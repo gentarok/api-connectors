@@ -11,7 +11,7 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IO.Swagger\IO.Swagger.csproj" />
+    <ProjectReference Include="..\BybitAPI\BybitAPI.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="JsonSubTypes" Version="1.8.0" />

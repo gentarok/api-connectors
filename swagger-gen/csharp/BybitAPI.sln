@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Swagger", "src\IO.Swagger\IO.Swagger.csproj", "{2FC808BF-158C-4579-AA6C-70D3FBF78CF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BybitAPI", "src\BybitAPI\BybitAPI.csproj", "{2FC808BF-158C-4579-AA6C-70D3FBF78CF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Swagger.Test", "src\IO.Swagger.Test\IO.Swagger.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BybitAPI.Test", "src\BybitAPI.Test\BybitAPI.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
