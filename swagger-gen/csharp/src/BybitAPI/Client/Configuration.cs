@@ -434,8 +434,8 @@ namespace BybitAPI.Client
         public static string ToDebugReport()
         {
             var report = "C# SDK (IO.Swagger) Debug Report:\n";
-            report += "    OS: " + System.Environment.OSVersion + "\n";
-            report += "    .NET Framework Version: " + System.Environment.Version + "\n";
+            report += "    OS: " + Environment.OSVersion + "\n";
+            report += "    .NET Framework Version: " + Environment.Version + "\n";
             report += "    Version of the API: 0.2.10\n";
             report += "    SDK Package Version: 1.0.0\n";
 
