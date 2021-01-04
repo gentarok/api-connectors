@@ -39,7 +39,7 @@ namespace BybitAPI.Model
         /// <param name="extInfo">extInfo.</param>
         /// <param name="result">result.</param>
         /// <param name="timeNow">timeNow.</param>
-        public AccountRatio(decimal? retCode = default(decimal?), string retMsg = default(string), string extCode = default(string), string extInfo = default(string), List<AccountRatioInfo> result = default(List<AccountRatioInfo>), string timeNow = default(string))
+        public AccountRatio(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, List<AccountRatioInfo> result = default, string timeNow = default)
         {
             this.RetCode = retCode;
             this.RetMsg = retMsg;

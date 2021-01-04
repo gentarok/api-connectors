@@ -39,7 +39,7 @@ namespace BybitAPI.Model
         /// <param name="fundingRate">fundingRate.</param>
         /// <param name="execFee">execFee.</param>
         /// <param name="execTimestamp">execTimestamp.</param>
-        public FundingFeeRes(string symbol = default(string), string side = default(string), decimal? size = default(decimal?), string fundingRate = default(string), double? execFee = default(double?), decimal? execTimestamp = default(decimal?))
+        public FundingFeeRes(string symbol = default, string side = default, decimal? size = default, string fundingRate = default, double? execFee = default, decimal? execTimestamp = default)
         {
             this.Symbol = symbol;
             this.Side = side;

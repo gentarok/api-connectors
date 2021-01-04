@@ -20,6 +20,7 @@ using System.Net;
 using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
+using BybitAPI.Client;
 
 namespace BybitAPI.Client
 {
@@ -79,7 +80,7 @@ namespace BybitAPI.Client
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
-            Configuration = Client.Configuration.Default;
+            Configuration = BybitAPI.Client.Configuration.Default;
         }
 
         /// <summary>
@@ -229,10 +230,9 @@ namespace BybitAPI.Client
         /// <returns>FileParameter.</returns>
         public FileParameter ParameterToFile(string name, Stream stream)
         {
-            if (stream is FileStream)
-                return FileParameter.Create(name, ReadAsBytes(stream), Path.GetFileName(((FileStream)stream).Name));
-            else
-                return FileParameter.Create(name, ReadAsBytes(stream), "no_file_name_provided");
+            return stream is FileStream stream1
+                ? FileParameter.Create(name, ReadAsBytes(stream), Path.GetFileName(stream1.Name))
+                : FileParameter.Create(name, ReadAsBytes(stream), "no_file_name_provided");
         }
 
         /// <summary>
@@ -244,22 +244,26 @@ namespace BybitAPI.Client
         /// <returns>Formatted string.</returns>
         public string ParameterToString(object obj)
         {
-            if (obj is DateTime)
+            if (obj is DateTime time)
+            {
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return ((DateTime)obj).ToString(Configuration.DateTimeFormat);
-            else if (obj is DateTimeOffset)
+                return time.ToString(Configuration.DateTimeFormat);
+            }
+            else if (obj is DateTimeOffset offset)
+            {
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return ((DateTimeOffset)obj).ToString(Configuration.DateTimeFormat);
-            else if (obj is IList)
+                return offset.ToString(Configuration.DateTimeFormat);
+            }
+            else if (obj is IList list)
             {
                 var flattenedString = new StringBuilder();
-                foreach (var param in (IList)obj)
+                foreach (var param in list)
                 {
                     if (flattenedString.Length > 0)
                         flattenedString.Append(",");
@@ -431,15 +435,13 @@ namespace BybitAPI.Client
         public static byte[] ReadAsBytes(Stream inputStream)
         {
             byte[] buf = new byte[16 * 1024];
-            using (MemoryStream ms = new MemoryStream())
+            using MemoryStream ms = new MemoryStream();
+            int count;
+            while ((count = inputStream.Read(buf, 0, buf.Length)) > 0)
             {
-                int count;
-                while ((count = inputStream.Read(buf, 0, buf.Length)) > 0)
-                {
-                    ms.Write(buf, 0, count);
-                }
-                return ms.ToArray();
+                ms.Write(buf, 0, count);
             }
+            return ms.ToArray();
         }
 
         /// <summary>
@@ -454,7 +456,7 @@ namespace BybitAPI.Client
 
             if (input == null)
             {
-                throw new ArgumentNullException("input");
+                throw new ArgumentNullException(nameof(input));
             }
 
             if (input.Length <= maxLength)

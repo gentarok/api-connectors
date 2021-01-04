@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com
@@ -104,6 +104,7 @@ namespace BybitAPI.Client
 
         #region Constructors
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1810:Initialize reference type static fields inline", Justification = "<Pending>")]
         static Configuration()
         {
             _globalConfiguration = new GlobalConfiguration();
@@ -134,13 +135,13 @@ namespace BybitAPI.Client
             string basePath = "https://api.bybit.com") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
-                throw new ArgumentException("The provided basePath is invalid.", "basePath");
+                throw new ArgumentException("The provided basePath is invalid.", nameof(basePath));
             if (defaultHeader == null)
-                throw new ArgumentNullException("defaultHeader");
+                throw new ArgumentNullException(nameof(defaultHeader));
             if (apiKey == null)
-                throw new ArgumentNullException("apiKey");
+                throw new ArgumentNullException(nameof(apiKey));
             if (apiKeyPrefix == null)
-                throw new ArgumentNullException("apiKeyPrefix");
+                throw new ArgumentNullException(nameof(apiKeyPrefix));
 
             BasePath = basePath;
 
@@ -191,7 +192,6 @@ namespace BybitAPI.Client
             // ReSharper restore UnusedParameter.Local
             )
         {
-
         }
 
         /// <summary>
@@ -202,15 +202,14 @@ namespace BybitAPI.Client
         // ReSharper disable once UnusedParameter.Local
         public Configuration(ApiClient apiClient)
         {
-
         }
 
         #endregion Constructors
 
-
         #region Properties
 
         private ApiClient _apiClient = null;
+
         /// <summary>
         /// Gets an instance of an ApiClient for this configuration
         /// </summary>
@@ -224,15 +223,19 @@ namespace BybitAPI.Client
         }
 
         private String _basePath = null;
+
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
-        public virtual string BasePath {
+        public virtual string BasePath
+        {
             get { return _basePath; }
-            set {
+            set
+            {
                 _basePath = value;
                 // pass-through to ApiClient if it's set.
-                if(_apiClient != null) {
+                if (_apiClient != null)
+                {
                     _apiClient.RestClient.BaseUrl = new Uri(_basePath);
                 }
             }
@@ -248,7 +251,6 @@ namespace BybitAPI.Client
         /// </summary>
         public virtual int Timeout
         {
-            
             get { return ApiClient.RestClient.Timeout; }
             set { ApiClient.RestClient.Timeout = value; }
         }
@@ -279,9 +281,9 @@ namespace BybitAPI.Client
         public string GetApiKeyWithPrefix(string apiKeyIdentifier)
         {
             var apiKeyValue = "";
-            ApiKey.TryGetValue (apiKeyIdentifier, out apiKeyValue);
+            ApiKey.TryGetValue(apiKeyIdentifier, out apiKeyValue);
             var apiKeyPrefix = "";
-            if (ApiKeyPrefix.TryGetValue (apiKeyIdentifier, out apiKeyPrefix))
+            if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out apiKeyPrefix))
                 return apiKeyPrefix + " " + apiKeyValue;
             else
                 return apiKeyValue;
@@ -317,7 +319,7 @@ namespace BybitAPI.Client
                 }
 
                 // check if the path contains directory separator at the end
-                if (value[value.Length - 1] == Path.DirectorySeparatorChar)
+                if (value[^1] == Path.DirectorySeparatorChar)
                 {
                     _tempFolderPath = value;
                 }
@@ -412,7 +414,6 @@ namespace BybitAPI.Client
             return new ApiClient(BasePath) { Configuration = this };
         }
 
-
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
@@ -420,7 +421,7 @@ namespace BybitAPI.Client
         {
             String report = "C# SDK (IO.Swagger) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
-            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
+            report += "    .NET Framework Version: " + System.Environment.Version + "\n";
             report += "    Version of the API: 0.2.10\n";
             report += "    SDK Package Version: 1.0.0\n";
 
