@@ -104,7 +104,7 @@ namespace BybitAPI.Client
         /// Gets or sets the RestClient.
         /// </summary>
         /// <value>An instance of the RestClient</value>
-        public RestClient RestClient { get; set; }
+        public IRestClient RestClient { get; set; }
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(

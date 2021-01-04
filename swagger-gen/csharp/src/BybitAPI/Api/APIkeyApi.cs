@@ -9,6 +9,7 @@
  */
 
 using BybitAPI.Client;
+using BybitAPI.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
-        object APIkeyInfo();
+        APIKeyBase APIkeyInfo();
 
         /// <summary>
         /// Get account api-key information.
@@ -43,7 +44,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> APIkeyInfoWithHttpInfo();
+        ApiResponse<APIKeyBase> APIkeyInfoWithHttpInfo();
 
         #endregion Synchronous Operations
 
@@ -57,7 +58,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        Task<object> APIkeyInfoAsync();
+        Task<APIKeyBase> APIkeyInfoAsync();
 
         /// <summary>
         /// Get account api-key information.
@@ -67,7 +68,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> APIkeyInfoAsyncWithHttpInfo();
+        Task<ApiResponse<APIKeyBase>> APIkeyInfoAsyncWithHttpInfo();
 
         #endregion Asynchronous Operations
     }
@@ -178,7 +179,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
-        public object APIkeyInfo()
+        public APIKeyBase APIkeyInfo()
         {
             var localVarResponse = APIkeyInfoWithHttpInfo();
             return localVarResponse.Data;
@@ -189,7 +190,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> APIkeyInfoWithHttpInfo()
+        public ApiResponse<APIKeyBase> APIkeyInfoWithHttpInfo()
         {
             var localVarPath = "/open-api/api-key";
             var localVarPathParams = new Dictionary<string, string>();
@@ -248,9 +249,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<APIKeyBase>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (APIKeyBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(APIKeyBase)));
         }
 
         /// <summary>
@@ -258,7 +259,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        public async Task<object> APIkeyInfoAsync()
+        public async Task<APIKeyBase> APIkeyInfoAsync()
         {
             var localVarResponse = await APIkeyInfoAsyncWithHttpInfo();
             return localVarResponse.Data;
@@ -269,7 +270,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<object>> APIkeyInfoAsyncWithHttpInfo()
+        public async Task<ApiResponse<APIKeyBase>> APIkeyInfoAsyncWithHttpInfo()
         {
             var localVarPath = "/open-api/api-key";
             var localVarPathParams = new Dictionary<string, string>();
@@ -328,9 +329,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<APIKeyBase>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (APIKeyBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(APIKeyBase)));
         }
     }
 }
