@@ -143,6 +143,7 @@ namespace BybitAPI.Client
             foreach (var param in fileParams)
             {
                 using var ms = new MemoryStream();
+                param.Value.Writer.Invoke(ms);
                 var bytes = ms.ToArray();
                 request.AddFile(param.Value.Name, bytes, param.Value.FileName, param.Value.ContentType);
             }
