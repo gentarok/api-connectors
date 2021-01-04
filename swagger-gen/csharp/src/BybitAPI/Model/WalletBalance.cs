@@ -185,7 +185,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(WalletBalance input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -193,67 +193,67 @@ namespace BybitAPI.Model
             return
                 (
                     Equity == input.Equity ||
-                    (Equity != null &&
+                    (Equity is not null &&
                     Equity.Equals(input.Equity))
                 ) &&
                 (
                     AvailableBalance == input.AvailableBalance ||
-                    (AvailableBalance != null &&
+                    (AvailableBalance is not null &&
                     AvailableBalance.Equals(input.AvailableBalance))
                 ) &&
                 (
                     UsedMargin == input.UsedMargin ||
-                    (UsedMargin != null &&
+                    (UsedMargin is not null &&
                     UsedMargin.Equals(input.UsedMargin))
                 ) &&
                 (
                     OrderMargin == input.OrderMargin ||
-                    (OrderMargin != null &&
+                    (OrderMargin is not null &&
                     OrderMargin.Equals(input.OrderMargin))
                 ) &&
                 (
                     PositionMargin == input.PositionMargin ||
-                    (PositionMargin != null &&
+                    (PositionMargin is not null &&
                     PositionMargin.Equals(input.PositionMargin))
                 ) &&
                 (
                     OccClosingFee == input.OccClosingFee ||
-                    (OccClosingFee != null &&
+                    (OccClosingFee is not null &&
                     OccClosingFee.Equals(input.OccClosingFee))
                 ) &&
                 (
                     OccFundingFee == input.OccFundingFee ||
-                    (OccFundingFee != null &&
+                    (OccFundingFee is not null &&
                     OccFundingFee.Equals(input.OccFundingFee))
                 ) &&
                 (
                     _WalletBalance == input._WalletBalance ||
-                    (_WalletBalance != null &&
+                    (_WalletBalance is not null &&
                     _WalletBalance.Equals(input._WalletBalance))
                 ) &&
                 (
                     RealisedPnl == input.RealisedPnl ||
-                    (RealisedPnl != null &&
+                    (RealisedPnl is not null &&
                     RealisedPnl.Equals(input.RealisedPnl))
                 ) &&
                 (
                     UnrealisedPnl == input.UnrealisedPnl ||
-                    (UnrealisedPnl != null &&
+                    (UnrealisedPnl is not null &&
                     UnrealisedPnl.Equals(input.UnrealisedPnl))
                 ) &&
                 (
                     CumRealisedPnl == input.CumRealisedPnl ||
-                    (CumRealisedPnl != null &&
+                    (CumRealisedPnl is not null &&
                     CumRealisedPnl.Equals(input.CumRealisedPnl))
                 ) &&
                 (
                     GivenCash == input.GivenCash ||
-                    (GivenCash != null &&
+                    (GivenCash is not null &&
                     GivenCash.Equals(input.GivenCash))
                 ) &&
                 (
                     ServiceCash == input.ServiceCash ||
-                    (ServiceCash != null &&
+                    (ServiceCash is not null &&
                     ServiceCash.Equals(input.ServiceCash))
                 );
         }
@@ -267,67 +267,67 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Equity != null)
+                if (Equity is not null)
                 {
                     hashCode = hashCode * 59 + Equity.GetHashCode();
                 }
 
-                if (AvailableBalance != null)
+                if (AvailableBalance is not null)
                 {
                     hashCode = hashCode * 59 + AvailableBalance.GetHashCode();
                 }
 
-                if (UsedMargin != null)
+                if (UsedMargin is not null)
                 {
                     hashCode = hashCode * 59 + UsedMargin.GetHashCode();
                 }
 
-                if (OrderMargin != null)
+                if (OrderMargin is not null)
                 {
                     hashCode = hashCode * 59 + OrderMargin.GetHashCode();
                 }
 
-                if (PositionMargin != null)
+                if (PositionMargin is not null)
                 {
                     hashCode = hashCode * 59 + PositionMargin.GetHashCode();
                 }
 
-                if (OccClosingFee != null)
+                if (OccClosingFee is not null)
                 {
                     hashCode = hashCode * 59 + OccClosingFee.GetHashCode();
                 }
 
-                if (OccFundingFee != null)
+                if (OccFundingFee is not null)
                 {
                     hashCode = hashCode * 59 + OccFundingFee.GetHashCode();
                 }
 
-                if (_WalletBalance != null)
+                if (_WalletBalance is not null)
                 {
                     hashCode = hashCode * 59 + _WalletBalance.GetHashCode();
                 }
 
-                if (RealisedPnl != null)
+                if (RealisedPnl is not null)
                 {
                     hashCode = hashCode * 59 + RealisedPnl.GetHashCode();
                 }
 
-                if (UnrealisedPnl != null)
+                if (UnrealisedPnl is not null)
                 {
                     hashCode = hashCode * 59 + UnrealisedPnl.GetHashCode();
                 }
 
-                if (CumRealisedPnl != null)
+                if (CumRealisedPnl is not null)
                 {
                     hashCode = hashCode * 59 + CumRealisedPnl.GetHashCode();
                 }
 
-                if (GivenCash != null)
+                if (GivenCash is not null)
                 {
                     hashCode = hashCode * 59 + GivenCash.GetHashCode();
                 }
 
-                if (ServiceCash != null)
+                if (ServiceCash is not null)
                 {
                     hashCode = hashCode * 59 + ServiceCash.GetHashCode();
                 }
@@ -341,7 +341,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

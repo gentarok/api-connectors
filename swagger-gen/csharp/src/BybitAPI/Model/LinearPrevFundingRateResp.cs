@@ -95,7 +95,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearPrevFundingRateResp input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -103,17 +103,17 @@ namespace BybitAPI.Model
             return
                 (
                     FundingRate == input.FundingRate ||
-                    (FundingRate != null &&
+                    (FundingRate is not null &&
                     FundingRate.Equals(input.FundingRate))
                 ) &&
                 (
                     FundingRateTimestamp == input.FundingRateTimestamp ||
-                    (FundingRateTimestamp != null &&
+                    (FundingRateTimestamp is not null &&
                     FundingRateTimestamp.Equals(input.FundingRateTimestamp))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 );
         }
@@ -127,17 +127,17 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (FundingRate != null)
+                if (FundingRate is not null)
                 {
                     hashCode = hashCode * 59 + FundingRate.GetHashCode();
                 }
 
-                if (FundingRateTimestamp != null)
+                if (FundingRateTimestamp is not null)
                 {
                     hashCode = hashCode * 59 + FundingRateTimestamp.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
@@ -151,7 +151,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

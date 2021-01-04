@@ -131,7 +131,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(ExchangeOrderList input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -139,37 +139,37 @@ namespace BybitAPI.Model
             return
                 (
                     FromCoin == input.FromCoin ||
-                    (FromCoin != null &&
+                    (FromCoin is not null &&
                     FromCoin.Equals(input.FromCoin))
                 ) &&
                 (
                     ToCoin == input.ToCoin ||
-                    (ToCoin != null &&
+                    (ToCoin is not null &&
                     ToCoin.Equals(input.ToCoin))
                 ) &&
                 (
                     FromAmount == input.FromAmount ||
-                    (FromAmount != null &&
+                    (FromAmount is not null &&
                     FromAmount.Equals(input.FromAmount))
                 ) &&
                 (
                     ToAmount == input.ToAmount ||
-                    (ToAmount != null &&
+                    (ToAmount is not null &&
                     ToAmount.Equals(input.ToAmount))
                 ) &&
                 (
                     ExchangeRate == input.ExchangeRate ||
-                    (ExchangeRate != null &&
+                    (ExchangeRate is not null &&
                     ExchangeRate.Equals(input.ExchangeRate))
                 ) &&
                 (
                     FromFee == input.FromFee ||
-                    (FromFee != null &&
+                    (FromFee is not null &&
                     FromFee.Equals(input.FromFee))
                 ) &&
                 (
                     CreatedAt == input.CreatedAt ||
-                    (CreatedAt != null &&
+                    (CreatedAt is not null &&
                     CreatedAt.Equals(input.CreatedAt))
                 );
         }
@@ -183,37 +183,37 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (FromCoin != null)
+                if (FromCoin is not null)
                 {
                     hashCode = hashCode * 59 + FromCoin.GetHashCode();
                 }
 
-                if (ToCoin != null)
+                if (ToCoin is not null)
                 {
                     hashCode = hashCode * 59 + ToCoin.GetHashCode();
                 }
 
-                if (FromAmount != null)
+                if (FromAmount is not null)
                 {
                     hashCode = hashCode * 59 + FromAmount.GetHashCode();
                 }
 
-                if (ToAmount != null)
+                if (ToAmount is not null)
                 {
                     hashCode = hashCode * 59 + ToAmount.GetHashCode();
                 }
 
-                if (ExchangeRate != null)
+                if (ExchangeRate is not null)
                 {
                     hashCode = hashCode * 59 + ExchangeRate.GetHashCode();
                 }
 
-                if (FromFee != null)
+                if (FromFee is not null)
                 {
                     hashCode = hashCode * 59 + FromFee.GetHashCode();
                 }
 
-                if (CreatedAt != null)
+                if (CreatedAt is not null)
                 {
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
                 }
@@ -227,7 +227,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

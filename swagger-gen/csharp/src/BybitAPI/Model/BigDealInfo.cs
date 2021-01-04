@@ -104,7 +104,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(BigDealInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -112,22 +112,22 @@ namespace BybitAPI.Model
             return
                 (
                     Side == input.Side ||
-                    (Side != null &&
+                    (Side is not null &&
                     Side.Equals(input.Side))
                 ) &&
                 (
                     Timestamp == input.Timestamp ||
-                    (Timestamp != null &&
+                    (Timestamp is not null &&
                     Timestamp.Equals(input.Timestamp))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     Value == input.Value ||
-                    (Value != null &&
+                    (Value is not null &&
                     Value.Equals(input.Value))
                 );
         }
@@ -141,22 +141,22 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Side != null)
+                if (Side is not null)
                 {
                     hashCode = hashCode * 59 + Side.GetHashCode();
                 }
 
-                if (Timestamp != null)
+                if (Timestamp is not null)
                 {
                     hashCode = hashCode * 59 + Timestamp.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (Value != null)
+                if (Value is not null)
                 {
                     hashCode = hashCode * 59 + Value.GetHashCode();
                 }
@@ -170,7 +170,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

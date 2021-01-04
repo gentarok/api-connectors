@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get user&#39;s trading records.
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
@@ -46,7 +47,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get user&#39;s trading records.
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
@@ -66,7 +67,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get user&#39;s trading records.
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
@@ -74,7 +75,7 @@ namespace BybitAPI.Api
         /// <param name="page"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearExecutionGetTradesAsync(string symbol = null, long? startTime = null, long? endTime = null, string execType = null, long? page = null, long? limit = null);
+        Task<object> LinearExecutionGetTradesAsync(string symbol = null, long? startTime = null, long? endTime = null, string execType = null, long? page = null, long? limit = null);
 
         /// <summary>
         /// Get user&#39;s trading records.
@@ -82,7 +83,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get user&#39;s trading records.
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
@@ -90,7 +91,7 @@ namespace BybitAPI.Api
         /// <param name="page"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearExecutionGetTradesAsyncWithHttpInfo(string symbol = null, long? startTime = null, long? endTime = null, string execType = null, long? page = null, long? limit = null);
+        Task<ApiResponse<object>> LinearExecutionGetTradesAsyncWithHttpInfo(string symbol = null, long? startTime = null, long? endTime = null, string execType = null, long? page = null, long? limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -100,7 +101,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class LinearExecutionApi : ILinearExecutionApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LinearExecutionApi"/> class.
@@ -108,9 +109,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public LinearExecutionApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -119,18 +120,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LinearExecutionApi(BybitAPI.Client.Configuration configuration = null)
+        public LinearExecutionApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -156,16 +157,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -199,7 +200,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s trading records. This will get user&#39;s trading records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
@@ -216,7 +217,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s trading records. This will get user&#39;s trading records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
@@ -246,37 +247,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (endTime != null)
+            if (endTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
             }
 
-            if (execType != null)
+            if (execType is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -304,10 +305,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearExecutionGetTrades", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -321,7 +322,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s trading records. This will get user&#39;s trading records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
@@ -329,7 +330,7 @@ namespace BybitAPI.Api
         /// <param name="page"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearExecutionGetTradesAsync(string symbol = null, long? startTime = null, long? endTime = null, string execType = null, long? page = null, long? limit = null)
+        public async Task<object> LinearExecutionGetTradesAsync(string symbol = null, long? startTime = null, long? endTime = null, string execType = null, long? page = null, long? limit = null)
         {
             var localVarResponse = await LinearExecutionGetTradesAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
             return localVarResponse.Data;
@@ -338,7 +339,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s trading records. This will get user&#39;s trading records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
@@ -346,7 +347,7 @@ namespace BybitAPI.Api
         /// <param name="page"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearExecutionGetTradesAsyncWithHttpInfo(string symbol = null, long? startTime = null, long? endTime = null, string execType = null, long? page = null, long? limit = null)
+        public async Task<ApiResponse<object>> LinearExecutionGetTradesAsyncWithHttpInfo(string symbol = null, long? startTime = null, long? endTime = null, string execType = null, long? page = null, long? limit = null)
         {
             var localVarPath = "/private/linear/trade/execution/list";
             var localVarPathParams = new Dictionary<string, string>();
@@ -368,37 +369,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (endTime != null)
+            if (endTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
             }
 
-            if (execType != null)
+            if (execType is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -426,10 +427,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearExecutionGetTrades", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

@@ -95,7 +95,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LotSizeFilter input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -103,17 +103,17 @@ namespace BybitAPI.Model
             return
                 (
                     MinTradingQty == input.MinTradingQty ||
-                    (MinTradingQty != null &&
+                    (MinTradingQty is not null &&
                     MinTradingQty.Equals(input.MinTradingQty))
                 ) &&
                 (
                     MaxTradingQty == input.MaxTradingQty ||
-                    (MaxTradingQty != null &&
+                    (MaxTradingQty is not null &&
                     MaxTradingQty.Equals(input.MaxTradingQty))
                 ) &&
                 (
                     QtyStep == input.QtyStep ||
-                    (QtyStep != null &&
+                    (QtyStep is not null &&
                     QtyStep.Equals(input.QtyStep))
                 );
         }
@@ -127,17 +127,17 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (MinTradingQty != null)
+                if (MinTradingQty is not null)
                 {
                     hashCode = hashCode * 59 + MinTradingQty.GetHashCode();
                 }
 
-                if (MaxTradingQty != null)
+                if (MaxTradingQty is not null)
                 {
                     hashCode = hashCode * 59 + MaxTradingQty.GetHashCode();
                 }
 
-                if (QtyStep != null)
+                if (QtyStep is not null)
                 {
                     hashCode = hashCode * 59 + QtyStep.GetHashCode();
                 }
@@ -151,7 +151,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

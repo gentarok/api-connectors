@@ -48,106 +48,105 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' LinearOrderApi
-            Assert.IsInstanceOf(typeof(LinearOrderApi), instance, "instance is a LinearOrderApi");
+            Assert.IsInstanceOf<LinearOrderApi>(instance, "instance is a LinearOrderApi");
         }
 
-        /// <summary>
-        /// Test LinearOrderCancel
-        /// </summary>
-        [Test]
-        public void LinearOrderCancelTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string orderId = null;
-            //string orderLinkId = null;
-            //string symbol = null;
-            //var response = instance.LinearOrderCancel(orderId, orderLinkId, symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearOrderCancel
+        ///// </summary>
+        //[Test]
+        //public void LinearOrderCancelTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string orderId = null;
+        //    //string orderLinkId = null;
+        //    //string symbol = null;
+        //    //var response = instance.LinearOrderCancel(orderId, orderLinkId, symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test LinearOrderCancelAll
-        /// </summary>
-        [Test]
-        public void LinearOrderCancelAllTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.LinearOrderCancelAll(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearOrderCancelAll
+        ///// </summary>
+        //[Test]
+        //public void LinearOrderCancelAllTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.LinearOrderCancelAll(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test LinearOrderGetOrders
-        /// </summary>
-        [Test]
-        public void LinearOrderGetOrdersTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string orderId = null;
-            //string orderLinkId = null;
-            //string symbol = null;
-            //string order = null;
-            //string page = null;
-            //string limit = null;
-            //string orderStatus = null;
-            //var response = instance.LinearOrderGetOrders(orderId, orderLinkId, symbol, order, page, limit, orderStatus);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearOrderGetOrders
+        ///// </summary>
+        //[Test]
+        //public void LinearOrderGetOrdersTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string orderId = null;
+        //    //string orderLinkId = null;
+        //    //string symbol = null;
+        //    //string order = null;
+        //    //string page = null;
+        //    //string limit = null;
+        //    //string orderStatus = null;
+        //    //var response = instance.LinearOrderGetOrders(orderId, orderLinkId, symbol, order, page, limit, orderStatus);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test LinearOrderNew
-        /// </summary>
-        [Test]
-        public void LinearOrderNewTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string side = null;
-            //string orderType = null;
-            //string timeInForce = null;
-            //double? qty = null;
-            //double? price = null;
-            //double? takeProfit = null;
-            //double? stopLoss = null;
-            //bool? reduceOnly = null;
-            //string tpTriggerBy = null;
-            //string slTriggerBy = null;
-            //bool? closeOnTrigger = null;
-            //string orderLinkId = null;
-            //var response = instance.LinearOrderNew(symbol, side, orderType, timeInForce, qty, price, takeProfit, stopLoss, reduceOnly, tpTriggerBy, slTriggerBy, closeOnTrigger, orderLinkId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearOrderNew
+        ///// </summary>
+        //[Test]
+        //public void LinearOrderNewTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string side = null;
+        //    //string orderType = null;
+        //    //string timeInForce = null;
+        //    //double? qty = null;
+        //    //double? price = null;
+        //    //double? takeProfit = null;
+        //    //double? stopLoss = null;
+        //    //bool? reduceOnly = null;
+        //    //string tpTriggerBy = null;
+        //    //string slTriggerBy = null;
+        //    //bool? closeOnTrigger = null;
+        //    //string orderLinkId = null;
+        //    //var response = instance.LinearOrderNew(symbol, side, orderType, timeInForce, qty, price, takeProfit, stopLoss, reduceOnly, tpTriggerBy, slTriggerBy, closeOnTrigger, orderLinkId);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test LinearOrderQuery
-        /// </summary>
-        [Test]
-        public void LinearOrderQueryTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string orderId = null;
-            //string orderLinkId = null;
-            //var response = instance.LinearOrderQuery(symbol, orderId, orderLinkId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearOrderQuery
+        ///// </summary>
+        //[Test]
+        //public void LinearOrderQueryTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string orderId = null;
+        //    //string orderLinkId = null;
+        //    //var response = instance.LinearOrderQuery(symbol, orderId, orderLinkId);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test LinearOrderReplace
-        /// </summary>
-        [Test]
-        public void LinearOrderReplaceTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string orderId = null;
-            //string orderLinkId = null;
-            //string pRQty = null;
-            //decimal? pRPrice = null;
-            //var response = instance.LinearOrderReplace(symbol, orderId, orderLinkId, pRQty, pRPrice);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearOrderReplace
+        ///// </summary>
+        //[Test]
+        //public void LinearOrderReplaceTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string orderId = null;
+        //    //string orderLinkId = null;
+        //    //string pRQty = null;
+        //    //decimal? pRPrice = null;
+        //    //var response = instance.LinearOrderReplace(symbol, orderId, orderLinkId, pRQty, pRPrice);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

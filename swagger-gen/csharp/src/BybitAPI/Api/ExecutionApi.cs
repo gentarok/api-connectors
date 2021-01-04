@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="symbol">Contract type. If order_id not provided, symbol is required. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
@@ -45,7 +46,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="symbol">Contract type. If order_id not provided, symbol is required. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
@@ -60,7 +61,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -76,7 +77,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -96,14 +97,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="symbol">Contract type. If order_id not provided, symbol is required. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
         /// <param name="page">Page. Default getting first page data. (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> ExecutionGetTradesAsync(string orderId = null, string symbol = null, string startTime = null, string page = null, string limit = null);
+        Task<object> ExecutionGetTradesAsync(string orderId = null, string symbol = null, string startTime = null, string page = null, string limit = null);
 
         /// <summary>
         /// Get user’s trade records.
@@ -111,14 +112,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="symbol">Contract type. If order_id not provided, symbol is required. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
         /// <param name="page">Page. Default getting first page data. (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> ExecutionGetTradesAsyncWithHttpInfo(string orderId = null, string symbol = null, string startTime = null, string page = null, string limit = null);
+        Task<ApiResponse<object>> ExecutionGetTradesAsyncWithHttpInfo(string orderId = null, string symbol = null, string startTime = null, string page = null, string limit = null);
 
         /// <summary>
         /// Get user&#39;s closed profit and loss records
@@ -126,7 +127,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -134,7 +135,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
+        Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
 
         /// <summary>
         /// Get user&#39;s closed profit and loss records
@@ -142,7 +143,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -150,7 +151,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
+        Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -160,7 +161,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class ExecutionApi : IExecutionApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecutionApi"/> class.
@@ -168,9 +169,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public ExecutionApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -179,18 +180,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ExecutionApi(BybitAPI.Client.Configuration configuration = null)
+        public ExecutionApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -216,16 +217,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -259,7 +260,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user’s trade records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="symbol">Contract type. If order_id not provided, symbol is required. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
@@ -275,7 +276,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user’s trade records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="symbol">Contract type. If order_id not provided, symbol is required. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
@@ -304,32 +305,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (orderId != null)
+            if (orderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_id", orderId)); // query parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -357,10 +358,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("ExecutionGetTrades", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -374,14 +375,14 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user’s trade records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="symbol">Contract type. If order_id not provided, symbol is required. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
         /// <param name="page">Page. Default getting first page data. (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> ExecutionGetTradesAsync(string orderId = null, string symbol = null, string startTime = null, string page = null, string limit = null)
+        public async Task<object> ExecutionGetTradesAsync(string orderId = null, string symbol = null, string startTime = null, string page = null, string limit = null)
         {
             var localVarResponse = await ExecutionGetTradesAsyncWithHttpInfo(orderId, symbol, startTime, page, limit);
             return localVarResponse.Data;
@@ -390,14 +391,14 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user’s trade records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="symbol">Contract type. If order_id not provided, symbol is required. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
         /// <param name="page">Page. Default getting first page data. (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> ExecutionGetTradesAsyncWithHttpInfo(string orderId = null, string symbol = null, string startTime = null, string page = null, string limit = null)
+        public async Task<ApiResponse<object>> ExecutionGetTradesAsyncWithHttpInfo(string orderId = null, string symbol = null, string startTime = null, string page = null, string limit = null)
         {
             var localVarPath = "/v2/private/execution/list";
             var localVarPathParams = new Dictionary<string, string>();
@@ -419,32 +420,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (orderId != null)
+            if (orderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_id", orderId)); // query parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -472,10 +473,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("ExecutionGetTrades", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -489,7 +490,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s closed profit and loss records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -506,7 +507,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s closed profit and loss records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -517,7 +518,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> PositionsClosePnlRecordsWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling ExecutionApi->PositionsClosePnlRecords");
             }
@@ -542,37 +543,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (endTime != null)
+            if (endTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
             }
 
-            if (execType != null)
+            if (execType is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -600,10 +601,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsClosePnlRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -617,7 +618,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s closed profit and loss records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -625,7 +626,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
+        public async Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
             var localVarResponse = await PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
             return localVarResponse.Data;
@@ -634,7 +635,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s closed profit and loss records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -642,10 +643,10 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
+        public async Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling ExecutionApi->PositionsClosePnlRecords");
             }
@@ -670,37 +671,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (endTime != null)
+            if (endTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
             }
 
-            if (execType != null)
+            if (execType is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -728,10 +729,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsClosePnlRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

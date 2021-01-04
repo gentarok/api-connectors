@@ -275,7 +275,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(SymbolTickInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -283,117 +283,117 @@ namespace BybitAPI.Model
             return
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     BidPrice == input.BidPrice ||
-                    (BidPrice != null &&
+                    (BidPrice is not null &&
                     BidPrice.Equals(input.BidPrice))
                 ) &&
                 (
                     AskPrice == input.AskPrice ||
-                    (AskPrice != null &&
+                    (AskPrice is not null &&
                     AskPrice.Equals(input.AskPrice))
                 ) &&
                 (
                     LastPrice == input.LastPrice ||
-                    (LastPrice != null &&
+                    (LastPrice is not null &&
                     LastPrice.Equals(input.LastPrice))
                 ) &&
                 (
                     LastTickDirection == input.LastTickDirection ||
-                    (LastTickDirection != null &&
+                    (LastTickDirection is not null &&
                     LastTickDirection.Equals(input.LastTickDirection))
                 ) &&
                 (
                     PrevPrice24h == input.PrevPrice24h ||
-                    (PrevPrice24h != null &&
+                    (PrevPrice24h is not null &&
                     PrevPrice24h.Equals(input.PrevPrice24h))
                 ) &&
                 (
                     Price24hPcnt == input.Price24hPcnt ||
-                    (Price24hPcnt != null &&
+                    (Price24hPcnt is not null &&
                     Price24hPcnt.Equals(input.Price24hPcnt))
                 ) &&
                 (
                     HighPrice24h == input.HighPrice24h ||
-                    (HighPrice24h != null &&
+                    (HighPrice24h is not null &&
                     HighPrice24h.Equals(input.HighPrice24h))
                 ) &&
                 (
                     LowPrice24h == input.LowPrice24h ||
-                    (LowPrice24h != null &&
+                    (LowPrice24h is not null &&
                     LowPrice24h.Equals(input.LowPrice24h))
                 ) &&
                 (
                     PrevPrice1h == input.PrevPrice1h ||
-                    (PrevPrice1h != null &&
+                    (PrevPrice1h is not null &&
                     PrevPrice1h.Equals(input.PrevPrice1h))
                 ) &&
                 (
                     Price1hPcnt == input.Price1hPcnt ||
-                    (Price1hPcnt != null &&
+                    (Price1hPcnt is not null &&
                     Price1hPcnt.Equals(input.Price1hPcnt))
                 ) &&
                 (
                     MarkPrice == input.MarkPrice ||
-                    (MarkPrice != null &&
+                    (MarkPrice is not null &&
                     MarkPrice.Equals(input.MarkPrice))
                 ) &&
                 (
                     IndexPrice == input.IndexPrice ||
-                    (IndexPrice != null &&
+                    (IndexPrice is not null &&
                     IndexPrice.Equals(input.IndexPrice))
                 ) &&
                 (
                     OpenInterest == input.OpenInterest ||
-                    (OpenInterest != null &&
+                    (OpenInterest is not null &&
                     OpenInterest.Equals(input.OpenInterest))
                 ) &&
                 (
                     OpenValue == input.OpenValue ||
-                    (OpenValue != null &&
+                    (OpenValue is not null &&
                     OpenValue.Equals(input.OpenValue))
                 ) &&
                 (
                     TotalTurnover == input.TotalTurnover ||
-                    (TotalTurnover != null &&
+                    (TotalTurnover is not null &&
                     TotalTurnover.Equals(input.TotalTurnover))
                 ) &&
                 (
                     Turnover24h == input.Turnover24h ||
-                    (Turnover24h != null &&
+                    (Turnover24h is not null &&
                     Turnover24h.Equals(input.Turnover24h))
                 ) &&
                 (
                     TotalVolume == input.TotalVolume ||
-                    (TotalVolume != null &&
+                    (TotalVolume is not null &&
                     TotalVolume.Equals(input.TotalVolume))
                 ) &&
                 (
                     Volume24h == input.Volume24h ||
-                    (Volume24h != null &&
+                    (Volume24h is not null &&
                     Volume24h.Equals(input.Volume24h))
                 ) &&
                 (
                     FundingRate == input.FundingRate ||
-                    (FundingRate != null &&
+                    (FundingRate is not null &&
                     FundingRate.Equals(input.FundingRate))
                 ) &&
                 (
                     PredictedFundingRate == input.PredictedFundingRate ||
-                    (PredictedFundingRate != null &&
+                    (PredictedFundingRate is not null &&
                     PredictedFundingRate.Equals(input.PredictedFundingRate))
                 ) &&
                 (
                     NextFundingTime == input.NextFundingTime ||
-                    (NextFundingTime != null &&
+                    (NextFundingTime is not null &&
                     NextFundingTime.Equals(input.NextFundingTime))
                 ) &&
                 (
                     CountdownHour == input.CountdownHour ||
-                    (CountdownHour != null &&
+                    (CountdownHour is not null &&
                     CountdownHour.Equals(input.CountdownHour))
                 );
         }
@@ -407,117 +407,117 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (BidPrice != null)
+                if (BidPrice is not null)
                 {
                     hashCode = hashCode * 59 + BidPrice.GetHashCode();
                 }
 
-                if (AskPrice != null)
+                if (AskPrice is not null)
                 {
                     hashCode = hashCode * 59 + AskPrice.GetHashCode();
                 }
 
-                if (LastPrice != null)
+                if (LastPrice is not null)
                 {
                     hashCode = hashCode * 59 + LastPrice.GetHashCode();
                 }
 
-                if (LastTickDirection != null)
+                if (LastTickDirection is not null)
                 {
                     hashCode = hashCode * 59 + LastTickDirection.GetHashCode();
                 }
 
-                if (PrevPrice24h != null)
+                if (PrevPrice24h is not null)
                 {
                     hashCode = hashCode * 59 + PrevPrice24h.GetHashCode();
                 }
 
-                if (Price24hPcnt != null)
+                if (Price24hPcnt is not null)
                 {
                     hashCode = hashCode * 59 + Price24hPcnt.GetHashCode();
                 }
 
-                if (HighPrice24h != null)
+                if (HighPrice24h is not null)
                 {
                     hashCode = hashCode * 59 + HighPrice24h.GetHashCode();
                 }
 
-                if (LowPrice24h != null)
+                if (LowPrice24h is not null)
                 {
                     hashCode = hashCode * 59 + LowPrice24h.GetHashCode();
                 }
 
-                if (PrevPrice1h != null)
+                if (PrevPrice1h is not null)
                 {
                     hashCode = hashCode * 59 + PrevPrice1h.GetHashCode();
                 }
 
-                if (Price1hPcnt != null)
+                if (Price1hPcnt is not null)
                 {
                     hashCode = hashCode * 59 + Price1hPcnt.GetHashCode();
                 }
 
-                if (MarkPrice != null)
+                if (MarkPrice is not null)
                 {
                     hashCode = hashCode * 59 + MarkPrice.GetHashCode();
                 }
 
-                if (IndexPrice != null)
+                if (IndexPrice is not null)
                 {
                     hashCode = hashCode * 59 + IndexPrice.GetHashCode();
                 }
 
-                if (OpenInterest != null)
+                if (OpenInterest is not null)
                 {
                     hashCode = hashCode * 59 + OpenInterest.GetHashCode();
                 }
 
-                if (OpenValue != null)
+                if (OpenValue is not null)
                 {
                     hashCode = hashCode * 59 + OpenValue.GetHashCode();
                 }
 
-                if (TotalTurnover != null)
+                if (TotalTurnover is not null)
                 {
                     hashCode = hashCode * 59 + TotalTurnover.GetHashCode();
                 }
 
-                if (Turnover24h != null)
+                if (Turnover24h is not null)
                 {
                     hashCode = hashCode * 59 + Turnover24h.GetHashCode();
                 }
 
-                if (TotalVolume != null)
+                if (TotalVolume is not null)
                 {
                     hashCode = hashCode * 59 + TotalVolume.GetHashCode();
                 }
 
-                if (Volume24h != null)
+                if (Volume24h is not null)
                 {
                     hashCode = hashCode * 59 + Volume24h.GetHashCode();
                 }
 
-                if (FundingRate != null)
+                if (FundingRate is not null)
                 {
                     hashCode = hashCode * 59 + FundingRate.GetHashCode();
                 }
 
-                if (PredictedFundingRate != null)
+                if (PredictedFundingRate is not null)
                 {
                     hashCode = hashCode * 59 + PredictedFundingRate.GetHashCode();
                 }
 
-                if (NextFundingTime != null)
+                if (NextFundingTime is not null)
                 {
                     hashCode = hashCode * 59 + NextFundingTime.GetHashCode();
                 }
 
-                if (CountdownHour != null)
+                if (CountdownHour is not null)
                 {
                     hashCode = hashCode * 59 + CountdownHour.GetHashCode();
                 }
@@ -531,7 +531,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

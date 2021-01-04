@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Object</returns>
@@ -42,7 +43,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>ApiResponse of Object</returns>
@@ -54,7 +55,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -70,7 +71,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -86,7 +87,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Object</returns>
         object PositionsMyPosition(string symbol = null);
@@ -97,7 +98,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> PositionsMyPositionWithHttpInfo(string symbol = null);
@@ -108,7 +109,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Object</returns>
@@ -120,7 +121,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>ApiResponse of Object</returns>
@@ -132,7 +133,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
@@ -147,7 +148,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
@@ -166,11 +167,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> PositionsChangeMarginAsync(string symbol, string margin);
+        Task<object> PositionsChangeMarginAsync(string symbol, string margin);
 
         /// <summary>
         /// Update margin.
@@ -178,11 +179,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> PositionsChangeMarginAsyncWithHttpInfo(string symbol, string margin);
+        Task<ApiResponse<object>> PositionsChangeMarginAsyncWithHttpInfo(string symbol, string margin);
 
         /// <summary>
         /// Get user&#39;s closed profit and loss records
@@ -190,7 +191,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -198,7 +199,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
+        Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
 
         /// <summary>
         /// Get user&#39;s closed profit and loss records
@@ -206,7 +207,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -214,7 +215,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
+        Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
 
         /// <summary>
         /// Get my position list.
@@ -222,10 +223,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> PositionsMyPositionAsync(string symbol = null);
+        Task<object> PositionsMyPositionAsync(string symbol = null);
 
         /// <summary>
         /// Get my position list.
@@ -233,10 +234,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> PositionsMyPositionAsyncWithHttpInfo(string symbol = null);
+        Task<ApiResponse<object>> PositionsMyPositionAsyncWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Change user leverage.
@@ -244,11 +245,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> PositionsSaveLeverageAsync(string symbol, string leverage);
+        Task<object> PositionsSaveLeverageAsync(string symbol, string leverage);
 
         /// <summary>
         /// Change user leverage.
@@ -256,11 +257,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> PositionsSaveLeverageAsyncWithHttpInfo(string symbol, string leverage);
+        Task<ApiResponse<object>> PositionsSaveLeverageAsyncWithHttpInfo(string symbol, string leverage);
 
         /// <summary>
         /// Set Trading-Stop Condition.
@@ -268,14 +269,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> PositionsTradingStopAsync(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
+        Task<object> PositionsTradingStopAsync(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
 
         /// <summary>
         /// Set Trading-Stop Condition.
@@ -283,14 +284,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> PositionsTradingStopAsyncWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
+        Task<ApiResponse<object>> PositionsTradingStopAsyncWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
 
         #endregion Asynchronous Operations
     }
@@ -300,7 +301,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class PositionsApi : IPositionsApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PositionsApi"/> class.
@@ -308,9 +309,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public PositionsApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -319,18 +320,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public PositionsApi(BybitAPI.Client.Configuration configuration = null)
+        public PositionsApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -356,16 +357,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -399,7 +400,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Update margin.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Object</returns>
@@ -412,19 +413,19 @@ namespace BybitAPI.Api
         /// <summary>
         /// Update margin.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> PositionsChangeMarginWithHttpInfo(string symbol, string margin)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsChangeMargin");
             }
             // verify the required parameter 'margin' is set
-            if (margin == null)
+            if (margin is null)
             {
                 throw new ApiException(400, "Missing required parameter 'margin' when calling PositionsApi->PositionsChangeMargin");
             }
@@ -448,17 +449,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (margin != null)
+            if (margin is not null)
             {
                 localVarFormParams.Add("margin", Configuration.ApiClient.ParameterToString(margin)); // form parameter
             }
@@ -486,10 +487,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsChangeMargin", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -503,11 +504,11 @@ namespace BybitAPI.Api
         /// <summary>
         /// Update margin.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> PositionsChangeMarginAsync(string symbol, string margin)
+        public async Task<object> PositionsChangeMarginAsync(string symbol, string margin)
         {
             var localVarResponse = await PositionsChangeMarginAsyncWithHttpInfo(symbol, margin);
             return localVarResponse.Data;
@@ -516,19 +517,19 @@ namespace BybitAPI.Api
         /// <summary>
         /// Update margin.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsChangeMarginAsyncWithHttpInfo(string symbol, string margin)
+        public async Task<ApiResponse<object>> PositionsChangeMarginAsyncWithHttpInfo(string symbol, string margin)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsChangeMargin");
             }
             // verify the required parameter 'margin' is set
-            if (margin == null)
+            if (margin is null)
             {
                 throw new ApiException(400, "Missing required parameter 'margin' when calling PositionsApi->PositionsChangeMargin");
             }
@@ -552,17 +553,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (margin != null)
+            if (margin is not null)
             {
                 localVarFormParams.Add("margin", Configuration.ApiClient.ParameterToString(margin)); // form parameter
             }
@@ -590,10 +591,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsChangeMargin", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -607,7 +608,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s closed profit and loss records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -624,7 +625,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s closed profit and loss records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -635,7 +636,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> PositionsClosePnlRecordsWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsClosePnlRecords");
             }
@@ -660,37 +661,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (endTime != null)
+            if (endTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
             }
 
-            if (execType != null)
+            if (execType is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -718,10 +719,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsClosePnlRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -735,7 +736,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s closed profit and loss records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -743,7 +744,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
+        public async Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
             var localVarResponse = await PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
             return localVarResponse.Data;
@@ -752,7 +753,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get user&#39;s closed profit and loss records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
@@ -760,10 +761,10 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
+        public async Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsClosePnlRecords");
             }
@@ -788,37 +789,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (endTime != null)
+            if (endTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
             }
 
-            if (execType != null)
+            if (execType is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -846,10 +847,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsClosePnlRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -863,7 +864,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my position list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Object</returns>
         public object PositionsMyPosition(string symbol = null)
@@ -875,7 +876,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my position list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> PositionsMyPositionWithHttpInfo(string symbol = null)
@@ -900,12 +901,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -933,10 +934,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsMyPosition", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -950,10 +951,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my position list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> PositionsMyPositionAsync(string symbol = null)
+        public async Task<object> PositionsMyPositionAsync(string symbol = null)
         {
             var localVarResponse = await PositionsMyPositionAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -962,10 +963,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my position list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsMyPositionAsyncWithHttpInfo(string symbol = null)
+        public async Task<ApiResponse<object>> PositionsMyPositionAsyncWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/v2/private/position/list";
             var localVarPathParams = new Dictionary<string, string>();
@@ -987,12 +988,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -1020,10 +1021,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsMyPosition", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1037,7 +1038,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Change user leverage.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Object</returns>
@@ -1050,19 +1051,19 @@ namespace BybitAPI.Api
         /// <summary>
         /// Change user leverage.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> PositionsSaveLeverageWithHttpInfo(string symbol, string leverage)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsSaveLeverage");
             }
             // verify the required parameter 'leverage' is set
-            if (leverage == null)
+            if (leverage is null)
             {
                 throw new ApiException(400, "Missing required parameter 'leverage' when calling PositionsApi->PositionsSaveLeverage");
             }
@@ -1086,17 +1087,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (leverage != null)
+            if (leverage is not null)
             {
                 localVarFormParams.Add("leverage", Configuration.ApiClient.ParameterToString(leverage)); // form parameter
             }
@@ -1124,10 +1125,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsSaveLeverage", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1141,11 +1142,11 @@ namespace BybitAPI.Api
         /// <summary>
         /// Change user leverage.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> PositionsSaveLeverageAsync(string symbol, string leverage)
+        public async Task<object> PositionsSaveLeverageAsync(string symbol, string leverage)
         {
             var localVarResponse = await PositionsSaveLeverageAsyncWithHttpInfo(symbol, leverage);
             return localVarResponse.Data;
@@ -1154,19 +1155,19 @@ namespace BybitAPI.Api
         /// <summary>
         /// Change user leverage.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsSaveLeverageAsyncWithHttpInfo(string symbol, string leverage)
+        public async Task<ApiResponse<object>> PositionsSaveLeverageAsyncWithHttpInfo(string symbol, string leverage)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsSaveLeverage");
             }
             // verify the required parameter 'leverage' is set
-            if (leverage == null)
+            if (leverage is null)
             {
                 throw new ApiException(400, "Missing required parameter 'leverage' when calling PositionsApi->PositionsSaveLeverage");
             }
@@ -1190,17 +1191,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (leverage != null)
+            if (leverage is not null)
             {
                 localVarFormParams.Add("leverage", Configuration.ApiClient.ParameterToString(leverage)); // form parameter
             }
@@ -1228,10 +1229,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsSaveLeverage", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1245,7 +1246,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Set Trading-Stop Condition.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
@@ -1261,7 +1262,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Set Trading-Stop Condition.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
@@ -1271,7 +1272,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> PositionsTradingStopWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsTradingStop");
             }
@@ -1295,32 +1296,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (takeProfit != null)
+            if (takeProfit is not null)
             {
                 localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
             }
 
-            if (stopLoss != null)
+            if (stopLoss is not null)
             {
                 localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
             }
 
-            if (trailingStop != null)
+            if (trailingStop is not null)
             {
                 localVarFormParams.Add("trailing_stop", Configuration.ApiClient.ParameterToString(trailingStop)); // form parameter
             }
 
-            if (newTrailingActive != null)
+            if (newTrailingActive is not null)
             {
                 localVarFormParams.Add("new_trailing_active", Configuration.ApiClient.ParameterToString(newTrailingActive)); // form parameter
             }
@@ -1348,10 +1349,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsTradingStop", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1365,14 +1366,14 @@ namespace BybitAPI.Api
         /// <summary>
         /// Set Trading-Stop Condition.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> PositionsTradingStopAsync(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
+        public async Task<object> PositionsTradingStopAsync(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
         {
             var localVarResponse = await PositionsTradingStopAsyncWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
             return localVarResponse.Data;
@@ -1381,17 +1382,17 @@ namespace BybitAPI.Api
         /// <summary>
         /// Set Trading-Stop Condition.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsTradingStopAsyncWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
+        public async Task<ApiResponse<object>> PositionsTradingStopAsyncWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsTradingStop");
             }
@@ -1415,32 +1416,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (takeProfit != null)
+            if (takeProfit is not null)
             {
                 localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
             }
 
-            if (stopLoss != null)
+            if (stopLoss is not null)
             {
                 localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
             }
 
-            if (trailingStop != null)
+            if (trailingStop is not null)
             {
                 localVarFormParams.Add("trailing_stop", Configuration.ApiClient.ParameterToString(trailingStop)); // form parameter
             }
 
-            if (newTrailingActive != null)
+            if (newTrailingActive is not null)
             {
                 localVarFormParams.Add("new_trailing_active", Configuration.ApiClient.ParameterToString(newTrailingActive)); // form parameter
             }
@@ -1468,10 +1469,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("PositionsTradingStop", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

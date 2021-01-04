@@ -48,79 +48,78 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' PositionsApi
-            Assert.IsInstanceOf(typeof(PositionsApi), instance, "instance is a PositionsApi");
+            Assert.IsInstanceOf<PositionsApi>(instance, "instance is a PositionsApi");
         }
 
-        /// <summary>
-        /// Test PositionsChangeMargin
-        /// </summary>
-        [Test]
-        public void PositionsChangeMarginTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string margin = null;
-            //var response = instance.PositionsChangeMargin(symbol, margin);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test PositionsChangeMargin
+        ///// </summary>
+        //[Test]
+        //public void PositionsChangeMarginTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string margin = null;
+        //    //var response = instance.PositionsChangeMargin(symbol, margin);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test PositionsClosePnlRecords
-        /// </summary>
-        [Test]
-        public void PositionsClosePnlRecordsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //int? startTime = null;
-            //int? endTime = null;
-            //string execType = null;
-            //int? page = null;
-            //int? limit = null;
-            //var response = instance.PositionsClosePnlRecords(symbol, startTime, endTime, execType, page, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test PositionsClosePnlRecords
+        ///// </summary>
+        //[Test]
+        //public void PositionsClosePnlRecordsTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //int? startTime = null;
+        //    //int? endTime = null;
+        //    //string execType = null;
+        //    //int? page = null;
+        //    //int? limit = null;
+        //    //var response = instance.PositionsClosePnlRecords(symbol, startTime, endTime, execType, page, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test PositionsMyPosition
-        /// </summary>
-        [Test]
-        public void PositionsMyPositionTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.PositionsMyPosition(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test PositionsMyPosition
+        ///// </summary>
+        //[Test]
+        //public void PositionsMyPositionTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.PositionsMyPosition(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test PositionsSaveLeverage
-        /// </summary>
-        [Test]
-        public void PositionsSaveLeverageTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string leverage = null;
-            //var response = instance.PositionsSaveLeverage(symbol, leverage);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test PositionsSaveLeverage
+        ///// </summary>
+        //[Test]
+        //public void PositionsSaveLeverageTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string leverage = null;
+        //    //var response = instance.PositionsSaveLeverage(symbol, leverage);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test PositionsTradingStop
-        /// </summary>
-        [Test]
-        public void PositionsTradingStopTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string takeProfit = null;
-            //string stopLoss = null;
-            //string trailingStop = null;
-            //string newTrailingActive = null;
-            //var response = instance.PositionsTradingStop(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test PositionsTradingStop
+        ///// </summary>
+        //[Test]
+        //public void PositionsTradingStopTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string takeProfit = null;
+        //    //string stopLoss = null;
+        //    //string trailingStop = null;
+        //    //string newTrailingActive = null;
+        //    //var response = instance.PositionsTradingStop(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

@@ -86,7 +86,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearFundingPredicted input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -94,12 +94,12 @@ namespace BybitAPI.Model
             return
                 (
                     PredictedFundingRate == input.PredictedFundingRate ||
-                    (PredictedFundingRate != null &&
+                    (PredictedFundingRate is not null &&
                     PredictedFundingRate.Equals(input.PredictedFundingRate))
                 ) &&
                 (
                     PredictedFundingFee == input.PredictedFundingFee ||
-                    (PredictedFundingFee != null &&
+                    (PredictedFundingFee is not null &&
                     PredictedFundingFee.Equals(input.PredictedFundingFee))
                 );
         }
@@ -113,12 +113,12 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (PredictedFundingRate != null)
+                if (PredictedFundingRate is not null)
                 {
                     hashCode = hashCode * 59 + PredictedFundingRate.GetHashCode();
                 }
 
-                if (PredictedFundingFee != null)
+                if (PredictedFundingFee is not null)
                 {
                     hashCode = hashCode * 59 + PredictedFundingFee.GetHashCode();
                 }
@@ -132,7 +132,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

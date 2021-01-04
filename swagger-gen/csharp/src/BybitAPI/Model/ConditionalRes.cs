@@ -203,7 +203,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(ConditionalRes input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -211,77 +211,77 @@ namespace BybitAPI.Model
             return
                 (
                     StopOrderId == input.StopOrderId ||
-                    (StopOrderId != null &&
+                    (StopOrderId is not null &&
                     StopOrderId.Equals(input.StopOrderId))
                 ) &&
                 (
                     UserId == input.UserId ||
-                    (UserId != null &&
+                    (UserId is not null &&
                     UserId.Equals(input.UserId))
                 ) &&
                 (
                     StopOrderStatus == input.StopOrderStatus ||
-                    (StopOrderStatus != null &&
+                    (StopOrderStatus is not null &&
                     StopOrderStatus.Equals(input.StopOrderStatus))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     Side == input.Side ||
-                    (Side != null &&
+                    (Side is not null &&
                     Side.Equals(input.Side))
                 ) &&
                 (
                     OrderType == input.OrderType ||
-                    (OrderType != null &&
+                    (OrderType is not null &&
                     OrderType.Equals(input.OrderType))
                 ) &&
                 (
                     Price == input.Price ||
-                    (Price != null &&
+                    (Price is not null &&
                     Price.Equals(input.Price))
                 ) &&
                 (
                     Qty == input.Qty ||
-                    (Qty != null &&
+                    (Qty is not null &&
                     Qty.Equals(input.Qty))
                 ) &&
                 (
                     TimeInForce == input.TimeInForce ||
-                    (TimeInForce != null &&
+                    (TimeInForce is not null &&
                     TimeInForce.Equals(input.TimeInForce))
                 ) &&
                 (
                     StopOrderType == input.StopOrderType ||
-                    (StopOrderType != null &&
+                    (StopOrderType is not null &&
                     StopOrderType.Equals(input.StopOrderType))
                 ) &&
                 (
                     BasePrice == input.BasePrice ||
-                    (BasePrice != null &&
+                    (BasePrice is not null &&
                     BasePrice.Equals(input.BasePrice))
                 ) &&
                 (
                     StopPx == input.StopPx ||
-                    (StopPx != null &&
+                    (StopPx is not null &&
                     StopPx.Equals(input.StopPx))
                 ) &&
                 (
                     OrderLinkId == input.OrderLinkId ||
-                    (OrderLinkId != null &&
+                    (OrderLinkId is not null &&
                     OrderLinkId.Equals(input.OrderLinkId))
                 ) &&
                 (
                     CreatedAt == input.CreatedAt ||
-                    (CreatedAt != null &&
+                    (CreatedAt is not null &&
                     CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
                     UpdatedAt == input.UpdatedAt ||
-                    (UpdatedAt != null &&
+                    (UpdatedAt is not null &&
                     UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
@@ -295,77 +295,77 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (StopOrderId != null)
+                if (StopOrderId is not null)
                 {
                     hashCode = hashCode * 59 + StopOrderId.GetHashCode();
                 }
 
-                if (UserId != null)
+                if (UserId is not null)
                 {
                     hashCode = hashCode * 59 + UserId.GetHashCode();
                 }
 
-                if (StopOrderStatus != null)
+                if (StopOrderStatus is not null)
                 {
                     hashCode = hashCode * 59 + StopOrderStatus.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (Side != null)
+                if (Side is not null)
                 {
                     hashCode = hashCode * 59 + Side.GetHashCode();
                 }
 
-                if (OrderType != null)
+                if (OrderType is not null)
                 {
                     hashCode = hashCode * 59 + OrderType.GetHashCode();
                 }
 
-                if (Price != null)
+                if (Price is not null)
                 {
                     hashCode = hashCode * 59 + Price.GetHashCode();
                 }
 
-                if (Qty != null)
+                if (Qty is not null)
                 {
                     hashCode = hashCode * 59 + Qty.GetHashCode();
                 }
 
-                if (TimeInForce != null)
+                if (TimeInForce is not null)
                 {
                     hashCode = hashCode * 59 + TimeInForce.GetHashCode();
                 }
 
-                if (StopOrderType != null)
+                if (StopOrderType is not null)
                 {
                     hashCode = hashCode * 59 + StopOrderType.GetHashCode();
                 }
 
-                if (BasePrice != null)
+                if (BasePrice is not null)
                 {
                     hashCode = hashCode * 59 + BasePrice.GetHashCode();
                 }
 
-                if (StopPx != null)
+                if (StopPx is not null)
                 {
                     hashCode = hashCode * 59 + StopPx.GetHashCode();
                 }
 
-                if (OrderLinkId != null)
+                if (OrderLinkId is not null)
                 {
                     hashCode = hashCode * 59 + OrderLinkId.GetHashCode();
                 }
 
-                if (CreatedAt != null)
+                if (CreatedAt is not null)
                 {
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
                 }
 
-                if (UpdatedAt != null)
+                if (UpdatedAt is not null)
                 {
                     hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
                 }
@@ -379,7 +379,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

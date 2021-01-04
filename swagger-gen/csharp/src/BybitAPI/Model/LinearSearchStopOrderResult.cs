@@ -221,7 +221,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearSearchStopOrderResult input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -229,87 +229,87 @@ namespace BybitAPI.Model
             return
                 (
                     StopOrderId == input.StopOrderId ||
-                    (StopOrderId != null &&
+                    (StopOrderId is not null &&
                     StopOrderId.Equals(input.StopOrderId))
                 ) &&
                 (
                     UserId == input.UserId ||
-                    (UserId != null &&
+                    (UserId is not null &&
                     UserId.Equals(input.UserId))
                 ) &&
                 (
                     Side == input.Side ||
-                    (Side != null &&
+                    (Side is not null &&
                     Side.Equals(input.Side))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     OrderType == input.OrderType ||
-                    (OrderType != null &&
+                    (OrderType is not null &&
                     OrderType.Equals(input.OrderType))
                 ) &&
                 (
                     Price == input.Price ||
-                    (Price != null &&
+                    (Price is not null &&
                     Price.Equals(input.Price))
                 ) &&
                 (
                     Qty == input.Qty ||
-                    (Qty != null &&
+                    (Qty is not null &&
                     Qty.Equals(input.Qty))
                 ) &&
                 (
                     TimeInForce == input.TimeInForce ||
-                    (TimeInForce != null &&
+                    (TimeInForce is not null &&
                     TimeInForce.Equals(input.TimeInForce))
                 ) &&
                 (
                     OrderStatus == input.OrderStatus ||
-                    (OrderStatus != null &&
+                    (OrderStatus is not null &&
                     OrderStatus.Equals(input.OrderStatus))
                 ) &&
                 (
                     TriggerPrice == input.TriggerPrice ||
-                    (TriggerPrice != null &&
+                    (TriggerPrice is not null &&
                     TriggerPrice.Equals(input.TriggerPrice))
                 ) &&
                 (
                     OrderLinkId == input.OrderLinkId ||
-                    (OrderLinkId != null &&
+                    (OrderLinkId is not null &&
                     OrderLinkId.Equals(input.OrderLinkId))
                 ) &&
                 (
                     CreatedAt == input.CreatedAt ||
-                    (CreatedAt != null &&
+                    (CreatedAt is not null &&
                     CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
                     UpdatedAt == input.UpdatedAt ||
-                    (UpdatedAt != null &&
+                    (UpdatedAt is not null &&
                     UpdatedAt.Equals(input.UpdatedAt))
                 ) &&
                 (
                     TakeProfit == input.TakeProfit ||
-                    (TakeProfit != null &&
+                    (TakeProfit is not null &&
                     TakeProfit.Equals(input.TakeProfit))
                 ) &&
                 (
                     StopLoss == input.StopLoss ||
-                    (StopLoss != null &&
+                    (StopLoss is not null &&
                     StopLoss.Equals(input.StopLoss))
                 ) &&
                 (
                     TpTriggerBy == input.TpTriggerBy ||
-                    (TpTriggerBy != null &&
+                    (TpTriggerBy is not null &&
                     TpTriggerBy.Equals(input.TpTriggerBy))
                 ) &&
                 (
                     SlTriggerBy == input.SlTriggerBy ||
-                    (SlTriggerBy != null &&
+                    (SlTriggerBy is not null &&
                     SlTriggerBy.Equals(input.SlTriggerBy))
                 );
         }
@@ -323,87 +323,87 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (StopOrderId != null)
+                if (StopOrderId is not null)
                 {
                     hashCode = hashCode * 59 + StopOrderId.GetHashCode();
                 }
 
-                if (UserId != null)
+                if (UserId is not null)
                 {
                     hashCode = hashCode * 59 + UserId.GetHashCode();
                 }
 
-                if (Side != null)
+                if (Side is not null)
                 {
                     hashCode = hashCode * 59 + Side.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (OrderType != null)
+                if (OrderType is not null)
                 {
                     hashCode = hashCode * 59 + OrderType.GetHashCode();
                 }
 
-                if (Price != null)
+                if (Price is not null)
                 {
                     hashCode = hashCode * 59 + Price.GetHashCode();
                 }
 
-                if (Qty != null)
+                if (Qty is not null)
                 {
                     hashCode = hashCode * 59 + Qty.GetHashCode();
                 }
 
-                if (TimeInForce != null)
+                if (TimeInForce is not null)
                 {
                     hashCode = hashCode * 59 + TimeInForce.GetHashCode();
                 }
 
-                if (OrderStatus != null)
+                if (OrderStatus is not null)
                 {
                     hashCode = hashCode * 59 + OrderStatus.GetHashCode();
                 }
 
-                if (TriggerPrice != null)
+                if (TriggerPrice is not null)
                 {
                     hashCode = hashCode * 59 + TriggerPrice.GetHashCode();
                 }
 
-                if (OrderLinkId != null)
+                if (OrderLinkId is not null)
                 {
                     hashCode = hashCode * 59 + OrderLinkId.GetHashCode();
                 }
 
-                if (CreatedAt != null)
+                if (CreatedAt is not null)
                 {
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
                 }
 
-                if (UpdatedAt != null)
+                if (UpdatedAt is not null)
                 {
                     hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
                 }
 
-                if (TakeProfit != null)
+                if (TakeProfit is not null)
                 {
                     hashCode = hashCode * 59 + TakeProfit.GetHashCode();
                 }
 
-                if (StopLoss != null)
+                if (StopLoss is not null)
                 {
                     hashCode = hashCode * 59 + StopLoss.GetHashCode();
                 }
 
-                if (TpTriggerBy != null)
+                if (TpTriggerBy is not null)
                 {
                     hashCode = hashCode * 59 + TpTriggerBy.GetHashCode();
                 }
 
-                if (SlTriggerBy != null)
+                if (SlTriggerBy is not null)
                 {
                     hashCode = hashCode * 59 + SlTriggerBy.GetHashCode();
                 }
@@ -417,7 +417,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

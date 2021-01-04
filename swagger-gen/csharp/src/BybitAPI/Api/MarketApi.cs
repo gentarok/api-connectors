@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
@@ -43,7 +44,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
@@ -56,7 +57,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Object</returns>
@@ -68,7 +69,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
@@ -80,7 +81,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
@@ -95,7 +96,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
@@ -110,7 +111,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
@@ -123,7 +124,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
@@ -136,7 +137,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         object MarketOrderbook(string symbol);
@@ -147,7 +148,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> MarketOrderbookWithHttpInfo(string symbol);
@@ -158,7 +159,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Object</returns>
         object MarketSymbolInfo(string symbol = null);
@@ -169,7 +170,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> MarketSymbolInfoWithHttpInfo(string symbol = null);
@@ -180,7 +181,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
@@ -193,7 +194,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
@@ -210,12 +211,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> MarketAccountRatioAsync(string symbol, string period, int? limit = null);
+        Task<object> MarketAccountRatioAsync(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Account Long Short Ratio
@@ -223,12 +224,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> MarketAccountRatioAsyncWithHttpInfo(string symbol, string period, int? limit = null);
+        Task<ApiResponse<object>> MarketAccountRatioAsyncWithHttpInfo(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Big Deal
@@ -236,11 +237,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> MarketBigDealAsync(string symbol, int? limit = null);
+        Task<object> MarketBigDealAsync(string symbol, int? limit = null);
 
         /// <summary>
         /// Query Big Deal
@@ -248,11 +249,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> MarketBigDealAsyncWithHttpInfo(string symbol, int? limit = null);
+        Task<ApiResponse<object>> MarketBigDealAsyncWithHttpInfo(string symbol, int? limit = null);
 
         /// <summary>
         /// Query liq records.
@@ -260,14 +261,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> MarketLiqRecordsAsync(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
+        Task<object> MarketLiqRecordsAsync(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
 
         /// <summary>
         /// Query liq records.
@@ -275,14 +276,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> MarketLiqRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
+        Task<ApiResponse<object>> MarketLiqRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
 
         /// <summary>
         /// Query Open Interest
@@ -290,12 +291,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> MarketOpenInterestAsync(string symbol, string period, int? limit = null);
+        Task<object> MarketOpenInterestAsync(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Open Interest
@@ -303,12 +304,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> MarketOpenInterestAsyncWithHttpInfo(string symbol, string period, int? limit = null);
+        Task<ApiResponse<object>> MarketOpenInterestAsyncWithHttpInfo(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Get the orderbook.
@@ -316,10 +317,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> MarketOrderbookAsync(string symbol);
+        Task<object> MarketOrderbookAsync(string symbol);
 
         /// <summary>
         /// Get the orderbook.
@@ -327,10 +328,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> MarketOrderbookAsyncWithHttpInfo(string symbol);
+        Task<ApiResponse<object>> MarketOrderbookAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get the latest information for symbol.
@@ -338,10 +339,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> MarketSymbolInfoAsync(string symbol = null);
+        Task<object> MarketSymbolInfoAsync(string symbol = null);
 
         /// <summary>
         /// Get the latest information for symbol.
@@ -349,10 +350,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> MarketSymbolInfoAsyncWithHttpInfo(string symbol = null);
+        Task<ApiResponse<object>> MarketSymbolInfoAsyncWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Get recent trades
@@ -360,12 +361,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> MarketTradingRecordsAsync(string symbol, int? from = null, int? limit = null);
+        Task<object> MarketTradingRecordsAsync(string symbol, int? from = null, int? limit = null);
 
         /// <summary>
         /// Get recent trades
@@ -373,12 +374,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> MarketTradingRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null);
+        Task<ApiResponse<object>> MarketTradingRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -388,7 +389,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class MarketApi : IMarketApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MarketApi"/> class.
@@ -396,9 +397,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public MarketApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -407,18 +408,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public MarketApi(BybitAPI.Client.Configuration configuration = null)
+        public MarketApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -444,16 +445,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -487,7 +488,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Account Long Short Ratio
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
@@ -501,7 +502,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Account Long Short Ratio
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
@@ -509,12 +510,12 @@ namespace BybitAPI.Api
         public ApiResponse<object> MarketAccountRatioWithHttpInfo(string symbol, string period, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketAccountRatio");
             }
             // verify the required parameter 'period' is set
-            if (period == null)
+            if (period is null)
             {
                 throw new ApiException(400, "Missing required parameter 'period' when calling MarketApi->MarketAccountRatio");
             }
@@ -539,22 +540,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (period != null)
+            if (period is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
             }
@@ -566,10 +567,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketAccountRatio", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -583,12 +584,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Account Long Short Ratio
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> MarketAccountRatioAsync(string symbol, string period, int? limit = null)
+        public async Task<object> MarketAccountRatioAsync(string symbol, string period, int? limit = null)
         {
             var localVarResponse = await MarketAccountRatioAsyncWithHttpInfo(symbol, period, limit);
             return localVarResponse.Data;
@@ -597,20 +598,20 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Account Long Short Ratio
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketAccountRatioAsyncWithHttpInfo(string symbol, string period, int? limit = null)
+        public async Task<ApiResponse<object>> MarketAccountRatioAsyncWithHttpInfo(string symbol, string period, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketAccountRatio");
             }
             // verify the required parameter 'period' is set
-            if (period == null)
+            if (period is null)
             {
                 throw new ApiException(400, "Missing required parameter 'period' when calling MarketApi->MarketAccountRatio");
             }
@@ -635,22 +636,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (period != null)
+            if (period is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
             }
@@ -662,10 +663,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketAccountRatio", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -679,7 +680,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Big Deal
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Object</returns>
@@ -692,14 +693,14 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Big Deal
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> MarketBigDealWithHttpInfo(string symbol, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketBigDeal");
             }
@@ -724,17 +725,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -746,10 +747,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketBigDeal", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -763,11 +764,11 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Big Deal
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> MarketBigDealAsync(string symbol, int? limit = null)
+        public async Task<object> MarketBigDealAsync(string symbol, int? limit = null)
         {
             var localVarResponse = await MarketBigDealAsyncWithHttpInfo(symbol, limit);
             return localVarResponse.Data;
@@ -776,14 +777,14 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Big Deal
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketBigDealAsyncWithHttpInfo(string symbol, int? limit = null)
+        public async Task<ApiResponse<object>> MarketBigDealAsyncWithHttpInfo(string symbol, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketBigDeal");
             }
@@ -808,17 +809,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -830,10 +831,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketBigDeal", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -847,7 +848,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query liq records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
@@ -863,7 +864,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query liq records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
@@ -873,7 +874,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> MarketLiqRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketLiqRecords");
             }
@@ -898,32 +899,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (endTime != null)
+            if (endTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
             }
@@ -935,10 +936,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketLiqRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -952,14 +953,14 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query liq records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> MarketLiqRecordsAsync(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
+        public async Task<object> MarketLiqRecordsAsync(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
         {
             var localVarResponse = await MarketLiqRecordsAsyncWithHttpInfo(symbol, from, limit, startTime, endTime);
             return localVarResponse.Data;
@@ -968,17 +969,17 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query liq records.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketLiqRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
+        public async Task<ApiResponse<object>> MarketLiqRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketLiqRecords");
             }
@@ -1003,32 +1004,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (startTime != null)
+            if (startTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
             }
 
-            if (endTime != null)
+            if (endTime is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
             }
@@ -1040,10 +1041,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketLiqRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1057,7 +1058,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Open Interest
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
@@ -1071,7 +1072,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Open Interest
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
@@ -1079,12 +1080,12 @@ namespace BybitAPI.Api
         public ApiResponse<object> MarketOpenInterestWithHttpInfo(string symbol, string period, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketOpenInterest");
             }
             // verify the required parameter 'period' is set
-            if (period == null)
+            if (period is null)
             {
                 throw new ApiException(400, "Missing required parameter 'period' when calling MarketApi->MarketOpenInterest");
             }
@@ -1109,22 +1110,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (period != null)
+            if (period is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
             }
@@ -1136,10 +1137,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketOpenInterest", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1153,12 +1154,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Open Interest
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> MarketOpenInterestAsync(string symbol, string period, int? limit = null)
+        public async Task<object> MarketOpenInterestAsync(string symbol, string period, int? limit = null)
         {
             var localVarResponse = await MarketOpenInterestAsyncWithHttpInfo(symbol, period, limit);
             return localVarResponse.Data;
@@ -1167,20 +1168,20 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query Open Interest
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketOpenInterestAsyncWithHttpInfo(string symbol, string period, int? limit = null)
+        public async Task<ApiResponse<object>> MarketOpenInterestAsyncWithHttpInfo(string symbol, string period, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketOpenInterest");
             }
             // verify the required parameter 'period' is set
-            if (period == null)
+            if (period is null)
             {
                 throw new ApiException(400, "Missing required parameter 'period' when calling MarketApi->MarketOpenInterest");
             }
@@ -1205,22 +1206,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (period != null)
+            if (period is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
             }
@@ -1232,10 +1233,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketOpenInterest", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1249,7 +1250,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get the orderbook.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         public object MarketOrderbook(string symbol)
@@ -1261,13 +1262,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get the orderbook.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> MarketOrderbookWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketOrderbook");
             }
@@ -1292,12 +1293,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -1309,10 +1310,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketOrderbook", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1326,10 +1327,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get the orderbook.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> MarketOrderbookAsync(string symbol)
+        public async Task<object> MarketOrderbookAsync(string symbol)
         {
             var localVarResponse = await MarketOrderbookAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -1338,13 +1339,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get the orderbook.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketOrderbookAsyncWithHttpInfo(string symbol)
+        public async Task<ApiResponse<object>> MarketOrderbookAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketOrderbook");
             }
@@ -1369,12 +1370,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -1386,10 +1387,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketOrderbook", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1403,7 +1404,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get the latest information for symbol.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Object</returns>
         public object MarketSymbolInfo(string symbol = null)
@@ -1415,7 +1416,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get the latest information for symbol.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> MarketSymbolInfoWithHttpInfo(string symbol = null)
@@ -1440,12 +1441,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -1457,10 +1458,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketSymbolInfo", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1474,10 +1475,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get the latest information for symbol.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> MarketSymbolInfoAsync(string symbol = null)
+        public async Task<object> MarketSymbolInfoAsync(string symbol = null)
         {
             var localVarResponse = await MarketSymbolInfoAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -1486,10 +1487,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get the latest information for symbol.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketSymbolInfoAsyncWithHttpInfo(string symbol = null)
+        public async Task<ApiResponse<object>> MarketSymbolInfoAsyncWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/v2/public/tickers";
             var localVarPathParams = new Dictionary<string, string>();
@@ -1511,12 +1512,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -1528,10 +1529,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketSymbolInfo", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1545,7 +1546,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get recent trades
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
@@ -1559,7 +1560,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get recent trades
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
@@ -1567,7 +1568,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> MarketTradingRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketTradingRecords");
             }
@@ -1592,22 +1593,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -1619,10 +1620,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketTradingRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1636,12 +1637,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get recent trades
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> MarketTradingRecordsAsync(string symbol, int? from = null, int? limit = null)
+        public async Task<object> MarketTradingRecordsAsync(string symbol, int? from = null, int? limit = null)
         {
             var localVarResponse = await MarketTradingRecordsAsyncWithHttpInfo(symbol, from, limit);
             return localVarResponse.Data;
@@ -1650,15 +1651,15 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get recent trades
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketTradingRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null)
+        public async Task<ApiResponse<object>> MarketTradingRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketTradingRecords");
             }
@@ -1683,22 +1684,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -1710,10 +1711,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("MarketTradingRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

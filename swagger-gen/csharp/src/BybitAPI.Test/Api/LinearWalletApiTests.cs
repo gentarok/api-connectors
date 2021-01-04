@@ -48,19 +48,18 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' LinearWalletApi
-            Assert.IsInstanceOf(typeof(LinearWalletApi), instance, "instance is a LinearWalletApi");
+            Assert.IsInstanceOf<LinearWalletApi>(instance, "instance is a LinearWalletApi");
         }
 
-        /// <summary>
-        /// Test LinearWalletGetRiskLimit
-        /// </summary>
-        [Test]
-        public void LinearWalletGetRiskLimitTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.LinearWalletGetRiskLimit();
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearWalletGetRiskLimit
+        ///// </summary>
+        //[Test]
+        //public void LinearWalletGetRiskLimitTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //var response = instance.LinearWalletGetRiskLimit();
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

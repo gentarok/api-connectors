@@ -158,7 +158,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(WithdrawRecords input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -166,52 +166,52 @@ namespace BybitAPI.Model
             return
                 (
                     Id == input.Id ||
-                    (Id != null &&
+                    (Id is not null &&
                     Id.Equals(input.Id))
                 ) &&
                 (
                     UserId == input.UserId ||
-                    (UserId != null &&
+                    (UserId is not null &&
                     UserId.Equals(input.UserId))
                 ) &&
                 (
                     Coin == input.Coin ||
-                    (Coin != null &&
+                    (Coin is not null &&
                     Coin.Equals(input.Coin))
                 ) &&
                 (
                     Status == input.Status ||
-                    (Status != null &&
+                    (Status is not null &&
                     Status.Equals(input.Status))
                 ) &&
                 (
                     Amount == input.Amount ||
-                    (Amount != null &&
+                    (Amount is not null &&
                     Amount.Equals(input.Amount))
                 ) &&
                 (
                     Fee == input.Fee ||
-                    (Fee != null &&
+                    (Fee is not null &&
                     Fee.Equals(input.Fee))
                 ) &&
                 (
                     Address == input.Address ||
-                    (Address != null &&
+                    (Address is not null &&
                     Address.Equals(input.Address))
                 ) &&
                 (
                     TxId == input.TxId ||
-                    (TxId != null &&
+                    (TxId is not null &&
                     TxId.Equals(input.TxId))
                 ) &&
                 (
                     SubmitedAt == input.SubmitedAt ||
-                    (SubmitedAt != null &&
+                    (SubmitedAt is not null &&
                     SubmitedAt.Equals(input.SubmitedAt))
                 ) &&
                 (
                     UpdatedAt == input.UpdatedAt ||
-                    (UpdatedAt != null &&
+                    (UpdatedAt is not null &&
                     UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
@@ -225,52 +225,52 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Id != null)
+                if (Id is not null)
                 {
                     hashCode = hashCode * 59 + Id.GetHashCode();
                 }
 
-                if (UserId != null)
+                if (UserId is not null)
                 {
                     hashCode = hashCode * 59 + UserId.GetHashCode();
                 }
 
-                if (Coin != null)
+                if (Coin is not null)
                 {
                     hashCode = hashCode * 59 + Coin.GetHashCode();
                 }
 
-                if (Status != null)
+                if (Status is not null)
                 {
                     hashCode = hashCode * 59 + Status.GetHashCode();
                 }
 
-                if (Amount != null)
+                if (Amount is not null)
                 {
                     hashCode = hashCode * 59 + Amount.GetHashCode();
                 }
 
-                if (Fee != null)
+                if (Fee is not null)
                 {
                     hashCode = hashCode * 59 + Fee.GetHashCode();
                 }
 
-                if (Address != null)
+                if (Address is not null)
                 {
                     hashCode = hashCode * 59 + Address.GetHashCode();
                 }
 
-                if (TxId != null)
+                if (TxId is not null)
                 {
                     hashCode = hashCode * 59 + TxId.GetHashCode();
                 }
 
-                if (SubmitedAt != null)
+                if (SubmitedAt is not null)
                 {
                     hashCode = hashCode * 59 + SubmitedAt.GetHashCode();
                 }
 
-                if (UpdatedAt != null)
+                if (UpdatedAt is not null)
                 {
                     hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
                 }
@@ -284,7 +284,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

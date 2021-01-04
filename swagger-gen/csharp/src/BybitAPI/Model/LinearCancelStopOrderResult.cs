@@ -77,7 +77,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearCancelStopOrderResult input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
             return
                 (
                     StopOrderId == input.StopOrderId ||
-                    (StopOrderId != null &&
+                    (StopOrderId is not null &&
                     StopOrderId.Equals(input.StopOrderId))
                 );
         }
@@ -99,7 +99,7 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (StopOrderId != null)
+                if (StopOrderId is not null)
                 {
                     hashCode = hashCode * 59 + StopOrderId.GetHashCode();
                 }
@@ -113,7 +113,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

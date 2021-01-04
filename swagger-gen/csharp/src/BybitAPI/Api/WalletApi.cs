@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -43,7 +44,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -56,7 +57,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Object</returns>
         object WalletGetBalance(string coin = null);
@@ -67,7 +68,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> WalletGetBalanceWithHttpInfo(string coin = null);
@@ -78,7 +79,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -94,7 +95,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -110,7 +111,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
         object WalletGetRiskLimit();
 
@@ -120,7 +121,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> WalletGetRiskLimitWithHttpInfo();
 
@@ -130,7 +131,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Object</returns>
@@ -142,7 +143,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>ApiResponse of Object</returns>
@@ -154,7 +155,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -170,7 +171,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -190,12 +191,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> WalletExchangeOrderAsync(decimal? limit = null, decimal? from = null, string direction = null);
+        Task<object> WalletExchangeOrderAsync(decimal? limit = null, decimal? from = null, string direction = null);
 
         /// <summary>
         /// Asset Exchange Records
@@ -203,12 +204,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> WalletExchangeOrderAsyncWithHttpInfo(decimal? limit = null, decimal? from = null, string direction = null);
+        Task<ApiResponse<object>> WalletExchangeOrderAsyncWithHttpInfo(decimal? limit = null, decimal? from = null, string direction = null);
 
         /// <summary>
         /// get wallet balance info
@@ -216,10 +217,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> WalletGetBalanceAsync(string coin = null);
+        Task<object> WalletGetBalanceAsync(string coin = null);
 
         /// <summary>
         /// get wallet balance info
@@ -227,10 +228,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> WalletGetBalanceAsyncWithHttpInfo(string coin = null);
+        Task<ApiResponse<object>> WalletGetBalanceAsyncWithHttpInfo(string coin = null);
 
         /// <summary>
         /// Get wallet fund records
@@ -238,7 +239,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -246,7 +247,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. Default getting first page data (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> WalletGetRecordsAsync(string startDate = null, string endDate = null, string currency = null, string walletFundType = null, string page = null, string limit = null);
+        Task<object> WalletGetRecordsAsync(string startDate = null, string endDate = null, string currency = null, string walletFundType = null, string page = null, string limit = null);
 
         /// <summary>
         /// Get wallet fund records
@@ -254,7 +255,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -262,7 +263,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. Default getting first page data (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> WalletGetRecordsAsyncWithHttpInfo(string startDate = null, string endDate = null, string currency = null, string walletFundType = null, string page = null, string limit = null);
+        Task<ApiResponse<object>> WalletGetRecordsAsyncWithHttpInfo(string startDate = null, string endDate = null, string currency = null, string walletFundType = null, string page = null, string limit = null);
 
         /// <summary>
         /// Get risk limit.
@@ -270,9 +271,9 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> WalletGetRiskLimitAsync();
+        Task<object> WalletGetRiskLimitAsync();
 
         /// <summary>
         /// Get risk limit.
@@ -280,9 +281,9 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> WalletGetRiskLimitAsyncWithHttpInfo();
+        Task<ApiResponse<object>> WalletGetRiskLimitAsyncWithHttpInfo();
 
         /// <summary>
         /// Set risk limit
@@ -290,11 +291,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> WalletSetRiskLimitAsync(string symbol, decimal? riskId);
+        Task<object> WalletSetRiskLimitAsync(string symbol, decimal? riskId);
 
         /// <summary>
         /// Set risk limit
@@ -302,11 +303,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> WalletSetRiskLimitAsyncWithHttpInfo(string symbol, decimal? riskId);
+        Task<ApiResponse<object>> WalletSetRiskLimitAsyncWithHttpInfo(string symbol, decimal? riskId);
 
         /// <summary>
         /// Get wallet fund records
@@ -314,7 +315,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -322,7 +323,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. Default getting first page data (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> WalletWithdrawAsync(string startDate = null, string endDate = null, string coin = null, string status = null, string page = null, string limit = null);
+        Task<object> WalletWithdrawAsync(string startDate = null, string endDate = null, string coin = null, string status = null, string page = null, string limit = null);
 
         /// <summary>
         /// Get wallet fund records
@@ -330,7 +331,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -338,7 +339,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. Default getting first page data (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> WalletWithdrawAsyncWithHttpInfo(string startDate = null, string endDate = null, string coin = null, string status = null, string page = null, string limit = null);
+        Task<ApiResponse<object>> WalletWithdrawAsyncWithHttpInfo(string startDate = null, string endDate = null, string coin = null, string status = null, string page = null, string limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -348,7 +349,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class WalletApi : IWalletApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletApi"/> class.
@@ -356,9 +357,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public WalletApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -367,18 +368,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public WalletApi(BybitAPI.Client.Configuration configuration = null)
+        public WalletApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -404,16 +405,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -447,7 +448,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Asset Exchange Records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -461,7 +462,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Asset Exchange Records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -487,22 +488,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (direction != null)
+            if (direction is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
             }
@@ -530,10 +531,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletExchangeOrder", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -547,12 +548,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Asset Exchange Records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> WalletExchangeOrderAsync(decimal? limit = null, decimal? from = null, string direction = null)
+        public async Task<object> WalletExchangeOrderAsync(decimal? limit = null, decimal? from = null, string direction = null)
         {
             var localVarResponse = await WalletExchangeOrderAsyncWithHttpInfo(limit, from, direction);
             return localVarResponse.Data;
@@ -561,12 +562,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Asset Exchange Records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> WalletExchangeOrderAsyncWithHttpInfo(decimal? limit = null, decimal? from = null, string direction = null)
+        public async Task<ApiResponse<object>> WalletExchangeOrderAsyncWithHttpInfo(decimal? limit = null, decimal? from = null, string direction = null)
         {
             var localVarPath = "/v2/private/exchange-order/list";
             var localVarPathParams = new Dictionary<string, string>();
@@ -587,22 +588,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (direction != null)
+            if (direction is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
             }
@@ -630,10 +631,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletExchangeOrder", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -647,7 +648,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// get wallet balance info
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Object</returns>
         public object WalletGetBalance(string coin = null)
@@ -659,7 +660,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// get wallet balance info
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> WalletGetBalanceWithHttpInfo(string coin = null)
@@ -684,12 +685,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (coin != null)
+            if (coin is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "coin", coin)); // query parameter
             }
@@ -717,10 +718,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletGetBalance", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -734,10 +735,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// get wallet balance info
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> WalletGetBalanceAsync(string coin = null)
+        public async Task<object> WalletGetBalanceAsync(string coin = null)
         {
             var localVarResponse = await WalletGetBalanceAsyncWithHttpInfo(coin);
             return localVarResponse.Data;
@@ -746,10 +747,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// get wallet balance info
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> WalletGetBalanceAsyncWithHttpInfo(string coin = null)
+        public async Task<ApiResponse<object>> WalletGetBalanceAsyncWithHttpInfo(string coin = null)
         {
             var localVarPath = "/v2/private/wallet/balance";
             var localVarPathParams = new Dictionary<string, string>();
@@ -771,12 +772,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (coin != null)
+            if (coin is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "coin", coin)); // query parameter
             }
@@ -804,10 +805,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletGetBalance", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -821,7 +822,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get wallet fund records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -838,7 +839,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get wallet fund records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -868,37 +869,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (startDate != null)
+            if (startDate is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_date", startDate)); // query parameter
             }
 
-            if (endDate != null)
+            if (endDate is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_date", endDate)); // query parameter
             }
 
-            if (currency != null)
+            if (currency is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "currency", currency)); // query parameter
             }
 
-            if (walletFundType != null)
+            if (walletFundType is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "wallet_fund_type", walletFundType)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -926,10 +927,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletGetRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -943,7 +944,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get wallet fund records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -951,7 +952,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. Default getting first page data (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> WalletGetRecordsAsync(string startDate = null, string endDate = null, string currency = null, string walletFundType = null, string page = null, string limit = null)
+        public async Task<object> WalletGetRecordsAsync(string startDate = null, string endDate = null, string currency = null, string walletFundType = null, string page = null, string limit = null)
         {
             var localVarResponse = await WalletGetRecordsAsyncWithHttpInfo(startDate, endDate, currency, walletFundType, page, limit);
             return localVarResponse.Data;
@@ -960,7 +961,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get wallet fund records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -968,7 +969,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. Default getting first page data (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> WalletGetRecordsAsyncWithHttpInfo(string startDate = null, string endDate = null, string currency = null, string walletFundType = null, string page = null, string limit = null)
+        public async Task<ApiResponse<object>> WalletGetRecordsAsyncWithHttpInfo(string startDate = null, string endDate = null, string currency = null, string walletFundType = null, string page = null, string limit = null)
         {
             var localVarPath = "/open-api/wallet/fund/records";
             var localVarPathParams = new Dictionary<string, string>();
@@ -990,37 +991,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (startDate != null)
+            if (startDate is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_date", startDate)); // query parameter
             }
 
-            if (endDate != null)
+            if (endDate is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_date", endDate)); // query parameter
             }
 
-            if (currency != null)
+            if (currency is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "currency", currency)); // query parameter
             }
 
-            if (walletFundType != null)
+            if (walletFundType is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "wallet_fund_type", walletFundType)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -1048,10 +1049,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletGetRecords", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1065,7 +1066,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get risk limit.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
         public object WalletGetRiskLimit()
         {
@@ -1076,7 +1077,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get risk limit.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> WalletGetRiskLimitWithHttpInfo()
         {
@@ -1100,7 +1101,7 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
@@ -1128,10 +1129,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletGetRiskLimit", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1145,9 +1146,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get risk limit.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> WalletGetRiskLimitAsync()
+        public async Task<object> WalletGetRiskLimitAsync()
         {
             var localVarResponse = await WalletGetRiskLimitAsyncWithHttpInfo();
             return localVarResponse.Data;
@@ -1156,9 +1157,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get risk limit.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> WalletGetRiskLimitAsyncWithHttpInfo()
+        public async Task<ApiResponse<object>> WalletGetRiskLimitAsyncWithHttpInfo()
         {
             var localVarPath = "/open-api/wallet/risk-limit/list";
             var localVarPathParams = new Dictionary<string, string>();
@@ -1180,7 +1181,7 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
@@ -1208,10 +1209,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletGetRiskLimit", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1225,7 +1226,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Set risk limit
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Object</returns>
@@ -1238,19 +1239,19 @@ namespace BybitAPI.Api
         /// <summary>
         /// Set risk limit
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> WalletSetRiskLimitWithHttpInfo(string symbol, decimal? riskId)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling WalletApi->WalletSetRiskLimit");
             }
             // verify the required parameter 'riskId' is set
-            if (riskId == null)
+            if (riskId is null)
             {
                 throw new ApiException(400, "Missing required parameter 'riskId' when calling WalletApi->WalletSetRiskLimit");
             }
@@ -1274,17 +1275,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (riskId != null)
+            if (riskId is not null)
             {
                 localVarFormParams.Add("risk_id", Configuration.ApiClient.ParameterToString(riskId)); // form parameter
             }
@@ -1312,10 +1313,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletSetRiskLimit", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1329,11 +1330,11 @@ namespace BybitAPI.Api
         /// <summary>
         /// Set risk limit
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> WalletSetRiskLimitAsync(string symbol, decimal? riskId)
+        public async Task<object> WalletSetRiskLimitAsync(string symbol, decimal? riskId)
         {
             var localVarResponse = await WalletSetRiskLimitAsyncWithHttpInfo(symbol, riskId);
             return localVarResponse.Data;
@@ -1342,19 +1343,19 @@ namespace BybitAPI.Api
         /// <summary>
         /// Set risk limit
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> WalletSetRiskLimitAsyncWithHttpInfo(string symbol, decimal? riskId)
+        public async Task<ApiResponse<object>> WalletSetRiskLimitAsyncWithHttpInfo(string symbol, decimal? riskId)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling WalletApi->WalletSetRiskLimit");
             }
             // verify the required parameter 'riskId' is set
-            if (riskId == null)
+            if (riskId is null)
             {
                 throw new ApiException(400, "Missing required parameter 'riskId' when calling WalletApi->WalletSetRiskLimit");
             }
@@ -1378,17 +1379,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (riskId != null)
+            if (riskId is not null)
             {
                 localVarFormParams.Add("risk_id", Configuration.ApiClient.ParameterToString(riskId)); // form parameter
             }
@@ -1416,10 +1417,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletSetRiskLimit", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1433,7 +1434,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get wallet fund records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -1450,7 +1451,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get wallet fund records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -1480,37 +1481,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (startDate != null)
+            if (startDate is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_date", startDate)); // query parameter
             }
 
-            if (endDate != null)
+            if (endDate is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_date", endDate)); // query parameter
             }
 
-            if (coin != null)
+            if (coin is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "coin", coin)); // query parameter
             }
 
-            if (status != null)
+            if (status is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -1538,10 +1539,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletWithdraw", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1555,7 +1556,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get wallet fund records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -1563,7 +1564,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. Default getting first page data (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> WalletWithdrawAsync(string startDate = null, string endDate = null, string coin = null, string status = null, string page = null, string limit = null)
+        public async Task<object> WalletWithdrawAsync(string startDate = null, string endDate = null, string coin = null, string status = null, string page = null, string limit = null)
         {
             var localVarResponse = await WalletWithdrawAsyncWithHttpInfo(startDate, endDate, coin, status, page, limit);
             return localVarResponse.Data;
@@ -1572,7 +1573,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get wallet fund records
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -1580,7 +1581,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. Default getting first page data (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> WalletWithdrawAsyncWithHttpInfo(string startDate = null, string endDate = null, string coin = null, string status = null, string page = null, string limit = null)
+        public async Task<ApiResponse<object>> WalletWithdrawAsyncWithHttpInfo(string startDate = null, string endDate = null, string coin = null, string status = null, string page = null, string limit = null)
         {
             var localVarPath = "/open-api/wallet/withdraw/list";
             var localVarPathParams = new Dictionary<string, string>();
@@ -1602,37 +1603,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (startDate != null)
+            if (startDate is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_date", startDate)); // query parameter
             }
 
-            if (endDate != null)
+            if (endDate is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_date", endDate)); // query parameter
             }
 
-            if (coin != null)
+            if (coin is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "coin", coin)); // query parameter
             }
 
-            if (status != null)
+            if (status is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -1660,10 +1661,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("WalletWithdraw", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

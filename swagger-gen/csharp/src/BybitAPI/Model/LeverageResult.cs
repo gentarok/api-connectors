@@ -104,7 +104,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LeverageResult input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -112,22 +112,22 @@ namespace BybitAPI.Model
             return
                 (
                     BTCUSD == input.BTCUSD ||
-                    (BTCUSD != null &&
+                    (BTCUSD is not null &&
                     BTCUSD.Equals(input.BTCUSD))
                 ) &&
                 (
                     EOSUSD == input.EOSUSD ||
-                    (EOSUSD != null &&
+                    (EOSUSD is not null &&
                     EOSUSD.Equals(input.EOSUSD))
                 ) &&
                 (
                     ETHUSD == input.ETHUSD ||
-                    (ETHUSD != null &&
+                    (ETHUSD is not null &&
                     ETHUSD.Equals(input.ETHUSD))
                 ) &&
                 (
                     XRPUSD == input.XRPUSD ||
-                    (XRPUSD != null &&
+                    (XRPUSD is not null &&
                     XRPUSD.Equals(input.XRPUSD))
                 );
         }
@@ -141,22 +141,22 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (BTCUSD != null)
+                if (BTCUSD is not null)
                 {
                     hashCode = hashCode * 59 + BTCUSD.GetHashCode();
                 }
 
-                if (EOSUSD != null)
+                if (EOSUSD is not null)
                 {
                     hashCode = hashCode * 59 + EOSUSD.GetHashCode();
                 }
 
-                if (ETHUSD != null)
+                if (ETHUSD is not null)
                 {
                     hashCode = hashCode * 59 + ETHUSD.GetHashCode();
                 }
 
-                if (XRPUSD != null)
+                if (XRPUSD is not null)
                 {
                     hashCode = hashCode * 59 + XRPUSD.GetHashCode();
                 }
@@ -170,7 +170,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

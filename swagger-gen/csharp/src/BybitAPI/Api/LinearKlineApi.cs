@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get kline
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -44,7 +45,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get kline
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -58,7 +59,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get mark price kline
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -72,7 +73,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get mark price kline
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -90,13 +91,13 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get kline
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearKlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null);
+        Task<object> LinearKlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Get kline
@@ -104,13 +105,13 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get kline
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearKlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
+        Task<ApiResponse<object>> LinearKlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Get kline
@@ -118,13 +119,13 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get mark price kline
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearKlineMarkPriceAsync(string symbol, string interval, decimal? from, decimal? limit = null);
+        Task<object> LinearKlineMarkPriceAsync(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Get kline
@@ -132,13 +133,13 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get mark price kline
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearKlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
+        Task<ApiResponse<object>> LinearKlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -148,7 +149,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class LinearKlineApi : ILinearKlineApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LinearKlineApi"/> class.
@@ -156,9 +157,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public LinearKlineApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -167,18 +168,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LinearKlineApi(BybitAPI.Client.Configuration configuration = null)
+        public LinearKlineApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -204,16 +205,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -247,7 +248,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get kline This will get kline
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -262,7 +263,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get kline This will get kline
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -271,17 +272,17 @@ namespace BybitAPI.Api
         public ApiResponse<object> LinearKlineGetWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearKlineApi->LinearKlineGet");
             }
             // verify the required parameter 'interval' is set
-            if (interval == null)
+            if (interval is null)
             {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling LinearKlineApi->LinearKlineGet");
             }
             // verify the required parameter 'from' is set
-            if (from == null)
+            if (from is null)
             {
                 throw new ApiException(400, "Missing required parameter 'from' when calling LinearKlineApi->LinearKlineGet");
             }
@@ -306,27 +307,27 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (interval != null)
+            if (interval is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -338,10 +339,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearKlineGet", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -355,13 +356,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get kline This will get kline
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearKlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null)
+        public async Task<object> LinearKlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             var localVarResponse = await LinearKlineGetAsyncWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
@@ -370,26 +371,26 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get kline This will get kline
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearKlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
+        public async Task<ApiResponse<object>> LinearKlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearKlineApi->LinearKlineGet");
             }
             // verify the required parameter 'interval' is set
-            if (interval == null)
+            if (interval is null)
             {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling LinearKlineApi->LinearKlineGet");
             }
             // verify the required parameter 'from' is set
-            if (from == null)
+            if (from is null)
             {
                 throw new ApiException(400, "Missing required parameter 'from' when calling LinearKlineApi->LinearKlineGet");
             }
@@ -414,27 +415,27 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (interval != null)
+            if (interval is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -446,10 +447,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearKlineGet", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -463,7 +464,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get kline This will get mark price kline
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -478,7 +479,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get kline This will get mark price kline
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -487,17 +488,17 @@ namespace BybitAPI.Api
         public ApiResponse<object> LinearKlineMarkPriceWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearKlineApi->LinearKlineMarkPrice");
             }
             // verify the required parameter 'interval' is set
-            if (interval == null)
+            if (interval is null)
             {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling LinearKlineApi->LinearKlineMarkPrice");
             }
             // verify the required parameter 'from' is set
-            if (from == null)
+            if (from is null)
             {
                 throw new ApiException(400, "Missing required parameter 'from' when calling LinearKlineApi->LinearKlineMarkPrice");
             }
@@ -522,27 +523,27 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (interval != null)
+            if (interval is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -570,10 +571,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearKlineMarkPrice", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -587,13 +588,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get kline This will get mark price kline
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearKlineMarkPriceAsync(string symbol, string interval, decimal? from, decimal? limit = null)
+        public async Task<object> LinearKlineMarkPriceAsync(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             var localVarResponse = await LinearKlineMarkPriceAsyncWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
@@ -602,26 +603,26 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get kline This will get mark price kline
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearKlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
+        public async Task<ApiResponse<object>> LinearKlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearKlineApi->LinearKlineMarkPrice");
             }
             // verify the required parameter 'interval' is set
-            if (interval == null)
+            if (interval is null)
             {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling LinearKlineApi->LinearKlineMarkPrice");
             }
             // verify the required parameter 'from' is set
-            if (from == null)
+            if (from is null)
             {
                 throw new ApiException(400, "Missing required parameter 'from' when calling LinearKlineApi->LinearKlineMarkPrice");
             }
@@ -646,27 +647,27 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (interval != null)
+            if (interval is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -694,10 +695,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearKlineMarkPrice", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

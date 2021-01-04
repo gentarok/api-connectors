@@ -122,7 +122,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(FundingFeeRes input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -130,32 +130,32 @@ namespace BybitAPI.Model
             return
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     Side == input.Side ||
-                    (Side != null &&
+                    (Side is not null &&
                     Side.Equals(input.Side))
                 ) &&
                 (
                     Size == input.Size ||
-                    (Size != null &&
+                    (Size is not null &&
                     Size.Equals(input.Size))
                 ) &&
                 (
                     FundingRate == input.FundingRate ||
-                    (FundingRate != null &&
+                    (FundingRate is not null &&
                     FundingRate.Equals(input.FundingRate))
                 ) &&
                 (
                     ExecFee == input.ExecFee ||
-                    (ExecFee != null &&
+                    (ExecFee is not null &&
                     ExecFee.Equals(input.ExecFee))
                 ) &&
                 (
                     ExecTimestamp == input.ExecTimestamp ||
-                    (ExecTimestamp != null &&
+                    (ExecTimestamp is not null &&
                     ExecTimestamp.Equals(input.ExecTimestamp))
                 );
         }
@@ -169,32 +169,32 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (Side != null)
+                if (Side is not null)
                 {
                     hashCode = hashCode * 59 + Side.GetHashCode();
                 }
 
-                if (Size != null)
+                if (Size is not null)
                 {
                     hashCode = hashCode * 59 + Size.GetHashCode();
                 }
 
-                if (FundingRate != null)
+                if (FundingRate is not null)
                 {
                     hashCode = hashCode * 59 + FundingRate.GetHashCode();
                 }
 
-                if (ExecFee != null)
+                if (ExecFee is not null)
                 {
                     hashCode = hashCode * 59 + ExecFee.GetHashCode();
                 }
 
-                if (ExecTimestamp != null)
+                if (ExecTimestamp is not null)
                 {
                     hashCode = hashCode * 59 + ExecTimestamp.GetHashCode();
                 }
@@ -208,7 +208,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

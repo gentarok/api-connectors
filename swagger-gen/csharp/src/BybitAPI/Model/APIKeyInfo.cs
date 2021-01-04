@@ -132,7 +132,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(APIKeyInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -140,37 +140,37 @@ namespace BybitAPI.Model
             return
                 (
                     ApiKey == input.ApiKey ||
-                    (ApiKey != null &&
+                    (ApiKey is not null &&
                     ApiKey.Equals(input.ApiKey))
                 ) &&
                 (
                     UserId == input.UserId ||
-                    (UserId != null &&
+                    (UserId is not null &&
                     UserId.Equals(input.UserId))
                 ) &&
                 (
                     Ips == input.Ips ||
-                    Ips != null &&
+                    Ips is not null &&
                     Ips.SequenceEqual(input.Ips)
                 ) &&
                 (
                     Note == input.Note ||
-                    (Note != null &&
+                    (Note is not null &&
                     Note.Equals(input.Note))
                 ) &&
                 (
                     Permissions == input.Permissions ||
-                    Permissions != null &&
+                    Permissions is not null &&
                     Permissions.SequenceEqual(input.Permissions)
                 ) &&
                 (
                     CreatedAt == input.CreatedAt ||
-                    (CreatedAt != null &&
+                    (CreatedAt is not null &&
                     CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
                     ReadOnly == input.ReadOnly ||
-                    (ReadOnly != null &&
+                    (ReadOnly is not null &&
                     ReadOnly.Equals(input.ReadOnly))
                 );
         }
@@ -184,37 +184,37 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (ApiKey != null)
+                if (ApiKey is not null)
                 {
                     hashCode = hashCode * 59 + ApiKey.GetHashCode();
                 }
 
-                if (UserId != null)
+                if (UserId is not null)
                 {
                     hashCode = hashCode * 59 + UserId.GetHashCode();
                 }
 
-                if (Ips != null)
+                if (Ips is not null)
                 {
                     hashCode = hashCode * 59 + Ips.GetHashCode();
                 }
 
-                if (Note != null)
+                if (Note is not null)
                 {
                     hashCode = hashCode * 59 + Note.GetHashCode();
                 }
 
-                if (Permissions != null)
+                if (Permissions is not null)
                 {
                     hashCode = hashCode * 59 + Permissions.GetHashCode();
                 }
 
-                if (CreatedAt != null)
+                if (CreatedAt is not null)
                 {
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
                 }
 
-                if (ReadOnly != null)
+                if (ReadOnly is not null)
                 {
                     hashCode = hashCode * 59 + ReadOnly.GetHashCode();
                 }
@@ -228,7 +228,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

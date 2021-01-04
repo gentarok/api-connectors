@@ -136,17 +136,17 @@ namespace BybitAPI.Client
                 throw new ArgumentException("The provided basePath is invalid.", nameof(basePath));
             }
 
-            if (defaultHeader == null)
+            if (defaultHeader is null)
             {
                 throw new ArgumentNullException(nameof(defaultHeader));
             }
 
-            if (apiKey == null)
+            if (apiKey is null)
             {
                 throw new ArgumentNullException(nameof(apiKey));
             }
 
-            if (apiKeyPrefix == null)
+            if (apiKeyPrefix is null)
             {
                 throw new ArgumentNullException(nameof(apiKeyPrefix));
             }
@@ -225,7 +225,7 @@ namespace BybitAPI.Client
         {
             get
             {
-                if (_apiClient == null)
+                if (_apiClient is null)
                 {
                     _apiClient = CreateApiClient();
                 }
@@ -246,7 +246,7 @@ namespace BybitAPI.Client
             {
                 _basePath = value;
                 // pass-through to ApiClient if it's set.
-                if (_apiClient != null)
+                if (_apiClient is not null)
                 {
                     _apiClient.RestClient.BaseUrl = new Uri(_basePath);
                 }
@@ -379,7 +379,7 @@ namespace BybitAPI.Client
             get => _apiKeyPrefix;
             set
             {
-                if (value == null)
+                if (value is null)
                 {
                     throw new InvalidOperationException("ApiKeyPrefix collection may not be null.");
                 }
@@ -396,7 +396,7 @@ namespace BybitAPI.Client
             get => _apiKey;
             set
             {
-                if (value == null)
+                if (value is null)
                 {
                     throw new InvalidOperationException("ApiKey collection may not be null.");
                 }

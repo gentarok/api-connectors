@@ -87,7 +87,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearOrderRecordsResponse input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -95,12 +95,12 @@ namespace BybitAPI.Model
             return
                 (
                     CurrentPage == input.CurrentPage ||
-                    (CurrentPage != null &&
+                    (CurrentPage is not null &&
                     CurrentPage.Equals(input.CurrentPage))
                 ) &&
                 (
                     Data == input.Data ||
-                    Data != null &&
+                    Data is not null &&
                     Data.SequenceEqual(input.Data)
                 );
         }
@@ -114,12 +114,12 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (CurrentPage != null)
+                if (CurrentPage is not null)
                 {
                     hashCode = hashCode * 59 + CurrentPage.GetHashCode();
                 }
 
-                if (Data != null)
+                if (Data is not null)
                 {
                     hashCode = hashCode * 59 + Data.GetHashCode();
                 }
@@ -133,7 +133,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -203,7 +203,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearPositionListResult input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -211,77 +211,77 @@ namespace BybitAPI.Model
             return
                 (
                     BustPrice == input.BustPrice ||
-                    (BustPrice != null &&
+                    (BustPrice is not null &&
                     BustPrice.Equals(input.BustPrice))
                 ) &&
                 (
                     CumRealisedPnl == input.CumRealisedPnl ||
-                    (CumRealisedPnl != null &&
+                    (CumRealisedPnl is not null &&
                     CumRealisedPnl.Equals(input.CumRealisedPnl))
                 ) &&
                 (
                     EntryPrice == input.EntryPrice ||
-                    (EntryPrice != null &&
+                    (EntryPrice is not null &&
                     EntryPrice.Equals(input.EntryPrice))
                 ) &&
                 (
                     FreeQty == input.FreeQty ||
-                    (FreeQty != null &&
+                    (FreeQty is not null &&
                     FreeQty.Equals(input.FreeQty))
                 ) &&
                 (
                     Leverage == input.Leverage ||
-                    (Leverage != null &&
+                    (Leverage is not null &&
                     Leverage.Equals(input.Leverage))
                 ) &&
                 (
                     LiqPrice == input.LiqPrice ||
-                    (LiqPrice != null &&
+                    (LiqPrice is not null &&
                     LiqPrice.Equals(input.LiqPrice))
                 ) &&
                 (
                     OccClosingFee == input.OccClosingFee ||
-                    (OccClosingFee != null &&
+                    (OccClosingFee is not null &&
                     OccClosingFee.Equals(input.OccClosingFee))
                 ) &&
                 (
                     PositionMargin == input.PositionMargin ||
-                    (PositionMargin != null &&
+                    (PositionMargin is not null &&
                     PositionMargin.Equals(input.PositionMargin))
                 ) &&
                 (
                     PositionValue == input.PositionValue ||
-                    (PositionValue != null &&
+                    (PositionValue is not null &&
                     PositionValue.Equals(input.PositionValue))
                 ) &&
                 (
                     RealisedPnl == input.RealisedPnl ||
-                    (RealisedPnl != null &&
+                    (RealisedPnl is not null &&
                     RealisedPnl.Equals(input.RealisedPnl))
                 ) &&
                 (
                     Side == input.Side ||
-                    (Side != null &&
+                    (Side is not null &&
                     Side.Equals(input.Side))
                 ) &&
                 (
                     Size == input.Size ||
-                    (Size != null &&
+                    (Size is not null &&
                     Size.Equals(input.Size))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     UserId == input.UserId ||
-                    (UserId != null &&
+                    (UserId is not null &&
                     UserId.Equals(input.UserId))
                 ) &&
                 (
                     TpSlMode == input.TpSlMode ||
-                    (TpSlMode != null &&
+                    (TpSlMode is not null &&
                     TpSlMode.Equals(input.TpSlMode))
                 );
         }
@@ -295,77 +295,77 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (BustPrice != null)
+                if (BustPrice is not null)
                 {
                     hashCode = hashCode * 59 + BustPrice.GetHashCode();
                 }
 
-                if (CumRealisedPnl != null)
+                if (CumRealisedPnl is not null)
                 {
                     hashCode = hashCode * 59 + CumRealisedPnl.GetHashCode();
                 }
 
-                if (EntryPrice != null)
+                if (EntryPrice is not null)
                 {
                     hashCode = hashCode * 59 + EntryPrice.GetHashCode();
                 }
 
-                if (FreeQty != null)
+                if (FreeQty is not null)
                 {
                     hashCode = hashCode * 59 + FreeQty.GetHashCode();
                 }
 
-                if (Leverage != null)
+                if (Leverage is not null)
                 {
                     hashCode = hashCode * 59 + Leverage.GetHashCode();
                 }
 
-                if (LiqPrice != null)
+                if (LiqPrice is not null)
                 {
                     hashCode = hashCode * 59 + LiqPrice.GetHashCode();
                 }
 
-                if (OccClosingFee != null)
+                if (OccClosingFee is not null)
                 {
                     hashCode = hashCode * 59 + OccClosingFee.GetHashCode();
                 }
 
-                if (PositionMargin != null)
+                if (PositionMargin is not null)
                 {
                     hashCode = hashCode * 59 + PositionMargin.GetHashCode();
                 }
 
-                if (PositionValue != null)
+                if (PositionValue is not null)
                 {
                     hashCode = hashCode * 59 + PositionValue.GetHashCode();
                 }
 
-                if (RealisedPnl != null)
+                if (RealisedPnl is not null)
                 {
                     hashCode = hashCode * 59 + RealisedPnl.GetHashCode();
                 }
 
-                if (Side != null)
+                if (Side is not null)
                 {
                     hashCode = hashCode * 59 + Side.GetHashCode();
                 }
 
-                if (Size != null)
+                if (Size is not null)
                 {
                     hashCode = hashCode * 59 + Size.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (UserId != null)
+                if (UserId is not null)
                 {
                     hashCode = hashCode * 59 + UserId.GetHashCode();
                 }
 
-                if (TpSlMode != null)
+                if (TpSlMode is not null)
                 {
                     hashCode = hashCode * 59 + TpSlMode.GetHashCode();
                 }
@@ -379,7 +379,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

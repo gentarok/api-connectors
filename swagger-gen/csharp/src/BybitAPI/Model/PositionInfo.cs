@@ -338,7 +338,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(PositionInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -346,152 +346,152 @@ namespace BybitAPI.Model
             return
                 (
                     Id == input.Id ||
-                    (Id != null &&
+                    (Id is not null &&
                     Id.Equals(input.Id))
                 ) &&
                 (
                     UserId == input.UserId ||
-                    (UserId != null &&
+                    (UserId is not null &&
                     UserId.Equals(input.UserId))
                 ) &&
                 (
                     RiskId == input.RiskId ||
-                    (RiskId != null &&
+                    (RiskId is not null &&
                     RiskId.Equals(input.RiskId))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     Side == input.Side ||
-                    (Side != null &&
+                    (Side is not null &&
                     Side.Equals(input.Side))
                 ) &&
                 (
                     Size == input.Size ||
-                    (Size != null &&
+                    (Size is not null &&
                     Size.Equals(input.Size))
                 ) &&
                 (
                     PositionValue == input.PositionValue ||
-                    (PositionValue != null &&
+                    (PositionValue is not null &&
                     PositionValue.Equals(input.PositionValue))
                 ) &&
                 (
                     EntryPrice == input.EntryPrice ||
-                    (EntryPrice != null &&
+                    (EntryPrice is not null &&
                     EntryPrice.Equals(input.EntryPrice))
                 ) &&
                 (
                     Leverage == input.Leverage ||
-                    (Leverage != null &&
+                    (Leverage is not null &&
                     Leverage.Equals(input.Leverage))
                 ) &&
                 (
                     AutoAddMargin == input.AutoAddMargin ||
-                    (AutoAddMargin != null &&
+                    (AutoAddMargin is not null &&
                     AutoAddMargin.Equals(input.AutoAddMargin))
                 ) &&
                 (
                     PositionMargin == input.PositionMargin ||
-                    (PositionMargin != null &&
+                    (PositionMargin is not null &&
                     PositionMargin.Equals(input.PositionMargin))
                 ) &&
                 (
                     LiqPrice == input.LiqPrice ||
-                    (LiqPrice != null &&
+                    (LiqPrice is not null &&
                     LiqPrice.Equals(input.LiqPrice))
                 ) &&
                 (
                     BustPrice == input.BustPrice ||
-                    (BustPrice != null &&
+                    (BustPrice is not null &&
                     BustPrice.Equals(input.BustPrice))
                 ) &&
                 (
                     OccClosingFee == input.OccClosingFee ||
-                    (OccClosingFee != null &&
+                    (OccClosingFee is not null &&
                     OccClosingFee.Equals(input.OccClosingFee))
                 ) &&
                 (
                     OccFundingFee == input.OccFundingFee ||
-                    (OccFundingFee != null &&
+                    (OccFundingFee is not null &&
                     OccFundingFee.Equals(input.OccFundingFee))
                 ) &&
                 (
                     TakeProfit == input.TakeProfit ||
-                    (TakeProfit != null &&
+                    (TakeProfit is not null &&
                     TakeProfit.Equals(input.TakeProfit))
                 ) &&
                 (
                     StopLoss == input.StopLoss ||
-                    (StopLoss != null &&
+                    (StopLoss is not null &&
                     StopLoss.Equals(input.StopLoss))
                 ) &&
                 (
                     PositionStatus == input.PositionStatus ||
-                    (PositionStatus != null &&
+                    (PositionStatus is not null &&
                     PositionStatus.Equals(input.PositionStatus))
                 ) &&
                 (
                     DeleverageIndicator == input.DeleverageIndicator ||
-                    (DeleverageIndicator != null &&
+                    (DeleverageIndicator is not null &&
                     DeleverageIndicator.Equals(input.DeleverageIndicator))
                 ) &&
                 (
                     OcCalcData == input.OcCalcData ||
-                    (OcCalcData != null &&
+                    (OcCalcData is not null &&
                     OcCalcData.Equals(input.OcCalcData))
                 ) &&
                 (
                     OrderMargin == input.OrderMargin ||
-                    (OrderMargin != null &&
+                    (OrderMargin is not null &&
                     OrderMargin.Equals(input.OrderMargin))
                 ) &&
                 (
                     WalletBalance == input.WalletBalance ||
-                    (WalletBalance != null &&
+                    (WalletBalance is not null &&
                     WalletBalance.Equals(input.WalletBalance))
                 ) &&
                 (
                     UnrealisedPnl == input.UnrealisedPnl ||
-                    (UnrealisedPnl != null &&
+                    (UnrealisedPnl is not null &&
                     UnrealisedPnl.Equals(input.UnrealisedPnl))
                 ) &&
                 (
                     RealisedPnl == input.RealisedPnl ||
-                    (RealisedPnl != null &&
+                    (RealisedPnl is not null &&
                     RealisedPnl.Equals(input.RealisedPnl))
                 ) &&
                 (
                     CumRealisedPnl == input.CumRealisedPnl ||
-                    (CumRealisedPnl != null &&
+                    (CumRealisedPnl is not null &&
                     CumRealisedPnl.Equals(input.CumRealisedPnl))
                 ) &&
                 (
                     CumCommission == input.CumCommission ||
-                    (CumCommission != null &&
+                    (CumCommission is not null &&
                     CumCommission.Equals(input.CumCommission))
                 ) &&
                 (
                     CrossSeq == input.CrossSeq ||
-                    (CrossSeq != null &&
+                    (CrossSeq is not null &&
                     CrossSeq.Equals(input.CrossSeq))
                 ) &&
                 (
                     PositionSeq == input.PositionSeq ||
-                    (PositionSeq != null &&
+                    (PositionSeq is not null &&
                     PositionSeq.Equals(input.PositionSeq))
                 ) &&
                 (
                     CreatedAt == input.CreatedAt ||
-                    (CreatedAt != null &&
+                    (CreatedAt is not null &&
                     CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
                     UpdatedAt == input.UpdatedAt ||
-                    (UpdatedAt != null &&
+                    (UpdatedAt is not null &&
                     UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
@@ -505,152 +505,152 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Id != null)
+                if (Id is not null)
                 {
                     hashCode = hashCode * 59 + Id.GetHashCode();
                 }
 
-                if (UserId != null)
+                if (UserId is not null)
                 {
                     hashCode = hashCode * 59 + UserId.GetHashCode();
                 }
 
-                if (RiskId != null)
+                if (RiskId is not null)
                 {
                     hashCode = hashCode * 59 + RiskId.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (Side != null)
+                if (Side is not null)
                 {
                     hashCode = hashCode * 59 + Side.GetHashCode();
                 }
 
-                if (Size != null)
+                if (Size is not null)
                 {
                     hashCode = hashCode * 59 + Size.GetHashCode();
                 }
 
-                if (PositionValue != null)
+                if (PositionValue is not null)
                 {
                     hashCode = hashCode * 59 + PositionValue.GetHashCode();
                 }
 
-                if (EntryPrice != null)
+                if (EntryPrice is not null)
                 {
                     hashCode = hashCode * 59 + EntryPrice.GetHashCode();
                 }
 
-                if (Leverage != null)
+                if (Leverage is not null)
                 {
                     hashCode = hashCode * 59 + Leverage.GetHashCode();
                 }
 
-                if (AutoAddMargin != null)
+                if (AutoAddMargin is not null)
                 {
                     hashCode = hashCode * 59 + AutoAddMargin.GetHashCode();
                 }
 
-                if (PositionMargin != null)
+                if (PositionMargin is not null)
                 {
                     hashCode = hashCode * 59 + PositionMargin.GetHashCode();
                 }
 
-                if (LiqPrice != null)
+                if (LiqPrice is not null)
                 {
                     hashCode = hashCode * 59 + LiqPrice.GetHashCode();
                 }
 
-                if (BustPrice != null)
+                if (BustPrice is not null)
                 {
                     hashCode = hashCode * 59 + BustPrice.GetHashCode();
                 }
 
-                if (OccClosingFee != null)
+                if (OccClosingFee is not null)
                 {
                     hashCode = hashCode * 59 + OccClosingFee.GetHashCode();
                 }
 
-                if (OccFundingFee != null)
+                if (OccFundingFee is not null)
                 {
                     hashCode = hashCode * 59 + OccFundingFee.GetHashCode();
                 }
 
-                if (TakeProfit != null)
+                if (TakeProfit is not null)
                 {
                     hashCode = hashCode * 59 + TakeProfit.GetHashCode();
                 }
 
-                if (StopLoss != null)
+                if (StopLoss is not null)
                 {
                     hashCode = hashCode * 59 + StopLoss.GetHashCode();
                 }
 
-                if (PositionStatus != null)
+                if (PositionStatus is not null)
                 {
                     hashCode = hashCode * 59 + PositionStatus.GetHashCode();
                 }
 
-                if (DeleverageIndicator != null)
+                if (DeleverageIndicator is not null)
                 {
                     hashCode = hashCode * 59 + DeleverageIndicator.GetHashCode();
                 }
 
-                if (OcCalcData != null)
+                if (OcCalcData is not null)
                 {
                     hashCode = hashCode * 59 + OcCalcData.GetHashCode();
                 }
 
-                if (OrderMargin != null)
+                if (OrderMargin is not null)
                 {
                     hashCode = hashCode * 59 + OrderMargin.GetHashCode();
                 }
 
-                if (WalletBalance != null)
+                if (WalletBalance is not null)
                 {
                     hashCode = hashCode * 59 + WalletBalance.GetHashCode();
                 }
 
-                if (UnrealisedPnl != null)
+                if (UnrealisedPnl is not null)
                 {
                     hashCode = hashCode * 59 + UnrealisedPnl.GetHashCode();
                 }
 
-                if (RealisedPnl != null)
+                if (RealisedPnl is not null)
                 {
                     hashCode = hashCode * 59 + RealisedPnl.GetHashCode();
                 }
 
-                if (CumRealisedPnl != null)
+                if (CumRealisedPnl is not null)
                 {
                     hashCode = hashCode * 59 + CumRealisedPnl.GetHashCode();
                 }
 
-                if (CumCommission != null)
+                if (CumCommission is not null)
                 {
                     hashCode = hashCode * 59 + CumCommission.GetHashCode();
                 }
 
-                if (CrossSeq != null)
+                if (CrossSeq is not null)
                 {
                     hashCode = hashCode * 59 + CrossSeq.GetHashCode();
                 }
 
-                if (PositionSeq != null)
+                if (PositionSeq is not null)
                 {
                     hashCode = hashCode * 59 + PositionSeq.GetHashCode();
                 }
 
-                if (CreatedAt != null)
+                if (CreatedAt is not null)
                 {
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
                 }
 
-                if (UpdatedAt != null)
+                if (UpdatedAt is not null)
                 {
                     hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
                 }
@@ -664,7 +664,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

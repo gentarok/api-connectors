@@ -48,92 +48,91 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' WalletApi
-            Assert.IsInstanceOf(typeof(WalletApi), instance, "instance is a WalletApi");
+            Assert.IsInstanceOf<WalletApi>(instance, "instance is a WalletApi");
         }
 
-        /// <summary>
-        /// Test WalletExchangeOrder
-        /// </summary>
-        [Test]
-        public void WalletExchangeOrderTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //decimal? limit = null;
-            //decimal? from = null;
-            //string direction = null;
-            //var response = instance.WalletExchangeOrder(limit, from, direction);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test WalletExchangeOrder
+        ///// </summary>
+        //[Test]
+        //public void WalletExchangeOrderTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //decimal? limit = null;
+        //    //decimal? from = null;
+        //    //string direction = null;
+        //    //var response = instance.WalletExchangeOrder(limit, from, direction);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test WalletGetBalance
-        /// </summary>
-        [Test]
-        public void WalletGetBalanceTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string coin = null;
-            //var response = instance.WalletGetBalance(coin);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test WalletGetBalance
+        ///// </summary>
+        //[Test]
+        //public void WalletGetBalanceTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string coin = null;
+        //    //var response = instance.WalletGetBalance(coin);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test WalletGetRecords
-        /// </summary>
-        [Test]
-        public void WalletGetRecordsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string startDate = null;
-            //string endDate = null;
-            //string currency = null;
-            //string walletFundType = null;
-            //string page = null;
-            //string limit = null;
-            //var response = instance.WalletGetRecords(startDate, endDate, currency, walletFundType, page, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test WalletGetRecords
+        ///// </summary>
+        //[Test]
+        //public void WalletGetRecordsTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string startDate = null;
+        //    //string endDate = null;
+        //    //string currency = null;
+        //    //string walletFundType = null;
+        //    //string page = null;
+        //    //string limit = null;
+        //    //var response = instance.WalletGetRecords(startDate, endDate, currency, walletFundType, page, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test WalletGetRiskLimit
-        /// </summary>
-        [Test]
-        public void WalletGetRiskLimitTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.WalletGetRiskLimit();
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test WalletGetRiskLimit
+        ///// </summary>
+        //[Test]
+        //public void WalletGetRiskLimitTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //var response = instance.WalletGetRiskLimit();
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test WalletSetRiskLimit
-        /// </summary>
-        [Test]
-        public void WalletSetRiskLimitTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //decimal? riskId = null;
-            //var response = instance.WalletSetRiskLimit(symbol, riskId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test WalletSetRiskLimit
+        ///// </summary>
+        //[Test]
+        //public void WalletSetRiskLimitTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //decimal? riskId = null;
+        //    //var response = instance.WalletSetRiskLimit(symbol, riskId);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test WalletWithdraw
-        /// </summary>
-        [Test]
-        public void WalletWithdrawTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string startDate = null;
-            //string endDate = null;
-            //string coin = null;
-            //string status = null;
-            //string page = null;
-            //string limit = null;
-            //var response = instance.WalletWithdraw(startDate, endDate, coin, status, page, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test WalletWithdraw
+        ///// </summary>
+        //[Test]
+        //public void WalletWithdrawTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string startDate = null;
+        //    //string endDate = null;
+        //    //string coin = null;
+        //    //string status = null;
+        //    //string page = null;
+        //    //string limit = null;
+        //    //var response = instance.WalletWithdraw(startDate, endDate, coin, status, page, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

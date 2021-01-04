@@ -77,7 +77,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(OrderIdRes input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
             return
                 (
                     OrderId == input.OrderId ||
-                    (OrderId != null &&
+                    (OrderId is not null &&
                     OrderId.Equals(input.OrderId))
                 );
         }
@@ -99,7 +99,7 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (OrderId != null)
+                if (OrderId is not null)
                 {
                     hashCode = hashCode * 59 + OrderId.GetHashCode();
                 }
@@ -113,7 +113,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

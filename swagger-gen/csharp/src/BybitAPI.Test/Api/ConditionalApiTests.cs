@@ -48,103 +48,102 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' ConditionalApi
-            Assert.IsInstanceOf(typeof(ConditionalApi), instance, "instance is a ConditionalApi");
+            Assert.IsInstanceOf<ConditionalApi>(instance, "instance is a ConditionalApi");
         }
 
-        /// <summary>
-        /// Test ConditionalCancel
-        /// </summary>
-        [Test]
-        public void ConditionalCancelTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string stopOrderId = null;
-            //string orderLinkId = null;
-            //var response = instance.ConditionalCancel(symbol, stopOrderId, orderLinkId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test ConditionalCancel
+        ///// </summary>
+        //[Test]
+        //public void ConditionalCancelTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string stopOrderId = null;
+        //    //string orderLinkId = null;
+        //    //var response = instance.ConditionalCancel(symbol, stopOrderId, orderLinkId);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test ConditionalCancelAll
-        /// </summary>
-        [Test]
-        public void ConditionalCancelAllTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.ConditionalCancelAll(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test ConditionalCancelAll
+        ///// </summary>
+        //[Test]
+        //public void ConditionalCancelAllTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.ConditionalCancelAll(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test ConditionalGetOrders
-        /// </summary>
-        [Test]
-        public void ConditionalGetOrdersTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string stopOrderStatus = null;
-            //decimal? limit = null;
-            //string direction = null;
-            //string cursor = null;
-            //var response = instance.ConditionalGetOrders(symbol, stopOrderStatus, limit, direction, cursor);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test ConditionalGetOrders
+        ///// </summary>
+        //[Test]
+        //public void ConditionalGetOrdersTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string stopOrderStatus = null;
+        //    //decimal? limit = null;
+        //    //string direction = null;
+        //    //string cursor = null;
+        //    //var response = instance.ConditionalGetOrders(symbol, stopOrderStatus, limit, direction, cursor);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test ConditionalNew
-        /// </summary>
-        [Test]
-        public void ConditionalNewTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string side = null;
-            //string symbol = null;
-            //string orderType = null;
-            //string qty = null;
-            //string basePrice = null;
-            //string stopPx = null;
-            //string timeInForce = null;
-            //string price = null;
-            //string triggerBy = null;
-            //bool? closeOnTrigger = null;
-            //string orderLinkId = null;
-            //var response = instance.ConditionalNew(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test ConditionalNew
+        ///// </summary>
+        //[Test]
+        //public void ConditionalNewTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string side = null;
+        //    //string symbol = null;
+        //    //string orderType = null;
+        //    //string qty = null;
+        //    //string basePrice = null;
+        //    //string stopPx = null;
+        //    //string timeInForce = null;
+        //    //string price = null;
+        //    //string triggerBy = null;
+        //    //bool? closeOnTrigger = null;
+        //    //string orderLinkId = null;
+        //    //var response = instance.ConditionalNew(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test ConditionalQuery
-        /// </summary>
-        [Test]
-        public void ConditionalQueryTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string stopOrderId = null;
-            //string orderLinkId = null;
-            //string symbol = null;
-            //var response = instance.ConditionalQuery(stopOrderId, orderLinkId, symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test ConditionalQuery
+        ///// </summary>
+        //[Test]
+        //public void ConditionalQueryTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string stopOrderId = null;
+        //    //string orderLinkId = null;
+        //    //string symbol = null;
+        //    //var response = instance.ConditionalQuery(stopOrderId, orderLinkId, symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test ConditionalReplace
-        /// </summary>
-        [Test]
-        public void ConditionalReplaceTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string stopOrderId = null;
-            //string orderLinkId = null;
-            //string pRQty = null;
-            //string pRPrice = null;
-            //string pRTriggerPrice = null;
-            //var response = instance.ConditionalReplace(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test ConditionalReplace
+        ///// </summary>
+        //[Test]
+        //public void ConditionalReplaceTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string stopOrderId = null;
+        //    //string orderLinkId = null;
+        //    //string pRQty = null;
+        //    //string pRPrice = null;
+        //    //string pRTriggerPrice = null;
+        //    //var response = instance.ConditionalReplace(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

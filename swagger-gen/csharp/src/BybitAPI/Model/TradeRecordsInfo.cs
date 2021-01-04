@@ -248,7 +248,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(TradeRecordsInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -256,102 +256,102 @@ namespace BybitAPI.Model
             return
                 (
                     ClosedSize == input.ClosedSize ||
-                    (ClosedSize != null &&
+                    (ClosedSize is not null &&
                     ClosedSize.Equals(input.ClosedSize))
                 ) &&
                 (
                     CrossSeq == input.CrossSeq ||
-                    (CrossSeq != null &&
+                    (CrossSeq is not null &&
                     CrossSeq.Equals(input.CrossSeq))
                 ) &&
                 (
                     ExecFee == input.ExecFee ||
-                    (ExecFee != null &&
+                    (ExecFee is not null &&
                     ExecFee.Equals(input.ExecFee))
                 ) &&
                 (
                     ExecId == input.ExecId ||
-                    (ExecId != null &&
+                    (ExecId is not null &&
                     ExecId.Equals(input.ExecId))
                 ) &&
                 (
                     ExecPrice == input.ExecPrice ||
-                    (ExecPrice != null &&
+                    (ExecPrice is not null &&
                     ExecPrice.Equals(input.ExecPrice))
                 ) &&
                 (
                     ExecQty == input.ExecQty ||
-                    (ExecQty != null &&
+                    (ExecQty is not null &&
                     ExecQty.Equals(input.ExecQty))
                 ) &&
                 (
                     ExecTime == input.ExecTime ||
-                    (ExecTime != null &&
+                    (ExecTime is not null &&
                     ExecTime.Equals(input.ExecTime))
                 ) &&
                 (
                     ExecType == input.ExecType ||
-                    (ExecType != null &&
+                    (ExecType is not null &&
                     ExecType.Equals(input.ExecType))
                 ) &&
                 (
                     ExecValue == input.ExecValue ||
-                    (ExecValue != null &&
+                    (ExecValue is not null &&
                     ExecValue.Equals(input.ExecValue))
                 ) &&
                 (
                     FeeRate == input.FeeRate ||
-                    (FeeRate != null &&
+                    (FeeRate is not null &&
                     FeeRate.Equals(input.FeeRate))
                 ) &&
                 (
                     LastLiquidityInd == input.LastLiquidityInd ||
-                    (LastLiquidityInd != null &&
+                    (LastLiquidityInd is not null &&
                     LastLiquidityInd.Equals(input.LastLiquidityInd))
                 ) &&
                 (
                     LeavesQty == input.LeavesQty ||
-                    (LeavesQty != null &&
+                    (LeavesQty is not null &&
                     LeavesQty.Equals(input.LeavesQty))
                 ) &&
                 (
                     NthFill == input.NthFill ||
-                    (NthFill != null &&
+                    (NthFill is not null &&
                     NthFill.Equals(input.NthFill))
                 ) &&
                 (
                     OrderId == input.OrderId ||
-                    (OrderId != null &&
+                    (OrderId is not null &&
                     OrderId.Equals(input.OrderId))
                 ) &&
                 (
                     OrderPrice == input.OrderPrice ||
-                    (OrderPrice != null &&
+                    (OrderPrice is not null &&
                     OrderPrice.Equals(input.OrderPrice))
                 ) &&
                 (
                     OrderQty == input.OrderQty ||
-                    (OrderQty != null &&
+                    (OrderQty is not null &&
                     OrderQty.Equals(input.OrderQty))
                 ) &&
                 (
                     OrderType == input.OrderType ||
-                    (OrderType != null &&
+                    (OrderType is not null &&
                     OrderType.Equals(input.OrderType))
                 ) &&
                 (
                     Side == input.Side ||
-                    (Side != null &&
+                    (Side is not null &&
                     Side.Equals(input.Side))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     UserId == input.UserId ||
-                    (UserId != null &&
+                    (UserId is not null &&
                     UserId.Equals(input.UserId))
                 );
         }
@@ -365,102 +365,102 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (ClosedSize != null)
+                if (ClosedSize is not null)
                 {
                     hashCode = hashCode * 59 + ClosedSize.GetHashCode();
                 }
 
-                if (CrossSeq != null)
+                if (CrossSeq is not null)
                 {
                     hashCode = hashCode * 59 + CrossSeq.GetHashCode();
                 }
 
-                if (ExecFee != null)
+                if (ExecFee is not null)
                 {
                     hashCode = hashCode * 59 + ExecFee.GetHashCode();
                 }
 
-                if (ExecId != null)
+                if (ExecId is not null)
                 {
                     hashCode = hashCode * 59 + ExecId.GetHashCode();
                 }
 
-                if (ExecPrice != null)
+                if (ExecPrice is not null)
                 {
                     hashCode = hashCode * 59 + ExecPrice.GetHashCode();
                 }
 
-                if (ExecQty != null)
+                if (ExecQty is not null)
                 {
                     hashCode = hashCode * 59 + ExecQty.GetHashCode();
                 }
 
-                if (ExecTime != null)
+                if (ExecTime is not null)
                 {
                     hashCode = hashCode * 59 + ExecTime.GetHashCode();
                 }
 
-                if (ExecType != null)
+                if (ExecType is not null)
                 {
                     hashCode = hashCode * 59 + ExecType.GetHashCode();
                 }
 
-                if (ExecValue != null)
+                if (ExecValue is not null)
                 {
                     hashCode = hashCode * 59 + ExecValue.GetHashCode();
                 }
 
-                if (FeeRate != null)
+                if (FeeRate is not null)
                 {
                     hashCode = hashCode * 59 + FeeRate.GetHashCode();
                 }
 
-                if (LastLiquidityInd != null)
+                if (LastLiquidityInd is not null)
                 {
                     hashCode = hashCode * 59 + LastLiquidityInd.GetHashCode();
                 }
 
-                if (LeavesQty != null)
+                if (LeavesQty is not null)
                 {
                     hashCode = hashCode * 59 + LeavesQty.GetHashCode();
                 }
 
-                if (NthFill != null)
+                if (NthFill is not null)
                 {
                     hashCode = hashCode * 59 + NthFill.GetHashCode();
                 }
 
-                if (OrderId != null)
+                if (OrderId is not null)
                 {
                     hashCode = hashCode * 59 + OrderId.GetHashCode();
                 }
 
-                if (OrderPrice != null)
+                if (OrderPrice is not null)
                 {
                     hashCode = hashCode * 59 + OrderPrice.GetHashCode();
                 }
 
-                if (OrderQty != null)
+                if (OrderQty is not null)
                 {
                     hashCode = hashCode * 59 + OrderQty.GetHashCode();
                 }
 
-                if (OrderType != null)
+                if (OrderType is not null)
                 {
                     hashCode = hashCode * 59 + OrderType.GetHashCode();
                 }
 
-                if (Side != null)
+                if (Side is not null)
                 {
                     hashCode = hashCode * 59 + Side.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (UserId != null)
+                if (UserId is not null)
                 {
                     hashCode = hashCode * 59 + UserId.GetHashCode();
                 }
@@ -474,7 +474,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

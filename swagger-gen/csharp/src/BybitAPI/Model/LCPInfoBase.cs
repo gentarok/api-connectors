@@ -104,7 +104,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LCPInfoBase input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -112,22 +112,22 @@ namespace BybitAPI.Model
             return
                 (
                     Date == input.Date ||
-                    (Date != null &&
+                    (Date is not null &&
                     Date.Equals(input.Date))
                 ) &&
                 (
                     SelfRatio == input.SelfRatio ||
-                    (SelfRatio != null &&
+                    (SelfRatio is not null &&
                     SelfRatio.Equals(input.SelfRatio))
                 ) &&
                 (
                     PlatformRatio == input.PlatformRatio ||
-                    (PlatformRatio != null &&
+                    (PlatformRatio is not null &&
                     PlatformRatio.Equals(input.PlatformRatio))
                 ) &&
                 (
                     Score == input.Score ||
-                    (Score != null &&
+                    (Score is not null &&
                     Score.Equals(input.Score))
                 );
         }
@@ -141,22 +141,22 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Date != null)
+                if (Date is not null)
                 {
                     hashCode = hashCode * 59 + Date.GetHashCode();
                 }
 
-                if (SelfRatio != null)
+                if (SelfRatio is not null)
                 {
                     hashCode = hashCode * 59 + SelfRatio.GetHashCode();
                 }
 
-                if (PlatformRatio != null)
+                if (PlatformRatio is not null)
                 {
                     hashCode = hashCode * 59 + PlatformRatio.GetHashCode();
                 }
 
-                if (Score != null)
+                if (Score is not null)
                 {
                     hashCode = hashCode * 59 + Score.GetHashCode();
                 }
@@ -170,7 +170,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

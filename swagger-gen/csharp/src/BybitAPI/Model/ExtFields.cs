@@ -95,7 +95,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(ExtFields input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -103,17 +103,17 @@ namespace BybitAPI.Model
             return
                 (
                     OReqNum == input.OReqNum ||
-                    (OReqNum != null &&
+                    (OReqNum is not null &&
                     OReqNum.Equals(input.OReqNum))
                 ) &&
                 (
                     XreqType == input.XreqType ||
-                    (XreqType != null &&
+                    (XreqType is not null &&
                     XreqType.Equals(input.XreqType))
                 ) &&
                 (
                     XreqOffset == input.XreqOffset ||
-                    (XreqOffset != null &&
+                    (XreqOffset is not null &&
                     XreqOffset.Equals(input.XreqOffset))
                 );
         }
@@ -127,17 +127,17 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (OReqNum != null)
+                if (OReqNum is not null)
                 {
                     hashCode = hashCode * 59 + OReqNum.GetHashCode();
                 }
 
-                if (XreqType != null)
+                if (XreqType is not null)
                 {
                     hashCode = hashCode * 59 + XreqType.GetHashCode();
                 }
 
-                if (XreqOffset != null)
+                if (XreqOffset is not null)
                 {
                     hashCode = hashCode * 59 + XreqOffset.GetHashCode();
                 }
@@ -151,7 +151,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

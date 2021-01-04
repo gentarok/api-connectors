@@ -48,19 +48,18 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' APIkeyApi
-            Assert.IsInstanceOf(typeof(APIkeyApi), instance, "instance is a APIkeyApi");
+            Assert.IsInstanceOf<APIkeyApi>(instance, "instance is a APIkeyApi");
         }
 
-        /// <summary>
-        /// Test APIkeyInfo
-        /// </summary>
-        [Test]
-        public void APIkeyInfoTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.APIkeyInfo();
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test APIkeyInfo
+        ///// </summary>
+        //[Test]
+        //public void APIkeyInfoTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //var response = instance.APIkeyInfo();
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

@@ -95,7 +95,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearSetMarginResult input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -103,17 +103,17 @@ namespace BybitAPI.Model
             return
                 (
                     PositionListResult == input.PositionListResult ||
-                    (PositionListResult != null &&
+                    (PositionListResult is not null &&
                     PositionListResult.Equals(input.PositionListResult))
                 ) &&
                 (
                     AvailableBalance == input.AvailableBalance ||
-                    (AvailableBalance != null &&
+                    (AvailableBalance is not null &&
                     AvailableBalance.Equals(input.AvailableBalance))
                 ) &&
                 (
                     WalletBalance == input.WalletBalance ||
-                    (WalletBalance != null &&
+                    (WalletBalance is not null &&
                     WalletBalance.Equals(input.WalletBalance))
                 );
         }
@@ -127,17 +127,17 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (PositionListResult != null)
+                if (PositionListResult is not null)
                 {
                     hashCode = hashCode * 59 + PositionListResult.GetHashCode();
                 }
 
-                if (AvailableBalance != null)
+                if (AvailableBalance is not null)
                 {
                     hashCode = hashCode * 59 + AvailableBalance.GetHashCode();
                 }
 
-                if (WalletBalance != null)
+                if (WalletBalance is not null)
                 {
                     hashCode = hashCode * 59 + WalletBalance.GetHashCode();
                 }
@@ -151,7 +151,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

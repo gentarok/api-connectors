@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will cancel linear active order
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -43,7 +44,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will cancel linear active order
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -56,7 +57,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         object LinearConditionalCancelAll(string symbol);
@@ -67,7 +68,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> LinearConditionalCancelAllWithHttpInfo(string symbol);
@@ -78,7 +79,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get linear active orders
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -95,7 +96,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get linear active orders
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -112,7 +113,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will create linear stop order
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -138,7 +139,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will create linear stop order
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -164,7 +165,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get linear stop orders(real-time)
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -177,7 +178,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get linear stop orders(real-time)
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -190,7 +191,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -206,7 +207,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -226,12 +227,12 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will cancel linear active order
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearConditionalCancelAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null);
+        Task<object> LinearConditionalCancelAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null);
 
         /// <summary>
         /// Cancel Active Order
@@ -239,12 +240,12 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will cancel linear active order
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalCancelAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null);
+        Task<ApiResponse<object>> LinearConditionalCancelAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null);
 
         /// <summary>
         /// Cancel all stop orders.
@@ -252,10 +253,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearConditionalCancelAllAsync(string symbol);
+        Task<object> LinearConditionalCancelAllAsync(string symbol);
 
         /// <summary>
         /// Cancel all stop orders.
@@ -263,10 +264,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalCancelAllAsyncWithHttpInfo(string symbol);
+        Task<ApiResponse<object>> LinearConditionalCancelAllAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get linear Stop Orders
@@ -274,7 +275,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get linear active orders
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -283,7 +284,7 @@ namespace BybitAPI.Api
         /// <param name="limit"> (optional)</param>
         /// <param name="stopOrderStatus"> (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearConditionalGetOrdersAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null, string order = null, string page = null, string limit = null, string stopOrderStatus = null);
+        Task<object> LinearConditionalGetOrdersAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null, string order = null, string page = null, string limit = null, string stopOrderStatus = null);
 
         /// <summary>
         /// Get linear Stop Orders
@@ -291,7 +292,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get linear active orders
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -300,7 +301,7 @@ namespace BybitAPI.Api
         /// <param name="limit"> (optional)</param>
         /// <param name="stopOrderStatus"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalGetOrdersAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null, string order = null, string page = null, string limit = null, string stopOrderStatus = null);
+        Task<ApiResponse<object>> LinearConditionalGetOrdersAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null, string order = null, string page = null, string limit = null, string stopOrderStatus = null);
 
         /// <summary>
         /// Create linear stop Order
@@ -308,7 +309,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will create linear stop order
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -326,7 +327,7 @@ namespace BybitAPI.Api
         /// <param name="tpTriggerBy"> (optional)</param>
         /// <param name="slTriggerBy"> (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearConditionalNewAsync(string symbol = null, string side = null, string orderType = null, double? qty = null, double? price = null, double? basePrice = null, double? stopPx = null, string timeInForce = null, string triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null, double? takeProfit = null, double? stopLoss = null, string tpTriggerBy = null, string slTriggerBy = null);
+        Task<object> LinearConditionalNewAsync(string symbol = null, string side = null, string orderType = null, double? qty = null, double? price = null, double? basePrice = null, double? stopPx = null, string timeInForce = null, string triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null, double? takeProfit = null, double? stopLoss = null, string tpTriggerBy = null, string slTriggerBy = null);
 
         /// <summary>
         /// Create linear stop Order
@@ -334,7 +335,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will create linear stop order
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -352,7 +353,7 @@ namespace BybitAPI.Api
         /// <param name="tpTriggerBy"> (optional)</param>
         /// <param name="slTriggerBy"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalNewAsyncWithHttpInfo(string symbol = null, string side = null, string orderType = null, double? qty = null, double? price = null, double? basePrice = null, double? stopPx = null, string timeInForce = null, string triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null, double? takeProfit = null, double? stopLoss = null, string tpTriggerBy = null, string slTriggerBy = null);
+        Task<ApiResponse<object>> LinearConditionalNewAsyncWithHttpInfo(string symbol = null, string side = null, string orderType = null, double? qty = null, double? price = null, double? basePrice = null, double? stopPx = null, string timeInForce = null, string triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null, double? takeProfit = null, double? stopLoss = null, string tpTriggerBy = null, string slTriggerBy = null);
 
         /// <summary>
         /// Get Stop Orders(real-time)
@@ -360,12 +361,12 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get linear stop orders(real-time)
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearConditionalQueryAsync(string symbol = null, string stopOrderId = null, string orderLinkId = null);
+        Task<object> LinearConditionalQueryAsync(string symbol = null, string stopOrderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Get Stop Orders(real-time)
@@ -373,12 +374,12 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get linear stop orders(real-time)
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalQueryAsyncWithHttpInfo(string symbol = null, string stopOrderId = null, string orderLinkId = null);
+        Task<ApiResponse<object>> LinearConditionalQueryAsyncWithHttpInfo(string symbol = null, string stopOrderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Replace conditional order
@@ -386,7 +387,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -394,7 +395,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice"> (optional)</param>
         /// <param name="pRTriggerPrice"> (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearConditionalReplaceAsync(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null);
+        Task<object> LinearConditionalReplaceAsync(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null);
 
         /// <summary>
         /// Replace conditional order
@@ -402,7 +403,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -410,7 +411,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice"> (optional)</param>
         /// <param name="pRTriggerPrice"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalReplaceAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null);
+        Task<ApiResponse<object>> LinearConditionalReplaceAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null);
 
         #endregion Asynchronous Operations
     }
@@ -420,7 +421,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class LinearConditionalApi : ILinearConditionalApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LinearConditionalApi"/> class.
@@ -428,9 +429,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public LinearConditionalApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -439,18 +440,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LinearConditionalApi(BybitAPI.Client.Configuration configuration = null)
+        public LinearConditionalApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -476,16 +477,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -519,7 +520,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel Active Order This will cancel linear active order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -533,7 +534,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel Active Order This will cancel linear active order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -559,22 +560,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (stopOrderId != null)
+            if (stopOrderId is not null)
             {
                 localVarFormParams.Add("stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
@@ -602,10 +603,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalCancel", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -619,12 +620,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel Active Order This will cancel linear active order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearConditionalCancelAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null)
+        public async Task<object> LinearConditionalCancelAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null)
         {
             var localVarResponse = await LinearConditionalCancelAsyncWithHttpInfo(stopOrderId, orderLinkId, symbol);
             return localVarResponse.Data;
@@ -633,12 +634,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel Active Order This will cancel linear active order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalCancelAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null)
+        public async Task<ApiResponse<object>> LinearConditionalCancelAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null)
         {
             var localVarPath = "/private/linear/stop-order/cancel";
             var localVarPathParams = new Dictionary<string, string>();
@@ -659,22 +660,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (stopOrderId != null)
+            if (stopOrderId is not null)
             {
                 localVarFormParams.Add("stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
@@ -702,10 +703,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalCancel", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -719,7 +720,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel all stop orders.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         public object LinearConditionalCancelAll(string symbol)
@@ -731,13 +732,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel all stop orders.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> LinearConditionalCancelAllWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearConditionalApi->LinearConditionalCancelAll");
             }
@@ -761,12 +762,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
@@ -794,10 +795,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalCancelAll", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -811,10 +812,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel all stop orders.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearConditionalCancelAllAsync(string symbol)
+        public async Task<object> LinearConditionalCancelAllAsync(string symbol)
         {
             var localVarResponse = await LinearConditionalCancelAllAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -823,13 +824,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel all stop orders.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalCancelAllAsyncWithHttpInfo(string symbol)
+        public async Task<ApiResponse<object>> LinearConditionalCancelAllAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearConditionalApi->LinearConditionalCancelAll");
             }
@@ -853,12 +854,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
@@ -886,10 +887,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalCancelAll", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -903,7 +904,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get linear Stop Orders This will get linear active orders
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -921,7 +922,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get linear Stop Orders This will get linear active orders
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -952,42 +953,42 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (stopOrderId != null)
+            if (stopOrderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", stopOrderId)); // query parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", orderLinkId)); // query parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (order != null)
+            if (order is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order", order)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (stopOrderStatus != null)
+            if (stopOrderStatus is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_status", stopOrderStatus)); // query parameter
             }
@@ -1015,10 +1016,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalGetOrders", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1032,7 +1033,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get linear Stop Orders This will get linear active orders
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -1041,7 +1042,7 @@ namespace BybitAPI.Api
         /// <param name="limit"> (optional)</param>
         /// <param name="stopOrderStatus"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearConditionalGetOrdersAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null, string order = null, string page = null, string limit = null, string stopOrderStatus = null)
+        public async Task<object> LinearConditionalGetOrdersAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null, string order = null, string page = null, string limit = null, string stopOrderStatus = null)
         {
             var localVarResponse = await LinearConditionalGetOrdersAsyncWithHttpInfo(stopOrderId, orderLinkId, symbol, order, page, limit, stopOrderStatus);
             return localVarResponse.Data;
@@ -1050,7 +1051,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get linear Stop Orders This will get linear active orders
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -1059,7 +1060,7 @@ namespace BybitAPI.Api
         /// <param name="limit"> (optional)</param>
         /// <param name="stopOrderStatus"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalGetOrdersAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null, string order = null, string page = null, string limit = null, string stopOrderStatus = null)
+        public async Task<ApiResponse<object>> LinearConditionalGetOrdersAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null, string order = null, string page = null, string limit = null, string stopOrderStatus = null)
         {
             var localVarPath = "/private/linear/stop-order/list";
             var localVarPathParams = new Dictionary<string, string>();
@@ -1081,42 +1082,42 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (stopOrderId != null)
+            if (stopOrderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", stopOrderId)); // query parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", orderLinkId)); // query parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (order != null)
+            if (order is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order", order)); // query parameter
             }
 
-            if (page != null)
+            if (page is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (stopOrderStatus != null)
+            if (stopOrderStatus is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_status", stopOrderStatus)); // query parameter
             }
@@ -1144,10 +1145,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalGetOrders", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1161,7 +1162,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Create linear stop Order This will create linear stop order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -1188,7 +1189,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Create linear stop Order This will create linear stop order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -1227,87 +1228,87 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (side != null)
+            if (side is not null)
             {
                 localVarFormParams.Add("side", Configuration.ApiClient.ParameterToString(side)); // form parameter
             }
 
-            if (orderType != null)
+            if (orderType is not null)
             {
                 localVarFormParams.Add("order_type", Configuration.ApiClient.ParameterToString(orderType)); // form parameter
             }
 
-            if (qty != null)
+            if (qty is not null)
             {
                 localVarFormParams.Add("qty", Configuration.ApiClient.ParameterToString(qty)); // form parameter
             }
 
-            if (price != null)
+            if (price is not null)
             {
                 localVarFormParams.Add("price", Configuration.ApiClient.ParameterToString(price)); // form parameter
             }
 
-            if (basePrice != null)
+            if (basePrice is not null)
             {
                 localVarFormParams.Add("base_price", Configuration.ApiClient.ParameterToString(basePrice)); // form parameter
             }
 
-            if (stopPx != null)
+            if (stopPx is not null)
             {
                 localVarFormParams.Add("stop_px", Configuration.ApiClient.ParameterToString(stopPx)); // form parameter
             }
 
-            if (timeInForce != null)
+            if (timeInForce is not null)
             {
                 localVarFormParams.Add("time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
             }
 
-            if (triggerBy != null)
+            if (triggerBy is not null)
             {
                 localVarFormParams.Add("trigger_by", Configuration.ApiClient.ParameterToString(triggerBy)); // form parameter
             }
 
-            if (reduceOnly != null)
+            if (reduceOnly is not null)
             {
                 localVarFormParams.Add("reduce_only", Configuration.ApiClient.ParameterToString(reduceOnly)); // form parameter
             }
 
-            if (closeOnTrigger != null)
+            if (closeOnTrigger is not null)
             {
                 localVarFormParams.Add("close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
 
-            if (takeProfit != null)
+            if (takeProfit is not null)
             {
                 localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
             }
 
-            if (stopLoss != null)
+            if (stopLoss is not null)
             {
                 localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
             }
 
-            if (tpTriggerBy != null)
+            if (tpTriggerBy is not null)
             {
                 localVarFormParams.Add("tp_trigger_by", Configuration.ApiClient.ParameterToString(tpTriggerBy)); // form parameter
             }
 
-            if (slTriggerBy != null)
+            if (slTriggerBy is not null)
             {
                 localVarFormParams.Add("sl_trigger_by", Configuration.ApiClient.ParameterToString(slTriggerBy)); // form parameter
             }
@@ -1335,10 +1336,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalNew", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1352,7 +1353,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Create linear stop Order This will create linear stop order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -1370,7 +1371,7 @@ namespace BybitAPI.Api
         /// <param name="tpTriggerBy"> (optional)</param>
         /// <param name="slTriggerBy"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearConditionalNewAsync(string symbol = null, string side = null, string orderType = null, double? qty = null, double? price = null, double? basePrice = null, double? stopPx = null, string timeInForce = null, string triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null, double? takeProfit = null, double? stopLoss = null, string tpTriggerBy = null, string slTriggerBy = null)
+        public async Task<object> LinearConditionalNewAsync(string symbol = null, string side = null, string orderType = null, double? qty = null, double? price = null, double? basePrice = null, double? stopPx = null, string timeInForce = null, string triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null, double? takeProfit = null, double? stopLoss = null, string tpTriggerBy = null, string slTriggerBy = null)
         {
             var localVarResponse = await LinearConditionalNewAsyncWithHttpInfo(symbol, side, orderType, qty, price, basePrice, stopPx, timeInForce, triggerBy, reduceOnly, closeOnTrigger, orderLinkId, takeProfit, stopLoss, tpTriggerBy, slTriggerBy);
             return localVarResponse.Data;
@@ -1379,7 +1380,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Create linear stop Order This will create linear stop order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -1397,7 +1398,7 @@ namespace BybitAPI.Api
         /// <param name="tpTriggerBy"> (optional)</param>
         /// <param name="slTriggerBy"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalNewAsyncWithHttpInfo(string symbol = null, string side = null, string orderType = null, double? qty = null, double? price = null, double? basePrice = null, double? stopPx = null, string timeInForce = null, string triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null, double? takeProfit = null, double? stopLoss = null, string tpTriggerBy = null, string slTriggerBy = null)
+        public async Task<ApiResponse<object>> LinearConditionalNewAsyncWithHttpInfo(string symbol = null, string side = null, string orderType = null, double? qty = null, double? price = null, double? basePrice = null, double? stopPx = null, string timeInForce = null, string triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null, double? takeProfit = null, double? stopLoss = null, string tpTriggerBy = null, string slTriggerBy = null)
         {
             var localVarPath = "/private/linear/stop-order/create";
             var localVarPathParams = new Dictionary<string, string>();
@@ -1418,87 +1419,87 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (side != null)
+            if (side is not null)
             {
                 localVarFormParams.Add("side", Configuration.ApiClient.ParameterToString(side)); // form parameter
             }
 
-            if (orderType != null)
+            if (orderType is not null)
             {
                 localVarFormParams.Add("order_type", Configuration.ApiClient.ParameterToString(orderType)); // form parameter
             }
 
-            if (qty != null)
+            if (qty is not null)
             {
                 localVarFormParams.Add("qty", Configuration.ApiClient.ParameterToString(qty)); // form parameter
             }
 
-            if (price != null)
+            if (price is not null)
             {
                 localVarFormParams.Add("price", Configuration.ApiClient.ParameterToString(price)); // form parameter
             }
 
-            if (basePrice != null)
+            if (basePrice is not null)
             {
                 localVarFormParams.Add("base_price", Configuration.ApiClient.ParameterToString(basePrice)); // form parameter
             }
 
-            if (stopPx != null)
+            if (stopPx is not null)
             {
                 localVarFormParams.Add("stop_px", Configuration.ApiClient.ParameterToString(stopPx)); // form parameter
             }
 
-            if (timeInForce != null)
+            if (timeInForce is not null)
             {
                 localVarFormParams.Add("time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
             }
 
-            if (triggerBy != null)
+            if (triggerBy is not null)
             {
                 localVarFormParams.Add("trigger_by", Configuration.ApiClient.ParameterToString(triggerBy)); // form parameter
             }
 
-            if (reduceOnly != null)
+            if (reduceOnly is not null)
             {
                 localVarFormParams.Add("reduce_only", Configuration.ApiClient.ParameterToString(reduceOnly)); // form parameter
             }
 
-            if (closeOnTrigger != null)
+            if (closeOnTrigger is not null)
             {
                 localVarFormParams.Add("close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
 
-            if (takeProfit != null)
+            if (takeProfit is not null)
             {
                 localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
             }
 
-            if (stopLoss != null)
+            if (stopLoss is not null)
             {
                 localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
             }
 
-            if (tpTriggerBy != null)
+            if (tpTriggerBy is not null)
             {
                 localVarFormParams.Add("tp_trigger_by", Configuration.ApiClient.ParameterToString(tpTriggerBy)); // form parameter
             }
 
-            if (slTriggerBy != null)
+            if (slTriggerBy is not null)
             {
                 localVarFormParams.Add("sl_trigger_by", Configuration.ApiClient.ParameterToString(slTriggerBy)); // form parameter
             }
@@ -1526,10 +1527,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalNew", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1543,7 +1544,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1557,7 +1558,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1584,22 +1585,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (stopOrderId != null)
+            if (stopOrderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", stopOrderId)); // query parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", orderLinkId)); // query parameter
             }
@@ -1627,10 +1628,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalQuery", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1644,12 +1645,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearConditionalQueryAsync(string symbol = null, string stopOrderId = null, string orderLinkId = null)
+        public async Task<object> LinearConditionalQueryAsync(string symbol = null, string stopOrderId = null, string orderLinkId = null)
         {
             var localVarResponse = await LinearConditionalQueryAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId);
             return localVarResponse.Data;
@@ -1658,12 +1659,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalQueryAsyncWithHttpInfo(string symbol = null, string stopOrderId = null, string orderLinkId = null)
+        public async Task<ApiResponse<object>> LinearConditionalQueryAsyncWithHttpInfo(string symbol = null, string stopOrderId = null, string orderLinkId = null)
         {
             var localVarPath = "/private/linear/stop-order/search";
             var localVarPathParams = new Dictionary<string, string>();
@@ -1685,22 +1686,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (stopOrderId != null)
+            if (stopOrderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", stopOrderId)); // query parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", orderLinkId)); // query parameter
             }
@@ -1728,10 +1729,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalQuery", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1745,7 +1746,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace conditional order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1762,7 +1763,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace conditional order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1773,7 +1774,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> LinearConditionalReplaceWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearConditionalApi->LinearConditionalReplace");
             }
@@ -1797,37 +1798,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (stopOrderId != null)
+            if (stopOrderId is not null)
             {
                 localVarFormParams.Add("stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
 
-            if (pRQty != null)
+            if (pRQty is not null)
             {
                 localVarFormParams.Add("p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
             }
 
-            if (pRPrice != null)
+            if (pRPrice is not null)
             {
                 localVarFormParams.Add("p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
             }
 
-            if (pRTriggerPrice != null)
+            if (pRTriggerPrice is not null)
             {
                 localVarFormParams.Add("p_r_trigger_price", Configuration.ApiClient.ParameterToString(pRTriggerPrice)); // form parameter
             }
@@ -1855,10 +1856,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalReplace", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1872,7 +1873,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace conditional order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1880,7 +1881,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice"> (optional)</param>
         /// <param name="pRTriggerPrice"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearConditionalReplaceAsync(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
+        public async Task<object> LinearConditionalReplaceAsync(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
             var localVarResponse = await LinearConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
             return localVarResponse.Data;
@@ -1889,7 +1890,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace conditional order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1897,10 +1898,10 @@ namespace BybitAPI.Api
         /// <param name="pRPrice"> (optional)</param>
         /// <param name="pRTriggerPrice"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearConditionalReplaceAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
+        public async Task<ApiResponse<object>> LinearConditionalReplaceAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearConditionalApi->LinearConditionalReplace");
             }
@@ -1924,37 +1925,37 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (stopOrderId != null)
+            if (stopOrderId is not null)
             {
                 localVarFormParams.Add("stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
 
-            if (pRQty != null)
+            if (pRQty is not null)
             {
                 localVarFormParams.Add("p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
             }
 
-            if (pRPrice != null)
+            if (pRPrice is not null)
             {
                 localVarFormParams.Add("p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
             }
 
-            if (pRTriggerPrice != null)
+            if (pRTriggerPrice is not null)
             {
                 localVarFormParams.Add("p_r_trigger_price", Configuration.ApiClient.ParameterToString(pRTriggerPrice)); // form parameter
             }
@@ -1982,10 +1983,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearConditionalReplace", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

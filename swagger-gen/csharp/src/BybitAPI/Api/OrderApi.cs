@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
@@ -43,7 +44,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
@@ -56,7 +57,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         object OrderCancelAll(string symbol);
@@ -67,7 +68,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> OrderCancelAllWithHttpInfo(string symbol);
@@ -78,7 +79,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. Default BTCUSD</param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
@@ -93,7 +94,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. Default BTCUSD</param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
@@ -108,7 +109,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderType">Active order type</param>
@@ -129,7 +130,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderType">Active order type</param>
@@ -150,7 +151,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Object</returns>
@@ -162,7 +163,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>ApiResponse of Object</returns>
@@ -174,7 +175,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
@@ -189,7 +190,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
@@ -208,12 +209,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> OrderCancelAsync(string symbol, string orderId = null, string orderLinkId = null);
+        Task<object> OrderCancelAsync(string symbol, string orderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -221,12 +222,12 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> OrderCancelAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null);
+        Task<ApiResponse<object>> OrderCancelAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -234,10 +235,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> OrderCancelAllAsync(string symbol);
+        Task<object> OrderCancelAllAsync(string symbol);
 
         /// <summary>
         /// Get my active order list.
@@ -245,10 +246,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> OrderCancelAllAsyncWithHttpInfo(string symbol);
+        Task<ApiResponse<object>> OrderCancelAllAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my active order list.
@@ -256,14 +257,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. Default BTCUSD</param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> OrderGetOrdersAsync(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
+        Task<object> OrderGetOrdersAsync(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
 
         /// <summary>
         /// Get my active order list.
@@ -271,14 +272,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. Default BTCUSD</param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> OrderGetOrdersAsyncWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
+        Task<ApiResponse<object>> OrderGetOrdersAsyncWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
 
         /// <summary>
         /// Place active order
@@ -286,7 +287,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderType">Active order type</param>
@@ -299,7 +300,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> OrderNewAsync(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        Task<object> OrderNewAsync(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
 
         /// <summary>
         /// Place active order
@@ -307,7 +308,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderType">Active order type</param>
@@ -320,7 +321,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> OrderNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        Task<ApiResponse<object>> OrderNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -328,11 +329,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> OrderQueryAsync(string orderId = null, string symbol = null);
+        Task<object> OrderQueryAsync(string orderId = null, string symbol = null);
 
         /// <summary>
         /// Get my active order list.
@@ -340,11 +341,11 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> OrderQueryAsyncWithHttpInfo(string orderId = null, string symbol = null);
+        Task<ApiResponse<object>> OrderQueryAsyncWithHttpInfo(string orderId = null, string symbol = null);
 
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
@@ -352,14 +353,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> OrderReplaceAsync(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
+        Task<object> OrderReplaceAsync(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
 
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
@@ -367,14 +368,14 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> OrderReplaceAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
+        Task<ApiResponse<object>> OrderReplaceAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
 
         #endregion Asynchronous Operations
     }
@@ -384,7 +385,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class OrderApi : IOrderApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderApi"/> class.
@@ -392,9 +393,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public OrderApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -403,18 +404,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public OrderApi(BybitAPI.Client.Configuration configuration = null)
+        public OrderApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -440,16 +441,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -483,7 +484,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
@@ -497,7 +498,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
@@ -505,7 +506,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> OrderCancelWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderCancel");
             }
@@ -529,22 +530,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (orderId != null)
+            if (orderId is not null)
             {
                 localVarFormParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // form parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
@@ -572,10 +573,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderCancel", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -589,12 +590,12 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> OrderCancelAsync(string symbol, string orderId = null, string orderLinkId = null)
+        public async Task<object> OrderCancelAsync(string symbol, string orderId = null, string orderLinkId = null)
         {
             var localVarResponse = await OrderCancelAsyncWithHttpInfo(symbol, orderId, orderLinkId);
             return localVarResponse.Data;
@@ -603,15 +604,15 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderCancelAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null)
+        public async Task<ApiResponse<object>> OrderCancelAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderCancel");
             }
@@ -635,22 +636,22 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (orderId != null)
+            if (orderId is not null)
             {
                 localVarFormParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // form parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
@@ -678,10 +679,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderCancel", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -695,7 +696,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         public object OrderCancelAll(string symbol)
@@ -707,13 +708,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> OrderCancelAllWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderCancelAll");
             }
@@ -737,12 +738,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
@@ -770,10 +771,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderCancelAll", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -787,10 +788,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> OrderCancelAllAsync(string symbol)
+        public async Task<object> OrderCancelAllAsync(string symbol)
         {
             var localVarResponse = await OrderCancelAllAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -799,13 +800,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderCancelAllAsyncWithHttpInfo(string symbol)
+        public async Task<ApiResponse<object>> OrderCancelAllAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderCancelAll");
             }
@@ -829,12 +830,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
@@ -862,10 +863,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderCancelAll", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -879,7 +880,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. Default BTCUSD</param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
@@ -895,7 +896,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. Default BTCUSD</param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
@@ -905,7 +906,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> OrderGetOrdersWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderGetOrders");
             }
@@ -930,32 +931,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (orderStatus != null)
+            if (orderStatus is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", orderStatus)); // query parameter
             }
 
-            if (direction != null)
+            if (direction is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
             }
 
-            if (cursor != null)
+            if (cursor is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             }
@@ -983,10 +984,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderGetOrders", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1000,14 +1001,14 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. Default BTCUSD</param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> OrderGetOrdersAsync(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
+        public async Task<object> OrderGetOrdersAsync(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
         {
             var localVarResponse = await OrderGetOrdersAsyncWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
             return localVarResponse.Data;
@@ -1016,17 +1017,17 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. Default BTCUSD</param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderGetOrdersAsyncWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
+        public async Task<ApiResponse<object>> OrderGetOrdersAsyncWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderGetOrders");
             }
@@ -1051,32 +1052,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
 
-            if (orderStatus != null)
+            if (orderStatus is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", orderStatus)); // query parameter
             }
 
-            if (direction != null)
+            if (direction is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
             }
 
-            if (cursor != null)
+            if (cursor is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             }
@@ -1104,10 +1105,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderGetOrders", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1121,7 +1122,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Place active order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderType">Active order type</param>
@@ -1143,7 +1144,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Place active order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderType">Active order type</param>
@@ -1159,27 +1160,27 @@ namespace BybitAPI.Api
         public ApiResponse<object> OrderNewWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
         {
             // verify the required parameter 'side' is set
-            if (side == null)
+            if (side is null)
             {
                 throw new ApiException(400, "Missing required parameter 'side' when calling OrderApi->OrderNew");
             }
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderNew");
             }
             // verify the required parameter 'orderType' is set
-            if (orderType == null)
+            if (orderType is null)
             {
                 throw new ApiException(400, "Missing required parameter 'orderType' when calling OrderApi->OrderNew");
             }
             // verify the required parameter 'qty' is set
-            if (qty == null)
+            if (qty is null)
             {
                 throw new ApiException(400, "Missing required parameter 'qty' when calling OrderApi->OrderNew");
             }
             // verify the required parameter 'timeInForce' is set
-            if (timeInForce == null)
+            if (timeInForce is null)
             {
                 throw new ApiException(400, "Missing required parameter 'timeInForce' when calling OrderApi->OrderNew");
             }
@@ -1203,62 +1204,62 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (side != null)
+            if (side is not null)
             {
                 localVarFormParams.Add("side", Configuration.ApiClient.ParameterToString(side)); // form parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (orderType != null)
+            if (orderType is not null)
             {
                 localVarFormParams.Add("order_type", Configuration.ApiClient.ParameterToString(orderType)); // form parameter
             }
 
-            if (qty != null)
+            if (qty is not null)
             {
                 localVarFormParams.Add("qty", Configuration.ApiClient.ParameterToString(qty)); // form parameter
             }
 
-            if (price != null)
+            if (price is not null)
             {
                 localVarFormParams.Add("price", Configuration.ApiClient.ParameterToString(price)); // form parameter
             }
 
-            if (timeInForce != null)
+            if (timeInForce is not null)
             {
                 localVarFormParams.Add("time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
             }
 
-            if (takeProfit != null)
+            if (takeProfit is not null)
             {
                 localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
             }
 
-            if (stopLoss != null)
+            if (stopLoss is not null)
             {
                 localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
             }
 
-            if (reduceOnly != null)
+            if (reduceOnly is not null)
             {
                 localVarFormParams.Add("reduce_only", Configuration.ApiClient.ParameterToString(reduceOnly)); // form parameter
             }
 
-            if (closeOnTrigger != null)
+            if (closeOnTrigger is not null)
             {
                 localVarFormParams.Add("close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
@@ -1286,10 +1287,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderNew", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1303,7 +1304,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Place active order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderType">Active order type</param>
@@ -1316,7 +1317,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> OrderNewAsync(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
+        public async Task<object> OrderNewAsync(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
         {
             var localVarResponse = await OrderNewAsyncWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId);
             return localVarResponse.Data;
@@ -1325,7 +1326,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Place active order
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderType">Active order type</param>
@@ -1338,30 +1339,30 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
+        public async Task<ApiResponse<object>> OrderNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
         {
             // verify the required parameter 'side' is set
-            if (side == null)
+            if (side is null)
             {
                 throw new ApiException(400, "Missing required parameter 'side' when calling OrderApi->OrderNew");
             }
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderNew");
             }
             // verify the required parameter 'orderType' is set
-            if (orderType == null)
+            if (orderType is null)
             {
                 throw new ApiException(400, "Missing required parameter 'orderType' when calling OrderApi->OrderNew");
             }
             // verify the required parameter 'qty' is set
-            if (qty == null)
+            if (qty is null)
             {
                 throw new ApiException(400, "Missing required parameter 'qty' when calling OrderApi->OrderNew");
             }
             // verify the required parameter 'timeInForce' is set
-            if (timeInForce == null)
+            if (timeInForce is null)
             {
                 throw new ApiException(400, "Missing required parameter 'timeInForce' when calling OrderApi->OrderNew");
             }
@@ -1385,62 +1386,62 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (side != null)
+            if (side is not null)
             {
                 localVarFormParams.Add("side", Configuration.ApiClient.ParameterToString(side)); // form parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (orderType != null)
+            if (orderType is not null)
             {
                 localVarFormParams.Add("order_type", Configuration.ApiClient.ParameterToString(orderType)); // form parameter
             }
 
-            if (qty != null)
+            if (qty is not null)
             {
                 localVarFormParams.Add("qty", Configuration.ApiClient.ParameterToString(qty)); // form parameter
             }
 
-            if (price != null)
+            if (price is not null)
             {
                 localVarFormParams.Add("price", Configuration.ApiClient.ParameterToString(price)); // form parameter
             }
 
-            if (timeInForce != null)
+            if (timeInForce is not null)
             {
                 localVarFormParams.Add("time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
             }
 
-            if (takeProfit != null)
+            if (takeProfit is not null)
             {
                 localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
             }
 
-            if (stopLoss != null)
+            if (stopLoss is not null)
             {
                 localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
             }
 
-            if (reduceOnly != null)
+            if (reduceOnly is not null)
             {
                 localVarFormParams.Add("reduce_only", Configuration.ApiClient.ParameterToString(reduceOnly)); // form parameter
             }
 
-            if (closeOnTrigger != null)
+            if (closeOnTrigger is not null)
             {
                 localVarFormParams.Add("close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
@@ -1468,10 +1469,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderNew", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1485,7 +1486,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Object</returns>
@@ -1498,7 +1499,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>ApiResponse of Object</returns>
@@ -1524,17 +1525,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (orderId != null)
+            if (orderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_id", orderId)); // query parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -1562,10 +1563,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderQuery", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1579,11 +1580,11 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> OrderQueryAsync(string orderId = null, string symbol = null)
+        public async Task<object> OrderQueryAsync(string orderId = null, string symbol = null)
         {
             var localVarResponse = await OrderQueryAsyncWithHttpInfo(orderId, symbol);
             return localVarResponse.Data;
@@ -1592,11 +1593,11 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my active order list.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderQueryAsyncWithHttpInfo(string orderId = null, string symbol = null)
+        public async Task<ApiResponse<object>> OrderQueryAsyncWithHttpInfo(string orderId = null, string symbol = null)
         {
             var localVarPath = "/v2/private/order";
             var localVarPathParams = new Dictionary<string, string>();
@@ -1618,17 +1619,17 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (orderId != null)
+            if (orderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_id", orderId)); // query parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -1656,10 +1657,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderQuery", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1673,7 +1674,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
@@ -1689,7 +1690,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
@@ -1699,7 +1700,7 @@ namespace BybitAPI.Api
         public ApiResponse<object> OrderReplaceWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderReplace");
             }
@@ -1723,32 +1724,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (orderId != null)
+            if (orderId is not null)
             {
                 localVarFormParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (pRQty != null)
+            if (pRQty is not null)
             {
                 localVarFormParams.Add("p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
             }
 
-            if (pRPrice != null)
+            if (pRPrice is not null)
             {
                 localVarFormParams.Add("p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
             }
@@ -1776,10 +1777,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderReplace", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -1793,14 +1794,14 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> OrderReplaceAsync(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
+        public async Task<object> OrderReplaceAsync(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
         {
             var localVarResponse = await OrderReplaceAsyncWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
             return localVarResponse.Data;
@@ -1809,17 +1810,17 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderReplaceAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
+        public async Task<ApiResponse<object>> OrderReplaceAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderReplace");
             }
@@ -1843,32 +1844,32 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (orderId != null)
+            if (orderId is not null)
             {
                 localVarFormParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // form parameter
             }
 
-            if (orderLinkId != null)
+            if (orderLinkId is not null)
             {
                 localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
             }
 
-            if (pRQty != null)
+            if (pRQty is not null)
             {
                 localVarFormParams.Add("p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
             }
 
-            if (pRPrice != null)
+            if (pRPrice is not null)
             {
                 localVarFormParams.Add("p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
             }
@@ -1896,10 +1897,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("OrderReplace", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

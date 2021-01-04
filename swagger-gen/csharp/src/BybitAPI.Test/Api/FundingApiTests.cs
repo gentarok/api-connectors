@@ -48,44 +48,43 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' FundingApi
-            Assert.IsInstanceOf(typeof(FundingApi), instance, "instance is a FundingApi");
+            Assert.IsInstanceOf<FundingApi>(instance, "instance is a FundingApi");
         }
 
-        /// <summary>
-        /// Test FundingMyLastFee
-        /// </summary>
-        [Test]
-        public void FundingMyLastFeeTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.FundingMyLastFee(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test FundingMyLastFee
+        ///// </summary>
+        //[Test]
+        //public void FundingMyLastFeeTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.FundingMyLastFee(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test FundingPredicted
-        /// </summary>
-        [Test]
-        public void FundingPredictedTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.FundingPredicted(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test FundingPredicted
+        ///// </summary>
+        //[Test]
+        //public void FundingPredictedTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.FundingPredicted(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test FundingPrevRate
-        /// </summary>
-        [Test]
-        public void FundingPrevRateTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.FundingPrevRate(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test FundingPrevRate
+        ///// </summary>
+        //[Test]
+        //public void FundingPrevRateTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.FundingPrevRate(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

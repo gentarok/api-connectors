@@ -48,21 +48,20 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' LinearMarketApi
-            Assert.IsInstanceOf(typeof(LinearMarketApi), instance, "instance is a LinearMarketApi");
+            Assert.IsInstanceOf<LinearMarketApi>(instance, "instance is a LinearMarketApi");
         }
 
-        /// <summary>
-        /// Test LinearMarketTrading
-        /// </summary>
-        [Test]
-        public void LinearMarketTradingTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string limit = null;
-            //var response = instance.LinearMarketTrading(symbol, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearMarketTrading
+        ///// </summary>
+        //[Test]
+        //public void LinearMarketTradingTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string limit = null;
+        //    //var response = instance.LinearMarketTrading(symbol, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get prev funding
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Object</returns>
         object LinearFundingMyLastFee(string symbol = null);
@@ -41,7 +42,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get prev funding
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> LinearFundingMyLastFeeWithHttpInfo(string symbol = null);
@@ -52,7 +53,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         object LinearFundingPredicted(string symbol);
@@ -63,7 +64,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> LinearFundingPredictedWithHttpInfo(string symbol);
@@ -74,7 +75,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get prev funding rate
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Object</returns>
         object LinearFundingPrevRate(string symbol);
@@ -85,7 +86,7 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get prev funding rate
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<object> LinearFundingPrevRateWithHttpInfo(string symbol);
@@ -100,10 +101,10 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get prev funding
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearFundingMyLastFeeAsync(string symbol = null);
+        Task<object> LinearFundingMyLastFeeAsync(string symbol = null);
 
         /// <summary>
         /// Get prev funding
@@ -111,10 +112,10 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get prev funding
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingMyLastFeeAsyncWithHttpInfo(string symbol = null);
+        Task<ApiResponse<object>> LinearFundingMyLastFeeAsyncWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -122,10 +123,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearFundingPredictedAsync(string symbol);
+        Task<object> LinearFundingPredictedAsync(string symbol);
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -133,10 +134,10 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingPredictedAsyncWithHttpInfo(string symbol);
+        Task<ApiResponse<object>> LinearFundingPredictedAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get prev funding
@@ -144,10 +145,10 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get prev funding rate
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> LinearFundingPrevRateAsync(string symbol);
+        Task<object> LinearFundingPrevRateAsync(string symbol);
 
         /// <summary>
         /// Get prev funding
@@ -155,10 +156,10 @@ namespace BybitAPI.Api
         /// <remarks>
         /// This will get prev funding rate
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingPrevRateAsyncWithHttpInfo(string symbol);
+        Task<ApiResponse<object>> LinearFundingPrevRateAsyncWithHttpInfo(string symbol);
 
         #endregion Asynchronous Operations
     }
@@ -168,7 +169,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class LinearFundingApi : ILinearFundingApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LinearFundingApi"/> class.
@@ -176,9 +177,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public LinearFundingApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -187,18 +188,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LinearFundingApi(BybitAPI.Client.Configuration configuration = null)
+        public LinearFundingApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -224,16 +225,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -267,7 +268,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get prev funding This will get prev funding
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Object</returns>
         public object LinearFundingMyLastFee(string symbol = null)
@@ -279,7 +280,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get prev funding This will get prev funding
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> LinearFundingMyLastFeeWithHttpInfo(string symbol = null)
@@ -304,12 +305,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -337,10 +338,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearFundingMyLastFee", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -354,10 +355,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get prev funding This will get prev funding
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearFundingMyLastFeeAsync(string symbol = null)
+        public async Task<object> LinearFundingMyLastFeeAsync(string symbol = null)
         {
             var localVarResponse = await LinearFundingMyLastFeeAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -366,10 +367,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get prev funding This will get prev funding
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingMyLastFeeAsyncWithHttpInfo(string symbol = null)
+        public async Task<ApiResponse<object>> LinearFundingMyLastFeeAsyncWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/private/linear/funding/prev-funding";
             var localVarPathParams = new Dictionary<string, string>();
@@ -391,12 +392,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -424,10 +425,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearFundingMyLastFee", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -441,7 +442,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get predicted funding rate and funding fee.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         public object LinearFundingPredicted(string symbol)
@@ -453,13 +454,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get predicted funding rate and funding fee.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> LinearFundingPredictedWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearFundingApi->LinearFundingPredicted");
             }
@@ -484,12 +485,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -517,10 +518,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearFundingPredicted", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -534,10 +535,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get predicted funding rate and funding fee.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearFundingPredictedAsync(string symbol)
+        public async Task<object> LinearFundingPredictedAsync(string symbol)
         {
             var localVarResponse = await LinearFundingPredictedAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -546,13 +547,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get predicted funding rate and funding fee.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingPredictedAsyncWithHttpInfo(string symbol)
+        public async Task<ApiResponse<object>> LinearFundingPredictedAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearFundingApi->LinearFundingPredicted");
             }
@@ -577,12 +578,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -610,10 +611,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearFundingPredicted", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -627,7 +628,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get prev funding This will get prev funding rate
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Object</returns>
         public object LinearFundingPrevRate(string symbol)
@@ -639,13 +640,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get prev funding This will get prev funding rate
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<object> LinearFundingPrevRateWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearFundingApi->LinearFundingPrevRate");
             }
@@ -670,12 +671,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -703,10 +704,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearFundingPrevRate", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -720,10 +721,10 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get prev funding This will get prev funding rate
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> LinearFundingPrevRateAsync(string symbol)
+        public async Task<object> LinearFundingPrevRateAsync(string symbol)
         {
             var localVarResponse = await LinearFundingPrevRateAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -732,13 +733,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get prev funding This will get prev funding rate
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingPrevRateAsyncWithHttpInfo(string symbol)
+        public async Task<ApiResponse<object>> LinearFundingPrevRateAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearFundingApi->LinearFundingPrevRate");
             }
@@ -763,12 +764,12 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
@@ -796,10 +797,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("LinearFundingPrevRate", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

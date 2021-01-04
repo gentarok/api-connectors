@@ -48,38 +48,37 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' KlineApi
-            Assert.IsInstanceOf(typeof(KlineApi), instance, "instance is a KlineApi");
+            Assert.IsInstanceOf<KlineApi>(instance, "instance is a KlineApi");
         }
 
-        /// <summary>
-        /// Test KlineGet
-        /// </summary>
-        [Test]
-        public void KlineGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string interval = null;
-            //decimal? from = null;
-            //decimal? limit = null;
-            //var response = instance.KlineGet(symbol, interval, from, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test KlineGet
+        ///// </summary>
+        //[Test]
+        //public void KlineGetTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string interval = null;
+        //    //decimal? from = null;
+        //    //decimal? limit = null;
+        //    //var response = instance.KlineGet(symbol, interval, from, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test KlineMarkPrice
-        /// </summary>
-        [Test]
-        public void KlineMarkPriceTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //string interval = null;
-            //int? from = null;
-            //int? limit = null;
-            //var response = instance.KlineMarkPrice(symbol, interval, from, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test KlineMarkPrice
+        ///// </summary>
+        //[Test]
+        //public void KlineMarkPriceTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //string interval = null;
+        //    //int? from = null;
+        //    //int? limit = null;
+        //    //var response = instance.KlineMarkPrice(symbol, interval, from, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

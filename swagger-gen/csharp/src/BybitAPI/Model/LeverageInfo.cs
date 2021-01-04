@@ -77,7 +77,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LeverageInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
             return
                 (
                     Leverage == input.Leverage ||
-                    (Leverage != null &&
+                    (Leverage is not null &&
                     Leverage.Equals(input.Leverage))
                 );
         }
@@ -99,7 +99,7 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Leverage != null)
+                if (Leverage is not null)
                 {
                     hashCode = hashCode * 59 + Leverage.GetHashCode();
                 }
@@ -113,7 +113,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

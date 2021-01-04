@@ -140,7 +140,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(KlineRes input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -148,42 +148,42 @@ namespace BybitAPI.Model
             return
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     Interval == input.Interval ||
-                    (Interval != null &&
+                    (Interval is not null &&
                     Interval.Equals(input.Interval))
                 ) &&
                 (
                     OpenTime == input.OpenTime ||
-                    (OpenTime != null &&
+                    (OpenTime is not null &&
                     OpenTime.Equals(input.OpenTime))
                 ) &&
                 (
                     Open == input.Open ||
-                    (Open != null &&
+                    (Open is not null &&
                     Open.Equals(input.Open))
                 ) &&
                 (
                     High == input.High ||
-                    (High != null &&
+                    (High is not null &&
                     High.Equals(input.High))
                 ) &&
                 (
                     Low == input.Low ||
-                    (Low != null &&
+                    (Low is not null &&
                     Low.Equals(input.Low))
                 ) &&
                 (
                     Close == input.Close ||
-                    (Close != null &&
+                    (Close is not null &&
                     Close.Equals(input.Close))
                 ) &&
                 (
                     Volume == input.Volume ||
-                    (Volume != null &&
+                    (Volume is not null &&
                     Volume.Equals(input.Volume))
                 );
         }
@@ -197,42 +197,42 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (Interval != null)
+                if (Interval is not null)
                 {
                     hashCode = hashCode * 59 + Interval.GetHashCode();
                 }
 
-                if (OpenTime != null)
+                if (OpenTime is not null)
                 {
                     hashCode = hashCode * 59 + OpenTime.GetHashCode();
                 }
 
-                if (Open != null)
+                if (Open is not null)
                 {
                     hashCode = hashCode * 59 + Open.GetHashCode();
                 }
 
-                if (High != null)
+                if (High is not null)
                 {
                     hashCode = hashCode * 59 + High.GetHashCode();
                 }
 
-                if (Low != null)
+                if (Low is not null)
                 {
                     hashCode = hashCode * 59 + Low.GetHashCode();
                 }
 
-                if (Close != null)
+                if (Close is not null)
                 {
                     hashCode = hashCode * 59 + Close.GetHashCode();
                 }
 
-                if (Volume != null)
+                if (Volume is not null)
                 {
                     hashCode = hashCode * 59 + Volume.GetHashCode();
                 }
@@ -246,7 +246,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

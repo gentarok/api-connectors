@@ -95,7 +95,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(OpenInterestInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -103,17 +103,17 @@ namespace BybitAPI.Model
             return
                 (
                     OpenInterest == input.OpenInterest ||
-                    (OpenInterest != null &&
+                    (OpenInterest is not null &&
                     OpenInterest.Equals(input.OpenInterest))
                 ) &&
                 (
                     Timestamp == input.Timestamp ||
-                    (Timestamp != null &&
+                    (Timestamp is not null &&
                     Timestamp.Equals(input.Timestamp))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 );
         }
@@ -127,17 +127,17 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (OpenInterest != null)
+                if (OpenInterest is not null)
                 {
                     hashCode = hashCode * 59 + OpenInterest.GetHashCode();
                 }
 
-                if (Timestamp != null)
+                if (Timestamp is not null)
                 {
                     hashCode = hashCode * 59 + Timestamp.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
@@ -151,7 +151,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

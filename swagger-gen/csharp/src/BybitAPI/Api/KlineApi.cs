@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
@@ -30,7 +31,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -44,7 +45,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -58,7 +59,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -72,7 +73,7 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -90,13 +91,13 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> KlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null);
+        Task<object> KlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Query historical kline.
@@ -104,13 +105,13 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> KlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
+        Task<ApiResponse<object>> KlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Query mark price kline.
@@ -118,13 +119,13 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<object> KlineMarkPriceAsync(string symbol, string interval, int? from, int? limit = null);
+        Task<object> KlineMarkPriceAsync(string symbol, string interval, int? from, int? limit = null);
 
         /// <summary>
         /// Query mark price kline.
@@ -132,13 +133,13 @@ namespace BybitAPI.Api
         /// <remarks>
         ///
         /// </remarks>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<object>> KlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, int? from, int? limit = null);
+        Task<ApiResponse<object>> KlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, int? from, int? limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -148,7 +149,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class KlineApi : IKlineApi
     {
-        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="KlineApi"/> class.
@@ -156,9 +157,9 @@ namespace BybitAPI.Api
         /// <returns></returns>
         public KlineApi(string basePath)
         {
-            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -167,18 +168,18 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public KlineApi(BybitAPI.Client.Configuration configuration = null)
+        public KlineApi(Configuration configuration = null)
         {
-            if (configuration == null) // use the default one in Configuration
+            if (configuration is null) // use the default one in Configuration
             {
-                Configuration = BybitAPI.Client.Configuration.Default;
+                Configuration = Configuration.Default;
             }
             else
             {
                 Configuration = configuration;
             }
 
-            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -204,16 +205,16 @@ namespace BybitAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public BybitAPI.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public BybitAPI.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
                 {
                     throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
                 }
@@ -247,7 +248,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query historical kline.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -262,7 +263,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query historical kline.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -271,17 +272,17 @@ namespace BybitAPI.Api
         public ApiResponse<object> KlineGetWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling KlineApi->KlineGet");
             }
             // verify the required parameter 'interval' is set
-            if (interval == null)
+            if (interval is null)
             {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling KlineApi->KlineGet");
             }
             // verify the required parameter 'from' is set
-            if (from == null)
+            if (from is null)
             {
                 throw new ApiException(400, "Missing required parameter 'from' when calling KlineApi->KlineGet");
             }
@@ -306,27 +307,27 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (interval != null)
+            if (interval is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -338,10 +339,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("KlineGet", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -355,13 +356,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query historical kline.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> KlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null)
+        public async Task<object> KlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             var localVarResponse = await KlineGetAsyncWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
@@ -370,26 +371,26 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query historical kline.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> KlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
+        public async Task<ApiResponse<object>> KlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling KlineApi->KlineGet");
             }
             // verify the required parameter 'interval' is set
-            if (interval == null)
+            if (interval is null)
             {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling KlineApi->KlineGet");
             }
             // verify the required parameter 'from' is set
-            if (from == null)
+            if (from is null)
             {
                 throw new ApiException(400, "Missing required parameter 'from' when calling KlineApi->KlineGet");
             }
@@ -414,27 +415,27 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (interval != null)
+            if (interval is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -446,10 +447,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("KlineGet", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -463,7 +464,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query mark price kline.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -478,7 +479,7 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query mark price kline.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -487,17 +488,17 @@ namespace BybitAPI.Api
         public ApiResponse<object> KlineMarkPriceWithHttpInfo(string symbol, string interval, int? from, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling KlineApi->KlineMarkPrice");
             }
             // verify the required parameter 'interval' is set
-            if (interval == null)
+            if (interval is null)
             {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling KlineApi->KlineMarkPrice");
             }
             // verify the required parameter 'from' is set
-            if (from == null)
+            if (from is null)
             {
                 throw new ApiException(400, "Missing required parameter 'from' when calling KlineApi->KlineMarkPrice");
             }
@@ -522,27 +523,27 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (interval != null)
+            if (interval is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -554,10 +555,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("KlineMarkPrice", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }
@@ -571,13 +572,13 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query mark price kline.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<object> KlineMarkPriceAsync(string symbol, string interval, int? from, int? limit = null)
+        public async Task<object> KlineMarkPriceAsync(string symbol, string interval, int? from, int? limit = null)
         {
             var localVarResponse = await KlineMarkPriceAsyncWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
@@ -586,26 +587,26 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query mark price kline.
         /// </summary>
-        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<object>> KlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, int? from, int? limit = null)
+        public async Task<ApiResponse<object>> KlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, int? from, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
-            if (symbol == null)
+            if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling KlineApi->KlineMarkPrice");
             }
             // verify the required parameter 'interval' is set
-            if (interval == null)
+            if (interval is null)
             {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling KlineApi->KlineMarkPrice");
             }
             // verify the required parameter 'from' is set
-            if (from == null)
+            if (from is null)
             {
                 throw new ApiException(400, "Missing required parameter 'from' when calling KlineApi->KlineMarkPrice");
             }
@@ -630,27 +631,27 @@ namespace BybitAPI.Api
                 "application/json"
             };
             var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             }
 
-            if (symbol != null)
+            if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
-            if (interval != null)
+            if (interval is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
             }
 
-            if (from != null)
+            if (from is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
             }
 
-            if (limit != null)
+            if (limit is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             }
@@ -662,10 +663,10 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            if (ExceptionFactory != null)
+            if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory("KlineMarkPrice", localVarResponse);
-                if (exception != null)
+                if (exception is not null)
                 {
                     throw exception;
                 }

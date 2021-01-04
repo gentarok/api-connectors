@@ -48,42 +48,41 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' CommonApi
-            Assert.IsInstanceOf(typeof(CommonApi), instance, "instance is a CommonApi");
+            Assert.IsInstanceOf<CommonApi>(instance, "instance is a CommonApi");
         }
 
-        /// <summary>
-        /// Test CommonAnnouncements
-        /// </summary>
-        [Test]
-        public void CommonAnnouncementsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.CommonAnnouncements();
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test CommonAnnouncements
+        ///// </summary>
+        //[Test]
+        //public void CommonAnnouncementsTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //var response = instance.CommonAnnouncements();
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test CommonGetLcp
-        /// </summary>
-        [Test]
-        public void CommonGetLcpTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.CommonGetLcp(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test CommonGetLcp
+        ///// </summary>
+        //[Test]
+        //public void CommonGetLcpTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.CommonGetLcp(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test CommonGetTime
-        /// </summary>
-        [Test]
-        public void CommonGetTimeTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.CommonGetTime();
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test CommonGetTime
+        ///// </summary>
+        //[Test]
+        //public void CommonGetTimeTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //var response = instance.CommonGetTime();
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

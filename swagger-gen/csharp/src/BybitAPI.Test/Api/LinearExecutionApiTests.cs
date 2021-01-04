@@ -48,25 +48,24 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' LinearExecutionApi
-            Assert.IsInstanceOf(typeof(LinearExecutionApi), instance, "instance is a LinearExecutionApi");
+            Assert.IsInstanceOf<LinearExecutionApi>(instance, "instance is a LinearExecutionApi");
         }
 
-        /// <summary>
-        /// Test LinearExecutionGetTrades
-        /// </summary>
-        [Test]
-        public void LinearExecutionGetTradesTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //long? startTime = null;
-            //long? endTime = null;
-            //string execType = null;
-            //long? page = null;
-            //long? limit = null;
-            //var response = instance.LinearExecutionGetTrades(symbol, startTime, endTime, execType, page, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearExecutionGetTrades
+        ///// </summary>
+        //[Test]
+        //public void LinearExecutionGetTradesTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //long? startTime = null;
+        //    //long? endTime = null;
+        //    //string execType = null;
+        //    //long? page = null;
+        //    //long? limit = null;
+        //    //var response = instance.LinearExecutionGetTrades(symbol, startTime, endTime, execType, page, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

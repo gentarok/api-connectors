@@ -17,6 +17,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Client
 {
@@ -49,7 +50,7 @@ namespace BybitAPI.Client
         /// </summary>
         public ApiClient()
         {
-            Configuration = BybitAPI.Client.Configuration.Default;
+            Configuration = Client.Configuration.Default;
             RestClient = new RestClient("https://api.bybit.com");
         }
 
@@ -60,7 +61,7 @@ namespace BybitAPI.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
         {
-            Configuration = config ?? BybitAPI.Client.Configuration.Default;
+            Configuration = config ?? Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
         }
@@ -78,7 +79,7 @@ namespace BybitAPI.Client
             }
 
             RestClient = new RestClient(basePath);
-            Configuration = BybitAPI.Client.Configuration.Default;
+            Configuration = Client.Configuration.Default;
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace BybitAPI.Client
                 request.AddFile(param.Value.Name, bytes, param.Value.FileName, param.Value.ContentType);
             }
 
-            if (postBody != null) // http body (model or byte[]) parameter
+            if (postBody is not null) // http body (model or byte[]) parameter
             {
                 request.AddParameter(contentType, postBody, ParameterType.RequestBody);
             }
@@ -203,7 +204,7 @@ namespace BybitAPI.Client
         /// <param name="pathParams">Path parameters.</param>
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
-        public async System.Threading.Tasks.Task<object> CallApiAsync(
+        public async Task<object> CallApiAsync(
             string path, RestSharp.Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
             Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
             Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
@@ -303,7 +304,7 @@ namespace BybitAPI.Client
             // TODO: ? if (type.IsAssignableFrom(typeof(Stream)))
             if (type == typeof(Stream))
             {
-                if (headers != null)
+                if (headers is not null)
                 {
                     var filePath = string.IsNullOrEmpty(Configuration.TempFolderPath)
                         ? Path.GetTempPath()
@@ -354,7 +355,7 @@ namespace BybitAPI.Client
         {
             try
             {
-                return obj != null ? JsonConvert.SerializeObject(obj) : null;
+                return obj is not null ? JsonConvert.SerializeObject(obj) : null;
             }
             catch (Exception e)
             {
@@ -375,7 +376,7 @@ namespace BybitAPI.Client
         public bool IsJsonMime(string mime)
         {
             var jsonRegex = new Regex("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
-            return mime != null && (jsonRegex.IsMatch(mime) || mime.Equals("application/json-patch+json"));
+            return mime is not null && (jsonRegex.IsMatch(mime) || mime.Equals("application/json-patch+json"));
         }
 
         /// <summary>
@@ -473,7 +474,7 @@ namespace BybitAPI.Client
         {
             const int maxLength = 32766;
 
-            if (input == null)
+            if (input is null)
             {
                 throw new ArgumentNullException(nameof(input));
             }

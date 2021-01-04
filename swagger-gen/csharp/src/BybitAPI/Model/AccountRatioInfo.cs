@@ -104,7 +104,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(AccountRatioInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -112,22 +112,22 @@ namespace BybitAPI.Model
             return
                 (
                     BuyRatio == input.BuyRatio ||
-                    (BuyRatio != null &&
+                    (BuyRatio is not null &&
                     BuyRatio.Equals(input.BuyRatio))
                 ) &&
                 (
                     SellRatio == input.SellRatio ||
-                    (SellRatio != null &&
+                    (SellRatio is not null &&
                     SellRatio.Equals(input.SellRatio))
                 ) &&
                 (
                     Timestamp == input.Timestamp ||
-                    (Timestamp != null &&
+                    (Timestamp is not null &&
                     Timestamp.Equals(input.Timestamp))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 );
         }
@@ -141,22 +141,22 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (BuyRatio != null)
+                if (BuyRatio is not null)
                 {
                     hashCode = hashCode * 59 + BuyRatio.GetHashCode();
                 }
 
-                if (SellRatio != null)
+                if (SellRatio is not null)
                 {
                     hashCode = hashCode * 59 + SellRatio.GetHashCode();
                 }
 
-                if (Timestamp != null)
+                if (Timestamp is not null)
                 {
                     hashCode = hashCode * 59 + Timestamp.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
@@ -170,7 +170,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

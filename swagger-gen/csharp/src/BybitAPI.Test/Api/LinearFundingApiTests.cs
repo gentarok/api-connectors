@@ -48,44 +48,43 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' LinearFundingApi
-            Assert.IsInstanceOf(typeof(LinearFundingApi), instance, "instance is a LinearFundingApi");
+            Assert.IsInstanceOf<LinearFundingApi>(instance, "instance is a LinearFundingApi");
         }
 
-        /// <summary>
-        /// Test LinearFundingMyLastFee
-        /// </summary>
-        [Test]
-        public void LinearFundingMyLastFeeTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.LinearFundingMyLastFee(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearFundingMyLastFee
+        ///// </summary>
+        //[Test]
+        //public void LinearFundingMyLastFeeTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.LinearFundingMyLastFee(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test LinearFundingPredicted
-        /// </summary>
-        [Test]
-        public void LinearFundingPredictedTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.LinearFundingPredicted(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearFundingPredicted
+        ///// </summary>
+        //[Test]
+        //public void LinearFundingPredictedTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.LinearFundingPredicted(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test LinearFundingPrevRate
-        /// </summary>
-        [Test]
-        public void LinearFundingPrevRateTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.LinearFundingPrevRate(symbol);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test LinearFundingPrevRate
+        ///// </summary>
+        //[Test]
+        //public void LinearFundingPrevRateTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //var response = instance.LinearFundingPrevRate(symbol);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

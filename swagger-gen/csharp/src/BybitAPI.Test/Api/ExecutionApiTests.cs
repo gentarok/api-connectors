@@ -48,41 +48,40 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' ExecutionApi
-            Assert.IsInstanceOf(typeof(ExecutionApi), instance, "instance is a ExecutionApi");
+            Assert.IsInstanceOf<ExecutionApi>(instance, "instance is a ExecutionApi");
         }
 
-        /// <summary>
-        /// Test ExecutionGetTrades
-        /// </summary>
-        [Test]
-        public void ExecutionGetTradesTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string orderId = null;
-            //string symbol = null;
-            //string startTime = null;
-            //string page = null;
-            //string limit = null;
-            //var response = instance.ExecutionGetTrades(orderId, symbol, startTime, page, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test ExecutionGetTrades
+        ///// </summary>
+        //[Test]
+        //public void ExecutionGetTradesTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string orderId = null;
+        //    //string symbol = null;
+        //    //string startTime = null;
+        //    //string page = null;
+        //    //string limit = null;
+        //    //var response = instance.ExecutionGetTrades(orderId, symbol, startTime, page, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
 
-        /// <summary>
-        /// Test PositionsClosePnlRecords
-        /// </summary>
-        [Test]
-        public void PositionsClosePnlRecordsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //int? startTime = null;
-            //int? endTime = null;
-            //string execType = null;
-            //int? page = null;
-            //int? limit = null;
-            //var response = instance.PositionsClosePnlRecords(symbol, startTime, endTime, execType, page, limit);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test PositionsClosePnlRecords
+        ///// </summary>
+        //[Test]
+        //public void PositionsClosePnlRecordsTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //string symbol = null;
+        //    //int? startTime = null;
+        //    //int? endTime = null;
+        //    //string execType = null;
+        //    //int? page = null;
+        //    //int? limit = null;
+        //    //var response = instance.PositionsClosePnlRecords(symbol, startTime, endTime, execType, page, limit);
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

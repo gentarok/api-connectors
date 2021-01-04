@@ -48,19 +48,18 @@ namespace BybitAPI.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' SymbolApi
-            Assert.IsInstanceOf(typeof(SymbolApi), instance, "instance is a SymbolApi");
+            Assert.IsInstanceOf<SymbolApi>(instance, "instance is a SymbolApi");
         }
 
-        /// <summary>
-        /// Test SymbolGet
-        /// </summary>
-        [Test]
-        public void SymbolGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.SymbolGet();
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
-        }
+        ///// <summary>
+        ///// Test SymbolGet
+        ///// </summary>
+        //[Test]
+        //public void SymbolGetTest()
+        //{
+        //    // TODO uncomment below to test the method and replace null with proper value
+        //    //var response = instance.SymbolGet();
+        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //}
     }
 }

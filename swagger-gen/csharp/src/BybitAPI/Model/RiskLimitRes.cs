@@ -86,7 +86,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(RiskLimitRes input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -94,12 +94,12 @@ namespace BybitAPI.Model
             return
                 (
                     Position == input.Position ||
-                    (Position != null &&
+                    (Position is not null &&
                     Position.Equals(input.Position))
                 ) &&
                 (
                     Risk == input.Risk ||
-                    (Risk != null &&
+                    (Risk is not null &&
                     Risk.Equals(input.Risk))
                 );
         }
@@ -113,12 +113,12 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Position != null)
+                if (Position is not null)
                 {
                     hashCode = hashCode * 59 + Position.GetHashCode();
                 }
 
-                if (Risk != null)
+                if (Risk is not null)
                 {
                     hashCode = hashCode * 59 + Risk.GetHashCode();
                 }
@@ -132,7 +132,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

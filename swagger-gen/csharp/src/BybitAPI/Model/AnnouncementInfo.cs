@@ -113,7 +113,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(AnnouncementInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -121,27 +121,27 @@ namespace BybitAPI.Model
             return
                 (
                     Id == input.Id ||
-                    (Id != null &&
+                    (Id is not null &&
                     Id.Equals(input.Id))
                 ) &&
                 (
                     Title == input.Title ||
-                    (Title != null &&
+                    (Title is not null &&
                     Title.Equals(input.Title))
                 ) &&
                 (
                     Link == input.Link ||
-                    (Link != null &&
+                    (Link is not null &&
                     Link.Equals(input.Link))
                 ) &&
                 (
                     Summary == input.Summary ||
-                    (Summary != null &&
+                    (Summary is not null &&
                     Summary.Equals(input.Summary))
                 ) &&
                 (
                     CreatedAt == input.CreatedAt ||
-                    (CreatedAt != null &&
+                    (CreatedAt is not null &&
                     CreatedAt.Equals(input.CreatedAt))
                 );
         }
@@ -155,27 +155,27 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Id != null)
+                if (Id is not null)
                 {
                     hashCode = hashCode * 59 + Id.GetHashCode();
                 }
 
-                if (Title != null)
+                if (Title is not null)
                 {
                     hashCode = hashCode * 59 + Title.GetHashCode();
                 }
 
-                if (Link != null)
+                if (Link is not null)
                 {
                     hashCode = hashCode * 59 + Link.GetHashCode();
                 }
 
-                if (Summary != null)
+                if (Summary is not null)
                 {
                     hashCode = hashCode * 59 + Summary.GetHashCode();
                 }
 
-                if (CreatedAt != null)
+                if (CreatedAt is not null)
                 {
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
                 }
@@ -189,7 +189,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

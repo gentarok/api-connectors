@@ -113,7 +113,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearSetTradingStopResult input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -121,27 +121,27 @@ namespace BybitAPI.Model
             return
                 (
                     RetCode == input.RetCode ||
-                    (RetCode != null &&
+                    (RetCode is not null &&
                     RetCode.Equals(input.RetCode))
                 ) &&
                 (
                     RetMsg == input.RetMsg ||
-                    (RetMsg != null &&
+                    (RetMsg is not null &&
                     RetMsg.Equals(input.RetMsg))
                 ) &&
                 (
                     ExtCode == input.ExtCode ||
-                    (ExtCode != null &&
+                    (ExtCode is not null &&
                     ExtCode.Equals(input.ExtCode))
                 ) &&
                 (
                     ExtInfo == input.ExtInfo ||
-                    (ExtInfo != null &&
+                    (ExtInfo is not null &&
                     ExtInfo.Equals(input.ExtInfo))
                 ) &&
                 (
                     TimeNow == input.TimeNow ||
-                    (TimeNow != null &&
+                    (TimeNow is not null &&
                     TimeNow.Equals(input.TimeNow))
                 );
         }
@@ -155,27 +155,27 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (RetCode != null)
+                if (RetCode is not null)
                 {
                     hashCode = hashCode * 59 + RetCode.GetHashCode();
                 }
 
-                if (RetMsg != null)
+                if (RetMsg is not null)
                 {
                     hashCode = hashCode * 59 + RetMsg.GetHashCode();
                 }
 
-                if (ExtCode != null)
+                if (ExtCode is not null)
                 {
                     hashCode = hashCode * 59 + ExtCode.GetHashCode();
                 }
 
-                if (ExtInfo != null)
+                if (ExtInfo is not null)
                 {
                     hashCode = hashCode * 59 + ExtInfo.GetHashCode();
                 }
 
-                if (TimeNow != null)
+                if (TimeNow is not null)
                 {
                     hashCode = hashCode * 59 + TimeNow.GetHashCode();
                 }
@@ -189,7 +189,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

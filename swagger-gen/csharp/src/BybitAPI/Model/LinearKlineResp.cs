@@ -176,7 +176,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(LinearKlineResp input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -184,62 +184,62 @@ namespace BybitAPI.Model
             return
                 (
                     Close == input.Close ||
-                    (Close != null &&
+                    (Close is not null &&
                     Close.Equals(input.Close))
                 ) &&
                 (
                     High == input.High ||
-                    (High != null &&
+                    (High is not null &&
                     High.Equals(input.High))
                 ) &&
                 (
                     Id == input.Id ||
-                    (Id != null &&
+                    (Id is not null &&
                     Id.Equals(input.Id))
                 ) &&
                 (
                     Interval == input.Interval ||
-                    (Interval != null &&
+                    (Interval is not null &&
                     Interval.Equals(input.Interval))
                 ) &&
                 (
                     Low == input.Low ||
-                    (Low != null &&
+                    (Low is not null &&
                     Low.Equals(input.Low))
                 ) &&
                 (
                     Open == input.Open ||
-                    (Open != null &&
+                    (Open is not null &&
                     Open.Equals(input.Open))
                 ) &&
                 (
                     OpenTime == input.OpenTime ||
-                    (OpenTime != null &&
+                    (OpenTime is not null &&
                     OpenTime.Equals(input.OpenTime))
                 ) &&
                 (
                     Period == input.Period ||
-                    (Period != null &&
+                    (Period is not null &&
                     Period.Equals(input.Period))
                 ) &&
                 (
                     StartAt == input.StartAt ||
-                    (StartAt != null &&
+                    (StartAt is not null &&
                     StartAt.Equals(input.StartAt))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     Turnover == input.Turnover ||
-                    (Turnover != null &&
+                    (Turnover is not null &&
                     Turnover.Equals(input.Turnover))
                 ) &&
                 (
                     Volume == input.Volume ||
-                    (Volume != null &&
+                    (Volume is not null &&
                     Volume.Equals(input.Volume))
                 );
         }
@@ -253,62 +253,62 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Close != null)
+                if (Close is not null)
                 {
                     hashCode = hashCode * 59 + Close.GetHashCode();
                 }
 
-                if (High != null)
+                if (High is not null)
                 {
                     hashCode = hashCode * 59 + High.GetHashCode();
                 }
 
-                if (Id != null)
+                if (Id is not null)
                 {
                     hashCode = hashCode * 59 + Id.GetHashCode();
                 }
 
-                if (Interval != null)
+                if (Interval is not null)
                 {
                     hashCode = hashCode * 59 + Interval.GetHashCode();
                 }
 
-                if (Low != null)
+                if (Low is not null)
                 {
                     hashCode = hashCode * 59 + Low.GetHashCode();
                 }
 
-                if (Open != null)
+                if (Open is not null)
                 {
                     hashCode = hashCode * 59 + Open.GetHashCode();
                 }
 
-                if (OpenTime != null)
+                if (OpenTime is not null)
                 {
                     hashCode = hashCode * 59 + OpenTime.GetHashCode();
                 }
 
-                if (Period != null)
+                if (Period is not null)
                 {
                     hashCode = hashCode * 59 + Period.GetHashCode();
                 }
 
-                if (StartAt != null)
+                if (StartAt is not null)
                 {
                     hashCode = hashCode * 59 + StartAt.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (Turnover != null)
+                if (Turnover is not null)
                 {
                     hashCode = hashCode * 59 + Turnover.GetHashCode();
                 }
 
-                if (Volume != null)
+                if (Volume is not null)
                 {
                     hashCode = hashCode * 59 + Volume.GetHashCode();
                 }
@@ -322,7 +322,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

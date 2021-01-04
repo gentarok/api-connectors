@@ -140,7 +140,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public bool Equals(MarkPriceKlineInfo input)
         {
-            if (input == null)
+            if (input is null)
             {
                 return false;
             }
@@ -148,42 +148,42 @@ namespace BybitAPI.Model
             return
                 (
                     Id == input.Id ||
-                    (Id != null &&
+                    (Id is not null &&
                     Id.Equals(input.Id))
                 ) &&
                 (
                     Symbol == input.Symbol ||
-                    (Symbol != null &&
+                    (Symbol is not null &&
                     Symbol.Equals(input.Symbol))
                 ) &&
                 (
                     Period == input.Period ||
-                    (Period != null &&
+                    (Period is not null &&
                     Period.Equals(input.Period))
                 ) &&
                 (
                     StartAt == input.StartAt ||
-                    (StartAt != null &&
+                    (StartAt is not null &&
                     StartAt.Equals(input.StartAt))
                 ) &&
                 (
                     Open == input.Open ||
-                    (Open != null &&
+                    (Open is not null &&
                     Open.Equals(input.Open))
                 ) &&
                 (
                     High == input.High ||
-                    (High != null &&
+                    (High is not null &&
                     High.Equals(input.High))
                 ) &&
                 (
                     Low == input.Low ||
-                    (Low != null &&
+                    (Low is not null &&
                     Low.Equals(input.Low))
                 ) &&
                 (
                     Close == input.Close ||
-                    (Close != null &&
+                    (Close is not null &&
                     Close.Equals(input.Close))
                 );
         }
@@ -197,42 +197,42 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Id != null)
+                if (Id is not null)
                 {
                     hashCode = hashCode * 59 + Id.GetHashCode();
                 }
 
-                if (Symbol != null)
+                if (Symbol is not null)
                 {
                     hashCode = hashCode * 59 + Symbol.GetHashCode();
                 }
 
-                if (Period != null)
+                if (Period is not null)
                 {
                     hashCode = hashCode * 59 + Period.GetHashCode();
                 }
 
-                if (StartAt != null)
+                if (StartAt is not null)
                 {
                     hashCode = hashCode * 59 + StartAt.GetHashCode();
                 }
 
-                if (Open != null)
+                if (Open is not null)
                 {
                     hashCode = hashCode * 59 + Open.GetHashCode();
                 }
 
-                if (High != null)
+                if (High is not null)
                 {
                     hashCode = hashCode * 59 + High.GetHashCode();
                 }
 
-                if (Low != null)
+                if (Low is not null)
                 {
                     hashCode = hashCode * 59 + Low.GetHashCode();
                 }
 
-                if (Close != null)
+                if (Close is not null)
                 {
                     hashCode = hashCode * 59 + Close.GetHashCode();
                 }
@@ -246,7 +246,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
