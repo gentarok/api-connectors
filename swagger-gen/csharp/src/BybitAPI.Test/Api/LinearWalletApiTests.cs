@@ -11,7 +11,7 @@
 using BybitAPI.Api;
 using NUnit.Framework;
 
-namespace BybitAPI.Test
+namespace BybitAPI.Api.Test
 {
     /// <summary>
     ///  Class for testing LinearWalletApi

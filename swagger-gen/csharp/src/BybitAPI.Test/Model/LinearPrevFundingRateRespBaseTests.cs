@@ -11,7 +11,7 @@
 using BybitAPI.Model;
 using NUnit.Framework;
 
-namespace BybitAPI.Test
+namespace BybitAPI.Model.Test
 {
     /// <summary>
     ///  Class for testing LinearPrevFundingRateRespBase
