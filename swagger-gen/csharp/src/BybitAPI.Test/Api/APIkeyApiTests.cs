@@ -10,10 +10,8 @@
 
 using BybitAPI.Client;
 using BybitAPI.Model;
-using Moq;
+using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
-using RestSharp;
-using System;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -27,24 +25,6 @@ namespace BybitAPI.Api.Test
     {
         private APIkeyApi instance;
 
-        public static IRestClient MockRestClient(HttpStatusCode httpStatusCode, string json)
-        {
-            var response = new Mock<IRestResponse>();
-            response.Setup(_ => _.StatusCode).Returns(httpStatusCode);
-            response.Setup(_ => _.Headers).Returns(Array.Empty<Parameter>());
-            response.Setup(_ => _.Content).Returns(json);
-
-            var mockIRestClient = new Mock<IRestClient>();
-            mockIRestClient
-                .Setup(x => x.Execute(It.IsAny<IRestRequest>()))
-                .Returns(response.Object);
-            mockIRestClient
-                .Setup(x => x.ExecuteAsync(It.IsAny<IRestRequest>(), System.Threading.CancellationToken.None))
-                .ReturnsAsync(response.Object);
-
-            return mockIRestClient.Object;
-        }
-
         /// <summary>
         /// Setup before each unit test
         /// </summary>
@@ -52,7 +32,7 @@ namespace BybitAPI.Api.Test
         public void Init()
         {
             instance = new APIkeyApi();
-            var client = MockRestClient(HttpStatusCode.OK, json);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, json);
             instance.Configuration.ApiClient.RestClient = client;
         }
 
@@ -109,36 +89,56 @@ namespace BybitAPI.Api.Test
         [Test]
         public void APIkeyInfoTest()
         {
+            // Arrange
+
+            // Act
             var response = instance.APIkeyInfo();
+
+            // Assert
             Assert.IsInstanceOf<APIKeyBase>(response, "response is APIKeyBase");
-            Assert.AreEqual(0, response.RetCode);
-            Assert.AreEqual("ok", response.RetMsg);
-            Assert.AreEqual("", response.ExtCode);
-            Assert.IsNull(response.ExtInfo);
-            Assert.AreEqual("1577445138.790150", response.TimeNow);
-            Assert.AreEqual(1, response.Result.Count);
-            Assert.AreEqual("7GkMBBLTbGRfa0Nuh1", response.Result[0].ApiKey);
+            Assert.That(response.RetCode, Is.EqualTo(0));
+            Assert.That(response.RetMsg, Is.EqualTo("ok"));
+            Assert.That(response.ExtCode, Is.EqualTo(""));
+            Assert.That(response.ExtInfo, Is.Null);
+            Assert.That(response.TimeNow, Is.EqualTo("1577445138.790150"));
+            Assert.That(response.Result.Count, Is.EqualTo(1));
+            Assert.That(response.Result[0].ApiKey, Is.EqualTo("7GkMBBLTbGRfa0Nuh1"));
             // TODO: and more...
         }
 
         [Test]
         public void APIkeyInfoWithHttpInfoTest()
         {
+            // Arrange
+
+            // Act
             var response = instance.APIkeyInfoWithHttpInfo();
+
+            // Assert
             Assert.IsInstanceOf<ApiResponse<APIKeyBase>>(response, "response is ApiResponse<APIKeyBase>");
         }
 
         [Test()]
         public async Task APIkeyInfoAsyncTest()
         {
+            // Arrange
+
+            // Act
             var response = await instance.APIkeyInfoAsync();
+
+            // Assert
             Assert.IsInstanceOf<APIKeyBase>(response, "response is APIKeyBase");
         }
 
         [Test()]
         public async Task APIkeyInfoAsyncWithHttpInfoTest()
         {
+            // Arrange
+
+            // Act
             var response = await instance.APIkeyInfoAsyncWithHttpInfo();
+
+            // Assert
             Assert.IsInstanceOf<ApiResponse<APIKeyBase>>(response, "response is ApiResponse<APIKeyBase>");
         }
     }

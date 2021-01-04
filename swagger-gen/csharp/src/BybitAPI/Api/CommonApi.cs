@@ -9,6 +9,7 @@
  */
 
 using BybitAPI.Client;
+using BybitAPI.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -32,8 +33,8 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        object CommonAnnouncements();
+        /// <returns><see cref="Announcement"/></returns>
+        Announcement CommonAnnouncements();
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
@@ -42,8 +43,8 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> CommonAnnouncementsWithHttpInfo();
+        /// <returns>ApiResponse of Announcement</returns>
+        ApiResponse<Announcement> CommonAnnouncementsWithHttpInfo();
 
         /// <summary>
         /// Query LCP info.
@@ -53,8 +54,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Object</returns>
-        object CommonGetLcp(string symbol);
+        /// <returns><see cref="LCPInfo"/></returns>
+        LCPInfo CommonGetLcp(string symbol);
 
         /// <summary>
         /// Query LCP info.
@@ -64,8 +65,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> CommonGetLcpWithHttpInfo(string symbol);
+        /// <returns>ApiResponse of LCPInfo</returns>
+        ApiResponse<LCPInfo> CommonGetLcpWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get bybit server time.
@@ -74,8 +75,8 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        object CommonGetTime();
+        /// <returns><see cref="ServerTime"/></returns>
+        ServerTime CommonGetTime();
 
         /// <summary>
         /// Get bybit server time.
@@ -84,8 +85,8 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> CommonGetTimeWithHttpInfo();
+        /// <returns>ApiResponse of ServerTime</returns>
+        ApiResponse<ServerTime> CommonGetTimeWithHttpInfo();
 
         #endregion Synchronous Operations
 
@@ -98,8 +99,8 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
-        Task<object> CommonAnnouncementsAsync();
+        /// <returns>Task of Announcement</returns>
+        Task<Announcement> CommonAnnouncementsAsync();
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
@@ -108,8 +109,8 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> CommonAnnouncementsAsyncWithHttpInfo();
+        /// <returns>Task of ApiResponse (Announcement)</returns>
+        Task<ApiResponse<Announcement>> CommonAnnouncementsAsyncWithHttpInfo();
 
         /// <summary>
         /// Query LCP info.
@@ -119,8 +120,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of Object</returns>
-        Task<object> CommonGetLcpAsync(string symbol);
+        /// <returns>Task of LCPInfo</returns>
+        Task<LCPInfo> CommonGetLcpAsync(string symbol);
 
         /// <summary>
         /// Query LCP info.
@@ -130,8 +131,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> CommonGetLcpAsyncWithHttpInfo(string symbol);
+        /// <returns>Task of ApiResponse (LCPInfo)</returns>
+        Task<ApiResponse<LCPInfo>> CommonGetLcpAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get bybit server time.
@@ -140,8 +141,8 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
-        Task<object> CommonGetTimeAsync();
+        /// <returns>Task of ServerTime</returns>
+        Task<ServerTime> CommonGetTimeAsync();
 
         /// <summary>
         /// Get bybit server time.
@@ -150,8 +151,8 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> CommonGetTimeAsyncWithHttpInfo();
+        /// <returns>Task of ApiResponse (ServerTime)</returns>
+        Task<ApiResponse<ServerTime>> CommonGetTimeAsyncWithHttpInfo();
 
         #endregion Asynchronous Operations
     }
@@ -261,8 +262,8 @@ namespace BybitAPI.Api
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        public object CommonAnnouncements()
+        /// <returns><see cref="Announcement"/></returns>
+        public Announcement CommonAnnouncements()
         {
             var localVarResponse = CommonAnnouncementsWithHttpInfo();
             return localVarResponse.Data;
@@ -272,8 +273,8 @@ namespace BybitAPI.Api
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> CommonAnnouncementsWithHttpInfo()
+        /// <returns>ApiResponse of Announcement</returns>
+        public ApiResponse<Announcement> CommonAnnouncementsWithHttpInfo()
         {
             var localVarPath = "/v2/public/announcement";
             var localVarPathParams = new Dictionary<string, string>();
@@ -316,17 +317,17 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<Announcement>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (Announcement)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Announcement)));
         }
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
-        public async Task<object> CommonAnnouncementsAsync()
+        /// <returns>Task of Announcement</returns>
+        public async Task<Announcement> CommonAnnouncementsAsync()
         {
             var localVarResponse = await CommonAnnouncementsAsyncWithHttpInfo();
             return localVarResponse.Data;
@@ -336,8 +337,8 @@ namespace BybitAPI.Api
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<object>> CommonAnnouncementsAsyncWithHttpInfo()
+        /// <returns>Task of ApiResponse (Announcement)</returns>
+        public async Task<ApiResponse<Announcement>> CommonAnnouncementsAsyncWithHttpInfo()
         {
             var localVarPath = "/v2/public/announcement";
             var localVarPathParams = new Dictionary<string, string>();
@@ -380,9 +381,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<Announcement>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (Announcement)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Announcement)));
         }
 
         /// <summary>
@@ -390,8 +391,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Object</returns>
-        public object CommonGetLcp(string symbol)
+        /// <returns><see cref="LCPInfo"/></returns>
+        public LCPInfo CommonGetLcp(string symbol)
         {
             var localVarResponse = CommonGetLcpWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -402,8 +403,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> CommonGetLcpWithHttpInfo(string symbol)
+        /// <returns>ApiResponse of LCPInfo</returns>
+        public ApiResponse<LCPInfo> CommonGetLcpWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -457,9 +458,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<LCPInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (LCPInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LCPInfo)));
         }
 
         /// <summary>
@@ -467,8 +468,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of Object</returns>
-        public async Task<object> CommonGetLcpAsync(string symbol)
+        /// <returns>Task of LCPInfo</returns>
+        public async Task<LCPInfo> CommonGetLcpAsync(string symbol)
         {
             var localVarResponse = await CommonGetLcpAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -479,8 +480,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<object>> CommonGetLcpAsyncWithHttpInfo(string symbol)
+        /// <returns>Task of ApiResponse (LCPInfo)</returns>
+        public async Task<ApiResponse<LCPInfo>> CommonGetLcpAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -534,17 +535,17 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<LCPInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (LCPInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LCPInfo)));
         }
 
         /// <summary>
         /// Get bybit server time.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        public object CommonGetTime()
+        /// <returns><see cref="ServerTime"/></returns>
+        public ServerTime CommonGetTime()
         {
             var localVarResponse = CommonGetTimeWithHttpInfo();
             return localVarResponse.Data;
@@ -554,8 +555,8 @@ namespace BybitAPI.Api
         /// Get bybit server time.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> CommonGetTimeWithHttpInfo()
+        /// <returns>ApiResponse of ServerTime</returns>
+        public ApiResponse<ServerTime> CommonGetTimeWithHttpInfo()
         {
             var localVarPath = "/v2/public/time";
             var localVarPathParams = new Dictionary<string, string>();
@@ -598,17 +599,17 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<ServerTime>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (ServerTime)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServerTime)));
         }
 
         /// <summary>
         /// Get bybit server time.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
-        public async Task<object> CommonGetTimeAsync()
+        /// <returns>Task of ServerTime</returns>
+        public async Task<ServerTime> CommonGetTimeAsync()
         {
             var localVarResponse = await CommonGetTimeAsyncWithHttpInfo();
             return localVarResponse.Data;
@@ -618,8 +619,8 @@ namespace BybitAPI.Api
         /// Get bybit server time.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<object>> CommonGetTimeAsyncWithHttpInfo()
+        /// <returns>Task of ApiResponse (ServerTime)</returns>
+        public async Task<ApiResponse<ServerTime>> CommonGetTimeAsyncWithHttpInfo()
         {
             var localVarPath = "/v2/public/time";
             var localVarPathParams = new Dictionary<string, string>();
@@ -662,9 +663,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<ServerTime>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (ServerTime)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServerTime)));
         }
     }
 }
