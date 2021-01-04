@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Swagger Library")]
-[assembly: AssemblyDescription("A library generated from a Swagger doc")]
+[assembly: AssemblyTitle("bybit api library")]
+[assembly: AssemblyDescription("bybit api library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Swagger")]
-[assembly: AssemblyProduct("SwaggerLibrary")]
-[assembly: AssemblyCopyright("No Copyright")]
+[assembly: AssemblyCompany("Gentaro")]
+[assembly: AssemblyProduct("bybit api library")]
+[assembly: AssemblyCopyright("MIT")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
