@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com

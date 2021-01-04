@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com
@@ -32,7 +32,7 @@ namespace BybitAPI.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiException"/> class.
         /// </summary>
-        public ApiException() {}
+        public ApiException() { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiException"/> class.
@@ -56,5 +56,4 @@ namespace BybitAPI.Client
             this.ErrorContent = errorContent;
         }
     }
-
 }
