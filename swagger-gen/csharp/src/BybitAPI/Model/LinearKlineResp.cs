@@ -38,20 +38,20 @@ namespace BybitAPI.Model
         /// <param name="symbol">symbol.</param>
         /// <param name="turnover">turnover.</param>
         /// <param name="volume">volume.</param>
-        public LinearKlineResp(double? close = default(double?), double? high = default(double?), int? id = default(int?), string interval = default(string), double? low = default(double?), double? open = default(double?), long? openTime = default(long?), string period = default(string), long? startAt = default(long?), string symbol = default(string), double? turnover = default(double?), double? volume = default(double?))
+        public LinearKlineResp(double? close = default, double? high = default, int? id = default, string interval = default, double? low = default, double? open = default, long? openTime = default, string period = default, long? startAt = default, string symbol = default, double? turnover = default, double? volume = default)
         {
-            this.Close = close;
-            this.High = high;
-            this.Id = id;
-            this.Interval = interval;
-            this.Low = low;
-            this.Open = open;
-            this.OpenTime = openTime;
-            this.Period = period;
-            this.StartAt = startAt;
-            this.Symbol = symbol;
-            this.Turnover = turnover;
-            this.Volume = volume;
+            Close = close;
+            High = high;
+            Id = id;
+            Interval = interval;
+            Low = low;
+            Open = open;
+            OpenTime = openTime;
+            Period = period;
+            StartAt = startAt;
+            Symbol = symbol;
+            Turnover = turnover;
+            Volume = volume;
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearKlineResp);
+            return Equals(input as LinearKlineResp);
         }
 
         /// <summary>
@@ -177,68 +177,70 @@ namespace BybitAPI.Model
         public bool Equals(LinearKlineResp input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Close == input.Close ||
-                    (this.Close != null &&
-                    this.Close.Equals(input.Close))
+                    Close == input.Close ||
+                    (Close != null &&
+                    Close.Equals(input.Close))
                 ) &&
                 (
-                    this.High == input.High ||
-                    (this.High != null &&
-                    this.High.Equals(input.High))
+                    High == input.High ||
+                    (High != null &&
+                    High.Equals(input.High))
                 ) &&
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) &&
                 (
-                    this.Interval == input.Interval ||
-                    (this.Interval != null &&
-                    this.Interval.Equals(input.Interval))
+                    Interval == input.Interval ||
+                    (Interval != null &&
+                    Interval.Equals(input.Interval))
                 ) &&
                 (
-                    this.Low == input.Low ||
-                    (this.Low != null &&
-                    this.Low.Equals(input.Low))
+                    Low == input.Low ||
+                    (Low != null &&
+                    Low.Equals(input.Low))
                 ) &&
                 (
-                    this.Open == input.Open ||
-                    (this.Open != null &&
-                    this.Open.Equals(input.Open))
+                    Open == input.Open ||
+                    (Open != null &&
+                    Open.Equals(input.Open))
                 ) &&
                 (
-                    this.OpenTime == input.OpenTime ||
-                    (this.OpenTime != null &&
-                    this.OpenTime.Equals(input.OpenTime))
+                    OpenTime == input.OpenTime ||
+                    (OpenTime != null &&
+                    OpenTime.Equals(input.OpenTime))
                 ) &&
                 (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
+                    Period == input.Period ||
+                    (Period != null &&
+                    Period.Equals(input.Period))
                 ) &&
                 (
-                    this.StartAt == input.StartAt ||
-                    (this.StartAt != null &&
-                    this.StartAt.Equals(input.StartAt))
+                    StartAt == input.StartAt ||
+                    (StartAt != null &&
+                    StartAt.Equals(input.StartAt))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.Turnover == input.Turnover ||
-                    (this.Turnover != null &&
-                    this.Turnover.Equals(input.Turnover))
+                    Turnover == input.Turnover ||
+                    (Turnover != null &&
+                    Turnover.Equals(input.Turnover))
                 ) &&
                 (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
+                    Volume == input.Volume ||
+                    (Volume != null &&
+                    Volume.Equals(input.Volume))
                 );
         }
 
@@ -250,31 +252,67 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Close != null)
-                    hashCode = hashCode * 59 + this.Close.GetHashCode();
-                if (this.High != null)
-                    hashCode = hashCode * 59 + this.High.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Interval != null)
-                    hashCode = hashCode * 59 + this.Interval.GetHashCode();
-                if (this.Low != null)
-                    hashCode = hashCode * 59 + this.Low.GetHashCode();
-                if (this.Open != null)
-                    hashCode = hashCode * 59 + this.Open.GetHashCode();
-                if (this.OpenTime != null)
-                    hashCode = hashCode * 59 + this.OpenTime.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.StartAt != null)
-                    hashCode = hashCode * 59 + this.StartAt.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Turnover != null)
-                    hashCode = hashCode * 59 + this.Turnover.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                var hashCode = 41;
+                if (Close != null)
+                {
+                    hashCode = hashCode * 59 + Close.GetHashCode();
+                }
+
+                if (High != null)
+                {
+                    hashCode = hashCode * 59 + High.GetHashCode();
+                }
+
+                if (Id != null)
+                {
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                }
+
+                if (Interval != null)
+                {
+                    hashCode = hashCode * 59 + Interval.GetHashCode();
+                }
+
+                if (Low != null)
+                {
+                    hashCode = hashCode * 59 + Low.GetHashCode();
+                }
+
+                if (Open != null)
+                {
+                    hashCode = hashCode * 59 + Open.GetHashCode();
+                }
+
+                if (OpenTime != null)
+                {
+                    hashCode = hashCode * 59 + OpenTime.GetHashCode();
+                }
+
+                if (Period != null)
+                {
+                    hashCode = hashCode * 59 + Period.GetHashCode();
+                }
+
+                if (StartAt != null)
+                {
+                    hashCode = hashCode * 59 + StartAt.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (Turnover != null)
+                {
+                    hashCode = hashCode * 59 + Turnover.GetHashCode();
+                }
+
+                if (Volume != null)
+                {
+                    hashCode = hashCode * 59 + Volume.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

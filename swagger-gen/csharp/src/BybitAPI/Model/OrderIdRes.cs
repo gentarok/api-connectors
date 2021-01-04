@@ -27,9 +27,9 @@ namespace BybitAPI.Model
         /// Initializes a new instance of the <see cref="OrderIdRes" /> class.
         /// </summary>
         /// <param name="orderId">orderId.</param>
-        public OrderIdRes(string orderId = default(string))
+        public OrderIdRes(string orderId = default)
         {
-            this.OrderId = orderId;
+            OrderId = orderId;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderIdRes);
+            return Equals(input as OrderIdRes);
         }
 
         /// <summary>
@@ -78,13 +78,15 @@ namespace BybitAPI.Model
         public bool Equals(OrderIdRes input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    OrderId == input.OrderId ||
+                    (OrderId != null &&
+                    OrderId.Equals(input.OrderId))
                 );
         }
 
@@ -96,9 +98,12 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                var hashCode = 41;
+                if (OrderId != null)
+                {
+                    hashCode = hashCode * 59 + OrderId.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

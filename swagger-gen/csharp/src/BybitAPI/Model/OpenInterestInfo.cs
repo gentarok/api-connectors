@@ -29,11 +29,11 @@ namespace BybitAPI.Model
         /// <param name="openInterest">openInterest.</param>
         /// <param name="timestamp">timestamp.</param>
         /// <param name="symbol">symbol.</param>
-        public OpenInterestInfo(int? openInterest = default(int?), int? timestamp = default(int?), string symbol = default(string))
+        public OpenInterestInfo(int? openInterest = default, int? timestamp = default, string symbol = default)
         {
-            this.OpenInterest = openInterest;
-            this.Timestamp = timestamp;
-            this.Symbol = symbol;
+            OpenInterest = openInterest;
+            Timestamp = timestamp;
+            Symbol = symbol;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OpenInterestInfo);
+            return Equals(input as OpenInterestInfo);
         }
 
         /// <summary>
@@ -96,23 +96,25 @@ namespace BybitAPI.Model
         public bool Equals(OpenInterestInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.OpenInterest == input.OpenInterest ||
-                    (this.OpenInterest != null &&
-                    this.OpenInterest.Equals(input.OpenInterest))
+                    OpenInterest == input.OpenInterest ||
+                    (OpenInterest != null &&
+                    OpenInterest.Equals(input.OpenInterest))
                 ) &&
                 (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
+                    Timestamp == input.Timestamp ||
+                    (Timestamp != null &&
+                    Timestamp.Equals(input.Timestamp))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 );
         }
 
@@ -124,13 +126,22 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OpenInterest != null)
-                    hashCode = hashCode * 59 + this.OpenInterest.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                var hashCode = 41;
+                if (OpenInterest != null)
+                {
+                    hashCode = hashCode * 59 + OpenInterest.GetHashCode();
+                }
+
+                if (Timestamp != null)
+                {
+                    hashCode = hashCode * 59 + Timestamp.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

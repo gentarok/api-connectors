@@ -30,12 +30,12 @@ namespace BybitAPI.Model
         /// <param name="timestamp">timestamp.</param>
         /// <param name="symbol">symbol.</param>
         /// <param name="value">value.</param>
-        public BigDealInfo(string side = default(string), int? timestamp = default(int?), string symbol = default(string), int? value = default(int?))
+        public BigDealInfo(string side = default, int? timestamp = default, string symbol = default, int? value = default)
         {
-            this.Side = side;
-            this.Timestamp = timestamp;
-            this.Symbol = symbol;
-            this.Value = value;
+            Side = side;
+            Timestamp = timestamp;
+            Symbol = symbol;
+            Value = value;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BigDealInfo);
+            return Equals(input as BigDealInfo);
         }
 
         /// <summary>
@@ -105,28 +105,30 @@ namespace BybitAPI.Model
         public bool Equals(BigDealInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
+                    Timestamp == input.Timestamp ||
+                    (Timestamp != null &&
+                    Timestamp.Equals(input.Timestamp))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    Value == input.Value ||
+                    (Value != null &&
+                    Value.Equals(input.Value))
                 );
         }
 
@@ -138,15 +140,27 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (Timestamp != null)
+                {
+                    hashCode = hashCode * 59 + Timestamp.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (Value != null)
+                {
+                    hashCode = hashCode * 59 + Value.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

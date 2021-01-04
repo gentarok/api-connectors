@@ -49,7 +49,7 @@ namespace BybitAPI.Test
         public void InstanceTest()
         {
             // TODO uncomment below to test 'IsInstanceOfType' CommonApi
-            //Assert.IsInstanceOfType(typeof(CommonApi), instance, "instance is a CommonApi");
+            Assert.IsInstanceOf(typeof(CommonApi), instance, "instance is a CommonApi");
         }
 
         /// <summary>

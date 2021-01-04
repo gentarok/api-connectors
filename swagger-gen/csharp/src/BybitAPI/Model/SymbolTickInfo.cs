@@ -49,31 +49,31 @@ namespace BybitAPI.Model
         /// <param name="predictedFundingRate">predictedFundingRate.</param>
         /// <param name="nextFundingTime">nextFundingTime.</param>
         /// <param name="countdownHour">countdownHour.</param>
-        public SymbolTickInfo(string symbol = default(string), string bidPrice = default(string), string askPrice = default(string), string lastPrice = default(string), string lastTickDirection = default(string), string prevPrice24h = default(string), string price24hPcnt = default(string), string highPrice24h = default(string), string lowPrice24h = default(string), string prevPrice1h = default(string), string price1hPcnt = default(string), string markPrice = default(string), string indexPrice = default(string), decimal? openInterest = default(decimal?), string openValue = default(string), string totalTurnover = default(string), string turnover24h = default(string), decimal? totalVolume = default(decimal?), decimal? volume24h = default(decimal?), string fundingRate = default(string), string predictedFundingRate = default(string), string nextFundingTime = default(string), decimal? countdownHour = default(decimal?))
+        public SymbolTickInfo(string symbol = default, string bidPrice = default, string askPrice = default, string lastPrice = default, string lastTickDirection = default, string prevPrice24h = default, string price24hPcnt = default, string highPrice24h = default, string lowPrice24h = default, string prevPrice1h = default, string price1hPcnt = default, string markPrice = default, string indexPrice = default, decimal? openInterest = default, string openValue = default, string totalTurnover = default, string turnover24h = default, decimal? totalVolume = default, decimal? volume24h = default, string fundingRate = default, string predictedFundingRate = default, string nextFundingTime = default, decimal? countdownHour = default)
         {
-            this.Symbol = symbol;
-            this.BidPrice = bidPrice;
-            this.AskPrice = askPrice;
-            this.LastPrice = lastPrice;
-            this.LastTickDirection = lastTickDirection;
-            this.PrevPrice24h = prevPrice24h;
-            this.Price24hPcnt = price24hPcnt;
-            this.HighPrice24h = highPrice24h;
-            this.LowPrice24h = lowPrice24h;
-            this.PrevPrice1h = prevPrice1h;
-            this.Price1hPcnt = price1hPcnt;
-            this.MarkPrice = markPrice;
-            this.IndexPrice = indexPrice;
-            this.OpenInterest = openInterest;
-            this.OpenValue = openValue;
-            this.TotalTurnover = totalTurnover;
-            this.Turnover24h = turnover24h;
-            this.TotalVolume = totalVolume;
-            this.Volume24h = volume24h;
-            this.FundingRate = fundingRate;
-            this.PredictedFundingRate = predictedFundingRate;
-            this.NextFundingTime = nextFundingTime;
-            this.CountdownHour = countdownHour;
+            Symbol = symbol;
+            BidPrice = bidPrice;
+            AskPrice = askPrice;
+            LastPrice = lastPrice;
+            LastTickDirection = lastTickDirection;
+            PrevPrice24h = prevPrice24h;
+            Price24hPcnt = price24hPcnt;
+            HighPrice24h = highPrice24h;
+            LowPrice24h = lowPrice24h;
+            PrevPrice1h = prevPrice1h;
+            Price1hPcnt = price1hPcnt;
+            MarkPrice = markPrice;
+            IndexPrice = indexPrice;
+            OpenInterest = openInterest;
+            OpenValue = openValue;
+            TotalTurnover = totalTurnover;
+            Turnover24h = turnover24h;
+            TotalVolume = totalVolume;
+            Volume24h = volume24h;
+            FundingRate = fundingRate;
+            PredictedFundingRate = predictedFundingRate;
+            NextFundingTime = nextFundingTime;
+            CountdownHour = countdownHour;
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SymbolTickInfo);
+            return Equals(input as SymbolTickInfo);
         }
 
         /// <summary>
@@ -276,123 +276,125 @@ namespace BybitAPI.Model
         public bool Equals(SymbolTickInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.BidPrice == input.BidPrice ||
-                    (this.BidPrice != null &&
-                    this.BidPrice.Equals(input.BidPrice))
+                    BidPrice == input.BidPrice ||
+                    (BidPrice != null &&
+                    BidPrice.Equals(input.BidPrice))
                 ) &&
                 (
-                    this.AskPrice == input.AskPrice ||
-                    (this.AskPrice != null &&
-                    this.AskPrice.Equals(input.AskPrice))
+                    AskPrice == input.AskPrice ||
+                    (AskPrice != null &&
+                    AskPrice.Equals(input.AskPrice))
                 ) &&
                 (
-                    this.LastPrice == input.LastPrice ||
-                    (this.LastPrice != null &&
-                    this.LastPrice.Equals(input.LastPrice))
+                    LastPrice == input.LastPrice ||
+                    (LastPrice != null &&
+                    LastPrice.Equals(input.LastPrice))
                 ) &&
                 (
-                    this.LastTickDirection == input.LastTickDirection ||
-                    (this.LastTickDirection != null &&
-                    this.LastTickDirection.Equals(input.LastTickDirection))
+                    LastTickDirection == input.LastTickDirection ||
+                    (LastTickDirection != null &&
+                    LastTickDirection.Equals(input.LastTickDirection))
                 ) &&
                 (
-                    this.PrevPrice24h == input.PrevPrice24h ||
-                    (this.PrevPrice24h != null &&
-                    this.PrevPrice24h.Equals(input.PrevPrice24h))
+                    PrevPrice24h == input.PrevPrice24h ||
+                    (PrevPrice24h != null &&
+                    PrevPrice24h.Equals(input.PrevPrice24h))
                 ) &&
                 (
-                    this.Price24hPcnt == input.Price24hPcnt ||
-                    (this.Price24hPcnt != null &&
-                    this.Price24hPcnt.Equals(input.Price24hPcnt))
+                    Price24hPcnt == input.Price24hPcnt ||
+                    (Price24hPcnt != null &&
+                    Price24hPcnt.Equals(input.Price24hPcnt))
                 ) &&
                 (
-                    this.HighPrice24h == input.HighPrice24h ||
-                    (this.HighPrice24h != null &&
-                    this.HighPrice24h.Equals(input.HighPrice24h))
+                    HighPrice24h == input.HighPrice24h ||
+                    (HighPrice24h != null &&
+                    HighPrice24h.Equals(input.HighPrice24h))
                 ) &&
                 (
-                    this.LowPrice24h == input.LowPrice24h ||
-                    (this.LowPrice24h != null &&
-                    this.LowPrice24h.Equals(input.LowPrice24h))
+                    LowPrice24h == input.LowPrice24h ||
+                    (LowPrice24h != null &&
+                    LowPrice24h.Equals(input.LowPrice24h))
                 ) &&
                 (
-                    this.PrevPrice1h == input.PrevPrice1h ||
-                    (this.PrevPrice1h != null &&
-                    this.PrevPrice1h.Equals(input.PrevPrice1h))
+                    PrevPrice1h == input.PrevPrice1h ||
+                    (PrevPrice1h != null &&
+                    PrevPrice1h.Equals(input.PrevPrice1h))
                 ) &&
                 (
-                    this.Price1hPcnt == input.Price1hPcnt ||
-                    (this.Price1hPcnt != null &&
-                    this.Price1hPcnt.Equals(input.Price1hPcnt))
+                    Price1hPcnt == input.Price1hPcnt ||
+                    (Price1hPcnt != null &&
+                    Price1hPcnt.Equals(input.Price1hPcnt))
                 ) &&
                 (
-                    this.MarkPrice == input.MarkPrice ||
-                    (this.MarkPrice != null &&
-                    this.MarkPrice.Equals(input.MarkPrice))
+                    MarkPrice == input.MarkPrice ||
+                    (MarkPrice != null &&
+                    MarkPrice.Equals(input.MarkPrice))
                 ) &&
                 (
-                    this.IndexPrice == input.IndexPrice ||
-                    (this.IndexPrice != null &&
-                    this.IndexPrice.Equals(input.IndexPrice))
+                    IndexPrice == input.IndexPrice ||
+                    (IndexPrice != null &&
+                    IndexPrice.Equals(input.IndexPrice))
                 ) &&
                 (
-                    this.OpenInterest == input.OpenInterest ||
-                    (this.OpenInterest != null &&
-                    this.OpenInterest.Equals(input.OpenInterest))
+                    OpenInterest == input.OpenInterest ||
+                    (OpenInterest != null &&
+                    OpenInterest.Equals(input.OpenInterest))
                 ) &&
                 (
-                    this.OpenValue == input.OpenValue ||
-                    (this.OpenValue != null &&
-                    this.OpenValue.Equals(input.OpenValue))
+                    OpenValue == input.OpenValue ||
+                    (OpenValue != null &&
+                    OpenValue.Equals(input.OpenValue))
                 ) &&
                 (
-                    this.TotalTurnover == input.TotalTurnover ||
-                    (this.TotalTurnover != null &&
-                    this.TotalTurnover.Equals(input.TotalTurnover))
+                    TotalTurnover == input.TotalTurnover ||
+                    (TotalTurnover != null &&
+                    TotalTurnover.Equals(input.TotalTurnover))
                 ) &&
                 (
-                    this.Turnover24h == input.Turnover24h ||
-                    (this.Turnover24h != null &&
-                    this.Turnover24h.Equals(input.Turnover24h))
+                    Turnover24h == input.Turnover24h ||
+                    (Turnover24h != null &&
+                    Turnover24h.Equals(input.Turnover24h))
                 ) &&
                 (
-                    this.TotalVolume == input.TotalVolume ||
-                    (this.TotalVolume != null &&
-                    this.TotalVolume.Equals(input.TotalVolume))
+                    TotalVolume == input.TotalVolume ||
+                    (TotalVolume != null &&
+                    TotalVolume.Equals(input.TotalVolume))
                 ) &&
                 (
-                    this.Volume24h == input.Volume24h ||
-                    (this.Volume24h != null &&
-                    this.Volume24h.Equals(input.Volume24h))
+                    Volume24h == input.Volume24h ||
+                    (Volume24h != null &&
+                    Volume24h.Equals(input.Volume24h))
                 ) &&
                 (
-                    this.FundingRate == input.FundingRate ||
-                    (this.FundingRate != null &&
-                    this.FundingRate.Equals(input.FundingRate))
+                    FundingRate == input.FundingRate ||
+                    (FundingRate != null &&
+                    FundingRate.Equals(input.FundingRate))
                 ) &&
                 (
-                    this.PredictedFundingRate == input.PredictedFundingRate ||
-                    (this.PredictedFundingRate != null &&
-                    this.PredictedFundingRate.Equals(input.PredictedFundingRate))
+                    PredictedFundingRate == input.PredictedFundingRate ||
+                    (PredictedFundingRate != null &&
+                    PredictedFundingRate.Equals(input.PredictedFundingRate))
                 ) &&
                 (
-                    this.NextFundingTime == input.NextFundingTime ||
-                    (this.NextFundingTime != null &&
-                    this.NextFundingTime.Equals(input.NextFundingTime))
+                    NextFundingTime == input.NextFundingTime ||
+                    (NextFundingTime != null &&
+                    NextFundingTime.Equals(input.NextFundingTime))
                 ) &&
                 (
-                    this.CountdownHour == input.CountdownHour ||
-                    (this.CountdownHour != null &&
-                    this.CountdownHour.Equals(input.CountdownHour))
+                    CountdownHour == input.CountdownHour ||
+                    (CountdownHour != null &&
+                    CountdownHour.Equals(input.CountdownHour))
                 );
         }
 
@@ -404,53 +406,122 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.BidPrice != null)
-                    hashCode = hashCode * 59 + this.BidPrice.GetHashCode();
-                if (this.AskPrice != null)
-                    hashCode = hashCode * 59 + this.AskPrice.GetHashCode();
-                if (this.LastPrice != null)
-                    hashCode = hashCode * 59 + this.LastPrice.GetHashCode();
-                if (this.LastTickDirection != null)
-                    hashCode = hashCode * 59 + this.LastTickDirection.GetHashCode();
-                if (this.PrevPrice24h != null)
-                    hashCode = hashCode * 59 + this.PrevPrice24h.GetHashCode();
-                if (this.Price24hPcnt != null)
-                    hashCode = hashCode * 59 + this.Price24hPcnt.GetHashCode();
-                if (this.HighPrice24h != null)
-                    hashCode = hashCode * 59 + this.HighPrice24h.GetHashCode();
-                if (this.LowPrice24h != null)
-                    hashCode = hashCode * 59 + this.LowPrice24h.GetHashCode();
-                if (this.PrevPrice1h != null)
-                    hashCode = hashCode * 59 + this.PrevPrice1h.GetHashCode();
-                if (this.Price1hPcnt != null)
-                    hashCode = hashCode * 59 + this.Price1hPcnt.GetHashCode();
-                if (this.MarkPrice != null)
-                    hashCode = hashCode * 59 + this.MarkPrice.GetHashCode();
-                if (this.IndexPrice != null)
-                    hashCode = hashCode * 59 + this.IndexPrice.GetHashCode();
-                if (this.OpenInterest != null)
-                    hashCode = hashCode * 59 + this.OpenInterest.GetHashCode();
-                if (this.OpenValue != null)
-                    hashCode = hashCode * 59 + this.OpenValue.GetHashCode();
-                if (this.TotalTurnover != null)
-                    hashCode = hashCode * 59 + this.TotalTurnover.GetHashCode();
-                if (this.Turnover24h != null)
-                    hashCode = hashCode * 59 + this.Turnover24h.GetHashCode();
-                if (this.TotalVolume != null)
-                    hashCode = hashCode * 59 + this.TotalVolume.GetHashCode();
-                if (this.Volume24h != null)
-                    hashCode = hashCode * 59 + this.Volume24h.GetHashCode();
-                if (this.FundingRate != null)
-                    hashCode = hashCode * 59 + this.FundingRate.GetHashCode();
-                if (this.PredictedFundingRate != null)
-                    hashCode = hashCode * 59 + this.PredictedFundingRate.GetHashCode();
-                if (this.NextFundingTime != null)
-                    hashCode = hashCode * 59 + this.NextFundingTime.GetHashCode();
-                if (this.CountdownHour != null)
-                    hashCode = hashCode * 59 + this.CountdownHour.GetHashCode();
+                var hashCode = 41;
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (BidPrice != null)
+                {
+                    hashCode = hashCode * 59 + BidPrice.GetHashCode();
+                }
+
+                if (AskPrice != null)
+                {
+                    hashCode = hashCode * 59 + AskPrice.GetHashCode();
+                }
+
+                if (LastPrice != null)
+                {
+                    hashCode = hashCode * 59 + LastPrice.GetHashCode();
+                }
+
+                if (LastTickDirection != null)
+                {
+                    hashCode = hashCode * 59 + LastTickDirection.GetHashCode();
+                }
+
+                if (PrevPrice24h != null)
+                {
+                    hashCode = hashCode * 59 + PrevPrice24h.GetHashCode();
+                }
+
+                if (Price24hPcnt != null)
+                {
+                    hashCode = hashCode * 59 + Price24hPcnt.GetHashCode();
+                }
+
+                if (HighPrice24h != null)
+                {
+                    hashCode = hashCode * 59 + HighPrice24h.GetHashCode();
+                }
+
+                if (LowPrice24h != null)
+                {
+                    hashCode = hashCode * 59 + LowPrice24h.GetHashCode();
+                }
+
+                if (PrevPrice1h != null)
+                {
+                    hashCode = hashCode * 59 + PrevPrice1h.GetHashCode();
+                }
+
+                if (Price1hPcnt != null)
+                {
+                    hashCode = hashCode * 59 + Price1hPcnt.GetHashCode();
+                }
+
+                if (MarkPrice != null)
+                {
+                    hashCode = hashCode * 59 + MarkPrice.GetHashCode();
+                }
+
+                if (IndexPrice != null)
+                {
+                    hashCode = hashCode * 59 + IndexPrice.GetHashCode();
+                }
+
+                if (OpenInterest != null)
+                {
+                    hashCode = hashCode * 59 + OpenInterest.GetHashCode();
+                }
+
+                if (OpenValue != null)
+                {
+                    hashCode = hashCode * 59 + OpenValue.GetHashCode();
+                }
+
+                if (TotalTurnover != null)
+                {
+                    hashCode = hashCode * 59 + TotalTurnover.GetHashCode();
+                }
+
+                if (Turnover24h != null)
+                {
+                    hashCode = hashCode * 59 + Turnover24h.GetHashCode();
+                }
+
+                if (TotalVolume != null)
+                {
+                    hashCode = hashCode * 59 + TotalVolume.GetHashCode();
+                }
+
+                if (Volume24h != null)
+                {
+                    hashCode = hashCode * 59 + Volume24h.GetHashCode();
+                }
+
+                if (FundingRate != null)
+                {
+                    hashCode = hashCode * 59 + FundingRate.GetHashCode();
+                }
+
+                if (PredictedFundingRate != null)
+                {
+                    hashCode = hashCode * 59 + PredictedFundingRate.GetHashCode();
+                }
+
+                if (NextFundingTime != null)
+                {
+                    hashCode = hashCode * 59 + NextFundingTime.GetHashCode();
+                }
+
+                if (CountdownHour != null)
+                {
+                    hashCode = hashCode * 59 + CountdownHour.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

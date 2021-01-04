@@ -31,13 +31,13 @@ namespace BybitAPI.Model
         /// <param name="link">link.</param>
         /// <param name="summary">summary.</param>
         /// <param name="createdAt">createdAt.</param>
-        public AnnouncementInfo(decimal? id = default(decimal?), string title = default(string), string link = default(string), string summary = default(string), string createdAt = default(string))
+        public AnnouncementInfo(decimal? id = default, string title = default, string link = default, string summary = default, string createdAt = default)
         {
-            this.Id = id;
-            this.Title = title;
-            this.Link = link;
-            this.Summary = summary;
-            this.CreatedAt = createdAt;
+            Id = id;
+            Title = title;
+            Link = link;
+            Summary = summary;
+            CreatedAt = createdAt;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AnnouncementInfo);
+            return Equals(input as AnnouncementInfo);
         }
 
         /// <summary>
@@ -114,33 +114,35 @@ namespace BybitAPI.Model
         public bool Equals(AnnouncementInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) &&
                 (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
+                    Title == input.Title ||
+                    (Title != null &&
+                    Title.Equals(input.Title))
                 ) &&
                 (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
+                    Link == input.Link ||
+                    (Link != null &&
+                    Link.Equals(input.Link))
                 ) &&
                 (
-                    this.Summary == input.Summary ||
-                    (this.Summary != null &&
-                    this.Summary.Equals(input.Summary))
+                    Summary == input.Summary ||
+                    (Summary != null &&
+                    Summary.Equals(input.Summary))
                 ) &&
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 );
         }
 
@@ -152,17 +154,32 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
-                if (this.Summary != null)
-                    hashCode = hashCode * 59 + this.Summary.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                var hashCode = 41;
+                if (Id != null)
+                {
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                }
+
+                if (Title != null)
+                {
+                    hashCode = hashCode * 59 + Title.GetHashCode();
+                }
+
+                if (Link != null)
+                {
+                    hashCode = hashCode * 59 + Link.GetHashCode();
+                }
+
+                if (Summary != null)
+                {
+                    hashCode = hashCode * 59 + Summary.GetHashCode();
+                }
+
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

@@ -33,15 +33,15 @@ namespace BybitAPI.Model
         /// <param name="result">result.</param>
         /// <param name="timeNow">timeNow.</param>
         /// <param name="rateLimitStatus">rateLimitStatus.</param>
-        public Leverage(decimal? retCode = default(decimal?), string retMsg = default(string), string extCode = default(string), string extInfo = default(string), Object result = default(Object), string timeNow = default(string), decimal? rateLimitStatus = default(decimal?))
+        public Leverage(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, object result = default, string timeNow = default, decimal? rateLimitStatus = default)
         {
-            this.RetCode = retCode;
-            this.RetMsg = retMsg;
-            this.ExtCode = extCode;
-            this.ExtInfo = extInfo;
-            this.Result = result;
-            this.TimeNow = timeNow;
-            this.RateLimitStatus = rateLimitStatus;
+            RetCode = retCode;
+            RetMsg = retMsg;
+            ExtCode = extCode;
+            ExtInfo = extInfo;
+            Result = result;
+            TimeNow = timeNow;
+            RateLimitStatus = rateLimitStatus;
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace BybitAPI.Model
         /// Gets or Sets Result
         /// </summary>
         [DataMember(Name = "result", EmitDefaultValue = false)]
-        public Object Result { get; set; }
+        public object Result { get; set; }
 
         /// <summary>
         /// Gets or Sets TimeNow
@@ -121,7 +121,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Leverage);
+            return Equals(input as Leverage);
         }
 
         /// <summary>
@@ -132,43 +132,45 @@ namespace BybitAPI.Model
         public bool Equals(Leverage input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.RetCode == input.RetCode ||
-                    (this.RetCode != null &&
-                    this.RetCode.Equals(input.RetCode))
+                    RetCode == input.RetCode ||
+                    (RetCode != null &&
+                    RetCode.Equals(input.RetCode))
                 ) &&
                 (
-                    this.RetMsg == input.RetMsg ||
-                    (this.RetMsg != null &&
-                    this.RetMsg.Equals(input.RetMsg))
+                    RetMsg == input.RetMsg ||
+                    (RetMsg != null &&
+                    RetMsg.Equals(input.RetMsg))
                 ) &&
                 (
-                    this.ExtCode == input.ExtCode ||
-                    (this.ExtCode != null &&
-                    this.ExtCode.Equals(input.ExtCode))
+                    ExtCode == input.ExtCode ||
+                    (ExtCode != null &&
+                    ExtCode.Equals(input.ExtCode))
                 ) &&
                 (
-                    this.ExtInfo == input.ExtInfo ||
-                    (this.ExtInfo != null &&
-                    this.ExtInfo.Equals(input.ExtInfo))
+                    ExtInfo == input.ExtInfo ||
+                    (ExtInfo != null &&
+                    ExtInfo.Equals(input.ExtInfo))
                 ) &&
                 (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
+                    Result == input.Result ||
+                    (Result != null &&
+                    Result.Equals(input.Result))
                 ) &&
                 (
-                    this.TimeNow == input.TimeNow ||
-                    (this.TimeNow != null &&
-                    this.TimeNow.Equals(input.TimeNow))
+                    TimeNow == input.TimeNow ||
+                    (TimeNow != null &&
+                    TimeNow.Equals(input.TimeNow))
                 ) &&
                 (
-                    this.RateLimitStatus == input.RateLimitStatus ||
-                    (this.RateLimitStatus != null &&
-                    this.RateLimitStatus.Equals(input.RateLimitStatus))
+                    RateLimitStatus == input.RateLimitStatus ||
+                    (RateLimitStatus != null &&
+                    RateLimitStatus.Equals(input.RateLimitStatus))
                 );
         }
 
@@ -180,21 +182,42 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RetCode != null)
-                    hashCode = hashCode * 59 + this.RetCode.GetHashCode();
-                if (this.RetMsg != null)
-                    hashCode = hashCode * 59 + this.RetMsg.GetHashCode();
-                if (this.ExtCode != null)
-                    hashCode = hashCode * 59 + this.ExtCode.GetHashCode();
-                if (this.ExtInfo != null)
-                    hashCode = hashCode * 59 + this.ExtInfo.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.TimeNow != null)
-                    hashCode = hashCode * 59 + this.TimeNow.GetHashCode();
-                if (this.RateLimitStatus != null)
-                    hashCode = hashCode * 59 + this.RateLimitStatus.GetHashCode();
+                var hashCode = 41;
+                if (RetCode != null)
+                {
+                    hashCode = hashCode * 59 + RetCode.GetHashCode();
+                }
+
+                if (RetMsg != null)
+                {
+                    hashCode = hashCode * 59 + RetMsg.GetHashCode();
+                }
+
+                if (ExtCode != null)
+                {
+                    hashCode = hashCode * 59 + ExtCode.GetHashCode();
+                }
+
+                if (ExtInfo != null)
+                {
+                    hashCode = hashCode * 59 + ExtInfo.GetHashCode();
+                }
+
+                if (Result != null)
+                {
+                    hashCode = hashCode * 59 + Result.GetHashCode();
+                }
+
+                if (TimeNow != null)
+                {
+                    hashCode = hashCode * 59 + TimeNow.GetHashCode();
+                }
+
+                if (RateLimitStatus != null)
+                {
+                    hashCode = hashCode * 59 + RateLimitStatus.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

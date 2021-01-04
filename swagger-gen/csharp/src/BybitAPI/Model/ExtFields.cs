@@ -29,11 +29,11 @@ namespace BybitAPI.Model
         /// <param name="oReqNum">oReqNum.</param>
         /// <param name="xreqType">xreqType.</param>
         /// <param name="xreqOffset">xreqOffset.</param>
-        public ExtFields(decimal? oReqNum = default(decimal?), string xreqType = default(string), decimal? xreqOffset = default(decimal?))
+        public ExtFields(decimal? oReqNum = default, string xreqType = default, decimal? xreqOffset = default)
         {
-            this.OReqNum = oReqNum;
-            this.XreqType = xreqType;
-            this.XreqOffset = xreqOffset;
+            OReqNum = oReqNum;
+            XreqType = xreqType;
+            XreqOffset = xreqOffset;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ExtFields);
+            return Equals(input as ExtFields);
         }
 
         /// <summary>
@@ -96,23 +96,25 @@ namespace BybitAPI.Model
         public bool Equals(ExtFields input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.OReqNum == input.OReqNum ||
-                    (this.OReqNum != null &&
-                    this.OReqNum.Equals(input.OReqNum))
+                    OReqNum == input.OReqNum ||
+                    (OReqNum != null &&
+                    OReqNum.Equals(input.OReqNum))
                 ) &&
                 (
-                    this.XreqType == input.XreqType ||
-                    (this.XreqType != null &&
-                    this.XreqType.Equals(input.XreqType))
+                    XreqType == input.XreqType ||
+                    (XreqType != null &&
+                    XreqType.Equals(input.XreqType))
                 ) &&
                 (
-                    this.XreqOffset == input.XreqOffset ||
-                    (this.XreqOffset != null &&
-                    this.XreqOffset.Equals(input.XreqOffset))
+                    XreqOffset == input.XreqOffset ||
+                    (XreqOffset != null &&
+                    XreqOffset.Equals(input.XreqOffset))
                 );
         }
 
@@ -124,13 +126,22 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OReqNum != null)
-                    hashCode = hashCode * 59 + this.OReqNum.GetHashCode();
-                if (this.XreqType != null)
-                    hashCode = hashCode * 59 + this.XreqType.GetHashCode();
-                if (this.XreqOffset != null)
-                    hashCode = hashCode * 59 + this.XreqOffset.GetHashCode();
+                var hashCode = 41;
+                if (OReqNum != null)
+                {
+                    hashCode = hashCode * 59 + OReqNum.GetHashCode();
+                }
+
+                if (XreqType != null)
+                {
+                    hashCode = hashCode * 59 + XreqType.GetHashCode();
+                }
+
+                if (XreqOffset != null)
+                {
+                    hashCode = hashCode * 59 + XreqOffset.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

@@ -29,11 +29,11 @@ namespace BybitAPI.Model
         /// <param name="minPrice">minPrice.</param>
         /// <param name="maxPrice">maxPrice.</param>
         /// <param name="tickSize">tickSize.</param>
-        public PriceFilter(string minPrice = default(string), string maxPrice = default(string), string tickSize = default(string))
+        public PriceFilter(string minPrice = default, string maxPrice = default, string tickSize = default)
         {
-            this.MinPrice = minPrice;
-            this.MaxPrice = maxPrice;
-            this.TickSize = tickSize;
+            MinPrice = minPrice;
+            MaxPrice = maxPrice;
+            TickSize = tickSize;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PriceFilter);
+            return Equals(input as PriceFilter);
         }
 
         /// <summary>
@@ -96,23 +96,25 @@ namespace BybitAPI.Model
         public bool Equals(PriceFilter input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.MinPrice == input.MinPrice ||
-                    (this.MinPrice != null &&
-                    this.MinPrice.Equals(input.MinPrice))
+                    MinPrice == input.MinPrice ||
+                    (MinPrice != null &&
+                    MinPrice.Equals(input.MinPrice))
                 ) &&
                 (
-                    this.MaxPrice == input.MaxPrice ||
-                    (this.MaxPrice != null &&
-                    this.MaxPrice.Equals(input.MaxPrice))
+                    MaxPrice == input.MaxPrice ||
+                    (MaxPrice != null &&
+                    MaxPrice.Equals(input.MaxPrice))
                 ) &&
                 (
-                    this.TickSize == input.TickSize ||
-                    (this.TickSize != null &&
-                    this.TickSize.Equals(input.TickSize))
+                    TickSize == input.TickSize ||
+                    (TickSize != null &&
+                    TickSize.Equals(input.TickSize))
                 );
         }
 
@@ -124,13 +126,22 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MinPrice != null)
-                    hashCode = hashCode * 59 + this.MinPrice.GetHashCode();
-                if (this.MaxPrice != null)
-                    hashCode = hashCode * 59 + this.MaxPrice.GetHashCode();
-                if (this.TickSize != null)
-                    hashCode = hashCode * 59 + this.TickSize.GetHashCode();
+                var hashCode = 41;
+                if (MinPrice != null)
+                {
+                    hashCode = hashCode * 59 + MinPrice.GetHashCode();
+                }
+
+                if (MaxPrice != null)
+                {
+                    hashCode = hashCode * 59 + MaxPrice.GetHashCode();
+                }
+
+                if (TickSize != null)
+                {
+                    hashCode = hashCode * 59 + TickSize.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

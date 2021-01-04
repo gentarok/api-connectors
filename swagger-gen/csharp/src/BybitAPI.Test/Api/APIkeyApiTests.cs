@@ -49,7 +49,7 @@ namespace BybitAPI.Test
         public void InstanceTest()
         {
             // TODO uncomment below to test 'IsInstanceOfType' APIkeyApi
-            //Assert.IsInstanceOfType(typeof(APIkeyApi), instance, "instance is a APIkeyApi");
+            Assert.IsInstanceOf(typeof(APIkeyApi), instance, "instance is a APIkeyApi");
         }
 
         /// <summary>

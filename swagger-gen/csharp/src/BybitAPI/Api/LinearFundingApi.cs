@@ -33,7 +33,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Object</returns>
-        Object LinearFundingMyLastFee(string symbol = null);
+        object LinearFundingMyLastFee(string symbol = null);
 
         /// <summary>
         /// Get prev funding
@@ -44,7 +44,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> LinearFundingMyLastFeeWithHttpInfo(string symbol = null);
+        ApiResponse<object> LinearFundingMyLastFeeWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -55,7 +55,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
-        Object LinearFundingPredicted(string symbol);
+        object LinearFundingPredicted(string symbol);
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -66,7 +66,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> LinearFundingPredictedWithHttpInfo(string symbol);
+        ApiResponse<object> LinearFundingPredictedWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get prev funding
@@ -77,7 +77,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Object</returns>
-        Object LinearFundingPrevRate(string symbol);
+        object LinearFundingPrevRate(string symbol);
 
         /// <summary>
         /// Get prev funding
@@ -88,7 +88,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> LinearFundingPrevRateWithHttpInfo(string symbol);
+        ApiResponse<object> LinearFundingPrevRateWithHttpInfo(string symbol);
 
         #endregion Synchronous Operations
 
@@ -103,7 +103,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> LinearFundingMyLastFeeAsync(string symbol = null);
+        System.Threading.Tasks.Task<object> LinearFundingMyLastFeeAsync(string symbol = null);
 
         /// <summary>
         /// Get prev funding
@@ -114,7 +114,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LinearFundingMyLastFeeAsyncWithHttpInfo(string symbol = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingMyLastFeeAsyncWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -125,7 +125,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> LinearFundingPredictedAsync(string symbol);
+        System.Threading.Tasks.Task<object> LinearFundingPredictedAsync(string symbol);
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -136,7 +136,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LinearFundingPredictedAsyncWithHttpInfo(string symbol);
+        System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingPredictedAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get prev funding
@@ -147,7 +147,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> LinearFundingPrevRateAsync(string symbol);
+        System.Threading.Tasks.Task<object> LinearFundingPrevRateAsync(string symbol);
 
         /// <summary>
         /// Get prev funding
@@ -158,7 +158,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LinearFundingPrevRateAsyncWithHttpInfo(string symbol);
+        System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingPrevRateAsyncWithHttpInfo(string symbol);
 
         #endregion Asynchronous Operations
     }
@@ -174,9 +174,9 @@ namespace BybitAPI.Api
         /// Initializes a new instance of the <see cref="LinearFundingApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public LinearFundingApi(String basePath)
+        public LinearFundingApi(string basePath)
         {
-            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -190,9 +190,13 @@ namespace BybitAPI.Api
         public LinearFundingApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = BybitAPI.Client.Configuration.Default;
+            {
+                Configuration = BybitAPI.Client.Configuration.Default;
+            }
             else
-                this.Configuration = configuration;
+            {
+                Configuration = configuration;
+            }
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -201,9 +205,9 @@ namespace BybitAPI.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -211,7 +215,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -235,7 +239,7 @@ namespace BybitAPI.Api
                 }
                 return _exceptionFactory;
             }
-            set { _exceptionFactory = value; }
+            set => _exceptionFactory = value;
         }
 
         /// <summary>
@@ -243,9 +247,9 @@ namespace BybitAPI.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -257,7 +261,7 @@ namespace BybitAPI.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
@@ -266,9 +270,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Object</returns>
-        public Object LinearFundingMyLastFee(string symbol = null)
+        public object LinearFundingMyLastFee(string symbol = null)
         {
-            ApiResponse<Object> localVarResponse = LinearFundingMyLastFeeWithHttpInfo(symbol);
+            var localVarResponse = LinearFundingMyLastFeeWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -278,65 +282,73 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> LinearFundingMyLastFeeWithHttpInfo(string symbol = null)
+        public ApiResponse<object> LinearFundingMyLastFeeWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/private/linear/funding/prev-funding";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("LinearFundingMyLastFee", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("LinearFundingMyLastFee", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -345,9 +357,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> LinearFundingMyLastFeeAsync(string symbol = null)
+        public async System.Threading.Tasks.Task<object> LinearFundingMyLastFeeAsync(string symbol = null)
         {
-            ApiResponse<Object> localVarResponse = await LinearFundingMyLastFeeAsyncWithHttpInfo(symbol);
+            var localVarResponse = await LinearFundingMyLastFeeAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -357,65 +369,73 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> LinearFundingMyLastFeeAsyncWithHttpInfo(string symbol = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingMyLastFeeAsyncWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/private/linear/funding/prev-funding";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("LinearFundingMyLastFee", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("LinearFundingMyLastFee", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -424,9 +444,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
-        public Object LinearFundingPredicted(string symbol)
+        public object LinearFundingPredicted(string symbol)
         {
-            ApiResponse<Object> localVarResponse = LinearFundingPredictedWithHttpInfo(symbol);
+            var localVarResponse = LinearFundingPredictedWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -436,69 +456,79 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> LinearFundingPredictedWithHttpInfo(string symbol)
+        public ApiResponse<object> LinearFundingPredictedWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearFundingApi->LinearFundingPredicted");
+            }
 
             var localVarPath = "/private/linear/funding/predicted-funding";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("LinearFundingPredicted", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("LinearFundingPredicted", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -507,9 +537,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> LinearFundingPredictedAsync(string symbol)
+        public async System.Threading.Tasks.Task<object> LinearFundingPredictedAsync(string symbol)
         {
-            ApiResponse<Object> localVarResponse = await LinearFundingPredictedAsyncWithHttpInfo(symbol);
+            var localVarResponse = await LinearFundingPredictedAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -519,69 +549,79 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> LinearFundingPredictedAsyncWithHttpInfo(string symbol)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingPredictedAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearFundingApi->LinearFundingPredicted");
+            }
 
             var localVarPath = "/private/linear/funding/predicted-funding";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("LinearFundingPredicted", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("LinearFundingPredicted", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -590,9 +630,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Object</returns>
-        public Object LinearFundingPrevRate(string symbol)
+        public object LinearFundingPrevRate(string symbol)
         {
-            ApiResponse<Object> localVarResponse = LinearFundingPrevRateWithHttpInfo(symbol);
+            var localVarResponse = LinearFundingPrevRateWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -602,69 +642,79 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> LinearFundingPrevRateWithHttpInfo(string symbol)
+        public ApiResponse<object> LinearFundingPrevRateWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearFundingApi->LinearFundingPrevRate");
+            }
 
             var localVarPath = "/public/linear/funding/prev-funding-rate";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("LinearFundingPrevRate", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("LinearFundingPrevRate", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -673,9 +723,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> LinearFundingPrevRateAsync(string symbol)
+        public async System.Threading.Tasks.Task<object> LinearFundingPrevRateAsync(string symbol)
         {
-            ApiResponse<Object> localVarResponse = await LinearFundingPrevRateAsyncWithHttpInfo(symbol);
+            var localVarResponse = await LinearFundingPrevRateAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -685,69 +735,79 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> LinearFundingPrevRateAsyncWithHttpInfo(string symbol)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> LinearFundingPrevRateAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling LinearFundingApi->LinearFundingPrevRate");
+            }
 
             var localVarPath = "/public/linear/funding/prev-funding-rate";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("LinearFundingPrevRate", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("LinearFundingPrevRate", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
     }
 }

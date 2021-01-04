@@ -29,10 +29,10 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="orderId">orderId.</param>
         /// <param name="tradeList">tradeList.</param>
-        public TradeRecords(string orderId = default(string), List<TradeRecordsInfo> tradeList = default(List<TradeRecordsInfo>))
+        public TradeRecords(string orderId = default, List<TradeRecordsInfo> tradeList = default)
         {
-            this.OrderId = orderId;
-            this.TradeList = tradeList;
+            OrderId = orderId;
+            TradeList = tradeList;
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TradeRecords);
+            return Equals(input as TradeRecords);
         }
 
         /// <summary>
@@ -88,18 +88,20 @@ namespace BybitAPI.Model
         public bool Equals(TradeRecords input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    OrderId == input.OrderId ||
+                    (OrderId != null &&
+                    OrderId.Equals(input.OrderId))
                 ) &&
                 (
-                    this.TradeList == input.TradeList ||
-                    this.TradeList != null &&
-                    this.TradeList.SequenceEqual(input.TradeList)
+                    TradeList == input.TradeList ||
+                    TradeList != null &&
+                    TradeList.SequenceEqual(input.TradeList)
                 );
         }
 
@@ -111,11 +113,17 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.TradeList != null)
-                    hashCode = hashCode * 59 + this.TradeList.GetHashCode();
+                var hashCode = 41;
+                if (OrderId != null)
+                {
+                    hashCode = hashCode * 59 + OrderId.GetHashCode();
+                }
+
+                if (TradeList != null)
+                {
+                    hashCode = hashCode * 59 + TradeList.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

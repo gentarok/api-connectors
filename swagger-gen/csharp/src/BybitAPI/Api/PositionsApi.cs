@@ -34,7 +34,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Object</returns>
-        Object PositionsChangeMargin(string symbol, string margin);
+        object PositionsChangeMargin(string symbol, string margin);
 
         /// <summary>
         /// Update margin.
@@ -46,7 +46,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PositionsChangeMarginWithHttpInfo(string symbol, string margin);
+        ApiResponse<object> PositionsChangeMarginWithHttpInfo(string symbol, string margin);
 
         /// <summary>
         /// Get user&#39;s closed profit and loss records
@@ -62,7 +62,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Object</returns>
-        Object PositionsClosePnlRecords(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
+        object PositionsClosePnlRecords(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
 
         /// <summary>
         /// Get user&#39;s closed profit and loss records
@@ -78,7 +78,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PositionsClosePnlRecordsWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
+        ApiResponse<object> PositionsClosePnlRecordsWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
 
         /// <summary>
         /// Get my position list.
@@ -89,7 +89,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Object</returns>
-        Object PositionsMyPosition(string symbol = null);
+        object PositionsMyPosition(string symbol = null);
 
         /// <summary>
         /// Get my position list.
@@ -100,7 +100,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PositionsMyPositionWithHttpInfo(string symbol = null);
+        ApiResponse<object> PositionsMyPositionWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Change user leverage.
@@ -112,7 +112,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Object</returns>
-        Object PositionsSaveLeverage(string symbol, string leverage);
+        object PositionsSaveLeverage(string symbol, string leverage);
 
         /// <summary>
         /// Change user leverage.
@@ -124,7 +124,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PositionsSaveLeverageWithHttpInfo(string symbol, string leverage);
+        ApiResponse<object> PositionsSaveLeverageWithHttpInfo(string symbol, string leverage);
 
         /// <summary>
         /// Set Trading-Stop Condition.
@@ -139,7 +139,7 @@ namespace BybitAPI.Api
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Object</returns>
-        Object PositionsTradingStop(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
+        object PositionsTradingStop(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
 
         /// <summary>
         /// Set Trading-Stop Condition.
@@ -154,7 +154,7 @@ namespace BybitAPI.Api
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PositionsTradingStopWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
+        ApiResponse<object> PositionsTradingStopWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
 
         #endregion Synchronous Operations
 
@@ -170,7 +170,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PositionsChangeMarginAsync(string symbol, string margin);
+        System.Threading.Tasks.Task<object> PositionsChangeMarginAsync(string symbol, string margin);
 
         /// <summary>
         /// Update margin.
@@ -182,7 +182,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PositionsChangeMarginAsyncWithHttpInfo(string symbol, string margin);
+        System.Threading.Tasks.Task<ApiResponse<object>> PositionsChangeMarginAsyncWithHttpInfo(string symbol, string margin);
 
         /// <summary>
         /// Get user&#39;s closed profit and loss records
@@ -198,7 +198,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
+        System.Threading.Tasks.Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
 
         /// <summary>
         /// Get user&#39;s closed profit and loss records
@@ -214,7 +214,7 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null);
 
         /// <summary>
         /// Get my position list.
@@ -225,7 +225,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PositionsMyPositionAsync(string symbol = null);
+        System.Threading.Tasks.Task<object> PositionsMyPositionAsync(string symbol = null);
 
         /// <summary>
         /// Get my position list.
@@ -236,7 +236,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PositionsMyPositionAsyncWithHttpInfo(string symbol = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> PositionsMyPositionAsyncWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Change user leverage.
@@ -248,7 +248,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PositionsSaveLeverageAsync(string symbol, string leverage);
+        System.Threading.Tasks.Task<object> PositionsSaveLeverageAsync(string symbol, string leverage);
 
         /// <summary>
         /// Change user leverage.
@@ -260,7 +260,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PositionsSaveLeverageAsyncWithHttpInfo(string symbol, string leverage);
+        System.Threading.Tasks.Task<ApiResponse<object>> PositionsSaveLeverageAsyncWithHttpInfo(string symbol, string leverage);
 
         /// <summary>
         /// Set Trading-Stop Condition.
@@ -275,7 +275,7 @@ namespace BybitAPI.Api
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PositionsTradingStopAsync(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
+        System.Threading.Tasks.Task<object> PositionsTradingStopAsync(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
 
         /// <summary>
         /// Set Trading-Stop Condition.
@@ -290,7 +290,7 @@ namespace BybitAPI.Api
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PositionsTradingStopAsyncWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> PositionsTradingStopAsyncWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null);
 
         #endregion Asynchronous Operations
     }
@@ -306,9 +306,9 @@ namespace BybitAPI.Api
         /// Initializes a new instance of the <see cref="PositionsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PositionsApi(String basePath)
+        public PositionsApi(string basePath)
         {
-            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -322,9 +322,13 @@ namespace BybitAPI.Api
         public PositionsApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = BybitAPI.Client.Configuration.Default;
+            {
+                Configuration = BybitAPI.Client.Configuration.Default;
+            }
             else
-                this.Configuration = configuration;
+            {
+                Configuration = configuration;
+            }
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -333,9 +337,9 @@ namespace BybitAPI.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -343,7 +347,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -367,7 +371,7 @@ namespace BybitAPI.Api
                 }
                 return _exceptionFactory;
             }
-            set { _exceptionFactory = value; }
+            set => _exceptionFactory = value;
         }
 
         /// <summary>
@@ -375,9 +379,9 @@ namespace BybitAPI.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -389,7 +393,7 @@ namespace BybitAPI.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
@@ -399,9 +403,9 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Object</returns>
-        public Object PositionsChangeMargin(string symbol, string margin)
+        public object PositionsChangeMargin(string symbol, string margin)
         {
-            ApiResponse<Object> localVarResponse = PositionsChangeMarginWithHttpInfo(symbol, margin);
+            var localVarResponse = PositionsChangeMarginWithHttpInfo(symbol, margin);
             return localVarResponse.Data;
         }
 
@@ -412,72 +416,88 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> PositionsChangeMarginWithHttpInfo(string symbol, string margin)
+        public ApiResponse<object> PositionsChangeMarginWithHttpInfo(string symbol, string margin)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsChangeMargin");
+            }
             // verify the required parameter 'margin' is set
             if (margin == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'margin' when calling PositionsApi->PositionsChangeMargin");
+            }
 
             var localVarPath = "/position/change-position-margin";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (margin != null) localVarFormParams.Add("margin", this.Configuration.ApiClient.ParameterToString(margin)); // form parameter
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (margin != null)
+            {
+                localVarFormParams.Add("margin", Configuration.ApiClient.ParameterToString(margin)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsChangeMargin", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsChangeMargin", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -487,9 +507,9 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PositionsChangeMarginAsync(string symbol, string margin)
+        public async System.Threading.Tasks.Task<object> PositionsChangeMarginAsync(string symbol, string margin)
         {
-            ApiResponse<Object> localVarResponse = await PositionsChangeMarginAsyncWithHttpInfo(symbol, margin);
+            var localVarResponse = await PositionsChangeMarginAsyncWithHttpInfo(symbol, margin);
             return localVarResponse.Data;
         }
 
@@ -500,72 +520,88 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type which you want update its margin</param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PositionsChangeMarginAsyncWithHttpInfo(string symbol, string margin)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsChangeMarginAsyncWithHttpInfo(string symbol, string margin)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsChangeMargin");
+            }
             // verify the required parameter 'margin' is set
             if (margin == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'margin' when calling PositionsApi->PositionsChangeMargin");
+            }
 
             var localVarPath = "/position/change-position-margin";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (margin != null) localVarFormParams.Add("margin", this.Configuration.ApiClient.ParameterToString(margin)); // form parameter
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (margin != null)
+            {
+                localVarFormParams.Add("margin", Configuration.ApiClient.ParameterToString(margin)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsChangeMargin", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsChangeMargin", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -579,9 +615,9 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Object</returns>
-        public Object PositionsClosePnlRecords(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
+        public object PositionsClosePnlRecords(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = PositionsClosePnlRecordsWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
+            var localVarResponse = PositionsClosePnlRecordsWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
             return localVarResponse.Data;
         }
 
@@ -596,74 +632,104 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> PositionsClosePnlRecordsWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
+        public ApiResponse<object> PositionsClosePnlRecordsWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsClosePnlRecords");
+            }
 
             var localVarPath = "/v2/private/trade/closed-pnl/list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (startTime != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
-            if (endTime != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
-            if (execType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (startTime != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
+            }
+
+            if (endTime != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
+            }
+
+            if (execType != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
+            }
+
+            if (page != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsClosePnlRecords", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsClosePnlRecords", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -677,9 +743,9 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
+        public async System.Threading.Tasks.Task<object> PositionsClosePnlRecordsAsync(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = await PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
+            var localVarResponse = await PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
             return localVarResponse.Data;
         }
 
@@ -694,74 +760,104 @@ namespace BybitAPI.Api
         /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsClosePnlRecordsAsyncWithHttpInfo(string symbol, int? startTime = null, int? endTime = null, string execType = null, int? page = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsClosePnlRecords");
+            }
 
             var localVarPath = "/v2/private/trade/closed-pnl/list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (startTime != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
-            if (endTime != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
-            if (execType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (startTime != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
+            }
+
+            if (endTime != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
+            }
+
+            if (execType != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType)); // query parameter
+            }
+
+            if (page != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsClosePnlRecords", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsClosePnlRecords", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -770,9 +866,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Object</returns>
-        public Object PositionsMyPosition(string symbol = null)
+        public object PositionsMyPosition(string symbol = null)
         {
-            ApiResponse<Object> localVarResponse = PositionsMyPositionWithHttpInfo(symbol);
+            var localVarResponse = PositionsMyPositionWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -782,65 +878,73 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> PositionsMyPositionWithHttpInfo(string symbol = null)
+        public ApiResponse<object> PositionsMyPositionWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/v2/private/position/list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsMyPosition", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsMyPosition", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -849,9 +953,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PositionsMyPositionAsync(string symbol = null)
+        public async System.Threading.Tasks.Task<object> PositionsMyPositionAsync(string symbol = null)
         {
-            ApiResponse<Object> localVarResponse = await PositionsMyPositionAsyncWithHttpInfo(symbol);
+            var localVarResponse = await PositionsMyPositionAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -861,65 +965,73 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type which you want update its margin (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PositionsMyPositionAsyncWithHttpInfo(string symbol = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsMyPositionAsyncWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/v2/private/position/list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsMyPosition", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsMyPosition", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -929,9 +1041,9 @@ namespace BybitAPI.Api
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Object</returns>
-        public Object PositionsSaveLeverage(string symbol, string leverage)
+        public object PositionsSaveLeverage(string symbol, string leverage)
         {
-            ApiResponse<Object> localVarResponse = PositionsSaveLeverageWithHttpInfo(symbol, leverage);
+            var localVarResponse = PositionsSaveLeverageWithHttpInfo(symbol, leverage);
             return localVarResponse.Data;
         }
 
@@ -942,72 +1054,88 @@ namespace BybitAPI.Api
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> PositionsSaveLeverageWithHttpInfo(string symbol, string leverage)
+        public ApiResponse<object> PositionsSaveLeverageWithHttpInfo(string symbol, string leverage)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsSaveLeverage");
+            }
             // verify the required parameter 'leverage' is set
             if (leverage == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'leverage' when calling PositionsApi->PositionsSaveLeverage");
+            }
 
             var localVarPath = "/user/leverage/save";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (leverage != null) localVarFormParams.Add("leverage", this.Configuration.ApiClient.ParameterToString(leverage)); // form parameter
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (leverage != null)
+            {
+                localVarFormParams.Add("leverage", Configuration.ApiClient.ParameterToString(leverage)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsSaveLeverage", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsSaveLeverage", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1017,9 +1145,9 @@ namespace BybitAPI.Api
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PositionsSaveLeverageAsync(string symbol, string leverage)
+        public async System.Threading.Tasks.Task<object> PositionsSaveLeverageAsync(string symbol, string leverage)
         {
-            ApiResponse<Object> localVarResponse = await PositionsSaveLeverageAsyncWithHttpInfo(symbol, leverage);
+            var localVarResponse = await PositionsSaveLeverageAsyncWithHttpInfo(symbol, leverage);
             return localVarResponse.Data;
         }
 
@@ -1030,72 +1158,88 @@ namespace BybitAPI.Api
         /// <param name="symbol">A symbol which you want change its leverage</param>
         /// <param name="leverage">New leverage you want set</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PositionsSaveLeverageAsyncWithHttpInfo(string symbol, string leverage)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsSaveLeverageAsyncWithHttpInfo(string symbol, string leverage)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsSaveLeverage");
+            }
             // verify the required parameter 'leverage' is set
             if (leverage == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'leverage' when calling PositionsApi->PositionsSaveLeverage");
+            }
 
             var localVarPath = "/user/leverage/save";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (leverage != null) localVarFormParams.Add("leverage", this.Configuration.ApiClient.ParameterToString(leverage)); // form parameter
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (leverage != null)
+            {
+                localVarFormParams.Add("leverage", Configuration.ApiClient.ParameterToString(leverage)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsSaveLeverage", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsSaveLeverage", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1108,9 +1252,9 @@ namespace BybitAPI.Api
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Object</returns>
-        public Object PositionsTradingStop(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
+        public object PositionsTradingStop(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
         {
-            ApiResponse<Object> localVarResponse = PositionsTradingStopWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+            var localVarResponse = PositionsTradingStopWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
             return localVarResponse.Data;
         }
 
@@ -1124,72 +1268,98 @@ namespace BybitAPI.Api
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> PositionsTradingStopWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
+        public ApiResponse<object> PositionsTradingStopWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsTradingStop");
+            }
 
             var localVarPath = "/open-api/position/trading-stop";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (takeProfit != null) localVarFormParams.Add("take_profit", this.Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
-            if (stopLoss != null) localVarFormParams.Add("stop_loss", this.Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
-            if (trailingStop != null) localVarFormParams.Add("trailing_stop", this.Configuration.ApiClient.ParameterToString(trailingStop)); // form parameter
-            if (newTrailingActive != null) localVarFormParams.Add("new_trailing_active", this.Configuration.ApiClient.ParameterToString(newTrailingActive)); // form parameter
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (takeProfit != null)
+            {
+                localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
+            }
+
+            if (stopLoss != null)
+            {
+                localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
+            }
+
+            if (trailingStop != null)
+            {
+                localVarFormParams.Add("trailing_stop", Configuration.ApiClient.ParameterToString(trailingStop)); // form parameter
+            }
+
+            if (newTrailingActive != null)
+            {
+                localVarFormParams.Add("new_trailing_active", Configuration.ApiClient.ParameterToString(newTrailingActive)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsTradingStop", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsTradingStop", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1202,9 +1372,9 @@ namespace BybitAPI.Api
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PositionsTradingStopAsync(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
+        public async System.Threading.Tasks.Task<object> PositionsTradingStopAsync(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
         {
-            ApiResponse<Object> localVarResponse = await PositionsTradingStopAsyncWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+            var localVarResponse = await PositionsTradingStopAsyncWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
             return localVarResponse.Data;
         }
 
@@ -1218,72 +1388,98 @@ namespace BybitAPI.Api
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
         /// <param name="newTrailingActive">Trailing stop trigger price. Trailing stops are triggered only when the price reaches the specified price. Trailing stops are triggered immediately by default. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PositionsTradingStopAsyncWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> PositionsTradingStopAsyncWithHttpInfo(string symbol, string takeProfit = null, string stopLoss = null, string trailingStop = null, string newTrailingActive = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling PositionsApi->PositionsTradingStop");
+            }
 
             var localVarPath = "/open-api/position/trading-stop";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (takeProfit != null) localVarFormParams.Add("take_profit", this.Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
-            if (stopLoss != null) localVarFormParams.Add("stop_loss", this.Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
-            if (trailingStop != null) localVarFormParams.Add("trailing_stop", this.Configuration.ApiClient.ParameterToString(trailingStop)); // form parameter
-            if (newTrailingActive != null) localVarFormParams.Add("new_trailing_active", this.Configuration.ApiClient.ParameterToString(newTrailingActive)); // form parameter
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (takeProfit != null)
+            {
+                localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
+            }
+
+            if (stopLoss != null)
+            {
+                localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
+            }
+
+            if (trailingStop != null)
+            {
+                localVarFormParams.Add("trailing_stop", Configuration.ApiClient.ParameterToString(trailingStop)); // form parameter
+            }
+
+            if (newTrailingActive != null)
+            {
+                localVarFormParams.Add("new_trailing_active", Configuration.ApiClient.ParameterToString(newTrailingActive)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("PositionsTradingStop", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("PositionsTradingStop", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
     }
 }

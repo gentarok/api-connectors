@@ -41,23 +41,23 @@ namespace BybitAPI.Model
         /// <param name="updatedAt">updatedAt.</param>
         /// <param name="crossStatus">crossStatus.</param>
         /// <param name="crossSeq">crossSeq.</param>
-        public OrderCancelAllRes(string clOrdID = default(string), decimal? userId = default(decimal?), string side = default(string), string orderType = default(string), string price = default(string), string qty = default(string), string timeInForce = default(string), string createType = default(string), string orderStatus = default(string), decimal? leavesQty = default(decimal?), decimal? leavesValue = default(decimal?), string createdAt = default(string), string updatedAt = default(string), string crossStatus = default(string), decimal? crossSeq = default(decimal?))
+        public OrderCancelAllRes(string clOrdID = default, decimal? userId = default, string side = default, string orderType = default, string price = default, string qty = default, string timeInForce = default, string createType = default, string orderStatus = default, decimal? leavesQty = default, decimal? leavesValue = default, string createdAt = default, string updatedAt = default, string crossStatus = default, decimal? crossSeq = default)
         {
-            this.ClOrdID = clOrdID;
-            this.UserId = userId;
-            this.Side = side;
-            this.OrderType = orderType;
-            this.Price = price;
-            this.Qty = qty;
-            this.TimeInForce = timeInForce;
-            this.CreateType = createType;
-            this.OrderStatus = orderStatus;
-            this.LeavesQty = leavesQty;
-            this.LeavesValue = leavesValue;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.CrossStatus = crossStatus;
-            this.CrossSeq = crossSeq;
+            ClOrdID = clOrdID;
+            UserId = userId;
+            Side = side;
+            OrderType = orderType;
+            Price = price;
+            Qty = qty;
+            TimeInForce = timeInForce;
+            CreateType = createType;
+            OrderStatus = orderStatus;
+            LeavesQty = leavesQty;
+            LeavesValue = leavesValue;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
+            CrossStatus = crossStatus;
+            CrossSeq = crossSeq;
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrderCancelAllRes);
+            return Equals(input as OrderCancelAllRes);
         }
 
         /// <summary>
@@ -204,83 +204,85 @@ namespace BybitAPI.Model
         public bool Equals(OrderCancelAllRes input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.ClOrdID == input.ClOrdID ||
-                    (this.ClOrdID != null &&
-                    this.ClOrdID.Equals(input.ClOrdID))
+                    ClOrdID == input.ClOrdID ||
+                    (ClOrdID != null &&
+                    ClOrdID.Equals(input.ClOrdID))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.OrderType == input.OrderType ||
-                    (this.OrderType != null &&
-                    this.OrderType.Equals(input.OrderType))
+                    OrderType == input.OrderType ||
+                    (OrderType != null &&
+                    OrderType.Equals(input.OrderType))
                 ) &&
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    Price == input.Price ||
+                    (Price != null &&
+                    Price.Equals(input.Price))
                 ) &&
                 (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
+                    Qty == input.Qty ||
+                    (Qty != null &&
+                    Qty.Equals(input.Qty))
                 ) &&
                 (
-                    this.TimeInForce == input.TimeInForce ||
-                    (this.TimeInForce != null &&
-                    this.TimeInForce.Equals(input.TimeInForce))
+                    TimeInForce == input.TimeInForce ||
+                    (TimeInForce != null &&
+                    TimeInForce.Equals(input.TimeInForce))
                 ) &&
                 (
-                    this.CreateType == input.CreateType ||
-                    (this.CreateType != null &&
-                    this.CreateType.Equals(input.CreateType))
+                    CreateType == input.CreateType ||
+                    (CreateType != null &&
+                    CreateType.Equals(input.CreateType))
                 ) &&
                 (
-                    this.OrderStatus == input.OrderStatus ||
-                    (this.OrderStatus != null &&
-                    this.OrderStatus.Equals(input.OrderStatus))
+                    OrderStatus == input.OrderStatus ||
+                    (OrderStatus != null &&
+                    OrderStatus.Equals(input.OrderStatus))
                 ) &&
                 (
-                    this.LeavesQty == input.LeavesQty ||
-                    (this.LeavesQty != null &&
-                    this.LeavesQty.Equals(input.LeavesQty))
+                    LeavesQty == input.LeavesQty ||
+                    (LeavesQty != null &&
+                    LeavesQty.Equals(input.LeavesQty))
                 ) &&
                 (
-                    this.LeavesValue == input.LeavesValue ||
-                    (this.LeavesValue != null &&
-                    this.LeavesValue.Equals(input.LeavesValue))
+                    LeavesValue == input.LeavesValue ||
+                    (LeavesValue != null &&
+                    LeavesValue.Equals(input.LeavesValue))
                 ) &&
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
+                    UpdatedAt == input.UpdatedAt ||
+                    (UpdatedAt != null &&
+                    UpdatedAt.Equals(input.UpdatedAt))
                 ) &&
                 (
-                    this.CrossStatus == input.CrossStatus ||
-                    (this.CrossStatus != null &&
-                    this.CrossStatus.Equals(input.CrossStatus))
+                    CrossStatus == input.CrossStatus ||
+                    (CrossStatus != null &&
+                    CrossStatus.Equals(input.CrossStatus))
                 ) &&
                 (
-                    this.CrossSeq == input.CrossSeq ||
-                    (this.CrossSeq != null &&
-                    this.CrossSeq.Equals(input.CrossSeq))
+                    CrossSeq == input.CrossSeq ||
+                    (CrossSeq != null &&
+                    CrossSeq.Equals(input.CrossSeq))
                 );
         }
 
@@ -292,37 +294,82 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClOrdID != null)
-                    hashCode = hashCode * 59 + this.ClOrdID.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.OrderType != null)
-                    hashCode = hashCode * 59 + this.OrderType.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.TimeInForce != null)
-                    hashCode = hashCode * 59 + this.TimeInForce.GetHashCode();
-                if (this.CreateType != null)
-                    hashCode = hashCode * 59 + this.CreateType.GetHashCode();
-                if (this.OrderStatus != null)
-                    hashCode = hashCode * 59 + this.OrderStatus.GetHashCode();
-                if (this.LeavesQty != null)
-                    hashCode = hashCode * 59 + this.LeavesQty.GetHashCode();
-                if (this.LeavesValue != null)
-                    hashCode = hashCode * 59 + this.LeavesValue.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.CrossStatus != null)
-                    hashCode = hashCode * 59 + this.CrossStatus.GetHashCode();
-                if (this.CrossSeq != null)
-                    hashCode = hashCode * 59 + this.CrossSeq.GetHashCode();
+                var hashCode = 41;
+                if (ClOrdID != null)
+                {
+                    hashCode = hashCode * 59 + ClOrdID.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (OrderType != null)
+                {
+                    hashCode = hashCode * 59 + OrderType.GetHashCode();
+                }
+
+                if (Price != null)
+                {
+                    hashCode = hashCode * 59 + Price.GetHashCode();
+                }
+
+                if (Qty != null)
+                {
+                    hashCode = hashCode * 59 + Qty.GetHashCode();
+                }
+
+                if (TimeInForce != null)
+                {
+                    hashCode = hashCode * 59 + TimeInForce.GetHashCode();
+                }
+
+                if (CreateType != null)
+                {
+                    hashCode = hashCode * 59 + CreateType.GetHashCode();
+                }
+
+                if (OrderStatus != null)
+                {
+                    hashCode = hashCode * 59 + OrderStatus.GetHashCode();
+                }
+
+                if (LeavesQty != null)
+                {
+                    hashCode = hashCode * 59 + LeavesQty.GetHashCode();
+                }
+
+                if (LeavesValue != null)
+                {
+                    hashCode = hashCode * 59 + LeavesValue.GetHashCode();
+                }
+
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
+                if (UpdatedAt != null)
+                {
+                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                }
+
+                if (CrossStatus != null)
+                {
+                    hashCode = hashCode * 59 + CrossStatus.GetHashCode();
+                }
+
+                if (CrossSeq != null)
+                {
+                    hashCode = hashCode * 59 + CrossSeq.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

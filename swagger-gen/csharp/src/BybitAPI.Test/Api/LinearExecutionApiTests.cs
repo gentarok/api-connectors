@@ -49,7 +49,7 @@ namespace BybitAPI.Test
         public void InstanceTest()
         {
             // TODO uncomment below to test 'IsInstanceOfType' LinearExecutionApi
-            //Assert.IsInstanceOfType(typeof(LinearExecutionApi), instance, "instance is a LinearExecutionApi");
+            Assert.IsInstanceOf(typeof(LinearExecutionApi), instance, "instance is a LinearExecutionApi");
         }
 
         /// <summary>

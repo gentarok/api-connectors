@@ -35,7 +35,7 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Object</returns>
-        Object MarketAccountRatio(string symbol, string period, int? limit = null);
+        object MarketAccountRatio(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Account Long Short Ratio
@@ -48,7 +48,7 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> MarketAccountRatioWithHttpInfo(string symbol, string period, int? limit = null);
+        ApiResponse<object> MarketAccountRatioWithHttpInfo(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Big Deal
@@ -60,7 +60,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Object</returns>
-        Object MarketBigDeal(string symbol, int? limit = null);
+        object MarketBigDeal(string symbol, int? limit = null);
 
         /// <summary>
         /// Query Big Deal
@@ -72,7 +72,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> MarketBigDealWithHttpInfo(string symbol, int? limit = null);
+        ApiResponse<object> MarketBigDealWithHttpInfo(string symbol, int? limit = null);
 
         /// <summary>
         /// Query liq records.
@@ -87,7 +87,7 @@ namespace BybitAPI.Api
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Object</returns>
-        Object MarketLiqRecords(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
+        object MarketLiqRecords(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
 
         /// <summary>
         /// Query liq records.
@@ -102,7 +102,7 @@ namespace BybitAPI.Api
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> MarketLiqRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
+        ApiResponse<object> MarketLiqRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
 
         /// <summary>
         /// Query Open Interest
@@ -115,7 +115,7 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Object</returns>
-        Object MarketOpenInterest(string symbol, string period, int? limit = null);
+        object MarketOpenInterest(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Open Interest
@@ -128,7 +128,7 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> MarketOpenInterestWithHttpInfo(string symbol, string period, int? limit = null);
+        ApiResponse<object> MarketOpenInterestWithHttpInfo(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Get the orderbook.
@@ -139,7 +139,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
-        Object MarketOrderbook(string symbol);
+        object MarketOrderbook(string symbol);
 
         /// <summary>
         /// Get the orderbook.
@@ -150,7 +150,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> MarketOrderbookWithHttpInfo(string symbol);
+        ApiResponse<object> MarketOrderbookWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get the latest information for symbol.
@@ -161,7 +161,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Object</returns>
-        Object MarketSymbolInfo(string symbol = null);
+        object MarketSymbolInfo(string symbol = null);
 
         /// <summary>
         /// Get the latest information for symbol.
@@ -172,7 +172,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> MarketSymbolInfoWithHttpInfo(string symbol = null);
+        ApiResponse<object> MarketSymbolInfoWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Get recent trades
@@ -185,7 +185,7 @@ namespace BybitAPI.Api
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Object</returns>
-        Object MarketTradingRecords(string symbol, int? from = null, int? limit = null);
+        object MarketTradingRecords(string symbol, int? from = null, int? limit = null);
 
         /// <summary>
         /// Get recent trades
@@ -198,7 +198,7 @@ namespace BybitAPI.Api
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> MarketTradingRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null);
+        ApiResponse<object> MarketTradingRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null);
 
         #endregion Synchronous Operations
 
@@ -215,7 +215,7 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> MarketAccountRatioAsync(string symbol, string period, int? limit = null);
+        System.Threading.Tasks.Task<object> MarketAccountRatioAsync(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Account Long Short Ratio
@@ -228,7 +228,7 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MarketAccountRatioAsyncWithHttpInfo(string symbol, string period, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> MarketAccountRatioAsyncWithHttpInfo(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Big Deal
@@ -240,7 +240,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> MarketBigDealAsync(string symbol, int? limit = null);
+        System.Threading.Tasks.Task<object> MarketBigDealAsync(string symbol, int? limit = null);
 
         /// <summary>
         /// Query Big Deal
@@ -252,7 +252,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MarketBigDealAsyncWithHttpInfo(string symbol, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> MarketBigDealAsyncWithHttpInfo(string symbol, int? limit = null);
 
         /// <summary>
         /// Query liq records.
@@ -267,7 +267,7 @@ namespace BybitAPI.Api
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> MarketLiqRecordsAsync(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
+        System.Threading.Tasks.Task<object> MarketLiqRecordsAsync(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
 
         /// <summary>
         /// Query liq records.
@@ -282,7 +282,7 @@ namespace BybitAPI.Api
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MarketLiqRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> MarketLiqRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null);
 
         /// <summary>
         /// Query Open Interest
@@ -295,7 +295,7 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> MarketOpenInterestAsync(string symbol, string period, int? limit = null);
+        System.Threading.Tasks.Task<object> MarketOpenInterestAsync(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Query Open Interest
@@ -308,7 +308,7 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MarketOpenInterestAsyncWithHttpInfo(string symbol, string period, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> MarketOpenInterestAsyncWithHttpInfo(string symbol, string period, int? limit = null);
 
         /// <summary>
         /// Get the orderbook.
@@ -319,7 +319,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> MarketOrderbookAsync(string symbol);
+        System.Threading.Tasks.Task<object> MarketOrderbookAsync(string symbol);
 
         /// <summary>
         /// Get the orderbook.
@@ -330,7 +330,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MarketOrderbookAsyncWithHttpInfo(string symbol);
+        System.Threading.Tasks.Task<ApiResponse<object>> MarketOrderbookAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get the latest information for symbol.
@@ -341,7 +341,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> MarketSymbolInfoAsync(string symbol = null);
+        System.Threading.Tasks.Task<object> MarketSymbolInfoAsync(string symbol = null);
 
         /// <summary>
         /// Get the latest information for symbol.
@@ -352,7 +352,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MarketSymbolInfoAsyncWithHttpInfo(string symbol = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> MarketSymbolInfoAsyncWithHttpInfo(string symbol = null);
 
         /// <summary>
         /// Get recent trades
@@ -365,7 +365,7 @@ namespace BybitAPI.Api
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> MarketTradingRecordsAsync(string symbol, int? from = null, int? limit = null);
+        System.Threading.Tasks.Task<object> MarketTradingRecordsAsync(string symbol, int? from = null, int? limit = null);
 
         /// <summary>
         /// Get recent trades
@@ -378,7 +378,7 @@ namespace BybitAPI.Api
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MarketTradingRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> MarketTradingRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -394,9 +394,9 @@ namespace BybitAPI.Api
         /// Initializes a new instance of the <see cref="MarketApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public MarketApi(String basePath)
+        public MarketApi(string basePath)
         {
-            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -410,9 +410,13 @@ namespace BybitAPI.Api
         public MarketApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = BybitAPI.Client.Configuration.Default;
+            {
+                Configuration = BybitAPI.Client.Configuration.Default;
+            }
             else
-                this.Configuration = configuration;
+            {
+                Configuration = configuration;
+            }
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -421,9 +425,9 @@ namespace BybitAPI.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -431,7 +435,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -455,7 +459,7 @@ namespace BybitAPI.Api
                 }
                 return _exceptionFactory;
             }
-            set { _exceptionFactory = value; }
+            set => _exceptionFactory = value;
         }
 
         /// <summary>
@@ -463,9 +467,9 @@ namespace BybitAPI.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -477,7 +481,7 @@ namespace BybitAPI.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
@@ -488,9 +492,9 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Object</returns>
-        public Object MarketAccountRatio(string symbol, string period, int? limit = null)
+        public object MarketAccountRatio(string symbol, string period, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = MarketAccountRatioWithHttpInfo(symbol, period, limit);
+            var localVarResponse = MarketAccountRatioWithHttpInfo(symbol, period, limit);
             return localVarResponse.Data;
         }
 
@@ -502,58 +506,78 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> MarketAccountRatioWithHttpInfo(string symbol, string period, int? limit = null)
+        public ApiResponse<object> MarketAccountRatioWithHttpInfo(string symbol, string period, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketAccountRatio");
+            }
             // verify the required parameter 'period' is set
             if (period == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'period' when calling MarketApi->MarketAccountRatio");
+            }
 
             var localVarPath = "/v2/public/account-ratio";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (period != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
+
+            if (period != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketAccountRatio", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketAccountRatio", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -564,9 +588,9 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> MarketAccountRatioAsync(string symbol, string period, int? limit = null)
+        public async System.Threading.Tasks.Task<object> MarketAccountRatioAsync(string symbol, string period, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = await MarketAccountRatioAsyncWithHttpInfo(symbol, period, limit);
+            var localVarResponse = await MarketAccountRatioAsyncWithHttpInfo(symbol, period, limit);
             return localVarResponse.Data;
         }
 
@@ -578,58 +602,78 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> MarketAccountRatioAsyncWithHttpInfo(string symbol, string period, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketAccountRatioAsyncWithHttpInfo(string symbol, string period, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketAccountRatio");
+            }
             // verify the required parameter 'period' is set
             if (period == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'period' when calling MarketApi->MarketAccountRatio");
+            }
 
             var localVarPath = "/v2/public/account-ratio";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (period != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
+
+            if (period != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketAccountRatio", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketAccountRatio", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -639,9 +683,9 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Object</returns>
-        public Object MarketBigDeal(string symbol, int? limit = null)
+        public object MarketBigDeal(string symbol, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = MarketBigDealWithHttpInfo(symbol, limit);
+            var localVarResponse = MarketBigDealWithHttpInfo(symbol, limit);
             return localVarResponse.Data;
         }
 
@@ -652,54 +696,68 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> MarketBigDealWithHttpInfo(string symbol, int? limit = null)
+        public ApiResponse<object> MarketBigDealWithHttpInfo(string symbol, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketBigDeal");
+            }
 
             var localVarPath = "/v2/public/big-deal";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketBigDeal", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketBigDeal", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -709,9 +767,9 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> MarketBigDealAsync(string symbol, int? limit = null)
+        public async System.Threading.Tasks.Task<object> MarketBigDealAsync(string symbol, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = await MarketBigDealAsyncWithHttpInfo(symbol, limit);
+            var localVarResponse = await MarketBigDealAsyncWithHttpInfo(symbol, limit);
             return localVarResponse.Data;
         }
 
@@ -722,54 +780,68 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> MarketBigDealAsyncWithHttpInfo(string symbol, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketBigDealAsyncWithHttpInfo(string symbol, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketBigDeal");
+            }
 
             var localVarPath = "/v2/public/big-deal";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketBigDeal", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketBigDeal", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -782,9 +854,9 @@ namespace BybitAPI.Api
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Object</returns>
-        public Object MarketLiqRecords(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
+        public object MarketLiqRecords(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
         {
-            ApiResponse<Object> localVarResponse = MarketLiqRecordsWithHttpInfo(symbol, from, limit, startTime, endTime);
+            var localVarResponse = MarketLiqRecordsWithHttpInfo(symbol, from, limit, startTime, endTime);
             return localVarResponse.Data;
         }
 
@@ -798,57 +870,83 @@ namespace BybitAPI.Api
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> MarketLiqRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
+        public ApiResponse<object> MarketLiqRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketLiqRecords");
+            }
 
             var localVarPath = "/v2/public/liq-records";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (from != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (startTime != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
-            if (endTime != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (from != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
+
+            if (startTime != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
+            }
+
+            if (endTime != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketLiqRecords", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketLiqRecords", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -861,9 +959,9 @@ namespace BybitAPI.Api
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> MarketLiqRecordsAsync(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
+        public async System.Threading.Tasks.Task<object> MarketLiqRecordsAsync(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
         {
-            ApiResponse<Object> localVarResponse = await MarketLiqRecordsAsyncWithHttpInfo(symbol, from, limit, startTime, endTime);
+            var localVarResponse = await MarketLiqRecordsAsyncWithHttpInfo(symbol, from, limit, startTime, endTime);
             return localVarResponse.Data;
         }
 
@@ -877,57 +975,83 @@ namespace BybitAPI.Api
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
         /// <param name="endTime">End timestamp point for result, in millisecond (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> MarketLiqRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketLiqRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null, int? startTime = null, int? endTime = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketLiqRecords");
+            }
 
             var localVarPath = "/v2/public/liq-records";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (from != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (startTime != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
-            if (endTime != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (from != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
+
+            if (startTime != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime)); // query parameter
+            }
+
+            if (endTime != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketLiqRecords", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketLiqRecords", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -938,9 +1062,9 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Object</returns>
-        public Object MarketOpenInterest(string symbol, string period, int? limit = null)
+        public object MarketOpenInterest(string symbol, string period, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = MarketOpenInterestWithHttpInfo(symbol, period, limit);
+            var localVarResponse = MarketOpenInterestWithHttpInfo(symbol, period, limit);
             return localVarResponse.Data;
         }
 
@@ -952,58 +1076,78 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> MarketOpenInterestWithHttpInfo(string symbol, string period, int? limit = null)
+        public ApiResponse<object> MarketOpenInterestWithHttpInfo(string symbol, string period, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketOpenInterest");
+            }
             // verify the required parameter 'period' is set
             if (period == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'period' when calling MarketApi->MarketOpenInterest");
+            }
 
             var localVarPath = "/v2/public/open-interest";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (period != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
+
+            if (period != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketOpenInterest", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketOpenInterest", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1014,9 +1158,9 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> MarketOpenInterestAsync(string symbol, string period, int? limit = null)
+        public async System.Threading.Tasks.Task<object> MarketOpenInterestAsync(string symbol, string period, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = await MarketOpenInterestAsyncWithHttpInfo(symbol, period, limit);
+            var localVarResponse = await MarketOpenInterestAsyncWithHttpInfo(symbol, period, limit);
             return localVarResponse.Data;
         }
 
@@ -1028,58 +1172,78 @@ namespace BybitAPI.Api
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> MarketOpenInterestAsyncWithHttpInfo(string symbol, string period, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketOpenInterestAsyncWithHttpInfo(string symbol, string period, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketOpenInterest");
+            }
             // verify the required parameter 'period' is set
             if (period == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'period' when calling MarketApi->MarketOpenInterest");
+            }
 
             var localVarPath = "/v2/public/open-interest";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (period != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
+
+            if (period != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "period", period)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketOpenInterest", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketOpenInterest", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1088,9 +1252,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
-        public Object MarketOrderbook(string symbol)
+        public object MarketOrderbook(string symbol)
         {
-            ApiResponse<Object> localVarResponse = MarketOrderbookWithHttpInfo(symbol);
+            var localVarResponse = MarketOrderbookWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -1100,53 +1264,63 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> MarketOrderbookWithHttpInfo(string symbol)
+        public ApiResponse<object> MarketOrderbookWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketOrderbook");
+            }
 
             var localVarPath = "/v2/public/orderBook/L2";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketOrderbook", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketOrderbook", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1155,9 +1329,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> MarketOrderbookAsync(string symbol)
+        public async System.Threading.Tasks.Task<object> MarketOrderbookAsync(string symbol)
         {
-            ApiResponse<Object> localVarResponse = await MarketOrderbookAsyncWithHttpInfo(symbol);
+            var localVarResponse = await MarketOrderbookAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -1167,53 +1341,63 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> MarketOrderbookAsyncWithHttpInfo(string symbol)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketOrderbookAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketOrderbook");
+            }
 
             var localVarPath = "/v2/public/orderBook/L2";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketOrderbook", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketOrderbook", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1222,9 +1406,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Object</returns>
-        public Object MarketSymbolInfo(string symbol = null)
+        public object MarketSymbolInfo(string symbol = null)
         {
-            ApiResponse<Object> localVarResponse = MarketSymbolInfoWithHttpInfo(symbol);
+            var localVarResponse = MarketSymbolInfoWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -1234,49 +1418,57 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> MarketSymbolInfoWithHttpInfo(string symbol = null)
+        public ApiResponse<object> MarketSymbolInfoWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/v2/public/tickers";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketSymbolInfo", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketSymbolInfo", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1285,9 +1477,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> MarketSymbolInfoAsync(string symbol = null)
+        public async System.Threading.Tasks.Task<object> MarketSymbolInfoAsync(string symbol = null)
         {
-            ApiResponse<Object> localVarResponse = await MarketSymbolInfoAsyncWithHttpInfo(symbol);
+            var localVarResponse = await MarketSymbolInfoAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -1297,49 +1489,57 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> MarketSymbolInfoAsyncWithHttpInfo(string symbol = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketSymbolInfoAsyncWithHttpInfo(string symbol = null)
         {
             var localVarPath = "/v2/public/tickers";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketSymbolInfo", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketSymbolInfo", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1350,9 +1550,9 @@ namespace BybitAPI.Api
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Object</returns>
-        public Object MarketTradingRecords(string symbol, int? from = null, int? limit = null)
+        public object MarketTradingRecords(string symbol, int? from = null, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = MarketTradingRecordsWithHttpInfo(symbol, from, limit);
+            var localVarResponse = MarketTradingRecordsWithHttpInfo(symbol, from, limit);
             return localVarResponse.Data;
         }
 
@@ -1364,55 +1564,73 @@ namespace BybitAPI.Api
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> MarketTradingRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null)
+        public ApiResponse<object> MarketTradingRecordsWithHttpInfo(string symbol, int? from = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketTradingRecords");
+            }
 
             var localVarPath = "/v2/public/trading-records";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (from != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (from != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketTradingRecords", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketTradingRecords", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1423,9 +1641,9 @@ namespace BybitAPI.Api
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> MarketTradingRecordsAsync(string symbol, int? from = null, int? limit = null)
+        public async System.Threading.Tasks.Task<object> MarketTradingRecordsAsync(string symbol, int? from = null, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = await MarketTradingRecordsAsyncWithHttpInfo(symbol, from, limit);
+            var localVarResponse = await MarketTradingRecordsAsyncWithHttpInfo(symbol, from, limit);
             return localVarResponse.Data;
         }
 
@@ -1437,55 +1655,73 @@ namespace BybitAPI.Api
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> MarketTradingRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> MarketTradingRecordsAsyncWithHttpInfo(string symbol, int? from = null, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling MarketApi->MarketTradingRecords");
+            }
 
             var localVarPath = "/v2/public/trading-records";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (from != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (from != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MarketTradingRecords", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("MarketTradingRecords", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
     }
 }

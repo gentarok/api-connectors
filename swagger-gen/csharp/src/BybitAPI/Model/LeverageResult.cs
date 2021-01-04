@@ -30,37 +30,37 @@ namespace BybitAPI.Model
         /// <param name="eOSUSD">eOSUSD.</param>
         /// <param name="eTHUSD">eTHUSD.</param>
         /// <param name="xRPUSD">xRPUSD.</param>
-        public LeverageResult(Object bTCUSD = default(Object), Object eOSUSD = default(Object), Object eTHUSD = default(Object), Object xRPUSD = default(Object))
+        public LeverageResult(object bTCUSD = default, object eOSUSD = default, object eTHUSD = default, object xRPUSD = default)
         {
-            this.BTCUSD = bTCUSD;
-            this.EOSUSD = eOSUSD;
-            this.ETHUSD = eTHUSD;
-            this.XRPUSD = xRPUSD;
+            BTCUSD = bTCUSD;
+            EOSUSD = eOSUSD;
+            ETHUSD = eTHUSD;
+            XRPUSD = xRPUSD;
         }
 
         /// <summary>
         /// Gets or Sets BTCUSD
         /// </summary>
         [DataMember(Name = "BTCUSD", EmitDefaultValue = false)]
-        public Object BTCUSD { get; set; }
+        public object BTCUSD { get; set; }
 
         /// <summary>
         /// Gets or Sets EOSUSD
         /// </summary>
         [DataMember(Name = "EOSUSD", EmitDefaultValue = false)]
-        public Object EOSUSD { get; set; }
+        public object EOSUSD { get; set; }
 
         /// <summary>
         /// Gets or Sets ETHUSD
         /// </summary>
         [DataMember(Name = "ETHUSD", EmitDefaultValue = false)]
-        public Object ETHUSD { get; set; }
+        public object ETHUSD { get; set; }
 
         /// <summary>
         /// Gets or Sets XRPUSD
         /// </summary>
         [DataMember(Name = "XRPUSD", EmitDefaultValue = false)]
-        public Object XRPUSD { get; set; }
+        public object XRPUSD { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,7 +94,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LeverageResult);
+            return Equals(input as LeverageResult);
         }
 
         /// <summary>
@@ -105,28 +105,30 @@ namespace BybitAPI.Model
         public bool Equals(LeverageResult input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.BTCUSD == input.BTCUSD ||
-                    (this.BTCUSD != null &&
-                    this.BTCUSD.Equals(input.BTCUSD))
+                    BTCUSD == input.BTCUSD ||
+                    (BTCUSD != null &&
+                    BTCUSD.Equals(input.BTCUSD))
                 ) &&
                 (
-                    this.EOSUSD == input.EOSUSD ||
-                    (this.EOSUSD != null &&
-                    this.EOSUSD.Equals(input.EOSUSD))
+                    EOSUSD == input.EOSUSD ||
+                    (EOSUSD != null &&
+                    EOSUSD.Equals(input.EOSUSD))
                 ) &&
                 (
-                    this.ETHUSD == input.ETHUSD ||
-                    (this.ETHUSD != null &&
-                    this.ETHUSD.Equals(input.ETHUSD))
+                    ETHUSD == input.ETHUSD ||
+                    (ETHUSD != null &&
+                    ETHUSD.Equals(input.ETHUSD))
                 ) &&
                 (
-                    this.XRPUSD == input.XRPUSD ||
-                    (this.XRPUSD != null &&
-                    this.XRPUSD.Equals(input.XRPUSD))
+                    XRPUSD == input.XRPUSD ||
+                    (XRPUSD != null &&
+                    XRPUSD.Equals(input.XRPUSD))
                 );
         }
 
@@ -138,15 +140,27 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BTCUSD != null)
-                    hashCode = hashCode * 59 + this.BTCUSD.GetHashCode();
-                if (this.EOSUSD != null)
-                    hashCode = hashCode * 59 + this.EOSUSD.GetHashCode();
-                if (this.ETHUSD != null)
-                    hashCode = hashCode * 59 + this.ETHUSD.GetHashCode();
-                if (this.XRPUSD != null)
-                    hashCode = hashCode * 59 + this.XRPUSD.GetHashCode();
+                var hashCode = 41;
+                if (BTCUSD != null)
+                {
+                    hashCode = hashCode * 59 + BTCUSD.GetHashCode();
+                }
+
+                if (EOSUSD != null)
+                {
+                    hashCode = hashCode * 59 + EOSUSD.GetHashCode();
+                }
+
+                if (ETHUSD != null)
+                {
+                    hashCode = hashCode * 59 + ETHUSD.GetHashCode();
+                }
+
+                if (XRPUSD != null)
+                {
+                    hashCode = hashCode * 59 + XRPUSD.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

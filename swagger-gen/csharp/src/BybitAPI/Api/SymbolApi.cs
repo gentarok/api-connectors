@@ -32,7 +32,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
-        Object SymbolGet();
+        object SymbolGet();
 
         /// <summary>
         /// Query Symbols.
@@ -42,7 +42,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> SymbolGetWithHttpInfo();
+        ApiResponse<object> SymbolGetWithHttpInfo();
 
         #endregion Synchronous Operations
 
@@ -56,7 +56,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> SymbolGetAsync();
+        System.Threading.Tasks.Task<object> SymbolGetAsync();
 
         /// <summary>
         /// Query Symbols.
@@ -66,7 +66,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SymbolGetAsyncWithHttpInfo();
+        System.Threading.Tasks.Task<ApiResponse<object>> SymbolGetAsyncWithHttpInfo();
 
         #endregion Asynchronous Operations
     }
@@ -82,9 +82,9 @@ namespace BybitAPI.Api
         /// Initializes a new instance of the <see cref="SymbolApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public SymbolApi(String basePath)
+        public SymbolApi(string basePath)
         {
-            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -98,9 +98,13 @@ namespace BybitAPI.Api
         public SymbolApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = BybitAPI.Client.Configuration.Default;
+            {
+                Configuration = BybitAPI.Client.Configuration.Default;
+            }
             else
-                this.Configuration = configuration;
+            {
+                Configuration = configuration;
+            }
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -109,9 +113,9 @@ namespace BybitAPI.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -119,7 +123,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -143,7 +147,7 @@ namespace BybitAPI.Api
                 }
                 return _exceptionFactory;
             }
-            set { _exceptionFactory = value; }
+            set => _exceptionFactory = value;
         }
 
         /// <summary>
@@ -151,9 +155,9 @@ namespace BybitAPI.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -165,7 +169,7 @@ namespace BybitAPI.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
@@ -173,9 +177,9 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
-        public Object SymbolGet()
+        public object SymbolGet()
         {
-            ApiResponse<Object> localVarResponse = SymbolGetWithHttpInfo();
+            var localVarResponse = SymbolGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -184,47 +188,52 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> SymbolGetWithHttpInfo()
+        public ApiResponse<object> SymbolGetWithHttpInfo()
         {
             var localVarPath = "/v2/public/symbols";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("SymbolGet", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("SymbolGet", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -232,9 +241,9 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> SymbolGetAsync()
+        public async System.Threading.Tasks.Task<object> SymbolGetAsync()
         {
-            ApiResponse<Object> localVarResponse = await SymbolGetAsyncWithHttpInfo();
+            var localVarResponse = await SymbolGetAsyncWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -243,47 +252,52 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> SymbolGetAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<object>> SymbolGetAsyncWithHttpInfo()
         {
             var localVarPath = "/v2/public/symbols";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("SymbolGet", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("SymbolGet", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
     }
 }

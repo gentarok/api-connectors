@@ -36,18 +36,18 @@ namespace BybitAPI.Model
         /// <param name="txId">txId.</param>
         /// <param name="submitedAt">submitedAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public WithdrawRecords(decimal? id = default(decimal?), decimal? userId = default(decimal?), string coin = default(string), string status = default(string), string amount = default(string), string fee = default(string), string address = default(string), string txId = default(string), string submitedAt = default(string), string updatedAt = default(string))
+        public WithdrawRecords(decimal? id = default, decimal? userId = default, string coin = default, string status = default, string amount = default, string fee = default, string address = default, string txId = default, string submitedAt = default, string updatedAt = default)
         {
-            this.Id = id;
-            this.UserId = userId;
-            this.Coin = coin;
-            this.Status = status;
-            this.Amount = amount;
-            this.Fee = fee;
-            this.Address = address;
-            this.TxId = txId;
-            this.SubmitedAt = submitedAt;
-            this.UpdatedAt = updatedAt;
+            Id = id;
+            UserId = userId;
+            Coin = coin;
+            Status = status;
+            Amount = amount;
+            Fee = fee;
+            Address = address;
+            TxId = txId;
+            SubmitedAt = submitedAt;
+            UpdatedAt = updatedAt;
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WithdrawRecords);
+            return Equals(input as WithdrawRecords);
         }
 
         /// <summary>
@@ -159,58 +159,60 @@ namespace BybitAPI.Model
         public bool Equals(WithdrawRecords input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    Coin == input.Coin ||
+                    (Coin != null &&
+                    Coin.Equals(input.Coin))
                 ) &&
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    Status == input.Status ||
+                    (Status != null &&
+                    Status.Equals(input.Status))
                 ) &&
                 (
-                    this.Amount == input.Amount ||
-                    (this.Amount != null &&
-                    this.Amount.Equals(input.Amount))
+                    Amount == input.Amount ||
+                    (Amount != null &&
+                    Amount.Equals(input.Amount))
                 ) &&
                 (
-                    this.Fee == input.Fee ||
-                    (this.Fee != null &&
-                    this.Fee.Equals(input.Fee))
+                    Fee == input.Fee ||
+                    (Fee != null &&
+                    Fee.Equals(input.Fee))
                 ) &&
                 (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
+                    Address == input.Address ||
+                    (Address != null &&
+                    Address.Equals(input.Address))
                 ) &&
                 (
-                    this.TxId == input.TxId ||
-                    (this.TxId != null &&
-                    this.TxId.Equals(input.TxId))
+                    TxId == input.TxId ||
+                    (TxId != null &&
+                    TxId.Equals(input.TxId))
                 ) &&
                 (
-                    this.SubmitedAt == input.SubmitedAt ||
-                    (this.SubmitedAt != null &&
-                    this.SubmitedAt.Equals(input.SubmitedAt))
+                    SubmitedAt == input.SubmitedAt ||
+                    (SubmitedAt != null &&
+                    SubmitedAt.Equals(input.SubmitedAt))
                 ) &&
                 (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
+                    UpdatedAt == input.UpdatedAt ||
+                    (UpdatedAt != null &&
+                    UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
 
@@ -222,27 +224,57 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Amount != null)
-                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
-                if (this.Fee != null)
-                    hashCode = hashCode * 59 + this.Fee.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.TxId != null)
-                    hashCode = hashCode * 59 + this.TxId.GetHashCode();
-                if (this.SubmitedAt != null)
-                    hashCode = hashCode * 59 + this.SubmitedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (Id != null)
+                {
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (Coin != null)
+                {
+                    hashCode = hashCode * 59 + Coin.GetHashCode();
+                }
+
+                if (Status != null)
+                {
+                    hashCode = hashCode * 59 + Status.GetHashCode();
+                }
+
+                if (Amount != null)
+                {
+                    hashCode = hashCode * 59 + Amount.GetHashCode();
+                }
+
+                if (Fee != null)
+                {
+                    hashCode = hashCode * 59 + Fee.GetHashCode();
+                }
+
+                if (Address != null)
+                {
+                    hashCode = hashCode * 59 + Address.GetHashCode();
+                }
+
+                if (TxId != null)
+                {
+                    hashCode = hashCode * 59 + TxId.GetHashCode();
+                }
+
+                if (SubmitedAt != null)
+                {
+                    hashCode = hashCode * 59 + SubmitedAt.GetHashCode();
+                }
+
+                if (UpdatedAt != null)
+                {
+                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

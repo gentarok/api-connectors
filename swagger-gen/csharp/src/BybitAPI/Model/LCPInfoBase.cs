@@ -30,12 +30,12 @@ namespace BybitAPI.Model
         /// <param name="selfRatio">selfRatio.</param>
         /// <param name="platformRatio">platformRatio.</param>
         /// <param name="score">score.</param>
-        public LCPInfoBase(string date = default(string), decimal? selfRatio = default(decimal?), decimal? platformRatio = default(decimal?), decimal? score = default(decimal?))
+        public LCPInfoBase(string date = default, decimal? selfRatio = default, decimal? platformRatio = default, decimal? score = default)
         {
-            this.Date = date;
-            this.SelfRatio = selfRatio;
-            this.PlatformRatio = platformRatio;
-            this.Score = score;
+            Date = date;
+            SelfRatio = selfRatio;
+            PlatformRatio = platformRatio;
+            Score = score;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LCPInfoBase);
+            return Equals(input as LCPInfoBase);
         }
 
         /// <summary>
@@ -105,28 +105,30 @@ namespace BybitAPI.Model
         public bool Equals(LCPInfoBase input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    Date == input.Date ||
+                    (Date != null &&
+                    Date.Equals(input.Date))
                 ) &&
                 (
-                    this.SelfRatio == input.SelfRatio ||
-                    (this.SelfRatio != null &&
-                    this.SelfRatio.Equals(input.SelfRatio))
+                    SelfRatio == input.SelfRatio ||
+                    (SelfRatio != null &&
+                    SelfRatio.Equals(input.SelfRatio))
                 ) &&
                 (
-                    this.PlatformRatio == input.PlatformRatio ||
-                    (this.PlatformRatio != null &&
-                    this.PlatformRatio.Equals(input.PlatformRatio))
+                    PlatformRatio == input.PlatformRatio ||
+                    (PlatformRatio != null &&
+                    PlatformRatio.Equals(input.PlatformRatio))
                 ) &&
                 (
-                    this.Score == input.Score ||
-                    (this.Score != null &&
-                    this.Score.Equals(input.Score))
+                    Score == input.Score ||
+                    (Score != null &&
+                    Score.Equals(input.Score))
                 );
         }
 
@@ -138,15 +140,27 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.SelfRatio != null)
-                    hashCode = hashCode * 59 + this.SelfRatio.GetHashCode();
-                if (this.PlatformRatio != null)
-                    hashCode = hashCode * 59 + this.PlatformRatio.GetHashCode();
-                if (this.Score != null)
-                    hashCode = hashCode * 59 + this.Score.GetHashCode();
+                var hashCode = 41;
+                if (Date != null)
+                {
+                    hashCode = hashCode * 59 + Date.GetHashCode();
+                }
+
+                if (SelfRatio != null)
+                {
+                    hashCode = hashCode * 59 + SelfRatio.GetHashCode();
+                }
+
+                if (PlatformRatio != null)
+                {
+                    hashCode = hashCode * 59 + PlatformRatio.GetHashCode();
+                }
+
+                if (Score != null)
+                {
+                    hashCode = hashCode * 59 + Score.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

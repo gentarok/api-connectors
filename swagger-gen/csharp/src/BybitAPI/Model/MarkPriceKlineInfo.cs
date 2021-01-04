@@ -34,16 +34,16 @@ namespace BybitAPI.Model
         /// <param name="high">high.</param>
         /// <param name="low">low.</param>
         /// <param name="close">close.</param>
-        public MarkPriceKlineInfo(int? id = default(int?), string symbol = default(string), string period = default(string), int? startAt = default(int?), int? open = default(int?), int? high = default(int?), int? low = default(int?), int? close = default(int?))
+        public MarkPriceKlineInfo(int? id = default, string symbol = default, string period = default, int? startAt = default, int? open = default, int? high = default, int? low = default, int? close = default)
         {
-            this.Id = id;
-            this.Symbol = symbol;
-            this.Period = period;
-            this.StartAt = startAt;
-            this.Open = open;
-            this.High = high;
-            this.Low = low;
-            this.Close = close;
+            Id = id;
+            Symbol = symbol;
+            Period = period;
+            StartAt = startAt;
+            Open = open;
+            High = high;
+            Low = low;
+            Close = close;
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MarkPriceKlineInfo);
+            return Equals(input as MarkPriceKlineInfo);
         }
 
         /// <summary>
@@ -141,48 +141,50 @@ namespace BybitAPI.Model
         public bool Equals(MarkPriceKlineInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
+                    Period == input.Period ||
+                    (Period != null &&
+                    Period.Equals(input.Period))
                 ) &&
                 (
-                    this.StartAt == input.StartAt ||
-                    (this.StartAt != null &&
-                    this.StartAt.Equals(input.StartAt))
+                    StartAt == input.StartAt ||
+                    (StartAt != null &&
+                    StartAt.Equals(input.StartAt))
                 ) &&
                 (
-                    this.Open == input.Open ||
-                    (this.Open != null &&
-                    this.Open.Equals(input.Open))
+                    Open == input.Open ||
+                    (Open != null &&
+                    Open.Equals(input.Open))
                 ) &&
                 (
-                    this.High == input.High ||
-                    (this.High != null &&
-                    this.High.Equals(input.High))
+                    High == input.High ||
+                    (High != null &&
+                    High.Equals(input.High))
                 ) &&
                 (
-                    this.Low == input.Low ||
-                    (this.Low != null &&
-                    this.Low.Equals(input.Low))
+                    Low == input.Low ||
+                    (Low != null &&
+                    Low.Equals(input.Low))
                 ) &&
                 (
-                    this.Close == input.Close ||
-                    (this.Close != null &&
-                    this.Close.Equals(input.Close))
+                    Close == input.Close ||
+                    (Close != null &&
+                    Close.Equals(input.Close))
                 );
         }
 
@@ -194,23 +196,47 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.StartAt != null)
-                    hashCode = hashCode * 59 + this.StartAt.GetHashCode();
-                if (this.Open != null)
-                    hashCode = hashCode * 59 + this.Open.GetHashCode();
-                if (this.High != null)
-                    hashCode = hashCode * 59 + this.High.GetHashCode();
-                if (this.Low != null)
-                    hashCode = hashCode * 59 + this.Low.GetHashCode();
-                if (this.Close != null)
-                    hashCode = hashCode * 59 + this.Close.GetHashCode();
+                var hashCode = 41;
+                if (Id != null)
+                {
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (Period != null)
+                {
+                    hashCode = hashCode * 59 + Period.GetHashCode();
+                }
+
+                if (StartAt != null)
+                {
+                    hashCode = hashCode * 59 + StartAt.GetHashCode();
+                }
+
+                if (Open != null)
+                {
+                    hashCode = hashCode * 59 + Open.GetHashCode();
+                }
+
+                if (High != null)
+                {
+                    hashCode = hashCode * 59 + High.GetHashCode();
+                }
+
+                if (Low != null)
+                {
+                    hashCode = hashCode * 59 + Low.GetHashCode();
+                }
+
+                if (Close != null)
+                {
+                    hashCode = hashCode * 59 + Close.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

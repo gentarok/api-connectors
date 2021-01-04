@@ -30,11 +30,11 @@ namespace BybitAPI.Model
         /// <param name="currentPage">currentPage.</param>
         /// <param name="lastPage">lastPage.</param>
         /// <param name="data">data.</param>
-        public LinearStopOrderRecordsResponse(long? currentPage = default(long?), long? lastPage = default(long?), List<LinearListStopOrderResult> data = default(List<LinearListStopOrderResult>))
+        public LinearStopOrderRecordsResponse(long? currentPage = default, long? lastPage = default, List<LinearListStopOrderResult> data = default)
         {
-            this.CurrentPage = currentPage;
-            this.LastPage = lastPage;
-            this.Data = data;
+            CurrentPage = currentPage;
+            LastPage = lastPage;
+            Data = data;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearStopOrderRecordsResponse);
+            return Equals(input as LinearStopOrderRecordsResponse);
         }
 
         /// <summary>
@@ -97,23 +97,25 @@ namespace BybitAPI.Model
         public bool Equals(LinearStopOrderRecordsResponse input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.CurrentPage == input.CurrentPage ||
-                    (this.CurrentPage != null &&
-                    this.CurrentPage.Equals(input.CurrentPage))
+                    CurrentPage == input.CurrentPage ||
+                    (CurrentPage != null &&
+                    CurrentPage.Equals(input.CurrentPage))
                 ) &&
                 (
-                    this.LastPage == input.LastPage ||
-                    (this.LastPage != null &&
-                    this.LastPage.Equals(input.LastPage))
+                    LastPage == input.LastPage ||
+                    (LastPage != null &&
+                    LastPage.Equals(input.LastPage))
                 ) &&
                 (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
+                    Data == input.Data ||
+                    Data != null &&
+                    Data.SequenceEqual(input.Data)
                 );
         }
 
@@ -125,13 +127,22 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CurrentPage != null)
-                    hashCode = hashCode * 59 + this.CurrentPage.GetHashCode();
-                if (this.LastPage != null)
-                    hashCode = hashCode * 59 + this.LastPage.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                var hashCode = 41;
+                if (CurrentPage != null)
+                {
+                    hashCode = hashCode * 59 + CurrentPage.GetHashCode();
+                }
+
+                if (LastPage != null)
+                {
+                    hashCode = hashCode * 59 + LastPage.GetHashCode();
+                }
+
+                if (Data != null)
+                {
+                    hashCode = hashCode * 59 + Data.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

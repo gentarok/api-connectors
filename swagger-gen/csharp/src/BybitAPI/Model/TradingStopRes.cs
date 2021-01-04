@@ -55,37 +55,37 @@ namespace BybitAPI.Model
         /// <param name="positionSeq">positionSeq.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public TradingStopRes(decimal? id = default(decimal?), decimal? userId = default(decimal?), string symbol = default(string), string side = default(string), decimal? size = default(decimal?), double? positionValue = default(double?), double? entryPrice = default(double?), decimal? riskId = default(decimal?), double? autoAddMargin = default(double?), double? leverage = default(double?), double? positionMargin = default(double?), double? liqPrice = default(double?), double? bustPrice = default(double?), double? occClosingFee = default(double?), double? occFundingFee = default(double?), double? takeProfit = default(double?), double? stopLoss = default(double?), string positionStatus = default(string), decimal? deleverageIndicator = default(decimal?), string ocCalcData = default(string), double? orderMargin = default(double?), double? walletBalance = default(double?), double? realisedPnl = default(double?), double? cumRealisedPnl = default(double?), decimal? cumCommission = default(decimal?), decimal? crossSeq = default(decimal?), decimal? positionSeq = default(decimal?), string createdAt = default(string), string updatedAt = default(string))
+        public TradingStopRes(decimal? id = default, decimal? userId = default, string symbol = default, string side = default, decimal? size = default, double? positionValue = default, double? entryPrice = default, decimal? riskId = default, double? autoAddMargin = default, double? leverage = default, double? positionMargin = default, double? liqPrice = default, double? bustPrice = default, double? occClosingFee = default, double? occFundingFee = default, double? takeProfit = default, double? stopLoss = default, string positionStatus = default, decimal? deleverageIndicator = default, string ocCalcData = default, double? orderMargin = default, double? walletBalance = default, double? realisedPnl = default, double? cumRealisedPnl = default, decimal? cumCommission = default, decimal? crossSeq = default, decimal? positionSeq = default, string createdAt = default, string updatedAt = default)
         {
-            this.Id = id;
-            this.UserId = userId;
-            this.Symbol = symbol;
-            this.Side = side;
-            this.Size = size;
-            this.PositionValue = positionValue;
-            this.EntryPrice = entryPrice;
-            this.RiskId = riskId;
-            this.AutoAddMargin = autoAddMargin;
-            this.Leverage = leverage;
-            this.PositionMargin = positionMargin;
-            this.LiqPrice = liqPrice;
-            this.BustPrice = bustPrice;
-            this.OccClosingFee = occClosingFee;
-            this.OccFundingFee = occFundingFee;
-            this.TakeProfit = takeProfit;
-            this.StopLoss = stopLoss;
-            this.PositionStatus = positionStatus;
-            this.DeleverageIndicator = deleverageIndicator;
-            this.OcCalcData = ocCalcData;
-            this.OrderMargin = orderMargin;
-            this.WalletBalance = walletBalance;
-            this.RealisedPnl = realisedPnl;
-            this.CumRealisedPnl = cumRealisedPnl;
-            this.CumCommission = cumCommission;
-            this.CrossSeq = crossSeq;
-            this.PositionSeq = positionSeq;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
+            Id = id;
+            UserId = userId;
+            Symbol = symbol;
+            Side = side;
+            Size = size;
+            PositionValue = positionValue;
+            EntryPrice = entryPrice;
+            RiskId = riskId;
+            AutoAddMargin = autoAddMargin;
+            Leverage = leverage;
+            PositionMargin = positionMargin;
+            LiqPrice = liqPrice;
+            BustPrice = bustPrice;
+            OccClosingFee = occClosingFee;
+            OccFundingFee = occFundingFee;
+            TakeProfit = takeProfit;
+            StopLoss = stopLoss;
+            PositionStatus = positionStatus;
+            DeleverageIndicator = deleverageIndicator;
+            OcCalcData = ocCalcData;
+            OrderMargin = orderMargin;
+            WalletBalance = walletBalance;
+            RealisedPnl = realisedPnl;
+            CumRealisedPnl = cumRealisedPnl;
+            CumCommission = cumCommission;
+            CrossSeq = crossSeq;
+            PositionSeq = positionSeq;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TradingStopRes);
+            return Equals(input as TradingStopRes);
         }
 
         /// <summary>
@@ -330,153 +330,155 @@ namespace BybitAPI.Model
         public bool Equals(TradingStopRes input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
+                    Size == input.Size ||
+                    (Size != null &&
+                    Size.Equals(input.Size))
                 ) &&
                 (
-                    this.PositionValue == input.PositionValue ||
-                    (this.PositionValue != null &&
-                    this.PositionValue.Equals(input.PositionValue))
+                    PositionValue == input.PositionValue ||
+                    (PositionValue != null &&
+                    PositionValue.Equals(input.PositionValue))
                 ) &&
                 (
-                    this.EntryPrice == input.EntryPrice ||
-                    (this.EntryPrice != null &&
-                    this.EntryPrice.Equals(input.EntryPrice))
+                    EntryPrice == input.EntryPrice ||
+                    (EntryPrice != null &&
+                    EntryPrice.Equals(input.EntryPrice))
                 ) &&
                 (
-                    this.RiskId == input.RiskId ||
-                    (this.RiskId != null &&
-                    this.RiskId.Equals(input.RiskId))
+                    RiskId == input.RiskId ||
+                    (RiskId != null &&
+                    RiskId.Equals(input.RiskId))
                 ) &&
                 (
-                    this.AutoAddMargin == input.AutoAddMargin ||
-                    (this.AutoAddMargin != null &&
-                    this.AutoAddMargin.Equals(input.AutoAddMargin))
+                    AutoAddMargin == input.AutoAddMargin ||
+                    (AutoAddMargin != null &&
+                    AutoAddMargin.Equals(input.AutoAddMargin))
                 ) &&
                 (
-                    this.Leverage == input.Leverage ||
-                    (this.Leverage != null &&
-                    this.Leverage.Equals(input.Leverage))
+                    Leverage == input.Leverage ||
+                    (Leverage != null &&
+                    Leverage.Equals(input.Leverage))
                 ) &&
                 (
-                    this.PositionMargin == input.PositionMargin ||
-                    (this.PositionMargin != null &&
-                    this.PositionMargin.Equals(input.PositionMargin))
+                    PositionMargin == input.PositionMargin ||
+                    (PositionMargin != null &&
+                    PositionMargin.Equals(input.PositionMargin))
                 ) &&
                 (
-                    this.LiqPrice == input.LiqPrice ||
-                    (this.LiqPrice != null &&
-                    this.LiqPrice.Equals(input.LiqPrice))
+                    LiqPrice == input.LiqPrice ||
+                    (LiqPrice != null &&
+                    LiqPrice.Equals(input.LiqPrice))
                 ) &&
                 (
-                    this.BustPrice == input.BustPrice ||
-                    (this.BustPrice != null &&
-                    this.BustPrice.Equals(input.BustPrice))
+                    BustPrice == input.BustPrice ||
+                    (BustPrice != null &&
+                    BustPrice.Equals(input.BustPrice))
                 ) &&
                 (
-                    this.OccClosingFee == input.OccClosingFee ||
-                    (this.OccClosingFee != null &&
-                    this.OccClosingFee.Equals(input.OccClosingFee))
+                    OccClosingFee == input.OccClosingFee ||
+                    (OccClosingFee != null &&
+                    OccClosingFee.Equals(input.OccClosingFee))
                 ) &&
                 (
-                    this.OccFundingFee == input.OccFundingFee ||
-                    (this.OccFundingFee != null &&
-                    this.OccFundingFee.Equals(input.OccFundingFee))
+                    OccFundingFee == input.OccFundingFee ||
+                    (OccFundingFee != null &&
+                    OccFundingFee.Equals(input.OccFundingFee))
                 ) &&
                 (
-                    this.TakeProfit == input.TakeProfit ||
-                    (this.TakeProfit != null &&
-                    this.TakeProfit.Equals(input.TakeProfit))
+                    TakeProfit == input.TakeProfit ||
+                    (TakeProfit != null &&
+                    TakeProfit.Equals(input.TakeProfit))
                 ) &&
                 (
-                    this.StopLoss == input.StopLoss ||
-                    (this.StopLoss != null &&
-                    this.StopLoss.Equals(input.StopLoss))
+                    StopLoss == input.StopLoss ||
+                    (StopLoss != null &&
+                    StopLoss.Equals(input.StopLoss))
                 ) &&
                 (
-                    this.PositionStatus == input.PositionStatus ||
-                    (this.PositionStatus != null &&
-                    this.PositionStatus.Equals(input.PositionStatus))
+                    PositionStatus == input.PositionStatus ||
+                    (PositionStatus != null &&
+                    PositionStatus.Equals(input.PositionStatus))
                 ) &&
                 (
-                    this.DeleverageIndicator == input.DeleverageIndicator ||
-                    (this.DeleverageIndicator != null &&
-                    this.DeleverageIndicator.Equals(input.DeleverageIndicator))
+                    DeleverageIndicator == input.DeleverageIndicator ||
+                    (DeleverageIndicator != null &&
+                    DeleverageIndicator.Equals(input.DeleverageIndicator))
                 ) &&
                 (
-                    this.OcCalcData == input.OcCalcData ||
-                    (this.OcCalcData != null &&
-                    this.OcCalcData.Equals(input.OcCalcData))
+                    OcCalcData == input.OcCalcData ||
+                    (OcCalcData != null &&
+                    OcCalcData.Equals(input.OcCalcData))
                 ) &&
                 (
-                    this.OrderMargin == input.OrderMargin ||
-                    (this.OrderMargin != null &&
-                    this.OrderMargin.Equals(input.OrderMargin))
+                    OrderMargin == input.OrderMargin ||
+                    (OrderMargin != null &&
+                    OrderMargin.Equals(input.OrderMargin))
                 ) &&
                 (
-                    this.WalletBalance == input.WalletBalance ||
-                    (this.WalletBalance != null &&
-                    this.WalletBalance.Equals(input.WalletBalance))
+                    WalletBalance == input.WalletBalance ||
+                    (WalletBalance != null &&
+                    WalletBalance.Equals(input.WalletBalance))
                 ) &&
                 (
-                    this.RealisedPnl == input.RealisedPnl ||
-                    (this.RealisedPnl != null &&
-                    this.RealisedPnl.Equals(input.RealisedPnl))
+                    RealisedPnl == input.RealisedPnl ||
+                    (RealisedPnl != null &&
+                    RealisedPnl.Equals(input.RealisedPnl))
                 ) &&
                 (
-                    this.CumRealisedPnl == input.CumRealisedPnl ||
-                    (this.CumRealisedPnl != null &&
-                    this.CumRealisedPnl.Equals(input.CumRealisedPnl))
+                    CumRealisedPnl == input.CumRealisedPnl ||
+                    (CumRealisedPnl != null &&
+                    CumRealisedPnl.Equals(input.CumRealisedPnl))
                 ) &&
                 (
-                    this.CumCommission == input.CumCommission ||
-                    (this.CumCommission != null &&
-                    this.CumCommission.Equals(input.CumCommission))
+                    CumCommission == input.CumCommission ||
+                    (CumCommission != null &&
+                    CumCommission.Equals(input.CumCommission))
                 ) &&
                 (
-                    this.CrossSeq == input.CrossSeq ||
-                    (this.CrossSeq != null &&
-                    this.CrossSeq.Equals(input.CrossSeq))
+                    CrossSeq == input.CrossSeq ||
+                    (CrossSeq != null &&
+                    CrossSeq.Equals(input.CrossSeq))
                 ) &&
                 (
-                    this.PositionSeq == input.PositionSeq ||
-                    (this.PositionSeq != null &&
-                    this.PositionSeq.Equals(input.PositionSeq))
+                    PositionSeq == input.PositionSeq ||
+                    (PositionSeq != null &&
+                    PositionSeq.Equals(input.PositionSeq))
                 ) &&
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
+                    UpdatedAt == input.UpdatedAt ||
+                    (UpdatedAt != null &&
+                    UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
 
@@ -488,65 +490,152 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.PositionValue != null)
-                    hashCode = hashCode * 59 + this.PositionValue.GetHashCode();
-                if (this.EntryPrice != null)
-                    hashCode = hashCode * 59 + this.EntryPrice.GetHashCode();
-                if (this.RiskId != null)
-                    hashCode = hashCode * 59 + this.RiskId.GetHashCode();
-                if (this.AutoAddMargin != null)
-                    hashCode = hashCode * 59 + this.AutoAddMargin.GetHashCode();
-                if (this.Leverage != null)
-                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
-                if (this.PositionMargin != null)
-                    hashCode = hashCode * 59 + this.PositionMargin.GetHashCode();
-                if (this.LiqPrice != null)
-                    hashCode = hashCode * 59 + this.LiqPrice.GetHashCode();
-                if (this.BustPrice != null)
-                    hashCode = hashCode * 59 + this.BustPrice.GetHashCode();
-                if (this.OccClosingFee != null)
-                    hashCode = hashCode * 59 + this.OccClosingFee.GetHashCode();
-                if (this.OccFundingFee != null)
-                    hashCode = hashCode * 59 + this.OccFundingFee.GetHashCode();
-                if (this.TakeProfit != null)
-                    hashCode = hashCode * 59 + this.TakeProfit.GetHashCode();
-                if (this.StopLoss != null)
-                    hashCode = hashCode * 59 + this.StopLoss.GetHashCode();
-                if (this.PositionStatus != null)
-                    hashCode = hashCode * 59 + this.PositionStatus.GetHashCode();
-                if (this.DeleverageIndicator != null)
-                    hashCode = hashCode * 59 + this.DeleverageIndicator.GetHashCode();
-                if (this.OcCalcData != null)
-                    hashCode = hashCode * 59 + this.OcCalcData.GetHashCode();
-                if (this.OrderMargin != null)
-                    hashCode = hashCode * 59 + this.OrderMargin.GetHashCode();
-                if (this.WalletBalance != null)
-                    hashCode = hashCode * 59 + this.WalletBalance.GetHashCode();
-                if (this.RealisedPnl != null)
-                    hashCode = hashCode * 59 + this.RealisedPnl.GetHashCode();
-                if (this.CumRealisedPnl != null)
-                    hashCode = hashCode * 59 + this.CumRealisedPnl.GetHashCode();
-                if (this.CumCommission != null)
-                    hashCode = hashCode * 59 + this.CumCommission.GetHashCode();
-                if (this.CrossSeq != null)
-                    hashCode = hashCode * 59 + this.CrossSeq.GetHashCode();
-                if (this.PositionSeq != null)
-                    hashCode = hashCode * 59 + this.PositionSeq.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (Id != null)
+                {
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (Size != null)
+                {
+                    hashCode = hashCode * 59 + Size.GetHashCode();
+                }
+
+                if (PositionValue != null)
+                {
+                    hashCode = hashCode * 59 + PositionValue.GetHashCode();
+                }
+
+                if (EntryPrice != null)
+                {
+                    hashCode = hashCode * 59 + EntryPrice.GetHashCode();
+                }
+
+                if (RiskId != null)
+                {
+                    hashCode = hashCode * 59 + RiskId.GetHashCode();
+                }
+
+                if (AutoAddMargin != null)
+                {
+                    hashCode = hashCode * 59 + AutoAddMargin.GetHashCode();
+                }
+
+                if (Leverage != null)
+                {
+                    hashCode = hashCode * 59 + Leverage.GetHashCode();
+                }
+
+                if (PositionMargin != null)
+                {
+                    hashCode = hashCode * 59 + PositionMargin.GetHashCode();
+                }
+
+                if (LiqPrice != null)
+                {
+                    hashCode = hashCode * 59 + LiqPrice.GetHashCode();
+                }
+
+                if (BustPrice != null)
+                {
+                    hashCode = hashCode * 59 + BustPrice.GetHashCode();
+                }
+
+                if (OccClosingFee != null)
+                {
+                    hashCode = hashCode * 59 + OccClosingFee.GetHashCode();
+                }
+
+                if (OccFundingFee != null)
+                {
+                    hashCode = hashCode * 59 + OccFundingFee.GetHashCode();
+                }
+
+                if (TakeProfit != null)
+                {
+                    hashCode = hashCode * 59 + TakeProfit.GetHashCode();
+                }
+
+                if (StopLoss != null)
+                {
+                    hashCode = hashCode * 59 + StopLoss.GetHashCode();
+                }
+
+                if (PositionStatus != null)
+                {
+                    hashCode = hashCode * 59 + PositionStatus.GetHashCode();
+                }
+
+                if (DeleverageIndicator != null)
+                {
+                    hashCode = hashCode * 59 + DeleverageIndicator.GetHashCode();
+                }
+
+                if (OcCalcData != null)
+                {
+                    hashCode = hashCode * 59 + OcCalcData.GetHashCode();
+                }
+
+                if (OrderMargin != null)
+                {
+                    hashCode = hashCode * 59 + OrderMargin.GetHashCode();
+                }
+
+                if (WalletBalance != null)
+                {
+                    hashCode = hashCode * 59 + WalletBalance.GetHashCode();
+                }
+
+                if (RealisedPnl != null)
+                {
+                    hashCode = hashCode * 59 + RealisedPnl.GetHashCode();
+                }
+
+                if (CumRealisedPnl != null)
+                {
+                    hashCode = hashCode * 59 + CumRealisedPnl.GetHashCode();
+                }
+
+                if (CumCommission != null)
+                {
+                    hashCode = hashCode * 59 + CumCommission.GetHashCode();
+                }
+
+                if (CrossSeq != null)
+                {
+                    hashCode = hashCode * 59 + CrossSeq.GetHashCode();
+                }
+
+                if (PositionSeq != null)
+                {
+                    hashCode = hashCode * 59 + PositionSeq.GetHashCode();
+                }
+
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
+                if (UpdatedAt != null)
+                {
+                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

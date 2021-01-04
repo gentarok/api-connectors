@@ -68,7 +68,7 @@ namespace BybitAPI.Client
         /// <value>Configuration.</value>
         public static Configuration Default
         {
-            get { return _globalConfiguration; }
+            get => _globalConfiguration;
             set
             {
                 lock (GlobalConfigSync)
@@ -132,13 +132,24 @@ namespace BybitAPI.Client
             string basePath = "https://api.bybit.com") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
+            {
                 throw new ArgumentException("The provided basePath is invalid.", nameof(basePath));
+            }
+
             if (defaultHeader == null)
+            {
                 throw new ArgumentNullException(nameof(defaultHeader));
+            }
+
             if (apiKey == null)
+            {
                 throw new ArgumentNullException(nameof(apiKey));
+            }
+
             if (apiKeyPrefix == null)
+            {
                 throw new ArgumentNullException(nameof(apiKeyPrefix));
+            }
 
             BasePath = basePath;
 
@@ -214,19 +225,23 @@ namespace BybitAPI.Client
         {
             get
             {
-                if (_apiClient == null) _apiClient = CreateApiClient();
+                if (_apiClient == null)
+                {
+                    _apiClient = CreateApiClient();
+                }
+
                 return _apiClient;
             }
         }
 
-        private String _basePath = null;
+        private string _basePath = null;
 
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
         public virtual string BasePath
         {
-            get { return _basePath; }
+            get => _basePath;
             set
             {
                 _basePath = value;
@@ -248,8 +263,8 @@ namespace BybitAPI.Client
         /// </summary>
         public virtual int Timeout
         {
-            get { return ApiClient.RestClient.Timeout; }
-            set { ApiClient.RestClient.Timeout = value; }
+            get => ApiClient.RestClient.Timeout;
+            set => ApiClient.RestClient.Timeout = value;
         }
 
         /// <summary>
@@ -277,13 +292,15 @@ namespace BybitAPI.Client
         /// <returns>API key with prefix.</returns>
         public string GetApiKeyWithPrefix(string apiKeyIdentifier)
         {
-            var apiKeyValue = "";
-            ApiKey.TryGetValue(apiKeyIdentifier, out apiKeyValue);
-            var apiKeyPrefix = "";
-            if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out apiKeyPrefix))
+            ApiKey.TryGetValue(apiKeyIdentifier, out var apiKeyValue);
+            if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out var apiKeyPrefix))
+            {
                 return apiKeyPrefix + " " + apiKeyValue;
+            }
             else
+            {
                 return apiKeyValue;
+            }
         }
 
         /// <summary>
@@ -298,7 +315,7 @@ namespace BybitAPI.Client
         /// <value>Folder path.</value>
         public virtual string TempFolderPath
         {
-            get { return _tempFolderPath; }
+            get => _tempFolderPath;
 
             set
             {
@@ -337,7 +354,7 @@ namespace BybitAPI.Client
         /// <value>The DateTimeFormat string</value>
         public virtual string DateTimeFormat
         {
-            get { return _dateTimeFormat; }
+            get => _dateTimeFormat;
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -359,7 +376,7 @@ namespace BybitAPI.Client
         /// <value>The prefix of the API key.</value>
         public virtual IDictionary<string, string> ApiKeyPrefix
         {
-            get { return _apiKeyPrefix; }
+            get => _apiKeyPrefix;
             set
             {
                 if (value == null)
@@ -376,7 +393,7 @@ namespace BybitAPI.Client
         /// <value>The API key.</value>
         public virtual IDictionary<string, string> ApiKey
         {
-            get { return _apiKey; }
+            get => _apiKey;
             set
             {
                 if (value == null)
@@ -414,9 +431,9 @@ namespace BybitAPI.Client
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK (IO.Swagger) Debug Report:\n";
+            var report = "C# SDK (IO.Swagger) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version + "\n";
             report += "    Version of the API: 0.2.10\n";

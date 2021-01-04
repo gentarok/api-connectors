@@ -29,10 +29,10 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="data">data.</param>
         /// <param name="cursor">cursor.</param>
-        public ConditionalOrdersRes(List<V2ConditionalListRes> data = default(List<V2ConditionalListRes>), string cursor = default(string))
+        public ConditionalOrdersRes(List<V2ConditionalListRes> data = default, string cursor = default)
         {
-            this.Data = data;
-            this.Cursor = cursor;
+            Data = data;
+            Cursor = cursor;
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ConditionalOrdersRes);
+            return Equals(input as ConditionalOrdersRes);
         }
 
         /// <summary>
@@ -88,18 +88,20 @@ namespace BybitAPI.Model
         public bool Equals(ConditionalOrdersRes input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
+                    Data == input.Data ||
+                    Data != null &&
+                    Data.SequenceEqual(input.Data)
                 ) &&
                 (
-                    this.Cursor == input.Cursor ||
-                    (this.Cursor != null &&
-                    this.Cursor.Equals(input.Cursor))
+                    Cursor == input.Cursor ||
+                    (Cursor != null &&
+                    Cursor.Equals(input.Cursor))
                 );
         }
 
@@ -111,11 +113,17 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.Cursor != null)
-                    hashCode = hashCode * 59 + this.Cursor.GetHashCode();
+                var hashCode = 41;
+                if (Data != null)
+                {
+                    hashCode = hashCode * 59 + Data.GetHashCode();
+                }
+
+                if (Cursor != null)
+                {
+                    hashCode = hashCode * 59 + Cursor.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

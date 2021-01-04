@@ -32,14 +32,14 @@ namespace BybitAPI.Model
         /// <param name="side">side.</param>
         /// <param name="size">size.</param>
         /// <param name="symbol">symbol.</param>
-        public LinearPrevFundingResp(double? execFee = default(double?), string execTime = default(string), double? fundingRate = default(double?), string side = default(string), double? size = default(double?), string symbol = default(string))
+        public LinearPrevFundingResp(double? execFee = default, string execTime = default, double? fundingRate = default, string side = default, double? size = default, string symbol = default)
         {
-            this.ExecFee = execFee;
-            this.ExecTime = execTime;
-            this.FundingRate = fundingRate;
-            this.Side = side;
-            this.Size = size;
-            this.Symbol = symbol;
+            ExecFee = execFee;
+            ExecTime = execTime;
+            FundingRate = fundingRate;
+            Side = side;
+            Size = size;
+            Symbol = symbol;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearPrevFundingResp);
+            return Equals(input as LinearPrevFundingResp);
         }
 
         /// <summary>
@@ -123,38 +123,40 @@ namespace BybitAPI.Model
         public bool Equals(LinearPrevFundingResp input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.ExecFee == input.ExecFee ||
-                    (this.ExecFee != null &&
-                    this.ExecFee.Equals(input.ExecFee))
+                    ExecFee == input.ExecFee ||
+                    (ExecFee != null &&
+                    ExecFee.Equals(input.ExecFee))
                 ) &&
                 (
-                    this.ExecTime == input.ExecTime ||
-                    (this.ExecTime != null &&
-                    this.ExecTime.Equals(input.ExecTime))
+                    ExecTime == input.ExecTime ||
+                    (ExecTime != null &&
+                    ExecTime.Equals(input.ExecTime))
                 ) &&
                 (
-                    this.FundingRate == input.FundingRate ||
-                    (this.FundingRate != null &&
-                    this.FundingRate.Equals(input.FundingRate))
+                    FundingRate == input.FundingRate ||
+                    (FundingRate != null &&
+                    FundingRate.Equals(input.FundingRate))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
+                    Size == input.Size ||
+                    (Size != null &&
+                    Size.Equals(input.Size))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 );
         }
 
@@ -166,19 +168,37 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExecFee != null)
-                    hashCode = hashCode * 59 + this.ExecFee.GetHashCode();
-                if (this.ExecTime != null)
-                    hashCode = hashCode * 59 + this.ExecTime.GetHashCode();
-                if (this.FundingRate != null)
-                    hashCode = hashCode * 59 + this.FundingRate.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                var hashCode = 41;
+                if (ExecFee != null)
+                {
+                    hashCode = hashCode * 59 + ExecFee.GetHashCode();
+                }
+
+                if (ExecTime != null)
+                {
+                    hashCode = hashCode * 59 + ExecTime.GetHashCode();
+                }
+
+                if (FundingRate != null)
+                {
+                    hashCode = hashCode * 59 + FundingRate.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (Size != null)
+                {
+                    hashCode = hashCode * 59 + Size.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

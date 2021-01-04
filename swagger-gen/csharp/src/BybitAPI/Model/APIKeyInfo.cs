@@ -34,15 +34,15 @@ namespace BybitAPI.Model
         /// <param name="permissions">permissions.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="readOnly">readOnly.</param>
-        public APIKeyInfo(string apiKey = default(string), decimal? userId = default(decimal?), List<string> ips = default(List<string>), string note = default(string), List<string> permissions = default(List<string>), string createdAt = default(string), bool? readOnly = default(bool?))
+        public APIKeyInfo(string apiKey = default, decimal? userId = default, List<string> ips = default, string note = default, List<string> permissions = default, string createdAt = default, bool? readOnly = default)
         {
-            this.ApiKey = apiKey;
-            this.UserId = userId;
-            this.Ips = ips;
-            this.Note = note;
-            this.Permissions = permissions;
-            this.CreatedAt = createdAt;
-            this.ReadOnly = readOnly;
+            ApiKey = apiKey;
+            UserId = userId;
+            Ips = ips;
+            Note = note;
+            Permissions = permissions;
+            CreatedAt = createdAt;
+            ReadOnly = readOnly;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as APIKeyInfo);
+            return Equals(input as APIKeyInfo);
         }
 
         /// <summary>
@@ -133,43 +133,45 @@ namespace BybitAPI.Model
         public bool Equals(APIKeyInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.ApiKey == input.ApiKey ||
-                    (this.ApiKey != null &&
-                    this.ApiKey.Equals(input.ApiKey))
+                    ApiKey == input.ApiKey ||
+                    (ApiKey != null &&
+                    ApiKey.Equals(input.ApiKey))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.Ips == input.Ips ||
-                    this.Ips != null &&
-                    this.Ips.SequenceEqual(input.Ips)
+                    Ips == input.Ips ||
+                    Ips != null &&
+                    Ips.SequenceEqual(input.Ips)
                 ) &&
                 (
-                    this.Note == input.Note ||
-                    (this.Note != null &&
-                    this.Note.Equals(input.Note))
+                    Note == input.Note ||
+                    (Note != null &&
+                    Note.Equals(input.Note))
                 ) &&
                 (
-                    this.Permissions == input.Permissions ||
-                    this.Permissions != null &&
-                    this.Permissions.SequenceEqual(input.Permissions)
+                    Permissions == input.Permissions ||
+                    Permissions != null &&
+                    Permissions.SequenceEqual(input.Permissions)
                 ) &&
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
-                    this.ReadOnly == input.ReadOnly ||
-                    (this.ReadOnly != null &&
-                    this.ReadOnly.Equals(input.ReadOnly))
+                    ReadOnly == input.ReadOnly ||
+                    (ReadOnly != null &&
+                    ReadOnly.Equals(input.ReadOnly))
                 );
         }
 
@@ -181,21 +183,42 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApiKey != null)
-                    hashCode = hashCode * 59 + this.ApiKey.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Ips != null)
-                    hashCode = hashCode * 59 + this.Ips.GetHashCode();
-                if (this.Note != null)
-                    hashCode = hashCode * 59 + this.Note.GetHashCode();
-                if (this.Permissions != null)
-                    hashCode = hashCode * 59 + this.Permissions.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.ReadOnly != null)
-                    hashCode = hashCode * 59 + this.ReadOnly.GetHashCode();
+                var hashCode = 41;
+                if (ApiKey != null)
+                {
+                    hashCode = hashCode * 59 + ApiKey.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (Ips != null)
+                {
+                    hashCode = hashCode * 59 + Ips.GetHashCode();
+                }
+
+                if (Note != null)
+                {
+                    hashCode = hashCode * 59 + Note.GetHashCode();
+                }
+
+                if (Permissions != null)
+                {
+                    hashCode = hashCode * 59 + Permissions.GetHashCode();
+                }
+
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
+                if (ReadOnly != null)
+                {
+                    hashCode = hashCode * 59 + ReadOnly.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

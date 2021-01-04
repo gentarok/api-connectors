@@ -35,7 +35,7 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Object</returns>
-        Object OrderCancel(string symbol, string orderId = null, string orderLinkId = null);
+        object OrderCancel(string symbol, string orderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -48,7 +48,7 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> OrderCancelWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null);
+        ApiResponse<object> OrderCancelWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -59,7 +59,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
-        Object OrderCancelAll(string symbol);
+        object OrderCancelAll(string symbol);
 
         /// <summary>
         /// Get my active order list.
@@ -70,7 +70,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> OrderCancelAllWithHttpInfo(string symbol);
+        ApiResponse<object> OrderCancelAllWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my active order list.
@@ -85,7 +85,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Object</returns>
-        Object OrderGetOrders(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
+        object OrderGetOrders(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
 
         /// <summary>
         /// Get my active order list.
@@ -100,7 +100,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> OrderGetOrdersWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
+        ApiResponse<object> OrderGetOrdersWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
 
         /// <summary>
         /// Place active order
@@ -121,7 +121,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Object</returns>
-        Object OrderNew(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        object OrderNew(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
 
         /// <summary>
         /// Place active order
@@ -142,7 +142,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> OrderNewWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        ApiResponse<object> OrderNewWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -154,7 +154,7 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Object</returns>
-        Object OrderQuery(string orderId = null, string symbol = null);
+        object OrderQuery(string orderId = null, string symbol = null);
 
         /// <summary>
         /// Get my active order list.
@@ -166,7 +166,7 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> OrderQueryWithHttpInfo(string orderId = null, string symbol = null);
+        ApiResponse<object> OrderQueryWithHttpInfo(string orderId = null, string symbol = null);
 
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
@@ -181,7 +181,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Object</returns>
-        Object OrderReplace(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
+        object OrderReplace(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
 
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
@@ -196,7 +196,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> OrderReplaceWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
+        ApiResponse<object> OrderReplaceWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
 
         #endregion Synchronous Operations
 
@@ -213,7 +213,7 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> OrderCancelAsync(string symbol, string orderId = null, string orderLinkId = null);
+        System.Threading.Tasks.Task<object> OrderCancelAsync(string symbol, string orderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -226,7 +226,7 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> OrderCancelAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> OrderCancelAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -237,7 +237,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> OrderCancelAllAsync(string symbol);
+        System.Threading.Tasks.Task<object> OrderCancelAllAsync(string symbol);
 
         /// <summary>
         /// Get my active order list.
@@ -248,7 +248,7 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> OrderCancelAllAsyncWithHttpInfo(string symbol);
+        System.Threading.Tasks.Task<ApiResponse<object>> OrderCancelAllAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my active order list.
@@ -263,7 +263,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> OrderGetOrdersAsync(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
+        System.Threading.Tasks.Task<object> OrderGetOrdersAsync(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
 
         /// <summary>
         /// Get my active order list.
@@ -278,7 +278,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> OrderGetOrdersAsyncWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> OrderGetOrdersAsyncWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null);
 
         /// <summary>
         /// Place active order
@@ -299,7 +299,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> OrderNewAsync(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        System.Threading.Tasks.Task<object> OrderNewAsync(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
 
         /// <summary>
         /// Place active order
@@ -320,7 +320,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> OrderNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> OrderNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -332,7 +332,7 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> OrderQueryAsync(string orderId = null, string symbol = null);
+        System.Threading.Tasks.Task<object> OrderQueryAsync(string orderId = null, string symbol = null);
 
         /// <summary>
         /// Get my active order list.
@@ -344,7 +344,7 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> OrderQueryAsyncWithHttpInfo(string orderId = null, string symbol = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> OrderQueryAsyncWithHttpInfo(string orderId = null, string symbol = null);
 
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
@@ -359,7 +359,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> OrderReplaceAsync(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
+        System.Threading.Tasks.Task<object> OrderReplaceAsync(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
 
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
@@ -374,7 +374,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> OrderReplaceAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> OrderReplaceAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null);
 
         #endregion Asynchronous Operations
     }
@@ -390,9 +390,9 @@ namespace BybitAPI.Api
         /// Initializes a new instance of the <see cref="OrderApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public OrderApi(String basePath)
+        public OrderApi(string basePath)
         {
-            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -406,9 +406,13 @@ namespace BybitAPI.Api
         public OrderApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = BybitAPI.Client.Configuration.Default;
+            {
+                Configuration = BybitAPI.Client.Configuration.Default;
+            }
             else
-                this.Configuration = configuration;
+            {
+                Configuration = configuration;
+            }
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -417,9 +421,9 @@ namespace BybitAPI.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -427,7 +431,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -451,7 +455,7 @@ namespace BybitAPI.Api
                 }
                 return _exceptionFactory;
             }
-            set { _exceptionFactory = value; }
+            set => _exceptionFactory = value;
         }
 
         /// <summary>
@@ -459,9 +463,9 @@ namespace BybitAPI.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -473,7 +477,7 @@ namespace BybitAPI.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
@@ -484,9 +488,9 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Object</returns>
-        public Object OrderCancel(string symbol, string orderId = null, string orderLinkId = null)
+        public object OrderCancel(string symbol, string orderId = null, string orderLinkId = null)
         {
-            ApiResponse<Object> localVarResponse = OrderCancelWithHttpInfo(symbol, orderId, orderLinkId);
+            var localVarResponse = OrderCancelWithHttpInfo(symbol, orderId, orderLinkId);
             return localVarResponse.Data;
         }
 
@@ -498,70 +502,88 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> OrderCancelWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null)
+        public ApiResponse<object> OrderCancelWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderCancel");
+            }
 
             var localVarPath = "/v2/private/order/cancel";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (orderId != null) localVarFormParams.Add("order_id", this.Configuration.ApiClient.ParameterToString(orderId)); // form parameter
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (orderLinkId != null) localVarFormParams.Add("order_link_id", this.Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            if (orderId != null)
+            {
+                localVarFormParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // form parameter
+            }
+
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (orderLinkId != null)
+            {
+                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderCancel", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderCancel", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -572,9 +594,9 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> OrderCancelAsync(string symbol, string orderId = null, string orderLinkId = null)
+        public async System.Threading.Tasks.Task<object> OrderCancelAsync(string symbol, string orderId = null, string orderLinkId = null)
         {
-            ApiResponse<Object> localVarResponse = await OrderCancelAsyncWithHttpInfo(symbol, orderId, orderLinkId);
+            var localVarResponse = await OrderCancelAsyncWithHttpInfo(symbol, orderId, orderLinkId);
             return localVarResponse.Data;
         }
 
@@ -586,70 +608,88 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> OrderCancelAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderCancelAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderCancel");
+            }
 
             var localVarPath = "/v2/private/order/cancel";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (orderId != null) localVarFormParams.Add("order_id", this.Configuration.ApiClient.ParameterToString(orderId)); // form parameter
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (orderLinkId != null) localVarFormParams.Add("order_link_id", this.Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            if (orderId != null)
+            {
+                localVarFormParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // form parameter
+            }
+
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (orderLinkId != null)
+            {
+                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderCancel", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderCancel", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -658,9 +698,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
-        public Object OrderCancelAll(string symbol)
+        public object OrderCancelAll(string symbol)
         {
-            ApiResponse<Object> localVarResponse = OrderCancelAllWithHttpInfo(symbol);
+            var localVarResponse = OrderCancelAllWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -670,68 +710,78 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> OrderCancelAllWithHttpInfo(string symbol)
+        public ApiResponse<object> OrderCancelAllWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderCancelAll");
+            }
 
             var localVarPath = "/v2/private/order/cancelAll";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderCancelAll", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderCancelAll", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -740,9 +790,9 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> OrderCancelAllAsync(string symbol)
+        public async System.Threading.Tasks.Task<object> OrderCancelAllAsync(string symbol)
         {
-            ApiResponse<Object> localVarResponse = await OrderCancelAllAsyncWithHttpInfo(symbol);
+            var localVarResponse = await OrderCancelAllAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
         }
 
@@ -752,68 +802,78 @@ namespace BybitAPI.Api
         /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> OrderCancelAllAsyncWithHttpInfo(string symbol)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderCancelAllAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderCancelAll");
+            }
 
             var localVarPath = "/v2/private/order/cancelAll";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderCancelAll", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderCancelAll", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -826,9 +886,9 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Object</returns>
-        public Object OrderGetOrders(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
+        public object OrderGetOrders(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
         {
-            ApiResponse<Object> localVarResponse = OrderGetOrdersWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+            var localVarResponse = OrderGetOrdersWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
             return localVarResponse.Data;
         }
 
@@ -842,73 +902,99 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> OrderGetOrdersWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
+        public ApiResponse<object> OrderGetOrdersWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderGetOrders");
+            }
 
             var localVarPath = "/v2/private/order/list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (orderStatus != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", orderStatus)); // query parameter
-            if (direction != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
-            if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
+
+            if (orderStatus != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", orderStatus)); // query parameter
+            }
+
+            if (direction != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
+            }
+
+            if (cursor != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderGetOrders", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderGetOrders", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -921,9 +1007,9 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> OrderGetOrdersAsync(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
+        public async System.Threading.Tasks.Task<object> OrderGetOrdersAsync(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
         {
-            ApiResponse<Object> localVarResponse = await OrderGetOrdersAsyncWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+            var localVarResponse = await OrderGetOrdersAsyncWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
             return localVarResponse.Data;
         }
 
@@ -937,73 +1023,99 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> OrderGetOrdersAsyncWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderGetOrdersAsyncWithHttpInfo(string symbol, decimal? limit = null, string orderStatus = null, string direction = null, string cursor = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderGetOrders");
+            }
 
             var localVarPath = "/v2/private/order/list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (orderStatus != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", orderStatus)); // query parameter
-            if (direction != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
-            if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
+
+            if (orderStatus != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", orderStatus)); // query parameter
+            }
+
+            if (direction != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
+            }
+
+            if (cursor != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderGetOrders", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderGetOrders", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1022,9 +1134,9 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Object</returns>
-        public Object OrderNew(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
+        public object OrderNew(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
         {
-            ApiResponse<Object> localVarResponse = OrderNewWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId);
+            var localVarResponse = OrderNewWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId);
             return localVarResponse.Data;
         }
 
@@ -1044,90 +1156,148 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> OrderNewWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
+        public ApiResponse<object> OrderNewWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
         {
             // verify the required parameter 'side' is set
             if (side == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'side' when calling OrderApi->OrderNew");
+            }
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderNew");
+            }
             // verify the required parameter 'orderType' is set
             if (orderType == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'orderType' when calling OrderApi->OrderNew");
+            }
             // verify the required parameter 'qty' is set
             if (qty == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'qty' when calling OrderApi->OrderNew");
+            }
             // verify the required parameter 'timeInForce' is set
             if (timeInForce == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'timeInForce' when calling OrderApi->OrderNew");
+            }
 
             var localVarPath = "/v2/private/order/create";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (side != null) localVarFormParams.Add("side", this.Configuration.ApiClient.ParameterToString(side)); // form parameter
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (orderType != null) localVarFormParams.Add("order_type", this.Configuration.ApiClient.ParameterToString(orderType)); // form parameter
-            if (qty != null) localVarFormParams.Add("qty", this.Configuration.ApiClient.ParameterToString(qty)); // form parameter
-            if (price != null) localVarFormParams.Add("price", this.Configuration.ApiClient.ParameterToString(price)); // form parameter
-            if (timeInForce != null) localVarFormParams.Add("time_in_force", this.Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
-            if (takeProfit != null) localVarFormParams.Add("take_profit", this.Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
-            if (stopLoss != null) localVarFormParams.Add("stop_loss", this.Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
-            if (reduceOnly != null) localVarFormParams.Add("reduce_only", this.Configuration.ApiClient.ParameterToString(reduceOnly)); // form parameter
-            if (closeOnTrigger != null) localVarFormParams.Add("close_on_trigger", this.Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
-            if (orderLinkId != null) localVarFormParams.Add("order_link_id", this.Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            if (side != null)
+            {
+                localVarFormParams.Add("side", Configuration.ApiClient.ParameterToString(side)); // form parameter
+            }
+
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (orderType != null)
+            {
+                localVarFormParams.Add("order_type", Configuration.ApiClient.ParameterToString(orderType)); // form parameter
+            }
+
+            if (qty != null)
+            {
+                localVarFormParams.Add("qty", Configuration.ApiClient.ParameterToString(qty)); // form parameter
+            }
+
+            if (price != null)
+            {
+                localVarFormParams.Add("price", Configuration.ApiClient.ParameterToString(price)); // form parameter
+            }
+
+            if (timeInForce != null)
+            {
+                localVarFormParams.Add("time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
+            }
+
+            if (takeProfit != null)
+            {
+                localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
+            }
+
+            if (stopLoss != null)
+            {
+                localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
+            }
+
+            if (reduceOnly != null)
+            {
+                localVarFormParams.Add("reduce_only", Configuration.ApiClient.ParameterToString(reduceOnly)); // form parameter
+            }
+
+            if (closeOnTrigger != null)
+            {
+                localVarFormParams.Add("close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
+            }
+
+            if (orderLinkId != null)
+            {
+                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderNew", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderNew", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1146,9 +1316,9 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> OrderNewAsync(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
+        public async System.Threading.Tasks.Task<object> OrderNewAsync(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
         {
-            ApiResponse<Object> localVarResponse = await OrderNewAsyncWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId);
+            var localVarResponse = await OrderNewAsyncWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId);
             return localVarResponse.Data;
         }
 
@@ -1168,90 +1338,148 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> OrderNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal? qty, string timeInForce, double? price = null, double? takeProfit = null, double? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string orderLinkId = null)
         {
             // verify the required parameter 'side' is set
             if (side == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'side' when calling OrderApi->OrderNew");
+            }
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderNew");
+            }
             // verify the required parameter 'orderType' is set
             if (orderType == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'orderType' when calling OrderApi->OrderNew");
+            }
             // verify the required parameter 'qty' is set
             if (qty == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'qty' when calling OrderApi->OrderNew");
+            }
             // verify the required parameter 'timeInForce' is set
             if (timeInForce == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'timeInForce' when calling OrderApi->OrderNew");
+            }
 
             var localVarPath = "/v2/private/order/create";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (side != null) localVarFormParams.Add("side", this.Configuration.ApiClient.ParameterToString(side)); // form parameter
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (orderType != null) localVarFormParams.Add("order_type", this.Configuration.ApiClient.ParameterToString(orderType)); // form parameter
-            if (qty != null) localVarFormParams.Add("qty", this.Configuration.ApiClient.ParameterToString(qty)); // form parameter
-            if (price != null) localVarFormParams.Add("price", this.Configuration.ApiClient.ParameterToString(price)); // form parameter
-            if (timeInForce != null) localVarFormParams.Add("time_in_force", this.Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
-            if (takeProfit != null) localVarFormParams.Add("take_profit", this.Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
-            if (stopLoss != null) localVarFormParams.Add("stop_loss", this.Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
-            if (reduceOnly != null) localVarFormParams.Add("reduce_only", this.Configuration.ApiClient.ParameterToString(reduceOnly)); // form parameter
-            if (closeOnTrigger != null) localVarFormParams.Add("close_on_trigger", this.Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
-            if (orderLinkId != null) localVarFormParams.Add("order_link_id", this.Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            if (side != null)
+            {
+                localVarFormParams.Add("side", Configuration.ApiClient.ParameterToString(side)); // form parameter
+            }
+
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (orderType != null)
+            {
+                localVarFormParams.Add("order_type", Configuration.ApiClient.ParameterToString(orderType)); // form parameter
+            }
+
+            if (qty != null)
+            {
+                localVarFormParams.Add("qty", Configuration.ApiClient.ParameterToString(qty)); // form parameter
+            }
+
+            if (price != null)
+            {
+                localVarFormParams.Add("price", Configuration.ApiClient.ParameterToString(price)); // form parameter
+            }
+
+            if (timeInForce != null)
+            {
+                localVarFormParams.Add("time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
+            }
+
+            if (takeProfit != null)
+            {
+                localVarFormParams.Add("take_profit", Configuration.ApiClient.ParameterToString(takeProfit)); // form parameter
+            }
+
+            if (stopLoss != null)
+            {
+                localVarFormParams.Add("stop_loss", Configuration.ApiClient.ParameterToString(stopLoss)); // form parameter
+            }
+
+            if (reduceOnly != null)
+            {
+                localVarFormParams.Add("reduce_only", Configuration.ApiClient.ParameterToString(reduceOnly)); // form parameter
+            }
+
+            if (closeOnTrigger != null)
+            {
+                localVarFormParams.Add("close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
+            }
+
+            if (orderLinkId != null)
+            {
+                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderNew", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderNew", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1261,9 +1489,9 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Object</returns>
-        public Object OrderQuery(string orderId = null, string symbol = null)
+        public object OrderQuery(string orderId = null, string symbol = null)
         {
-            ApiResponse<Object> localVarResponse = OrderQueryWithHttpInfo(orderId, symbol);
+            var localVarResponse = OrderQueryWithHttpInfo(orderId, symbol);
             return localVarResponse.Data;
         }
 
@@ -1274,66 +1502,78 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> OrderQueryWithHttpInfo(string orderId = null, string symbol = null)
+        public ApiResponse<object> OrderQueryWithHttpInfo(string orderId = null, string symbol = null)
         {
             var localVarPath = "/v2/private/order";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (orderId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order_id", orderId)); // query parameter
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (orderId != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_id", orderId)); // query parameter
+            }
+
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderQuery", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderQuery", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1343,9 +1583,9 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> OrderQueryAsync(string orderId = null, string symbol = null)
+        public async System.Threading.Tasks.Task<object> OrderQueryAsync(string orderId = null, string symbol = null)
         {
-            ApiResponse<Object> localVarResponse = await OrderQueryAsyncWithHttpInfo(orderId, symbol);
+            var localVarResponse = await OrderQueryAsyncWithHttpInfo(orderId, symbol);
             return localVarResponse.Data;
         }
 
@@ -1356,66 +1596,78 @@ namespace BybitAPI.Api
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="symbol">Contract type. Default BTCUSD (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> OrderQueryAsyncWithHttpInfo(string orderId = null, string symbol = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderQueryAsyncWithHttpInfo(string orderId = null, string symbol = null)
         {
             var localVarPath = "/v2/private/order";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (orderId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order_id", orderId)); // query parameter
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            if (orderId != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_id", orderId)); // query parameter
+            }
+
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderQuery", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderQuery", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1428,9 +1680,9 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Object</returns>
-        public Object OrderReplace(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
+        public object OrderReplace(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
         {
-            ApiResponse<Object> localVarResponse = OrderReplaceWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
+            var localVarResponse = OrderReplaceWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
             return localVarResponse.Data;
         }
 
@@ -1444,72 +1696,98 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> OrderReplaceWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
+        public ApiResponse<object> OrderReplaceWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderReplace");
+            }
 
             var localVarPath = "/v2/private/order/replace";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (orderId != null) localVarFormParams.Add("order_id", this.Configuration.ApiClient.ParameterToString(orderId)); // form parameter
-            if (orderLinkId != null) localVarFormParams.Add("order_link_id", this.Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (pRQty != null) localVarFormParams.Add("p_r_qty", this.Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
-            if (pRPrice != null) localVarFormParams.Add("p_r_price", this.Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
+            if (orderId != null)
+            {
+                localVarFormParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // form parameter
+            }
+
+            if (orderLinkId != null)
+            {
+                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            }
+
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (pRQty != null)
+            {
+                localVarFormParams.Add("p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
+            }
+
+            if (pRPrice != null)
+            {
+                localVarFormParams.Add("p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderReplace", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderReplace", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -1522,9 +1800,9 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> OrderReplaceAsync(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
+        public async System.Threading.Tasks.Task<object> OrderReplaceAsync(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
         {
-            ApiResponse<Object> localVarResponse = await OrderReplaceAsyncWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
+            var localVarResponse = await OrderReplaceAsyncWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
             return localVarResponse.Data;
         }
 
@@ -1538,72 +1816,98 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> OrderReplaceAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> OrderReplaceAsyncWithHttpInfo(string symbol, string orderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling OrderApi->OrderReplace");
+            }
 
             var localVarPath = "/v2/private/order/replace";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (orderId != null) localVarFormParams.Add("order_id", this.Configuration.ApiClient.ParameterToString(orderId)); // form parameter
-            if (orderLinkId != null) localVarFormParams.Add("order_link_id", this.Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
-            if (symbol != null) localVarFormParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // form parameter
-            if (pRQty != null) localVarFormParams.Add("p_r_qty", this.Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
-            if (pRPrice != null) localVarFormParams.Add("p_r_price", this.Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
+            if (orderId != null)
+            {
+                localVarFormParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // form parameter
+            }
+
+            if (orderLinkId != null)
+            {
+                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+            }
+
+            if (symbol != null)
+            {
+                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+            }
+
+            if (pRQty != null)
+            {
+                localVarFormParams.Add("p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
+            }
+
+            if (pRPrice != null)
+            {
+                localVarFormParams.Add("p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
+            }
 
             // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("sign")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", this.Configuration.GetApiKeyWithPrefix("sign")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
             }
             // authentication (timestamp) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("timestamp")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
-                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", this.Configuration.GetApiKeyWithPrefix("timestamp")));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("OrderReplace", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("OrderReplace", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
     }
 }

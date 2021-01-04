@@ -29,10 +29,10 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="currentPage">currentPage.</param>
         /// <param name="data">data.</param>
-        public LinearOrderRecordsResponse(long? currentPage = default(long?), List<LinearListOrderResult> data = default(List<LinearListOrderResult>))
+        public LinearOrderRecordsResponse(long? currentPage = default, List<LinearListOrderResult> data = default)
         {
-            this.CurrentPage = currentPage;
-            this.Data = data;
+            CurrentPage = currentPage;
+            Data = data;
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearOrderRecordsResponse);
+            return Equals(input as LinearOrderRecordsResponse);
         }
 
         /// <summary>
@@ -88,18 +88,20 @@ namespace BybitAPI.Model
         public bool Equals(LinearOrderRecordsResponse input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.CurrentPage == input.CurrentPage ||
-                    (this.CurrentPage != null &&
-                    this.CurrentPage.Equals(input.CurrentPage))
+                    CurrentPage == input.CurrentPage ||
+                    (CurrentPage != null &&
+                    CurrentPage.Equals(input.CurrentPage))
                 ) &&
                 (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
+                    Data == input.Data ||
+                    Data != null &&
+                    Data.SequenceEqual(input.Data)
                 );
         }
 
@@ -111,11 +113,17 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CurrentPage != null)
-                    hashCode = hashCode * 59 + this.CurrentPage.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                var hashCode = 41;
+                if (CurrentPage != null)
+                {
+                    hashCode = hashCode * 59 + CurrentPage.GetHashCode();
+                }
+
+                if (Data != null)
+                {
+                    hashCode = hashCode * 59 + Data.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

@@ -29,18 +29,18 @@ namespace BybitAPI.Model
         /// <param name="positionListResult">positionListResult.</param>
         /// <param name="availableBalance">availableBalance.</param>
         /// <param name="walletBalance">walletBalance.</param>
-        public LinearSetMarginResult(Object positionListResult = default(Object), double? availableBalance = default(double?), double? walletBalance = default(double?))
+        public LinearSetMarginResult(object positionListResult = default, double? availableBalance = default, double? walletBalance = default)
         {
-            this.PositionListResult = positionListResult;
-            this.AvailableBalance = availableBalance;
-            this.WalletBalance = walletBalance;
+            PositionListResult = positionListResult;
+            AvailableBalance = availableBalance;
+            WalletBalance = walletBalance;
         }
 
         /// <summary>
         /// Gets or Sets PositionListResult
         /// </summary>
         [DataMember(Name = "PositionListResult", EmitDefaultValue = false)]
-        public Object PositionListResult { get; set; }
+        public object PositionListResult { get; set; }
 
         /// <summary>
         /// Gets or Sets AvailableBalance
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearSetMarginResult);
+            return Equals(input as LinearSetMarginResult);
         }
 
         /// <summary>
@@ -96,23 +96,25 @@ namespace BybitAPI.Model
         public bool Equals(LinearSetMarginResult input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.PositionListResult == input.PositionListResult ||
-                    (this.PositionListResult != null &&
-                    this.PositionListResult.Equals(input.PositionListResult))
+                    PositionListResult == input.PositionListResult ||
+                    (PositionListResult != null &&
+                    PositionListResult.Equals(input.PositionListResult))
                 ) &&
                 (
-                    this.AvailableBalance == input.AvailableBalance ||
-                    (this.AvailableBalance != null &&
-                    this.AvailableBalance.Equals(input.AvailableBalance))
+                    AvailableBalance == input.AvailableBalance ||
+                    (AvailableBalance != null &&
+                    AvailableBalance.Equals(input.AvailableBalance))
                 ) &&
                 (
-                    this.WalletBalance == input.WalletBalance ||
-                    (this.WalletBalance != null &&
-                    this.WalletBalance.Equals(input.WalletBalance))
+                    WalletBalance == input.WalletBalance ||
+                    (WalletBalance != null &&
+                    WalletBalance.Equals(input.WalletBalance))
                 );
         }
 
@@ -124,13 +126,22 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PositionListResult != null)
-                    hashCode = hashCode * 59 + this.PositionListResult.GetHashCode();
-                if (this.AvailableBalance != null)
-                    hashCode = hashCode * 59 + this.AvailableBalance.GetHashCode();
-                if (this.WalletBalance != null)
-                    hashCode = hashCode * 59 + this.WalletBalance.GetHashCode();
+                var hashCode = 41;
+                if (PositionListResult != null)
+                {
+                    hashCode = hashCode * 59 + PositionListResult.GetHashCode();
+                }
+
+                if (AvailableBalance != null)
+                {
+                    hashCode = hashCode * 59 + AvailableBalance.GetHashCode();
+                }
+
+                if (WalletBalance != null)
+                {
+                    hashCode = hashCode * 59 + WalletBalance.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

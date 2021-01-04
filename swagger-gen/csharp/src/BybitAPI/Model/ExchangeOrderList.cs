@@ -33,15 +33,15 @@ namespace BybitAPI.Model
         /// <param name="exchangeRate">exchangeRate.</param>
         /// <param name="fromFee">fromFee.</param>
         /// <param name="createdAt">createdAt.</param>
-        public ExchangeOrderList(string fromCoin = default(string), string toCoin = default(string), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), decimal? exchangeRate = default(decimal?), decimal? fromFee = default(decimal?), string createdAt = default(string))
+        public ExchangeOrderList(string fromCoin = default, string toCoin = default, decimal? fromAmount = default, decimal? toAmount = default, decimal? exchangeRate = default, decimal? fromFee = default, string createdAt = default)
         {
-            this.FromCoin = fromCoin;
-            this.ToCoin = toCoin;
-            this.FromAmount = fromAmount;
-            this.ToAmount = toAmount;
-            this.ExchangeRate = exchangeRate;
-            this.FromFee = fromFee;
-            this.CreatedAt = createdAt;
+            FromCoin = fromCoin;
+            ToCoin = toCoin;
+            FromAmount = fromAmount;
+            ToAmount = toAmount;
+            ExchangeRate = exchangeRate;
+            FromFee = fromFee;
+            CreatedAt = createdAt;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ExchangeOrderList);
+            return Equals(input as ExchangeOrderList);
         }
 
         /// <summary>
@@ -132,43 +132,45 @@ namespace BybitAPI.Model
         public bool Equals(ExchangeOrderList input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.FromCoin == input.FromCoin ||
-                    (this.FromCoin != null &&
-                    this.FromCoin.Equals(input.FromCoin))
+                    FromCoin == input.FromCoin ||
+                    (FromCoin != null &&
+                    FromCoin.Equals(input.FromCoin))
                 ) &&
                 (
-                    this.ToCoin == input.ToCoin ||
-                    (this.ToCoin != null &&
-                    this.ToCoin.Equals(input.ToCoin))
+                    ToCoin == input.ToCoin ||
+                    (ToCoin != null &&
+                    ToCoin.Equals(input.ToCoin))
                 ) &&
                 (
-                    this.FromAmount == input.FromAmount ||
-                    (this.FromAmount != null &&
-                    this.FromAmount.Equals(input.FromAmount))
+                    FromAmount == input.FromAmount ||
+                    (FromAmount != null &&
+                    FromAmount.Equals(input.FromAmount))
                 ) &&
                 (
-                    this.ToAmount == input.ToAmount ||
-                    (this.ToAmount != null &&
-                    this.ToAmount.Equals(input.ToAmount))
+                    ToAmount == input.ToAmount ||
+                    (ToAmount != null &&
+                    ToAmount.Equals(input.ToAmount))
                 ) &&
                 (
-                    this.ExchangeRate == input.ExchangeRate ||
-                    (this.ExchangeRate != null &&
-                    this.ExchangeRate.Equals(input.ExchangeRate))
+                    ExchangeRate == input.ExchangeRate ||
+                    (ExchangeRate != null &&
+                    ExchangeRate.Equals(input.ExchangeRate))
                 ) &&
                 (
-                    this.FromFee == input.FromFee ||
-                    (this.FromFee != null &&
-                    this.FromFee.Equals(input.FromFee))
+                    FromFee == input.FromFee ||
+                    (FromFee != null &&
+                    FromFee.Equals(input.FromFee))
                 ) &&
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 );
         }
 
@@ -180,21 +182,42 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FromCoin != null)
-                    hashCode = hashCode * 59 + this.FromCoin.GetHashCode();
-                if (this.ToCoin != null)
-                    hashCode = hashCode * 59 + this.ToCoin.GetHashCode();
-                if (this.FromAmount != null)
-                    hashCode = hashCode * 59 + this.FromAmount.GetHashCode();
-                if (this.ToAmount != null)
-                    hashCode = hashCode * 59 + this.ToAmount.GetHashCode();
-                if (this.ExchangeRate != null)
-                    hashCode = hashCode * 59 + this.ExchangeRate.GetHashCode();
-                if (this.FromFee != null)
-                    hashCode = hashCode * 59 + this.FromFee.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                var hashCode = 41;
+                if (FromCoin != null)
+                {
+                    hashCode = hashCode * 59 + FromCoin.GetHashCode();
+                }
+
+                if (ToCoin != null)
+                {
+                    hashCode = hashCode * 59 + ToCoin.GetHashCode();
+                }
+
+                if (FromAmount != null)
+                {
+                    hashCode = hashCode * 59 + FromAmount.GetHashCode();
+                }
+
+                if (ToAmount != null)
+                {
+                    hashCode = hashCode * 59 + ToAmount.GetHashCode();
+                }
+
+                if (ExchangeRate != null)
+                {
+                    hashCode = hashCode * 59 + ExchangeRate.GetHashCode();
+                }
+
+                if (FromFee != null)
+                {
+                    hashCode = hashCode * 59 + FromFee.GetHashCode();
+                }
+
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

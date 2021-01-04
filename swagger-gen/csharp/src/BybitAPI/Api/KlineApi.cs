@@ -36,7 +36,7 @@ namespace BybitAPI.Api
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Object</returns>
-        Object KlineGet(string symbol, string interval, decimal? from, decimal? limit = null);
+        object KlineGet(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Query historical kline.
@@ -50,7 +50,7 @@ namespace BybitAPI.Api
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> KlineGetWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
+        ApiResponse<object> KlineGetWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Query mark price kline.
@@ -64,7 +64,7 @@ namespace BybitAPI.Api
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Object</returns>
-        Object KlineMarkPrice(string symbol, string interval, int? from, int? limit = null);
+        object KlineMarkPrice(string symbol, string interval, int? from, int? limit = null);
 
         /// <summary>
         /// Query mark price kline.
@@ -78,7 +78,7 @@ namespace BybitAPI.Api
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> KlineMarkPriceWithHttpInfo(string symbol, string interval, int? from, int? limit = null);
+        ApiResponse<object> KlineMarkPriceWithHttpInfo(string symbol, string interval, int? from, int? limit = null);
 
         #endregion Synchronous Operations
 
@@ -96,7 +96,7 @@ namespace BybitAPI.Api
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> KlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null);
+        System.Threading.Tasks.Task<object> KlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Query historical kline.
@@ -110,7 +110,7 @@ namespace BybitAPI.Api
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> KlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> KlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null);
 
         /// <summary>
         /// Query mark price kline.
@@ -124,7 +124,7 @@ namespace BybitAPI.Api
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> KlineMarkPriceAsync(string symbol, string interval, int? from, int? limit = null);
+        System.Threading.Tasks.Task<object> KlineMarkPriceAsync(string symbol, string interval, int? from, int? limit = null);
 
         /// <summary>
         /// Query mark price kline.
@@ -138,7 +138,7 @@ namespace BybitAPI.Api
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> KlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, int? from, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<object>> KlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, int? from, int? limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -154,9 +154,9 @@ namespace BybitAPI.Api
         /// Initializes a new instance of the <see cref="KlineApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public KlineApi(String basePath)
+        public KlineApi(string basePath)
         {
-            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
+            Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -170,9 +170,13 @@ namespace BybitAPI.Api
         public KlineApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = BybitAPI.Client.Configuration.Default;
+            {
+                Configuration = BybitAPI.Client.Configuration.Default;
+            }
             else
-                this.Configuration = configuration;
+            {
+                Configuration = configuration;
+            }
 
             ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
@@ -181,9 +185,9 @@ namespace BybitAPI.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -191,7 +195,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -215,7 +219,7 @@ namespace BybitAPI.Api
                 }
                 return _exceptionFactory;
             }
-            set { _exceptionFactory = value; }
+            set => _exceptionFactory = value;
         }
 
         /// <summary>
@@ -223,9 +227,9 @@ namespace BybitAPI.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -237,7 +241,7 @@ namespace BybitAPI.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
@@ -249,9 +253,9 @@ namespace BybitAPI.Api
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Object</returns>
-        public Object KlineGet(string symbol, string interval, decimal? from, decimal? limit = null)
+        public object KlineGet(string symbol, string interval, decimal? from, decimal? limit = null)
         {
-            ApiResponse<Object> localVarResponse = KlineGetWithHttpInfo(symbol, interval, from, limit);
+            var localVarResponse = KlineGetWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
         }
 
@@ -264,62 +268,88 @@ namespace BybitAPI.Api
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> KlineGetWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
+        public ApiResponse<object> KlineGetWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling KlineApi->KlineGet");
+            }
             // verify the required parameter 'interval' is set
             if (interval == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling KlineApi->KlineGet");
+            }
             // verify the required parameter 'from' is set
             if (from == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'from' when calling KlineApi->KlineGet");
+            }
 
             var localVarPath = "/v2/public/kline/list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (interval != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
-            if (from != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (interval != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
+            }
+
+            if (from != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KlineGet", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("KlineGet", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -331,9 +361,9 @@ namespace BybitAPI.Api
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> KlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null)
+        public async System.Threading.Tasks.Task<object> KlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null)
         {
-            ApiResponse<Object> localVarResponse = await KlineGetAsyncWithHttpInfo(symbol, interval, from, limit);
+            var localVarResponse = await KlineGetAsyncWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
         }
 
@@ -346,62 +376,88 @@ namespace BybitAPI.Api
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> KlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> KlineGetAsyncWithHttpInfo(string symbol, string interval, decimal? from, decimal? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling KlineApi->KlineGet");
+            }
             // verify the required parameter 'interval' is set
             if (interval == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling KlineApi->KlineGet");
+            }
             // verify the required parameter 'from' is set
             if (from == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'from' when calling KlineApi->KlineGet");
+            }
 
             var localVarPath = "/v2/public/kline/list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (interval != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
-            if (from != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (interval != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
+            }
+
+            if (from != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KlineGet", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("KlineGet", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -413,9 +469,9 @@ namespace BybitAPI.Api
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Object</returns>
-        public Object KlineMarkPrice(string symbol, string interval, int? from, int? limit = null)
+        public object KlineMarkPrice(string symbol, string interval, int? from, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = KlineMarkPriceWithHttpInfo(symbol, interval, from, limit);
+            var localVarResponse = KlineMarkPriceWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
         }
 
@@ -428,62 +484,88 @@ namespace BybitAPI.Api
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> KlineMarkPriceWithHttpInfo(string symbol, string interval, int? from, int? limit = null)
+        public ApiResponse<object> KlineMarkPriceWithHttpInfo(string symbol, string interval, int? from, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling KlineApi->KlineMarkPrice");
+            }
             // verify the required parameter 'interval' is set
             if (interval == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling KlineApi->KlineMarkPrice");
+            }
             // verify the required parameter 'from' is set
             if (from == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'from' when calling KlineApi->KlineMarkPrice");
+            }
 
             var localVarPath = "/v2/public/mark-price-kline";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (interval != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
-            if (from != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (interval != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
+            }
+
+            if (from != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KlineMarkPrice", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("KlineMarkPrice", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
 
         /// <summary>
@@ -495,9 +577,9 @@ namespace BybitAPI.Api
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> KlineMarkPriceAsync(string symbol, string interval, int? from, int? limit = null)
+        public async System.Threading.Tasks.Task<object> KlineMarkPriceAsync(string symbol, string interval, int? from, int? limit = null)
         {
-            ApiResponse<Object> localVarResponse = await KlineMarkPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+            var localVarResponse = await KlineMarkPriceAsyncWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
         }
 
@@ -510,62 +592,88 @@ namespace BybitAPI.Api
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> KlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, int? from, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<object>> KlineMarkPriceAsyncWithHttpInfo(string symbol, string interval, int? from, int? limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling KlineApi->KlineMarkPrice");
+            }
             // verify the required parameter 'interval' is set
             if (interval == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'interval' when calling KlineApi->KlineMarkPrice");
+            }
             // verify the required parameter 'from' is set
             if (from == null)
+            {
                 throw new ApiException(400, "Missing required parameter 'from' when calling KlineApi->KlineMarkPrice");
+            }
 
             var localVarPath = "/v2/public/mark-price-kline";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
+            {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            }
 
-            if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
-            if (interval != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
-            if (from != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (symbol != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+            }
+
+            if (interval != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval)); // query parameter
+            }
+
+            if (from != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from)); // query parameter
+            }
+
+            if (limit != null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KlineMarkPrice", localVarResponse);
-                if (exception != null) throw exception;
+                var exception = ExceptionFactory("KlineMarkPrice", localVarResponse);
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
         }
     }
 }

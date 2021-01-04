@@ -27,9 +27,9 @@ namespace BybitAPI.Model
         /// Initializes a new instance of the <see cref="LinearSwitchModeResult" /> class.
         /// </summary>
         /// <param name="tpSlMode">tpSlMode.</param>
-        public LinearSwitchModeResult(double? tpSlMode = default(double?))
+        public LinearSwitchModeResult(double? tpSlMode = default)
         {
-            this.TpSlMode = tpSlMode;
+            TpSlMode = tpSlMode;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearSwitchModeResult);
+            return Equals(input as LinearSwitchModeResult);
         }
 
         /// <summary>
@@ -78,13 +78,15 @@ namespace BybitAPI.Model
         public bool Equals(LinearSwitchModeResult input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.TpSlMode == input.TpSlMode ||
-                    (this.TpSlMode != null &&
-                    this.TpSlMode.Equals(input.TpSlMode))
+                    TpSlMode == input.TpSlMode ||
+                    (TpSlMode != null &&
+                    TpSlMode.Equals(input.TpSlMode))
                 );
         }
 
@@ -96,9 +98,12 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TpSlMode != null)
-                    hashCode = hashCode * 59 + this.TpSlMode.GetHashCode();
+                var hashCode = 41;
+                if (TpSlMode != null)
+                {
+                    hashCode = hashCode * 59 + TpSlMode.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

@@ -43,9 +43,9 @@ namespace BybitAPI.Client
         /// <param name="data">Data (parsed HTTP body)</param>
         public ApiResponse(int statusCode, IDictionary<string, string> headers, T data)
         {
-            this.StatusCode = statusCode;
-            this.Headers = headers;
-            this.Data = data;
+            StatusCode = statusCode;
+            Headers = headers;
+            Data = data;
         }
     }
 }

@@ -27,9 +27,9 @@ namespace BybitAPI.Model
         /// Initializes a new instance of the <see cref="LinearCancelStopOrderResult" /> class.
         /// </summary>
         /// <param name="stopOrderId">stopOrderId.</param>
-        public LinearCancelStopOrderResult(string stopOrderId = default(string))
+        public LinearCancelStopOrderResult(string stopOrderId = default)
         {
-            this.StopOrderId = stopOrderId;
+            StopOrderId = stopOrderId;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearCancelStopOrderResult);
+            return Equals(input as LinearCancelStopOrderResult);
         }
 
         /// <summary>
@@ -78,13 +78,15 @@ namespace BybitAPI.Model
         public bool Equals(LinearCancelStopOrderResult input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.StopOrderId == input.StopOrderId ||
-                    (this.StopOrderId != null &&
-                    this.StopOrderId.Equals(input.StopOrderId))
+                    StopOrderId == input.StopOrderId ||
+                    (StopOrderId != null &&
+                    StopOrderId.Equals(input.StopOrderId))
                 );
         }
 
@@ -96,9 +98,12 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StopOrderId != null)
-                    hashCode = hashCode * 59 + this.StopOrderId.GetHashCode();
+                var hashCode = 41;
+                if (StopOrderId != null)
+                {
+                    hashCode = hashCode * 59 + StopOrderId.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

@@ -43,25 +43,25 @@ namespace BybitAPI.Model
         /// <param name="stopLoss">stopLoss.</param>
         /// <param name="tpTriggerBy">tpTriggerBy.</param>
         /// <param name="slTriggerBy">slTriggerBy.</param>
-        public LinearSearchStopOrderResult(string stopOrderId = default(string), long? userId = default(long?), string side = default(string), string symbol = default(string), string orderType = default(string), double? price = default(double?), double? qty = default(double?), string timeInForce = default(string), string orderStatus = default(string), double? triggerPrice = default(double?), string orderLinkId = default(string), string createdAt = default(string), string updatedAt = default(string), double? takeProfit = default(double?), double? stopLoss = default(double?), string tpTriggerBy = default(string), string slTriggerBy = default(string))
+        public LinearSearchStopOrderResult(string stopOrderId = default, long? userId = default, string side = default, string symbol = default, string orderType = default, double? price = default, double? qty = default, string timeInForce = default, string orderStatus = default, double? triggerPrice = default, string orderLinkId = default, string createdAt = default, string updatedAt = default, double? takeProfit = default, double? stopLoss = default, string tpTriggerBy = default, string slTriggerBy = default)
         {
-            this.StopOrderId = stopOrderId;
-            this.UserId = userId;
-            this.Side = side;
-            this.Symbol = symbol;
-            this.OrderType = orderType;
-            this.Price = price;
-            this.Qty = qty;
-            this.TimeInForce = timeInForce;
-            this.OrderStatus = orderStatus;
-            this.TriggerPrice = triggerPrice;
-            this.OrderLinkId = orderLinkId;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.TakeProfit = takeProfit;
-            this.StopLoss = stopLoss;
-            this.TpTriggerBy = tpTriggerBy;
-            this.SlTriggerBy = slTriggerBy;
+            StopOrderId = stopOrderId;
+            UserId = userId;
+            Side = side;
+            Symbol = symbol;
+            OrderType = orderType;
+            Price = price;
+            Qty = qty;
+            TimeInForce = timeInForce;
+            OrderStatus = orderStatus;
+            TriggerPrice = triggerPrice;
+            OrderLinkId = orderLinkId;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
+            TakeProfit = takeProfit;
+            StopLoss = stopLoss;
+            TpTriggerBy = tpTriggerBy;
+            SlTriggerBy = slTriggerBy;
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearSearchStopOrderResult);
+            return Equals(input as LinearSearchStopOrderResult);
         }
 
         /// <summary>
@@ -222,93 +222,95 @@ namespace BybitAPI.Model
         public bool Equals(LinearSearchStopOrderResult input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.StopOrderId == input.StopOrderId ||
-                    (this.StopOrderId != null &&
-                    this.StopOrderId.Equals(input.StopOrderId))
+                    StopOrderId == input.StopOrderId ||
+                    (StopOrderId != null &&
+                    StopOrderId.Equals(input.StopOrderId))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.OrderType == input.OrderType ||
-                    (this.OrderType != null &&
-                    this.OrderType.Equals(input.OrderType))
+                    OrderType == input.OrderType ||
+                    (OrderType != null &&
+                    OrderType.Equals(input.OrderType))
                 ) &&
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    Price == input.Price ||
+                    (Price != null &&
+                    Price.Equals(input.Price))
                 ) &&
                 (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
+                    Qty == input.Qty ||
+                    (Qty != null &&
+                    Qty.Equals(input.Qty))
                 ) &&
                 (
-                    this.TimeInForce == input.TimeInForce ||
-                    (this.TimeInForce != null &&
-                    this.TimeInForce.Equals(input.TimeInForce))
+                    TimeInForce == input.TimeInForce ||
+                    (TimeInForce != null &&
+                    TimeInForce.Equals(input.TimeInForce))
                 ) &&
                 (
-                    this.OrderStatus == input.OrderStatus ||
-                    (this.OrderStatus != null &&
-                    this.OrderStatus.Equals(input.OrderStatus))
+                    OrderStatus == input.OrderStatus ||
+                    (OrderStatus != null &&
+                    OrderStatus.Equals(input.OrderStatus))
                 ) &&
                 (
-                    this.TriggerPrice == input.TriggerPrice ||
-                    (this.TriggerPrice != null &&
-                    this.TriggerPrice.Equals(input.TriggerPrice))
+                    TriggerPrice == input.TriggerPrice ||
+                    (TriggerPrice != null &&
+                    TriggerPrice.Equals(input.TriggerPrice))
                 ) &&
                 (
-                    this.OrderLinkId == input.OrderLinkId ||
-                    (this.OrderLinkId != null &&
-                    this.OrderLinkId.Equals(input.OrderLinkId))
+                    OrderLinkId == input.OrderLinkId ||
+                    (OrderLinkId != null &&
+                    OrderLinkId.Equals(input.OrderLinkId))
                 ) &&
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
+                    UpdatedAt == input.UpdatedAt ||
+                    (UpdatedAt != null &&
+                    UpdatedAt.Equals(input.UpdatedAt))
                 ) &&
                 (
-                    this.TakeProfit == input.TakeProfit ||
-                    (this.TakeProfit != null &&
-                    this.TakeProfit.Equals(input.TakeProfit))
+                    TakeProfit == input.TakeProfit ||
+                    (TakeProfit != null &&
+                    TakeProfit.Equals(input.TakeProfit))
                 ) &&
                 (
-                    this.StopLoss == input.StopLoss ||
-                    (this.StopLoss != null &&
-                    this.StopLoss.Equals(input.StopLoss))
+                    StopLoss == input.StopLoss ||
+                    (StopLoss != null &&
+                    StopLoss.Equals(input.StopLoss))
                 ) &&
                 (
-                    this.TpTriggerBy == input.TpTriggerBy ||
-                    (this.TpTriggerBy != null &&
-                    this.TpTriggerBy.Equals(input.TpTriggerBy))
+                    TpTriggerBy == input.TpTriggerBy ||
+                    (TpTriggerBy != null &&
+                    TpTriggerBy.Equals(input.TpTriggerBy))
                 ) &&
                 (
-                    this.SlTriggerBy == input.SlTriggerBy ||
-                    (this.SlTriggerBy != null &&
-                    this.SlTriggerBy.Equals(input.SlTriggerBy))
+                    SlTriggerBy == input.SlTriggerBy ||
+                    (SlTriggerBy != null &&
+                    SlTriggerBy.Equals(input.SlTriggerBy))
                 );
         }
 
@@ -320,41 +322,92 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StopOrderId != null)
-                    hashCode = hashCode * 59 + this.StopOrderId.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.OrderType != null)
-                    hashCode = hashCode * 59 + this.OrderType.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.TimeInForce != null)
-                    hashCode = hashCode * 59 + this.TimeInForce.GetHashCode();
-                if (this.OrderStatus != null)
-                    hashCode = hashCode * 59 + this.OrderStatus.GetHashCode();
-                if (this.TriggerPrice != null)
-                    hashCode = hashCode * 59 + this.TriggerPrice.GetHashCode();
-                if (this.OrderLinkId != null)
-                    hashCode = hashCode * 59 + this.OrderLinkId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.TakeProfit != null)
-                    hashCode = hashCode * 59 + this.TakeProfit.GetHashCode();
-                if (this.StopLoss != null)
-                    hashCode = hashCode * 59 + this.StopLoss.GetHashCode();
-                if (this.TpTriggerBy != null)
-                    hashCode = hashCode * 59 + this.TpTriggerBy.GetHashCode();
-                if (this.SlTriggerBy != null)
-                    hashCode = hashCode * 59 + this.SlTriggerBy.GetHashCode();
+                var hashCode = 41;
+                if (StopOrderId != null)
+                {
+                    hashCode = hashCode * 59 + StopOrderId.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (OrderType != null)
+                {
+                    hashCode = hashCode * 59 + OrderType.GetHashCode();
+                }
+
+                if (Price != null)
+                {
+                    hashCode = hashCode * 59 + Price.GetHashCode();
+                }
+
+                if (Qty != null)
+                {
+                    hashCode = hashCode * 59 + Qty.GetHashCode();
+                }
+
+                if (TimeInForce != null)
+                {
+                    hashCode = hashCode * 59 + TimeInForce.GetHashCode();
+                }
+
+                if (OrderStatus != null)
+                {
+                    hashCode = hashCode * 59 + OrderStatus.GetHashCode();
+                }
+
+                if (TriggerPrice != null)
+                {
+                    hashCode = hashCode * 59 + TriggerPrice.GetHashCode();
+                }
+
+                if (OrderLinkId != null)
+                {
+                    hashCode = hashCode * 59 + OrderLinkId.GetHashCode();
+                }
+
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
+                if (UpdatedAt != null)
+                {
+                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                }
+
+                if (TakeProfit != null)
+                {
+                    hashCode = hashCode * 59 + TakeProfit.GetHashCode();
+                }
+
+                if (StopLoss != null)
+                {
+                    hashCode = hashCode * 59 + StopLoss.GetHashCode();
+                }
+
+                if (TpTriggerBy != null)
+                {
+                    hashCode = hashCode * 59 + TpTriggerBy.GetHashCode();
+                }
+
+                if (SlTriggerBy != null)
+                {
+                    hashCode = hashCode * 59 + SlTriggerBy.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

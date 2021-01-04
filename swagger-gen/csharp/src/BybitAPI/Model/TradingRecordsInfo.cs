@@ -32,14 +32,14 @@ namespace BybitAPI.Model
         /// <param name="qty">qty.</param>
         /// <param name="side">side.</param>
         /// <param name="time">time.</param>
-        public TradingRecordsInfo(int? id = default(int?), string symbol = default(string), decimal? price = default(decimal?), decimal? qty = default(decimal?), string side = default(string), string time = default(string))
+        public TradingRecordsInfo(int? id = default, string symbol = default, decimal? price = default, decimal? qty = default, string side = default, string time = default)
         {
-            this.Id = id;
-            this.Symbol = symbol;
-            this.Price = price;
-            this.Qty = qty;
-            this.Side = side;
-            this.Time = time;
+            Id = id;
+            Symbol = symbol;
+            Price = price;
+            Qty = qty;
+            Side = side;
+            Time = time;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TradingRecordsInfo);
+            return Equals(input as TradingRecordsInfo);
         }
 
         /// <summary>
@@ -123,38 +123,40 @@ namespace BybitAPI.Model
         public bool Equals(TradingRecordsInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    Price == input.Price ||
+                    (Price != null &&
+                    Price.Equals(input.Price))
                 ) &&
                 (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
+                    Qty == input.Qty ||
+                    (Qty != null &&
+                    Qty.Equals(input.Qty))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
+                    Time == input.Time ||
+                    (Time != null &&
+                    Time.Equals(input.Time))
                 );
         }
 
@@ -166,19 +168,37 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (Id != null)
+                {
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (Price != null)
+                {
+                    hashCode = hashCode * 59 + Price.GetHashCode();
+                }
+
+                if (Qty != null)
+                {
+                    hashCode = hashCode * 59 + Qty.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (Time != null)
+                {
+                    hashCode = hashCode * 59 + Time.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

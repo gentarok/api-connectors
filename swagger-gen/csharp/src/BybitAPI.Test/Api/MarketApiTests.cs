@@ -49,7 +49,7 @@ namespace BybitAPI.Test
         public void InstanceTest()
         {
             // TODO uncomment below to test 'IsInstanceOfType' MarketApi
-            //Assert.IsInstanceOfType(typeof(MarketApi), instance, "instance is a MarketApi");
+            Assert.IsInstanceOf(typeof(MarketApi), instance, "instance is a MarketApi");
         }
 
         /// <summary>

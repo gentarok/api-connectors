@@ -28,10 +28,10 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="predictedFundingRate">predictedFundingRate.</param>
         /// <param name="predictedFundingFee">predictedFundingFee.</param>
-        public LinearFundingPredicted(double? predictedFundingRate = default(double?), double? predictedFundingFee = default(double?))
+        public LinearFundingPredicted(double? predictedFundingRate = default, double? predictedFundingFee = default)
         {
-            this.PredictedFundingRate = predictedFundingRate;
-            this.PredictedFundingFee = predictedFundingFee;
+            PredictedFundingRate = predictedFundingRate;
+            PredictedFundingFee = predictedFundingFee;
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearFundingPredicted);
+            return Equals(input as LinearFundingPredicted);
         }
 
         /// <summary>
@@ -87,18 +87,20 @@ namespace BybitAPI.Model
         public bool Equals(LinearFundingPredicted input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.PredictedFundingRate == input.PredictedFundingRate ||
-                    (this.PredictedFundingRate != null &&
-                    this.PredictedFundingRate.Equals(input.PredictedFundingRate))
+                    PredictedFundingRate == input.PredictedFundingRate ||
+                    (PredictedFundingRate != null &&
+                    PredictedFundingRate.Equals(input.PredictedFundingRate))
                 ) &&
                 (
-                    this.PredictedFundingFee == input.PredictedFundingFee ||
-                    (this.PredictedFundingFee != null &&
-                    this.PredictedFundingFee.Equals(input.PredictedFundingFee))
+                    PredictedFundingFee == input.PredictedFundingFee ||
+                    (PredictedFundingFee != null &&
+                    PredictedFundingFee.Equals(input.PredictedFundingFee))
                 );
         }
 
@@ -110,11 +112,17 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PredictedFundingRate != null)
-                    hashCode = hashCode * 59 + this.PredictedFundingRate.GetHashCode();
-                if (this.PredictedFundingFee != null)
-                    hashCode = hashCode * 59 + this.PredictedFundingFee.GetHashCode();
+                var hashCode = 41;
+                if (PredictedFundingRate != null)
+                {
+                    hashCode = hashCode * 59 + PredictedFundingRate.GetHashCode();
+                }
+
+                if (PredictedFundingFee != null)
+                {
+                    hashCode = hashCode * 59 + PredictedFundingFee.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

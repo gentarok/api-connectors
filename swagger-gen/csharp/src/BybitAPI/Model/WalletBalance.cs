@@ -39,21 +39,21 @@ namespace BybitAPI.Model
         /// <param name="cumRealisedPnl">cumRealisedPnl.</param>
         /// <param name="givenCash">givenCash.</param>
         /// <param name="serviceCash">serviceCash.</param>
-        public WalletBalance(double? equity = default(double?), double? availableBalance = default(double?), double? usedMargin = default(double?), double? orderMargin = default(double?), double? positionMargin = default(double?), double? occClosingFee = default(double?), double? occFundingFee = default(double?), double? walletBalance = default(double?), double? realisedPnl = default(double?), double? unrealisedPnl = default(double?), double? cumRealisedPnl = default(double?), double? givenCash = default(double?), double? serviceCash = default(double?))
+        public WalletBalance(double? equity = default, double? availableBalance = default, double? usedMargin = default, double? orderMargin = default, double? positionMargin = default, double? occClosingFee = default, double? occFundingFee = default, double? walletBalance = default, double? realisedPnl = default, double? unrealisedPnl = default, double? cumRealisedPnl = default, double? givenCash = default, double? serviceCash = default)
         {
-            this.Equity = equity;
-            this.AvailableBalance = availableBalance;
-            this.UsedMargin = usedMargin;
-            this.OrderMargin = orderMargin;
-            this.PositionMargin = positionMargin;
-            this.OccClosingFee = occClosingFee;
-            this.OccFundingFee = occFundingFee;
-            this._WalletBalance = walletBalance;
-            this.RealisedPnl = realisedPnl;
-            this.UnrealisedPnl = unrealisedPnl;
-            this.CumRealisedPnl = cumRealisedPnl;
-            this.GivenCash = givenCash;
-            this.ServiceCash = serviceCash;
+            Equity = equity;
+            AvailableBalance = availableBalance;
+            UsedMargin = usedMargin;
+            OrderMargin = orderMargin;
+            PositionMargin = positionMargin;
+            OccClosingFee = occClosingFee;
+            OccFundingFee = occFundingFee;
+            _WalletBalance = walletBalance;
+            RealisedPnl = realisedPnl;
+            UnrealisedPnl = unrealisedPnl;
+            CumRealisedPnl = cumRealisedPnl;
+            GivenCash = givenCash;
+            ServiceCash = serviceCash;
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WalletBalance);
+            return Equals(input as WalletBalance);
         }
 
         /// <summary>
@@ -186,73 +186,75 @@ namespace BybitAPI.Model
         public bool Equals(WalletBalance input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Equity == input.Equity ||
-                    (this.Equity != null &&
-                    this.Equity.Equals(input.Equity))
+                    Equity == input.Equity ||
+                    (Equity != null &&
+                    Equity.Equals(input.Equity))
                 ) &&
                 (
-                    this.AvailableBalance == input.AvailableBalance ||
-                    (this.AvailableBalance != null &&
-                    this.AvailableBalance.Equals(input.AvailableBalance))
+                    AvailableBalance == input.AvailableBalance ||
+                    (AvailableBalance != null &&
+                    AvailableBalance.Equals(input.AvailableBalance))
                 ) &&
                 (
-                    this.UsedMargin == input.UsedMargin ||
-                    (this.UsedMargin != null &&
-                    this.UsedMargin.Equals(input.UsedMargin))
+                    UsedMargin == input.UsedMargin ||
+                    (UsedMargin != null &&
+                    UsedMargin.Equals(input.UsedMargin))
                 ) &&
                 (
-                    this.OrderMargin == input.OrderMargin ||
-                    (this.OrderMargin != null &&
-                    this.OrderMargin.Equals(input.OrderMargin))
+                    OrderMargin == input.OrderMargin ||
+                    (OrderMargin != null &&
+                    OrderMargin.Equals(input.OrderMargin))
                 ) &&
                 (
-                    this.PositionMargin == input.PositionMargin ||
-                    (this.PositionMargin != null &&
-                    this.PositionMargin.Equals(input.PositionMargin))
+                    PositionMargin == input.PositionMargin ||
+                    (PositionMargin != null &&
+                    PositionMargin.Equals(input.PositionMargin))
                 ) &&
                 (
-                    this.OccClosingFee == input.OccClosingFee ||
-                    (this.OccClosingFee != null &&
-                    this.OccClosingFee.Equals(input.OccClosingFee))
+                    OccClosingFee == input.OccClosingFee ||
+                    (OccClosingFee != null &&
+                    OccClosingFee.Equals(input.OccClosingFee))
                 ) &&
                 (
-                    this.OccFundingFee == input.OccFundingFee ||
-                    (this.OccFundingFee != null &&
-                    this.OccFundingFee.Equals(input.OccFundingFee))
+                    OccFundingFee == input.OccFundingFee ||
+                    (OccFundingFee != null &&
+                    OccFundingFee.Equals(input.OccFundingFee))
                 ) &&
                 (
-                    this._WalletBalance == input._WalletBalance ||
-                    (this._WalletBalance != null &&
-                    this._WalletBalance.Equals(input._WalletBalance))
+                    _WalletBalance == input._WalletBalance ||
+                    (_WalletBalance != null &&
+                    _WalletBalance.Equals(input._WalletBalance))
                 ) &&
                 (
-                    this.RealisedPnl == input.RealisedPnl ||
-                    (this.RealisedPnl != null &&
-                    this.RealisedPnl.Equals(input.RealisedPnl))
+                    RealisedPnl == input.RealisedPnl ||
+                    (RealisedPnl != null &&
+                    RealisedPnl.Equals(input.RealisedPnl))
                 ) &&
                 (
-                    this.UnrealisedPnl == input.UnrealisedPnl ||
-                    (this.UnrealisedPnl != null &&
-                    this.UnrealisedPnl.Equals(input.UnrealisedPnl))
+                    UnrealisedPnl == input.UnrealisedPnl ||
+                    (UnrealisedPnl != null &&
+                    UnrealisedPnl.Equals(input.UnrealisedPnl))
                 ) &&
                 (
-                    this.CumRealisedPnl == input.CumRealisedPnl ||
-                    (this.CumRealisedPnl != null &&
-                    this.CumRealisedPnl.Equals(input.CumRealisedPnl))
+                    CumRealisedPnl == input.CumRealisedPnl ||
+                    (CumRealisedPnl != null &&
+                    CumRealisedPnl.Equals(input.CumRealisedPnl))
                 ) &&
                 (
-                    this.GivenCash == input.GivenCash ||
-                    (this.GivenCash != null &&
-                    this.GivenCash.Equals(input.GivenCash))
+                    GivenCash == input.GivenCash ||
+                    (GivenCash != null &&
+                    GivenCash.Equals(input.GivenCash))
                 ) &&
                 (
-                    this.ServiceCash == input.ServiceCash ||
-                    (this.ServiceCash != null &&
-                    this.ServiceCash.Equals(input.ServiceCash))
+                    ServiceCash == input.ServiceCash ||
+                    (ServiceCash != null &&
+                    ServiceCash.Equals(input.ServiceCash))
                 );
         }
 
@@ -264,33 +266,72 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Equity != null)
-                    hashCode = hashCode * 59 + this.Equity.GetHashCode();
-                if (this.AvailableBalance != null)
-                    hashCode = hashCode * 59 + this.AvailableBalance.GetHashCode();
-                if (this.UsedMargin != null)
-                    hashCode = hashCode * 59 + this.UsedMargin.GetHashCode();
-                if (this.OrderMargin != null)
-                    hashCode = hashCode * 59 + this.OrderMargin.GetHashCode();
-                if (this.PositionMargin != null)
-                    hashCode = hashCode * 59 + this.PositionMargin.GetHashCode();
-                if (this.OccClosingFee != null)
-                    hashCode = hashCode * 59 + this.OccClosingFee.GetHashCode();
-                if (this.OccFundingFee != null)
-                    hashCode = hashCode * 59 + this.OccFundingFee.GetHashCode();
-                if (this._WalletBalance != null)
-                    hashCode = hashCode * 59 + this._WalletBalance.GetHashCode();
-                if (this.RealisedPnl != null)
-                    hashCode = hashCode * 59 + this.RealisedPnl.GetHashCode();
-                if (this.UnrealisedPnl != null)
-                    hashCode = hashCode * 59 + this.UnrealisedPnl.GetHashCode();
-                if (this.CumRealisedPnl != null)
-                    hashCode = hashCode * 59 + this.CumRealisedPnl.GetHashCode();
-                if (this.GivenCash != null)
-                    hashCode = hashCode * 59 + this.GivenCash.GetHashCode();
-                if (this.ServiceCash != null)
-                    hashCode = hashCode * 59 + this.ServiceCash.GetHashCode();
+                var hashCode = 41;
+                if (Equity != null)
+                {
+                    hashCode = hashCode * 59 + Equity.GetHashCode();
+                }
+
+                if (AvailableBalance != null)
+                {
+                    hashCode = hashCode * 59 + AvailableBalance.GetHashCode();
+                }
+
+                if (UsedMargin != null)
+                {
+                    hashCode = hashCode * 59 + UsedMargin.GetHashCode();
+                }
+
+                if (OrderMargin != null)
+                {
+                    hashCode = hashCode * 59 + OrderMargin.GetHashCode();
+                }
+
+                if (PositionMargin != null)
+                {
+                    hashCode = hashCode * 59 + PositionMargin.GetHashCode();
+                }
+
+                if (OccClosingFee != null)
+                {
+                    hashCode = hashCode * 59 + OccClosingFee.GetHashCode();
+                }
+
+                if (OccFundingFee != null)
+                {
+                    hashCode = hashCode * 59 + OccFundingFee.GetHashCode();
+                }
+
+                if (_WalletBalance != null)
+                {
+                    hashCode = hashCode * 59 + _WalletBalance.GetHashCode();
+                }
+
+                if (RealisedPnl != null)
+                {
+                    hashCode = hashCode * 59 + RealisedPnl.GetHashCode();
+                }
+
+                if (UnrealisedPnl != null)
+                {
+                    hashCode = hashCode * 59 + UnrealisedPnl.GetHashCode();
+                }
+
+                if (CumRealisedPnl != null)
+                {
+                    hashCode = hashCode * 59 + CumRealisedPnl.GetHashCode();
+                }
+
+                if (GivenCash != null)
+                {
+                    hashCode = hashCode * 59 + GivenCash.GetHashCode();
+                }
+
+                if (ServiceCash != null)
+                {
+                    hashCode = hashCode * 59 + ServiceCash.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

@@ -30,12 +30,12 @@ namespace BybitAPI.Model
         /// <param name="sellRatio">sellRatio.</param>
         /// <param name="timestamp">timestamp.</param>
         /// <param name="symbol">symbol.</param>
-        public AccountRatioInfo(int? buyRatio = default(int?), int? sellRatio = default(int?), int? timestamp = default(int?), string symbol = default(string))
+        public AccountRatioInfo(int? buyRatio = default, int? sellRatio = default, int? timestamp = default, string symbol = default)
         {
-            this.BuyRatio = buyRatio;
-            this.SellRatio = sellRatio;
-            this.Timestamp = timestamp;
-            this.Symbol = symbol;
+            BuyRatio = buyRatio;
+            SellRatio = sellRatio;
+            Timestamp = timestamp;
+            Symbol = symbol;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AccountRatioInfo);
+            return Equals(input as AccountRatioInfo);
         }
 
         /// <summary>
@@ -105,28 +105,30 @@ namespace BybitAPI.Model
         public bool Equals(AccountRatioInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.BuyRatio == input.BuyRatio ||
-                    (this.BuyRatio != null &&
-                    this.BuyRatio.Equals(input.BuyRatio))
+                    BuyRatio == input.BuyRatio ||
+                    (BuyRatio != null &&
+                    BuyRatio.Equals(input.BuyRatio))
                 ) &&
                 (
-                    this.SellRatio == input.SellRatio ||
-                    (this.SellRatio != null &&
-                    this.SellRatio.Equals(input.SellRatio))
+                    SellRatio == input.SellRatio ||
+                    (SellRatio != null &&
+                    SellRatio.Equals(input.SellRatio))
                 ) &&
                 (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
+                    Timestamp == input.Timestamp ||
+                    (Timestamp != null &&
+                    Timestamp.Equals(input.Timestamp))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 );
         }
 
@@ -138,15 +140,27 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BuyRatio != null)
-                    hashCode = hashCode * 59 + this.BuyRatio.GetHashCode();
-                if (this.SellRatio != null)
-                    hashCode = hashCode * 59 + this.SellRatio.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                var hashCode = 41;
+                if (BuyRatio != null)
+                {
+                    hashCode = hashCode * 59 + BuyRatio.GetHashCode();
+                }
+
+                if (SellRatio != null)
+                {
+                    hashCode = hashCode * 59 + SellRatio.GetHashCode();
+                }
+
+                if (Timestamp != null)
+                {
+                    hashCode = hashCode * 59 + Timestamp.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

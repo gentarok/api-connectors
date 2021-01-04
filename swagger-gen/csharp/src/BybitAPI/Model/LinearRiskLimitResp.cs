@@ -36,17 +36,17 @@ namespace BybitAPI.Model
         /// <param name="startingMargin">startingMargin.</param>
         /// <param name="symbol">symbol.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public LinearRiskLimitResp(string createdAt = default(string), int? id = default(int?), int? isLowestRisk = default(int?), long? limit = default(long?), double? maintainMargin = default(double?), List<string> section = default(List<string>), double? startingMargin = default(double?), string symbol = default(string), string updatedAt = default(string))
+        public LinearRiskLimitResp(string createdAt = default, int? id = default, int? isLowestRisk = default, long? limit = default, double? maintainMargin = default, List<string> section = default, double? startingMargin = default, string symbol = default, string updatedAt = default)
         {
-            this.CreatedAt = createdAt;
-            this.Id = id;
-            this.IsLowestRisk = isLowestRisk;
-            this.Limit = limit;
-            this.MaintainMargin = maintainMargin;
-            this.Section = section;
-            this.StartingMargin = startingMargin;
-            this.Symbol = symbol;
-            this.UpdatedAt = updatedAt;
+            CreatedAt = createdAt;
+            Id = id;
+            IsLowestRisk = isLowestRisk;
+            Limit = limit;
+            MaintainMargin = maintainMargin;
+            Section = section;
+            StartingMargin = startingMargin;
+            Symbol = symbol;
+            UpdatedAt = updatedAt;
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearRiskLimitResp);
+            return Equals(input as LinearRiskLimitResp);
         }
 
         /// <summary>
@@ -151,53 +151,55 @@ namespace BybitAPI.Model
         public bool Equals(LinearRiskLimitResp input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) &&
                 (
-                    this.IsLowestRisk == input.IsLowestRisk ||
-                    (this.IsLowestRisk != null &&
-                    this.IsLowestRisk.Equals(input.IsLowestRisk))
+                    IsLowestRisk == input.IsLowestRisk ||
+                    (IsLowestRisk != null &&
+                    IsLowestRisk.Equals(input.IsLowestRisk))
                 ) &&
                 (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
+                    Limit == input.Limit ||
+                    (Limit != null &&
+                    Limit.Equals(input.Limit))
                 ) &&
                 (
-                    this.MaintainMargin == input.MaintainMargin ||
-                    (this.MaintainMargin != null &&
-                    this.MaintainMargin.Equals(input.MaintainMargin))
+                    MaintainMargin == input.MaintainMargin ||
+                    (MaintainMargin != null &&
+                    MaintainMargin.Equals(input.MaintainMargin))
                 ) &&
                 (
-                    this.Section == input.Section ||
-                    this.Section != null &&
-                    this.Section.SequenceEqual(input.Section)
+                    Section == input.Section ||
+                    Section != null &&
+                    Section.SequenceEqual(input.Section)
                 ) &&
                 (
-                    this.StartingMargin == input.StartingMargin ||
-                    (this.StartingMargin != null &&
-                    this.StartingMargin.Equals(input.StartingMargin))
+                    StartingMargin == input.StartingMargin ||
+                    (StartingMargin != null &&
+                    StartingMargin.Equals(input.StartingMargin))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
+                    UpdatedAt == input.UpdatedAt ||
+                    (UpdatedAt != null &&
+                    UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
 
@@ -209,25 +211,52 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IsLowestRisk != null)
-                    hashCode = hashCode * 59 + this.IsLowestRisk.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.MaintainMargin != null)
-                    hashCode = hashCode * 59 + this.MaintainMargin.GetHashCode();
-                if (this.Section != null)
-                    hashCode = hashCode * 59 + this.Section.GetHashCode();
-                if (this.StartingMargin != null)
-                    hashCode = hashCode * 59 + this.StartingMargin.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
+                if (Id != null)
+                {
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                }
+
+                if (IsLowestRisk != null)
+                {
+                    hashCode = hashCode * 59 + IsLowestRisk.GetHashCode();
+                }
+
+                if (Limit != null)
+                {
+                    hashCode = hashCode * 59 + Limit.GetHashCode();
+                }
+
+                if (MaintainMargin != null)
+                {
+                    hashCode = hashCode * 59 + MaintainMargin.GetHashCode();
+                }
+
+                if (Section != null)
+                {
+                    hashCode = hashCode * 59 + Section.GetHashCode();
+                }
+
+                if (StartingMargin != null)
+                {
+                    hashCode = hashCode * 59 + StartingMargin.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (UpdatedAt != null)
+                {
+                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

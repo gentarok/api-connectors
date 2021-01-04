@@ -32,14 +32,14 @@ namespace BybitAPI.Model
         /// <param name="priceScale">priceScale.</param>
         /// <param name="priceFilter">priceFilter.</param>
         /// <param name="lotSizeFilter">lotSizeFilter.</param>
-        public SymbolInfo(string name = default(string), string baseCurrency = default(string), string quoteCurrency = default(string), decimal? priceScale = default(decimal?), Object priceFilter = default(Object), Object lotSizeFilter = default(Object))
+        public SymbolInfo(string name = default, string baseCurrency = default, string quoteCurrency = default, decimal? priceScale = default, object priceFilter = default, object lotSizeFilter = default)
         {
-            this.Name = name;
-            this.BaseCurrency = baseCurrency;
-            this.QuoteCurrency = quoteCurrency;
-            this.PriceScale = priceScale;
-            this.PriceFilter = priceFilter;
-            this.LotSizeFilter = lotSizeFilter;
+            Name = name;
+            BaseCurrency = baseCurrency;
+            QuoteCurrency = quoteCurrency;
+            PriceScale = priceScale;
+            PriceFilter = priceFilter;
+            LotSizeFilter = lotSizeFilter;
         }
 
         /// <summary>
@@ -70,13 +70,13 @@ namespace BybitAPI.Model
         /// Gets or Sets PriceFilter
         /// </summary>
         [DataMember(Name = "price_filter", EmitDefaultValue = false)]
-        public Object PriceFilter { get; set; }
+        public object PriceFilter { get; set; }
 
         /// <summary>
         /// Gets or Sets LotSizeFilter
         /// </summary>
         [DataMember(Name = "lot_size_filter", EmitDefaultValue = false)]
-        public Object LotSizeFilter { get; set; }
+        public object LotSizeFilter { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -112,7 +112,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SymbolInfo);
+            return Equals(input as SymbolInfo);
         }
 
         /// <summary>
@@ -123,38 +123,40 @@ namespace BybitAPI.Model
         public bool Equals(SymbolInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) &&
                 (
-                    this.BaseCurrency == input.BaseCurrency ||
-                    (this.BaseCurrency != null &&
-                    this.BaseCurrency.Equals(input.BaseCurrency))
+                    BaseCurrency == input.BaseCurrency ||
+                    (BaseCurrency != null &&
+                    BaseCurrency.Equals(input.BaseCurrency))
                 ) &&
                 (
-                    this.QuoteCurrency == input.QuoteCurrency ||
-                    (this.QuoteCurrency != null &&
-                    this.QuoteCurrency.Equals(input.QuoteCurrency))
+                    QuoteCurrency == input.QuoteCurrency ||
+                    (QuoteCurrency != null &&
+                    QuoteCurrency.Equals(input.QuoteCurrency))
                 ) &&
                 (
-                    this.PriceScale == input.PriceScale ||
-                    (this.PriceScale != null &&
-                    this.PriceScale.Equals(input.PriceScale))
+                    PriceScale == input.PriceScale ||
+                    (PriceScale != null &&
+                    PriceScale.Equals(input.PriceScale))
                 ) &&
                 (
-                    this.PriceFilter == input.PriceFilter ||
-                    (this.PriceFilter != null &&
-                    this.PriceFilter.Equals(input.PriceFilter))
+                    PriceFilter == input.PriceFilter ||
+                    (PriceFilter != null &&
+                    PriceFilter.Equals(input.PriceFilter))
                 ) &&
                 (
-                    this.LotSizeFilter == input.LotSizeFilter ||
-                    (this.LotSizeFilter != null &&
-                    this.LotSizeFilter.Equals(input.LotSizeFilter))
+                    LotSizeFilter == input.LotSizeFilter ||
+                    (LotSizeFilter != null &&
+                    LotSizeFilter.Equals(input.LotSizeFilter))
                 );
         }
 
@@ -166,19 +168,37 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.BaseCurrency != null)
-                    hashCode = hashCode * 59 + this.BaseCurrency.GetHashCode();
-                if (this.QuoteCurrency != null)
-                    hashCode = hashCode * 59 + this.QuoteCurrency.GetHashCode();
-                if (this.PriceScale != null)
-                    hashCode = hashCode * 59 + this.PriceScale.GetHashCode();
-                if (this.PriceFilter != null)
-                    hashCode = hashCode * 59 + this.PriceFilter.GetHashCode();
-                if (this.LotSizeFilter != null)
-                    hashCode = hashCode * 59 + this.LotSizeFilter.GetHashCode();
+                var hashCode = 41;
+                if (Name != null)
+                {
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                }
+
+                if (BaseCurrency != null)
+                {
+                    hashCode = hashCode * 59 + BaseCurrency.GetHashCode();
+                }
+
+                if (QuoteCurrency != null)
+                {
+                    hashCode = hashCode * 59 + QuoteCurrency.GetHashCode();
+                }
+
+                if (PriceScale != null)
+                {
+                    hashCode = hashCode * 59 + PriceScale.GetHashCode();
+                }
+
+                if (PriceFilter != null)
+                {
+                    hashCode = hashCode * 59 + PriceFilter.GetHashCode();
+                }
+
+                if (LotSizeFilter != null)
+                {
+                    hashCode = hashCode * 59 + LotSizeFilter.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

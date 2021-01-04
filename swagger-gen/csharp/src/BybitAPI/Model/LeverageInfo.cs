@@ -27,9 +27,9 @@ namespace BybitAPI.Model
         /// Initializes a new instance of the <see cref="LeverageInfo" /> class.
         /// </summary>
         /// <param name="leverage">leverage.</param>
-        public LeverageInfo(decimal? leverage = default(decimal?))
+        public LeverageInfo(decimal? leverage = default)
         {
-            this.Leverage = leverage;
+            Leverage = leverage;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LeverageInfo);
+            return Equals(input as LeverageInfo);
         }
 
         /// <summary>
@@ -78,13 +78,15 @@ namespace BybitAPI.Model
         public bool Equals(LeverageInfo input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Leverage == input.Leverage ||
-                    (this.Leverage != null &&
-                    this.Leverage.Equals(input.Leverage))
+                    Leverage == input.Leverage ||
+                    (Leverage != null &&
+                    Leverage.Equals(input.Leverage))
                 );
         }
 
@@ -96,9 +98,12 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Leverage != null)
-                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
+                var hashCode = 41;
+                if (Leverage != null)
+                {
+                    hashCode = hashCode * 59 + Leverage.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

@@ -28,23 +28,23 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="position">position.</param>
         /// <param name="risk">risk.</param>
-        public RiskLimitRes(Object position = default(Object), Object risk = default(Object))
+        public RiskLimitRes(object position = default, object risk = default)
         {
-            this.Position = position;
-            this.Risk = risk;
+            Position = position;
+            Risk = risk;
         }
 
         /// <summary>
         /// Gets or Sets Position
         /// </summary>
         [DataMember(Name = "position", EmitDefaultValue = false)]
-        public Object Position { get; set; }
+        public object Position { get; set; }
 
         /// <summary>
         /// Gets or Sets Risk
         /// </summary>
         [DataMember(Name = "risk", EmitDefaultValue = false)]
-        public Object Risk { get; set; }
+        public object Risk { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,7 +76,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RiskLimitRes);
+            return Equals(input as RiskLimitRes);
         }
 
         /// <summary>
@@ -87,18 +87,20 @@ namespace BybitAPI.Model
         public bool Equals(RiskLimitRes input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Position == input.Position ||
-                    (this.Position != null &&
-                    this.Position.Equals(input.Position))
+                    Position == input.Position ||
+                    (Position != null &&
+                    Position.Equals(input.Position))
                 ) &&
                 (
-                    this.Risk == input.Risk ||
-                    (this.Risk != null &&
-                    this.Risk.Equals(input.Risk))
+                    Risk == input.Risk ||
+                    (Risk != null &&
+                    Risk.Equals(input.Risk))
                 );
         }
 
@@ -110,11 +112,17 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Position != null)
-                    hashCode = hashCode * 59 + this.Position.GetHashCode();
-                if (this.Risk != null)
-                    hashCode = hashCode * 59 + this.Risk.GetHashCode();
+                var hashCode = 41;
+                if (Position != null)
+                {
+                    hashCode = hashCode * 59 + Position.GetHashCode();
+                }
+
+                if (Risk != null)
+                {
+                    hashCode = hashCode * 59 + Risk.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

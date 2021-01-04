@@ -29,30 +29,30 @@ namespace BybitAPI.Model
         /// <param name="minTradingQty">minTradingQty.</param>
         /// <param name="maxTradingQty">maxTradingQty.</param>
         /// <param name="qtyStep">qtyStep.</param>
-        public LotSizeFilter(Object minTradingQty = default(Object), Object maxTradingQty = default(Object), Object qtyStep = default(Object))
+        public LotSizeFilter(object minTradingQty = default, object maxTradingQty = default, object qtyStep = default)
         {
-            this.MinTradingQty = minTradingQty;
-            this.MaxTradingQty = maxTradingQty;
-            this.QtyStep = qtyStep;
+            MinTradingQty = minTradingQty;
+            MaxTradingQty = maxTradingQty;
+            QtyStep = qtyStep;
         }
 
         /// <summary>
         /// Gets or Sets MinTradingQty
         /// </summary>
         [DataMember(Name = "min_trading_qty", EmitDefaultValue = false)]
-        public Object MinTradingQty { get; set; }
+        public object MinTradingQty { get; set; }
 
         /// <summary>
         /// Gets or Sets MaxTradingQty
         /// </summary>
         [DataMember(Name = "max_trading_qty", EmitDefaultValue = false)]
-        public Object MaxTradingQty { get; set; }
+        public object MaxTradingQty { get; set; }
 
         /// <summary>
         /// Gets or Sets QtyStep
         /// </summary>
         [DataMember(Name = "qty_step", EmitDefaultValue = false)]
-        public Object QtyStep { get; set; }
+        public object QtyStep { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LotSizeFilter);
+            return Equals(input as LotSizeFilter);
         }
 
         /// <summary>
@@ -96,23 +96,25 @@ namespace BybitAPI.Model
         public bool Equals(LotSizeFilter input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.MinTradingQty == input.MinTradingQty ||
-                    (this.MinTradingQty != null &&
-                    this.MinTradingQty.Equals(input.MinTradingQty))
+                    MinTradingQty == input.MinTradingQty ||
+                    (MinTradingQty != null &&
+                    MinTradingQty.Equals(input.MinTradingQty))
                 ) &&
                 (
-                    this.MaxTradingQty == input.MaxTradingQty ||
-                    (this.MaxTradingQty != null &&
-                    this.MaxTradingQty.Equals(input.MaxTradingQty))
+                    MaxTradingQty == input.MaxTradingQty ||
+                    (MaxTradingQty != null &&
+                    MaxTradingQty.Equals(input.MaxTradingQty))
                 ) &&
                 (
-                    this.QtyStep == input.QtyStep ||
-                    (this.QtyStep != null &&
-                    this.QtyStep.Equals(input.QtyStep))
+                    QtyStep == input.QtyStep ||
+                    (QtyStep != null &&
+                    QtyStep.Equals(input.QtyStep))
                 );
         }
 
@@ -124,13 +126,22 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MinTradingQty != null)
-                    hashCode = hashCode * 59 + this.MinTradingQty.GetHashCode();
-                if (this.MaxTradingQty != null)
-                    hashCode = hashCode * 59 + this.MaxTradingQty.GetHashCode();
-                if (this.QtyStep != null)
-                    hashCode = hashCode * 59 + this.QtyStep.GetHashCode();
+                var hashCode = 41;
+                if (MinTradingQty != null)
+                {
+                    hashCode = hashCode * 59 + MinTradingQty.GetHashCode();
+                }
+
+                if (MaxTradingQty != null)
+                {
+                    hashCode = hashCode * 59 + MaxTradingQty.GetHashCode();
+                }
+
+                if (QtyStep != null)
+                {
+                    hashCode = hashCode * 59 + QtyStep.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

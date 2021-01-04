@@ -41,7 +41,7 @@ namespace BybitAPI.Client
         /// <param name="message">Error message.</param>
         public ApiException(int errorCode, string message) : base(message)
         {
-            this.ErrorCode = errorCode;
+            ErrorCode = errorCode;
         }
 
         /// <summary>
@@ -52,8 +52,16 @@ namespace BybitAPI.Client
         /// <param name="errorContent">Error content.</param>
         public ApiException(int errorCode, string message, dynamic errorContent = null) : base(message)
         {
-            this.ErrorCode = errorCode;
-            this.ErrorContent = errorContent;
+            ErrorCode = errorCode;
+            ErrorContent = errorContent;
+        }
+
+        public ApiException(string message) : base(message)
+        {
+        }
+
+        public ApiException(string message, Exception innerException) : base(message, innerException)
+        {
         }
     }
 }

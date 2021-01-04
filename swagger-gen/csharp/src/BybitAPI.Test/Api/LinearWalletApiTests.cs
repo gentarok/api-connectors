@@ -49,7 +49,7 @@ namespace BybitAPI.Test
         public void InstanceTest()
         {
             // TODO uncomment below to test 'IsInstanceOfType' LinearWalletApi
-            //Assert.IsInstanceOfType(typeof(LinearWalletApi), instance, "instance is a LinearWalletApi");
+            Assert.IsInstanceOf(typeof(LinearWalletApi), instance, "instance is a LinearWalletApi");
         }
 
         /// <summary>

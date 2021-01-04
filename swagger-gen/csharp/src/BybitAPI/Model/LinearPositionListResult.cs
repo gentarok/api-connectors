@@ -41,23 +41,23 @@ namespace BybitAPI.Model
         /// <param name="symbol">symbol.</param>
         /// <param name="userId">userId.</param>
         /// <param name="tpSlMode">tpSlMode.</param>
-        public LinearPositionListResult(double? bustPrice = default(double?), double? cumRealisedPnl = default(double?), double? entryPrice = default(double?), double? freeQty = default(double?), double? leverage = default(double?), double? liqPrice = default(double?), double? occClosingFee = default(double?), double? positionMargin = default(double?), double? positionValue = default(double?), double? realisedPnl = default(double?), string side = default(string), double? size = default(double?), string symbol = default(string), long? userId = default(long?), string tpSlMode = default(string))
+        public LinearPositionListResult(double? bustPrice = default, double? cumRealisedPnl = default, double? entryPrice = default, double? freeQty = default, double? leverage = default, double? liqPrice = default, double? occClosingFee = default, double? positionMargin = default, double? positionValue = default, double? realisedPnl = default, string side = default, double? size = default, string symbol = default, long? userId = default, string tpSlMode = default)
         {
-            this.BustPrice = bustPrice;
-            this.CumRealisedPnl = cumRealisedPnl;
-            this.EntryPrice = entryPrice;
-            this.FreeQty = freeQty;
-            this.Leverage = leverage;
-            this.LiqPrice = liqPrice;
-            this.OccClosingFee = occClosingFee;
-            this.PositionMargin = positionMargin;
-            this.PositionValue = positionValue;
-            this.RealisedPnl = realisedPnl;
-            this.Side = side;
-            this.Size = size;
-            this.Symbol = symbol;
-            this.UserId = userId;
-            this.TpSlMode = tpSlMode;
+            BustPrice = bustPrice;
+            CumRealisedPnl = cumRealisedPnl;
+            EntryPrice = entryPrice;
+            FreeQty = freeQty;
+            Leverage = leverage;
+            LiqPrice = liqPrice;
+            OccClosingFee = occClosingFee;
+            PositionMargin = positionMargin;
+            PositionValue = positionValue;
+            RealisedPnl = realisedPnl;
+            Side = side;
+            Size = size;
+            Symbol = symbol;
+            UserId = userId;
+            TpSlMode = tpSlMode;
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearPositionListResult);
+            return Equals(input as LinearPositionListResult);
         }
 
         /// <summary>
@@ -204,83 +204,85 @@ namespace BybitAPI.Model
         public bool Equals(LinearPositionListResult input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.BustPrice == input.BustPrice ||
-                    (this.BustPrice != null &&
-                    this.BustPrice.Equals(input.BustPrice))
+                    BustPrice == input.BustPrice ||
+                    (BustPrice != null &&
+                    BustPrice.Equals(input.BustPrice))
                 ) &&
                 (
-                    this.CumRealisedPnl == input.CumRealisedPnl ||
-                    (this.CumRealisedPnl != null &&
-                    this.CumRealisedPnl.Equals(input.CumRealisedPnl))
+                    CumRealisedPnl == input.CumRealisedPnl ||
+                    (CumRealisedPnl != null &&
+                    CumRealisedPnl.Equals(input.CumRealisedPnl))
                 ) &&
                 (
-                    this.EntryPrice == input.EntryPrice ||
-                    (this.EntryPrice != null &&
-                    this.EntryPrice.Equals(input.EntryPrice))
+                    EntryPrice == input.EntryPrice ||
+                    (EntryPrice != null &&
+                    EntryPrice.Equals(input.EntryPrice))
                 ) &&
                 (
-                    this.FreeQty == input.FreeQty ||
-                    (this.FreeQty != null &&
-                    this.FreeQty.Equals(input.FreeQty))
+                    FreeQty == input.FreeQty ||
+                    (FreeQty != null &&
+                    FreeQty.Equals(input.FreeQty))
                 ) &&
                 (
-                    this.Leverage == input.Leverage ||
-                    (this.Leverage != null &&
-                    this.Leverage.Equals(input.Leverage))
+                    Leverage == input.Leverage ||
+                    (Leverage != null &&
+                    Leverage.Equals(input.Leverage))
                 ) &&
                 (
-                    this.LiqPrice == input.LiqPrice ||
-                    (this.LiqPrice != null &&
-                    this.LiqPrice.Equals(input.LiqPrice))
+                    LiqPrice == input.LiqPrice ||
+                    (LiqPrice != null &&
+                    LiqPrice.Equals(input.LiqPrice))
                 ) &&
                 (
-                    this.OccClosingFee == input.OccClosingFee ||
-                    (this.OccClosingFee != null &&
-                    this.OccClosingFee.Equals(input.OccClosingFee))
+                    OccClosingFee == input.OccClosingFee ||
+                    (OccClosingFee != null &&
+                    OccClosingFee.Equals(input.OccClosingFee))
                 ) &&
                 (
-                    this.PositionMargin == input.PositionMargin ||
-                    (this.PositionMargin != null &&
-                    this.PositionMargin.Equals(input.PositionMargin))
+                    PositionMargin == input.PositionMargin ||
+                    (PositionMargin != null &&
+                    PositionMargin.Equals(input.PositionMargin))
                 ) &&
                 (
-                    this.PositionValue == input.PositionValue ||
-                    (this.PositionValue != null &&
-                    this.PositionValue.Equals(input.PositionValue))
+                    PositionValue == input.PositionValue ||
+                    (PositionValue != null &&
+                    PositionValue.Equals(input.PositionValue))
                 ) &&
                 (
-                    this.RealisedPnl == input.RealisedPnl ||
-                    (this.RealisedPnl != null &&
-                    this.RealisedPnl.Equals(input.RealisedPnl))
+                    RealisedPnl == input.RealisedPnl ||
+                    (RealisedPnl != null &&
+                    RealisedPnl.Equals(input.RealisedPnl))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
+                    Size == input.Size ||
+                    (Size != null &&
+                    Size.Equals(input.Size))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.TpSlMode == input.TpSlMode ||
-                    (this.TpSlMode != null &&
-                    this.TpSlMode.Equals(input.TpSlMode))
+                    TpSlMode == input.TpSlMode ||
+                    (TpSlMode != null &&
+                    TpSlMode.Equals(input.TpSlMode))
                 );
         }
 
@@ -292,37 +294,82 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BustPrice != null)
-                    hashCode = hashCode * 59 + this.BustPrice.GetHashCode();
-                if (this.CumRealisedPnl != null)
-                    hashCode = hashCode * 59 + this.CumRealisedPnl.GetHashCode();
-                if (this.EntryPrice != null)
-                    hashCode = hashCode * 59 + this.EntryPrice.GetHashCode();
-                if (this.FreeQty != null)
-                    hashCode = hashCode * 59 + this.FreeQty.GetHashCode();
-                if (this.Leverage != null)
-                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
-                if (this.LiqPrice != null)
-                    hashCode = hashCode * 59 + this.LiqPrice.GetHashCode();
-                if (this.OccClosingFee != null)
-                    hashCode = hashCode * 59 + this.OccClosingFee.GetHashCode();
-                if (this.PositionMargin != null)
-                    hashCode = hashCode * 59 + this.PositionMargin.GetHashCode();
-                if (this.PositionValue != null)
-                    hashCode = hashCode * 59 + this.PositionValue.GetHashCode();
-                if (this.RealisedPnl != null)
-                    hashCode = hashCode * 59 + this.RealisedPnl.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.TpSlMode != null)
-                    hashCode = hashCode * 59 + this.TpSlMode.GetHashCode();
+                var hashCode = 41;
+                if (BustPrice != null)
+                {
+                    hashCode = hashCode * 59 + BustPrice.GetHashCode();
+                }
+
+                if (CumRealisedPnl != null)
+                {
+                    hashCode = hashCode * 59 + CumRealisedPnl.GetHashCode();
+                }
+
+                if (EntryPrice != null)
+                {
+                    hashCode = hashCode * 59 + EntryPrice.GetHashCode();
+                }
+
+                if (FreeQty != null)
+                {
+                    hashCode = hashCode * 59 + FreeQty.GetHashCode();
+                }
+
+                if (Leverage != null)
+                {
+                    hashCode = hashCode * 59 + Leverage.GetHashCode();
+                }
+
+                if (LiqPrice != null)
+                {
+                    hashCode = hashCode * 59 + LiqPrice.GetHashCode();
+                }
+
+                if (OccClosingFee != null)
+                {
+                    hashCode = hashCode * 59 + OccClosingFee.GetHashCode();
+                }
+
+                if (PositionMargin != null)
+                {
+                    hashCode = hashCode * 59 + PositionMargin.GetHashCode();
+                }
+
+                if (PositionValue != null)
+                {
+                    hashCode = hashCode * 59 + PositionValue.GetHashCode();
+                }
+
+                if (RealisedPnl != null)
+                {
+                    hashCode = hashCode * 59 + RealisedPnl.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (Size != null)
+                {
+                    hashCode = hashCode * 59 + Size.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (TpSlMode != null)
+                {
+                    hashCode = hashCode * 59 + TpSlMode.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

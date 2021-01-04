@@ -49,7 +49,7 @@ namespace BybitAPI.Test
         public void InstanceTest()
         {
             // TODO uncomment below to test 'IsInstanceOfType' LinearConditionalApi
-            //Assert.IsInstanceOfType(typeof(LinearConditionalApi), instance, "instance is a LinearConditionalApi");
+            Assert.IsInstanceOf(typeof(LinearConditionalApi), instance, "instance is a LinearConditionalApi");
         }
 
         /// <summary>

@@ -43,25 +43,25 @@ namespace BybitAPI.Model
         /// <param name="orderLinkId">orderLinkId.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public QueryOrderRes(string orderId = default(string), decimal? userId = default(decimal?), string symbol = default(string), string side = default(string), string orderType = default(string), double? price = default(double?), string qty = default(string), string timeInForce = default(string), string orderStatus = default(string), Object extFields = default(Object), decimal? leavesQty = default(decimal?), decimal? leavesValue = default(decimal?), decimal? cumExecQty = default(decimal?), string rejectReason = default(string), string orderLinkId = default(string), string createdAt = default(string), string updatedAt = default(string))
+        public QueryOrderRes(string orderId = default, decimal? userId = default, string symbol = default, string side = default, string orderType = default, double? price = default, string qty = default, string timeInForce = default, string orderStatus = default, object extFields = default, decimal? leavesQty = default, decimal? leavesValue = default, decimal? cumExecQty = default, string rejectReason = default, string orderLinkId = default, string createdAt = default, string updatedAt = default)
         {
-            this.OrderId = orderId;
-            this.UserId = userId;
-            this.Symbol = symbol;
-            this.Side = side;
-            this.OrderType = orderType;
-            this.Price = price;
-            this.Qty = qty;
-            this.TimeInForce = timeInForce;
-            this.OrderStatus = orderStatus;
-            this.ExtFields = extFields;
-            this.LeavesQty = leavesQty;
-            this.LeavesValue = leavesValue;
-            this.CumExecQty = cumExecQty;
-            this.RejectReason = rejectReason;
-            this.OrderLinkId = orderLinkId;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
+            OrderId = orderId;
+            UserId = userId;
+            Symbol = symbol;
+            Side = side;
+            OrderType = orderType;
+            Price = price;
+            Qty = qty;
+            TimeInForce = timeInForce;
+            OrderStatus = orderStatus;
+            ExtFields = extFields;
+            LeavesQty = leavesQty;
+            LeavesValue = leavesValue;
+            CumExecQty = cumExecQty;
+            RejectReason = rejectReason;
+            OrderLinkId = orderLinkId;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace BybitAPI.Model
         /// Gets or Sets ExtFields
         /// </summary>
         [DataMember(Name = "ext_fields", EmitDefaultValue = false)]
-        public Object ExtFields { get; set; }
+        public object ExtFields { get; set; }
 
         /// <summary>
         /// Gets or Sets LeavesQty
@@ -211,7 +211,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as QueryOrderRes);
+            return Equals(input as QueryOrderRes);
         }
 
         /// <summary>
@@ -222,93 +222,95 @@ namespace BybitAPI.Model
         public bool Equals(QueryOrderRes input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    OrderId == input.OrderId ||
+                    (OrderId != null &&
+                    OrderId.Equals(input.OrderId))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.OrderType == input.OrderType ||
-                    (this.OrderType != null &&
-                    this.OrderType.Equals(input.OrderType))
+                    OrderType == input.OrderType ||
+                    (OrderType != null &&
+                    OrderType.Equals(input.OrderType))
                 ) &&
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    Price == input.Price ||
+                    (Price != null &&
+                    Price.Equals(input.Price))
                 ) &&
                 (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
+                    Qty == input.Qty ||
+                    (Qty != null &&
+                    Qty.Equals(input.Qty))
                 ) &&
                 (
-                    this.TimeInForce == input.TimeInForce ||
-                    (this.TimeInForce != null &&
-                    this.TimeInForce.Equals(input.TimeInForce))
+                    TimeInForce == input.TimeInForce ||
+                    (TimeInForce != null &&
+                    TimeInForce.Equals(input.TimeInForce))
                 ) &&
                 (
-                    this.OrderStatus == input.OrderStatus ||
-                    (this.OrderStatus != null &&
-                    this.OrderStatus.Equals(input.OrderStatus))
+                    OrderStatus == input.OrderStatus ||
+                    (OrderStatus != null &&
+                    OrderStatus.Equals(input.OrderStatus))
                 ) &&
                 (
-                    this.ExtFields == input.ExtFields ||
-                    (this.ExtFields != null &&
-                    this.ExtFields.Equals(input.ExtFields))
+                    ExtFields == input.ExtFields ||
+                    (ExtFields != null &&
+                    ExtFields.Equals(input.ExtFields))
                 ) &&
                 (
-                    this.LeavesQty == input.LeavesQty ||
-                    (this.LeavesQty != null &&
-                    this.LeavesQty.Equals(input.LeavesQty))
+                    LeavesQty == input.LeavesQty ||
+                    (LeavesQty != null &&
+                    LeavesQty.Equals(input.LeavesQty))
                 ) &&
                 (
-                    this.LeavesValue == input.LeavesValue ||
-                    (this.LeavesValue != null &&
-                    this.LeavesValue.Equals(input.LeavesValue))
+                    LeavesValue == input.LeavesValue ||
+                    (LeavesValue != null &&
+                    LeavesValue.Equals(input.LeavesValue))
                 ) &&
                 (
-                    this.CumExecQty == input.CumExecQty ||
-                    (this.CumExecQty != null &&
-                    this.CumExecQty.Equals(input.CumExecQty))
+                    CumExecQty == input.CumExecQty ||
+                    (CumExecQty != null &&
+                    CumExecQty.Equals(input.CumExecQty))
                 ) &&
                 (
-                    this.RejectReason == input.RejectReason ||
-                    (this.RejectReason != null &&
-                    this.RejectReason.Equals(input.RejectReason))
+                    RejectReason == input.RejectReason ||
+                    (RejectReason != null &&
+                    RejectReason.Equals(input.RejectReason))
                 ) &&
                 (
-                    this.OrderLinkId == input.OrderLinkId ||
-                    (this.OrderLinkId != null &&
-                    this.OrderLinkId.Equals(input.OrderLinkId))
+                    OrderLinkId == input.OrderLinkId ||
+                    (OrderLinkId != null &&
+                    OrderLinkId.Equals(input.OrderLinkId))
                 ) &&
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
+                    UpdatedAt == input.UpdatedAt ||
+                    (UpdatedAt != null &&
+                    UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
 
@@ -320,41 +322,92 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.OrderType != null)
-                    hashCode = hashCode * 59 + this.OrderType.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.TimeInForce != null)
-                    hashCode = hashCode * 59 + this.TimeInForce.GetHashCode();
-                if (this.OrderStatus != null)
-                    hashCode = hashCode * 59 + this.OrderStatus.GetHashCode();
-                if (this.ExtFields != null)
-                    hashCode = hashCode * 59 + this.ExtFields.GetHashCode();
-                if (this.LeavesQty != null)
-                    hashCode = hashCode * 59 + this.LeavesQty.GetHashCode();
-                if (this.LeavesValue != null)
-                    hashCode = hashCode * 59 + this.LeavesValue.GetHashCode();
-                if (this.CumExecQty != null)
-                    hashCode = hashCode * 59 + this.CumExecQty.GetHashCode();
-                if (this.RejectReason != null)
-                    hashCode = hashCode * 59 + this.RejectReason.GetHashCode();
-                if (this.OrderLinkId != null)
-                    hashCode = hashCode * 59 + this.OrderLinkId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (OrderId != null)
+                {
+                    hashCode = hashCode * 59 + OrderId.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (OrderType != null)
+                {
+                    hashCode = hashCode * 59 + OrderType.GetHashCode();
+                }
+
+                if (Price != null)
+                {
+                    hashCode = hashCode * 59 + Price.GetHashCode();
+                }
+
+                if (Qty != null)
+                {
+                    hashCode = hashCode * 59 + Qty.GetHashCode();
+                }
+
+                if (TimeInForce != null)
+                {
+                    hashCode = hashCode * 59 + TimeInForce.GetHashCode();
+                }
+
+                if (OrderStatus != null)
+                {
+                    hashCode = hashCode * 59 + OrderStatus.GetHashCode();
+                }
+
+                if (ExtFields != null)
+                {
+                    hashCode = hashCode * 59 + ExtFields.GetHashCode();
+                }
+
+                if (LeavesQty != null)
+                {
+                    hashCode = hashCode * 59 + LeavesQty.GetHashCode();
+                }
+
+                if (LeavesValue != null)
+                {
+                    hashCode = hashCode * 59 + LeavesValue.GetHashCode();
+                }
+
+                if (CumExecQty != null)
+                {
+                    hashCode = hashCode * 59 + CumExecQty.GetHashCode();
+                }
+
+                if (RejectReason != null)
+                {
+                    hashCode = hashCode * 59 + RejectReason.GetHashCode();
+                }
+
+                if (OrderLinkId != null)
+                {
+                    hashCode = hashCode * 59 + OrderLinkId.GetHashCode();
+                }
+
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
+                if (UpdatedAt != null)
+                {
+                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

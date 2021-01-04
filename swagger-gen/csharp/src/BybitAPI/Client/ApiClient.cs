@@ -25,7 +25,7 @@ namespace BybitAPI.Client
     /// </summary>
     public partial class ApiClient
     {
-        private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
+        private readonly JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
         };
@@ -70,10 +70,12 @@ namespace BybitAPI.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://api.bybit.com")
+        public ApiClient(string basePath = "https://api.bybit.com")
         {
-            if (String.IsNullOrEmpty(basePath))
+            if (string.IsNullOrEmpty(basePath))
+            {
                 throw new ArgumentException("basePath cannot be empty");
+            }
 
             RestClient = new RestClient(basePath);
             Configuration = BybitAPI.Client.Configuration.Default;
@@ -105,28 +107,36 @@ namespace BybitAPI.Client
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-            String contentType)
+            string path, RestSharp.Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+            Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+            string contentType)
         {
             var request = new RestRequest(path, method);
 
             // add path parameter, if any
             foreach (var param in pathParams)
+            {
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+            }
 
             // add header parameter, if any
             foreach (var param in headerParams)
+            {
                 request.AddHeader(param.Key, param.Value);
+            }
 
             // add query parameter, if any
             foreach (var param in queryParams)
+            {
                 request.AddQueryParameter(param.Key, param.Value);
+            }
 
             // add form parameter, if any
             foreach (var param in formParams)
+            {
                 request.AddParameter(param.Key, param.Value);
+            }
 
             // add file parameter, if any
             foreach (var param in fileParams)
@@ -157,11 +167,11 @@ namespace BybitAPI.Client
         /// <param name="pathParams">Path parameters.</param>
         /// <param name="contentType">Content Type of the request</param>
         /// <returns>Object</returns>
-        public Object CallApi(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-            String contentType)
+        public object CallApi(
+            string path, RestSharp.Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+            Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+            string contentType)
         {
             var request = PrepareRequest(
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
@@ -177,7 +187,7 @@ namespace BybitAPI.Client
             var response = RestClient.Execute(request);
             InterceptResponse(request, response);
 
-            return (Object)response;
+            return response;
         }
 
         /// <summary>
@@ -193,11 +203,11 @@ namespace BybitAPI.Client
         /// <param name="pathParams">Path parameters.</param>
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
-        public async System.Threading.Tasks.Task<Object> CallApiAsync(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-            String contentType)
+        public async System.Threading.Tasks.Task<object> CallApiAsync(
+            string path, RestSharp.Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+            Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+            string contentType)
         {
             var request = PrepareRequest(
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
@@ -205,7 +215,7 @@ namespace BybitAPI.Client
             InterceptRequest(request);
             var response = await RestClient.ExecuteAsync(request);
             InterceptResponse(request, response);
-            return (Object)response;
+            return response;
         }
 
         /// <summary>
@@ -262,13 +272,18 @@ namespace BybitAPI.Client
                 foreach (var param in list)
                 {
                     if (flattenedString.Length > 0)
+                    {
                         flattenedString.Append(",");
+                    }
+
                     flattenedString.Append(param);
                 }
                 return flattenedString.ToString();
             }
             else
+            {
                 return Convert.ToString(obj);
+            }
         }
 
         /// <summary>
@@ -279,7 +294,7 @@ namespace BybitAPI.Client
         /// <returns>Object representation of the JSON string.</returns>
         public object Deserialize(IRestResponse response, Type type)
         {
-            IList<Parameter> headers = response.Headers;
+            var headers = response.Headers;
             if (type == typeof(byte[])) // return byte array
             {
                 return response.RawBytes;
@@ -290,7 +305,7 @@ namespace BybitAPI.Client
             {
                 if (headers != null)
                 {
-                    var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
+                    var filePath = string.IsNullOrEmpty(Configuration.TempFolderPath)
                         ? Path.GetTempPath()
                         : Configuration.TempFolderPath;
                     var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
@@ -299,7 +314,7 @@ namespace BybitAPI.Client
                         var match = regex.Match(header.ToString());
                         if (match.Success)
                         {
-                            string fileName = filePath + SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
+                            var fileName = filePath + SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
                             File.WriteAllBytes(fileName, response.RawBytes);
                             return new FileStream(fileName, FileMode.Open);
                         }
@@ -314,7 +329,7 @@ namespace BybitAPI.Client
                 return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
             }
 
-            if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
+            if (type == typeof(string) || type.Name.StartsWith("System.Nullable")) // return primitive type
             {
                 return ConvertType(response.Content, type);
             }
@@ -335,7 +350,7 @@ namespace BybitAPI.Client
         /// </summary>
         /// <param name="obj">Object.</param>
         /// <returns>JSON string.</returns>
-        public String Serialize(object obj)
+        public string Serialize(object obj)
         {
             try
             {
@@ -357,7 +372,7 @@ namespace BybitAPI.Client
         /// </summary>
         /// <param name="mime">MIME</param>
         /// <returns>Returns True if MIME type is json.</returns>
-        public bool IsJsonMime(String mime)
+        public bool IsJsonMime(string mime)
         {
             var jsonRegex = new Regex("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
             return mime != null && (jsonRegex.IsMatch(mime) || mime.Equals("application/json-patch+json"));
@@ -370,15 +385,19 @@ namespace BybitAPI.Client
         /// </summary>
         /// <param name="contentTypes">The Content-Type array to select from.</param>
         /// <returns>The Content-Type header to use.</returns>
-        public String SelectHeaderContentType(String[] contentTypes)
+        public string SelectHeaderContentType(string[] contentTypes)
         {
             if (contentTypes.Length == 0)
+            {
                 return "application/json";
+            }
 
             foreach (var contentType in contentTypes)
             {
                 if (IsJsonMime(contentType.ToLower()))
+                {
                     return contentType;
+                }
             }
 
             return contentTypes[0]; // use the first content type specified in 'consumes'
@@ -391,15 +410,19 @@ namespace BybitAPI.Client
         /// </summary>
         /// <param name="accepts">The accepts array to select from.</param>
         /// <returns>The Accept header to use.</returns>
-        public String SelectHeaderAccept(String[] accepts)
+        public string SelectHeaderAccept(string[] accepts)
         {
             if (accepts.Length == 0)
+            {
                 return null;
+            }
 
             if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
+            {
                 return "application/json";
+            }
 
-            return String.Join(",", accepts);
+            return string.Join(",", accepts);
         }
 
         /// <summary>
@@ -430,8 +453,8 @@ namespace BybitAPI.Client
         /// <returns>Byte array</returns>
         public static byte[] ReadAsBytes(Stream inputStream)
         {
-            byte[] buf = new byte[16 * 1024];
-            using MemoryStream ms = new MemoryStream();
+            var buf = new byte[16 * 1024];
+            using var ms = new MemoryStream();
             int count;
             while ((count = inputStream.Read(buf, 0, buf.Length)) > 0)
             {
@@ -460,13 +483,13 @@ namespace BybitAPI.Client
                 return Uri.EscapeDataString(input);
             }
 
-            StringBuilder sb = new StringBuilder(input.Length * 2);
-            int index = 0;
+            var sb = new StringBuilder(input.Length * 2);
+            var index = 0;
 
             while (index < input.Length)
             {
-                int length = Math.Min(input.Length - index, maxLength);
-                string subString = input.Substring(index, length);
+                var length = Math.Min(input.Length - index, maxLength);
+                var subString = input.Substring(index, length);
 
                 sb.Append(Uri.EscapeDataString(subString));
                 index += subString.Length;
@@ -482,7 +505,7 @@ namespace BybitAPI.Client
         /// <returns>Filename</returns>
         public static string SanitizeFilename(string filename)
         {
-            Match match = Regex.Match(filename, @".*[/\\](.*)$");
+            var match = Regex.Match(filename, @".*[/\\](.*)$");
 
             if (match.Success)
             {

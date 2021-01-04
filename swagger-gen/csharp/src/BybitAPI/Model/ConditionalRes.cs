@@ -41,23 +41,23 @@ namespace BybitAPI.Model
         /// <param name="orderLinkId">orderLinkId.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public ConditionalRes(string stopOrderId = default(string), decimal? userId = default(decimal?), string stopOrderStatus = default(string), string symbol = default(string), string side = default(string), string orderType = default(string), double? price = default(double?), decimal? qty = default(decimal?), string timeInForce = default(string), string stopOrderType = default(string), double? basePrice = default(double?), double? stopPx = default(double?), string orderLinkId = default(string), string createdAt = default(string), string updatedAt = default(string))
+        public ConditionalRes(string stopOrderId = default, decimal? userId = default, string stopOrderStatus = default, string symbol = default, string side = default, string orderType = default, double? price = default, decimal? qty = default, string timeInForce = default, string stopOrderType = default, double? basePrice = default, double? stopPx = default, string orderLinkId = default, string createdAt = default, string updatedAt = default)
         {
-            this.StopOrderId = stopOrderId;
-            this.UserId = userId;
-            this.StopOrderStatus = stopOrderStatus;
-            this.Symbol = symbol;
-            this.Side = side;
-            this.OrderType = orderType;
-            this.Price = price;
-            this.Qty = qty;
-            this.TimeInForce = timeInForce;
-            this.StopOrderType = stopOrderType;
-            this.BasePrice = basePrice;
-            this.StopPx = stopPx;
-            this.OrderLinkId = orderLinkId;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
+            StopOrderId = stopOrderId;
+            UserId = userId;
+            StopOrderStatus = stopOrderStatus;
+            Symbol = symbol;
+            Side = side;
+            OrderType = orderType;
+            Price = price;
+            Qty = qty;
+            TimeInForce = timeInForce;
+            StopOrderType = stopOrderType;
+            BasePrice = basePrice;
+            StopPx = stopPx;
+            OrderLinkId = orderLinkId;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ConditionalRes);
+            return Equals(input as ConditionalRes);
         }
 
         /// <summary>
@@ -204,83 +204,85 @@ namespace BybitAPI.Model
         public bool Equals(ConditionalRes input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.StopOrderId == input.StopOrderId ||
-                    (this.StopOrderId != null &&
-                    this.StopOrderId.Equals(input.StopOrderId))
+                    StopOrderId == input.StopOrderId ||
+                    (StopOrderId != null &&
+                    StopOrderId.Equals(input.StopOrderId))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.StopOrderStatus == input.StopOrderStatus ||
-                    (this.StopOrderStatus != null &&
-                    this.StopOrderStatus.Equals(input.StopOrderStatus))
+                    StopOrderStatus == input.StopOrderStatus ||
+                    (StopOrderStatus != null &&
+                    StopOrderStatus.Equals(input.StopOrderStatus))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 ) &&
                 (
-                    this.OrderType == input.OrderType ||
-                    (this.OrderType != null &&
-                    this.OrderType.Equals(input.OrderType))
+                    OrderType == input.OrderType ||
+                    (OrderType != null &&
+                    OrderType.Equals(input.OrderType))
                 ) &&
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    Price == input.Price ||
+                    (Price != null &&
+                    Price.Equals(input.Price))
                 ) &&
                 (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
+                    Qty == input.Qty ||
+                    (Qty != null &&
+                    Qty.Equals(input.Qty))
                 ) &&
                 (
-                    this.TimeInForce == input.TimeInForce ||
-                    (this.TimeInForce != null &&
-                    this.TimeInForce.Equals(input.TimeInForce))
+                    TimeInForce == input.TimeInForce ||
+                    (TimeInForce != null &&
+                    TimeInForce.Equals(input.TimeInForce))
                 ) &&
                 (
-                    this.StopOrderType == input.StopOrderType ||
-                    (this.StopOrderType != null &&
-                    this.StopOrderType.Equals(input.StopOrderType))
+                    StopOrderType == input.StopOrderType ||
+                    (StopOrderType != null &&
+                    StopOrderType.Equals(input.StopOrderType))
                 ) &&
                 (
-                    this.BasePrice == input.BasePrice ||
-                    (this.BasePrice != null &&
-                    this.BasePrice.Equals(input.BasePrice))
+                    BasePrice == input.BasePrice ||
+                    (BasePrice != null &&
+                    BasePrice.Equals(input.BasePrice))
                 ) &&
                 (
-                    this.StopPx == input.StopPx ||
-                    (this.StopPx != null &&
-                    this.StopPx.Equals(input.StopPx))
+                    StopPx == input.StopPx ||
+                    (StopPx != null &&
+                    StopPx.Equals(input.StopPx))
                 ) &&
                 (
-                    this.OrderLinkId == input.OrderLinkId ||
-                    (this.OrderLinkId != null &&
-                    this.OrderLinkId.Equals(input.OrderLinkId))
+                    OrderLinkId == input.OrderLinkId ||
+                    (OrderLinkId != null &&
+                    OrderLinkId.Equals(input.OrderLinkId))
                 ) &&
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt != null &&
+                    CreatedAt.Equals(input.CreatedAt))
                 ) &&
                 (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
+                    UpdatedAt == input.UpdatedAt ||
+                    (UpdatedAt != null &&
+                    UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
 
@@ -292,37 +294,82 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StopOrderId != null)
-                    hashCode = hashCode * 59 + this.StopOrderId.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.StopOrderStatus != null)
-                    hashCode = hashCode * 59 + this.StopOrderStatus.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.OrderType != null)
-                    hashCode = hashCode * 59 + this.OrderType.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.TimeInForce != null)
-                    hashCode = hashCode * 59 + this.TimeInForce.GetHashCode();
-                if (this.StopOrderType != null)
-                    hashCode = hashCode * 59 + this.StopOrderType.GetHashCode();
-                if (this.BasePrice != null)
-                    hashCode = hashCode * 59 + this.BasePrice.GetHashCode();
-                if (this.StopPx != null)
-                    hashCode = hashCode * 59 + this.StopPx.GetHashCode();
-                if (this.OrderLinkId != null)
-                    hashCode = hashCode * 59 + this.OrderLinkId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (StopOrderId != null)
+                {
+                    hashCode = hashCode * 59 + StopOrderId.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (StopOrderStatus != null)
+                {
+                    hashCode = hashCode * 59 + StopOrderStatus.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
+                if (OrderType != null)
+                {
+                    hashCode = hashCode * 59 + OrderType.GetHashCode();
+                }
+
+                if (Price != null)
+                {
+                    hashCode = hashCode * 59 + Price.GetHashCode();
+                }
+
+                if (Qty != null)
+                {
+                    hashCode = hashCode * 59 + Qty.GetHashCode();
+                }
+
+                if (TimeInForce != null)
+                {
+                    hashCode = hashCode * 59 + TimeInForce.GetHashCode();
+                }
+
+                if (StopOrderType != null)
+                {
+                    hashCode = hashCode * 59 + StopOrderType.GetHashCode();
+                }
+
+                if (BasePrice != null)
+                {
+                    hashCode = hashCode * 59 + BasePrice.GetHashCode();
+                }
+
+                if (StopPx != null)
+                {
+                    hashCode = hashCode * 59 + StopPx.GetHashCode();
+                }
+
+                if (OrderLinkId != null)
+                {
+                    hashCode = hashCode * 59 + OrderLinkId.GetHashCode();
+                }
+
+                if (CreatedAt != null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
+                if (UpdatedAt != null)
+                {
+                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

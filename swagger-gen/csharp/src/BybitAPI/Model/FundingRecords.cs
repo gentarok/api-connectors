@@ -37,19 +37,19 @@ namespace BybitAPI.Model
         /// <param name="walletBalance">walletBalance.</param>
         /// <param name="execTime">execTime.</param>
         /// <param name="crossSeq">crossSeq.</param>
-        public FundingRecords(decimal? id = default(decimal?), decimal? userId = default(decimal?), string coin = default(string), decimal? walletId = default(decimal?), string type = default(string), string amount = default(string), string txId = default(string), string address = default(string), string walletBalance = default(string), string execTime = default(string), decimal? crossSeq = default(decimal?))
+        public FundingRecords(decimal? id = default, decimal? userId = default, string coin = default, decimal? walletId = default, string type = default, string amount = default, string txId = default, string address = default, string walletBalance = default, string execTime = default, decimal? crossSeq = default)
         {
-            this.Id = id;
-            this.UserId = userId;
-            this.Coin = coin;
-            this.WalletId = walletId;
-            this.Type = type;
-            this.Amount = amount;
-            this.TxId = txId;
-            this.Address = address;
-            this.WalletBalance = walletBalance;
-            this.ExecTime = execTime;
-            this.CrossSeq = crossSeq;
+            Id = id;
+            UserId = userId;
+            Coin = coin;
+            WalletId = walletId;
+            Type = type;
+            Amount = amount;
+            TxId = txId;
+            Address = address;
+            WalletBalance = walletBalance;
+            ExecTime = execTime;
+            CrossSeq = crossSeq;
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FundingRecords);
+            return Equals(input as FundingRecords);
         }
 
         /// <summary>
@@ -168,63 +168,65 @@ namespace BybitAPI.Model
         public bool Equals(FundingRecords input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) &&
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    UserId == input.UserId ||
+                    (UserId != null &&
+                    UserId.Equals(input.UserId))
                 ) &&
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    Coin == input.Coin ||
+                    (Coin != null &&
+                    Coin.Equals(input.Coin))
                 ) &&
                 (
-                    this.WalletId == input.WalletId ||
-                    (this.WalletId != null &&
-                    this.WalletId.Equals(input.WalletId))
+                    WalletId == input.WalletId ||
+                    (WalletId != null &&
+                    WalletId.Equals(input.WalletId))
                 ) &&
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    Type == input.Type ||
+                    (Type != null &&
+                    Type.Equals(input.Type))
                 ) &&
                 (
-                    this.Amount == input.Amount ||
-                    (this.Amount != null &&
-                    this.Amount.Equals(input.Amount))
+                    Amount == input.Amount ||
+                    (Amount != null &&
+                    Amount.Equals(input.Amount))
                 ) &&
                 (
-                    this.TxId == input.TxId ||
-                    (this.TxId != null &&
-                    this.TxId.Equals(input.TxId))
+                    TxId == input.TxId ||
+                    (TxId != null &&
+                    TxId.Equals(input.TxId))
                 ) &&
                 (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
+                    Address == input.Address ||
+                    (Address != null &&
+                    Address.Equals(input.Address))
                 ) &&
                 (
-                    this.WalletBalance == input.WalletBalance ||
-                    (this.WalletBalance != null &&
-                    this.WalletBalance.Equals(input.WalletBalance))
+                    WalletBalance == input.WalletBalance ||
+                    (WalletBalance != null &&
+                    WalletBalance.Equals(input.WalletBalance))
                 ) &&
                 (
-                    this.ExecTime == input.ExecTime ||
-                    (this.ExecTime != null &&
-                    this.ExecTime.Equals(input.ExecTime))
+                    ExecTime == input.ExecTime ||
+                    (ExecTime != null &&
+                    ExecTime.Equals(input.ExecTime))
                 ) &&
                 (
-                    this.CrossSeq == input.CrossSeq ||
-                    (this.CrossSeq != null &&
-                    this.CrossSeq.Equals(input.CrossSeq))
+                    CrossSeq == input.CrossSeq ||
+                    (CrossSeq != null &&
+                    CrossSeq.Equals(input.CrossSeq))
                 );
         }
 
@@ -236,29 +238,62 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                if (this.WalletId != null)
-                    hashCode = hashCode * 59 + this.WalletId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Amount != null)
-                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
-                if (this.TxId != null)
-                    hashCode = hashCode * 59 + this.TxId.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.WalletBalance != null)
-                    hashCode = hashCode * 59 + this.WalletBalance.GetHashCode();
-                if (this.ExecTime != null)
-                    hashCode = hashCode * 59 + this.ExecTime.GetHashCode();
-                if (this.CrossSeq != null)
-                    hashCode = hashCode * 59 + this.CrossSeq.GetHashCode();
+                var hashCode = 41;
+                if (Id != null)
+                {
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                }
+
+                if (UserId != null)
+                {
+                    hashCode = hashCode * 59 + UserId.GetHashCode();
+                }
+
+                if (Coin != null)
+                {
+                    hashCode = hashCode * 59 + Coin.GetHashCode();
+                }
+
+                if (WalletId != null)
+                {
+                    hashCode = hashCode * 59 + WalletId.GetHashCode();
+                }
+
+                if (Type != null)
+                {
+                    hashCode = hashCode * 59 + Type.GetHashCode();
+                }
+
+                if (Amount != null)
+                {
+                    hashCode = hashCode * 59 + Amount.GetHashCode();
+                }
+
+                if (TxId != null)
+                {
+                    hashCode = hashCode * 59 + TxId.GetHashCode();
+                }
+
+                if (Address != null)
+                {
+                    hashCode = hashCode * 59 + Address.GetHashCode();
+                }
+
+                if (WalletBalance != null)
+                {
+                    hashCode = hashCode * 59 + WalletBalance.GetHashCode();
+                }
+
+                if (ExecTime != null)
+                {
+                    hashCode = hashCode * 59 + ExecTime.GetHashCode();
+                }
+
+                if (CrossSeq != null)
+                {
+                    hashCode = hashCode * 59 + CrossSeq.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

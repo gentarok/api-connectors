@@ -49,7 +49,7 @@ namespace BybitAPI.Test
         public void InstanceTest()
         {
             // TODO uncomment below to test 'IsInstanceOfType' LinearPositionsApi
-            //Assert.IsInstanceOfType(typeof(LinearPositionsApi), instance, "instance is a LinearPositionsApi");
+            Assert.IsInstanceOf(typeof(LinearPositionsApi), instance, "instance is a LinearPositionsApi");
         }
 
         /// <summary>

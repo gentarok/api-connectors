@@ -29,11 +29,11 @@ namespace BybitAPI.Model
         /// <param name="fundingRate">fundingRate.</param>
         /// <param name="fundingRateTimestamp">fundingRateTimestamp.</param>
         /// <param name="symbol">symbol.</param>
-        public LinearPrevFundingRateResp(double? fundingRate = default(double?), string fundingRateTimestamp = default(string), string symbol = default(string))
+        public LinearPrevFundingRateResp(double? fundingRate = default, string fundingRateTimestamp = default, string symbol = default)
         {
-            this.FundingRate = fundingRate;
-            this.FundingRateTimestamp = fundingRateTimestamp;
-            this.Symbol = symbol;
+            FundingRate = fundingRate;
+            FundingRateTimestamp = fundingRateTimestamp;
+            Symbol = symbol;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LinearPrevFundingRateResp);
+            return Equals(input as LinearPrevFundingRateResp);
         }
 
         /// <summary>
@@ -96,23 +96,25 @@ namespace BybitAPI.Model
         public bool Equals(LinearPrevFundingRateResp input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.FundingRate == input.FundingRate ||
-                    (this.FundingRate != null &&
-                    this.FundingRate.Equals(input.FundingRate))
+                    FundingRate == input.FundingRate ||
+                    (FundingRate != null &&
+                    FundingRate.Equals(input.FundingRate))
                 ) &&
                 (
-                    this.FundingRateTimestamp == input.FundingRateTimestamp ||
-                    (this.FundingRateTimestamp != null &&
-                    this.FundingRateTimestamp.Equals(input.FundingRateTimestamp))
+                    FundingRateTimestamp == input.FundingRateTimestamp ||
+                    (FundingRateTimestamp != null &&
+                    FundingRateTimestamp.Equals(input.FundingRateTimestamp))
                 ) &&
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 );
         }
 
@@ -124,13 +126,22 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FundingRate != null)
-                    hashCode = hashCode * 59 + this.FundingRate.GetHashCode();
-                if (this.FundingRateTimestamp != null)
-                    hashCode = hashCode * 59 + this.FundingRateTimestamp.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                var hashCode = 41;
+                if (FundingRate != null)
+                {
+                    hashCode = hashCode * 59 + FundingRate.GetHashCode();
+                }
+
+                if (FundingRateTimestamp != null)
+                {
+                    hashCode = hashCode * 59 + FundingRateTimestamp.GetHashCode();
+                }
+
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
                 return hashCode;
             }
         }

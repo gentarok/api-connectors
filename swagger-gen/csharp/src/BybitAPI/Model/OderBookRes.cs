@@ -30,12 +30,12 @@ namespace BybitAPI.Model
         /// <param name="price">price.</param>
         /// <param name="size">size.</param>
         /// <param name="side">side.</param>
-        public OderBookRes(string symbol = default(string), string price = default(string), decimal? size = default(decimal?), string side = default(string))
+        public OderBookRes(string symbol = default, string price = default, decimal? size = default, string side = default)
         {
-            this.Symbol = symbol;
-            this.Price = price;
-            this.Size = size;
-            this.Side = side;
+            Symbol = symbol;
+            Price = price;
+            Size = size;
+            Side = side;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OderBookRes);
+            return Equals(input as OderBookRes);
         }
 
         /// <summary>
@@ -105,28 +105,30 @@ namespace BybitAPI.Model
         public bool Equals(OderBookRes input)
         {
             if (input == null)
+            {
                 return false;
+            }
 
             return
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) &&
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    Price == input.Price ||
+                    (Price != null &&
+                    Price.Equals(input.Price))
                 ) &&
                 (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
+                    Size == input.Size ||
+                    (Size != null &&
+                    Size.Equals(input.Size))
                 ) &&
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    Side == input.Side ||
+                    (Side != null &&
+                    Side.Equals(input.Side))
                 );
         }
 
@@ -138,15 +140,27 @@ namespace BybitAPI.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
+                var hashCode = 41;
+                if (Symbol != null)
+                {
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                }
+
+                if (Price != null)
+                {
+                    hashCode = hashCode * 59 + Price.GetHashCode();
+                }
+
+                if (Size != null)
+                {
+                    hashCode = hashCode * 59 + Size.GetHashCode();
+                }
+
+                if (Side != null)
+                {
+                    hashCode = hashCode * 59 + Side.GetHashCode();
+                }
+
                 return hashCode;
             }
         }
