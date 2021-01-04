@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
+using BybitAPI.Client;
 
-namespace IO.Swagger.Api
+namespace BybitAPI.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -29,7 +29,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -43,7 +43,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -56,7 +56,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -70,7 +70,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -85,7 +85,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -99,7 +99,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -112,7 +112,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -126,7 +126,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -141,7 +141,7 @@ namespace IO.Swagger.Api
     /// </summary>
     public partial class KlineApi : IKlineApi
     {
-        private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="KlineApi"/> class.
@@ -149,9 +149,9 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public KlineApi(String basePath)
         {
-            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -160,14 +160,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public KlineApi(IO.Swagger.Client.Configuration configuration = null)
+        public KlineApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                this.Configuration = BybitAPI.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -193,12 +193,12 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IO.Swagger.Client.Configuration Configuration {get; set;}
+        public BybitAPI.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+        public BybitAPI.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -236,7 +236,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Query historical kline. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -251,7 +251,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Query historical kline. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -319,7 +319,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Query historical kline. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -335,7 +335,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Query historical kline. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
@@ -403,7 +403,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Query mark price kline. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -418,7 +418,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Query mark price kline. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -486,7 +486,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Query mark price kline. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
@@ -502,7 +502,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Query mark price kline. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>

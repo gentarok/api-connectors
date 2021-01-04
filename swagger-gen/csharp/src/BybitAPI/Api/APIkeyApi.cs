@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com
@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
+using BybitAPI.Client;
 
-namespace IO.Swagger.Api
+namespace BybitAPI.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,46 +23,51 @@ namespace IO.Swagger.Api
     public interface IAPIkeyApi : IApiAccessor
     {
         #region Synchronous Operations
+
         /// <summary>
         /// Get account api-key information.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
-        Object APIkeyInfo ();
+        Object APIkeyInfo();
 
         /// <summary>
         /// Get account api-key information.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> APIkeyInfoWithHttpInfo ();
+        ApiResponse<Object> APIkeyInfoWithHttpInfo();
+
         #endregion Synchronous Operations
+
         #region Asynchronous Operations
-        /// <summary>
-        /// Get account api-key information.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> APIkeyInfoAsync ();
 
         /// <summary>
         /// Get account api-key information.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> APIkeyInfoAsync();
+
+        /// <summary>
+        /// Get account api-key information.
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> APIkeyInfoAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<Object>> APIkeyInfoAsyncWithHttpInfo();
+
         #endregion Asynchronous Operations
     }
 
@@ -71,7 +76,7 @@ namespace IO.Swagger.Api
     /// </summary>
     public partial class APIkeyApi : IAPIkeyApi
     {
-        private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="APIkeyApi"/> class.
@@ -79,9 +84,9 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public APIkeyApi(String basePath)
         {
-            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -90,14 +95,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public APIkeyApi(IO.Swagger.Client.Configuration configuration = null)
+        public APIkeyApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                this.Configuration = BybitAPI.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -123,12 +128,12 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IO.Swagger.Client.Configuration Configuration {get; set;}
+        public BybitAPI.Client.Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+        public BybitAPI.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -164,24 +169,23 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get account api-key information. 
+        /// Get account api-key information.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
-        public Object APIkeyInfo ()
+        public Object APIkeyInfo()
         {
-             ApiResponse<Object> localVarResponse = APIkeyInfoWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<Object> localVarResponse = APIkeyInfoWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get account api-key information. 
+        /// Get account api-key information.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > APIkeyInfoWithHttpInfo ()
+        public ApiResponse<Object> APIkeyInfoWithHttpInfo()
         {
-
             var localVarPath = "/open-api/api-key";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
@@ -192,7 +196,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -204,7 +208,6 @@ namespace IO.Swagger.Api
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
 
             // authentication (apiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
@@ -223,11 +226,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -237,29 +240,27 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
-        /// Get account api-key information. 
+        /// Get account api-key information.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> APIkeyInfoAsync ()
+        public async System.Threading.Tasks.Task<Object> APIkeyInfoAsync()
         {
-             ApiResponse<Object> localVarResponse = await APIkeyInfoAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            ApiResponse<Object> localVarResponse = await APIkeyInfoAsyncWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get account api-key information. 
+        /// Get account api-key information.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> APIkeyInfoAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> APIkeyInfoAsyncWithHttpInfo()
         {
-
             var localVarPath = "/open-api/api-key";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
@@ -270,7 +271,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -282,7 +283,6 @@ namespace IO.Swagger.Api
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
 
             // authentication (apiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
@@ -301,11 +301,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -315,8 +315,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
-
     }
 }

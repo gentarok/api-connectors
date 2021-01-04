@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
+using BybitAPI.Client;
 
-namespace IO.Swagger.Api
+namespace BybitAPI.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -29,7 +29,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -42,7 +42,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -54,7 +54,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Object</returns>
         Object WalletGetBalance (string coin = null);
@@ -65,7 +65,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> WalletGetBalanceWithHttpInfo (string coin = null);
@@ -75,7 +75,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -91,7 +91,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -106,7 +106,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
         Object WalletGetRiskLimit ();
 
@@ -116,7 +116,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> WalletGetRiskLimitWithHttpInfo ();
         /// <summary>
@@ -125,7 +125,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Object</returns>
@@ -137,7 +137,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>ApiResponse of Object</returns>
@@ -148,7 +148,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -164,7 +164,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -181,7 +181,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -194,7 +194,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -206,7 +206,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> WalletGetBalanceAsync (string coin = null);
@@ -217,7 +217,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> WalletGetBalanceAsyncWithHttpInfo (string coin = null);
@@ -227,7 +227,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -243,7 +243,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -258,7 +258,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> WalletGetRiskLimitAsync ();
 
@@ -268,7 +268,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> WalletGetRiskLimitAsyncWithHttpInfo ();
         /// <summary>
@@ -277,7 +277,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of Object</returns>
@@ -289,7 +289,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -300,7 +300,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -316,7 +316,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -333,7 +333,7 @@ namespace IO.Swagger.Api
     /// </summary>
     public partial class WalletApi : IWalletApi
     {
-        private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletApi"/> class.
@@ -341,9 +341,9 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public WalletApi(String basePath)
         {
-            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -352,14 +352,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public WalletApi(IO.Swagger.Client.Configuration configuration = null)
+        public WalletApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                this.Configuration = BybitAPI.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -385,12 +385,12 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IO.Swagger.Client.Configuration Configuration {get; set;}
+        public BybitAPI.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+        public BybitAPI.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -428,7 +428,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Asset Exchange Records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -442,7 +442,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Asset Exchange Records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -513,7 +513,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Asset Exchange Records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -528,7 +528,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Asset Exchange Records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="from">Start ID. By default, returns the latest IDs (optional)</param>
         /// <param name="direction">Search direction. Prev: searches in ascending order from start ID, Next: searches in descending order from start ID. Defaults to Next (optional)</param>
@@ -599,7 +599,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// get wallet balance info 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Object</returns>
         public Object WalletGetBalance (string coin = null)
@@ -611,7 +611,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// get wallet balance info 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse< Object > WalletGetBalanceWithHttpInfo (string coin = null)
@@ -679,7 +679,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// get wallet balance info 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Task of Object</returns>
         public async System.Threading.Tasks.Task<Object> WalletGetBalanceAsync (string coin = null)
@@ -692,7 +692,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// get wallet balance info 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Coin.enum {BTC,EOS,XRP,ETH,USDT} (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> WalletGetBalanceAsyncWithHttpInfo (string coin = null)
@@ -760,7 +760,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get wallet fund records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -777,7 +777,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get wallet fund records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -855,7 +855,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get wallet fund records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -873,7 +873,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get wallet fund records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="currency">Currency type (optional)</param>
@@ -951,7 +951,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get risk limit. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
         public Object WalletGetRiskLimit ()
         {
@@ -962,7 +962,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get risk limit. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse< Object > WalletGetRiskLimitWithHttpInfo ()
         {
@@ -1028,7 +1028,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get risk limit. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
         public async System.Threading.Tasks.Task<Object> WalletGetRiskLimitAsync ()
         {
@@ -1040,7 +1040,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get risk limit. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> WalletGetRiskLimitAsyncWithHttpInfo ()
         {
@@ -1106,7 +1106,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Set risk limit 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Object</returns>
@@ -1119,7 +1119,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Set risk limit 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>ApiResponse of Object</returns>
@@ -1194,7 +1194,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Set risk limit 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of Object</returns>
@@ -1208,7 +1208,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Set risk limit 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -1283,7 +1283,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get wallet fund records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -1300,7 +1300,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get wallet fund records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -1378,7 +1378,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get wallet fund records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>
@@ -1396,7 +1396,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get wallet fund records 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start point for result (optional)</param>
         /// <param name="endDate">End point for result (optional)</param>
         /// <param name="coin">Currency (optional)</param>

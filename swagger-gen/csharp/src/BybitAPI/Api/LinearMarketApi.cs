@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com
@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
+using BybitAPI.Client;
 
-namespace IO.Swagger.Api
+namespace BybitAPI.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,17 +23,18 @@ namespace IO.Swagger.Api
     public interface ILinearMarketApi : IApiAccessor
     {
         #region Synchronous Operations
+
         /// <summary>
         /// Get recent trades
         /// </summary>
         /// <remarks>
         /// This will get recent trades
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Object</returns>
-        Object LinearMarketTrading (string symbol, string limit = null);
+        Object LinearMarketTrading(string symbol, string limit = null);
 
         /// <summary>
         /// Get recent trades
@@ -41,24 +42,15 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get recent trades
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> LinearMarketTradingWithHttpInfo (string symbol, string limit = null);
+        ApiResponse<Object> LinearMarketTradingWithHttpInfo(string symbol, string limit = null);
+
         #endregion Synchronous Operations
+
         #region Asynchronous Operations
-        /// <summary>
-        /// Get recent trades
-        /// </summary>
-        /// <remarks>
-        /// This will get recent trades
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="limit">Contract type. (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> LinearMarketTradingAsync (string symbol, string limit = null);
 
         /// <summary>
         /// Get recent trades
@@ -66,11 +58,24 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get recent trades
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Contract type.</param>
+        /// <param name="limit">Contract type. (optional)</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> LinearMarketTradingAsync(string symbol, string limit = null);
+
+        /// <summary>
+        /// Get recent trades
+        /// </summary>
+        /// <remarks>
+        /// This will get recent trades
+        /// </remarks>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LinearMarketTradingAsyncWithHttpInfo (string symbol, string limit = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> LinearMarketTradingAsyncWithHttpInfo(string symbol, string limit = null);
+
         #endregion Asynchronous Operations
     }
 
@@ -79,7 +84,7 @@ namespace IO.Swagger.Api
     /// </summary>
     public partial class LinearMarketApi : ILinearMarketApi
     {
-        private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LinearMarketApi"/> class.
@@ -87,9 +92,9 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public LinearMarketApi(String basePath)
         {
-            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -98,14 +103,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LinearMarketApi(IO.Swagger.Client.Configuration configuration = null)
+        public LinearMarketApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                this.Configuration = BybitAPI.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -131,12 +136,12 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IO.Swagger.Client.Configuration Configuration {get; set;}
+        public BybitAPI.Client.Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+        public BybitAPI.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -174,24 +179,24 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get recent trades This will get recent trades
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Object</returns>
-        public Object LinearMarketTrading (string symbol, string limit = null)
+        public Object LinearMarketTrading(string symbol, string limit = null)
         {
-             ApiResponse<Object> localVarResponse = LinearMarketTradingWithHttpInfo(symbol, limit);
-             return localVarResponse.Data;
+            ApiResponse<Object> localVarResponse = LinearMarketTradingWithHttpInfo(symbol, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get recent trades This will get recent trades
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > LinearMarketTradingWithHttpInfo (string symbol, string limit = null)
+        public ApiResponse<Object> LinearMarketTradingWithHttpInfo(string symbol, string limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -207,7 +212,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -240,11 +245,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -254,31 +259,30 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
         /// Get recent trades This will get recent trades
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> LinearMarketTradingAsync (string symbol, string limit = null)
+        public async System.Threading.Tasks.Task<Object> LinearMarketTradingAsync(string symbol, string limit = null)
         {
-             ApiResponse<Object> localVarResponse = await LinearMarketTradingAsyncWithHttpInfo(symbol, limit);
-             return localVarResponse.Data;
-
+            ApiResponse<Object> localVarResponse = await LinearMarketTradingAsyncWithHttpInfo(symbol, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get recent trades This will get recent trades
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="limit">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> LinearMarketTradingAsyncWithHttpInfo (string symbol, string limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> LinearMarketTradingAsyncWithHttpInfo(string symbol, string limit = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -294,7 +298,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -327,11 +331,11 @@ namespace IO.Swagger.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -341,8 +345,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
-
     }
 }

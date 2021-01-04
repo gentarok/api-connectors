@@ -11,7 +11,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace IO.Swagger.Client
+namespace BybitAPI.Client
 {
     /// <summary>
     /// API Response

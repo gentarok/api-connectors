@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com
@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
+using BybitAPI.Client;
 
-namespace IO.Swagger.Api
+namespace BybitAPI.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,126 +23,135 @@ namespace IO.Swagger.Api
     public interface ICommonApi : IApiAccessor
     {
         #region Synchronous Operations
-        /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        Object CommonAnnouncements ();
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> CommonAnnouncementsWithHttpInfo ();
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Object</returns>
+        Object CommonAnnouncements();
+
         /// <summary>
-        /// Query LCP info.
+        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <returns>Object</returns>
-        Object CommonGetLcp (string symbol);
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> CommonAnnouncementsWithHttpInfo();
 
         /// <summary>
         /// Query LCP info.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> CommonGetLcpWithHttpInfo (string symbol);
+        /// <returns>Object</returns>
+        Object CommonGetLcp(string symbol);
+
         /// <summary>
-        /// Get bybit server time.
+        /// Query LCP info.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        Object CommonGetTime ();
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Contract type</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> CommonGetLcpWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get bybit server time.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Object</returns>
+        Object CommonGetTime();
+
+        /// <summary>
+        /// Get bybit server time.
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> CommonGetTimeWithHttpInfo ();
+        ApiResponse<Object> CommonGetTimeWithHttpInfo();
+
         #endregion Synchronous Operations
+
         #region Asynchronous Operations
-        /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> CommonAnnouncementsAsync ();
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CommonAnnouncementsAsyncWithHttpInfo ();
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> CommonAnnouncementsAsync();
+
         /// <summary>
-        /// Query LCP info.
+        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> CommonGetLcpAsync (string symbol);
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> CommonAnnouncementsAsyncWithHttpInfo();
 
         /// <summary>
         /// Query LCP info.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CommonGetLcpAsyncWithHttpInfo (string symbol);
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> CommonGetLcpAsync(string symbol);
+
         /// <summary>
-        /// Get bybit server time.
+        /// Query LCP info.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> CommonGetTimeAsync ();
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Contract type</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> CommonGetLcpAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get bybit server time.
         /// </summary>
         /// <remarks>
-        /// 
+        ///
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> CommonGetTimeAsync();
+
+        /// <summary>
+        /// Get bybit server time.
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CommonGetTimeAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<Object>> CommonGetTimeAsyncWithHttpInfo();
+
         #endregion Asynchronous Operations
     }
 
@@ -151,7 +160,7 @@ namespace IO.Swagger.Api
     /// </summary>
     public partial class CommonApi : ICommonApi
     {
-        private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommonApi"/> class.
@@ -159,9 +168,9 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public CommonApi(String basePath)
         {
-            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -170,14 +179,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public CommonApi(IO.Swagger.Client.Configuration configuration = null)
+        public CommonApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                this.Configuration = BybitAPI.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -203,12 +212,12 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IO.Swagger.Client.Configuration Configuration {get; set;}
+        public BybitAPI.Client.Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+        public BybitAPI.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -244,24 +253,23 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order. 
+        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
-        public Object CommonAnnouncements ()
+        public Object CommonAnnouncements()
         {
-             ApiResponse<Object> localVarResponse = CommonAnnouncementsWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<Object> localVarResponse = CommonAnnouncementsWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order. 
+        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > CommonAnnouncementsWithHttpInfo ()
+        public ApiResponse<Object> CommonAnnouncementsWithHttpInfo()
         {
-
             var localVarPath = "/v2/public/announcement";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
@@ -272,7 +280,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -285,14 +293,12 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -302,29 +308,27 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order. 
+        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> CommonAnnouncementsAsync ()
+        public async System.Threading.Tasks.Task<Object> CommonAnnouncementsAsync()
         {
-             ApiResponse<Object> localVarResponse = await CommonAnnouncementsAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            ApiResponse<Object> localVarResponse = await CommonAnnouncementsAsyncWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order. 
+        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CommonAnnouncementsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CommonAnnouncementsAsyncWithHttpInfo()
         {
-
             var localVarPath = "/v2/public/announcement";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
@@ -335,7 +339,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -348,14 +352,12 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -365,28 +367,28 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
-        /// Query LCP info. 
+        /// Query LCP info.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>Object</returns>
-        public Object CommonGetLcp (string symbol)
+        public Object CommonGetLcp(string symbol)
         {
-             ApiResponse<Object> localVarResponse = CommonGetLcpWithHttpInfo(symbol);
-             return localVarResponse.Data;
+            ApiResponse<Object> localVarResponse = CommonGetLcpWithHttpInfo(symbol);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Query LCP info. 
+        /// Query LCP info.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > CommonGetLcpWithHttpInfo (string symbol)
+        public ApiResponse<Object> CommonGetLcpWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -402,7 +404,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -417,13 +419,12 @@ namespace IO.Swagger.Api
 
             if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
 
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -433,29 +434,28 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
-        /// Query LCP info. 
+        /// Query LCP info.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> CommonGetLcpAsync (string symbol)
+        public async System.Threading.Tasks.Task<Object> CommonGetLcpAsync(string symbol)
         {
-             ApiResponse<Object> localVarResponse = await CommonGetLcpAsyncWithHttpInfo(symbol);
-             return localVarResponse.Data;
-
+            ApiResponse<Object> localVarResponse = await CommonGetLcpAsyncWithHttpInfo(symbol);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Query LCP info. 
+        /// Query LCP info.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CommonGetLcpAsyncWithHttpInfo (string symbol)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CommonGetLcpAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -471,7 +471,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -486,13 +486,12 @@ namespace IO.Swagger.Api
 
             if (symbol != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
 
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -502,28 +501,27 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
-        /// Get bybit server time. 
+        /// Get bybit server time.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
-        public Object CommonGetTime ()
+        public Object CommonGetTime()
         {
-             ApiResponse<Object> localVarResponse = CommonGetTimeWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<Object> localVarResponse = CommonGetTimeWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get bybit server time. 
+        /// Get bybit server time.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > CommonGetTimeWithHttpInfo ()
+        public ApiResponse<Object> CommonGetTimeWithHttpInfo()
         {
-
             var localVarPath = "/v2/public/time";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
@@ -534,7 +532,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -547,14 +545,12 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -564,29 +560,27 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
-        /// Get bybit server time. 
+        /// Get bybit server time.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> CommonGetTimeAsync ()
+        public async System.Threading.Tasks.Task<Object> CommonGetTimeAsync()
         {
-             ApiResponse<Object> localVarResponse = await CommonGetTimeAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            ApiResponse<Object> localVarResponse = await CommonGetTimeAsyncWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get bybit server time. 
+        /// Get bybit server time.
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CommonGetTimeAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CommonGetTimeAsyncWithHttpInfo()
         {
-
             var localVarPath = "/v2/public/time";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
@@ -597,7 +591,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -610,14 +604,12 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -627,8 +619,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
-
     }
 }

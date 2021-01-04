@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
+using BybitAPI.Client;
 
-namespace IO.Swagger.Api
+namespace BybitAPI.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -29,7 +29,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will cancel linear active order
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -42,7 +42,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will cancel linear active order
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -54,7 +54,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         Object LinearConditionalCancelAll (string symbol);
@@ -65,7 +65,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> LinearConditionalCancelAllWithHttpInfo (string symbol);
@@ -75,7 +75,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get linear active orders
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -92,7 +92,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get linear active orders
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -108,7 +108,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will create linear stop order
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -134,7 +134,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will create linear stop order
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -159,7 +159,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get linear stop orders(real-time)
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -172,7 +172,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get linear stop orders(real-time)
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -184,7 +184,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -200,7 +200,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -217,7 +217,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will cancel linear active order
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -230,7 +230,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will cancel linear active order
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -242,7 +242,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> LinearConditionalCancelAllAsync (string symbol);
@@ -253,7 +253,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> LinearConditionalCancelAllAsyncWithHttpInfo (string symbol);
@@ -263,7 +263,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get linear active orders
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -280,7 +280,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get linear active orders
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -296,7 +296,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will create linear stop order
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -322,7 +322,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will create linear stop order
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -347,7 +347,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get linear stop orders(real-time)
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -360,7 +360,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// This will get linear stop orders(real-time)
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -372,7 +372,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -388,7 +388,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -405,7 +405,7 @@ namespace IO.Swagger.Api
     /// </summary>
     public partial class LinearConditionalApi : ILinearConditionalApi
     {
-        private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private BybitAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LinearConditionalApi"/> class.
@@ -413,9 +413,9 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public LinearConditionalApi(String basePath)
         {
-            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+            this.Configuration = new BybitAPI.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -424,14 +424,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LinearConditionalApi(IO.Swagger.Client.Configuration configuration = null)
+        public LinearConditionalApi(BybitAPI.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                this.Configuration = BybitAPI.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = BybitAPI.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -457,12 +457,12 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IO.Swagger.Client.Configuration Configuration {get; set;}
+        public BybitAPI.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+        public BybitAPI.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -500,7 +500,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Cancel Active Order This will cancel linear active order
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -514,7 +514,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Cancel Active Order This will cancel linear active order
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -585,7 +585,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Cancel Active Order This will cancel linear active order
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -600,7 +600,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Cancel Active Order This will cancel linear active order
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -671,7 +671,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Cancel all stop orders. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Object</returns>
         public Object LinearConditionalCancelAll (string symbol)
@@ -683,7 +683,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Cancel all stop orders. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse< Object > LinearConditionalCancelAllWithHttpInfo (string symbol)
@@ -753,7 +753,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Cancel all stop orders. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of Object</returns>
         public async System.Threading.Tasks.Task<Object> LinearConditionalCancelAllAsync (string symbol)
@@ -766,7 +766,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Cancel all stop orders. 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> LinearConditionalCancelAllAsyncWithHttpInfo (string symbol)
@@ -836,7 +836,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get linear Stop Orders This will get linear active orders
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -854,7 +854,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get linear Stop Orders This will get linear active orders
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -934,7 +934,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get linear Stop Orders This will get linear active orders
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -953,7 +953,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get linear Stop Orders This will get linear active orders
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="symbol"> (optional)</param>
@@ -1033,7 +1033,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Create linear stop Order This will create linear stop order
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -1060,7 +1060,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Create linear stop Order This will create linear stop order
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -1157,7 +1157,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Create linear stop Order This will create linear stop order
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -1185,7 +1185,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Create linear stop Order This will create linear stop order
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="side"> (optional)</param>
         /// <param name="orderType"> (optional)</param>
@@ -1282,7 +1282,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1296,7 +1296,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1368,7 +1368,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1383,7 +1383,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"> (optional)</param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1455,7 +1455,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Replace conditional order 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1472,7 +1472,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Replace conditional order 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1552,7 +1552,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Replace conditional order 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
@@ -1570,7 +1570,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Replace conditional order 
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="BybitAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>

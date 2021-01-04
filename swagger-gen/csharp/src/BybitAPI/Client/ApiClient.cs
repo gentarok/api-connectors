@@ -21,7 +21,7 @@ using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace IO.Swagger.Client
+namespace BybitAPI.Client
 {
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
@@ -52,7 +52,7 @@ namespace IO.Swagger.Client
         /// </summary>
         public ApiClient()
         {
-            Configuration = IO.Swagger.Client.Configuration.Default;
+            Configuration = BybitAPI.Client.Configuration.Default;
             RestClient = new RestClient("https://api.bybit.com");
         }
 
@@ -63,7 +63,7 @@ namespace IO.Swagger.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
         {
-            Configuration = config ?? IO.Swagger.Client.Configuration.Default;
+            Configuration = config ?? BybitAPI.Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
         }

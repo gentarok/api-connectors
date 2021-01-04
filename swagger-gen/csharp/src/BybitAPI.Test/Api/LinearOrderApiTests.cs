@@ -17,10 +17,10 @@ using System.Reflection;
 using RestSharp;
 using NUnit.Framework;
 
-using IO.Swagger.Client;
-using IO.Swagger.Api;
+using BybitAPI.Client;
+using BybitAPI.Api;
 
-namespace IO.Swagger.Test
+namespace BybitAPI.Test
 {
     /// <summary>
     ///  Class for testing LinearOrderApi

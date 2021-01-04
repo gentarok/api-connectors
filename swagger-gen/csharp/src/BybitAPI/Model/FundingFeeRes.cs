@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com
@@ -20,15 +20,15 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+using SwaggerDateConverter = BybitAPI.Client.SwaggerDateConverter;
 
-namespace IO.Swagger.Model
+namespace BybitAPI.Model
 {
     /// <summary>
     /// Get the last funding fee
     /// </summary>
     [DataContract]
-    public partial class FundingFeeRes :  IEquatable<FundingFeeRes>, IValidatableObject
+    public partial class FundingFeeRes : IEquatable<FundingFeeRes>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FundingFeeRes" /> class.
@@ -48,41 +48,41 @@ namespace IO.Swagger.Model
             this.ExecFee = execFee;
             this.ExecTimestamp = execTimestamp;
         }
-        
+
         /// <summary>
         /// Gets or Sets Symbol
         /// </summary>
-        [DataMember(Name="symbol", EmitDefaultValue=false)]
+        [DataMember(Name = "symbol", EmitDefaultValue = false)]
         public string Symbol { get; set; }
 
         /// <summary>
         /// Gets or Sets Side
         /// </summary>
-        [DataMember(Name="side", EmitDefaultValue=false)]
+        [DataMember(Name = "side", EmitDefaultValue = false)]
         public string Side { get; set; }
 
         /// <summary>
         /// Gets or Sets Size
         /// </summary>
-        [DataMember(Name="size", EmitDefaultValue=false)]
+        [DataMember(Name = "size", EmitDefaultValue = false)]
         public decimal? Size { get; set; }
 
         /// <summary>
         /// Gets or Sets FundingRate
         /// </summary>
-        [DataMember(Name="funding_rate", EmitDefaultValue=false)]
+        [DataMember(Name = "funding_rate", EmitDefaultValue = false)]
         public string FundingRate { get; set; }
 
         /// <summary>
         /// Gets or Sets ExecFee
         /// </summary>
-        [DataMember(Name="exec_fee", EmitDefaultValue=false)]
+        [DataMember(Name = "exec_fee", EmitDefaultValue = false)]
         public double? ExecFee { get; set; }
 
         /// <summary>
         /// Gets or Sets ExecTimestamp
         /// </summary>
-        [DataMember(Name="exec_timestamp", EmitDefaultValue=false)]
+        [DataMember(Name = "exec_timestamp", EmitDefaultValue = false)]
         public decimal? ExecTimestamp { get; set; }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace IO.Swagger.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -132,32 +132,32 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Symbol == input.Symbol ||
                     (this.Symbol != null &&
                     this.Symbol.Equals(input.Symbol))
-                ) && 
+                ) &&
                 (
                     this.Side == input.Side ||
                     (this.Side != null &&
                     this.Side.Equals(input.Side))
-                ) && 
+                ) &&
                 (
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
-                ) && 
+                ) &&
                 (
                     this.FundingRate == input.FundingRate ||
                     (this.FundingRate != null &&
                     this.FundingRate.Equals(input.FundingRate))
-                ) && 
+                ) &&
                 (
                     this.ExecFee == input.ExecFee ||
                     (this.ExecFee != null &&
                     this.ExecFee.Equals(input.ExecFee))
-                ) && 
+                ) &&
                 (
                     this.ExecTimestamp == input.ExecTimestamp ||
                     (this.ExecTimestamp != null &&
@@ -200,5 +200,4 @@ namespace IO.Swagger.Model
             yield break;
         }
     }
-
 }

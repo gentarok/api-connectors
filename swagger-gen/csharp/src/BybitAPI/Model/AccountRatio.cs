@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com
@@ -20,15 +20,15 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+using SwaggerDateConverter = BybitAPI.Client.SwaggerDateConverter;
 
-namespace IO.Swagger.Model
+namespace BybitAPI.Model
 {
     /// <summary>
     /// Get account long short account ratio information.
     /// </summary>
     [DataContract]
-    public partial class AccountRatio :  IEquatable<AccountRatio>, IValidatableObject
+    public partial class AccountRatio : IEquatable<AccountRatio>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountRatio" /> class.
@@ -48,41 +48,41 @@ namespace IO.Swagger.Model
             this.Result = result;
             this.TimeNow = timeNow;
         }
-        
+
         /// <summary>
         /// Gets or Sets RetCode
         /// </summary>
-        [DataMember(Name="ret_code", EmitDefaultValue=false)]
+        [DataMember(Name = "ret_code", EmitDefaultValue = false)]
         public decimal? RetCode { get; set; }
 
         /// <summary>
         /// Gets or Sets RetMsg
         /// </summary>
-        [DataMember(Name="ret_msg", EmitDefaultValue=false)]
+        [DataMember(Name = "ret_msg", EmitDefaultValue = false)]
         public string RetMsg { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtCode
         /// </summary>
-        [DataMember(Name="ext_code", EmitDefaultValue=false)]
+        [DataMember(Name = "ext_code", EmitDefaultValue = false)]
         public string ExtCode { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtInfo
         /// </summary>
-        [DataMember(Name="ext_info", EmitDefaultValue=false)]
+        [DataMember(Name = "ext_info", EmitDefaultValue = false)]
         public string ExtInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets Result
         /// </summary>
-        [DataMember(Name="result", EmitDefaultValue=false)]
+        [DataMember(Name = "result", EmitDefaultValue = false)]
         public List<AccountRatioInfo> Result { get; set; }
 
         /// <summary>
         /// Gets or Sets TimeNow
         /// </summary>
-        [DataMember(Name="time_now", EmitDefaultValue=false)]
+        [DataMember(Name = "time_now", EmitDefaultValue = false)]
         public string TimeNow { get; set; }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace IO.Swagger.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -132,32 +132,32 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.RetCode == input.RetCode ||
                     (this.RetCode != null &&
                     this.RetCode.Equals(input.RetCode))
-                ) && 
+                ) &&
                 (
                     this.RetMsg == input.RetMsg ||
                     (this.RetMsg != null &&
                     this.RetMsg.Equals(input.RetMsg))
-                ) && 
+                ) &&
                 (
                     this.ExtCode == input.ExtCode ||
                     (this.ExtCode != null &&
                     this.ExtCode.Equals(input.ExtCode))
-                ) && 
+                ) &&
                 (
                     this.ExtInfo == input.ExtInfo ||
                     (this.ExtInfo != null &&
                     this.ExtInfo.Equals(input.ExtInfo))
-                ) && 
+                ) &&
                 (
                     this.Result == input.Result ||
                     this.Result != null &&
                     this.Result.SequenceEqual(input.Result)
-                ) && 
+                ) &&
                 (
                     this.TimeNow == input.TimeNow ||
                     (this.TimeNow != null &&
@@ -200,5 +200,4 @@ namespace IO.Swagger.Model
             yield break;
         }
     }
-
 }

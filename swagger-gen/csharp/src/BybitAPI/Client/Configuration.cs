@@ -16,7 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace IO.Swagger.Client
+namespace BybitAPI.Client
 {
     /// <summary>
     /// Represents a set of configuration settings

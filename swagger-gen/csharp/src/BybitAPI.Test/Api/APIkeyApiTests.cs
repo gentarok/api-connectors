@@ -1,7 +1,7 @@
-/* 
+/*
  * Bybit API
  *
- * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]  
+ * ## REST API for the Bybit Exchange. Base URI: [https://api.bybit.com]
  *
  * OpenAPI spec version: 0.2.10
  * Contact: support@bybit.com
@@ -17,10 +17,10 @@ using System.Reflection;
 using RestSharp;
 using NUnit.Framework;
 
-using IO.Swagger.Client;
-using IO.Swagger.Api;
+using BybitAPI.Client;
+using BybitAPI.Api;
 
-namespace IO.Swagger.Test
+namespace BybitAPI.Test
 {
     /// <summary>
     ///  Class for testing APIkeyApi
@@ -49,7 +49,6 @@ namespace IO.Swagger.Test
         [TearDown]
         public void Cleanup()
         {
-
         }
 
         /// <summary>
@@ -62,7 +61,6 @@ namespace IO.Swagger.Test
             //Assert.IsInstanceOfType(typeof(APIkeyApi), instance, "instance is a APIkeyApi");
         }
 
-        
         /// <summary>
         /// Test APIkeyInfo
         /// </summary>
@@ -73,7 +71,5 @@ namespace IO.Swagger.Test
             //var response = instance.APIkeyInfo();
             //Assert.IsInstanceOf<Object> (response, "response is Object");
         }
-        
     }
-
 }

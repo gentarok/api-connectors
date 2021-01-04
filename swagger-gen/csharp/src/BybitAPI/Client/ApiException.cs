@@ -10,7 +10,7 @@
 
 using System;
 
-namespace IO.Swagger.Client
+namespace BybitAPI.Client
 {
     /// <summary>
     /// API Exception
