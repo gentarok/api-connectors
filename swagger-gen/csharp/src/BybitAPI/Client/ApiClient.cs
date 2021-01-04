@@ -108,7 +108,7 @@ namespace BybitAPI.Client
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
-            string path, RestSharp.Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
             Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
             Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
             string contentType)
@@ -170,7 +170,7 @@ namespace BybitAPI.Client
         /// <param name="contentType">Content Type of the request</param>
         /// <returns>Object</returns>
         public object CallApi(
-            string path, RestSharp.Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
             Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
             Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
             string contentType)
@@ -206,7 +206,7 @@ namespace BybitAPI.Client
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
         public async Task<object> CallApiAsync(
-            string path, RestSharp.Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
             Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
             Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
             string contentType)
@@ -434,7 +434,7 @@ namespace BybitAPI.Client
         /// <returns>Encoded string.</returns>
         public static string Base64Encode(string text)
         {
-            return System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(text));
+            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(text));
         }
 
         /// <summary>
