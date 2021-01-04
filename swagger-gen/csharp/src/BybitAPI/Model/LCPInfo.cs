@@ -32,7 +32,7 @@ namespace BybitAPI.Model
         /// <param name="extInfo">extInfo.</param>
         /// <param name="result">result.</param>
         /// <param name="timeNow">timeNow.</param>
-        public LCPInfo(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, LCPInfoBase result = default, string timeNow = default)
+        public LCPInfo(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, List<LCPInfoBase> result = default, string timeNow = default)
         {
             RetCode = retCode;
             RetMsg = retMsg;
@@ -70,7 +70,7 @@ namespace BybitAPI.Model
         /// Gets or Sets Result
         /// </summary>
         [DataMember(Name = "result", EmitDefaultValue = false)]
-        public LCPInfoBase Result { get; set; }
+        public List<LCPInfoBase> Result { get; set; }
 
         /// <summary>
         /// Gets or Sets TimeNow
