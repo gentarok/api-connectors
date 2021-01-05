@@ -9,6 +9,7 @@
  */
 
 using BybitAPI.Client;
+using BybitAPI.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -35,8 +36,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Object</returns>
-        object ConditionalCancel(string symbol, string stopOrderId = null, string orderLinkId = null);
+        /// <returns><see cref="OrderCancelBase"/></returns>
+        OrderCancelBase ConditionalCancel(string symbol, string stopOrderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
@@ -48,8 +49,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> ConditionalCancelWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null);
+        /// <returns>ApiResponse of OrderCancelBase</returns>
+        ApiResponse<OrderCancelBase> ConditionalCancelWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
@@ -217,8 +218,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> ConditionalCancelAsync(string symbol, string stopOrderId = null, string orderLinkId = null);
+        /// <returns>Task of OrderCancelBase</returns>
+        Task<OrderCancelBase> ConditionalCancelAsync(string symbol, string stopOrderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
@@ -230,8 +231,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> ConditionalCancelAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null);
+        /// <returns>Task of ApiResponse (OrderCancelBase)</returns>
+        Task<ApiResponse<OrderCancelBase>> ConditionalCancelAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
@@ -496,8 +497,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Object</returns>
-        public object ConditionalCancel(string symbol, string stopOrderId = null, string orderLinkId = null)
+        /// <returns><see cref="OrderCancelBase"/></returns>
+        public OrderCancelBase ConditionalCancel(string symbol, string stopOrderId = null, string orderLinkId = null)
         {
             var localVarResponse = ConditionalCancelWithHttpInfo(symbol, stopOrderId, orderLinkId);
             return localVarResponse.Data;
@@ -510,13 +511,19 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> ConditionalCancelWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null)
+        /// <returns>ApiResponse of OrderCancelBase</returns>
+        public ApiResponse<OrderCancelBase> ConditionalCancelWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
             {
                 throw new ApiException(400, "Missing required parameter 'symbol' when calling ConditionalApi->ConditionalCancel");
+            }
+            // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
+            // see: https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond
+            if (stopOrderId is null && orderLinkId is null)
+            {
+                throw new ApiException(400, "Missing required parameter 'stopOrderId' or 'orderLinkId' when calling ConditionalApi->ConditionalCancel");
             }
 
             var localVarPath = "/v2/private/stop-order/cancel";
@@ -590,9 +597,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<OrderCancelBase>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (OrderCancelBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrderCancelBase)));
         }
 
         /// <summary>
@@ -602,8 +609,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async Task<object> ConditionalCancelAsync(string symbol, string stopOrderId = null, string orderLinkId = null)
+        /// <returns>Task of OrderCancelBase</returns>
+        public async Task<OrderCancelBase> ConditionalCancelAsync(string symbol, string stopOrderId = null, string orderLinkId = null)
         {
             var localVarResponse = await ConditionalCancelAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId);
             return localVarResponse.Data;
@@ -616,8 +623,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<object>> ConditionalCancelAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null)
+        /// <returns>Task of ApiResponse (OrderCancelBase)</returns>
+        public async Task<ApiResponse<OrderCancelBase>> ConditionalCancelAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -696,9 +703,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<OrderCancelBase>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (OrderCancelBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrderCancelBase)));
         }
 
         /// <summary>
