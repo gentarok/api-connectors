@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of TradingStopBase
         /// </summary>
         [Test]
-        public void TradingStopBaseInstanceTest()
+        public void TradingStopBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<TradingStopBase>(instance, "variable 'instance' is a TradingStopBase");
         }

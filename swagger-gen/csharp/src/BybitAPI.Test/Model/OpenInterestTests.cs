@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of OpenInterest
         /// </summary>
         [Test]
-        public void OpenInterestInstanceTest()
+        public void OpenInterestInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<OpenInterest>(instance, "variable 'instance' is a OpenInterest");
         }

@@ -44,11 +44,8 @@ namespace BybitAPI.Api.Test
         {
         }
 
-        /// <summary>
-        /// Test an instance of APIkeyApi
-        /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<APIkeyApi>(instance, "instance is a APIkeyApi");
         }
@@ -83,11 +80,8 @@ namespace BybitAPI.Api.Test
     ""rate_limit"": 100
 }";
 
-        /// <summary>
-        /// Test APIkeyInfo
-        /// </summary>
         [Test]
-        public void APIkeyInfoTest()
+        public void APIkeyInfo_ShouldReturnAPIkeyBase()
         {
             // Arrange
 
@@ -107,7 +101,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        public void APIkeyInfoWithHttpInfoTest()
+        public void APIkeyInfoWithHttpInfo_ShouldReturnApiResponseOfAPIkeyBase()
         {
             // Arrange
 
@@ -119,7 +113,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public async Task APIkeyInfoAsyncTest()
+        public async Task APIkeyInfoAsyncTest_ShouldReturnAPIkeyBase()
         {
             // Arrange
 
@@ -131,7 +125,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public async Task APIkeyInfoAsyncWithHttpInfoTest()
+        public async Task APIkeyInfoAsyncWithHttpInfo_ShouldReturnApiResponseOfAPIkeyBase()
         {
             // Arrange
 

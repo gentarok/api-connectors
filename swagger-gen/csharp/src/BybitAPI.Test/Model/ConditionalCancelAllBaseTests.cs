@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ConditionalCancelAllBase
         /// </summary>
         [Test]
-        public void ConditionalCancelAllBaseInstanceTest()
+        public void ConditionalCancelAllBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ConditionalCancelAllBase>(instance, "variable 'instance' is a ConditionalCancelAllBase");
         }

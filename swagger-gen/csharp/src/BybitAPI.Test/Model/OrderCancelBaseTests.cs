@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of OrderCancelBase
         /// </summary>
         [Test]
-        public void OrderCancelBaseInstanceTest()
+        public void OrderCancelBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<OrderCancelBase>(instance, "variable 'instance' is a OrderCancelBase");
         }

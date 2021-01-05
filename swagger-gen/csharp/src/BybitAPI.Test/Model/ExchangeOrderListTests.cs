@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ExchangeOrderList
         /// </summary>
         [Test]
-        public void ExchangeOrderListInstanceTest()
+        public void ExchangeOrderListInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ExchangeOrderList>(instance, "variable 'instance' is a ExchangeOrderList");
         }

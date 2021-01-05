@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of AccountRatio
         /// </summary>
         [Test]
-        public void AccountRatioInstanceTest()
+        public void AccountRatioInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<AccountRatio>(instance, "variable 'instance' is a AccountRatio");
         }

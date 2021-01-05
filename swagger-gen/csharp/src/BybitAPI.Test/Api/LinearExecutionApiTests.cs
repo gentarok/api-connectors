@@ -45,7 +45,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearExecutionApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearExecutionApi>(instance, "instance is a LinearExecutionApi");
         }

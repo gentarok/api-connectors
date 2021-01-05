@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of SymbolTickInfo
         /// </summary>
         [Test]
-        public void SymbolTickInfoInstanceTest()
+        public void SymbolTickInfoInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<SymbolTickInfo>(instance, "variable 'instance' is a SymbolTickInfo");
         }

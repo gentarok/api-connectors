@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearFundingPredicted
         /// </summary>
         [Test]
-        public void LinearFundingPredictedInstanceTest()
+        public void LinearFundingPredictedInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearFundingPredicted>(instance, "variable 'instance' is a LinearFundingPredicted");
         }

@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of MarkPriceKlineBase
         /// </summary>
         [Test]
-        public void MarkPriceKlineBaseInstanceTest()
+        public void MarkPriceKlineBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<MarkPriceKlineBase>(instance, "variable 'instance' is a MarkPriceKlineBase");
         }

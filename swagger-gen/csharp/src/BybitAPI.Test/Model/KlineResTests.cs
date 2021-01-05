@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of KlineRes
         /// </summary>
         [Test]
-        public void KlineResInstanceTest()
+        public void KlineResInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<KlineRes>(instance, "variable 'instance' is a KlineRes");
         }

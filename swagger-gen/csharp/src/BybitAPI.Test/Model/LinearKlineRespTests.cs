@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearKlineResp
         /// </summary>
         [Test]
-        public void LinearKlineRespInstanceTest()
+        public void LinearKlineRespInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearKlineResp>(instance, "variable 'instance' is a LinearKlineResp");
         }

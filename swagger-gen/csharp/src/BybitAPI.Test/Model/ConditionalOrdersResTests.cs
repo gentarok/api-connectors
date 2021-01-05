@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ConditionalOrdersRes
         /// </summary>
         [Test]
-        public void ConditionalOrdersResInstanceTest()
+        public void ConditionalOrdersResInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ConditionalOrdersRes>(instance, "variable 'instance' is a ConditionalOrdersRes");
         }

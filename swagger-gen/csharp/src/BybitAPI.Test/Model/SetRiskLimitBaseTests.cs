@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of SetRiskLimitBase
         /// </summary>
         [Test]
-        public void SetRiskLimitBaseInstanceTest()
+        public void SetRiskLimitBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<SetRiskLimitBase>(instance, "variable 'instance' is a SetRiskLimitBase");
         }

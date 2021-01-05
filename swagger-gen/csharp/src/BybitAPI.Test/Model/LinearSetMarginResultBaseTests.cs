@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSetMarginResultBase
         /// </summary>
         [Test]
-        public void LinearSetMarginResultBaseInstanceTest()
+        public void LinearSetMarginResultBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearSetMarginResultBase>(instance, "variable 'instance' is a LinearSetMarginResultBase");
         }

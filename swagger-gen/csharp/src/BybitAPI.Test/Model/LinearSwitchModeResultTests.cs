@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSwitchModeResult
         /// </summary>
         [Test]
-        public void LinearSwitchModeResultInstanceTest()
+        public void LinearSwitchModeResultInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearSwitchModeResult>(instance, "variable 'instance' is a LinearSwitchModeResult");
         }

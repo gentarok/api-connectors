@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearCancelStopOrderResult
         /// </summary>
         [Test]
-        public void LinearCancelStopOrderResultInstanceTest()
+        public void LinearCancelStopOrderResultInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearCancelStopOrderResult>(instance, "variable 'instance' is a LinearCancelStopOrderResult");
         }

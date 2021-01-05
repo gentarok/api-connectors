@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of BigDealInfo
         /// </summary>
         [Test]
-        public void BigDealInfoInstanceTest()
+        public void BigDealInfoInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<BigDealInfo>(instance, "variable 'instance' is a BigDealInfo");
         }

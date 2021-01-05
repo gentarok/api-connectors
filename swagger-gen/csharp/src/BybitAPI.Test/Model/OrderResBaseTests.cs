@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of OrderResBase
         /// </summary>
         [Test]
-        public void OrderResBaseInstanceTest()
+        public void OrderResBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<OrderResBase>(instance, "variable 'instance' is a OrderResBase");
         }

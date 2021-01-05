@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearRiskLimitResp
         /// </summary>
         [Test]
-        public void LinearRiskLimitRespInstanceTest()
+        public void LinearRiskLimitRespInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearRiskLimitResp>(instance, "variable 'instance' is a LinearRiskLimitResp");
         }

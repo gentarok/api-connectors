@@ -45,7 +45,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearWalletApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearWalletApi>(instance, "instance is a LinearWalletApi");
         }

@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of PriceFilter
         /// </summary>
         [Test]
-        public void PriceFilterInstanceTest()
+        public void PriceFilterInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<PriceFilter>(instance, "variable 'instance' is a PriceFilter");
         }

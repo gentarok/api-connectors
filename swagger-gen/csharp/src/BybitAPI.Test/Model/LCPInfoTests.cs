@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LCPInfo
         /// </summary>
         [Test]
-        public void LCPInfoInstanceTest()
+        public void LCPInfoInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LCPInfo>(instance, "variable 'instance' is a LCPInfo");
         }

@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LeverageInfo
         /// </summary>
         [Test]
-        public void LeverageInfoInstanceTest()
+        public void LeverageInfoInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LeverageInfo>(instance, "variable 'instance' is a LeverageInfo");
         }

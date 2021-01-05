@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearPrevFundingResp
         /// </summary>
         [Test]
-        public void LinearPrevFundingRespInstanceTest()
+        public void LinearPrevFundingRespInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearPrevFundingResp>(instance, "variable 'instance' is a LinearPrevFundingResp");
         }

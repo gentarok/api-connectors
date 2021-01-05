@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of AnnouncementInfo
         /// </summary>
         [Test]
-        public void AnnouncementInfoInstanceTest()
+        public void AnnouncementInfoInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<AnnouncementInfo>(instance, "variable 'instance' is a AnnouncementInfo");
         }

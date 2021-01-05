@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of V2CancelOrderBase
         /// </summary>
         [Test]
-        public void V2CancelOrderBaseInstanceTest()
+        public void V2CancelOrderBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<V2CancelOrderBase>(instance, "variable 'instance' is a V2CancelOrderBase");
         }

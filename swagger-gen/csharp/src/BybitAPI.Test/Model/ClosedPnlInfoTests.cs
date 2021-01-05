@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ClosedPnlInfo
         /// </summary>
         [Test]
-        public void ClosedPnlInfoInstanceTest()
+        public void ClosedPnlInfoInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ClosedPnlInfo>(instance, "variable 'instance' is a ClosedPnlInfo");
         }

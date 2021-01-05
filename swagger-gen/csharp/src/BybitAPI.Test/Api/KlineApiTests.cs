@@ -45,7 +45,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of KlineApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<KlineApi>(instance, "instance is a KlineApi");
         }

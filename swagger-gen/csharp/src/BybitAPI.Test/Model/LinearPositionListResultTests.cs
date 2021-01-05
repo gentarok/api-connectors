@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearPositionListResult
         /// </summary>
         [Test]
-        public void LinearPositionListResultInstanceTest()
+        public void LinearPositionListResultInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearPositionListResult>(instance, "variable 'instance' is a LinearPositionListResult");
         }

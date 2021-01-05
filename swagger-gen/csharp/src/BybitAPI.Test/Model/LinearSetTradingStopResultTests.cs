@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSetTradingStopResult
         /// </summary>
         [Test]
-        public void LinearSetTradingStopResultInstanceTest()
+        public void LinearSetTradingStopResultInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearSetTradingStopResult>(instance, "variable 'instance' is a LinearSetTradingStopResult");
         }

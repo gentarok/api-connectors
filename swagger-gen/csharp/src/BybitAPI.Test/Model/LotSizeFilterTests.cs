@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LotSizeFilter
         /// </summary>
         [Test]
-        public void LotSizeFilterInstanceTest()
+        public void LotSizeFilterInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LotSizeFilter>(instance, "variable 'instance' is a LotSizeFilter");
         }

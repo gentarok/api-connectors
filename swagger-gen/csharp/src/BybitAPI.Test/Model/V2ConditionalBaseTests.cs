@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of V2ConditionalBase
         /// </summary>
         [Test]
-        public void V2ConditionalBaseInstanceTest()
+        public void V2ConditionalBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<V2ConditionalBase>(instance, "variable 'instance' is a V2ConditionalBase");
         }

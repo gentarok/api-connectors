@@ -33,7 +33,7 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
+        /// <returns><see cref="APIKeyBase"/></returns>
         APIKeyBase APIkeyInfo();
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
+        /// <returns>ApiResponse of APIKeyBase</returns>
         ApiResponse<APIKeyBase> APIkeyInfoWithHttpInfo();
 
         #endregion Synchronous Operations
@@ -57,7 +57,7 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
+        /// <returns>Task of APIKeyBase</returns>
         Task<APIKeyBase> APIkeyInfoAsync();
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Object)</returns>
+        /// <returns>Task of ApiResponse (APIKeyBase)</returns>
         Task<ApiResponse<APIKeyBase>> APIkeyInfoAsyncWithHttpInfo();
 
         #endregion Asynchronous Operations

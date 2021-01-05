@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of V2OrderRes
         /// </summary>
         [Test]
-        public void V2OrderResInstanceTest()
+        public void V2OrderResInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<V2OrderRes>(instance, "variable 'instance' is a V2OrderRes");
         }

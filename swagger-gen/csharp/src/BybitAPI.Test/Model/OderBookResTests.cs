@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of OderBookRes
         /// </summary>
         [Test]
-        public void OderBookResInstanceTest()
+        public void OderBookResInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<OderBookRes>(instance, "variable 'instance' is a OderBookRes");
         }

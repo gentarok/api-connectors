@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of V2OrderListBase
         /// </summary>
         [Test]
-        public void V2OrderListBaseInstanceTest()
+        public void V2OrderListBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<V2OrderListBase>(instance, "variable 'instance' is a V2OrderListBase");
         }

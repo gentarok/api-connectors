@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSetLeverageResult
         /// </summary>
         [Test]
-        public void LinearSetLeverageResultInstanceTest()
+        public void LinearSetLeverageResultInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearSetLeverageResult>(instance, "variable 'instance' is a LinearSetLeverageResult");
         }

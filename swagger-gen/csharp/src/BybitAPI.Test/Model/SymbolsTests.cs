@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of Symbols
         /// </summary>
         [Test]
-        public void SymbolsInstanceTest()
+        public void SymbolsInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<Symbols>(instance, "variable 'instance' is a Symbols");
         }

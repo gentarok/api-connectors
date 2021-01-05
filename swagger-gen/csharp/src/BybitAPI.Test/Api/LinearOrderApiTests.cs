@@ -45,7 +45,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearOrderApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearOrderApi>(instance, "instance is a LinearOrderApi");
         }

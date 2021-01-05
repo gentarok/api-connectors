@@ -45,7 +45,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of OrderApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<OrderApi>(instance, "instance is a OrderApi");
         }

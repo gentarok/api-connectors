@@ -11,6 +11,7 @@
 using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
+using Moq;
 using NUnit.Framework;
 using System.Net;
 using System.Threading.Tasks;
@@ -50,7 +51,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of CommonApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<CommonApi>(instance, "instance is a CommonApi");
         }
@@ -74,11 +75,8 @@ namespace BybitAPI.Api.Test
 }
 ";
 
-        /// <summary>
-        /// Test CommonAnnouncements
-        /// </summary>
         [Test]
-        public void CommonAnnouncementsTest()
+        public void CommonAnnouncements_ShouldReturnAnnouncement()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, announcementsjson);
@@ -92,7 +90,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public void CommonAnnouncementsWithHttpInfoTest()
+        public void CommonAnnouncementsWithHttpInfo_ShouldReturnApiResponseOfAnnouncement()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, announcementsjson);
@@ -106,7 +104,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public async Task CommonAnnouncementsAsyncTest()
+        public async Task CommonAnnouncementsAsync_ShouldReturnAnnouncement()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, announcementsjson);
@@ -120,7 +118,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public async Task CommonAnnouncementsAsyncWithHttpInfoTest()
+        public async Task CommonAnnouncementsAsyncWithHttpInfo_ShouldReturnApiResponseOfAnnouncement()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, announcementsjson);
@@ -160,11 +158,8 @@ namespace BybitAPI.Api.Test
 }
 ";
 
-        /// <summary>
-        /// Test CommonGetLcp
-        /// </summary>
         [Test]
-        public void CommonGetLcpTest()
+        public void CommonGetLcp_SymbolIsNotNull_ShouldReturnLCPInfo()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
@@ -183,7 +178,7 @@ namespace BybitAPI.Api.Test
         /// Test CommonGetLcp
         /// </summary>
         [Test]
-        public void CommonGetLcp_Should_Raise_ApiException()
+        public void CommonGetLcp_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
@@ -202,7 +197,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public void CommonGetLcpWithHttpInfoTest()
+        public void CommonGetLcpWithHttpInfo_SymbolIsNotNull_ShouldReturnApiResponseOfLCPInfo()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
@@ -218,7 +213,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public void CommonGetLcpWithHttpInfo_Should_Raise_ApiException()
+        public void CommonGetLcpWithHttpInfo_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
@@ -237,7 +232,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public async Task CommonGetLcpAsyncTest()
+        public async Task CommonGetLcpAsync_SymbolIsNotNull_ShouldReturnLCPInfo()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
@@ -253,7 +248,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public void CommonGetLcpAsync_Should_Raise_ApiException()
+        public void CommonGetLcpAsync_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
@@ -272,7 +267,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public async Task CommonGetLcpAsyncWithHttpInfoTest()
+        public async Task CommonGetLcpAsyncWithHttpInfo_SymbolIsNotNull_ShouldReturnApiResponseOfLCPInfo()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
@@ -288,7 +283,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public void CommonGetLcpAsyncWithHttpInfo_Should_Raise_ApiException()
+        public void CommonGetLcpAsyncWithHttpInfo_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
@@ -317,11 +312,8 @@ namespace BybitAPI.Api.Test
 }
 ";
 
-        /// <summary>
-        /// Test CommonGetTime
-        /// </summary>
         [Test]
-        public void CommonGetTimeTest()
+        public void CommonGetTime_ShouldReturnServerTime()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, servertimejson);
@@ -340,7 +332,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public void CommonGetTimeWithHttpInfoTest()
+        public void CommonGetTimeWithHttpInfo_ShouldReturnApiResponceOfServerTime()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, servertimejson);
@@ -354,7 +346,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public async Task CommonGetTimeAsyncTest()
+        public async Task CommonGetTimeAsync_ShouldReturnServerTime()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, servertimejson);
@@ -368,7 +360,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test()]
-        public async Task CommonGetTimeAsyncWithHttpInfoTest()
+        public async Task CommonGetTimeAsyncWithHttpInfo_ShouldReturnApiResponceOfServerTime()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, servertimejson);

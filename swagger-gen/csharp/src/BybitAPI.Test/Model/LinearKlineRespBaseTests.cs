@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearKlineRespBase
         /// </summary>
         [Test]
-        public void LinearKlineRespBaseInstanceTest()
+        public void LinearKlineRespBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearKlineRespBase>(instance, "variable 'instance' is a LinearKlineRespBase");
         }

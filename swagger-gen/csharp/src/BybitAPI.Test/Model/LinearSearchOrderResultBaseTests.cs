@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSearchOrderResultBase
         /// </summary>
         [Test]
-        public void LinearSearchOrderResultBaseInstanceTest()
+        public void LinearSearchOrderResultBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearSearchOrderResultBase>(instance, "variable 'instance' is a LinearSearchOrderResultBase");
         }

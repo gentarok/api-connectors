@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearTradeRecordItem
         /// </summary>
         [Test]
-        public void LinearTradeRecordItemInstanceTest()
+        public void LinearTradeRecordItemInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearTradeRecordItem>(instance, "variable 'instance' is a LinearTradeRecordItem");
         }

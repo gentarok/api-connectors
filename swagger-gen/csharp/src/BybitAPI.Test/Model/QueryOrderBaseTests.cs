@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of QueryOrderBase
         /// </summary>
         [Test]
-        public void QueryOrderBaseInstanceTest()
+        public void QueryOrderBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<QueryOrderBase>(instance, "variable 'instance' is a QueryOrderBase");
         }

@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of FundingRateBase
         /// </summary>
         [Test]
-        public void FundingRateBaseInstanceTest()
+        public void FundingRateBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<FundingRateBase>(instance, "variable 'instance' is a FundingRateBase");
         }

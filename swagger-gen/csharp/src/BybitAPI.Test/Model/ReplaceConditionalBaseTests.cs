@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ReplaceConditionalBase
         /// </summary>
         [Test]
-        public void ReplaceConditionalBaseInstanceTest()
+        public void ReplaceConditionalBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ReplaceConditionalBase>(instance, "variable 'instance' is a ReplaceConditionalBase");
         }

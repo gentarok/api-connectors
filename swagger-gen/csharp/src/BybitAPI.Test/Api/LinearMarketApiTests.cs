@@ -45,7 +45,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearMarketApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearMarketApi>(instance, "instance is a LinearMarketApi");
         }

@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of RiskLimitRes
         /// </summary>
         [Test]
-        public void RiskLimitResInstanceTest()
+        public void RiskLimitResInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<RiskLimitRes>(instance, "variable 'instance' is a RiskLimitRes");
         }

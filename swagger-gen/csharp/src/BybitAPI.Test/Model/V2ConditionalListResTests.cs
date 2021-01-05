@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of V2ConditionalListRes
         /// </summary>
         [Test]
-        public void V2ConditionalListResInstanceTest()
+        public void V2ConditionalListResInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<V2ConditionalListRes>(instance, "variable 'instance' is a V2ConditionalListRes");
         }

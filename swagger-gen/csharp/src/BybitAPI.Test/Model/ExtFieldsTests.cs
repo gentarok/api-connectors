@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ExtFields
         /// </summary>
         [Test]
-        public void ExtFieldsInstanceTest()
+        public void ExtFieldsInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ExtFields>(instance, "variable 'instance' is a ExtFields");
         }

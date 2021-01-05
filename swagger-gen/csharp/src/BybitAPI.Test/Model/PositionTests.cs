@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of Position
         /// </summary>
         [Test]
-        public void PositionInstanceTest()
+        public void PositionInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<Position>(instance, "variable 'instance' is a Position");
         }

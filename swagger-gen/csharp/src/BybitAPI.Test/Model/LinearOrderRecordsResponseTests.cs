@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearOrderRecordsResponse
         /// </summary>
         [Test]
-        public void LinearOrderRecordsResponseInstanceTest()
+        public void LinearOrderRecordsResponseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearOrderRecordsResponse>(instance, "variable 'instance' is a LinearOrderRecordsResponse");
         }

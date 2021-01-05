@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of WithdrawRecords
         /// </summary>
         [Test]
-        public void WithdrawRecordsInstanceTest()
+        public void WithdrawRecordsInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<WithdrawRecords>(instance, "variable 'instance' is a WithdrawRecords");
         }

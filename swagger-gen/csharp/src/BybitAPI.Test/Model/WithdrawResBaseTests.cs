@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of WithdrawResBase
         /// </summary>
         [Test]
-        public void WithdrawResBaseInstanceTest()
+        public void WithdrawResBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<WithdrawResBase>(instance, "variable 'instance' is a WithdrawResBase");
         }

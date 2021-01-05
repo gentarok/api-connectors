@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of APIKeyBase
         /// </summary>
         [Test]
-        public void APIKeyBaseInstanceTest()
+        public void APIKeyBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<APIKeyBase>(instance, "variable 'instance' is a APIKeyBase");
         }

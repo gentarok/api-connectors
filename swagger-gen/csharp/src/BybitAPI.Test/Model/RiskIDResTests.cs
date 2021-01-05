@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of RiskIDRes
         /// </summary>
         [Test]
-        public void RiskIDResInstanceTest()
+        public void RiskIDResInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<RiskIDRes>(instance, "variable 'instance' is a RiskIDRes");
         }

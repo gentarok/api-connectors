@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearStopOrderReplace
         /// </summary>
         [Test]
-        public void LinearStopOrderReplaceInstanceTest()
+        public void LinearStopOrderReplaceInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearStopOrderReplace>(instance, "variable 'instance' is a LinearStopOrderReplace");
         }

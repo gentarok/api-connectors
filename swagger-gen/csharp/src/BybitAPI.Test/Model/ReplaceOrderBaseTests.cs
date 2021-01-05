@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ReplaceOrderBase
         /// </summary>
         [Test]
-        public void ReplaceOrderBaseInstanceTest()
+        public void ReplaceOrderBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ReplaceOrderBase>(instance, "variable 'instance' is a ReplaceOrderBase");
         }

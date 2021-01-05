@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ServerTime
         /// </summary>
         [Test]
-        public void ServerTimeInstanceTest()
+        public void ServerTimeInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ServerTime>(instance, "variable 'instance' is a ServerTime");
         }

@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearStopOrderRecordsResponseBase
         /// </summary>
         [Test]
-        public void LinearStopOrderRecordsResponseBaseInstanceTest()
+        public void LinearStopOrderRecordsResponseBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearStopOrderRecordsResponseBase>(instance, "variable 'instance' is a LinearStopOrderRecordsResponseBase");
         }

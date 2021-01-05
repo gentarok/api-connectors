@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of WalletBalanceBase
         /// </summary>
         [Test]
-        public void WalletBalanceBaseInstanceTest()
+        public void WalletBalanceBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<WalletBalanceBase>(instance, "variable 'instance' is a WalletBalanceBase");
         }

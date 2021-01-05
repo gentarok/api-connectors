@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearClosedPnlRecordResult
         /// </summary>
         [Test]
-        public void LinearClosedPnlRecordResultInstanceTest()
+        public void LinearClosedPnlRecordResultInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LinearClosedPnlRecordResult>(instance, "variable 'instance' is a LinearClosedPnlRecordResult");
         }

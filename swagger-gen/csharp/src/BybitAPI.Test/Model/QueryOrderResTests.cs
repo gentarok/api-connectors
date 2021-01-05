@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of QueryOrderRes
         /// </summary>
         [Test]
-        public void QueryOrderResInstanceTest()
+        public void QueryOrderResInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<QueryOrderRes>(instance, "variable 'instance' is a QueryOrderRes");
         }

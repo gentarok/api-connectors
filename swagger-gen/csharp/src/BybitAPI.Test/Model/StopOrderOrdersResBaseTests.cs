@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of StopOrderOrdersResBase
         /// </summary>
         [Test]
-        public void StopOrderOrdersResBaseInstanceTest()
+        public void StopOrderOrdersResBaseInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<StopOrderOrdersResBase>(instance, "variable 'instance' is a StopOrderOrdersResBase");
         }

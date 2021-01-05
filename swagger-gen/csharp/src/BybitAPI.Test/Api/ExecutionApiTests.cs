@@ -45,7 +45,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of ExecutionApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<ExecutionApi>(instance, "instance is a ExecutionApi");
         }

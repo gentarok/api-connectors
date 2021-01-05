@@ -45,7 +45,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LiqRecordsInfo
         /// </summary>
         [Test]
-        public void LiqRecordsInfoInstanceTest()
+        public void LiqRecordsInfoInstance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<LiqRecordsInfo>(instance, "variable 'instance' is a LiqRecordsInfo");
         }

@@ -45,7 +45,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of PositionsApi
         /// </summary>
         [Test]
-        public void InstanceTest()
+        public void Instance_ShouldBeCreated()
         {
             Assert.IsInstanceOf<PositionsApi>(instance, "instance is a PositionsApi");
         }
