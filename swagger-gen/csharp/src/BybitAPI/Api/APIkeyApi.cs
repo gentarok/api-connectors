@@ -196,7 +196,7 @@ namespace BybitAPI.Api
             var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
             var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new SortedDictionary<string, string>();
+            var localVarFormParams = new Dictionary<string, string>();
             var localVarFileParams = new Dictionary<string, FileParameter>();
             object localVarPostBody = null;
 
@@ -232,17 +232,18 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
-            localVarFormParams.Add("timestamp", Configuration.GetApiKeyWithPrefix("timestamp"));
 
-            localVarFormParams.Add("api_key", Configuration.GetApiKeyWithPrefix("api_key"));
-            var queryString = Util.ApiUtil.GetQueryString(localVarFormParams);
-            var sign = Util.ApiUtil.CreateSignature(queryString);
+            var param = new SortedDictionary<string, string>();
+            param.Add("api_key", Configuration.GetApiKeyWithPrefix("api_key"));
+            param.Add("timestamp", Configuration.GetApiKeyWithPrefix("timestamp"));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                //Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, new Dictionary<string, string>(), localVarFileParams,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;

@@ -12,19 +12,11 @@ namespace BybitAPI.Api.Util
 
         internal const string TESTNET_URI = "https://api-testnet.bybit.com";
 
-        internal static string GetApiKey() => Environment.GetEnvironmentVariable("BYBIT_TEST_API_KEY");
+        internal static string CreateSignature(string secret, IDictionary<string, string> param) => CreateSignature(secret, CreateQueryString(param));
 
-        //internal static string GetApiSecret() => Environment.GetEnvironmentVariable("BYBIT_API_SECRET");
-        internal static string GetApiSecret() => Environment.GetEnvironmentVariable("BYBIT_TEST_API_SECRET");
-
-        internal static string CreateSignature(IDictionary<string, string> param) => CreateSignature(GetQueryString(param));
-
-        internal static string CreateSignature(string message) => CreateSignature(GetApiSecret(), message);
-
-        internal static string CreateSignature(string secret, string message)
+        private static string CreateSignature(string secret, string message)
         {
             var signatureBytes = Hmacsha256(Encoding.UTF8.GetBytes(secret), Encoding.UTF8.GetBytes(message));
-
             return ByteArrayToString(signatureBytes);
         }
 
@@ -34,7 +26,7 @@ namespace BybitAPI.Api.Util
             return hash.ComputeHash(messageBytes);
         }
 
-        internal static string ByteArrayToString(byte[] byteArray)
+        private static string ByteArrayToString(byte[] byteArray)
         {
             var hex = new StringBuilder(byteArray.Length * 2);
 
@@ -45,7 +37,7 @@ namespace BybitAPI.Api.Util
             return hex.ToString();
         }
 
-        internal static string GetQueryString(IDictionary<string, string> param)
+        private static string CreateQueryString(IDictionary<string, string> param)
         {
             if (param is null)
                 throw new ArgumentNullException(nameof(param));
