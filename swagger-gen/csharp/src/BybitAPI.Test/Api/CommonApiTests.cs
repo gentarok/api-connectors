@@ -11,7 +11,6 @@
 using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
-using Moq;
 using NUnit.Framework;
 using System.Net;
 using System.Threading.Tasks;
