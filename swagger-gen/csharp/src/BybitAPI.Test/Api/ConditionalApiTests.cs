@@ -111,17 +111,13 @@ namespace BybitAPI.Api.Test
             Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
-        ///// <summary>
-        ///// Test ConditionalCancelAll
-        ///// </summary>
-        //[Test]
-        //public void ConditionalCancelAllTest()
-        //{
-        //    // TODO uncomment below to test the method and replace null with proper value
-        //    //string symbol = null;
-        //    //var response = instance.ConditionalCancelAll(symbol);
-        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
-        //}
+        [Test]
+        public void ConditionalCancelAllTest()
+        {
+            string symbol = null;
+            var response = instance.ConditionalCancelAll(symbol);
+            Assert.IsInstanceOf<Object>(response, "response is Object");
+        }
 
         ///// <summary>
         ///// Test ConditionalGetOrders
