@@ -91,7 +91,7 @@ namespace BybitAPI.Api.Test
         [TestCase(null, "", null)]
         [TestCase(null, null, "")]
         [TestCase("", null, null)]
-        public void ConditionalCancel_SymbolIsNullOrBothStopOrderIdOrOrderLinkIdAreNull_ShouldRaiseApiException(string symbol, string stopOrderId, string orderLinkId)
+        public void ConditionalCancel_SymbolIsNullOrBothStopOrderIdAndOrderLinkIdAreNull_ShouldRaiseApiException(string symbol, string stopOrderId, string orderLinkId)
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelJson);
