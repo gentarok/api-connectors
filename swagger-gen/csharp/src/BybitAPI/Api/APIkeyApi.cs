@@ -196,7 +196,7 @@ namespace BybitAPI.Api
             var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
             var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFormParams = new SortedDictionary<string, string>();
             var localVarFileParams = new Dictionary<string, FileParameter>();
             object localVarPostBody = null;
 
@@ -223,19 +223,26 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
             // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+            //if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
+            //{
+            //    localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
+            //}
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+            localVarFormParams.Add("timestamp", Configuration.GetApiKeyWithPrefix("timestamp"));
+
+            localVarFormParams.Add("api_key", Configuration.GetApiKeyWithPrefix("api_key"));
+            var queryString = Util.ApiUtil.GetQueryString(localVarFormParams);
+            var sign = Util.ApiUtil.CreateSignature(queryString);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                //Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, new Dictionary<string, string>(), localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
