@@ -32,8 +32,13 @@ namespace BybitAPI.Api.Test
         public void Init()
         {
             instance = new APIkeyApi();
+
+            // Prepeare configurations to test.
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, json);
             instance.Configuration.ApiClient.RestClient = client;
+            instance.Configuration.AddApiKey("api_key", "");
+            instance.Configuration.AddApiKey("api_secret", "");
+            instance.Configuration.AddApiKey("timestamp", "");
         }
 
         /// <summary>
