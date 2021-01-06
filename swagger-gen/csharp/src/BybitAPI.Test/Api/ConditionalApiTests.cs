@@ -35,6 +35,11 @@ namespace BybitAPI.Api.Test
         public void Init()
         {
             instance = new ConditionalApi();
+
+            // Prepeare configurations to test.
+            instance.Configuration.AddApiKey("api_key", "");
+            instance.Configuration.AddApiKey("api_secret", "");
+            instance.Configuration.AddApiKey("timestamp", "");
         }
 
         /// <summary>
@@ -70,7 +75,7 @@ namespace BybitAPI.Api.Test
         [Test]
         [TestCase("", null)]
         [TestCase(null, "")]
-        public void ConditionalCancel_SymbolIsNotNullAndEitherStopOrderIdOrOrderLinkIdIsNotNull_ShouldReturnOrderCancelBase(string stopOrderId, string orderLinkId)
+        public void ConditionalCancel_SymbolIsNotNullAndEitherStopOrderIdOrOrderLinkIdIsNotNull_ShouldReturnConditionalCancelBase(string stopOrderId, string orderLinkId)
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelJson);
@@ -84,7 +89,7 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalCancel(symbol, stopOrderId, orderLinkId);
 
             // Assert
-            Assert.IsInstanceOf<OrderCancelBase>(response, "response is OrderCancelBase");
+            Assert.IsInstanceOf<ConditionalCancelBase>(response, "response is ConditionalCancelBase");
         }
 
         [Test]

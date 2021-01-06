@@ -233,12 +233,9 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            var param = new SortedDictionary<string, string>();
-            param.Add("api_key", Configuration.GetApiKeyWithPrefix("api_key"));
-            param.Add("timestamp", Configuration.GetApiKeyWithPrefix("timestamp"));
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
             var secret = Configuration.GetApiKeyWithPrefix("api_secret");
             var sign = Util.ApiUtil.CreateSignature(secret, param);
-
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
