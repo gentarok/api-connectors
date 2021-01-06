@@ -32,7 +32,19 @@ namespace BybitAPI.Model
         /// <param name="extInfo">extInfo.</param>
         /// <param name="result">result.</param>
         /// <param name="timeNow">timeNow.</param>
-        public V2ConditionalBase(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, T result = default, string timeNow = default)
+        /// <param name="rateLimitStatus">rateLimitStatus.</param>
+        /// <param name="rateLimitResetMs">rateLimitResetMs.</param>
+        /// <param name="rateLimit">rateLimit.</param>
+        public V2ConditionalBase(
+            decimal? retCode = default,
+            string retMsg = default,
+            string extCode = default,
+            string extInfo = default,
+            T result = default,
+            string timeNow = default,
+            int? rateLimitStatus = default,
+            long? rateLimitResetMs = default,
+            int? rateLimit = default)
         {
             RetCode = retCode;
             RetMsg = retMsg;
@@ -40,6 +52,9 @@ namespace BybitAPI.Model
             ExtInfo = extInfo;
             Result = result;
             TimeNow = timeNow;
+            RateLimitStatus = rateLimitStatus;
+            RateLimitResetMs = rateLimitResetMs;
+            RateLimit = rateLimit;
         }
 
         /// <summary>
@@ -79,6 +94,24 @@ namespace BybitAPI.Model
         public string TimeNow { get; set; }
 
         /// <summary>
+        /// Gets or Sets RateLimitStatus
+        /// </summary>
+        [DataMember(Name = "rate_limit_status", EmitDefaultValue = false)]
+        public int? RateLimitStatus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RateLimitResetMs
+        /// </summary>
+        [DataMember(Name = "rate_limit_reset_ms", EmitDefaultValue = false)]
+        public long? RateLimitResetMs { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RateLimit
+        /// </summary>
+        [DataMember(Name = "rate_limit", EmitDefaultValue = false)]
+        public int? RateLimit { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,6 +125,9 @@ namespace BybitAPI.Model
             sb.Append("  ExtInfo: ").Append(ExtInfo).Append("\n");
             sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("  TimeNow: ").Append(TimeNow).Append("\n");
+            sb.Append("  RateLimitStatus: ").Append(RateLimitStatus).Append("\n");
+            sb.Append("  RateLimitResetMs: ").Append(RateLimitResetMs).Append("\n");
+            sb.Append("  RateLimit: ").Append(RateLimit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -157,6 +193,21 @@ namespace BybitAPI.Model
                     TimeNow == input.TimeNow ||
                     (TimeNow is not null &&
                     TimeNow.Equals(input.TimeNow))
+                ) &&
+                (
+                    RateLimitStatus == input.RateLimitStatus ||
+                    (RateLimitStatus is not null &&
+                    RateLimitStatus.Equals(input.RateLimitStatus))
+                ) &&
+                (
+                    RateLimitResetMs == input.RateLimitResetMs ||
+                    (RateLimitResetMs is not null &&
+                    RateLimitResetMs.Equals(input.RateLimitResetMs))
+                ) &&
+                (
+                    RateLimit == input.RateLimit ||
+                    (RateLimit is not null &&
+                    RateLimit.Equals(input.RateLimit))
                 );
         }
 
@@ -197,6 +248,21 @@ namespace BybitAPI.Model
                 if (TimeNow is not null)
                 {
                     hashCode = hashCode * 59 + TimeNow.GetHashCode();
+                }
+
+                if (RateLimitStatus is not null)
+                {
+                    hashCode = hashCode * 59 + RateLimitStatus.GetHashCode();
+                }
+
+                if (RateLimitResetMs is not null)
+                {
+                    hashCode = hashCode * 59 + RateLimitResetMs.GetHashCode();
+                }
+
+                if (RateLimit is not null)
+                {
+                    hashCode = hashCode * 59 + RateLimit.GetHashCode();
                 }
 
                 return hashCode;

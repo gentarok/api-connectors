@@ -76,5 +76,21 @@ namespace BybitAPI.IntegrationTest
         //    Assert.IsInstanceOf<ApiResponse<OrderCancelBase>>(response, "response is ApiResponce<APIKeyBase>");
         //    Assert.That(response.Data.RetCode, Is.EqualTo(0), $"API error has occered: {response.Data.RetMsg}");
         //}
+
+        //[Test]
+        //public void ConditionalCancelAll_ParametersIsValid_ShouldReturnSuccess()
+        //{
+        //    // Arrange
+
+        //    //TODO: Create new conditional order.
+
+        //    string symbol = "BTCUSD";
+
+        //    // Act
+        //    var response = instance.ConditionalCancelAll(symbol);
+
+        //    // Assert
+        //    Assert.That(response.RetCode, Is.EqualTo(0), $"API error has occered: {response.RetMsg}");
+        //}
     }
 }

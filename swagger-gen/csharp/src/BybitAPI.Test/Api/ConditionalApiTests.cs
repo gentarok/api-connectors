@@ -12,6 +12,7 @@ using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -179,7 +180,7 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void ConditionalCancelAll_ShouldReturnConditionalCancelAllBase()
+        public void ConditionalCancelAll_ShouldReturnConditionalV2ConditionalBaseOfListOfConditionalCancelAllRes()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
@@ -191,7 +192,7 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalCancelAll(symbol);
 
             // Assert
-            Assert.IsInstanceOf<ConditionalCancelAllBase>(response, "response is ConditionalCancelAllBase");
+            Assert.IsInstanceOf<V2ConditionalBase<List<ConditionalCancelAllRes>>>(response, "response is V2ConditionalBase<List<ConditionalCancelAllRes>>");
         }
 
         [Test]
@@ -214,7 +215,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        public void ConditionalCancelAllWithHttpInfo_ShouldReturnApiResponseOfConditionalCancelAllBase()
+        public void ConditionalCancelAllWithHttpInfo_ShouldReturnApiResponseOfV2ConditionalBaseOfListOfConditionalCancelAllRes()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
@@ -226,7 +227,7 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalCancelAllWithHttpInfo(symbol);
 
             // Assert
-            Assert.IsInstanceOf<ApiResponse<ConditionalCancelAllBase>>(response, "response is ApiResponse<ConditionalCancelAllBase>");
+            Assert.IsInstanceOf<ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>>(response, "response is ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>");
         }
 
         [Test]

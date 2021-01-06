@@ -37,14 +37,39 @@ namespace BybitAPI.Model
         /// <param name="createType">createType.</param>
         /// <param name="cancelType">cancelType.</param>
         /// <param name="orderStatus">orderStatus.</param>
-        /// <param name="leavesQty">leavesQty.</param>
         /// <param name="leavesValue">leavesValue.</param>
+        /// <param name="createdAt">createdAt.</param>
+        /// <param name="updatedAt">updatedAt.</param>
+        /// <param name="crossStatus">crossStatus.</param>
         /// <param name="crossSeq">crossSeq.</param>
         /// <param name="stopOrderType">stopOrderType.</param>
         /// <param name="triggerBy">triggerBy.</param>
-        /// <param name="createdAt">createdAt.</param>
-        /// <param name="updatedAt">updatedAt.</param>
-        public ConditionalCancelAllRes(string clOrdID = default, decimal? userId = default, string symbol = default, string side = default, string orderType = default, string price = default, decimal? qty = default, string timeInForce = default, string createType = default, string cancelType = default, string orderStatus = default, decimal? leavesQty = default, string leavesValue = default, decimal? crossSeq = default, string stopOrderType = default, string triggerBy = default, string createdAt = default, string updatedAt = default)
+        /// <param name="basePrice">basePrice.</param>
+        /// <param name="trailValue">trailValue.</param>
+        /// <param name="expectedDirection">expectedDirection.</param>
+
+        public ConditionalCancelAllRes(
+            string clOrdID = default,
+            decimal? userId = default,
+            string symbol = default,
+            string side = default,
+            string orderType = default,
+            decimal? price = default,
+            decimal? qty = default,
+            string timeInForce = default,
+            string createType = default,
+            string cancelType = default,
+            string orderStatus = default,
+            decimal? leavesValue = default,
+            string createdAt = default,
+            string updatedAt = default,
+            string crossStatus = default,
+            decimal? crossSeq = default,
+            string stopOrderType = default,
+            string triggerBy = default,
+            decimal? basePrice = default,
+            decimal? trailValue = default,
+            string expectedDirection = default)
         {
             ClOrdID = clOrdID;
             UserId = userId;
@@ -57,13 +82,17 @@ namespace BybitAPI.Model
             CreateType = createType;
             CancelType = cancelType;
             OrderStatus = orderStatus;
-            LeavesQty = leavesQty;
+            //LeavesQty = leavesQty;
             LeavesValue = leavesValue;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
+            CrossStatus = crossStatus;
             CrossSeq = crossSeq;
             StopOrderType = stopOrderType;
             TriggerBy = triggerBy;
-            CreatedAt = createdAt;
-            UpdatedAt = updatedAt;
+            BasePrice = basePrice;
+            TrailValue = trailValue;
+            ExpectedDirection = expectedDirection;
         }
 
         /// <summary>
@@ -100,7 +129,7 @@ namespace BybitAPI.Model
         /// Gets or Sets Price
         /// </summary>
         [DataMember(Name = "price", EmitDefaultValue = false)]
-        public string Price { get; set; }
+        public decimal? Price { get; set; }
 
         /// <summary>
         /// Gets or Sets Qty
@@ -133,16 +162,28 @@ namespace BybitAPI.Model
         public string OrderStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets LeavesQty
-        /// </summary>
-        [DataMember(Name = "leaves_qty", EmitDefaultValue = false)]
-        public decimal? LeavesQty { get; set; }
-
-        /// <summary>
         /// Gets or Sets LeavesValue
         /// </summary>
         [DataMember(Name = "leaves_value", EmitDefaultValue = false)]
-        public string LeavesValue { get; set; }
+        public decimal? LeavesValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedAt
+        /// </summary>
+        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdatedAt
+        /// </summary>
+        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
+        public string UpdatedAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CrossStatus
+        /// </summary>
+        [DataMember(Name = "cross_status", EmitDefaultValue = false)]
+        public string CrossStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets CrossSeq
@@ -163,16 +204,22 @@ namespace BybitAPI.Model
         public string TriggerBy { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// Gets or Sets BasePrice
         /// </summary>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public string CreatedAt { get; set; }
+        [DataMember(Name = "base_price", EmitDefaultValue = false)]
+        public decimal? BasePrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// Gets or Sets TrailValue
         /// </summary>
-        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
-        public string UpdatedAt { get; set; }
+        [DataMember(Name = "trail_value", EmitDefaultValue = false)]
+        public decimal? TrailValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExpectedDirection
+        /// </summary>
+        [DataMember(Name = "expected_direction", EmitDefaultValue = false)]
+        public string ExpectedDirection { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -193,13 +240,17 @@ namespace BybitAPI.Model
             sb.Append("  CreateType: ").Append(CreateType).Append("\n");
             sb.Append("  CancelType: ").Append(CancelType).Append("\n");
             sb.Append("  OrderStatus: ").Append(OrderStatus).Append("\n");
-            sb.Append("  LeavesQty: ").Append(LeavesQty).Append("\n");
             sb.Append("  LeavesValue: ").Append(LeavesValue).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  CrossStatus: ").Append(CrossStatus).Append("\n");
             sb.Append("  CrossSeq: ").Append(CrossSeq).Append("\n");
             sb.Append("  StopOrderType: ").Append(StopOrderType).Append("\n");
             sb.Append("  TriggerBy: ").Append(TriggerBy).Append("\n");
-            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  BasePrice: ").Append(BasePrice).Append("\n");
+            sb.Append("  TrailValue: ").Append(TrailValue).Append("\n");
+            sb.Append("  ExpectedDirection: ").Append(ExpectedDirection).Append("\n");
+
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -292,14 +343,24 @@ namespace BybitAPI.Model
                     OrderStatus.Equals(input.OrderStatus))
                 ) &&
                 (
-                    LeavesQty == input.LeavesQty ||
-                    (LeavesQty is not null &&
-                    LeavesQty.Equals(input.LeavesQty))
-                ) &&
-                (
                     LeavesValue == input.LeavesValue ||
                     (LeavesValue is not null &&
                     LeavesValue.Equals(input.LeavesValue))
+                ) &&
+                (
+                    CreatedAt == input.CreatedAt ||
+                    (CreatedAt is not null &&
+                    CreatedAt.Equals(input.CreatedAt))
+                ) &&
+                (
+                    UpdatedAt == input.UpdatedAt ||
+                    (UpdatedAt is not null &&
+                    UpdatedAt.Equals(input.UpdatedAt))
+                ) &&
+                (
+                    CrossStatus == input.CrossStatus ||
+                    (CrossStatus is not null &&
+                    CrossStatus.Equals(input.CrossStatus))
                 ) &&
                 (
                     CrossSeq == input.CrossSeq ||
@@ -317,14 +378,19 @@ namespace BybitAPI.Model
                     TriggerBy.Equals(input.TriggerBy))
                 ) &&
                 (
-                    CreatedAt == input.CreatedAt ||
-                    (CreatedAt is not null &&
-                    CreatedAt.Equals(input.CreatedAt))
+                    BasePrice == input.BasePrice ||
+                    (BasePrice is not null &&
+                    BasePrice.Equals(input.BasePrice))
                 ) &&
                 (
-                    UpdatedAt == input.UpdatedAt ||
-                    (UpdatedAt is not null &&
-                    UpdatedAt.Equals(input.UpdatedAt))
+                    TrailValue == input.TrailValue ||
+                    (TrailValue is not null &&
+                    TrailValue.Equals(input.TrailValue))
+                ) &&
+                (
+                    ExpectedDirection == input.ExpectedDirection ||
+                    (ExpectedDirection is not null &&
+                    ExpectedDirection.Equals(input.ExpectedDirection))
                 );
         }
 
@@ -392,14 +458,24 @@ namespace BybitAPI.Model
                     hashCode = hashCode * 59 + OrderStatus.GetHashCode();
                 }
 
-                if (LeavesQty is not null)
-                {
-                    hashCode = hashCode * 59 + LeavesQty.GetHashCode();
-                }
-
                 if (LeavesValue is not null)
                 {
                     hashCode = hashCode * 59 + LeavesValue.GetHashCode();
+                }
+
+                if (CreatedAt is not null)
+                {
+                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                }
+
+                if (UpdatedAt is not null)
+                {
+                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                }
+
+                if (CrossStatus is not null)
+                {
+                    hashCode = hashCode * 59 + CrossStatus.GetHashCode();
                 }
 
                 if (CrossSeq is not null)
@@ -417,14 +493,19 @@ namespace BybitAPI.Model
                     hashCode = hashCode * 59 + TriggerBy.GetHashCode();
                 }
 
-                if (CreatedAt is not null)
+                if (BasePrice is not null)
                 {
-                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + BasePrice.GetHashCode();
                 }
 
-                if (UpdatedAt is not null)
+                if (TrailValue is not null)
                 {
-                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + TrailValue.GetHashCode();
+                }
+
+                if (ExpectedDirection is not null)
+                {
+                    hashCode = hashCode * 59 + ExpectedDirection.GetHashCode();
                 }
 
                 return hashCode;

@@ -24,8 +24,6 @@ namespace BybitAPI.Api
     /// </summary>
     public interface IConditionalApi : IApiAccessor
     {
-        //TODO: Consider to use V2 types.
-
         #region Synchronous Operations
 
         /// <summary>
@@ -62,8 +60,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns><see cref="ConditionalCancelAllBase"/></returns>
-        ConditionalCancelAllBase ConditionalCancelAll(string symbol);
+        /// <returns>V2ConditionalBase of List of ConditionalCancelAllRes</returns>
+        V2ConditionalBase<List<ConditionalCancelAllRes>> ConditionalCancelAll(string symbol);
 
         /// <summary>
         /// Cancel conditional order.
@@ -73,8 +71,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
-        ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(string symbol);
+        /// <returns>ApiResponse of V2ConditionalBase (List of ConditionalCancelAllRes)</returns>
+        ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>> ConditionalCancelAllWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my conditional order list.
@@ -244,8 +242,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ConditionalCancelAllBase</returns>
-        Task<ConditionalCancelAllBase> ConditionalCancelAllAsync(string symbol);
+        /// <returns>Task of V2ConditionalBase (List of ConditionalCancelAllRes)</returns>
+        Task<V2ConditionalBase<List<ConditionalCancelAllRes>>> ConditionalCancelAllAsync(string symbol);
 
         /// <summary>
         /// Cancel conditional order.
@@ -255,8 +253,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (ConditionalCancelAllBase)</returns>
-        Task<ApiResponse<ConditionalCancelAllBase>> ConditionalCancelAllAsyncWithHttpInfo(string symbol);
+        /// <returns>Task of ApiResponse (V2ConditionalBase (List of ConditionalCancelAllRes))</returns>
+        Task<ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>> ConditionalCancelAllAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my conditional order list.
@@ -499,7 +497,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns><see cref="ConditionalCancelBase"/></returns>
+        /// <returns>V2ConditionalBase of OrderIdRes</returns>
         public V2ConditionalBase<OrderIdRes> ConditionalCancel(string symbol, string stopOrderId = null, string orderLinkId = null)
         {
             var localVarResponse = ConditionalCancelWithHttpInfo(symbol, stopOrderId, orderLinkId);
@@ -513,7 +511,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>ApiResponse of ConditionalCancelBase</returns>
+        /// <returns>ApiResponse of V2ConditionalBase (OrderIdRes)</returns>
         public ApiResponse<V2ConditionalBase<OrderIdRes>> ConditionalCancelWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
@@ -717,8 +715,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns><see cref="ConditionalCancelAllBase"/></returns>
-        public ConditionalCancelAllBase ConditionalCancelAll(string symbol)
+        /// <returns>V2ConditionalBase of List of ConditionalCancelAllRes</returns>
+        public V2ConditionalBase<List<ConditionalCancelAllRes>> ConditionalCancelAll(string symbol)
         {
             var localVarResponse = ConditionalCancelAllWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -729,8 +727,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
-        public ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(string symbol)
+        /// <returns>ApiResponse of V2ConditionalBase (List of ConditionalCancelAllRes)</returns>
+        public ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>> ConditionalCancelAllWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -800,9 +798,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<ConditionalCancelAllBase>(localVarStatusCode,
+            return new ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ConditionalCancelAllBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConditionalCancelAllBase)));
+                (V2ConditionalBase<List<ConditionalCancelAllRes>>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(V2ConditionalBase<List<ConditionalCancelAllRes>>)));
         }
 
         /// <summary>
@@ -810,8 +808,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ConditionalCancelAllBase</returns>
-        public async Task<ConditionalCancelAllBase> ConditionalCancelAllAsync(string symbol)
+        /// <returns>Task of V2ConditionalBase (List of ConditionalCancelAllRes)</returns>
+        public async Task<V2ConditionalBase<List<ConditionalCancelAllRes>>> ConditionalCancelAllAsync(string symbol)
         {
             var localVarResponse = await ConditionalCancelAllAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -822,8 +820,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (ConditionalCancelAllBase)</returns>
-        public async Task<ApiResponse<ConditionalCancelAllBase>> ConditionalCancelAllAsyncWithHttpInfo(string symbol)
+        /// <returns>Task of ApiResponse (V2ConditionalBase (List of ConditionalCancelAllRes))</returns>
+        public async Task<ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>> ConditionalCancelAllAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -893,9 +891,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<ConditionalCancelAllBase>(localVarStatusCode,
+            return new ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ConditionalCancelAllBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConditionalCancelAllBase)));
+                (V2ConditionalBase<List<ConditionalCancelAllRes>>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(V2ConditionalBase<List<ConditionalCancelAllRes>>)));
         }
 
         /// <summary>
