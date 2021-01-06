@@ -1,7 +1,6 @@
 using BybitAPI.Api;
 using BybitAPI.Client;
 using BybitAPI.IntegrationTest.Util;
-using BybitAPI.Model;
 using NUnit.Framework;
 using System;
 
@@ -14,10 +13,11 @@ namespace BybitAPI.IntegrationTest
         [SetUp]
         public void Setup()
         {
-            var configuration = new Configuration();
-
             // Prepeare configurations to test.
-            configuration.BasePath = TestUtil.TESTNET_URI;
+            var configuration = new Configuration
+            {
+                BasePath = TestUtil.TESTNET_URI
+            };
             configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
             configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());
             configuration.ApiKey.Add("timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString());

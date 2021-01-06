@@ -40,9 +40,11 @@ namespace BybitAPI.Api.Util
         private static string CreateQueryString(IDictionary<string, string> param)
         {
             if (param is null)
+            {
                 throw new ArgumentNullException(nameof(param));
+            }
 
-            StringBuilder b = new StringBuilder();
+            var b = new StringBuilder();
             foreach (var item in param)
             {
                 b.Append(string.Format("&{0}={1}", item.Key, WebUtility.UrlEncode(item.Value)));

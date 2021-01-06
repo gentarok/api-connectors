@@ -14,10 +14,11 @@ namespace BybitAPI.IntegrationTest
         [SetUp]
         public void Setup()
         {
-            var configuration = new Configuration();
-
             // Prepeare configurations to test.
-            configuration.BasePath = TestUtil.TESTNET_URI;
+            var configuration = new Configuration
+            {
+                BasePath = TestUtil.TESTNET_URI
+            };
             configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
             configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());
             configuration.ApiKey.Add("timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString());
@@ -41,7 +42,7 @@ namespace BybitAPI.IntegrationTest
         public void CommonGetLcp_ShouldReturnLCPInfoBase()
         {
             // Arrange
-            string symbol = "BTCUSD";
+            var symbol = "BTCUSD";
 
             // Act
             var response = instance.CommonGetLcp(symbol);

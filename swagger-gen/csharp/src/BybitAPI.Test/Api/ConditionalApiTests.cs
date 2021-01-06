@@ -11,7 +11,6 @@
 using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
-using Moq;
 using NUnit.Framework;
 using System.Net;
 using System.Threading.Tasks;
@@ -83,7 +82,7 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            string symbol = string.Empty;
+            var symbol = string.Empty;
             //string stopOrderId = null;
             //string orderLinkId = null;
 
@@ -186,7 +185,7 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            string symbol = string.Empty;
+            var symbol = string.Empty;
 
             // Act
             var response = instance.ConditionalCancelAll(symbol);
@@ -221,7 +220,7 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            string symbol = string.Empty;
+            var symbol = string.Empty;
 
             // Act
             var response = instance.ConditionalCancelAllWithHttpInfo(symbol);
@@ -255,7 +254,7 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            string symbol = string.Empty;
+            var symbol = string.Empty;
 
             // Act
             var response = await instance.ConditionalCancelAllAsync(symbol);
@@ -289,7 +288,7 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            string symbol = string.Empty;
+            var symbol = string.Empty;
 
             // Act
             var response = await instance.ConditionalCancelAllAsyncWithHttpInfo(symbol);
