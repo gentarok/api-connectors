@@ -24,6 +24,8 @@ namespace BybitAPI.Api
     /// </summary>
     public interface IConditionalApi : IApiAccessor
     {
+        //TODO: Consider to use V2 types.
+
         #region Synchronous Operations
 
         /// <summary>
@@ -60,8 +62,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Object</returns>
-        object ConditionalCancelAll(string symbol);
+        /// <returns><see cref="ConditionalCancelAllBase"/></returns>
+        ConditionalCancelAllBase ConditionalCancelAll(string symbol);
 
         /// <summary>
         /// Cancel conditional order.
@@ -71,8 +73,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> ConditionalCancelAllWithHttpInfo(string symbol);
+        /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
+        ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my conditional order list.
@@ -242,8 +244,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of Object</returns>
-        Task<object> ConditionalCancelAllAsync(string symbol);
+        /// <returns>Task of ConditionalCancelAllBase</returns>
+        Task<ConditionalCancelAllBase> ConditionalCancelAllAsync(string symbol);
 
         /// <summary>
         /// Cancel conditional order.
@@ -253,8 +255,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> ConditionalCancelAllAsyncWithHttpInfo(string symbol);
+        /// <returns>Task of ApiResponse (ConditionalCancelAllBase)</returns>
+        Task<ApiResponse<ConditionalCancelAllBase>> ConditionalCancelAllAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my conditional order list.
@@ -713,8 +715,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Object</returns>
-        public object ConditionalCancelAll(string symbol)
+        /// <returns><see cref="ConditionalCancelAllBase"/></returns>
+        public ConditionalCancelAllBase ConditionalCancelAll(string symbol)
         {
             var localVarResponse = ConditionalCancelAllWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -725,8 +727,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> ConditionalCancelAllWithHttpInfo(string symbol)
+        /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
+        public ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -795,9 +797,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<ConditionalCancelAllBase>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (ConditionalCancelAllBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConditionalCancelAllBase)));
         }
 
         /// <summary>
@@ -805,8 +807,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of Object</returns>
-        public async Task<object> ConditionalCancelAllAsync(string symbol)
+        /// <returns>Task of ConditionalCancelAllBase</returns>
+        public async Task<ConditionalCancelAllBase> ConditionalCancelAllAsync(string symbol)
         {
             var localVarResponse = await ConditionalCancelAllAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -817,8 +819,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<object>> ConditionalCancelAllAsyncWithHttpInfo(string symbol)
+        /// <returns>Task of ApiResponse (ConditionalCancelAllBase)</returns>
+        public async Task<ApiResponse<ConditionalCancelAllBase>> ConditionalCancelAllAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -887,9 +889,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<object>(localVarStatusCode,
+            return new ApiResponse<ConditionalCancelAllBase>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+                (ConditionalCancelAllBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConditionalCancelAllBase)));
         }
 
         /// <summary>

@@ -11,8 +11,10 @@
 using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
+using Moq;
 using NUnit.Framework;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api.Test
 {
@@ -111,17 +113,239 @@ namespace BybitAPI.Api.Test
             Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
-        ///// <summary>
-        ///// Test ConditionalCancelAll
-        ///// </summary>
-        //[Test]
-        //public void ConditionalCancelAllTest()
-        //{
-        //    // TODO uncomment below to test the method and replace null with proper value
-        //    //string symbol = null;
-        //    //var response = instance.ConditionalCancelAll(symbol);
-        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
-        //}
+        private readonly string cancelAllJson = @"
+{
+    ""ret_code"": 0,
+    ""ret_msg"": ""OK"",
+    ""ext_code"": """",
+    ""ext_info"": """",
+    ""result"": [
+        {
+            ""clOrdID"": ""dea89649-9492-459d-a8c4-c298b87b3d26"",
+            ""user_id"": 1,
+            ""symbol"": ""BTCUSD"",
+            ""side"": ""Sell"",
+            ""order_type"": ""Limit"",
+            ""price"": ""999999"",
+            ""qty"": 1,
+            ""time_in_force"": ""PostOnly"",
+            ""create_type"": ""CreateByUser"",
+            ""cancel_type"": ""CancelByUser"",
+            ""order_status"": """",
+            ""leaves_qty"": 1,
+            ""leaves_value"": ""0"",
+            ""created_at"": ""2019-12-17T12:13:20Z"",
+            ""updated_at"": ""2019-12-27T13:56:33.793799Z"",
+            ""cross_status"": ""Deactivated"",
+            ""cross_seq"": -1,
+            ""stop_order_type"": ""Stop"",
+            ""trigger_by"": ""LastPrice"",
+            ""base_price"": ""6910.5"",
+            ""expected_direction"": ""Rising""
+        },
+        {
+            ""clOrdID"": ""a85cd1c0-a9a4-49d3-a1bd-bab5ebe946d5"",
+            ""user_id"": 1,
+            ""symbol"": ""BTCUSD"",
+            ""side"": ""Buy"",
+            ""order_type"": ""Limit"",
+            ""price"": ""8000"",
+            ""qty"": 1,
+            ""time_in_force"": ""GoodTillCancel"",
+            ""create_type"": ""CreateByStopOrder"",
+            ""cancel_type"": ""CancelByUser"",
+            ""order_status"": """",
+            ""leaves_qty"": 1,
+            ""leaves_value"": ""0"",
+            ""created_at"": ""2019-12-27T12:48:24.339323Z"",
+            ""updated_at"": ""2019-12-27T13:56:33.793802Z"",
+            ""cross_status"": ""Deactivated"",
+            ""cross_seq"": -1,
+            ""stop_order_type"": ""Stop"",
+            ""trigger_by"": ""LastPrice"",
+            ""base_price"": ""7000"",
+            ""expected_direction"": ""Rising""
+        }
+    ],
+    ""time_now"": ""1577454993.799912"",
+    ""rate_limit_status"": 90,
+    ""rate_limit_reset_ms"": 1580885703683,
+    ""rate_limit"": 100
+}
+";
+
+        [Test]
+        public void ConditionalCancelAll_ShouldReturnConditionalCancelAllBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = string.Empty;
+
+            // Act
+            var response = instance.ConditionalCancelAll(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ConditionalCancelAllBase>(response, "response is ConditionalCancelAllBase");
+        }
+
+        [Test]
+        public void ConditionalCancelAll_SymbolIsNull_ShouldRaiseApiException()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalCancelAll(symbol);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        public void ConditionalCancelAllWithHttpInfo_ShouldReturnApiResponseOfConditionalCancelAllBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = string.Empty;
+
+            // Act
+            var response = instance.ConditionalCancelAllWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalCancelAllBase>>(response, "response is ApiResponse<ConditionalCancelAllBase>");
+        }
+
+        [Test]
+        public void ConditionalCancelAllWithHttpInfo_SymbolIsNull_ShouldRaiseApiException()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalCancelAllWithHttpInfo(symbol);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        public async Task ConditionalCancelAllAsync_ShouldReturnConditionalCancelAllBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = string.Empty;
+
+            // Act
+            var response = await instance.ConditionalCancelAllAsync(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ConditionalCancelAllBase>(response, "response is ConditionalCancelAllBase");
+        }
+
+        [Test]
+        public void ConditionalCancelAllAsync_SymbolIsNull_ShouldRaiseApiException()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalCancelAllAsync(symbol);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        public async Task ConditionalCancelAllAsyncWithHttpInfo_ShouldReturnApiResponseOfConditionalCancelAllBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = string.Empty;
+
+            // Act
+            var response = await instance.ConditionalCancelAllAsyncWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalCancelAllBase>>(response, "response is ApiResponse<ConditionalCancelAllBase>");
+        }
+
+        [Test]
+        public void ConditionalCancelAllAsyncWithHttpInfo_SymbolIsNull_ShouldRaiseApiException()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalCancelAllAsyncWithHttpInfo(symbol);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        private readonly string conditionalGetOrdersJson = @"
+{
+    ""ret_code"": 0,
+    ""ret_msg"": ""OK"",
+    ""ext_code"": """",
+    ""ext_info"": """",
+    ""result"": {
+        ""data"": [
+            {
+                ""user_id"": 160861,
+                ""stop_order_status"": ""Active"",
+                ""symbol"": ""ETHUSD"",
+                ""side"": ""Buy"",
+                ""order_type"": ""Market"",
+                ""stop_order_type"": ""TakeProfit"",
+                ""price"": ""220"",
+                ""qty"": ""120"",
+                ""time_in_force"": ""ImmediateOrCancel"",
+                ""base_price"": ""258"",
+                ""order_link_id"": """",
+                ""created_at"": ""2019-08-02T07:37:24Z"",
+                ""updated_at"": ""2019-08-02T07:38:40Z"",
+                ""stop_px"": ""224.3"",
+                ""stop_order_id"": ""6d0dec74-f516-4d95-81f1-c85e60c9a331""
+            }
+        ],
+        ""cursor"": ""zZtvOJ0gc3UOxZOwotsJSZyMTOgyC9tj1DmFyUU6eNHUL0X4NLwZvo8iqI6ltPIc""
+    },
+    ""time_now"": ""1604653512.292878"",
+    ""rate_limit_status"": 599,
+    ""rate_limit_reset_ms"": 1604653512287,
+    ""rate_limit"": 600
+}
+";
 
         ///// <summary>
         ///// Test ConditionalGetOrders
