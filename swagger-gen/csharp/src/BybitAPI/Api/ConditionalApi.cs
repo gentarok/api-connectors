@@ -661,17 +661,17 @@ namespace BybitAPI.Api
 
             if (stopOrderId is not null)
             {
-                localVarFormParams.Add("stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)));
             }
 
             if (orderLinkId is not null)
             {
-                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)));
             }
 
             if (symbol is not null)
             {
-                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             // authentication (apiKey) required
@@ -679,16 +679,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -763,7 +764,7 @@ namespace BybitAPI.Api
 
             if (symbol is not null)
             {
-                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             // authentication (apiKey) required
@@ -771,16 +772,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
@@ -855,7 +857,7 @@ namespace BybitAPI.Api
 
             if (symbol is not null)
             {
-                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             // authentication (apiKey) required
@@ -863,16 +865,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -984,16 +987,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
@@ -1105,16 +1109,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -1239,57 +1244,57 @@ namespace BybitAPI.Api
 
             if (side is not null)
             {
-                localVarFormParams.Add("side", Configuration.ApiClient.ParameterToString(side)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
             }
 
             if (symbol is not null)
             {
-                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             if (orderType is not null)
             {
-                localVarFormParams.Add("order_type", Configuration.ApiClient.ParameterToString(orderType)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_type", Configuration.ApiClient.ParameterToString(orderType)));
             }
 
             if (qty is not null)
             {
-                localVarFormParams.Add("qty", Configuration.ApiClient.ParameterToString(qty)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "qty", Configuration.ApiClient.ParameterToString(qty)));
             }
 
             if (price is not null)
             {
-                localVarFormParams.Add("price", Configuration.ApiClient.ParameterToString(price)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "price", Configuration.ApiClient.ParameterToString(price)));
             }
 
             if (basePrice is not null)
             {
-                localVarFormParams.Add("base_price", Configuration.ApiClient.ParameterToString(basePrice)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "base_price", Configuration.ApiClient.ParameterToString(basePrice)));
             }
 
             if (stopPx is not null)
             {
-                localVarFormParams.Add("stop_px", Configuration.ApiClient.ParameterToString(stopPx)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_px", Configuration.ApiClient.ParameterToString(stopPx)));
             }
 
             if (timeInForce is not null)
             {
-                localVarFormParams.Add("time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)));
             }
 
             if (triggerBy is not null)
             {
-                localVarFormParams.Add("trigger_by", Configuration.ApiClient.ParameterToString(triggerBy)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "trigger_by", Configuration.ApiClient.ParameterToString(triggerBy)));
             }
 
             if (closeOnTrigger is not null)
             {
-                localVarFormParams.Add("close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)));
             }
 
             if (orderLinkId is not null)
             {
-                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)));
             }
 
             // authentication (apiKey) required
@@ -1297,16 +1302,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
@@ -1431,57 +1437,57 @@ namespace BybitAPI.Api
 
             if (side is not null)
             {
-                localVarFormParams.Add("side", Configuration.ApiClient.ParameterToString(side)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
             }
 
             if (symbol is not null)
             {
-                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             if (orderType is not null)
             {
-                localVarFormParams.Add("order_type", Configuration.ApiClient.ParameterToString(orderType)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_type", Configuration.ApiClient.ParameterToString(orderType)));
             }
 
             if (qty is not null)
             {
-                localVarFormParams.Add("qty", Configuration.ApiClient.ParameterToString(qty)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "qty", Configuration.ApiClient.ParameterToString(qty)));
             }
 
             if (price is not null)
             {
-                localVarFormParams.Add("price", Configuration.ApiClient.ParameterToString(price)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "price", Configuration.ApiClient.ParameterToString(price)));
             }
 
             if (basePrice is not null)
             {
-                localVarFormParams.Add("base_price", Configuration.ApiClient.ParameterToString(basePrice)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "base_price", Configuration.ApiClient.ParameterToString(basePrice)));
             }
 
             if (stopPx is not null)
             {
-                localVarFormParams.Add("stop_px", Configuration.ApiClient.ParameterToString(stopPx)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_px", Configuration.ApiClient.ParameterToString(stopPx)));
             }
 
             if (timeInForce is not null)
             {
-                localVarFormParams.Add("time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)));
             }
 
             if (triggerBy is not null)
             {
-                localVarFormParams.Add("trigger_by", Configuration.ApiClient.ParameterToString(triggerBy)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "trigger_by", Configuration.ApiClient.ParameterToString(triggerBy)));
             }
 
             if (closeOnTrigger is not null)
             {
-                localVarFormParams.Add("close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "close_on_trigger", Configuration.ApiClient.ParameterToString(closeOnTrigger)));
             }
 
             if (orderLinkId is not null)
             {
-                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)));
             }
 
             // authentication (apiKey) required
@@ -1489,16 +1495,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -1590,16 +1597,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
@@ -1691,16 +1699,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -1785,32 +1794,32 @@ namespace BybitAPI.Api
 
             if (stopOrderId is not null)
             {
-                localVarFormParams.Add("stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)));
             }
 
             if (orderLinkId is not null)
             {
-                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)));
             }
 
             if (symbol is not null)
             {
-                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             if (pRQty is not null)
             {
-                localVarFormParams.Add("p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)));
             }
 
             if (pRPrice is not null)
             {
-                localVarFormParams.Add("p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)));
             }
 
             if (pRTriggerPrice is not null)
             {
-                localVarFormParams.Add("p_r_trigger_price", Configuration.ApiClient.ParameterToString(pRTriggerPrice)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "p_r_trigger_price", Configuration.ApiClient.ParameterToString(pRTriggerPrice)));
             }
 
             // authentication (apiKey) required
@@ -1818,16 +1827,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
@@ -1912,32 +1922,32 @@ namespace BybitAPI.Api
 
             if (stopOrderId is not null)
             {
-                localVarFormParams.Add("stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)));
             }
 
             if (orderLinkId is not null)
             {
-                localVarFormParams.Add("order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)));
             }
 
             if (symbol is not null)
             {
-                localVarFormParams.Add("symbol", Configuration.ApiClient.ParameterToString(symbol)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             if (pRQty is not null)
             {
-                localVarFormParams.Add("p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "p_r_qty", Configuration.ApiClient.ParameterToString(pRQty)));
             }
 
             if (pRPrice is not null)
             {
-                localVarFormParams.Add("p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "p_r_price", Configuration.ApiClient.ParameterToString(pRPrice)));
             }
 
             if (pRTriggerPrice is not null)
             {
-                localVarFormParams.Add("p_r_trigger_price", Configuration.ApiClient.ParameterToString(pRTriggerPrice)); // form parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "p_r_trigger_price", Configuration.ApiClient.ParameterToString(pRTriggerPrice)));
             }
 
             // authentication (apiKey) required
@@ -1945,16 +1955,17 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
-            // authentication (apiSignature) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("sign")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", Configuration.GetApiKeyWithPrefix("sign")));
-            }
+
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
             var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,

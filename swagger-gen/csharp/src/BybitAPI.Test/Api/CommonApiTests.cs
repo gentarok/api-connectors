@@ -36,6 +36,11 @@ namespace BybitAPI.Api.Test
         public void Init()
         {
             instance = new CommonApi();
+
+            // Prepeare configurations to test.
+            instance.Configuration.AddApiKey("api_key", "");
+            instance.Configuration.AddApiKey("api_secret", "");
+            instance.Configuration.AddApiKey("timestamp", "");
         }
 
         /// <summary>
@@ -130,12 +135,40 @@ namespace BybitAPI.Api.Test
             Assert.IsInstanceOf<ApiResponse<Announcement>>(response, "response is ApiResponse<Announcement>");
         }
 
-        private readonly string lcpjson = @"
+        //Fixed: The documentation is wrong, so we will test it according to the actual format of the returned JSON.
+
+        //        private readonly string commonGetLcpjson = @"
+        //{
+        //    ""ret_code"": 0,
+        //    ""ret_msg"": ""ok"",
+        //    ""ext_code"": """",
+        //    ""result"": [
+        //        {
+        //            ""date"": ""2020-04-27"",
+        //            ""self_ratio"": 1.1251,
+        //            ""platform_ratio"": 0.001254,
+        //            ""score"": 0.1459
+        //        },
+        //        {
+        //            ""date"": ""2020-04-26"",
+        //            ""self_ratio"": 1.1251,
+        //            ""platform_ratio"": 0.001254,
+        //            ""score"": 0.1459
+        //        }
+        //    ],
+        //    ""ext_info"": null,
+        //    ""time_now"": ""1577445138.790150"",
+        //    ""rate_limit_status"": 99,
+        //    ""rate_limit_reset_ms"": 1577445138812,
+        //    ""rate_limit"": 100
+        //}
+        //";
+        private readonly string commonGetLcpjson = @"
 {
     ""ret_code"": 0,
     ""ret_msg"": ""ok"",
     ""ext_code"": """",
-    ""result"": [
+    ""result"": { ""lcp_list"": [
         {
             ""date"": ""2020-04-27"",
             ""self_ratio"": 1.1251,
@@ -148,12 +181,9 @@ namespace BybitAPI.Api.Test
             ""platform_ratio"": 0.001254,
             ""score"": 0.1459
         }
-    ],
+    ]},
     ""ext_info"": null,
-    ""time_now"": ""1577445138.790150"",
-    ""rate_limit_status"": 99,
-    ""rate_limit_reset_ms"": 1577445138812,
-    ""rate_limit"": 100
+    ""time_now"": ""1577445138.790150""
 }
 ";
 
@@ -161,7 +191,7 @@ namespace BybitAPI.Api.Test
         public void CommonGetLcp_SymbolIsNotNull_ShouldReturnLCPInfo()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, commonGetLcpjson);
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = string.Empty;
@@ -180,7 +210,7 @@ namespace BybitAPI.Api.Test
         public void CommonGetLcp_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, commonGetLcpjson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = null;
@@ -199,7 +229,7 @@ namespace BybitAPI.Api.Test
         public void CommonGetLcpWithHttpInfo_SymbolIsNotNull_ShouldReturnApiResponseOfLCPInfo()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, commonGetLcpjson);
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = string.Empty;
@@ -215,7 +245,7 @@ namespace BybitAPI.Api.Test
         public void CommonGetLcpWithHttpInfo_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, commonGetLcpjson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = null;
@@ -234,7 +264,7 @@ namespace BybitAPI.Api.Test
         public async Task CommonGetLcpAsync_SymbolIsNotNull_ShouldReturnLCPInfo()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, commonGetLcpjson);
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = string.Empty;
@@ -250,7 +280,7 @@ namespace BybitAPI.Api.Test
         public void CommonGetLcpAsync_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, commonGetLcpjson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = null;
@@ -269,7 +299,7 @@ namespace BybitAPI.Api.Test
         public async Task CommonGetLcpAsyncWithHttpInfo_SymbolIsNotNull_ShouldReturnApiResponseOfLCPInfo()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, commonGetLcpjson);
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = string.Empty;
@@ -285,7 +315,7 @@ namespace BybitAPI.Api.Test
         public void CommonGetLcpAsyncWithHttpInfo_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, lcpjson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, commonGetLcpjson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = null;
