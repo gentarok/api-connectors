@@ -21,7 +21,7 @@ namespace BybitAPI.Model
     /// Place new conditional order response
     /// </summary>
     [DataContract]
-    public partial class V2ConditionalBase : IEquatable<V2ConditionalBase>, IValidatableObject
+    public partial class V2ConditionalBase<T> : IEquatable<V2ConditionalBase<T>>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="V2ConditionalBase" /> class.
@@ -32,7 +32,7 @@ namespace BybitAPI.Model
         /// <param name="extInfo">extInfo.</param>
         /// <param name="result">result.</param>
         /// <param name="timeNow">timeNow.</param>
-        public V2ConditionalBase(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, object result = default, string timeNow = default)
+        public V2ConditionalBase(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, T result = default, string timeNow = default)
         {
             RetCode = retCode;
             RetMsg = retMsg;
@@ -70,7 +70,7 @@ namespace BybitAPI.Model
         /// Gets or Sets Result
         /// </summary>
         [DataMember(Name = "result", EmitDefaultValue = false)]
-        public object Result { get; set; }
+        public T Result { get; set; }
 
         /// <summary>
         /// Gets or Sets TimeNow
@@ -112,7 +112,7 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return Equals(input as V2ConditionalBase);
+            return Equals(input as V2ConditionalBase<T>);
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace BybitAPI.Model
         /// </summary>
         /// <param name="input">Instance of V2ConditionalBase to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(V2ConditionalBase input)
+        public bool Equals(V2ConditionalBase<T> input)
         {
             if (input is null)
             {
@@ -149,7 +149,7 @@ namespace BybitAPI.Model
                     ExtInfo.Equals(input.ExtInfo))
                 ) &&
                 (
-                    Result == input.Result ||
+                    Result.Equals(input.Result) ||
                     (Result is not null &&
                     Result.Equals(input.Result))
                 ) &&

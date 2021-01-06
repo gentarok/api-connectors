@@ -77,7 +77,7 @@ namespace BybitAPI.Api.Test
         [Test]
         [TestCase("", null)]
         [TestCase(null, "")]
-        public void ConditionalCancel_SymbolIsNotNullAndEitherStopOrderIdOrOrderLinkIdIsNotNull_ShouldReturnConditionalCancelBase(string stopOrderId, string orderLinkId)
+        public void ConditionalCancel_SymbolIsNotNullAndEitherStopOrderIdOrOrderLinkIdIsNotNull_ShouldReturnV2ConditionalBaseOfOrderIdRes(string stopOrderId, string orderLinkId)
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelJson);
@@ -91,7 +91,7 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalCancel(symbol, stopOrderId, orderLinkId);
 
             // Assert
-            Assert.IsInstanceOf<ConditionalCancelBase>(response, "response is ConditionalCancelBase");
+            Assert.IsInstanceOf<V2ConditionalBase<OrderIdRes>>(response, "response is ConditionalCancelBase");
         }
 
         [Test]
@@ -118,7 +118,7 @@ namespace BybitAPI.Api.Test
             Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
-        private readonly string cancelAllJson = @"
+        private readonly string conditionalCancelAllJson = @"
 {
     ""ret_code"": 0,
     ""ret_msg"": ""OK"",
@@ -183,7 +183,7 @@ namespace BybitAPI.Api.Test
         public void ConditionalCancelAll_ShouldReturnConditionalCancelAllBase()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = string.Empty;
@@ -199,7 +199,7 @@ namespace BybitAPI.Api.Test
         public void ConditionalCancelAll_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = null;
@@ -218,7 +218,7 @@ namespace BybitAPI.Api.Test
         public void ConditionalCancelAllWithHttpInfo_ShouldReturnApiResponseOfConditionalCancelAllBase()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = string.Empty;
@@ -234,7 +234,7 @@ namespace BybitAPI.Api.Test
         public void ConditionalCancelAllWithHttpInfo_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = null;
@@ -252,7 +252,7 @@ namespace BybitAPI.Api.Test
         public async Task ConditionalCancelAllAsync_ShouldReturnConditionalCancelAllBase()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = string.Empty;
@@ -268,7 +268,7 @@ namespace BybitAPI.Api.Test
         public void ConditionalCancelAllAsync_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = null;
@@ -286,7 +286,7 @@ namespace BybitAPI.Api.Test
         public async Task ConditionalCancelAllAsyncWithHttpInfo_ShouldReturnApiResponseOfConditionalCancelAllBase()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = string.Empty;
@@ -302,7 +302,7 @@ namespace BybitAPI.Api.Test
         public void ConditionalCancelAllAsyncWithHttpInfo_SymbolIsNull_ShouldRaiseApiException()
         {
             // Arrange
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, cancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             string symbol = null;

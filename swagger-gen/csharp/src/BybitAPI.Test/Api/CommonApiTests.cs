@@ -170,7 +170,7 @@ namespace BybitAPI.Api.Test
             var response = instance.CommonGetLcp(symbol);
 
             // Assert
-            Assert.IsInstanceOf<LCPInfo>(response, "response is LCPInfo");
+            Assert.IsInstanceOf<LCPInfoBase>(response, "response is LCPInfo");
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace BybitAPI.Api.Test
             var response = instance.CommonGetLcpWithHttpInfo(symbol);
 
             // Assert
-            Assert.IsInstanceOf<ApiResponse<LCPInfo>>(response, "response is ApiResponse<LCPInfo>");
+            Assert.IsInstanceOf<ApiResponse<LCPInfoBase>>(response, "response is ApiResponse<LCPInfo>");
         }
 
         [Test()]
@@ -243,7 +243,7 @@ namespace BybitAPI.Api.Test
             var response = await instance.CommonGetLcpAsync(symbol);
 
             // Assert
-            Assert.IsInstanceOf<LCPInfo>(response, "response is LCPInfo");
+            Assert.IsInstanceOf<LCPInfoBase>(response, "response is LCPInfo");
         }
 
         [Test()]
@@ -278,7 +278,7 @@ namespace BybitAPI.Api.Test
             var response = await instance.CommonGetLcpAsyncWithHttpInfo(symbol);
 
             // Assert
-            Assert.IsInstanceOf<ApiResponse<LCPInfo>>(response, "response is ApiResponse<LCPInfo>");
+            Assert.IsInstanceOf<ApiResponse<LCPInfoBase>>(response, "response is ApiResponse<LCPInfo>");
         }
 
         [Test()]

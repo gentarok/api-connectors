@@ -22,7 +22,7 @@ namespace BybitAPI.Model.Test
     [TestFixture]
     public class LCPInfoTests
     {
-        private LCPInfo instance;
+        private LCPInfoBase instance;
 
         /// <summary>
         /// Setup before each test
@@ -30,7 +30,7 @@ namespace BybitAPI.Model.Test
         [SetUp]
         public void Init()
         {
-            instance = new LCPInfo();
+            instance = new LCPInfoBase();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace BybitAPI.Model.Test
         [Test]
         public void LCPInfoInstance_ShouldBeCreated()
         {
-            Assert.IsInstanceOf<LCPInfo>(instance, "variable 'instance' is a LCPInfo");
+            Assert.IsInstanceOf<LCPInfoBase>(instance, "variable 'instance' is a LCPInfo");
         }
 
         ///// <summary>

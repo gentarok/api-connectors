@@ -15,6 +15,8 @@ namespace BybitAPI.IntegrationTest
         public void Setup()
         {
             var configuration = new Configuration();
+
+            // Prepeare configurations to test.
             configuration.BasePath = TestUtil.TESTNET_URI;
             configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
             configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());

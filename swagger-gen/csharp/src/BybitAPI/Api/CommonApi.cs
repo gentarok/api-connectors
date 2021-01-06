@@ -54,8 +54,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns><see cref="LCPInfo"/></returns>
-        LCPInfo CommonGetLcp(string symbol);
+        /// <returns><see cref="LCPInfoBase"/></returns>
+        LCPInfoBase CommonGetLcp(string symbol);
 
         /// <summary>
         /// Query LCP info.
@@ -65,8 +65,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>ApiResponse of LCPInfo</returns>
-        ApiResponse<LCPInfo> CommonGetLcpWithHttpInfo(string symbol);
+        /// <returns>ApiResponse of LCPInfoBase</returns>
+        ApiResponse<LCPInfoBase> CommonGetLcpWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get bybit server time.
@@ -120,8 +120,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of LCPInfo</returns>
-        Task<LCPInfo> CommonGetLcpAsync(string symbol);
+        /// <returns>Task of LCPInfoBase</returns>
+        Task<LCPInfoBase> CommonGetLcpAsync(string symbol);
 
         /// <summary>
         /// Query LCP info.
@@ -131,8 +131,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of ApiResponse (LCPInfo)</returns>
-        Task<ApiResponse<LCPInfo>> CommonGetLcpAsyncWithHttpInfo(string symbol);
+        /// <returns>Task of ApiResponse (LCPInfoBase)</returns>
+        Task<ApiResponse<LCPInfoBase>> CommonGetLcpAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get bybit server time.
@@ -391,8 +391,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns><see cref="LCPInfo"/></returns>
-        public LCPInfo CommonGetLcp(string symbol)
+        /// <returns><see cref="LCPInfoBase"/></returns>
+        public LCPInfoBase CommonGetLcp(string symbol)
         {
             var localVarResponse = CommonGetLcpWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -403,8 +403,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>ApiResponse of LCPInfo</returns>
-        public ApiResponse<LCPInfo> CommonGetLcpWithHttpInfo(string symbol)
+        /// <returns>ApiResponse of LCPInfoBase</returns>
+        public ApiResponse<LCPInfoBase> CommonGetLcpWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -442,6 +442,23 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
 
+            // authentication (timestamp) required
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
+            }
+
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
+
             // make the HTTP request
             var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -458,9 +475,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<LCPInfo>(localVarStatusCode,
+            return new ApiResponse<LCPInfoBase>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LCPInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LCPInfo)));
+                (LCPInfoBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LCPInfoBase)));
         }
 
         /// <summary>
@@ -468,8 +485,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of LCPInfo</returns>
-        public async Task<LCPInfo> CommonGetLcpAsync(string symbol)
+        /// <returns>Task of LCPInfoBase</returns>
+        public async Task<LCPInfoBase> CommonGetLcpAsync(string symbol)
         {
             var localVarResponse = await CommonGetLcpAsyncWithHttpInfo(symbol);
             return localVarResponse.Data;
@@ -480,8 +497,8 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
-        /// <returns>Task of ApiResponse (LCPInfo)</returns>
-        public async Task<ApiResponse<LCPInfo>> CommonGetLcpAsyncWithHttpInfo(string symbol)
+        /// <returns>Task of ApiResponse (LCPInfoBase)</returns>
+        public async Task<ApiResponse<LCPInfoBase>> CommonGetLcpAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -535,9 +552,9 @@ namespace BybitAPI.Api
                 }
             }
 
-            return new ApiResponse<LCPInfo>(localVarStatusCode,
+            return new ApiResponse<LCPInfoBase>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LCPInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LCPInfo)));
+                (LCPInfoBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LCPInfoBase)));
         }
 
         /// <summary>

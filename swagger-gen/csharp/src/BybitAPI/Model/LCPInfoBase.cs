@@ -26,41 +26,57 @@ namespace BybitAPI.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LCPInfoBase" /> class.
         /// </summary>
-        /// <param name="date">date.</param>
-        /// <param name="selfRatio">selfRatio.</param>
-        /// <param name="platformRatio">platformRatio.</param>
-        /// <param name="score">score.</param>
-        public LCPInfoBase(string date = default, decimal? selfRatio = default, decimal? platformRatio = default, decimal? score = default)
+        /// <param name="retCode">retCode.</param>
+        /// <param name="retMsg">retMsg.</param>
+        /// <param name="extCode">extCode.</param>
+        /// <param name="extInfo">extInfo.</param>
+        /// <param name="result">result.</param>
+        /// <param name="timeNow">timeNow.</param>
+        public LCPInfoBase(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, LCPInfoListBase result = default, string timeNow = default)
         {
-            Date = date;
-            SelfRatio = selfRatio;
-            PlatformRatio = platformRatio;
-            Score = score;
+            RetCode = retCode;
+            RetMsg = retMsg;
+            ExtCode = extCode;
+            ExtInfo = extInfo;
+            Result = result;
+            TimeNow = timeNow;
         }
 
         /// <summary>
-        /// Gets or Sets Date
+        /// Gets or Sets RetCode
         /// </summary>
-        [DataMember(Name = "date", EmitDefaultValue = false)]
-        public string Date { get; set; }
+        [DataMember(Name = "ret_code", EmitDefaultValue = false)]
+        public decimal? RetCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets SelfRatio
+        /// Gets or Sets RetMsg
         /// </summary>
-        [DataMember(Name = "self_ratio", EmitDefaultValue = false)]
-        public decimal? SelfRatio { get; set; }
+        [DataMember(Name = "ret_msg", EmitDefaultValue = false)]
+        public string RetMsg { get; set; }
 
         /// <summary>
-        /// Gets or Sets PlatformRatio
+        /// Gets or Sets ExtCode
         /// </summary>
-        [DataMember(Name = "platform_ratio", EmitDefaultValue = false)]
-        public decimal? PlatformRatio { get; set; }
+        [DataMember(Name = "ext_code", EmitDefaultValue = false)]
+        public string ExtCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Score
+        /// Gets or Sets ExtInfo
         /// </summary>
-        [DataMember(Name = "score", EmitDefaultValue = false)]
-        public decimal? Score { get; set; }
+        [DataMember(Name = "ext_info", EmitDefaultValue = false)]
+        public string ExtInfo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Result
+        /// </summary>
+        [DataMember(Name = "result", EmitDefaultValue = false)]
+        public LCPInfoListBase Result { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TimeNow
+        /// </summary>
+        [DataMember(Name = "time_now", EmitDefaultValue = false)]
+        public string TimeNow { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,11 +85,13 @@ namespace BybitAPI.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class LCPInfoBase {\n");
-            sb.Append("  Date: ").Append(Date).Append("\n");
-            sb.Append("  SelfRatio: ").Append(SelfRatio).Append("\n");
-            sb.Append("  PlatformRatio: ").Append(PlatformRatio).Append("\n");
-            sb.Append("  Score: ").Append(Score).Append("\n");
+            sb.Append("class LCPInfo {\n");
+            sb.Append("  RetCode: ").Append(RetCode).Append("\n");
+            sb.Append("  RetMsg: ").Append(RetMsg).Append("\n");
+            sb.Append("  ExtCode: ").Append(ExtCode).Append("\n");
+            sb.Append("  ExtInfo: ").Append(ExtInfo).Append("\n");
+            sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("  TimeNow: ").Append(TimeNow).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,9 +116,9 @@ namespace BybitAPI.Model
         }
 
         /// <summary>
-        /// Returns true if LCPInfoBase instances are equal
+        /// Returns true if LCPInfo instances are equal
         /// </summary>
-        /// <param name="input">Instance of LCPInfoBase to be compared</param>
+        /// <param name="input">Instance of LCPInfo to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(LCPInfoBase input)
         {
@@ -111,24 +129,34 @@ namespace BybitAPI.Model
 
             return
                 (
-                    Date == input.Date ||
-                    (Date is not null &&
-                    Date.Equals(input.Date))
+                    RetCode == input.RetCode ||
+                    (RetCode is not null &&
+                    RetCode.Equals(input.RetCode))
                 ) &&
                 (
-                    SelfRatio == input.SelfRatio ||
-                    (SelfRatio is not null &&
-                    SelfRatio.Equals(input.SelfRatio))
+                    RetMsg == input.RetMsg ||
+                    (RetMsg is not null &&
+                    RetMsg.Equals(input.RetMsg))
                 ) &&
                 (
-                    PlatformRatio == input.PlatformRatio ||
-                    (PlatformRatio is not null &&
-                    PlatformRatio.Equals(input.PlatformRatio))
+                    ExtCode == input.ExtCode ||
+                    (ExtCode is not null &&
+                    ExtCode.Equals(input.ExtCode))
                 ) &&
                 (
-                    Score == input.Score ||
-                    (Score is not null &&
-                    Score.Equals(input.Score))
+                    ExtInfo == input.ExtInfo ||
+                    (ExtInfo is not null &&
+                    ExtInfo.Equals(input.ExtInfo))
+                ) &&
+                (
+                    Result == input.Result ||
+                    (Result is not null &&
+                    Result.Equals(input.Result))
+                ) &&
+                (
+                    TimeNow == input.TimeNow ||
+                    (TimeNow is not null &&
+                    TimeNow.Equals(input.TimeNow))
                 );
         }
 
@@ -141,24 +169,34 @@ namespace BybitAPI.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (Date is not null)
+                if (RetCode is not null)
                 {
-                    hashCode = hashCode * 59 + Date.GetHashCode();
+                    hashCode = hashCode * 59 + RetCode.GetHashCode();
                 }
 
-                if (SelfRatio is not null)
+                if (RetMsg is not null)
                 {
-                    hashCode = hashCode * 59 + SelfRatio.GetHashCode();
+                    hashCode = hashCode * 59 + RetMsg.GetHashCode();
                 }
 
-                if (PlatformRatio is not null)
+                if (ExtCode is not null)
                 {
-                    hashCode = hashCode * 59 + PlatformRatio.GetHashCode();
+                    hashCode = hashCode * 59 + ExtCode.GetHashCode();
                 }
 
-                if (Score is not null)
+                if (ExtInfo is not null)
                 {
-                    hashCode = hashCode * 59 + Score.GetHashCode();
+                    hashCode = hashCode * 59 + ExtInfo.GetHashCode();
+                }
+
+                if (Result is not null)
+                {
+                    hashCode = hashCode * 59 + Result.GetHashCode();
+                }
+
+                if (TimeNow is not null)
+                {
+                    hashCode = hashCode * 59 + TimeNow.GetHashCode();
                 }
 
                 return hashCode;
