@@ -33,7 +33,7 @@ namespace BybitAPI.Model
         /// <param name="extInfo">extInfo.</param>
         /// <param name="result">result.</param>
         /// <param name="timeNow">timeNow.</param>
-        public OrderBookBase(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, List<OderBookRes> result = default, string timeNow = default)
+        public OrderBookBase(decimal? retCode = default, string retMsg = default, string extCode = default, string extInfo = default, List<OrderBookRes> result = default, string timeNow = default)
         {
             RetCode = retCode;
             RetMsg = retMsg;
@@ -71,7 +71,7 @@ namespace BybitAPI.Model
         /// Gets or Sets Result
         /// </summary>
         [DataMember(Name = "result", EmitDefaultValue = false)]
-        public List<OderBookRes> Result { get; set; }
+        public List<OrderBookRes> Result { get; set; }
 
         /// <summary>
         /// Gets or Sets TimeNow

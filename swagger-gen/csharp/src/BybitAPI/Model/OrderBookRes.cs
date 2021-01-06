@@ -21,16 +21,16 @@ namespace BybitAPI.Model
     /// Get the orderbook response
     /// </summary>
     [DataContract]
-    public partial class OderBookRes : IEquatable<OderBookRes>, IValidatableObject
+    public partial class OrderBookRes : IEquatable<OrderBookRes>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OderBookRes" /> class.
+        /// Initializes a new instance of the <see cref="OrderBookRes" /> class.
         /// </summary>
         /// <param name="symbol">symbol.</param>
         /// <param name="price">price.</param>
         /// <param name="size">size.</param>
         /// <param name="side">side.</param>
-        public OderBookRes(string symbol = default, string price = default, decimal? size = default, string side = default)
+        public OrderBookRes(string symbol = default, string price = default, decimal? size = default, string side = default)
         {
             Symbol = symbol;
             Price = price;
@@ -69,7 +69,7 @@ namespace BybitAPI.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class OderBookRes {\n");
+            sb.Append("class OrderBookRes {\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
@@ -94,15 +94,15 @@ namespace BybitAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return Equals(input as OderBookRes);
+            return Equals(input as OrderBookRes);
         }
 
         /// <summary>
-        /// Returns true if OderBookRes instances are equal
+        /// Returns true if OrderBookRes instances are equal
         /// </summary>
-        /// <param name="input">Instance of OderBookRes to be compared</param>
+        /// <param name="input">Instance of OrderBookRes to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OderBookRes input)
+        public bool Equals(OrderBookRes input)
         {
             if (input is null)
             {
