@@ -11,10 +11,7 @@
 using BybitAPI.Client;
 using BybitAPI.Model;
 using RestSharp;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BybitAPI.Api
@@ -160,20 +157,13 @@ namespace BybitAPI.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class CommonApi : ICommonApi
+    public partial class CommonApi : ApiBase, ICommonApi
     {
-        private ExceptionFactory _exceptionFactory = (name, response) => null;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="CommonApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public CommonApi(string basePath)
-        {
-            Configuration = new Configuration { BasePath = basePath };
-
-            ExceptionFactory = Configuration.DefaultExceptionFactory;
-        }
+        public CommonApi(string basePath) : base(basePath) { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommonApi"/> class
@@ -181,93 +171,14 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public CommonApi(Configuration configuration = null)
-        {
-            if (configuration is null) // use the default one in Configuration
-            {
-                Configuration = Configuration.Default;
-            }
-            else
-            {
-                Configuration = configuration;
-            }
-
-            ExceptionFactory = Configuration.DefaultExceptionFactory;
-        }
-
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        public string GetBasePath()
-        {
-            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
-        }
-
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(string basePath)
-        {
-            // do nothing
-        }
-
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public Configuration Configuration { get; set; }
-
-        /// <summary>
-        /// Provides a factory method hook for the creation of exceptions.
-        /// </summary>
-        public ExceptionFactory ExceptionFactory
-        {
-            get
-            {
-                if (_exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1)
-                {
-                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
-                }
-                return _exceptionFactory;
-            }
-            set => _exceptionFactory = value;
-        }
-
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<string, string> DefaultHeader()
-        {
-            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
-        }
-
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
-        {
-            Configuration.AddDefaultHeader(key, value);
-        }
+        public CommonApi(Configuration configuration = null) : base(configuration) { }
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns><see cref="Announcement"/></returns>
-        public Announcement CommonAnnouncements()
-        {
-            var localVarResponse = CommonAnnouncementsWithHttpInfo();
-            return localVarResponse.Data;
-        }
+        public Announcement CommonAnnouncements() => CommonAnnouncementsWithHttpInfo().Data;
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
@@ -277,49 +188,7 @@ namespace BybitAPI.Api
         public ApiResponse<Announcement> CommonAnnouncementsWithHttpInfo()
         {
             var localVarPath = "/v2/public/announcement";
-            var localVarPathParams = new Dictionary<string, string>();
-            var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/json",
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("CommonAnnouncements", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<Announcement>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Announcement)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Announcement)));
+            return CallApiWithHttpInfo<Announcement>(localVarPath, Method.GET);
         }
 
         /// <summary>
@@ -327,63 +196,17 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Announcement</returns>
-        public async Task<Announcement> CommonAnnouncementsAsync()
-        {
-            var localVarResponse = await CommonAnnouncementsAsyncWithHttpInfo();
-            return localVarResponse.Data;
-        }
+        public async Task<Announcement> CommonAnnouncementsAsync() => (await CommonAnnouncementsAsyncWithHttpInfo()).Data;
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Announcement)</returns>
-        public async Task<ApiResponse<Announcement>> CommonAnnouncementsAsyncWithHttpInfo()
+        public Task<ApiResponse<Announcement>> CommonAnnouncementsAsyncWithHttpInfo()
         {
             var localVarPath = "/v2/public/announcement";
-            var localVarPathParams = new Dictionary<string, string>();
-            var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/json",
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("CommonAnnouncements", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<Announcement>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Announcement)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Announcement)));
+            return CallApiAsyncWithHttpInfo<Announcement>(localVarPath, Method.GET);
         }
 
         /// <summary>
@@ -392,11 +215,7 @@ namespace BybitAPI.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns><see cref="LCPInfoBase"/></returns>
-        public LCPInfoBase CommonGetLcp(string symbol)
-        {
-            var localVarResponse = CommonGetLcpWithHttpInfo(symbol);
-            return localVarResponse.Data;
-        }
+        public LCPInfoBase CommonGetLcp(string symbol) => CommonGetLcpWithHttpInfo(symbol).Data;
 
         /// <summary>
         /// Query LCP info.
@@ -413,71 +232,24 @@ namespace BybitAPI.Api
             }
 
             var localVarPath = "/v2/private/account/lcp";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/json",
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
 
             if (symbol is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
             }
-
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
-
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("CommonGetLcp", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<LCPInfoBase>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LCPInfoBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LCPInfoBase)));
+            return CallApiWithHttpInfo<LCPInfoBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
         /// <summary>
@@ -486,11 +258,7 @@ namespace BybitAPI.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>Task of LCPInfoBase</returns>
-        public async Task<LCPInfoBase> CommonGetLcpAsync(string symbol)
-        {
-            var localVarResponse = await CommonGetLcpAsyncWithHttpInfo(symbol);
-            return localVarResponse.Data;
-        }
+        public async Task<LCPInfoBase> CommonGetLcpAsync(string symbol) => (await CommonGetLcpAsyncWithHttpInfo(symbol)).Data;
 
         /// <summary>
         /// Query LCP info.
@@ -498,7 +266,7 @@ namespace BybitAPI.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>Task of ApiResponse (LCPInfoBase)</returns>
-        public async Task<ApiResponse<LCPInfoBase>> CommonGetLcpAsyncWithHttpInfo(string symbol)
+        public Task<ApiResponse<LCPInfoBase>> CommonGetLcpAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -507,71 +275,24 @@ namespace BybitAPI.Api
             }
 
             var localVarPath = "/v2/private/account/lcp";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/json",
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
 
             if (symbol is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
             }
-
             // authentication (timestamp) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
-
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("CommonGetLcp", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<LCPInfoBase>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LCPInfoBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LCPInfoBase)));
+            return CallApiAsyncWithHttpInfo<LCPInfoBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
         /// <summary>
@@ -579,11 +300,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns><see cref="ServerTime"/></returns>
-        public ServerTime CommonGetTime()
-        {
-            var localVarResponse = CommonGetTimeWithHttpInfo();
-            return localVarResponse.Data;
-        }
+        public ServerTime CommonGetTime() => CommonGetTimeWithHttpInfo().Data;
 
         /// <summary>
         /// Get bybit server time.
@@ -593,49 +310,7 @@ namespace BybitAPI.Api
         public ApiResponse<ServerTime> CommonGetTimeWithHttpInfo()
         {
             var localVarPath = "/v2/public/time";
-            var localVarPathParams = new Dictionary<string, string>();
-            var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/json",
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("CommonGetTime", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<ServerTime>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ServerTime)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServerTime)));
+            return CallApiWithHttpInfo<ServerTime>(localVarPath, Method.GET);
         }
 
         /// <summary>
@@ -643,63 +318,17 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ServerTime</returns>
-        public async Task<ServerTime> CommonGetTimeAsync()
-        {
-            var localVarResponse = await CommonGetTimeAsyncWithHttpInfo();
-            return localVarResponse.Data;
-        }
+        public async Task<ServerTime> CommonGetTimeAsync() => (await CommonGetTimeAsyncWithHttpInfo()).Data;
 
         /// <summary>
         /// Get bybit server time.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ServerTime)</returns>
-        public async Task<ApiResponse<ServerTime>> CommonGetTimeAsyncWithHttpInfo()
+        public Task<ApiResponse<ServerTime>> CommonGetTimeAsyncWithHttpInfo()
         {
             var localVarPath = "/v2/public/time";
-            var localVarPathParams = new Dictionary<string, string>();
-            var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/json",
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("CommonGetTime", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<ServerTime>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ServerTime)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServerTime)));
+            return CallApiAsyncWithHttpInfo<ServerTime>(localVarPath, Method.GET);
         }
     }
 }
