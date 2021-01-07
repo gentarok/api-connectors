@@ -247,7 +247,7 @@ namespace BybitAPI.Api
         /// <returns>Object</returns>
         public object LinearKlineGet(string symbol, string interval, decimal? from, decimal? limit = null)
         {
-            ApiResponse<object> localVarResponse = LinearKlineGetWithHttpInfo(symbol, interval, from, limit);
+            var localVarResponse = LinearKlineGetWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
         }
 
@@ -278,26 +278,26 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Missing required parameter 'from' when calling LinearKlineApi->LinearKlineGet");
             }
 
-            string localVarPath = "/public/linear/kline";
-            Dictionary<string, string> localVarPathParams = new Dictionary<string, string>();
-            List<KeyValuePair<string, string>> localVarQueryParams = new List<KeyValuePair<string, string>>();
-            Dictionary<string, string> localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            Dictionary<string, string> localVarFormParams = new Dictionary<string, string>();
-            Dictionary<string, FileParameter> localVarFileParams = new Dictionary<string, FileParameter>();
+            var localVarPath = "/public/linear/kline";
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
             object localVarPostBody = null;
 
             // to determine the Content-Type header
-            string[] localVarHttpContentTypes = new string[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            string[] localVarHttpHeaderAccepts = new string[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -324,15 +324,15 @@ namespace BybitAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory is not null)
             {
-                Exception exception = ExceptionFactory("LinearKlineGet", localVarResponse);
+                var exception = ExceptionFactory("LinearKlineGet", localVarResponse);
                 if (exception is not null)
                 {
                     throw exception;
@@ -355,7 +355,7 @@ namespace BybitAPI.Api
         /// <returns>Task of Object</returns>
         public async Task<object> LinearKlineGetAsync(string symbol, string interval, decimal? from, decimal? limit = null)
         {
-            ApiResponse<object> localVarResponse = await LinearKlineGetAsyncWithHttpInfo(symbol, interval, from, limit);
+            var localVarResponse = await LinearKlineGetAsyncWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
         }
 
@@ -386,26 +386,26 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Missing required parameter 'from' when calling LinearKlineApi->LinearKlineGet");
             }
 
-            string localVarPath = "/public/linear/kline";
-            Dictionary<string, string> localVarPathParams = new Dictionary<string, string>();
-            List<KeyValuePair<string, string>> localVarQueryParams = new List<KeyValuePair<string, string>>();
-            Dictionary<string, string> localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            Dictionary<string, string> localVarFormParams = new Dictionary<string, string>();
-            Dictionary<string, FileParameter> localVarFileParams = new Dictionary<string, FileParameter>();
+            var localVarPath = "/public/linear/kline";
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
             object localVarPostBody = null;
 
             // to determine the Content-Type header
-            string[] localVarHttpContentTypes = new string[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            string[] localVarHttpHeaderAccepts = new string[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -432,15 +432,15 @@ namespace BybitAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory is not null)
             {
-                Exception exception = ExceptionFactory("LinearKlineGet", localVarResponse);
+                var exception = ExceptionFactory("LinearKlineGet", localVarResponse);
                 if (exception is not null)
                 {
                     throw exception;
@@ -463,7 +463,7 @@ namespace BybitAPI.Api
         /// <returns>Object</returns>
         public object LinearKlineMarkPrice(string symbol, string interval, decimal? from, decimal? limit = null)
         {
-            ApiResponse<object> localVarResponse = LinearKlineMarkPriceWithHttpInfo(symbol, interval, from, limit);
+            var localVarResponse = LinearKlineMarkPriceWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
         }
 
@@ -494,26 +494,26 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Missing required parameter 'from' when calling LinearKlineApi->LinearKlineMarkPrice");
             }
 
-            string localVarPath = "/public/linear/mark-price-kline";
-            Dictionary<string, string> localVarPathParams = new Dictionary<string, string>();
-            List<KeyValuePair<string, string>> localVarQueryParams = new List<KeyValuePair<string, string>>();
-            Dictionary<string, string> localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            Dictionary<string, string> localVarFormParams = new Dictionary<string, string>();
-            Dictionary<string, FileParameter> localVarFileParams = new Dictionary<string, FileParameter>();
+            var localVarPath = "/public/linear/mark-price-kline";
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
             object localVarPostBody = null;
 
             // to determine the Content-Type header
-            string[] localVarHttpContentTypes = new string[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            string[] localVarHttpHeaderAccepts = new string[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -551,21 +551,21 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            SortedDictionary<string, string> param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            string secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            string sign = Util.ApiUtil.CreateSignature(secret, param);
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
+            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory is not null)
             {
-                Exception exception = ExceptionFactory("LinearKlineMarkPrice", localVarResponse);
+                var exception = ExceptionFactory("LinearKlineMarkPrice", localVarResponse);
                 if (exception is not null)
                 {
                     throw exception;
@@ -588,7 +588,7 @@ namespace BybitAPI.Api
         /// <returns>Task of Object</returns>
         public async Task<object> LinearKlineMarkPriceAsync(string symbol, string interval, decimal? from, decimal? limit = null)
         {
-            ApiResponse<object> localVarResponse = await LinearKlineMarkPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+            var localVarResponse = await LinearKlineMarkPriceAsyncWithHttpInfo(symbol, interval, from, limit);
             return localVarResponse.Data;
         }
 
@@ -619,26 +619,26 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Missing required parameter 'from' when calling LinearKlineApi->LinearKlineMarkPrice");
             }
 
-            string localVarPath = "/public/linear/mark-price-kline";
-            Dictionary<string, string> localVarPathParams = new Dictionary<string, string>();
-            List<KeyValuePair<string, string>> localVarQueryParams = new List<KeyValuePair<string, string>>();
-            Dictionary<string, string> localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            Dictionary<string, string> localVarFormParams = new Dictionary<string, string>();
-            Dictionary<string, FileParameter> localVarFileParams = new Dictionary<string, FileParameter>();
+            var localVarPath = "/public/linear/mark-price-kline";
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
             object localVarPostBody = null;
 
             // to determine the Content-Type header
-            string[] localVarHttpContentTypes = new string[] {
+            var localVarHttpContentTypes = new string[] {
                 "application/json",
                 "application/x-www-form-urlencoded"
             };
-            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            string[] localVarHttpHeaderAccepts = new string[] {
+            var localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept is not null)
             {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -676,21 +676,21 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            SortedDictionary<string, string> param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            string secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            string sign = Util.ApiUtil.CreateSignature(secret, param);
+            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
+            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
+            var sign = Util.ApiUtil.CreateSignature(secret, param);
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
+            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
+            var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory is not null)
             {
-                Exception exception = ExceptionFactory("LinearKlineMarkPrice", localVarResponse);
+                var exception = ExceptionFactory("LinearKlineMarkPrice", localVarResponse);
                 if (exception is not null)
                 {
                     throw exception;
