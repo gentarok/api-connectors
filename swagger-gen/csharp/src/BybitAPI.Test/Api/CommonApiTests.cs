@@ -353,7 +353,7 @@ namespace BybitAPI.Api.Test
             Assert.That(response.RetCode, Is.EqualTo(0));
             Assert.That(response.RetMsg, Is.EqualTo("OK"));
             Assert.That(response.ExtCode, Is.EqualTo(""));
-            Assert.That(response.Result, Is.Empty);
+            Assert.That(response.Result, Is.InstanceOf<object>());
             Assert.That(response.TimeNow, Is.EqualTo("1577444332.192859"));
         }
 
