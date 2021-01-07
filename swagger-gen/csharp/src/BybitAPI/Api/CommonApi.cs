@@ -171,7 +171,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public CommonApi(Configuration configuration = null) : base(configuration) { }
+        public CommonApi(Configuration? configuration = null) : base(configuration) { }
 
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.

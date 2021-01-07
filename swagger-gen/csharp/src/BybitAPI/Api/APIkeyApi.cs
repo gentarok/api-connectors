@@ -87,7 +87,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public APIkeyApi(Configuration configuration = null) : base(configuration) { }
+        public APIkeyApi(Configuration? configuration = null) : base(configuration) { }
 
         /// <summary>
         /// Get account api-key information.
