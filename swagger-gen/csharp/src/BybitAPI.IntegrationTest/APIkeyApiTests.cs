@@ -35,7 +35,6 @@ namespace BybitAPI.IntegrationTest
 
             // Assert
             Assert.IsInstanceOf<APIKeyBase>(response, "response is APIKeyBase");
-            System.Diagnostics.Debug.WriteLine(response);
             Assert.That(response.RetCode, Is.EqualTo(0));
             Assert.That(response.Result, Has.Exactly(1).Matches<APIKeyInfo>(x => x.ApiKey == TestUtil.GetTestApiKey()));
         }
@@ -50,7 +49,6 @@ namespace BybitAPI.IntegrationTest
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<APIKeyBase>>(response, "response is ApiResponce<APIKeyBase>");
-            System.Diagnostics.Debug.WriteLine(response);
             Assert.That(response.Data.RetCode, Is.EqualTo(0));
             Assert.That(response.Data.Result, Has.Exactly(1).Matches<APIKeyInfo>(x => x.ApiKey == TestUtil.GetTestApiKey()));
         }
