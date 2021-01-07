@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearOrderReplace();
-        }
+        public void Init() => instance = new LinearOrderReplace();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearOrderReplace
         /// </summary>
         [Test]
-        public void LinearOrderReplaceInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearOrderReplace>(instance, "variable 'instance' is a LinearOrderReplace");
-        }
+        public void LinearOrderReplaceInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearOrderReplace>(instance, "variable 'instance' is a LinearOrderReplace");
 
         ///// <summary>
         ///// Test the property 'RetCode'

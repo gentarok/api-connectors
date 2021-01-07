@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ClosedPnlBase();
-        }
+        public void Init() => instance = new ClosedPnlBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ClosedPnlBase
         /// </summary>
         [Test]
-        public void ClosedPnlBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ClosedPnlBase>(instance, "variable 'instance' is a ClosedPnlBase");
-        }
+        public void ClosedPnlBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<ClosedPnlBase>(instance, "variable 'instance' is a ClosedPnlBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

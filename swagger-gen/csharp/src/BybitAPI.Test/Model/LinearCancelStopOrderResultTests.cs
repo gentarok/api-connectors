@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearCancelStopOrderResult();
-        }
+        public void Init() => instance = new LinearCancelStopOrderResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearCancelStopOrderResult
         /// </summary>
         [Test]
-        public void LinearCancelStopOrderResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearCancelStopOrderResult>(instance, "variable 'instance' is a LinearCancelStopOrderResult");
-        }
+        public void LinearCancelStopOrderResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearCancelStopOrderResult>(instance, "variable 'instance' is a LinearCancelStopOrderResult");
 
         ///// <summary>
         ///// Test the property 'StopOrderId'

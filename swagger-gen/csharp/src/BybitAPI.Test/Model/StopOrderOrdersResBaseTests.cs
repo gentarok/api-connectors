@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new StopOrderOrdersResBase();
-        }
+        public void Init() => instance = new StopOrderOrdersResBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of StopOrderOrdersResBase
         /// </summary>
         [Test]
-        public void StopOrderOrdersResBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<StopOrderOrdersResBase>(instance, "variable 'instance' is a StopOrderOrdersResBase");
-        }
+        public void StopOrderOrdersResBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<StopOrderOrdersResBase>(instance, "variable 'instance' is a StopOrderOrdersResBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

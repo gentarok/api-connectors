@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ExecutionApi();
-        }
+        public void Init() => instance = new ExecutionApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of ExecutionApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ExecutionApi>(instance, "instance is a ExecutionApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<ExecutionApi>(instance, "instance is a ExecutionApi");
 
         ///// <summary>
         ///// Test ExecutionGetTrades

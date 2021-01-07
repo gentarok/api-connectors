@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearKlineResp();
-        }
+        public void Init() => instance = new LinearKlineResp();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearKlineResp
         /// </summary>
         [Test]
-        public void LinearKlineRespInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearKlineResp>(instance, "variable 'instance' is a LinearKlineResp");
-        }
+        public void LinearKlineRespInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearKlineResp>(instance, "variable 'instance' is a LinearKlineResp");
 
         ///// <summary>
         ///// Test the property 'Close'

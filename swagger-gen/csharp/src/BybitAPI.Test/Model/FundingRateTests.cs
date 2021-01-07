@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new FundingRate();
-        }
+        public void Init() => instance = new FundingRate();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of FundingRate
         /// </summary>
         [Test]
-        public void FundingRateInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<FundingRate>(instance, "variable 'instance' is a FundingRate");
-        }
+        public void FundingRateInstance_ShouldBeCreated() => Assert.IsInstanceOf<FundingRate>(instance, "variable 'instance' is a FundingRate");
 
         ///// <summary>
         ///// Test the property 'Symbol'

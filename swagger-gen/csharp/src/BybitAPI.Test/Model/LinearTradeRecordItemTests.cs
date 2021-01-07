@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearTradeRecordItem();
-        }
+        public void Init() => instance = new LinearTradeRecordItem();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearTradeRecordItem
         /// </summary>
         [Test]
-        public void LinearTradeRecordItemInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearTradeRecordItem>(instance, "variable 'instance' is a LinearTradeRecordItem");
-        }
+        public void LinearTradeRecordItemInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearTradeRecordItem>(instance, "variable 'instance' is a LinearTradeRecordItem");
 
         ///// <summary>
         ///// Test the property 'ClosedSize'

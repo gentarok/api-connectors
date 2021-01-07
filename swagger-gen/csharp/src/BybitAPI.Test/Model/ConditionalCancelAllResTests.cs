@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ConditionalCancelAllRes();
-        }
+        public void Init() => instance = new ConditionalCancelAllRes();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ConditionalCancelAllRes
         /// </summary>
         [Test]
-        public void ConditionalCancelAllResInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ConditionalCancelAllRes>(instance, "variable 'instance' is a ConditionalCancelAllRes");
-        }
+        public void ConditionalCancelAllResInstance_ShouldBeCreated() => Assert.IsInstanceOf<ConditionalCancelAllRes>(instance, "variable 'instance' is a ConditionalCancelAllRes");
 
         ///// <summary>
         ///// Test the property 'ClOrdID'

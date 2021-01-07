@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearFundingPredicted();
-        }
+        public void Init() => instance = new LinearFundingPredicted();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearFundingPredicted
         /// </summary>
         [Test]
-        public void LinearFundingPredictedInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearFundingPredicted>(instance, "variable 'instance' is a LinearFundingPredicted");
-        }
+        public void LinearFundingPredictedInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearFundingPredicted>(instance, "variable 'instance' is a LinearFundingPredicted");
 
         ///// <summary>
         ///// Test the property 'PredictedFundingRate'

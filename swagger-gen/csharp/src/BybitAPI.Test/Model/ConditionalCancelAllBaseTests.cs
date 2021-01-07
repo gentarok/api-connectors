@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ConditionalCancelAllBase();
-        }
+        public void Init() => instance = new ConditionalCancelAllBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ConditionalCancelAllBase
         /// </summary>
         [Test]
-        public void ConditionalCancelAllBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ConditionalCancelAllBase>(instance, "variable 'instance' is a ConditionalCancelAllBase");
-        }
+        public void ConditionalCancelAllBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<ConditionalCancelAllBase>(instance, "variable 'instance' is a ConditionalCancelAllBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

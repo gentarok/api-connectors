@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new OrderBookBase();
-        }
+        public void Init() => instance = new OrderBookBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of OrderBookBase
         /// </summary>
         [Test]
-        public void OrderBookBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<OrderBookBase>(instance, "variable 'instance' is a OrderBookBase");
-        }
+        public void OrderBookBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<OrderBookBase>(instance, "variable 'instance' is a OrderBookBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ReplaceConditionalBase();
-        }
+        public void Init() => instance = new ReplaceConditionalBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ReplaceConditionalBase
         /// </summary>
         [Test]
-        public void ReplaceConditionalBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ReplaceConditionalBase>(instance, "variable 'instance' is a ReplaceConditionalBase");
-        }
+        public void ReplaceConditionalBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<ReplaceConditionalBase>(instance, "variable 'instance' is a ReplaceConditionalBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

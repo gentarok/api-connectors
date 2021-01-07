@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new OpenInterestInfo();
-        }
+        public void Init() => instance = new OpenInterestInfo();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of OpenInterestInfo
         /// </summary>
         [Test]
-        public void OpenInterestInfoInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<OpenInterestInfo>(instance, "variable 'instance' is a OpenInterestInfo");
-        }
+        public void OpenInterestInfoInstance_ShouldBeCreated() => Assert.IsInstanceOf<OpenInterestInfo>(instance, "variable 'instance' is a OpenInterestInfo");
 
         ///// <summary>
         ///// Test the property 'OpenInterest'

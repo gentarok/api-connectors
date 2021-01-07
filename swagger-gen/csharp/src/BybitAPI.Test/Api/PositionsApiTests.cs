@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new PositionsApi();
-        }
+        public void Init() => instance = new PositionsApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of PositionsApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<PositionsApi>(instance, "instance is a PositionsApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<PositionsApi>(instance, "instance is a PositionsApi");
 
         ///// <summary>
         ///// Test PositionsChangeMargin

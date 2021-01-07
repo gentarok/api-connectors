@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new FundRecordBase();
-        }
+        public void Init() => instance = new FundRecordBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of FundRecordBase
         /// </summary>
         [Test]
-        public void FundRecordBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<FundRecordBase>(instance, "variable 'instance' is a FundRecordBase");
-        }
+        public void FundRecordBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<FundRecordBase>(instance, "variable 'instance' is a FundRecordBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

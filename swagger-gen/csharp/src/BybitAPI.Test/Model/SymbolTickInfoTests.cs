@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new SymbolTickInfo();
-        }
+        public void Init() => instance = new SymbolTickInfo();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of SymbolTickInfo
         /// </summary>
         [Test]
-        public void SymbolTickInfoInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<SymbolTickInfo>(instance, "variable 'instance' is a SymbolTickInfo");
-        }
+        public void SymbolTickInfoInstance_ShouldBeCreated() => Assert.IsInstanceOf<SymbolTickInfo>(instance, "variable 'instance' is a SymbolTickInfo");
 
         ///// <summary>
         ///// Test the property 'Symbol'

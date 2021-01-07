@@ -55,10 +55,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of CommonApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<CommonApi>(instance, "instance is a CommonApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<CommonApi>(instance, "instance is a CommonApi");
 
         private readonly string announcementsjson = @"
 {

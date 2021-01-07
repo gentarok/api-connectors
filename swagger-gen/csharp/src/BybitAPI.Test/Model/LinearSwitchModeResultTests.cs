@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearSwitchModeResult();
-        }
+        public void Init() => instance = new LinearSwitchModeResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSwitchModeResult
         /// </summary>
         [Test]
-        public void LinearSwitchModeResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearSwitchModeResult>(instance, "variable 'instance' is a LinearSwitchModeResult");
-        }
+        public void LinearSwitchModeResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearSwitchModeResult>(instance, "variable 'instance' is a LinearSwitchModeResult");
 
         ///// <summary>
         ///// Test the property 'TpSlMode'

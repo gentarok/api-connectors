@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new AccountRatioInfo();
-        }
+        public void Init() => instance = new AccountRatioInfo();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of AccountRatioInfo
         /// </summary>
         [Test]
-        public void AccountRatioInfoInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<AccountRatioInfo>(instance, "variable 'instance' is a AccountRatioInfo");
-        }
+        public void AccountRatioInfoInstance_ShouldBeCreated() => Assert.IsInstanceOf<AccountRatioInfo>(instance, "variable 'instance' is a AccountRatioInfo");
 
         ///// <summary>
         ///// Test the property 'BuyRatio'

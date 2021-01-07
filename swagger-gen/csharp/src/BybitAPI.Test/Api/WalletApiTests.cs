@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new WalletApi();
-        }
+        public void Init() => instance = new WalletApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of WalletApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<WalletApi>(instance, "instance is a WalletApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<WalletApi>(instance, "instance is a WalletApi");
 
         ///// <summary>
         ///// Test WalletExchangeOrder

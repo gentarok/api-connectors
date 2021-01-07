@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearClosedPnlRecordResult();
-        }
+        public void Init() => instance = new LinearClosedPnlRecordResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearClosedPnlRecordResult
         /// </summary>
         [Test]
-        public void LinearClosedPnlRecordResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearClosedPnlRecordResult>(instance, "variable 'instance' is a LinearClosedPnlRecordResult");
-        }
+        public void LinearClosedPnlRecordResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearClosedPnlRecordResult>(instance, "variable 'instance' is a LinearClosedPnlRecordResult");
 
         ///// <summary>
         ///// Test the property 'AvgEntryPrice'

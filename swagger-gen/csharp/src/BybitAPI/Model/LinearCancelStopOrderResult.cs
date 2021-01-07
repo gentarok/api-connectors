@@ -27,10 +27,7 @@ namespace BybitAPI.Model
         /// Initializes a new instance of the <see cref="LinearCancelStopOrderResult" /> class.
         /// </summary>
         /// <param name="stopOrderId">stopOrderId.</param>
-        public LinearCancelStopOrderResult(string stopOrderId = default)
-        {
-            StopOrderId = stopOrderId;
-        }
+        public LinearCancelStopOrderResult(string stopOrderId = default) => StopOrderId = stopOrderId;
 
         /// <summary>
         /// Gets or Sets StopOrderId
@@ -55,20 +52,14 @@ namespace BybitAPI.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
+        public virtual string ToJson() => JsonConvert.SerializeObject(this, Formatting.Indented);
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return Equals(input as LinearCancelStopOrderResult);
-        }
+        public override bool Equals(object input) => Equals(input as LinearCancelStopOrderResult);
 
         /// <summary>
         /// Returns true if LinearCancelStopOrderResult instances are equal

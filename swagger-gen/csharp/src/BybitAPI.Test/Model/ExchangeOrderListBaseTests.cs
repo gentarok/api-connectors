@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ExchangeOrderListBase();
-        }
+        public void Init() => instance = new ExchangeOrderListBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ExchangeOrderListBase
         /// </summary>
         [Test]
-        public void ExchangeOrderListBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ExchangeOrderListBase>(instance, "variable 'instance' is a ExchangeOrderListBase");
-        }
+        public void ExchangeOrderListBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<ExchangeOrderListBase>(instance, "variable 'instance' is a ExchangeOrderListBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

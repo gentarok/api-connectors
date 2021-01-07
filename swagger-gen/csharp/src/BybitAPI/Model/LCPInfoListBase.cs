@@ -29,10 +29,7 @@ namespace BybitAPI.Model
         /// <param name="extInfo">extInfo.</param>
         /// <param name="result">result.</param>
         /// <param name="timeNow">timeNow.</param>
-        public LCPInfoListBase(List<LCPInfo> lcpList = default)
-        {
-            LcpList = lcpList;
-        }
+        public LCPInfoListBase(List<LCPInfo> lcpList = default) => LcpList = lcpList;
 
         [DataMember(Name = "lcp_list", EmitDefaultValue = false)]
         public List<LCPInfo> LcpList { get; set; }
@@ -46,15 +43,9 @@ namespace BybitAPI.Model
             return sb.ToString();
         }
 
-        public virtual string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
+        public virtual string ToJson() => JsonConvert.SerializeObject(this, Formatting.Indented);
 
-        public override bool Equals(object input)
-        {
-            return Equals(input as LCPInfoListBase);
-        }
+        public override bool Equals(object input) => Equals(input as LCPInfoListBase);
 
         public bool Equals(LCPInfoListBase input)
         {

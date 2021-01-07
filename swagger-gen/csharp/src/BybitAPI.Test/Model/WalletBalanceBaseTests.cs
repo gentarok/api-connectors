@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new WalletBalanceBase();
-        }
+        public void Init() => instance = new WalletBalanceBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of WalletBalanceBase
         /// </summary>
         [Test]
-        public void WalletBalanceBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<WalletBalanceBase>(instance, "variable 'instance' is a WalletBalanceBase");
-        }
+        public void WalletBalanceBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<WalletBalanceBase>(instance, "variable 'instance' is a WalletBalanceBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

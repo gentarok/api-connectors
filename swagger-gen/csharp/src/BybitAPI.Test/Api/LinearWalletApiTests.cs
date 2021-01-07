@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearWalletApi();
-        }
+        public void Init() => instance = new LinearWalletApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearWalletApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearWalletApi>(instance, "instance is a LinearWalletApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<LinearWalletApi>(instance, "instance is a LinearWalletApi");
 
         ///// <summary>
         ///// Test LinearWalletGetRiskLimit

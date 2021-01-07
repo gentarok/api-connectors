@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new WithdrawRecords();
-        }
+        public void Init() => instance = new WithdrawRecords();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of WithdrawRecords
         /// </summary>
         [Test]
-        public void WithdrawRecordsInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<WithdrawRecords>(instance, "variable 'instance' is a WithdrawRecords");
-        }
+        public void WithdrawRecordsInstance_ShouldBeCreated() => Assert.IsInstanceOf<WithdrawRecords>(instance, "variable 'instance' is a WithdrawRecords");
 
         ///// <summary>
         ///// Test the property 'Id'

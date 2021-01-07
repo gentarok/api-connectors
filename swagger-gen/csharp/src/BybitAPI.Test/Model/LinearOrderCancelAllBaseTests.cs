@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearOrderCancelAllBase();
-        }
+        public void Init() => instance = new LinearOrderCancelAllBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearOrderCancelAllBase
         /// </summary>
         [Test]
-        public void LinearOrderCancelAllBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearOrderCancelAllBase>(instance, "variable 'instance' is a LinearOrderCancelAllBase");
-        }
+        public void LinearOrderCancelAllBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearOrderCancelAllBase>(instance, "variable 'instance' is a LinearOrderCancelAllBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

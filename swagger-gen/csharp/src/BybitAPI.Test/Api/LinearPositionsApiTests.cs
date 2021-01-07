@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearPositionsApi();
-        }
+        public void Init() => instance = new LinearPositionsApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearPositionsApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearPositionsApi>(instance, "instance is a LinearPositionsApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<LinearPositionsApi>(instance, "instance is a LinearPositionsApi");
 
         ///// <summary>
         ///// Test LinearPositionsChangeMargin

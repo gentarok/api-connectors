@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearConditionalApi();
-        }
+        public void Init() => instance = new LinearConditionalApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearConditionalApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearConditionalApi>(instance, "instance is a LinearConditionalApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<LinearConditionalApi>(instance, "instance is a LinearConditionalApi");
 
         ///// <summary>
         ///// Test LinearConditionalCancel

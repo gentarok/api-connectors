@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearRiskLimitRespBase();
-        }
+        public void Init() => instance = new LinearRiskLimitRespBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearRiskLimitRespBase
         /// </summary>
         [Test]
-        public void LinearRiskLimitRespBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearRiskLimitRespBase>(instance, "variable 'instance' is a LinearRiskLimitRespBase");
-        }
+        public void LinearRiskLimitRespBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearRiskLimitRespBase>(instance, "variable 'instance' is a LinearRiskLimitRespBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

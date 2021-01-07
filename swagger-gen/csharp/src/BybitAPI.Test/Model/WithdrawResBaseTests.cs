@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new WithdrawResBase();
-        }
+        public void Init() => instance = new WithdrawResBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of WithdrawResBase
         /// </summary>
         [Test]
-        public void WithdrawResBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<WithdrawResBase>(instance, "variable 'instance' is a WithdrawResBase");
-        }
+        public void WithdrawResBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<WithdrawResBase>(instance, "variable 'instance' is a WithdrawResBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

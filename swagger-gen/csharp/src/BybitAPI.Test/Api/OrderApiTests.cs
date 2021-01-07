@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new OrderApi();
-        }
+        public void Init() => instance = new OrderApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of OrderApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<OrderApi>(instance, "instance is a OrderApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<OrderApi>(instance, "instance is a OrderApi");
 
         ///// <summary>
         ///// Test OrderCancel

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new V2CancelOrderBase();
-        }
+        public void Init() => instance = new V2CancelOrderBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of V2CancelOrderBase
         /// </summary>
         [Test]
-        public void V2CancelOrderBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<V2CancelOrderBase>(instance, "variable 'instance' is a V2CancelOrderBase");
-        }
+        public void V2CancelOrderBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<V2CancelOrderBase>(instance, "variable 'instance' is a V2CancelOrderBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

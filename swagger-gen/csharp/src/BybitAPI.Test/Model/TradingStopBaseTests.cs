@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new TradingStopBase();
-        }
+        public void Init() => instance = new TradingStopBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of TradingStopBase
         /// </summary>
         [Test]
-        public void TradingStopBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<TradingStopBase>(instance, "variable 'instance' is a TradingStopBase");
-        }
+        public void TradingStopBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<TradingStopBase>(instance, "variable 'instance' is a TradingStopBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

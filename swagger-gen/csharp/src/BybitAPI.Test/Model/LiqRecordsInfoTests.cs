@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LiqRecordsInfo();
-        }
+        public void Init() => instance = new LiqRecordsInfo();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LiqRecordsInfo
         /// </summary>
         [Test]
-        public void LiqRecordsInfoInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LiqRecordsInfo>(instance, "variable 'instance' is a LiqRecordsInfo");
-        }
+        public void LiqRecordsInfoInstance_ShouldBeCreated() => Assert.IsInstanceOf<LiqRecordsInfo>(instance, "variable 'instance' is a LiqRecordsInfo");
 
         ///// <summary>
         ///// Test the property 'Id'

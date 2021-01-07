@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new OrderRes();
-        }
+        public void Init() => instance = new OrderRes();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of OrderRes
         /// </summary>
         [Test]
-        public void OrderResInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<OrderRes>(instance, "variable 'instance' is a OrderRes");
-        }
+        public void OrderResInstance_ShouldBeCreated() => Assert.IsInstanceOf<OrderRes>(instance, "variable 'instance' is a OrderRes");
 
         ///// <summary>
         ///// Test the property 'OrderId'

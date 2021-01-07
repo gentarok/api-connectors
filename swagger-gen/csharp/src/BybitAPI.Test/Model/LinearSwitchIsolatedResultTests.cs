@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearSwitchIsolatedResult();
-        }
+        public void Init() => instance = new LinearSwitchIsolatedResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSwitchIsolatedResult
         /// </summary>
         [Test]
-        public void LinearSwitchIsolatedResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearSwitchIsolatedResult>(instance, "variable 'instance' is a LinearSwitchIsolatedResult");
-        }
+        public void LinearSwitchIsolatedResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearSwitchIsolatedResult>(instance, "variable 'instance' is a LinearSwitchIsolatedResult");
 
         ///// <summary>
         ///// Test the property 'RetCode'

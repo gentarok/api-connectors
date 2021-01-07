@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearSetMarginResult();
-        }
+        public void Init() => instance = new LinearSetMarginResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSetMarginResult
         /// </summary>
         [Test]
-        public void LinearSetMarginResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearSetMarginResult>(instance, "variable 'instance' is a LinearSetMarginResult");
-        }
+        public void LinearSetMarginResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearSetMarginResult>(instance, "variable 'instance' is a LinearSetMarginResult");
 
         ///// <summary>
         ///// Test the property 'PositionListResult'

@@ -27,10 +27,7 @@ namespace BybitAPI.Model
         /// Initializes a new instance of the <see cref="OrderIdRes" /> class.
         /// </summary>
         /// <param name="orderId">orderId.</param>
-        public OrderIdRes(string orderId = default)
-        {
-            OrderId = orderId;
-        }
+        public OrderIdRes(string orderId = default) => OrderId = orderId;
 
         /// <summary>
         /// Gets or Sets OrderId
@@ -55,20 +52,14 @@ namespace BybitAPI.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
+        public virtual string ToJson() => JsonConvert.SerializeObject(this, Formatting.Indented);
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return Equals(input as OrderIdRes);
-        }
+        public override bool Equals(object input) => Equals(input as OrderIdRes);
 
         /// <summary>
         /// Returns true if OrderIdRes instances are equal

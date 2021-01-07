@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new KlineApi();
-        }
+        public void Init() => instance = new KlineApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of KlineApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<KlineApi>(instance, "instance is a KlineApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<KlineApi>(instance, "instance is a KlineApi");
 
         ///// <summary>
         ///// Test KlineGet

@@ -21,10 +21,8 @@ namespace BybitAPI.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="SwaggerDateConverter" /> class.
         /// </summary>
-        public SwaggerDateConverter()
-        {
+        public SwaggerDateConverter() =>
             // full-date   = date-fullyear "-" date-month "-" date-mday
             DateTimeFormat = "yyyy-MM-dd";
-        }
     }
 }

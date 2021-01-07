@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearSetLeverageResult();
-        }
+        public void Init() => instance = new LinearSetLeverageResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSetLeverageResult
         /// </summary>
         [Test]
-        public void LinearSetLeverageResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearSetLeverageResult>(instance, "variable 'instance' is a LinearSetLeverageResult");
-        }
+        public void LinearSetLeverageResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearSetLeverageResult>(instance, "variable 'instance' is a LinearSetLeverageResult");
 
         ///// <summary>
         ///// Test the property 'RetCode'

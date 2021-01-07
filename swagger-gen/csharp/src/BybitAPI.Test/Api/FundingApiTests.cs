@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new FundingApi();
-        }
+        public void Init() => instance = new FundingApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of FundingApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<FundingApi>(instance, "instance is a FundingApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<FundingApi>(instance, "instance is a FundingApi");
 
         ///// <summary>
         ///// Test FundingMyLastFee

@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearFundingApi();
-        }
+        public void Init() => instance = new LinearFundingApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearFundingApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearFundingApi>(instance, "instance is a LinearFundingApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<LinearFundingApi>(instance, "instance is a LinearFundingApi");
 
         ///// <summary>
         ///// Test LinearFundingMyLastFee

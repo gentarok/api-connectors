@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new MarkPriceKlineBase();
-        }
+        public void Init() => instance = new MarkPriceKlineBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of MarkPriceKlineBase
         /// </summary>
         [Test]
-        public void MarkPriceKlineBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<MarkPriceKlineBase>(instance, "variable 'instance' is a MarkPriceKlineBase");
-        }
+        public void MarkPriceKlineBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<MarkPriceKlineBase>(instance, "variable 'instance' is a MarkPriceKlineBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

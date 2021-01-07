@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new BigDeal();
-        }
+        public void Init() => instance = new BigDeal();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of BigDeal
         /// </summary>
         [Test]
-        public void BigDealInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<BigDeal>(instance, "variable 'instance' is a BigDeal");
-        }
+        public void BigDealInstance_ShouldBeCreated() => Assert.IsInstanceOf<BigDeal>(instance, "variable 'instance' is a BigDeal");
 
         ///// <summary>
         ///// Test the property 'RetCode'

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearPrevFundingResp();
-        }
+        public void Init() => instance = new LinearPrevFundingResp();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearPrevFundingResp
         /// </summary>
         [Test]
-        public void LinearPrevFundingRespInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearPrevFundingResp>(instance, "variable 'instance' is a LinearPrevFundingResp");
-        }
+        public void LinearPrevFundingRespInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearPrevFundingResp>(instance, "variable 'instance' is a LinearPrevFundingResp");
 
         ///// <summary>
         ///// Test the property 'ExecFee'

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ConditionalRes();
-        }
+        public void Init() => instance = new ConditionalRes();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ConditionalRes
         /// </summary>
         [Test]
-        public void ConditionalResInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ConditionalRes>(instance, "variable 'instance' is a ConditionalRes");
-        }
+        public void ConditionalResInstance_ShouldBeCreated() => Assert.IsInstanceOf<ConditionalRes>(instance, "variable 'instance' is a ConditionalRes");
 
         ///// <summary>
         ///// Test the property 'StopOrderId'

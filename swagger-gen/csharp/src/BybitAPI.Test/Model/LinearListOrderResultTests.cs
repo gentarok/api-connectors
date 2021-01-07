@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearListOrderResult();
-        }
+        public void Init() => instance = new LinearListOrderResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearListOrderResult
         /// </summary>
         [Test]
-        public void LinearListOrderResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearListOrderResult>(instance, "variable 'instance' is a LinearListOrderResult");
-        }
+        public void LinearListOrderResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearListOrderResult>(instance, "variable 'instance' is a LinearListOrderResult");
 
         ///// <summary>
         ///// Test the property 'CreatedTime'

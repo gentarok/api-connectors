@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new KlineBase();
-        }
+        public void Init() => instance = new KlineBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of KlineBase
         /// </summary>
         [Test]
-        public void KlineBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<KlineBase>(instance, "variable 'instance' is a KlineBase");
-        }
+        public void KlineBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<KlineBase>(instance, "variable 'instance' is a KlineBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

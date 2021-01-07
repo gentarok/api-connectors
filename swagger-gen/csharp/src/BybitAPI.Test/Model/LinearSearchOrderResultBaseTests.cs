@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearSearchOrderResultBase();
-        }
+        public void Init() => instance = new LinearSearchOrderResultBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearSearchOrderResultBase
         /// </summary>
         [Test]
-        public void LinearSearchOrderResultBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearSearchOrderResultBase>(instance, "variable 'instance' is a LinearSearchOrderResultBase");
-        }
+        public void LinearSearchOrderResultBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearSearchOrderResultBase>(instance, "variable 'instance' is a LinearSearchOrderResultBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

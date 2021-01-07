@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ServerTime();
-        }
+        public void Init() => instance = new ServerTime();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ServerTime
         /// </summary>
         [Test]
-        public void ServerTimeInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ServerTime>(instance, "variable 'instance' is a ServerTime");
-        }
+        public void ServerTimeInstance_ShouldBeCreated() => Assert.IsInstanceOf<ServerTime>(instance, "variable 'instance' is a ServerTime");
 
         ///// <summary>
         ///// Test the property 'RetCode'

@@ -225,10 +225,7 @@ namespace BybitAPI.Client
         /// </summary>
         /// <param name="str">String to be escaped.</param>
         /// <returns>Escaped string.</returns>
-        public string EscapeString(string str)
-        {
-            return UrlEncode(str);
-        }
+        public string EscapeString(string str) => UrlEncode(str);
 
         /// <summary>
         /// Create FileParameter based on Stream.
@@ -236,12 +233,9 @@ namespace BybitAPI.Client
         /// <param name="name">Parameter name.</param>
         /// <param name="stream">Input stream.</param>
         /// <returns>FileParameter.</returns>
-        public FileParameter ParameterToFile(string name, Stream stream)
-        {
-            return stream is FileStream stream1
+        public FileParameter ParameterToFile(string name, Stream stream) => stream is FileStream stream1
                 ? FileParameter.Create(name, ReadAsBytes(stream), Path.GetFileName(stream1.Name))
                 : FileParameter.Create(name, ReadAsBytes(stream), "no_file_name_provided");
-        }
 
         /// <summary>
         /// If parameter is DateTime, output in a formatted string (default ISO 8601), customizable with Configuration.DateTime.
@@ -432,10 +426,7 @@ namespace BybitAPI.Client
         /// </summary>
         /// <param name="text">String to be encoded.</param>
         /// <returns>Encoded string.</returns>
-        public static string Base64Encode(string text)
-        {
-            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(text));
-        }
+        public static string Base64Encode(string text) => Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(text));
 
         /// <summary>
         /// Dynamically cast the object into target type.
@@ -443,10 +434,7 @@ namespace BybitAPI.Client
         /// <param name="fromObject">Object to be casted</param>
         /// <param name="toObject">Target type</param>
         /// <returns>Casted object</returns>
-        public static dynamic ConvertType(dynamic fromObject, Type toObject)
-        {
-            return Convert.ChangeType(fromObject, toObject);
-        }
+        public static dynamic ConvertType(dynamic fromObject, Type toObject) => Convert.ChangeType(fromObject, toObject);
 
         /// <summary>
         /// Convert stream to byte array
@@ -548,9 +536,6 @@ namespace BybitAPI.Client
         /// </summary>
         /// <param name="value"></param>
         /// <returns>True if object is a collection type</returns>
-        private static bool IsCollection(object value)
-        {
-            return value is IList || value is ICollection;
-        }
+        private static bool IsCollection(object value) => value is IList || value is ICollection;
     }
 }

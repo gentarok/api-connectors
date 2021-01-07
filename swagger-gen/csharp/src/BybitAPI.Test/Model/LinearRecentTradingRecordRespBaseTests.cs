@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearRecentTradingRecordRespBase();
-        }
+        public void Init() => instance = new LinearRecentTradingRecordRespBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearRecentTradingRecordRespBase
         /// </summary>
         [Test]
-        public void LinearRecentTradingRecordRespBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearRecentTradingRecordRespBase>(instance, "variable 'instance' is a LinearRecentTradingRecordRespBase");
-        }
+        public void LinearRecentTradingRecordRespBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearRecentTradingRecordRespBase>(instance, "variable 'instance' is a LinearRecentTradingRecordRespBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

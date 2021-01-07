@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearRiskLimitResp();
-        }
+        public void Init() => instance = new LinearRiskLimitResp();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearRiskLimitResp
         /// </summary>
         [Test]
-        public void LinearRiskLimitRespInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearRiskLimitResp>(instance, "variable 'instance' is a LinearRiskLimitResp");
-        }
+        public void LinearRiskLimitRespInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearRiskLimitResp>(instance, "variable 'instance' is a LinearRiskLimitResp");
 
         ///// <summary>
         ///// Test the property 'CreatedAt'

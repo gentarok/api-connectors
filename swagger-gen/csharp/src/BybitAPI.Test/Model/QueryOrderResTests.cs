@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new QueryOrderRes();
-        }
+        public void Init() => instance = new QueryOrderRes();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of QueryOrderRes
         /// </summary>
         [Test]
-        public void QueryOrderResInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<QueryOrderRes>(instance, "variable 'instance' is a QueryOrderRes");
-        }
+        public void QueryOrderResInstance_ShouldBeCreated() => Assert.IsInstanceOf<QueryOrderRes>(instance, "variable 'instance' is a QueryOrderRes");
 
         ///// <summary>
         ///// Test the property 'OrderId'

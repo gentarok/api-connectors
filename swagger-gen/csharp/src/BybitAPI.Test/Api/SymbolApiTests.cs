@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new SymbolApi();
-        }
+        public void Init() => instance = new SymbolApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of SymbolApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<SymbolApi>(instance, "instance is a SymbolApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<SymbolApi>(instance, "instance is a SymbolApi");
 
         ///// <summary>
         ///// Test SymbolGet

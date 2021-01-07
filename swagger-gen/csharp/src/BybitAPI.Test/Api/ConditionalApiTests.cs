@@ -53,10 +53,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ConditionalApi>(instance, "instance is a ConditionalApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<ConditionalApi>(instance, "instance is a ConditionalApi");
 
         private readonly string conditionalCancelJson = @"
 {

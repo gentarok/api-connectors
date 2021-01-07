@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new KlineRes();
-        }
+        public void Init() => instance = new KlineRes();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of KlineRes
         /// </summary>
         [Test]
-        public void KlineResInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<KlineRes>(instance, "variable 'instance' is a KlineRes");
-        }
+        public void KlineResInstance_ShouldBeCreated() => Assert.IsInstanceOf<KlineRes>(instance, "variable 'instance' is a KlineRes");
 
         ///// <summary>
         ///// Test the property 'Symbol'

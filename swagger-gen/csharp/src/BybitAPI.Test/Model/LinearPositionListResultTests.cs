@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearPositionListResult();
-        }
+        public void Init() => instance = new LinearPositionListResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearPositionListResult
         /// </summary>
         [Test]
-        public void LinearPositionListResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearPositionListResult>(instance, "variable 'instance' is a LinearPositionListResult");
-        }
+        public void LinearPositionListResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearPositionListResult>(instance, "variable 'instance' is a LinearPositionListResult");
 
         ///// <summary>
         ///// Test the property 'BustPrice'

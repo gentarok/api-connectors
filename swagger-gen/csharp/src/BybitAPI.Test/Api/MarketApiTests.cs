@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new MarketApi();
-        }
+        public void Init() => instance = new MarketApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of MarketApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<MarketApi>(instance, "instance is a MarketApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<MarketApi>(instance, "instance is a MarketApi");
 
         ///// <summary>
         ///// Test MarketAccountRatio

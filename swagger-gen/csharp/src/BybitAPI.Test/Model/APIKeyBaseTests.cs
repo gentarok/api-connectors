@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new APIKeyBase();
-        }
+        public void Init() => instance = new APIKeyBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of APIKeyBase
         /// </summary>
         [Test]
-        public void APIKeyBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<APIKeyBase>(instance, "variable 'instance' is a APIKeyBase");
-        }
+        public void APIKeyBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<APIKeyBase>(instance, "variable 'instance' is a APIKeyBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

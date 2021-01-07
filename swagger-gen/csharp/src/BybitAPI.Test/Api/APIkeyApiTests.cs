@@ -50,10 +50,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<APIkeyApi>(instance, "instance is a APIkeyApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<APIkeyApi>(instance, "instance is a APIkeyApi");
 
         private readonly string json = @"{
     ""ret_code"": 0,

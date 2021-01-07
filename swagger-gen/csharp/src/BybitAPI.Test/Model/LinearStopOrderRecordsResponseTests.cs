@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearStopOrderRecordsResponse();
-        }
+        public void Init() => instance = new LinearStopOrderRecordsResponse();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearStopOrderRecordsResponse
         /// </summary>
         [Test]
-        public void LinearStopOrderRecordsResponseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearStopOrderRecordsResponse>(instance, "variable 'instance' is a LinearStopOrderRecordsResponse");
-        }
+        public void LinearStopOrderRecordsResponseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearStopOrderRecordsResponse>(instance, "variable 'instance' is a LinearStopOrderRecordsResponse");
 
         ///// <summary>
         ///// Test the property 'CurrentPage'

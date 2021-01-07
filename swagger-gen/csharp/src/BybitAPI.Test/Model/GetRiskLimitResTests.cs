@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new GetRiskLimitRes();
-        }
+        public void Init() => instance = new GetRiskLimitRes();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of GetRiskLimitRes
         /// </summary>
         [Test]
-        public void GetRiskLimitResInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<GetRiskLimitRes>(instance, "variable 'instance' is a GetRiskLimitRes");
-        }
+        public void GetRiskLimitResInstance_ShouldBeCreated() => Assert.IsInstanceOf<GetRiskLimitRes>(instance, "variable 'instance' is a GetRiskLimitRes");
 
         ///// <summary>
         ///// Test the property 'RetCode'

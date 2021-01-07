@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearClosePnlRecordsResponse();
-        }
+        public void Init() => instance = new LinearClosePnlRecordsResponse();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearClosePnlRecordsResponse
         /// </summary>
         [Test]
-        public void LinearClosePnlRecordsResponseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearClosePnlRecordsResponse>(instance, "variable 'instance' is a LinearClosePnlRecordsResponse");
-        }
+        public void LinearClosePnlRecordsResponseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearClosePnlRecordsResponse>(instance, "variable 'instance' is a LinearClosePnlRecordsResponse");
 
         ///// <summary>
         ///// Test the property 'RetCode'

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new SymbolInfoBase();
-        }
+        public void Init() => instance = new SymbolInfoBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of SymbolInfoBase
         /// </summary>
         [Test]
-        public void SymbolInfoBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<SymbolInfoBase>(instance, "variable 'instance' is a SymbolInfoBase");
-        }
+        public void SymbolInfoBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<SymbolInfoBase>(instance, "variable 'instance' is a SymbolInfoBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

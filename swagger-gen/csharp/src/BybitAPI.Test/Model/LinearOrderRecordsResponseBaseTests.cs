@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearOrderRecordsResponseBase();
-        }
+        public void Init() => instance = new LinearOrderRecordsResponseBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearOrderRecordsResponseBase
         /// </summary>
         [Test]
-        public void LinearOrderRecordsResponseBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearOrderRecordsResponseBase>(instance, "variable 'instance' is a LinearOrderRecordsResponseBase");
-        }
+        public void LinearOrderRecordsResponseBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearOrderRecordsResponseBase>(instance, "variable 'instance' is a LinearOrderRecordsResponseBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

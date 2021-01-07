@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new MarkPriceKlineInfo();
-        }
+        public void Init() => instance = new MarkPriceKlineInfo();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of MarkPriceKlineInfo
         /// </summary>
         [Test]
-        public void MarkPriceKlineInfoInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<MarkPriceKlineInfo>(instance, "variable 'instance' is a MarkPriceKlineInfo");
-        }
+        public void MarkPriceKlineInfoInstance_ShouldBeCreated() => Assert.IsInstanceOf<MarkPriceKlineInfo>(instance, "variable 'instance' is a MarkPriceKlineInfo");
 
         ///// <summary>
         ///// Test the property 'Id'

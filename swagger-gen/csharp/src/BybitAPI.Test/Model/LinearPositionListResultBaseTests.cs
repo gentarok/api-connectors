@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearPositionListResultBase();
-        }
+        public void Init() => instance = new LinearPositionListResultBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearPositionListResultBase
         /// </summary>
         [Test]
-        public void LinearPositionListResultBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearPositionListResultBase>(instance, "variable 'instance' is a LinearPositionListResultBase");
-        }
+        public void LinearPositionListResultBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearPositionListResultBase>(instance, "variable 'instance' is a LinearPositionListResultBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

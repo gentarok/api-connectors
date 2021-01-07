@@ -101,20 +101,14 @@ namespace BybitAPI.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
+        public virtual string ToJson() => JsonConvert.SerializeObject(this, Formatting.Indented);
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return Equals(input as LinearPositionListResultBase);
-        }
+        public override bool Equals(object input) => Equals(input as LinearPositionListResultBase);
 
         /// <summary>
         /// Returns true if LinearPositionListResultBase instances are equal

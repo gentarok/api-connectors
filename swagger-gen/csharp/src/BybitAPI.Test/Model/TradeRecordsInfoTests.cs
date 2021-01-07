@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new TradeRecordsInfo();
-        }
+        public void Init() => instance = new TradeRecordsInfo();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of TradeRecordsInfo
         /// </summary>
         [Test]
-        public void TradeRecordsInfoInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<TradeRecordsInfo>(instance, "variable 'instance' is a TradeRecordsInfo");
-        }
+        public void TradeRecordsInfoInstance_ShouldBeCreated() => Assert.IsInstanceOf<TradeRecordsInfo>(instance, "variable 'instance' is a TradeRecordsInfo");
 
         ///// <summary>
         ///// Test the property 'ClosedSize'

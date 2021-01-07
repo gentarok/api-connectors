@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ExtFields();
-        }
+        public void Init() => instance = new ExtFields();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ExtFields
         /// </summary>
         [Test]
-        public void ExtFieldsInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ExtFields>(instance, "variable 'instance' is a ExtFields");
-        }
+        public void ExtFieldsInstance_ShouldBeCreated() => Assert.IsInstanceOf<ExtFields>(instance, "variable 'instance' is a ExtFields");
 
         ///// <summary>
         ///// Test the property 'OReqNum'

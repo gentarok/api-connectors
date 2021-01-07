@@ -6,7 +6,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BybitAPI", "src\BybitAPI\By
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BybitAPI.Test", "src\BybitAPI.Test\BybitAPI.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BybitAPI.IntegrationTest", "src\BybitAPI.IntegrationTest\BybitAPI.IntegrationTest.csproj", "{43604071-0197-4F30-BA1D-5B4D4A07A7AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BybitAPI.IntegrationTest", "src\BybitAPI.IntegrationTest\BybitAPI.IntegrationTest.csproj", "{43604071-0197-4F30-BA1D-5B4D4A07A7AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{758E84BD-6935-4101-8389-5F5D5BF0E176}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

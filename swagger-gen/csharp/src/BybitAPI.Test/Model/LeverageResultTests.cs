@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LeverageResult();
-        }
+        public void Init() => instance = new LeverageResult();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LeverageResult
         /// </summary>
         [Test]
-        public void LeverageResultInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LeverageResult>(instance, "variable 'instance' is a LeverageResult");
-        }
+        public void LeverageResultInstance_ShouldBeCreated() => Assert.IsInstanceOf<LeverageResult>(instance, "variable 'instance' is a LeverageResult");
 
         ///// <summary>
         ///// Test the property 'BTCUSD'

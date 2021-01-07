@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new PriceFilter();
-        }
+        public void Init() => instance = new PriceFilter();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of PriceFilter
         /// </summary>
         [Test]
-        public void PriceFilterInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<PriceFilter>(instance, "variable 'instance' is a PriceFilter");
-        }
+        public void PriceFilterInstance_ShouldBeCreated() => Assert.IsInstanceOf<PriceFilter>(instance, "variable 'instance' is a PriceFilter");
 
         ///// <summary>
         ///// Test the property 'MinPrice'

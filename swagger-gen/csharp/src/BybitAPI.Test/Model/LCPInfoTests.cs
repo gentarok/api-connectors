@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LCPInfoBase();
-        }
+        public void Init() => instance = new LCPInfoBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LCPInfo
         /// </summary>
         [Test]
-        public void LCPInfoInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LCPInfoBase>(instance, "variable 'instance' is a LCPInfo");
-        }
+        public void LCPInfoInstance_ShouldBeCreated() => Assert.IsInstanceOf<LCPInfoBase>(instance, "variable 'instance' is a LCPInfo");
 
         ///// <summary>
         ///// Test the property 'RetCode'

@@ -198,10 +198,7 @@ namespace BybitAPI.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public string GetBasePath()
-        {
-            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
-        }
+        public string GetBasePath() => Configuration.ApiClient.RestClient.BaseUrl.ToString();
 
         /// <summary>
         /// Sets the base path of the API client.
@@ -240,10 +237,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<string, string> DefaultHeader()
-        {
-            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
-        }
+        public IDictionary<string, string> DefaultHeader() => new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 
         /// <summary>
         /// Add default header.
@@ -252,10 +246,7 @@ namespace BybitAPI.Api
         /// <param name="value">Header field value.</param>
         /// <returns></returns>
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
-        {
-            Configuration.AddDefaultHeader(key, value);
-        }
+        public void AddDefaultHeader(string key, string value) => Configuration.AddDefaultHeader(key, value);
 
         /// <summary>
         /// Get user’s trade records.

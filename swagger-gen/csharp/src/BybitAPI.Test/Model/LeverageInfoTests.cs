@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LeverageInfo();
-        }
+        public void Init() => instance = new LeverageInfo();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LeverageInfo
         /// </summary>
         [Test]
-        public void LeverageInfoInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LeverageInfo>(instance, "variable 'instance' is a LeverageInfo");
-        }
+        public void LeverageInfoInstance_ShouldBeCreated() => Assert.IsInstanceOf<LeverageInfo>(instance, "variable 'instance' is a LeverageInfo");
 
         ///// <summary>
         ///// Test the property 'Leverage'

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new RiskIDRes();
-        }
+        public void Init() => instance = new RiskIDRes();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of RiskIDRes
         /// </summary>
         [Test]
-        public void RiskIDResInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<RiskIDRes>(instance, "variable 'instance' is a RiskIDRes");
-        }
+        public void RiskIDResInstance_ShouldBeCreated() => Assert.IsInstanceOf<RiskIDRes>(instance, "variable 'instance' is a RiskIDRes");
 
         ///// <summary>
         ///// Test the property 'Id'

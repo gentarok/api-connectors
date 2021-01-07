@@ -28,10 +28,7 @@ namespace BybitAPI.Api.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearOrderApi();
-        }
+        public void Init() => instance = new LinearOrderApi();
 
         /// <summary>
         /// Clean up after each unit test
@@ -45,10 +42,7 @@ namespace BybitAPI.Api.Test
         /// Test an instance of LinearOrderApi
         /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearOrderApi>(instance, "instance is a LinearOrderApi");
-        }
+        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<LinearOrderApi>(instance, "instance is a LinearOrderApi");
 
         ///// <summary>
         ///// Test LinearOrderCancel

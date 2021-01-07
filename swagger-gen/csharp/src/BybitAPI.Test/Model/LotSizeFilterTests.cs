@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LotSizeFilter();
-        }
+        public void Init() => instance = new LotSizeFilter();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LotSizeFilter
         /// </summary>
         [Test]
-        public void LotSizeFilterInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LotSizeFilter>(instance, "variable 'instance' is a LotSizeFilter");
-        }
+        public void LotSizeFilterInstance_ShouldBeCreated() => Assert.IsInstanceOf<LotSizeFilter>(instance, "variable 'instance' is a LotSizeFilter");
 
         ///// <summary>
         ///// Test the property 'MinTradingQty'

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new LinearKlineRespBase();
-        }
+        public void Init() => instance = new LinearKlineRespBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of LinearKlineRespBase
         /// </summary>
         [Test]
-        public void LinearKlineRespBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<LinearKlineRespBase>(instance, "variable 'instance' is a LinearKlineRespBase");
-        }
+        public void LinearKlineRespBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<LinearKlineRespBase>(instance, "variable 'instance' is a LinearKlineRespBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

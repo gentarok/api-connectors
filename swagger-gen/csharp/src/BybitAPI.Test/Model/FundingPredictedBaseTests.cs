@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new FundingPredictedBase();
-        }
+        public void Init() => instance = new FundingPredictedBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of FundingPredictedBase
         /// </summary>
         [Test]
-        public void FundingPredictedBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<FundingPredictedBase>(instance, "variable 'instance' is a FundingPredictedBase");
-        }
+        public void FundingPredictedBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<FundingPredictedBase>(instance, "variable 'instance' is a FundingPredictedBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new ExchangeOrderList();
-        }
+        public void Init() => instance = new ExchangeOrderList();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of ExchangeOrderList
         /// </summary>
         [Test]
-        public void ExchangeOrderListInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<ExchangeOrderList>(instance, "variable 'instance' is a ExchangeOrderList");
-        }
+        public void ExchangeOrderListInstance_ShouldBeCreated() => Assert.IsInstanceOf<ExchangeOrderList>(instance, "variable 'instance' is a ExchangeOrderList");
 
         ///// <summary>
         ///// Test the property 'FromCoin'

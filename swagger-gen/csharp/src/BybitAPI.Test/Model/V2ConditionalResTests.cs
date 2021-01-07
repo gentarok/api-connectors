@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new V2ConditionalRes();
-        }
+        public void Init() => instance = new V2ConditionalRes();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of V2ConditionalRes
         /// </summary>
         [Test]
-        public void V2ConditionalResInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<V2ConditionalRes>(instance, "variable 'instance' is a V2ConditionalRes");
-        }
+        public void V2ConditionalResInstance_ShouldBeCreated() => Assert.IsInstanceOf<V2ConditionalRes>(instance, "variable 'instance' is a V2ConditionalRes");
 
         ///// <summary>
         ///// Test the property 'UserId'

@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new V2OrderListData();
-        }
+        public void Init() => instance = new V2OrderListData();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of V2OrderListData
         /// </summary>
         [Test]
-        public void V2OrderListDataInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<V2OrderListData>(instance, "variable 'instance' is a V2OrderListData");
-        }
+        public void V2OrderListDataInstance_ShouldBeCreated() => Assert.IsInstanceOf<V2OrderListData>(instance, "variable 'instance' is a V2OrderListData");
 
         ///// <summary>
         ///// Test the property 'Data'

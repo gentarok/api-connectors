@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new Position();
-        }
+        public void Init() => instance = new Position();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of Position
         /// </summary>
         [Test]
-        public void PositionInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<Position>(instance, "variable 'instance' is a Position");
-        }
+        public void PositionInstance_ShouldBeCreated() => Assert.IsInstanceOf<Position>(instance, "variable 'instance' is a Position");
 
         ///// <summary>
         ///// Test the property 'RetCode'

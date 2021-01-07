@@ -28,10 +28,7 @@ namespace BybitAPI.Model.Test
         /// Setup before each test
         /// </summary>
         [SetUp]
-        public void Init()
-        {
-            instance = new SetRiskLimitBase();
-        }
+        public void Init() => instance = new SetRiskLimitBase();
 
         /// <summary>
         /// Clean up after each test
@@ -45,10 +42,7 @@ namespace BybitAPI.Model.Test
         /// Test an instance of SetRiskLimitBase
         /// </summary>
         [Test]
-        public void SetRiskLimitBaseInstance_ShouldBeCreated()
-        {
-            Assert.IsInstanceOf<SetRiskLimitBase>(instance, "variable 'instance' is a SetRiskLimitBase");
-        }
+        public void SetRiskLimitBaseInstance_ShouldBeCreated() => Assert.IsInstanceOf<SetRiskLimitBase>(instance, "variable 'instance' is a SetRiskLimitBase");
 
         ///// <summary>
         ///// Test the property 'RetCode'
