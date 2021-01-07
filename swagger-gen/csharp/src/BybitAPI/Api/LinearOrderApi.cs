@@ -424,7 +424,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LinearOrderApi(Configuration configuration = null)
+        public LinearOrderApi(Configuration? configuration = null)
         {
             if (configuration is null) // use the default one in Configuration
             {

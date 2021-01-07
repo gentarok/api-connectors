@@ -168,7 +168,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public KlineApi(Configuration configuration = null)
+        public KlineApi(Configuration? configuration = null)
         {
             if (configuration is null) // use the default one in Configuration
             {

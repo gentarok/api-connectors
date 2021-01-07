@@ -440,7 +440,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LinearConditionalApi(Configuration configuration = null)
+        public LinearConditionalApi(Configuration? configuration = null)
         {
             if (configuration is null) // use the default one in Configuration
             {

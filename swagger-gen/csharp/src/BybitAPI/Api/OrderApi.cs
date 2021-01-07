@@ -404,7 +404,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public OrderApi(Configuration configuration = null)
+        public OrderApi(Configuration? configuration = null)
         {
             if (configuration is null) // use the default one in Configuration
             {

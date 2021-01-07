@@ -188,7 +188,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public FundingApi(Configuration configuration = null)
+        public FundingApi(Configuration? configuration = null)
         {
             if (configuration is null) // use the default one in Configuration
             {
