@@ -12,7 +12,6 @@ using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
-using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -67,14 +66,14 @@ namespace BybitAPI.Api.Test
     ""time_now"": ""1577452218.567120"",
     ""rate_limit_status"": 97,
     ""rate_limit_reset_ms"": 1577452218573,
-    ""rate_limit"": ""100""
+     ""rate_limit"": ""100""
 }
 ";
 
         [Test]
         [TestCase("", null)]
         [TestCase(null, "")]
-        public void ConditionalCancel_SymbolIsNotNullAndEitherStopOrderIdOrOrderLinkIdIsNotNull_ShouldReturnV2ConditionalBaseOfOrderIdRes(string stopOrderId, string orderLinkId)
+        public void ConditionalCancel_SymbolIsNotNullAndEitherStopOrderIdOrOrderLinkIdIsNotNull_ShouldReturnConditionalCancelBase(string stopOrderId, string orderLinkId)
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelJson);
@@ -88,7 +87,7 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalCancel(symbol, stopOrderId, orderLinkId);
 
             // Assert
-            Assert.IsInstanceOf<V2ConditionalBase<OrderIdRes>>(response, "response is ConditionalCancelBase");
+            Assert.IsInstanceOf<ConditionalCancelBase>(response, "response is ConditionalCancelBase");
         }
 
         [Test]
@@ -177,7 +176,7 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void ConditionalCancelAll_ShouldReturnConditionalV2ConditionalBaseOfListOfConditionalCancelAllRes()
+        public void ConditionalCancelAll_ShouldReturnConditionalCancelAllBase()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
@@ -189,7 +188,7 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalCancelAll(symbol);
 
             // Assert
-            Assert.IsInstanceOf<V2ConditionalBase<List<ConditionalCancelAllRes>>>(response, "response is V2ConditionalBase<List<ConditionalCancelAllRes>>");
+            Assert.IsInstanceOf<ConditionalCancelAllBase>(response, "response is ConditionalCancelAllBase");
         }
 
         [Test]
@@ -212,7 +211,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        public void ConditionalCancelAllWithHttpInfo_ShouldReturnApiResponseOfV2ConditionalBaseOfListOfConditionalCancelAllRes()
+        public void ConditionalCancelAllWithHttpInfo_ShouldReturnApiResponseOfConditionalCancelAllBase()
         {
             // Arrange
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalCancelAllJson);
@@ -224,7 +223,7 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalCancelAllWithHttpInfo(symbol);
 
             // Assert
-            Assert.IsInstanceOf<ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>>(response, "response is ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>");
+            Assert.IsInstanceOf<ApiResponse<ConditionalCancelAllBase>>(response, "response is ApiResponseConditionalCancelAllBase>");
         }
 
         [Test]
@@ -349,43 +348,244 @@ namespace BybitAPI.Api.Test
 }
 ";
 
-        ///// <summary>
-        ///// Test ConditionalGetOrders
-        ///// </summary>
-        //[Test]
-        //public void ConditionalGetOrdersTest()
-        //{
-        //    // TODO uncomment below to test the method and replace null with proper value
-        //    //string symbol = null;
-        //    //string stopOrderStatus = null;
-        //    //decimal? limit = null;
-        //    //string direction = null;
-        //    //string cursor = null;
-        //    //var response = instance.ConditionalGetOrders(symbol, stopOrderStatus, limit, direction, cursor);
-        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
-        //}
+        [Test]
+        public void ConditionalGetOrders_SymbolIsNotNull_ShouldReturnConditionalGetOrdersResBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
-        ///// <summary>
-        ///// Test ConditionalNew
-        ///// </summary>
-        //[Test]
-        //public void ConditionalNewTest()
-        //{
-        //    // TODO uncomment below to test the method and replace null with proper value
-        //    //string side = null;
-        //    //string symbol = null;
-        //    //string orderType = null;
-        //    //string qty = null;
-        //    //string basePrice = null;
-        //    //string stopPx = null;
-        //    //string timeInForce = null;
-        //    //string price = null;
-        //    //string triggerBy = null;
-        //    //bool? closeOnTrigger = null;
-        //    //string orderLinkId = null;
-        //    //var response = instance.ConditionalNew(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId);
-        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
-        //}
+            var symbol = string.Empty;
+            string stopOrderStatus = null;
+            decimal? limit = null;
+            string direction = null;
+            string cursor = null;
+
+            // Act
+            var response = instance.ConditionalGetOrders(symbol, stopOrderStatus, limit, direction, cursor);
+
+            // Assert
+            Assert.IsInstanceOf<ConditionalGetOrdersResBase>(response, "response is ConditionalGetOrdersResBase");
+        }
+
+        [Test]
+        public void ConditionalGetOrders_SymbolIsNull_ShouldRaiseApiExciption()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = null;
+            string stopOrderStatus = null;
+            decimal? limit = null;
+            string direction = null;
+            string cursor = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalGetOrders(symbol, stopOrderStatus, limit, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        public void ConditionalGetOrdersWithHttpInfo_SymbolIsNotNull_ShouldReturnApiResponseOfConditionalGetOrdersResBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = string.Empty;
+            string stopOrderStatus = null;
+            decimal? limit = null;
+            string direction = null;
+            string cursor = null;
+
+            // Act
+            var response = instance.ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalGetOrdersResBase>>(response, "response is ConditionalGetOrdersResBase");
+        }
+
+        [Test]
+        public void ConditionalGetOrdersWithHttpInfo_SymbolIsNull_ShouldReturnApiResponseOfConditionalGetOrdersResBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = null;
+            string stopOrderStatus = null;
+            decimal? limit = null;
+            string direction = null;
+            string cursor = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        public async Task ConditionalGetOrdersAsync_SymbolIsNotNull_ShouldReturnConditionalGetOrdersResBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = string.Empty;
+            string stopOrderStatus = null;
+            decimal? limit = null;
+            string direction = null;
+            string cursor = null;
+
+            // Act
+            var response = await instance.ConditionalGetOrdersAsync(symbol, stopOrderStatus, limit, direction, cursor);
+
+            // Assert
+            Assert.IsInstanceOf<ConditionalGetOrdersResBase>(response, "response is ConditionalGetOrdersResBase");
+        }
+
+        [Test]
+        public void ConditionalGetOrdersAsync_SymbolIsNull_ShouldRaiseApiExciption()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = null;
+            string stopOrderStatus = null;
+            decimal? limit = null;
+            string direction = null;
+            string cursor = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalGetOrdersAsync(symbol, stopOrderStatus, limit, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        public async Task ConditionalGetOrdersAsyncWithHttpInfo_SymbolIsNotNull_ShouldReturnApiResponseOfConditionalGetOrdersResBase()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = string.Empty;
+            string stopOrderStatus = null;
+            decimal? limit = null;
+            string direction = null;
+            string cursor = null;
+
+            // Act
+            var response = await instance.ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalGetOrdersResBase>>(response, "response is ApiResponse<ConditionalGetOrdersResBase>");
+        }
+
+        [Test]
+        public void ConditionalGetOrdersAsyncWithHttpInfo_SymbolIsNull_ShouldRaiseApiExciption()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string symbol = null;
+            string stopOrderStatus = null;
+            decimal? limit = null;
+            string direction = null;
+            string cursor = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        private readonly string conditionalNetJson = @"
+{
+    ""ret_code"":0,
+    ""ret_msg"":""OK"",
+    ""ext_code"":"""",
+    ""ext_info"":"""",
+    ""result"":{
+        ""user_id"":160880,
+        ""symbol"":""BTCUSD"",
+        ""side"":""Buy"",
+        ""order_type"":""Limit"",
+        ""price"":""9003"",
+        ""qty"":""2"",
+        ""time_in_force"":""GoodTillCancel"",
+        ""remark"":""127.0.0.1"",
+        ""leaves_qty"":""2"",
+        ""leaves_value"":""0"",
+        ""stop_px"":""8232"",
+        ""reject_reason"":""EC_NoError"",
+        ""stop_order_id"":""eaf205ac-9dcc-44f6-8731-734e2101e61b"",
+        ""created_at"":""2020-11-06T07:48:43.940Z"",
+        ""updated_at"":""2020-11-06T07:48:43.940Z""
+    },
+    ""time_now"":""1604648923.942177""
+}
+";
+
+        [Test]
+        public void ConditionalNewTest()
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalNetJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            string side = null;
+            string symbol = null;
+            string orderType = null;
+            decimal qty = default;
+            decimal basePrice = default;
+            decimal stopPx = default;
+            string timeInForce = null;
+            decimal? price = null;
+            string triggerBy = null;
+            bool? closeOnTrigger = null;
+            string orderLinkId = null;
+            var response = instance.ConditionalNew(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId);
+            Assert.IsInstanceOf<object>(response, "response is Object");
+        }
+
+        [Test]
+        public void ConditionalNewTest(string side, string symbol, string orderType, string timeInForce)
+        {
+            // Arrange
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalNetJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            decimal qty = default;
+            decimal basePrice = default;
+            decimal stopPx = default;
+            decimal? price = null;
+            string triggerBy = null;
+            bool? closeOnTrigger = null;
+            string orderLinkId = null;
+            var response = instance.ConditionalNew(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId);
+            Assert.IsInstanceOf<object>(response, "response is Object");
+        }
 
         ///// <summary>
         ///// Test ConditionalQuery

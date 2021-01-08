@@ -33,8 +33,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>V2ConditionalBase of OrderIdRes</returns>
-        V2ConditionalBase<OrderIdRes> ConditionalCancel(string symbol, string stopOrderId = null, string orderLinkId = null);
+        /// <returns><see cref="ConditionalCancelBase"/></returns>
+        ConditionalCancelBase ConditionalCancel(string symbol, string stopOrderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
@@ -46,8 +46,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>ApiResponse of V2ConditionalBase (OrderIdRes)</returns>
-        ApiResponse<V2ConditionalBase<OrderIdRes>> ConditionalCancelWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null);
+        /// <returns>ApiResponse of ConditionalCancelBase</returns>
+        ApiResponse<ConditionalCancelBase> ConditionalCancelWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
@@ -57,8 +57,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>V2ConditionalBase of List of ConditionalCancelAllRes</returns>
-        V2ConditionalBase<List<ConditionalCancelAllRes>> ConditionalCancelAll(string symbol);
+        /// <returns><see cref="ConditionalCancelAllBase"/></returns>
+        ConditionalCancelAllBase ConditionalCancelAll(string symbol);
 
         /// <summary>
         /// Cancel conditional order.
@@ -68,8 +68,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of V2ConditionalBase (List of ConditionalCancelAllRes)</returns>
-        ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>> ConditionalCancelAllWithHttpInfo(string symbol);
+        /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
+        ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my conditional order list.
@@ -83,8 +83,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Object</returns>
-        object ConditionalGetOrders(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null);
+        /// <returns><see cref="ConditionalGetOrdersResBase"/></returns>
+        ConditionalGetOrdersResBase ConditionalGetOrders(string symbol, string? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null);
 
         /// <summary>
         /// Get my conditional order list.
@@ -98,8 +98,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> ConditionalGetOrdersWithHttpInfo(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null);
+        /// <returns>ApiResponse of ConditionalOrdersResBase</returns>
+        ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(string symbol, string? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null);
 
         /// <summary>
         /// Place a new conditional order.
@@ -119,8 +119,8 @@ namespace BybitAPI.Api
         /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
         /// <param name="closeOnTrigger">close on trigger. (optional)</param>
         /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>Object</returns>
-        object ConditionalNew(string side, string symbol, string orderType, string qty, string basePrice, string stopPx, string timeInForce, string price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        /// <returns><see cref="ConditionalNewOrderBase"/></returns>
+        ConditionalNewOrderBase ConditionalNew(string side, string symbol, string orderType, decimal qty, decimal basePrice, decimal stopPx, string timeInForce, decimal? price = null, string? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null);
 
         /// <summary>
         /// Place a new conditional order.
@@ -140,8 +140,8 @@ namespace BybitAPI.Api
         /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
         /// <param name="closeOnTrigger">close on trigger. (optional)</param>
         /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> ConditionalNewWithHttpInfo(string side, string symbol, string orderType, string qty, string basePrice, string stopPx, string timeInForce, string price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        /// <returns>ApiResponse of ConditionalNewOrderBase</returns>
+        ApiResponse<ConditionalNewOrderBase> ConditionalNewWithHttpInfo(string side, string symbol, string orderType, decimal qty, decimal basePrice, decimal stopPx, string timeInForce, decimal? price = null, string? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null);
 
         /// <summary>
         /// Query real-time stop order information.
@@ -154,7 +154,7 @@ namespace BybitAPI.Api
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Object</returns>
-        object ConditionalQuery(string stopOrderId = null, string orderLinkId = null, string symbol = null);
+        object ConditionalQuery(string? stopOrderId = null, string? orderLinkId = null, string? symbol = null);
 
         /// <summary>
         /// Query real-time stop order information.
@@ -167,7 +167,7 @@ namespace BybitAPI.Api
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> ConditionalQueryWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null);
+        ApiResponse<object> ConditionalQueryWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, string? symbol = null);
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
@@ -183,7 +183,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
         /// <returns>Object</returns>
-        object ConditionalReplace(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null, string pRTriggerPrice = null);
+        object ConditionalReplace(string symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null);
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
@@ -199,7 +199,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> ConditionalReplaceWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null, string pRTriggerPrice = null);
+        ApiResponse<object> ConditionalReplaceWithHttpInfo(string symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null);
 
         #endregion Synchronous Operations
 
@@ -215,8 +215,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of V2ConditionalBase (OrderIdRes)</returns>
-        Task<V2ConditionalBase<OrderIdRes>> ConditionalCancelAsync(string symbol, string stopOrderId = null, string orderLinkId = null);
+        /// <returns><see cref="ConditionalCancelBase"/></returns>
+        Task<ConditionalCancelBase> ConditionalCancelAsync(string symbol, string? stopOrderId = null, string? orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
@@ -228,8 +228,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of ApiResponse V2ConditionalBase of OrderIdRes</returns>
-        Task<ApiResponse<V2ConditionalBase<OrderIdRes>>> ConditionalCancelAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null);
+        /// <returns>Task of ApiResponse (ConditionalCancelBase)</returns>
+        Task<ApiResponse<ConditionalCancelBase>> ConditionalCancelAsyncWithHttpInfo(string symbol, string? stopOrderId = null, string? orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
@@ -239,8 +239,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of V2ConditionalBase (List of ConditionalCancelAllRes)</returns>
-        Task<V2ConditionalBase<List<ConditionalCancelAllRes>>> ConditionalCancelAllAsync(string symbol);
+        /// <returns>Task of ConditionalCancelAllBase</returns>
+        Task<ConditionalCancelAllBase> ConditionalCancelAllAsync(string symbol);
 
         /// <summary>
         /// Cancel conditional order.
@@ -250,8 +250,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (V2ConditionalBase (List of ConditionalCancelAllRes))</returns>
-        Task<ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>> ConditionalCancelAllAsyncWithHttpInfo(string symbol);
+        /// <returns>Task of ApiResponse (ConditionalCancelAllBase))</returns>
+        Task<ApiResponse<ConditionalCancelAllBase>> ConditionalCancelAllAsyncWithHttpInfo(string symbol);
 
         /// <summary>
         /// Get my conditional order list.
@@ -265,8 +265,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> ConditionalGetOrdersAsync(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null);
+        /// <returns>Task of ConditionalOrdersResBase</returns>
+        Task<ConditionalGetOrdersResBase> ConditionalGetOrdersAsync(string symbol, string? stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null);
 
         /// <summary>
         /// Get my conditional order list.
@@ -280,8 +280,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> ConditionalGetOrdersAsyncWithHttpInfo(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null);
+        /// <returns>Task of ApiResponse (ConditionalOrdersResBase)</returns>
+        Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null);
 
         /// <summary>
         /// Place a new conditional order.
@@ -301,8 +301,8 @@ namespace BybitAPI.Api
         /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
         /// <param name="closeOnTrigger">close on trigger. (optional)</param>
         /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> ConditionalNewAsync(string side, string symbol, string orderType, string qty, string basePrice, string stopPx, string timeInForce, string price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        /// <returns>Task of ConditionalNewOrderBase</returns>
+        Task<ConditionalNewOrderBase> ConditionalNewAsync(string side, string symbol, string orderType, decimal qty, decimal basePrice, decimal stopPx, string timeInForce, decimal? price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null);
 
         /// <summary>
         /// Place a new conditional order.
@@ -322,8 +322,8 @@ namespace BybitAPI.Api
         /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
         /// <param name="closeOnTrigger">close on trigger. (optional)</param>
         /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> ConditionalNewAsyncWithHttpInfo(string side, string symbol, string orderType, string qty, string basePrice, string stopPx, string timeInForce, string price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null);
+        /// <returns>Task of ApiResponse (ConditionalNewOrderBase)</returns>
+        Task<ApiResponse<ConditionalNewOrderBase>> ConditionalNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal qty, decimal basePrice, decimal stopPx, string timeInForce, decimal? price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null);
 
         /// <summary>
         /// Query real-time stop order information.
@@ -336,7 +336,7 @@ namespace BybitAPI.Api
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        Task<object> ConditionalQueryAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null);
+        Task<object> ConditionalQueryAsync(string? stopOrderId = null, string? orderLinkId = null, string? symbol = null);
 
         /// <summary>
         /// Query real-time stop order information.
@@ -349,7 +349,7 @@ namespace BybitAPI.Api
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> ConditionalQueryAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null);
+        Task<ApiResponse<object>> ConditionalQueryAsyncWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, string? symbol = null);
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
@@ -365,7 +365,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
         /// <returns>Task of Object</returns>
-        Task<object> ConditionalReplaceAsync(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null, string pRTriggerPrice = null);
+        Task<object> ConditionalReplaceAsync(string symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null);
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
@@ -381,7 +381,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> ConditionalReplaceAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null, string pRTriggerPrice = null);
+        Task<ApiResponse<object>> ConditionalReplaceAsyncWithHttpInfo(string symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null);
 
         #endregion Asynchronous Operations
     }
@@ -403,7 +403,7 @@ namespace BybitAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ConditionalApi(Configuration configuration = null) : base(configuration) { }
+        public ConditionalApi(Configuration? configuration = null) : base(configuration) { }
 
         /// <summary>
         /// Cancel conditional order.
@@ -412,8 +412,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>V2ConditionalBase of OrderIdRes</returns>
-        public V2ConditionalBase<OrderIdRes> ConditionalCancel(string symbol, string stopOrderId = null, string orderLinkId = null) => ConditionalCancelWithHttpInfo(symbol, stopOrderId, orderLinkId).Data;
+        /// <returns><see cref="ConditionalCancelBase"/></returns>
+        public ConditionalCancelBase ConditionalCancel(string symbol, string? stopOrderId = null, string? orderLinkId = null) => ConditionalCancelWithHttpInfo(symbol, stopOrderId, orderLinkId).Data;
 
         /// <summary>
         /// Cancel conditional order.
@@ -422,8 +422,8 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>ApiResponse of V2ConditionalBase (OrderIdRes)</returns>
-        public ApiResponse<V2ConditionalBase<OrderIdRes>> ConditionalCancelWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null)
+        /// <returns>ApiResponse of ConditionalCancelBase</returns>
+        public ApiResponse<ConditionalCancelBase> ConditionalCancelWithHttpInfo(string symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -463,7 +463,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            return CallApiWithHttpInfo<V2ConditionalBase<OrderIdRes>>(localVarPath, Method.POST, localVarQueryParams);
+            return CallApiWithHttpInfo<ConditionalCancelBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
         /// <summary>
@@ -474,7 +474,7 @@ namespace BybitAPI.Api
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>Task of ConditionalCancelBase</returns>
-        public async Task<V2ConditionalBase<OrderIdRes>> ConditionalCancelAsync(string symbol, string stopOrderId = null, string orderLinkId = null) => (await ConditionalCancelAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId)).Data;
+        public async Task<ConditionalCancelBase> ConditionalCancelAsync(string symbol, string? stopOrderId = null, string? orderLinkId = null) => (await ConditionalCancelAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId)).Data;
 
         /// <summary>
         /// Cancel conditional order.
@@ -484,7 +484,7 @@ namespace BybitAPI.Api
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>Task of ApiResponse (ConditionalCancelBase)</returns>
-        public Task<ApiResponse<V2ConditionalBase<OrderIdRes>>> ConditionalCancelAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null)
+        public Task<ApiResponse<ConditionalCancelBase>> ConditionalCancelAsyncWithHttpInfo(string symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -524,7 +524,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            return CallApiAsyncWithHttpInfo<V2ConditionalBase<OrderIdRes>>(localVarPath, Method.POST, localVarQueryParams);
+            return CallApiAsyncWithHttpInfo<ConditionalCancelBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
         /// <summary>
@@ -532,16 +532,16 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>V2ConditionalBase of List of ConditionalCancelAllRes</returns>
-        public V2ConditionalBase<List<ConditionalCancelAllRes>> ConditionalCancelAll(string symbol) => ConditionalCancelAllWithHttpInfo(symbol).Data;
+        /// <returns><see cref="ConditionalCancelAllBase"/></returns>
+        public ConditionalCancelAllBase ConditionalCancelAll(string symbol) => ConditionalCancelAllWithHttpInfo(symbol).Data;
 
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of V2ConditionalBase (List of ConditionalCancelAllRes)</returns>
-        public ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>> ConditionalCancelAllWithHttpInfo(string symbol)
+        /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
+        public ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -567,7 +567,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            return CallApiWithHttpInfo<V2ConditionalBase<List<ConditionalCancelAllRes>>>(localVarPath, Method.POST, localVarQueryParams);
+            return CallApiWithHttpInfo<ConditionalCancelAllBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
         /// <summary>
@@ -575,16 +575,16 @@ namespace BybitAPI.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of V2ConditionalBase (List of ConditionalCancelAllRes)</returns>
-        public async Task<V2ConditionalBase<List<ConditionalCancelAllRes>>> ConditionalCancelAllAsync(string symbol) => (await ConditionalCancelAllAsyncWithHttpInfo(symbol)).Data;
+        /// <returns>Task of ConditionalCancelAllBase</returns>
+        public async Task<ConditionalCancelAllBase> ConditionalCancelAllAsync(string symbol) => (await ConditionalCancelAllAsyncWithHttpInfo(symbol)).Data;
 
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (V2ConditionalBase (List of ConditionalCancelAllRes))</returns>
-        public Task<ApiResponse<V2ConditionalBase<List<ConditionalCancelAllRes>>>> ConditionalCancelAllAsyncWithHttpInfo(string symbol)
+        /// <returns>Task of ApiResponse (ConditionalCancelAllBase)</returns>
+        public Task<ApiResponse<ConditionalCancelAllBase>> ConditionalCancelAllAsyncWithHttpInfo(string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -610,7 +610,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            return CallApiAsyncWithHttpInfo<V2ConditionalBase<List<ConditionalCancelAllRes>>>(localVarPath, Method.POST, localVarQueryParams);
+            return CallApiAsyncWithHttpInfo<ConditionalCancelAllBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
         /// <summary>
@@ -622,8 +622,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Object</returns>
-        public object ConditionalGetOrders(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null) => ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor).Data;
+        /// <returns><see cref="ConditionalGetOrdersResBase"/></returns>
+        public ConditionalGetOrdersResBase ConditionalGetOrders(string symbol, string? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null) => ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor).Data;
 
         /// <summary>
         /// Get my conditional order list.
@@ -634,8 +634,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> ConditionalGetOrdersWithHttpInfo(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null)
+        /// <returns>ApiResponse of ConditionalOrdersResBase</returns>
+        public ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(string symbol, string? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -677,7 +677,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            return CallApiWithHttpInfo<object>(localVarPath, Method.GET, localVarQueryParams);
+            return CallApiWithHttpInfo<ConditionalGetOrdersResBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
         /// <summary>
@@ -689,8 +689,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async Task<object> ConditionalGetOrdersAsync(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null) => (await ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor)).Data;
+        /// <returns>Task of ConditionalOrdersResBase</returns>
+        public async Task<ConditionalGetOrdersResBase> ConditionalGetOrdersAsync(string symbol, string? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null) => (await ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor)).Data;
 
         /// <summary>
         /// Get my conditional order list.
@@ -701,8 +701,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public Task<ApiResponse<object>> ConditionalGetOrdersAsyncWithHttpInfo(string symbol, string stopOrderStatus = null, decimal? limit = null, string direction = null, string cursor = null)
+        /// <returns>Task of ApiResponse (ConditionalOrdersResBase)</returns>
+        public Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(string symbol, string? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -715,23 +715,23 @@ namespace BybitAPI.Api
 
             if (symbol is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol)); // query parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
             }
             if (stopOrderStatus is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_status", stopOrderStatus)); // query parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_status", stopOrderStatus));
             }
             if (limit is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
             }
             if (direction is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction)); // query parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "direction", direction));
             }
             if (cursor is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor));
             }
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -744,7 +744,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            return CallApiAsyncWithHttpInfo<object>(localVarPath, Method.GET, localVarQueryParams);
+            return CallApiAsyncWithHttpInfo<ConditionalGetOrdersResBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
         /// <summary>
@@ -762,8 +762,9 @@ namespace BybitAPI.Api
         /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
         /// <param name="closeOnTrigger">close on trigger. (optional)</param>
         /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>Object</returns>
-        public object ConditionalNew(string side, string symbol, string orderType, string qty, string basePrice, string stopPx, string timeInForce, string price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null) => ConditionalNewWithHttpInfo(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId).Data;
+        /// <returns><see cref="ConditionalNewOrderBase"/></returns>
+        public ConditionalNewOrderBase ConditionalNew(string side, string symbol, string orderType, decimal qty, decimal basePrice, decimal stopPx, string timeInForce, decimal? price = null, string? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null)
+            => ConditionalNewWithHttpInfo(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId).Data;
 
         /// <summary>
         /// Place a new conditional order.
@@ -780,8 +781,8 @@ namespace BybitAPI.Api
         /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
         /// <param name="closeOnTrigger">close on trigger. (optional)</param>
         /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> ConditionalNewWithHttpInfo(string side, string symbol, string orderType, string qty, string basePrice, string stopPx, string timeInForce, string price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null)
+        /// <returns>ApiResponse of ConditionalNewOrderBase</returns>
+        public ApiResponse<ConditionalNewOrderBase> ConditionalNewWithHttpInfo(string side, string symbol, string orderType, decimal qty, decimal basePrice, decimal stopPx, string timeInForce, decimal? price = null, string? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null)
         {
             // verify the required parameter 'side' is set
             if (side is null)
@@ -797,21 +798,6 @@ namespace BybitAPI.Api
             if (orderType is null)
             {
                 throw new ApiException(400, "Missing required parameter 'orderType' when calling ConditionalApi->ConditionalNew");
-            }
-            // verify the required parameter 'qty' is set
-            if (qty is null)
-            {
-                throw new ApiException(400, "Missing required parameter 'qty' when calling ConditionalApi->ConditionalNew");
-            }
-            // verify the required parameter 'basePrice' is set
-            if (basePrice is null)
-            {
-                throw new ApiException(400, "Missing required parameter 'basePrice' when calling ConditionalApi->ConditionalNew");
-            }
-            // verify the required parameter 'stopPx' is set
-            if (stopPx is null)
-            {
-                throw new ApiException(400, "Missing required parameter 'stopPx' when calling ConditionalApi->ConditionalNew");
             }
             // verify the required parameter 'timeInForce' is set
             if (timeInForce is null)
@@ -834,25 +820,18 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_type", Configuration.ApiClient.ParameterToString(orderType)));
             }
-            if (qty is not null)
+
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "qty", Configuration.ApiClient.ParameterToString(qty)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "base_price", Configuration.ApiClient.ParameterToString(basePrice)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_px", Configuration.ApiClient.ParameterToString(stopPx)));
+
+            if (timeInForce is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "qty", Configuration.ApiClient.ParameterToString(qty)));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)));
             }
             if (price is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "price", Configuration.ApiClient.ParameterToString(price)));
-            }
-            if (basePrice is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "base_price", Configuration.ApiClient.ParameterToString(basePrice)));
-            }
-            if (stopPx is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_px", Configuration.ApiClient.ParameterToString(stopPx)));
-            }
-            if (timeInForce is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)));
             }
             if (triggerBy is not null)
             {
@@ -877,7 +856,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            return CallApiWithHttpInfo<object>(localVarPath, Method.POST, localVarQueryParams);
+            return CallApiWithHttpInfo<ConditionalNewOrderBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
         /// <summary>
@@ -896,7 +875,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger. (optional)</param>
         /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async Task<object> ConditionalNewAsync(string side, string symbol, string orderType, string qty, string basePrice, string stopPx, string timeInForce, string price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null) => (await ConditionalNewAsyncWithHttpInfo(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId)).Data;
+        public async Task<ConditionalNewOrderBase> ConditionalNewAsync(string side, string symbol, string orderType, decimal qty, decimal basePrice, decimal stopPx, string timeInForce, decimal? price = null, string? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null) => (await ConditionalNewAsyncWithHttpInfo(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId)).Data;
 
         /// <summary>
         /// Place a new conditional order.
@@ -914,7 +893,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger. (optional)</param>
         /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public Task<ApiResponse<object>> ConditionalNewAsyncWithHttpInfo(string side, string symbol, string orderType, string qty, string basePrice, string stopPx, string timeInForce, string price = null, string triggerBy = null, bool? closeOnTrigger = null, string orderLinkId = null)
+        public Task<ApiResponse<ConditionalNewOrderBase>> ConditionalNewAsyncWithHttpInfo(string side, string symbol, string orderType, decimal qty, decimal basePrice, decimal stopPx, string timeInForce, decimal? price = null, string? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null)
         {
             // verify the required parameter 'side' is set
             if (side is null)
@@ -930,21 +909,6 @@ namespace BybitAPI.Api
             if (orderType is null)
             {
                 throw new ApiException(400, "Missing required parameter 'orderType' when calling ConditionalApi->ConditionalNew");
-            }
-            // verify the required parameter 'qty' is set
-            if (qty is null)
-            {
-                throw new ApiException(400, "Missing required parameter 'qty' when calling ConditionalApi->ConditionalNew");
-            }
-            // verify the required parameter 'basePrice' is set
-            if (basePrice is null)
-            {
-                throw new ApiException(400, "Missing required parameter 'basePrice' when calling ConditionalApi->ConditionalNew");
-            }
-            // verify the required parameter 'stopPx' is set
-            if (stopPx is null)
-            {
-                throw new ApiException(400, "Missing required parameter 'stopPx' when calling ConditionalApi->ConditionalNew");
             }
             // verify the required parameter 'timeInForce' is set
             if (timeInForce is null)
@@ -967,25 +931,18 @@ namespace BybitAPI.Api
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_type", Configuration.ApiClient.ParameterToString(orderType)));
             }
-            if (qty is not null)
+
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "qty", Configuration.ApiClient.ParameterToString(qty)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "base_price", Configuration.ApiClient.ParameterToString(basePrice)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_px", Configuration.ApiClient.ParameterToString(stopPx)));
+
+            if (timeInForce is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "qty", Configuration.ApiClient.ParameterToString(qty)));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)));
             }
             if (price is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "price", Configuration.ApiClient.ParameterToString(price)));
-            }
-            if (basePrice is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "base_price", Configuration.ApiClient.ParameterToString(basePrice)));
-            }
-            if (stopPx is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_px", Configuration.ApiClient.ParameterToString(stopPx)));
-            }
-            if (timeInForce is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "time_in_force", Configuration.ApiClient.ParameterToString(timeInForce)));
             }
             if (triggerBy is not null)
             {
@@ -1010,7 +967,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
             }
 
-            return CallApiAsyncWithHttpInfo<object>(localVarPath, Method.POST, localVarQueryParams);
+            return CallApiAsyncWithHttpInfo<ConditionalNewOrderBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
         /// <summary>
@@ -1021,7 +978,7 @@ namespace BybitAPI.Api
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Object</returns>
-        public object ConditionalQuery(string stopOrderId = null, string orderLinkId = null, string symbol = null) => ConditionalQueryWithHttpInfo(stopOrderId, orderLinkId, symbol).Data;
+        public object ConditionalQuery(string? stopOrderId = null, string? orderLinkId = null, string? symbol = null) => ConditionalQueryWithHttpInfo(stopOrderId, orderLinkId, symbol).Data;
 
         /// <summary>
         /// Query real-time stop order information.
@@ -1031,7 +988,7 @@ namespace BybitAPI.Api
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> ConditionalQueryWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null)
+        public ApiResponse<object> ConditionalQueryWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, string? symbol = null)
         {
             var localVarPath = "/v2/private/stop-order";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
@@ -1070,7 +1027,7 @@ namespace BybitAPI.Api
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async Task<object> ConditionalQueryAsync(string stopOrderId = null, string orderLinkId = null, string symbol = null) => (await ConditionalQueryAsyncWithHttpInfo(stopOrderId, orderLinkId, symbol)).Data;
+        public async Task<object> ConditionalQueryAsync(string? stopOrderId = null, string? orderLinkId = null, string? symbol = null) => (await ConditionalQueryAsyncWithHttpInfo(stopOrderId, orderLinkId, symbol)).Data;
 
         /// <summary>
         /// Query real-time stop order information.
@@ -1080,7 +1037,7 @@ namespace BybitAPI.Api
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <param name="symbol">Contract type. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public Task<ApiResponse<object>> ConditionalQueryAsyncWithHttpInfo(string stopOrderId = null, string orderLinkId = null, string symbol = null)
+        public Task<ApiResponse<object>> ConditionalQueryAsyncWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, string? symbol = null)
         {
             var localVarPath = "/v2/private/stop-order";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
@@ -1122,7 +1079,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
         /// <returns>Object</returns>
-        public object ConditionalReplace(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null, string pRTriggerPrice = null) => ConditionalReplaceWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice).Data;
+        public object ConditionalReplace(string symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null) => ConditionalReplaceWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice).Data;
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
@@ -1135,7 +1092,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> ConditionalReplaceWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null, string pRTriggerPrice = null)
+        public ApiResponse<object> ConditionalReplaceWithHttpInfo(string symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)
@@ -1195,7 +1152,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
         /// <returns>Task of Object</returns>
-        public async Task<object> ConditionalReplaceAsync(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null, string pRTriggerPrice = null) => (await ConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice)).Data;
+        public async Task<object> ConditionalReplaceAsync(string symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null) => (await ConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice)).Data;
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
@@ -1208,7 +1165,7 @@ namespace BybitAPI.Api
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public Task<ApiResponse<object>> ConditionalReplaceAsyncWithHttpInfo(string symbol, string stopOrderId = null, string orderLinkId = null, string pRQty = null, string pRPrice = null, string pRTriggerPrice = null)
+        public Task<ApiResponse<object>> ConditionalReplaceAsyncWithHttpInfo(string symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null)
         {
             // verify the required parameter 'symbol' is set
             if (symbol is null)

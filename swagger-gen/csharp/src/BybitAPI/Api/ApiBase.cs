@@ -1,16 +1,35 @@
-﻿using BybitAPI.Client;
+﻿using BybitAPI.Api.Exceptions;
+using BybitAPI.Api.Util;
+using BybitAPI.Client;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
     public class ApiBase
     {
+        private class SnakeCaseNamingPolicy : JsonNamingPolicy
+        {
+            public static SnakeCaseNamingPolicy Instance { get; } = new SnakeCaseNamingPolicy();
+
+            public override string ConvertName(string name) =>
+                // Conversion to other naming convention goes here. Like SnakeCase, KebabCase etc.
+                name.ToSnakeCase();
+        }
+
+        private static readonly JsonSerializerOptions SerializerOptions = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = new SnakeCaseNamingPolicy(),
+            NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString
+        };
+
         public ApiBase(string basePath)
         {
             Configuration = new Configuration { BasePath = basePath };
@@ -18,7 +37,7 @@ namespace BybitAPI.Api
             ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
-        public ApiBase(Configuration configuration = null)
+        public ApiBase(Configuration? configuration = null)
         {
             if (configuration is null) // use the default one in Configuration
             {
@@ -40,6 +59,7 @@ namespace BybitAPI.Api
         /// <value>An instance of the Configuration</value>
         public Configuration Configuration { get; set; }
 
+        [MaybeNull]
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
@@ -76,7 +96,14 @@ namespace BybitAPI.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public string GetBasePath() => Configuration.ApiClient.RestClient.BaseUrl.ToString();
+        public string GetBasePath()
+        {
+            if (Configuration.ApiClient.RestClient.BaseUrl is null)
+            {
+                throw new NullReferenceException();
+            }
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
+        }
 
         /// <summary>
         /// Sets the base path of the API client.
@@ -88,13 +115,13 @@ namespace BybitAPI.Api
             // do nothing
         }
 
-        protected ApiResponse<T> CallApiWithHttpInfo<T>(string localVarPath, Method method, List<KeyValuePair<string, string>> localVarQueryParams = default, [CallerMemberName] string callerName = default)
+        protected ApiResponse<T> CallApiWithHttpInfo<T>(string localVarPath, Method method, List<KeyValuePair<string, string>>? localVarQueryParams = default, [CallerMemberName] string callerName = default)
         {
             var localVarPathParams = new Dictionary<string, string>();
             var localVarFormParams = new Dictionary<string, string>();
             var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
             var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
+            object? localVarPostBody = null;
 
             // to determine the Content-Type header
             var localVarHttpContentTypes = new string[] {
@@ -143,17 +170,19 @@ namespace BybitAPI.Api
             }
 
             return new ApiResponse<T>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (T)Configuration.ApiClient.Deserialize(localVarResponse, typeof(T)));
+                localVarResponse.Headers.ToDictionary(
+                    x => x.Name ?? throw new NullReferenceException(),
+                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException()),
+                JsonSerializer.Deserialize<T>(localVarResponse.Content, SerializerOptions) ?? throw new ResponseContentNullException());
         }
 
-        protected async Task<ApiResponse<T>> CallApiAsyncWithHttpInfo<T>(string localVarPath, Method method, List<KeyValuePair<string, string>> localVarQueryParams = default, [CallerMemberName] string callerName = default)
+        protected async Task<ApiResponse<T>> CallApiAsyncWithHttpInfo<T>(string localVarPath, Method method, List<KeyValuePair<string, string>>? localVarQueryParams = default, [CallerMemberName] string callerName = default)
         {
             var localVarPathParams = new Dictionary<string, string>();
             var localVarFormParams = new Dictionary<string, string>();
             var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
             var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
+            object? localVarPostBody = null;
 
             // to determine the Content-Type header
             var localVarHttpContentTypes = new string[] {
@@ -190,6 +219,11 @@ namespace BybitAPI.Api
                 method, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
+            if (localVarResponse is null)
+            {
+                throw new ResponseNullException();
+            }
+
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory is not null)
@@ -202,8 +236,10 @@ namespace BybitAPI.Api
             }
 
             return new ApiResponse<T>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (T)Configuration.ApiClient.Deserialize(localVarResponse, typeof(T)));
+                localVarResponse.Headers.ToDictionary(
+                    x => x.Name ?? throw new NullReferenceException(),
+                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException()),
+                JsonSerializer.Deserialize<T>(localVarResponse.Content, SerializerOptions) ?? throw new ResponseContentNullException());
         }
     }
 }
