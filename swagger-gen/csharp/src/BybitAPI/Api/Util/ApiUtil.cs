@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace BybitAPI.Api.Util
 {
@@ -51,6 +54,32 @@ namespace BybitAPI.Api.Util
             }
 
             return b.ToString().TrimStart('&');
+        }
+
+        internal static IEnumerable<JsonConverter> GetJsonConverters()
+        {
+            // Add custom converters for nullable enums.
+            // Note: System.Text.Json 5.0 does not support to deserialise nullalbe enum. This may be supported in the next or later version.
+            var asm = Assembly.GetExecutingAssembly();
+            var type = typeof(StringNullableEnumConverter<>);
+
+            var converters = asm.GetTypes()
+                // Supports enums defined in the namespace "$(AssemblyName).Model".
+                .Where(x => x.IsEnum && x.FullName.StartsWith($"{asm.GetName().Name}.Model"))
+                .Select(x =>
+                {
+                    var nullableType = typeof(Nullable<>).MakeGenericType(x);
+                    var converterType = type.MakeGenericType(nullableType);
+                    return (JsonConverter)Activator.CreateInstance(converterType);
+                });
+
+            foreach (var converter in converters)
+            {
+                yield return converter;
+            }
+
+            // Add a default String to Enum converter.
+            yield return new JsonStringEnumConverter();
         }
     }
 }

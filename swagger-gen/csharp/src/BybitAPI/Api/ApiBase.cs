@@ -9,26 +9,28 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BybitAPI.Api
 {
     public class ApiBase
     {
-        private class SnakeCaseNamingPolicy : JsonNamingPolicy
-        {
-            public static SnakeCaseNamingPolicy Instance { get; } = new SnakeCaseNamingPolicy();
+        private static readonly JsonSerializerOptions SerializerOptions = CreateSerializerOptions();
 
-            public override string ConvertName(string name) =>
-                // Conversion to other naming convention goes here. Like SnakeCase, KebabCase etc.
-                name.ToSnakeCase();
+        private static JsonSerializerOptions CreateSerializerOptions()
+        {
+            var options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = new SnakeCaseNamingPolicy(),
+                NumberHandling = JsonNumberHandling.AllowReadingFromString,
+            };
+            foreach (var converter in ApiUtil.GetJsonConverters())
+            {
+                options.Converters.Add(converter);
+            }
+            return options;
         }
-
-        private static readonly JsonSerializerOptions SerializerOptions = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = new SnakeCaseNamingPolicy(),
-            NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString
-        };
 
         public ApiBase(string basePath)
         {
@@ -171,8 +173,8 @@ namespace BybitAPI.Api
 
             return new ApiResponse<T>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(
-                    x => x.Name ?? throw new NullReferenceException(),
-                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException()),
+                    x => x.Name ?? throw new NullReferenceException("x.Name"),
+                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException("x.Value")),
                 JsonSerializer.Deserialize<T>(localVarResponse.Content, SerializerOptions) ?? throw new ResponseContentNullException());
         }
 
@@ -237,8 +239,8 @@ namespace BybitAPI.Api
 
             return new ApiResponse<T>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(
-                    x => x.Name ?? throw new NullReferenceException(),
-                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException()),
+                    x => x.Name ?? throw new NullReferenceException("x.Name"),
+                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException("x.Value")),
                 JsonSerializer.Deserialize<T>(localVarResponse.Content, SerializerOptions) ?? throw new ResponseContentNullException());
         }
     }

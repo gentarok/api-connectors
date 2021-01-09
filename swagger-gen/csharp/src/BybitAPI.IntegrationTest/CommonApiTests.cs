@@ -3,16 +3,12 @@ using BybitAPI.Client;
 using BybitAPI.IntegrationTest.Util;
 using BybitAPI.Model;
 using NUnit.Framework;
-using System;
 
 namespace BybitAPI.IntegrationTest
 {
     public class CommonApiTests
     {
-        private CommonApi instance;
-
-        [SetUp]
-        public void Setup()
+        private static CommonApi Create()
         {
             // Prepeare configurations to test.
             var configuration = new Configuration
@@ -21,28 +17,30 @@ namespace BybitAPI.IntegrationTest
             };
             configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
             configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());
-            configuration.ApiKey.Add("timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString());
-            instance = new CommonApi(configuration);
+            return new CommonApi(configuration);
         }
 
         [Test]
-        public void CommonAnnouncements_ShouldReturnAnnouncement()
+        public void CommonAnnouncements_ShouldReturnAnnouncementBase()
         {
             // Arrange
+            var instance = Create();
 
             // Act
             var response = instance.CommonAnnouncements();
 
             // Assert
-            Assert.IsInstanceOf<Announcement>(response, "response is Announcement");
+            Assert.IsInstanceOf<AnnouncementBase>(response, "response is AnnouncementBase");
             Assert.That(response.RetCode, Is.EqualTo(0), $"API error has occered: {response.RetMsg}");
         }
 
         [Test]
-        public void CommonGetLcp_ShouldReturnLCPInfoBase()
+        public void CommonGetLcp_ParametersAreValid_ShouldReturnLCPInfoBase()
         {
             // Arrange
-            var symbol = "BTCUSD";
+            var instance = Create();
+
+            var symbol = Symbol.BTCUSD;
 
             // Act
             var response = instance.CommonGetLcp(symbol);
@@ -53,15 +51,16 @@ namespace BybitAPI.IntegrationTest
         }
 
         [Test]
-        public void CommonGetTime_ShouldReturnServerTime()
+        public void CommonGetTime_ShouldReturnServerTimeRes()
         {
             // Arrange
+            var instance = Create();
 
             // Act
             var response = instance.CommonGetTime();
 
             // Assert
-            Assert.IsInstanceOf<ServerTime>(response, "response is ServerTime");
+            Assert.IsInstanceOf<ServerTimeRes>(response, "response is ServerTimeRes");
             Assert.That(response.RetCode, Is.EqualTo(0), $"API error has occered: {response.RetMsg}");
         }
     }

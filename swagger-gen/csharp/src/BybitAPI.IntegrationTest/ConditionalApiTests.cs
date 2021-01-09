@@ -1,17 +1,14 @@
 using BybitAPI.Api;
 using BybitAPI.Client;
 using BybitAPI.IntegrationTest.Util;
+using BybitAPI.Model;
 using NUnit.Framework;
-using System;
 
 namespace BybitAPI.IntegrationTest
 {
     public class ConditionalApiTests
     {
-        private ConditionalApi instance;
-
-        [SetUp]
-        public void Setup()
+        private static ConditionalApi Create()
         {
             // Prepeare configurations to test.
             var configuration = new Configuration
@@ -20,8 +17,7 @@ namespace BybitAPI.IntegrationTest
             };
             configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
             configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());
-            configuration.ApiKey.Add("timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString());
-            instance = new ConditionalApi(configuration);
+            return new ConditionalApi(configuration);
         }
 
         //[Test]
@@ -44,12 +40,15 @@ namespace BybitAPI.IntegrationTest
         //}
 
         [Test]
-        [TestCase("", "", "", 10001)]
-        [TestCase("BTCUSD", "0", null, 20001)]
-        [TestCase("BTCUSD", null, "0", 20001)]
-        public void ConditionalCancel_ParametersAreInvalid_ShouldReturnApiError(string symbol, string stopOrderId, string orderLinkId, decimal expectedRetCode)
+        [TestCase("", "", 10001)]
+        [TestCase("0", null, 20001)]
+        [TestCase(null, "0", 20001)]
+        public void ConditionalCancel_ParametersAreInvalid_ShouldReturnApiError(string stopOrderId, string orderLinkId, decimal expectedRetCode)
         {
             // Arrange
+            var instance = Create();
+
+            var symbol = Symbol.BTCUSD;
 
             // Act
             var response = instance.ConditionalCancel(symbol, stopOrderId, orderLinkId);
@@ -92,5 +91,37 @@ namespace BybitAPI.IntegrationTest
         //    // Assert
         //    Assert.That(response.RetCode, Is.EqualTo(0), $"API error has occered: {response.RetMsg}");
         //}
+
+        [Test]
+        public void ConditionalQuery_ParamsAreInvalid_ShouldReturnApiError()
+        {
+            //// Arrange
+            //var instance = Create();
+
+            //var symbol = Symbol.BTCUSD;
+
+            //// Act
+            //var response = instance.ConditionalQuery(symbol, null, null);
+
+            //// Assert
+            //Assert.That(response.RetCode, Is.EqualTo(10001), $"API error has occered: {response.RetMsg}");
+        }
+
+        [Test]
+        public void ConditionalQueryTest()
+        {
+            // Arrange
+            var instance = Create();
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.ConditionalQuery(symbol, "c3cc95af-a362-43a4-9755-a009fb00de35");
+
+            // Assert
+            System.Diagnostics.Debug.WriteLine(response);
+            Assert.Fail();
+            //Assert.That(response.RetCode, Is.EqualTo(0), $"API error has occered: {response.RetMsg}");
+        }
     }
 }

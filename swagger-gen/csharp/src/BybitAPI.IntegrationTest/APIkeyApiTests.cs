@@ -3,16 +3,12 @@ using BybitAPI.Client;
 using BybitAPI.IntegrationTest.Util;
 using BybitAPI.Model;
 using NUnit.Framework;
-using System;
 
 namespace BybitAPI.IntegrationTest
 {
     public class APIkeyApiTests
     {
-        private APIkeyApi instance;
-
-        [SetUp]
-        public void Setup()
+        private static APIkeyApi Create()
         {
             // Prepeare configurations to test.
             var configuration = new Configuration
@@ -21,36 +17,37 @@ namespace BybitAPI.IntegrationTest
             };
             configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
             configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());
-            configuration.ApiKey.Add("timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString());
-            instance = new APIkeyApi(configuration);
+            return new APIkeyApi(configuration);
         }
 
         [Test]
-        public void APIkeyInfo_ShouldReturnAPIKeyBase()
+        public void APIkeyInfo_ShouldReturnAPIKeyInfoBase()
         {
             // Arrange
+            var instance = Create();
 
             // Act
             var response = instance.APIkeyInfo();
 
             // Assert
-            Assert.IsInstanceOf<APIKeyBase>(response, "response is APIKeyBase");
+            Assert.IsInstanceOf<APIKeyInfoBase>(response, "response is APIKeyInfoBase");
             Assert.That(response.RetCode, Is.EqualTo(0));
-            Assert.That(response.Result, Has.Exactly(1).Matches<APIKeyInfo>(x => x.ApiKey == TestUtil.GetTestApiKey()));
+            Assert.That(response.Result, Has.Exactly(1).Matches<APIKeyInfoRes>(x => x.ApiKey == TestUtil.GetTestApiKey()));
         }
 
         [Test]
-        public void APIkeyInfoWithHttpInfo_ShouldReturnApiRespenseOfAPIKeyBase()
+        public void APIkeyInfoWithHttpInfo_ShouldReturnApiRespenseOfAPIKeyInfoBase()
         {
             // Arrange
+            var instance = Create();
 
             // Act
             var response = instance.APIkeyInfoWithHttpInfo();
 
             // Assert
-            Assert.IsInstanceOf<ApiResponse<APIKeyBase>>(response, "response is ApiResponce<APIKeyBase>");
+            Assert.IsInstanceOf<ApiResponse<APIKeyInfoBase>>(response, "response is ApiResponce<APIKeyInfoBase>");
             Assert.That(response.Data.RetCode, Is.EqualTo(0));
-            Assert.That(response.Data.Result, Has.Exactly(1).Matches<APIKeyInfo>(x => x.ApiKey == TestUtil.GetTestApiKey()));
+            Assert.That(response.Data.Result, Has.Exactly(1).Matches<APIKeyInfoRes>(x => x.ApiKey == TestUtil.GetTestApiKey()));
         }
     }
 }
