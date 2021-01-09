@@ -534,7 +534,7 @@ namespace BybitAPI.Api.Test
         [TestCase("", null)]
         [TestCase(null, "")]
         [TestCase("", "")]
-        public void ConditionalQuery_ParametersAreValid_ShouldReturnsConditionalQueryBaseOfConditionalQueryRes(string? stopOrderId, string? orderLinkId)
+        public void ConditionalQuery_ParametersAreValid_ShouldReturnConditionalQueryBaseOfConditionalQueryRes(string? stopOrderId, string? orderLinkId)
         {
             // Arrange
             var instance = Create();
@@ -595,7 +595,7 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void ConditionalQuery_ParametersAreValid_ShouldReturnsConditionalQueryBaseOfListForConditionalQueryRes()
+        public void ConditionalQuery_ParametersAreValid_ShouldReturnConditionalQueryBaseOfListForConditionalQueryRes()
         {
             // Arrange
             var instance = Create();
@@ -611,21 +611,67 @@ namespace BybitAPI.Api.Test
             Assert.IsInstanceOf<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>(response, "response is ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>");
         }
 
-        ///// <summary>
-        ///// Test ConditionalReplace
-        ///// </summary>
-        //[Test]
-        //public void ConditionalReplaceTest()
-        //{
-        //    // TODO uncomment below to test the method and replace null with proper value
-        //    //string symbol = null;
-        //    //string stopOrderId = null;
-        //    //string orderLinkId = null;
-        //    //string pRQty = null;
-        //    //string pRPrice = null;
-        //    //string pRTriggerPrice = null;
-        //    //var response = instance.ConditionalReplace(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
-        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
-        //}
+        private readonly string conditionalReplaceJson = @"
+{
+    ""ret_code"": 0,
+    ""ret_msg"": ""ok"",
+    ""ext_code"": """",
+    ""result"": {
+        ""stop_order_id"": ""378a1bbc-a93a-4e75-87f4-502ea754ba36""
+    },
+    ""ext_info"": null,
+    ""time_now"": ""1577475760.604942"",
+    ""rate_limit_status"": 96,
+    ""rate_limit_reset_ms"": 1577475760612,
+    ""rate_limit"": ""100""
+}
+";
+
+        [Test]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public void ConditionalReplace_ParametersAreValid_ShouldReturnConditionalReplaceBase(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            int? pRQty = null;
+            decimal? pRPrice = null;
+            decimal? pRTriggerPrice = null;
+
+            // Act
+            var response = instance.ConditionalReplace(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+
+            // Assert
+            Assert.IsInstanceOf<ConditionalReplaceBase>(response, "response is ConditionalReplaceBase");
+        }
+
+        [Test]
+        public void ConditionalReplace_ParametersAreInValid_ShouldRaiseApiException()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? stopOrderId = null;
+            string? orderLinkId = null;
+            int? pRQty = null;
+            decimal? pRPrice = null;
+            decimal? pRTriggerPrice = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalReplace(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
     }
 }

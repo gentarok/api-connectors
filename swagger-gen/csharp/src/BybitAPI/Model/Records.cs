@@ -115,7 +115,7 @@ namespace BybitAPI.Model
         string? StopOrderId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
 
     /// <summary>
-    /// Base type of the response for the "Query Conditional Order (real-time)" API method.
+    /// Base type of the response for the 'Query Conditional Order (real-time)' API method.
     /// </summary>
     /// <remarks>
     /// "Query Conditional Order (real-time)" method of the API returns different types of responses depending on the parameters of the method, so define a generic type and deserialize it.
@@ -127,7 +127,7 @@ namespace BybitAPI.Model
         int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
-    /// Actual data type of the response for the "Query Conditional Order (real-time)" API method.
+    /// Actual data type of the response for the 'Query Conditional Order (real-time)' API method.
     /// </summary>
     public record ConditionalQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty, decimal StopPx,
         decimal BasePrice, TimeInForce TimeInForce, OrderStatus OrderStatus, ConditionalQuiryExtFields ExtFields,
@@ -143,4 +143,19 @@ namespace BybitAPI.Model
     /// The 'x_req_offset' field does not documented, but original generated code includes it.
     /// </remarks>
     public record ConditionalQuiryExtFields(long OReqNum, string? XreqType, decimal? XreqOffset);
+
+    /// <summary>
+    /// Base type of the response for the 'Replace Conditional Order' API method.
+    /// </summary>
+    /// <remarks>
+    public record ConditionalReplaceBase(int RetCode, string RetMsg, string ExtCode, string ExtInfo, ConditionalReplaceRes Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Replace Conditional Order' API method.
+    /// </summary>
+    /// <remarks>
+    /// 'order_id' (also 'order_link_id' and 'stop_order_id') field looks like a UUID, but the property type could not be defined as GUID because the API may return an empty string. Since an empty string does not imply null, it cannot be defined as a nullable reference type either.
+    /// </remarks>
+    public record ConditionalReplaceRes(string OrderId);
 }

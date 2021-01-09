@@ -18,7 +18,7 @@ namespace BybitAPI.Api
         /// Cancel conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -31,7 +31,7 @@ namespace BybitAPI.Api
         /// Cancel conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -44,7 +44,7 @@ namespace BybitAPI.Api
         /// Cancel conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -55,7 +55,7 @@ namespace BybitAPI.Api
         /// Cancel conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -66,7 +66,7 @@ namespace BybitAPI.Api
         /// Get my conditional order list.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
@@ -81,7 +81,7 @@ namespace BybitAPI.Api
         /// Get my conditional order list.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
@@ -96,7 +96,7 @@ namespace BybitAPI.Api
         /// Place a new conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
@@ -117,7 +117,7 @@ namespace BybitAPI.Api
         /// Place a new conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
@@ -138,7 +138,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -151,7 +151,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -164,7 +164,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -175,7 +175,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -186,7 +186,7 @@ namespace BybitAPI.Api
         /// Replace conditional order. Only incomplete orders can be modified.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -195,14 +195,14 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>Object</returns>
-        object ConditionalReplace(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null);
+        /// <returns><see cref="ConditionalReplaceBase"/></returns>
+        ConditionalReplaceBase ConditionalReplace(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, int? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null);
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -211,8 +211,8 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> ConditionalReplaceWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null);
+        /// <returns>ApiResponse of ConditionalReplaceBase</returns>
+        ApiResponse<ConditionalReplaceBase> ConditionalReplaceWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, int? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null);
 
         #endregion Synchronous Operations
 
@@ -222,20 +222,20 @@ namespace BybitAPI.Api
         /// Cancel conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns><see cref="ConditionalCancelBase"/></returns>
+        /// <returns>Task of ConditionalCancelBase</returns>
         Task<ConditionalCancelBase> ConditionalCancelAsync(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null);
 
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -248,7 +248,7 @@ namespace BybitAPI.Api
         /// Cancel conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -259,7 +259,7 @@ namespace BybitAPI.Api
         /// Cancel conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -285,7 +285,7 @@ namespace BybitAPI.Api
         /// Get my conditional order list.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
@@ -300,7 +300,7 @@ namespace BybitAPI.Api
         /// Place a new conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
@@ -321,7 +321,7 @@ namespace BybitAPI.Api
         /// Place a new conditional order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
@@ -342,7 +342,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -355,7 +355,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -368,7 +368,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -379,7 +379,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -390,7 +390,7 @@ namespace BybitAPI.Api
         /// Replace conditional order. Only incomplete orders can be modified.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -399,14 +399,14 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> ConditionalReplaceAsync(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null);
+        /// <returns>Task of ConditionalReplaceBase</returns>
+        Task<ConditionalReplaceBase> ConditionalReplaceAsync(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, int? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null);
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -415,8 +415,8 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> ConditionalReplaceAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null);
+        /// <returns>Task of ApiResponse (ConditionalReplaceBase)</returns>
+        Task<ApiResponse<ConditionalReplaceBase>> ConditionalReplaceAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, int? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null);
 
         #endregion Asynchronous Operations
     }
@@ -443,6 +443,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
@@ -454,6 +457,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
@@ -497,6 +503,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
@@ -508,6 +517,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
@@ -551,6 +563,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns><see cref="ConditionalCancelAllBase"/></returns>
@@ -560,6 +575,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
@@ -585,6 +603,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ConditionalCancelAllBase</returns>
@@ -593,6 +614,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Cancel conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of ApiResponse (ConditionalCancelAllBase)</returns>
@@ -618,6 +642,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my conditional order list.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="stopOrderStatus">Stop order status. (optional)</param>
@@ -631,6 +658,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my conditional order list.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="stopOrderStatus">Stop order status. (optional)</param>
@@ -677,6 +707,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my conditional order list.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="stopOrderStatus">Stop order status. (optional)</param>
@@ -690,6 +723,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get my conditional order list.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <param name="stopOrderStatus">Stop order status. (optional)</param>
@@ -736,6 +772,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Place a new conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
         /// <param name="symbol">Contract type.</param>
@@ -755,6 +794,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Place a new conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
         /// <param name="symbol">Contract type.</param>
@@ -813,6 +855,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Place a new conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
         /// <param name="symbol">Contract type.</param>
@@ -832,6 +877,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Place a new conditional order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
         /// <param name="symbol">Contract type.</param>
@@ -890,6 +938,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query real-time stop order information.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
@@ -901,6 +952,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query real-time stop order information.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
@@ -908,10 +962,12 @@ namespace BybitAPI.Api
         /// <returns>ApiResponse of ConditionalQueryBase (ConditionalQueryRes)</returns>
         public ApiResponse<ConditionalQueryBase<ConditionalQueryRes>> ConditionalQueryWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
+            // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
             if (stopOrderId is null && orderLinkId is null)
             {
                 throw new ApiException(400, "Missing required parameter 'stopOrderId' or 'orderLinkId' when calling ConditionalApi->ConditionalQuery");
             }
+
             var localVarPath = "/v2/private/stop-order";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -941,6 +997,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query real-time stop order information.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
@@ -952,6 +1011,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query real-time stop order information.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
@@ -959,6 +1021,7 @@ namespace BybitAPI.Api
         /// <returns>Task of ApiResponse (ConditionalQueryBase of ConditionalQueryRes)</returns>
         public Task<ApiResponse<ConditionalQueryBase<ConditionalQueryRes>>> ConditionalQueryAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
+            // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
             if (stopOrderId is null && orderLinkId is null)
             {
                 throw new ApiException(400, "Missing required parameter 'stopOrderId' or 'orderLinkId' when calling ConditionalApi->ConditionalQuery");
@@ -994,7 +1057,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -1006,7 +1069,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -1034,7 +1097,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -1046,7 +1109,7 @@ namespace BybitAPI.Api
         /// Query real-time stop order information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
@@ -1073,6 +1136,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Stop order ID. (optional)</param>
@@ -1080,13 +1146,16 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>Object</returns>
-        public object ConditionalReplace(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null)
+        /// <returns><see cref="ConditionalReplaceBase"/></returns>
+        public ConditionalReplaceBase ConditionalReplace(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, int? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
             => ConditionalReplaceWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice).Data;
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Stop order ID. (optional)</param>
@@ -1094,9 +1163,15 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<object> ConditionalReplaceWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null)
+        /// <returns>ApiResponse of ConditionalReplaceBase</returns>
+        public ApiResponse<ConditionalReplaceBase> ConditionalReplaceWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, int? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
+            // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
+            if (stopOrderId is null && orderLinkId is null)
+            {
+                throw new ApiException(400, "Missing required parameter 'stopOrderId' or 'orderLinkId' when calling ConditionalApi->ConditionalReplace");
+            }
+
             var localVarPath = "/v2/private/stop-order/replace";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -1132,12 +1207,15 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            return CallApiWithHttpInfo<object>(localVarPath, Method.POST, localVarQueryParams);
+            return CallApiWithHttpInfo<ConditionalReplaceBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Stop order ID. (optional)</param>
@@ -1145,13 +1223,16 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async Task<object> ConditionalReplaceAsync(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null)
+        /// <returns>Task of ConditionalReplaceBase</returns>
+        public async Task<ConditionalReplaceBase> ConditionalReplaceAsync(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, int? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
             => (await ConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice)).Data;
 
         /// <summary>
         /// Replace conditional order. Only incomplete orders can be modified.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
         /// <param name="stopOrderId">Stop order ID. (optional)</param>
@@ -1159,9 +1240,15 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public Task<ApiResponse<object>> ConditionalReplaceAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null, string? pRTriggerPrice = null)
+        /// <returns>Task of ApiResponse (ConditionalReplaceBase)</returns>
+        public Task<ApiResponse<ConditionalReplaceBase>> ConditionalReplaceAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, int? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
+            // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
+            if (stopOrderId is null && orderLinkId is null)
+            {
+                throw new ApiException(400, "Missing required parameter 'stopOrderId' or 'orderLinkId' when calling ConditionalApi->ConditionalReplace");
+            }
+
             var localVarPath = "/v2/private/stop-order/replace";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -1197,7 +1284,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            return CallApiAsyncWithHttpInfo<object>(localVarPath, Method.POST, localVarQueryParams);
+            return CallApiAsyncWithHttpInfo<ConditionalReplaceBase>(localVarPath, Method.POST, localVarQueryParams);
         }
     }
 }
