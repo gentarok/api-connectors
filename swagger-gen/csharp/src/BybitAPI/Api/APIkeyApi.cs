@@ -18,7 +18,7 @@ namespace BybitAPI.Api
         /// Get account api-key information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns><see cref="APIKeyInfoBase"/></returns>
@@ -28,7 +28,7 @@ namespace BybitAPI.Api
         /// Get account api-key information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of APIKeyInfoBase</returns>
@@ -42,7 +42,7 @@ namespace BybitAPI.Api
         /// Get account api-key information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of APIKeyInfoBase</returns>
@@ -52,7 +52,7 @@ namespace BybitAPI.Api
         /// Get account api-key information.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (APIKeyInfoBase)</returns>
@@ -83,6 +83,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get account api-key information.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
         public APIKeyInfoBase APIkeyInfo() => APIkeyInfoWithHttpInfo().Data;
@@ -90,6 +93,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get account api-key information.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<APIKeyInfoBase> APIkeyInfoWithHttpInfo()
@@ -112,6 +118,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get account api-key information.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of Object</returns>
         public async Task<APIKeyInfoBase> APIkeyInfoAsync() => (await APIkeyInfoAsyncWithHttpInfo()).Data;
@@ -119,6 +128,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get account api-key information.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
         public Task<ApiResponse<APIKeyInfoBase>> APIkeyInfoAsyncWithHttpInfo()

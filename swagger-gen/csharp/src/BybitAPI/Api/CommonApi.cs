@@ -18,7 +18,7 @@ namespace BybitAPI.Api
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns><see cref="AnnouncementRes"/></returns>
@@ -28,7 +28,7 @@ namespace BybitAPI.Api
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of AnnouncementBase</returns>
@@ -38,7 +38,7 @@ namespace BybitAPI.Api
         /// Query LCP info.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
@@ -49,7 +49,7 @@ namespace BybitAPI.Api
         /// Query LCP info.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
@@ -60,7 +60,7 @@ namespace BybitAPI.Api
         /// Get bybit server time.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns><see cref="ServerTime"/></returns>
@@ -70,7 +70,7 @@ namespace BybitAPI.Api
         /// Get bybit server time.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ServerTimeRes</returns>
@@ -84,7 +84,7 @@ namespace BybitAPI.Api
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of AnnouncementBase</returns>
@@ -94,7 +94,7 @@ namespace BybitAPI.Api
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (AnnouncementBase)</returns>
@@ -104,7 +104,7 @@ namespace BybitAPI.Api
         /// Query LCP info.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
@@ -115,7 +115,7 @@ namespace BybitAPI.Api
         /// Query LCP info.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
@@ -126,7 +126,7 @@ namespace BybitAPI.Api
         /// Get bybit server time.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ServerTimeRes</returns>
@@ -136,7 +136,7 @@ namespace BybitAPI.Api
         /// Get bybit server time.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ServerTimeRes)</returns>
@@ -167,6 +167,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns><see cref="AnnouncementRes"/></returns>
         public AnnouncementBase CommonAnnouncements() => CommonAnnouncementsWithHttpInfo().Data;
@@ -174,6 +177,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of AnnouncementBase</returns>
         public ApiResponse<AnnouncementBase> CommonAnnouncementsWithHttpInfo()
@@ -185,6 +191,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of AnnouncementBase</returns>
         public async Task<AnnouncementBase> CommonAnnouncementsAsync() => (await CommonAnnouncementsAsyncWithHttpInfo()).Data;
@@ -192,6 +201,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (AnnouncementBase)</returns>
         public Task<ApiResponse<AnnouncementBase>> CommonAnnouncementsAsyncWithHttpInfo()
@@ -203,6 +215,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query LCP info.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns><see cref="LCPInfoBase"/></returns>
@@ -211,6 +226,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query LCP info.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>ApiResponse of LCPInfoBase</returns>
@@ -236,6 +254,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query LCP info.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>Task of LCPInfoBase</returns>
@@ -244,6 +265,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Query LCP info.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type</param>
         /// <returns>Task of ApiResponse (LCPInfoBase)</returns>
@@ -269,6 +293,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get bybit server time.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns><see cref="ServerTime"/></returns>
         public ServerTimeRes CommonGetTime() => CommonGetTimeWithHttpInfo().Data;
@@ -276,6 +303,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get bybit server time.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ServerTimeRes</returns>
         public ApiResponse<ServerTimeRes> CommonGetTimeWithHttpInfo()
@@ -287,6 +317,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get bybit server time.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ServerTimeRes</returns>
         public async Task<ServerTimeRes> CommonGetTimeAsync() => (await CommonGetTimeAsyncWithHttpInfo()).Data;
@@ -294,6 +327,9 @@ namespace BybitAPI.Api
         /// <summary>
         /// Get bybit server time.
         /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
+        /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ServerTimeRes)</returns>
         public Task<ApiResponse<ServerTimeRes>> CommonGetTimeAsyncWithHttpInfo()
