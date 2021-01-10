@@ -141,6 +141,16 @@
         /// <seealso cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         Untriggered,
+
+        /// <summary>
+        /// The deactivated
+        /// </summary>
+        /// <remarks>
+        /// This value is not documented, but the "Get Active Order" method returns this value, so add it to the definition.
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#order-status-order_status"/>
+        /// <seealso cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getactive"/>
+        /// </remarks>
+        Deactivated,
     }
 
     /// <summary>
