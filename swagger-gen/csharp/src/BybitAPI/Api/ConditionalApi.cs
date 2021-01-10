@@ -426,6 +426,8 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class ConditionalApi : ApiBase, IConditionalApi
     {
+        private const int ConditionalGetOrdersMaxValue = 50;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ConditionalApi"/> class.
         /// </summary>
@@ -467,7 +469,7 @@ namespace BybitAPI.Api
         /// <returns>ApiResponse of ConditionalCancelBase</returns>
         public ApiResponse<ConditionalCancelBase> ConditionalCancelWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
-            // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
+            // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
             // see: https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond
             if (stopOrderId is null && orderLinkId is null)
             {
@@ -527,7 +529,7 @@ namespace BybitAPI.Api
         /// <returns>Task of ApiResponse (ConditionalCancelBase)</returns>
         public Task<ApiResponse<ConditionalCancelBase>> ConditionalCancelAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
-            // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
+            // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
             // see: https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond
             if (stopOrderId is null && orderLinkId is null)
             {
@@ -670,6 +672,12 @@ namespace BybitAPI.Api
         /// <returns>ApiResponse of ConditionalOrdersResBase</returns>
         public ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null)
         {
+            // verify the parameter 'limit'
+            if (limit is not null and >= 0 and <= ConditionalGetOrdersMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ConditionalApi->ConditionalGetOrders");
+            }
+
             var localVarPath = "/v2/private/stop-order/list";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -735,6 +743,12 @@ namespace BybitAPI.Api
         /// <returns>Task of ApiResponse (ConditionalOrdersResBase)</returns>
         public Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null)
         {
+            // verify the parameter 'limit'
+            if (limit is not null and >= 0 and <= ConditionalGetOrdersMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ConditionalApi->ConditionalGetOrders");
+            }
+
             var localVarPath = "/v2/private/stop-order/list";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -962,7 +976,7 @@ namespace BybitAPI.Api
         /// <returns>ApiResponse of ConditionalQueryBase (ConditionalQueryRes)</returns>
         public ApiResponse<ConditionalQueryBase<ConditionalQueryRes>> ConditionalQueryWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
-            // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
+            // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
             if (stopOrderId is null && orderLinkId is null)
             {
                 throw new ApiException(400, "Missing required parameter 'stopOrderId' or 'orderLinkId' when calling ConditionalApi->ConditionalQuery");
