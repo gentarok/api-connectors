@@ -9,13 +9,13 @@ namespace BybitAPI.Api.Util
     internal class StringNullableEnumConverter<T> : JsonConverter<T>
     {
         private readonly JsonConverter<T> _converter;
-        private readonly Type? _underlyingType;
+        private readonly Type _underlyingType;
 
         public StringNullableEnumConverter() : this(default)
         {
         }
 
-        public StringNullableEnumConverter(JsonSerializerOptions? options)
+        public StringNullableEnumConverter(JsonSerializerOptions options)
         {
             // for performance, use the existing converter if available
             if (options != null)
@@ -78,7 +78,7 @@ namespace BybitAPI.Api.Util
 
     internal class EnumHelper
     {
-        internal static bool TryParse(Type enumType, string? value, bool ignoreCase, out object? result)
+        internal static bool TryParse(Type enumType, string value, bool ignoreCase, out object result)
         {
             var mi = typeof(Enum).GetMethod(
                 "TryParse",
