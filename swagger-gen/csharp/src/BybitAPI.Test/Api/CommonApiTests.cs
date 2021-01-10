@@ -125,34 +125,7 @@ namespace BybitAPI.Api.Test
             Assert.IsInstanceOf<ApiResponse<AnnouncementBase>>(response, "response is ApiResponse<AnnouncementBase>");
         }
 
-        //Fixed: The documentation is wrong, so we will test it according to the actual format of the returned JSON.
-
-        //        private readonly string commonGetLcpjson = @"
-        //{
-        //    ""ret_code"": 0,
-        //    ""ret_msg"": ""ok"",
-        //    ""ext_code"": """",
-        //    ""result"": [
-        //        {
-        //            ""date"": ""2020-04-27"",
-        //            ""self_ratio"": 1.1251,
-        //            ""platform_ratio"": 0.001254,
-        //            ""score"": 0.1459
-        //        },
-        //        {
-        //            ""date"": ""2020-04-26"",
-        //            ""self_ratio"": 1.1251,
-        //            ""platform_ratio"": 0.001254,
-        //            ""score"": 0.1459
-        //        }
-        //    ],
-        //    ""ext_info"": null,
-        //    ""time_now"": ""1577445138.790150"",
-        //    ""rate_limit_status"": 99,
-        //    ""rate_limit_reset_ms"": 1577445138812,
-        //    ""rate_limit"": 100
-        //}
-        //";
+        // Note: The documentation is wrong, so we will test it according to the actual format of the returned JSON.
         private readonly string commonGetLcpjson = @"
 {
     ""ret_code"": 0,
