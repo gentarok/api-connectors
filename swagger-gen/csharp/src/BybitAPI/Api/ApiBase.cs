@@ -151,7 +151,7 @@ namespace BybitAPI.Api
             {
                 var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
                 var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-                var sign = Util.ApiUtil.CreateSignature(secret, param);
+                var sign = ApiUtil.CreateSignature(secret, param);
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
             }
 
@@ -170,6 +170,8 @@ namespace BybitAPI.Api
                     throw exception;
                 }
             }
+
+            System.Diagnostics.Trace.TraceInformation($"CallApiWithHttpInfo called from ${callerName}, deserializing json value is:\n{localVarResponse.Content}");
 
             return new ApiResponse<T>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(
@@ -212,7 +214,7 @@ namespace BybitAPI.Api
             {
                 var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
                 var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-                var sign = Util.ApiUtil.CreateSignature(secret, param);
+                var sign = ApiUtil.CreateSignature(secret, param);
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
             }
 
@@ -236,6 +238,8 @@ namespace BybitAPI.Api
                     throw exception;
                 }
             }
+
+            System.Diagnostics.Trace.TraceInformation($"CallApiAsyncWithHttpInfo called from ${callerName}, deserializing json value is:\n{localVarResponse.Content}");
 
             return new ApiResponse<T>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(
