@@ -90,8 +90,8 @@ namespace BybitAPI.Api.Test
             Assert.That(response.ExtCode, Is.EqualTo(""));
             Assert.That(response.ExtInfo, Is.Null);
             Assert.That(response.TimeNow, Is.EqualTo("1577445138.790150"));
-            Assert.That(response.Result.Count, Is.EqualTo(1));
-            Assert.That(response.Result[0].ApiKey, Is.EqualTo("7GkMBBLTbGRfa0Nuh1"));
+            Assert.That(response.Result?.Count, Is.EqualTo(1));
+            Assert.That(response.Result?[0].ApiKey, Is.EqualTo("7GkMBBLTbGRfa0Nuh1"));
             // TODO: and more...
         }
 
