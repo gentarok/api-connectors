@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 namespace BybitAPI.IntegrationTest
 {
+    [TestFixture]
     public class CommonApiTests
     {
         private static CommonApi Create()
@@ -21,7 +22,7 @@ namespace BybitAPI.IntegrationTest
         }
 
         [Test]
-        public void CommonAnnouncements_ShouldReturnAnnouncementBase()
+        public void CommonAnnouncements_NoConditions_ShouldReturnAnnouncementBase()
         {
             // Arrange
             var instance = Create();
@@ -51,7 +52,7 @@ namespace BybitAPI.IntegrationTest
         }
 
         [Test]
-        public void CommonGetTime_ShouldReturnServerTimeRes()
+        public void CommonGetTime_NoConditions_ShouldReturnServerTimeRes()
         {
             // Arrange
             var instance = Create();

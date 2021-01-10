@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 namespace BybitAPI.IntegrationTest
 {
+    [TestFixture]
     public class APIkeyApiTests
     {
         private static APIkeyApi Create()
@@ -21,7 +22,7 @@ namespace BybitAPI.IntegrationTest
         }
 
         [Test]
-        public void APIkeyInfo_ShouldReturnAPIKeyInfoBase()
+        public void APIkeyInfo_NoConditions_ShouldReturnAPIKeyInfoBase()
         {
             // Arrange
             var instance = Create();
@@ -36,7 +37,7 @@ namespace BybitAPI.IntegrationTest
         }
 
         [Test]
-        public void APIkeyInfoWithHttpInfo_ShouldReturnApiRespenseOfAPIKeyInfoBase()
+        public void APIkeyInfoWithHttpInfo_NoConditions_ShouldReturnApiRespenseOfAPIKeyInfoBase()
         {
             // Arrange
             var instance = Create();

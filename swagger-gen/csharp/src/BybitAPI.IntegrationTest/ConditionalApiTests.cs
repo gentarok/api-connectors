@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 namespace BybitAPI.IntegrationTest
 {
+    [TestFixture]
     public class ConditionalApiTests
     {
         private static ConditionalApi Create()
@@ -80,10 +81,11 @@ namespace BybitAPI.IntegrationTest
         //public void ConditionalCancelAll_ParametersIsValid_ShouldReturnSuccess()
         //{
         //    // Arrange
+        //    var instance = Create();
 
         //    //TODO: Create new conditional order.
 
-        //    string symbol = "BTCUSD";
+        //    var symbol = Symbol.BTCUSD;
 
         //    // Act
         //    var response = instance.ConditionalCancelAll(symbol);
@@ -116,7 +118,7 @@ namespace BybitAPI.IntegrationTest
             var symbol = Symbol.BTCUSD;
 
             // Act
-            var response = instance.ConditionalQuery(symbol, "c3cc95af-a362-43a4-9755-a009fb00de35");
+            var response = instance.ConditionalQuery(symbol, "da5fc794-6c65-4222-b06f-58fee13a1f0c");
 
             // Assert
             System.Diagnostics.Debug.WriteLine(response);
