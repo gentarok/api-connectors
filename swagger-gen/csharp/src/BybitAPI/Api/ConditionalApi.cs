@@ -75,7 +75,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns><see cref="ConditionalGetOrdersResBase"/></returns>
-        ConditionalGetOrdersResBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null);
+        ConditionalGetOrdersResBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Get my conditional order list.
@@ -90,7 +90,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>ApiResponse of ConditionalOrdersResBase</returns>
-        ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null);
+        ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Place a new conditional order.
@@ -279,7 +279,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ConditionalOrdersResBase</returns>
-        Task<ConditionalGetOrdersResBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null);
+        Task<ConditionalGetOrdersResBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Get my conditional order list.
@@ -294,7 +294,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ApiResponse (ConditionalOrdersResBase)</returns>
-        Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null);
+        Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Place a new conditional order.
@@ -654,7 +654,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns><see cref="ConditionalGetOrdersResBase"/></returns>
-        public ConditionalGetOrdersResBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null)
+        public ConditionalGetOrdersResBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
             => ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor).Data;
 
         /// <summary>
@@ -670,7 +670,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>ApiResponse of ConditionalOrdersResBase</returns>
-        public ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null)
+        public ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and >= 0 and <= ConditionalGetOrdersMaxValue)
@@ -725,7 +725,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ConditionalOrdersResBase</returns>
-        public async Task<ConditionalGetOrdersResBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null)
+        public async Task<ConditionalGetOrdersResBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
             => (await ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor)).Data;
 
         /// <summary>
@@ -741,7 +741,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ApiResponse (ConditionalOrdersResBase)</returns>
-        public Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, string? direction = null, string? cursor = null)
+        public Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and >= 0 and <= ConditionalGetOrdersMaxValue)

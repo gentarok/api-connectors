@@ -2,6 +2,7 @@ using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
@@ -275,7 +276,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             var stopOrderStatus = StopOrderStatus.Active;
             decimal? limit = null;
-            string? direction = null;
+            SearchDirection? direction = null;
             string? cursor = null;
 
             // Act
@@ -296,7 +297,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             var stopOrderStatus = StopOrderStatus.Active;
             decimal? limit = null;
-            string? direction = null;
+            SearchDirection? direction = null;
             string? cursor = null;
 
             // Act
@@ -317,7 +318,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             var stopOrderStatus = StopOrderStatus.Active;
             decimal? limit = null;
-            string? direction = null;
+            SearchDirection? direction = null;
             string? cursor = null;
 
             // Act
@@ -338,7 +339,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             var stopOrderStatus = StopOrderStatus.Active;
             decimal? limit = null;
-            string? direction = null;
+            SearchDirection? direction = null;
             string? cursor = null;
 
             // Act
@@ -604,6 +605,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>(response, "response is ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>");
+            Assert.That(response.Result?[0].CreatedAt, Is.EqualTo(DateTimeOffset.Parse("2021-01-08T17:30:07.306465866Z")));
         }
 
         private readonly string conditionalReplaceJson = @"

@@ -46,37 +46,37 @@ namespace BybitAPI.Api
         /// <returns>ApiResponse of ExecutionGetTradesBase</returns>
         ApiResponse<ExecutionGetTradesBase> ExecutionGetTradesWithHttpInfo(Symbol symbol, string? orderId = null, long? startTime = null, int? page = null, int? limit = null, Order? order = null);
 
-        /// <summary>
-        /// Get user&#39;s closed profit and loss records
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        /// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        /// <param name="execType">Execution type (optional)</param>
-        /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <returns>Object</returns>
-        PositionsClosePnlBase PositionsClosePnlRecords(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null);
+        ///// <summary>
+        ///// Get user&#39;s closed profit and loss records
+        ///// </summary>
+        ///// <remarks>
+        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
+        ///// </remarks>
+        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        ///// <param name="symbol">Contract type</param>
+        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
+        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
+        ///// <param name="execType">Execution type (optional)</param>
+        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
+        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        ///// <returns>Object</returns>
+        //PositionsClosePnlBase PositionsClosePnlRecords(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null);
 
-        /// <summary>
-        /// Get user&#39;s closed profit and loss records
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        /// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        /// <param name="execType">Execution type (optional)</param>
-        /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<PositionsClosePnlBase> PositionsClosePnlRecordsWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null);
+        ///// <summary>
+        ///// Get user&#39;s closed profit and loss records
+        ///// </summary>
+        ///// <remarks>
+        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
+        ///// </remarks>
+        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        ///// <param name="symbol">Contract type</param>
+        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
+        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
+        ///// <param name="execType">Execution type (optional)</param>
+        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
+        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        ///// <returns>ApiResponse of Object</returns>
+        //ApiResponse<PositionsClosePnlBase> PositionsClosePnlRecordsWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null);
 
         #endregion Synchronous Operations
 
@@ -114,37 +114,37 @@ namespace BybitAPI.Api
         /// <returns>Task of ApiResponse (ExecutionGetTradesBase)</returns>
         Task<ApiResponse<ExecutionGetTradesBase>> ExecutionGetTradesAsyncWithHttpInfo(Symbol symbol, string? orderId = null, long? startTime = null, int? page = null, int? limit = null, Order? order = null);
 
-        /// <summary>
-        /// Get user&#39;s closed profit and loss records
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        /// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        /// <param name="execType">Execution type (optional)</param>
-        /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<PositionsClosePnlBase> PositionsClosePnlRecordsAsync(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null);
+        ///// <summary>
+        ///// Get user&#39;s closed profit and loss records
+        ///// </summary>
+        ///// <remarks>
+        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
+        ///// </remarks>
+        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        ///// <param name="symbol">Contract type</param>
+        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
+        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
+        ///// <param name="execType">Execution type (optional)</param>
+        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
+        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        ///// <returns>Task of Object</returns>
+        //Task<PositionsClosePnlBase> PositionsClosePnlRecordsAsync(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null);
 
-        /// <summary>
-        /// Get user&#39;s closed profit and loss records
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        /// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        /// <param name="execType">Execution type (optional)</param>
-        /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<PositionsClosePnlBase>> PositionsClosePnlRecordsAsyncWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null);
+        ///// <summary>
+        ///// Get user&#39;s closed profit and loss records
+        ///// </summary>
+        ///// <remarks>
+        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
+        ///// </remarks>
+        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        ///// <param name="symbol">Contract type</param>
+        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
+        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
+        ///// <param name="execType">Execution type (optional)</param>
+        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
+        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        ///// <returns>Task of ApiResponse (Object)</returns>
+        //Task<ApiResponse<PositionsClosePnlBase>> PositionsClosePnlRecordsAsyncWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null);
 
         #endregion Asynchronous Operations
     }
@@ -156,8 +156,8 @@ namespace BybitAPI.Api
     {
         private const int ExecutionGetTradesPageMaxValue = 50;
         private const int ExecutionGetTradesLimitMaxValue = 200;
-        private const int PositionsClosePnlRecordsPageMaxValue = 50;
-        private const int PositionsClosePnlRecordsLimitMaxValue = 50;
+        //private const int PositionsClosePnlRecordsPageMaxValue = 50;
+        //private const int PositionsClosePnlRecordsLimitMaxValue = 50;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecutionApi"/> class.
@@ -335,176 +335,176 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ExecutionGetTradesBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get user&#39;s closed profit and loss records
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        /// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        /// <param name="execType">Execution type (optional)</param>
-        /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <returns><see cref="PositionsClosePnlBase"/></returns>
-        public PositionsClosePnlBase PositionsClosePnlRecords(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
-            => PositionsClosePnlRecordsWithHttpInfo(symbol, startTime, endTime, execType, page, limit).Data;
+        ///// <summary>
+        ///// Get user&#39;s closed profit and loss records
+        ///// </summary>
+        ///// <remarks>
+        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
+        ///// </remarks>
+        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        ///// <param name="symbol">Contract type</param>
+        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
+        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
+        ///// <param name="execType">Execution type (optional)</param>
+        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
+        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        ///// <returns><see cref="PositionsClosePnlBase"/></returns>
+        //public PositionsClosePnlBase PositionsClosePnlRecords(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
+        //    => PositionsClosePnlRecordsWithHttpInfo(symbol, startTime, endTime, execType, page, limit).Data;
 
-        /// <summary>
-        /// Get user&#39;s closed profit and loss records
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        /// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        /// <param name="execType">Execution type (optional)</param>
-        /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <returns>ApiResponse of PositionsClosePnlBase</returns>
-        public ApiResponse<PositionsClosePnlBase> PositionsClosePnlRecordsWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
-        {
-            // verify the parameter 'page'
-            if (page is not null and >= 0 and <= PositionsClosePnlRecordsPageMaxValue)
-            {
-                throw new ApiException(400, "Validation error on 'page' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
-            }
-            // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= PositionsClosePnlRecordsLimitMaxValue)
-            {
-                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
-            }
+        ///// <summary>
+        ///// Get user&#39;s closed profit and loss records
+        ///// </summary>
+        ///// <remarks>
+        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
+        ///// </remarks>
+        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        ///// <param name="symbol">Contract type</param>
+        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
+        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
+        ///// <param name="execType">Execution type (optional)</param>
+        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
+        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        ///// <returns>ApiResponse of PositionsClosePnlBase</returns>
+        //public ApiResponse<PositionsClosePnlBase> PositionsClosePnlRecordsWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
+        //{
+        //    // verify the parameter 'page'
+        //    if (page is not null and >= 0 and <= PositionsClosePnlRecordsPageMaxValue)
+        //    {
+        //        throw new ApiException(400, "Validation error on 'page' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
+        //    }
+        //    // verify the parameter 'limit'
+        //    if (limit is not null and >= 0 and <= PositionsClosePnlRecordsLimitMaxValue)
+        //    {
+        //        throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
+        //    }
 
-            var localVarPath = "/v2/private/trade/closed-pnl/list";
-            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+        //    var localVarPath = "/v2/private/trade/closed-pnl/list";
+        //    var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
+        //    localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
 
-            if (startTime is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime));
-            }
+        //    if (startTime is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime));
+        //    }
 
-            if (endTime is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime));
-            }
+        //    if (endTime is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime));
+        //    }
 
-            if (execType is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType));
-            }
+        //    if (execType is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType));
+        //    }
 
-            if (page is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page));
-            }
+        //    if (page is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page));
+        //    }
 
-            if (limit is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
-            }
+        //    if (limit is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
+        //    }
 
-            // authentication (timestamp) required
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
+        //    // authentication (timestamp) required
+        //    localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
-            // authentication (apiKey) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
-            }
+        //    // authentication (apiKey) required
+        //    if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
+        //    }
 
-            return CallApiWithHttpInfo<PositionsClosePnlBase>(localVarPath, Method.GET, localVarQueryParams);
-        }
+        //    return CallApiWithHttpInfo<PositionsClosePnlBase>(localVarPath, Method.GET, localVarQueryParams);
+        //}
 
-        /// <summary>
-        /// Get user&#39;s closed profit and loss records
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        /// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        /// <param name="execType">Execution type (optional)</param>
-        /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <returns>Task of PositionsClosePnlBase</returns>
-        public async Task<PositionsClosePnlBase> PositionsClosePnlRecordsAsync(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
-            => (await PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit)).Data;
+        ///// <summary>
+        ///// Get user&#39;s closed profit and loss records
+        ///// </summary>
+        ///// <remarks>
+        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
+        ///// </remarks>
+        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        ///// <param name="symbol">Contract type</param>
+        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
+        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
+        ///// <param name="execType">Execution type (optional)</param>
+        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
+        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        ///// <returns>Task of PositionsClosePnlBase</returns>
+        //public async Task<PositionsClosePnlBase> PositionsClosePnlRecordsAsync(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
+        //    => (await PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit)).Data;
 
-        /// <summary>
-        /// Get user&#39;s closed profit and loss records
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        /// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        /// <param name="execType">Execution type (optional)</param>
-        /// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <returns>Task of ApiResponse (PositionsClosePnlBase)</returns>
-        public Task<ApiResponse<PositionsClosePnlBase>> PositionsClosePnlRecordsAsyncWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
-        {
-            // verify the parameter 'page'
-            if (page is not null and >= 0 and <= PositionsClosePnlRecordsPageMaxValue)
-            {
-                throw new ApiException(400, "Validation error on 'page' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
-            }
-            // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= PositionsClosePnlRecordsLimitMaxValue)
-            {
-                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
-            }
+        ///// <summary>
+        ///// Get user&#39;s closed profit and loss records
+        ///// </summary>
+        ///// <remarks>
+        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
+        ///// </remarks>
+        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        ///// <param name="symbol">Contract type</param>
+        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
+        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
+        ///// <param name="execType">Execution type (optional)</param>
+        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
+        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        ///// <returns>Task of ApiResponse (PositionsClosePnlBase)</returns>
+        //public Task<ApiResponse<PositionsClosePnlBase>> PositionsClosePnlRecordsAsyncWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
+        //{
+        //    // verify the parameter 'page'
+        //    if (page is not null and >= 0 and <= PositionsClosePnlRecordsPageMaxValue)
+        //    {
+        //        throw new ApiException(400, "Validation error on 'page' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
+        //    }
+        //    // verify the parameter 'limit'
+        //    if (limit is not null and >= 0 and <= PositionsClosePnlRecordsLimitMaxValue)
+        //    {
+        //        throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
+        //    }
 
-            var localVarPath = "/v2/private/trade/closed-pnl/list"; ;
-            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+        //    var localVarPath = "/v2/private/trade/closed-pnl/list"; ;
+        //    var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
+        //    localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
 
-            if (startTime is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime));
-            }
+        //    if (startTime is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start_time", startTime));
+        //    }
 
-            if (endTime is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime));
-            }
+        //    if (endTime is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "end_time", endTime));
+        //    }
 
-            if (execType is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType));
-            }
+        //    if (execType is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "exec_type", execType));
+        //    }
 
-            if (page is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page));
-            }
+        //    if (page is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page));
+        //    }
 
-            if (limit is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
-            }
+        //    if (limit is not null)
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
+        //    }
 
-            // authentication (timestamp) required
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
+        //    // authentication (timestamp) required
+        //    localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
-            // authentication (apiKey) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
-            }
+        //    // authentication (apiKey) required
+        //    if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+        //    {
+        //        localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
+        //    }
 
-            return CallApiAsyncWithHttpInfo<PositionsClosePnlBase>(localVarPath, Method.GET, localVarQueryParams);
-        }
+        //    return CallApiAsyncWithHttpInfo<PositionsClosePnlBase>(localVarPath, Method.GET, localVarQueryParams);
+        //}
     }
 }

@@ -6,8 +6,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'API Key Info' API method.
     /// </summary>
-    public record APIKeyInfoBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<APIKeyInfoRes>? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record APIKeyInfoBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<APIKeyInfoRes>? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'API Key Info' API method.
@@ -18,8 +18,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Announcement' API method.
     /// </summary>
-    public record AnnouncementBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<AnnouncementRes>? Result,
-        string TimeNow);
+    public record AnnouncementBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<AnnouncementRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Announcement' API method.
@@ -77,10 +77,10 @@ namespace BybitAPI.Model
     /// 'trail_value' field is not defined in documentation, but actual API response returns it.
     /// </para>
     /// </remarks>
-    public record ConditionalCancelAllRes(string Clordid, long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price,
-        int Qty, TimeInForce TimeInForce, CreateType CreateType, CancelType CancelType, OrderStatus? OrderStatus, decimal? LeavesValue,
-        DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string CrossStatus, long? CrossSeq, string StopOrderType,
-        TriggerPriceType TriggerBy, decimal? BasePrice, decimal? TrailValue, string ExpectedDirection);
+    public record ConditionalCancelAllRes(string Clordid, long UserId, Symbol Symbol, Side Side, OrderType OrderType,
+        decimal Price, int Qty, TimeInForce TimeInForce, CreateType CreateType, CancelType CancelType, OrderStatus? OrderStatus,
+        decimal? LeavesValue, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string CrossStatus, long CrossSeq,
+        string StopOrderType, TriggerPriceType TriggerBy, decimal? BasePrice, decimal? TrailValue, string ExpectedDirection);
 
     /// <summary>
     /// Base type of the response for the 'Get Conditional Order' API method.
@@ -106,8 +106,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Place Conditional Order' API method.
     /// </summary>
-    public record ConditionalNewOrderBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, ConditionalNewOrderRes? Result,
-        string TimeNow);
+    public record ConditionalNewOrderBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        ConditionalNewOrderRes? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Place Conditional Order' API method.
@@ -135,9 +135,9 @@ namespace BybitAPI.Model
     /// Actual data type of the response for the 'Query Conditional Order (real-time)' API method.
     /// </summary>
     public record ConditionalQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty, decimal StopPx,
-        decimal BasePrice, TimeInForce TimeInForce, OrderStatus OrderStatus, ConditionalQuiryExtFields ExtFields,
-        int LeavesQty, decimal LeavesValue, int? CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason,
-        CancelType CancelType, string OrderLinkId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string OrderId, TriggerPriceType? TriggerBy);
+        decimal BasePrice, TimeInForce TimeInForce, OrderStatus OrderStatus, ConditionalQuiryExtFields ExtFields, int LeavesQty,
+        decimal LeavesValue, int? CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason, CancelType CancelType,
+        string OrderLinkId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string OrderId, TriggerPriceType? TriggerBy);
 
     /// <summary>
     /// Extra data for the <see cref="ConditionalQueryRes"/>
@@ -151,9 +151,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Replace Conditional Order' API method.
     /// </summary>
-    /// <remarks>
-    public record ConditionalReplaceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, ConditionalReplaceRes? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record ConditionalReplaceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, ConditionalReplaceRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'Replace Conditional Order' API method.
@@ -166,9 +165,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'User Trade Records' API method.
     /// </summary>
-    /// <remarks>
-    public record ExecutionGetTradesBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, ExecutionGetTradesListBase? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record ExecutionGetTradesBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, ExecutionGetTradesListBase? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Collection type for the actual data type of the 'User Trade Records' API method response.
@@ -186,50 +184,28 @@ namespace BybitAPI.Model
     /// ignore the 'exec_time' field because it is marked as 'abandoned' in the documentation.
     /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
     /// </remarks>
-    public record ExecutionGetTradesRes(decimal ClosedSize, long CrossSeq, decimal ExecFee, string ExecId, decimal ExecPrice, int ExecQty,
+    public record ExecutionGetTradesRes(int ClosedSize, long CrossSeq, decimal ExecFee, string ExecId, decimal ExecPrice, int ExecQty,
         ExecType ExecType, decimal ExecValue, decimal FeeRate, LiquidityType LastLiquidityInd, int LeavesQty, long NthFill, string OrderId,
         string OrderLinkId, decimal OrderPrice, int OrderQty, OrderType OrderType, Side Side, Symbol Symbol, int UserId, long TradeTimeMs);
-
-    /// <summary>
-    /// Base type of the response for the 'Closed Profit and Loss' API method.
-    /// </summary>
-    /// <remarks>
-    public record PositionsClosePnlBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, PositionsClosePnlListBase? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
-
-    /// <summary>
-    /// Collection type for the actual data type of the 'Closed Profit and Loss' API method response.
-    /// </summary>
-    public record PositionsClosePnlListBase(int CurrentPage, IList<PositionsClosePnlRes> Data);
-
-    /// <summary>
-    /// Actual data type of the response for the 'Closed Profit and Loss' API method.
-    /// </summary>
-    /// <remarks>
-    /// 'order_id' (also 'order_link_id' and 'stop_order_id') field looks like a UUID, but the property type could not be defined as GUID because the API may return an empty string. Since an empty string does not imply null, it cannot be defined as a nullable reference type either.
-    /// </remarks>
-    public record PositionsClosePnlRes(long Id, long UserId, Symbol Symbol, string OrderId, Side Side, int Qty, decimal OrderPrice, OrderType OrderType,
-        ExecType ExecType, decimal? ClosedSize, decimal? CumEntryValue, decimal? AvgEntryPrice, decimal? CumExitValue, decimal? AvgExitPrice,
-        decimal? ClosedPnl, int? FillCount, int? Leverage, DateTimeOffset CreatedAt);
 
     /// <summary>
     /// Base type of the response for the 'My Last Funding Fee' API method.
     /// </summary>
     /// <remarks>
-    public record FundingMyLastFeeBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingMyLastFeeRes? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record FundingMyLastFeeBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingMyLastFeeRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'My Last Funding Fee' API method.
     /// </summary>
-    public record FundingMyLastFeeRes(Symbol Symbol, Side Side, decimal Size, decimal FundingRate, decimal ExecFee, long ExecTimestamp);
+    public record FundingMyLastFeeRes(Symbol Symbol, Side Side, int Size, decimal FundingRate, decimal ExecFee, long ExecTimestamp);
 
     /// <summary>
     /// Base type of the response for the 'Predicted Funding Rate and My Funding Fee' API method.
     /// </summary>
     /// <remarks>
-    public record FundingPredictedBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingPredictedRes? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record FundingPredictedBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingPredictedRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'Predicted Funding Rate and My Funding Fee' API method.
@@ -240,8 +216,8 @@ namespace BybitAPI.Model
     /// Base type of the response for the 'Get the Last Funding Rate' API method.
     /// </summary>
     /// <remarks>
-    public record FundingPrevRateBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingPrevRateRes? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record FundingPrevRateBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingPrevRateRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'Get the Last Funding Rate' API method.
@@ -251,31 +227,33 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Query Kline' API method.
     /// </summary>
-    /// <remarks>
-    public record KlineGetBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<KlineGetRes>? Result, string TimeNow);
+    public record KlineGetBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<KlineGetRes>? Result,
+        string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Query Kline' API method.
     /// </summary>
-    public record KlineGetRes(Symbol Symbol, string Interval, long OpenTime, decimal Open, decimal High, decimal Low, decimal Close,
-        decimal Volume, decimal Turnover);
+    public record KlineGetRes(Symbol Symbol, string Interval, long OpenTime, decimal Open, decimal High, decimal Low,
+        decimal Close, decimal Volume, decimal Turnover);
 
     /// <summary>
     /// Base type of the response for the 'Query Mark Price Kline' API method.
     /// </summary>
-    /// <remarks>
-    public record KlineMarkPriceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<KlineMarkPriceRes>? Result, string TimeNow);
+    public record KlineMarkPriceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<KlineMarkPriceRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Query Mark Price Kline' API method.
     /// </summary>
-    public record KlineMarkPriceRes(long Id, Symbol Symbol, string Period, long StartAt, decimal Open, decimal High, decimal Low, decimal Close);
+    public record KlineMarkPriceRes(long Id, Symbol Symbol, string Period, long StartAt, decimal Open, decimal High, decimal Low,
+        decimal Close);
 
     /// <summary>
     /// Base type of the response for the 'Long-Short Ratio' API method.
     /// </summary>
     /// <remarks>
-    public record MarketAccountRatioBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<MarketAccountRatioRes>? Result, string TimeNow);
+    public record MarketAccountRatioBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<MarketAccountRatioRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Long-Short Ratio' API method.
@@ -285,8 +263,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Latest Big Deal' API method.
     /// </summary>
-    /// <remarks>
-    public record MarketBigDealBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<MarketBigDealRes>? Result, string TimeNow);
+    public record MarketBigDealBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<MarketBigDealRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Latest Big Deal' API method.
@@ -296,8 +274,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Liquidated Orders' API method.
     /// </summary>
-    /// <remarks>
-    public record MarketLiqRecordsBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<MarketLiqRecordsRes>? Result, string TimeNow);
+    public record MarketLiqRecordsBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<MarketLiqRecordsRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Liquidated Orders' API method.
@@ -307,8 +285,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Open Interest' API method.
     /// </summary>
-    /// <remarks>
-    public record MarketOpenInterestBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<MarketOpenInterestRes>? Result, string TimeNow);
+    public record MarketOpenInterestBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<MarketOpenInterestRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Open Interest' API method.
@@ -319,32 +297,37 @@ namespace BybitAPI.Model
     /// Base type of the response for the 'Open Interest' API method.
     /// </summary>
     /// <remarks>
-    public record MarketOrderbookBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<MarketOrderbookRes>? Result, string TimeNow);
+    public record MarketOrderbookBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<MarketOrderbookRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Open Interest' API method.
     /// </summary>
-    public record MarketOrderbookRes(Symbol Symbol, decimal Price, decimal Size, Side side);
+    public record MarketOrderbookRes(Symbol Symbol, decimal Price, int Size, Side Side);
 
     /// <summary>
     /// Base type of the response for the 'Latest Information for Symbol' API method.
     /// </summary>
     /// <remarks>
-    public record MarketSymbolInfoBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<MarketSymbolInfokRes>? Result, string TimeNow);
+    public record MarketSymbolInfoBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<MarketSymbolInfokRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Latest Information for Symbol' API method.
     /// </summary>
-    public record MarketSymbolInfokRes(Symbol Symbol, decimal BidPrice, decimal AskPrice, decimal LastPrice, TickDirectionType LastTickDirection,
-        decimal PrevPrice24h, decimal Price24hPcnt, decimal HighPrice24h, decimal LowPrice24h, decimal PrevPrice1h, decimal Price1hPcnt,
-        decimal MarkPrice, decimal IndexPrice, long OpenInterest, decimal OpenValue, decimal TotalTurnover, decimal Turnover24h, decimal TotalVolume, decimal Volume24h,
-        decimal FundingRate, decimal PredictedFundingRate, DateTimeOffset NextFundingTime, int CountdownHour);
+    public record MarketSymbolInfokRes(Symbol Symbol, decimal BidPrice, decimal AskPrice, decimal LastPrice,
+        TickDirectionType LastTickDirection, decimal PrevPrice24h, decimal Price24hPcnt, decimal HighPrice24h,
+        decimal LowPrice24h, decimal PrevPrice1h, decimal Price1hPcnt, decimal MarkPrice, decimal IndexPrice,
+        long OpenInterest, decimal OpenValue, decimal TotalTurnover, decimal Turnover24h, decimal TotalVolume,
+        decimal Volume24h, decimal FundingRate, decimal PredictedFundingRate, DateTimeOffset NextFundingTime,
+        int CountdownHour);
 
     /// <summary>
     /// Base type of the response for the 'Public Trading Records' API method.
     /// </summary>
     /// <remarks>
-    public record MarketTradingRecordsBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<MarketTradingRecordsRes>? Result, string TimeNow);
+    public record MarketTradingRecordsBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<MarketTradingRecordsRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Public Trading Records' API method.
@@ -355,22 +338,22 @@ namespace BybitAPI.Model
     /// Base type of the response for the 'Cancel Active Order' API method.
     /// </summary>
     /// <remarks>
-    public record OrderCancelBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, OrderCancelRes? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record OrderCancelBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, OrderCancelRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'Cancel Active Order' API method.
     /// </summary>
-    public record OrderCancelRes(long UserId, string OrderId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty, TimeInForce TimeInForce, OrderStatus OrderStatus,
-        double LastExecTime, decimal LastExecPrice, int LeavesQty, int CumExecQty, decimal CumExecValue, decimal CumExecFee, string? RejectReason, string OrderLinkId,
-        DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
+    public record OrderCancelRes(long UserId, string OrderId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
+        TimeInForce TimeInForce, OrderStatus OrderStatus, double LastExecTime, decimal LastExecPrice, int LeavesQty, int CumExecQty,
+        decimal CumExecValue, decimal CumExecFee, string? RejectReason, string OrderLinkId, DateTimeOffset CreatedAt,
+        DateTimeOffset UpdatedAt);
 
     /// <summary>
     /// Base type of the response for the 'Cancel All Active Orders' API method.
     /// </summary>
-    /// <remarks>
-    public record OrderCancelAllBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<OrderCancelAllRes>? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record OrderCancelAllBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<OrderCancelAllRes>? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'Cancel All Active Orders' API method.
@@ -378,42 +361,42 @@ namespace BybitAPI.Model
     /// <remarks>
     /// 'clOrdID' field is not consistent with the snake case naming policy, so it is named 'xxxid' when it should be named 'xxxId'.
     /// </remarks>
-    public record OrderCancelAllRes(string Clordid, long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty, TimeInForce TimeInForce,
-        CreateType CreateType, CancelType CancelType, OrderStatus? OrderStatus, int LeavesQty, decimal LeavesValue, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt,
-        string CrossStatus, long CrossSeq);
+    public record OrderCancelAllRes(string Clordid, long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
+        TimeInForce TimeInForce, CreateType CreateType, CancelType CancelType, OrderStatus? OrderStatus, int LeavesQty,
+        decimal LeavesValue, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string CrossStatus, long CrossSeq);
 
     /// <summary>
     /// Base type of the response for the 'Get Active Order' API method.
     /// </summary>
     /// <remarks>
-    public record OrderGetOrdersBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, OrderGetOrdersListBase? Result, string TimeNow,
-        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+    public record OrderGetOrdersBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        OrderGetOrdersListBase? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Collection type for the actual data type of the 'Get Active Order' API method response.
     /// </summary>
-    public record OrderGetOrdersListBase(IReadOnlyList<OrderGetOrdersRes>? Data);
+    public record OrderGetOrdersListBase(IReadOnlyList<OrderGetOrdersRes> Data);
 
     /// <summary>
     /// Actual data type of the response for the 'Get Active Order' API method.
     /// </summary>
-    public record OrderGetOrdersRes(long UserId, OrderStatus OrderStatus, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty, TimeInForce TimeInForce,
-        string OrderLinkId, string OrderId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, int LeavesQty, decimal LeavesValue, decimal CumExecQty, decimal CumExecValue,
-        decimal CumExecFee, string? RejectReason);
+    public record OrderGetOrdersRes(long UserId, OrderStatus OrderStatus, Symbol Symbol, Side Side, OrderType OrderType, decimal Price,
+        int Qty, TimeInForce TimeInForce, string OrderLinkId, string OrderId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt,
+        int LeavesQty, decimal LeavesValue, decimal CumExecQty, decimal CumExecValue, decimal CumExecFee, string? RejectReason);
 
     /// <summary>
     /// Base type of the response for the 'Place Active Order' API method.
     /// </summary>
-    /// <remarks>
     public record OrderNewBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, OrderNewRes? Result, string TimeNow,
         int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'Place Active Order' API method.
     /// </summary>
-    public record OrderNewRes(long UserId, string OrderId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty, TimeInForce TimeInForce,
-        OrderStatus OrderStatus, double LastExecTime, decimal LastExecPrice, int LeavesQty, int CumExecQty, decimal CumExecValue, decimal CumExecFee, string? RejectReason,
-        string OrderLinkId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
+    public record OrderNewRes(long UserId, string OrderId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
+        TimeInForce TimeInForce, OrderStatus OrderStatus, double LastExecTime, decimal LastExecPrice, int LeavesQty, int CumExecQty,
+        decimal CumExecValue, decimal CumExecFee, string? RejectReason, string OrderLinkId, DateTimeOffset CreatedAt,
+        DateTimeOffset UpdatedAt);
 
     /// <summary>
     /// Base type of the response for the 'Query Active Order (real-time)' API method.
@@ -430,9 +413,10 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Query Active Order (real-time)' API method.
     /// </summary>
-    public record OrderQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty, TimeInForce TimeInForce, OrderStatus OrderStatus,
-        OrderQueryExtFields ExtFields, double LastExecTime, int LeavesQty, decimal LeavesValue, int? CumExecQty, decimal? CumExecValue, decimal? CumExecFee,
-        string? RejectReason, CancelType CancelType, string OrderLinkId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string OrderId);
+    public record OrderQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
+        TimeInForce TimeInForce, OrderStatus OrderStatus, OrderQueryExtFields ExtFields, double LastExecTime, int LeavesQty,
+        decimal LeavesValue, int? CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason, CancelType CancelType,
+        string OrderLinkId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string OrderId);
 
     /// <summary>
     /// Extra data for the <see cref="OrderQueryRes"/>
@@ -446,7 +430,6 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Replace Active Order' API method.
     /// </summary>
-    /// <remarks>
     public record OrderReplaceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, OrderReplaceRes? Result, string TimeNow,
         int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
@@ -455,17 +438,88 @@ namespace BybitAPI.Model
     /// </summary>
     public record OrderReplaceRes(string OrderId);
 
-    //========================================
-    //========================================
-    //========================================
-    //========================================
-    //========================================
-    //========================================
+    /// <summary>
+    /// Base type of the response for the 'Change Margin' API method.
+    /// </summary>
+    /// <remarks>
+    public record PositionsChangeMarginBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, decimal? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Base type of the response for the 'Closed Profit and Loss' API method.
+    /// </summary>
+    public record PositionsClosePnlBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        PositionsClosePnlListBase? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Collection type for the actual data type of the 'Closed Profit and Loss' API method response.
+    /// </summary>
+    public record PositionsClosePnlListBase(int CurrentPage, IList<PositionsClosePnlRes> Data);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Closed Profit and Loss' API method.
+    /// </summary>
+    /// <remarks>
+    /// 'order_id' (also 'order_link_id' and 'stop_order_id') field looks like a UUID, but the property type could not be defined as GUID because the API may return an empty string. Since an empty string does not imply null, it cannot be defined as a nullable reference type either.
+    /// 'created_at' is a UNIX timestamp in seconds. not a datetime string. omg. Inconsistent naming!
+    /// </remarks>
+    public record PositionsClosePnlRes(long Id, long UserId, Symbol Symbol, string OrderId, Side Side, int Qty, decimal OrderPrice,
+        OrderType OrderType, ExecType ExecType, int ClosedSize, decimal CumEntryValue, decimal AvgEntryPrice, decimal CumExitValue,
+        decimal AvgExitPrice, decimal ClosedPnl, int FillCount, decimal Leverage, long CreatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'My Position' API method.
+    /// </summary>
+    public record PositionsMyPositionBase<T>(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, T? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Wrapper data type of the response for the 'My Position' API method.
+    /// </summary>
+    public record PositionsMyPositionResBase(PositionsMyPositionRes? Data, bool IsValid);
+
+    /// <summary>
+    /// Actual data type of the response for the 'My Position' API method.
+    /// </summary>
+    public record PositionsMyPositionRes(long Id, int PositionIdx, int Mode, long UserId, long RiskId, Symbol Symbol, Side Side,
+        int Size, decimal PositionValue, decimal EntryPrice, bool IsIsolated, int AutoAddMargin, decimal Leverage,
+        decimal EffectiveLeverage, decimal PositionMargin, decimal LiqPrice, decimal BustPrice, decimal OccClosingFee,
+        decimal OccFundingFee, decimal TakeProfit, decimal StopLoss, decimal TrailingStop, PositionStatus PositionStatus,
+        int DeleverageIndicator, string OcCalcData, decimal OrderMargin, decimal WalletBalance, decimal RealisedPnl,
+        decimal UnrealisedPnl, decimal CumRealisedPnl, long CrossSeq, long PositionSeq, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'Set Leverage' API method.
+    /// </summary>
+    public record PositionsSaveLeverageBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, decimal? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Base type of the response for the 'Set Trading-Stop' API method.
+    /// </summary>
+    public record PositionsTradingStopBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, PositionsTradingStopRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Set Trading-Stop' API method.
+    /// </summary>
+    public record PositionsTradingStopRes(long Id, long UserId, Symbol Symbol, Side Side, int Size, decimal PositionValue,
+        decimal EntryPrice, long RiskId, int AutoAddMargin, decimal Leverage, decimal PositionMargin, decimal LiqPrice, decimal BustPrice,
+        decimal OccClosingFee, decimal OccFundingFee, decimal TakeProfit, decimal StopLoss, decimal TrailingStop, PositionStatus PositionStatus,
+        int DeleverageIndicator, string OcCalcData, decimal OrderMargin, decimal WalletBalance, decimal RealisedPnl, decimal CumRealisedPnl,
+        long CumCommission, long CrossSeq, long PositionSeq, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt,
+        PositionsTradingStopResExtFields ExtFields);
+
+    /// <summary>
+    /// Extra data for the <see cref="PositionsTradingStopRes"/>
+    /// </summary>
+    public record PositionsTradingStopResExtFields(decimal TrailingActive, TriggerPriceType? SlTriggerBy, int V, int Mm);
+
     /// <summary>
     /// Base type of the response for the 'Query Symbol' API method.
     /// </summary>
-    /// <remarks>
-    public record SymbolGetBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<SymbolGetRes>? Result, string TimeNow);
+    public record SymbolGetBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<SymbolGetRes>? Result,
+        string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Query Symbol' API method.
@@ -474,17 +528,135 @@ namespace BybitAPI.Model
         LeverageFilterRes LeverageFilter, PriceFilterRes PriceFilter, LotSizeFilterRes LotSizeFilter);
 
     /// <summary>
-    /// Extra data for the <see cref="MarketSymbolInfoRes"/>
+    /// Extra data for the <see cref="SymbolGetRes"/>
     /// </summary>
     public record LeverageFilterRes(decimal MinLeverage, decimal MaxLeverage, decimal LeverageStep);
 
     /// <summary>
-    /// Extra data for the <see cref="MarketSymbolInfoRes"/>
+    /// Extra data for the <see cref="SymbolGetRes"/>
     /// </summary>
     public record PriceFilterRes(decimal MinPrice, decimal MaxPrice, decimal TickSize);
 
     /// <summary>
-    /// Extra data for the <see cref="MarketSymbolInfoRes"/>
+    /// Extra data for the <see cref="SymbolGetRes"/>
     /// </summary>
     public record LotSizeFilterRes(int MaxTradingQty, decimal MinTradingQty, int QtyStep);
+
+    /// <summary>
+    /// Base type of the response for the 'Asset Exchange Records' API method.
+    /// </summary>
+    public record WalletExchangeOrderBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<WalletExchangeOrderRes>? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Asset Exchange Records' API method.
+    /// </summary>
+    /// <remarks>
+    /// The format for 'created_at' is "YYYY-MM-DD HH:MM:SS". As with naming conventions, this format is inconsistent.
+    /// </remarks>
+    public record WalletExchangeOrderRes(Currency FromCoin, Currency ToCoin, decimal FromAmount, decimal ToAmount, decimal ExchangeRate,
+        decimal FromFee, DateTimeOffset CreatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'Get Wallet Balance' API method.
+    /// </summary>
+    public record WalletGetBalanceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, WalletGetBalanceResBase? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Wrapper data type of the response for the 'Get Wallet Balance' API method.
+    /// </summary>
+    public record WalletGetBalanceResBase(WalletGetBalanceRes? Btc, WalletGetBalanceRes? Eos, WalletGetBalanceRes? Eth,
+        WalletGetBalanceRes? Usdt, WalletGetBalanceRes? Xrp);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Get Wallet Balance' API method.
+    /// </summary>
+    public record WalletGetBalanceRes(decimal Equity, decimal AvailableBalance, decimal UsedMargin, decimal OrderMargin,
+        decimal PositionMargin, decimal OccClosingFee, decimal OccFundingFee, decimal WalletBalance, decimal RealisedPnl,
+        decimal UnrealisedPnl, decimal CumRealisedPnl, decimal GivenCash, decimal ServiceCash);
+
+    /// <summary>
+    /// Base type of the response for the 'Wallet Fund Records' API method.
+    /// </summary>
+    public record WalletGetRecordsBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, WalletGetRecordsResBase? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Wrapper data type of the response for the 'Wallet Fund Records' API method.
+    /// </summary>
+    public record WalletGetRecordsResBase(IReadOnlyList<WalletGetRecordsRes> Data);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Wallet Fund Records' API method.
+    /// </summary>
+    public record WalletGetRecordsRes(long Id, long UserId, Currency Coin, long WalletId, string Type, decimal Amount,
+        string TxId, string Address, decimal WalletBalance, DateTimeOffset ExecTime, long CrossSeq);
+
+    /// <summary>
+    /// Base type of the response for the 'Get Risk Limit' API method.
+    /// </summary>
+    public record WalletGetRiskLimitBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<WalletGetRiskLimitRes>? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Get Risk Limit' API method.
+    /// </summary>
+    /// <remarks>
+    /// 'is_lowest_risk' field is a numeric type and, despite its name, is not a bool. '0' represents 'No' and '1' represents 'Yes'. Terrible.
+    /// </remarks>
+    public record WalletGetRiskLimitRes(long Id, Currency Coin, decimal Limit, decimal MaintainMargin, decimal StartingMargin,
+        IEnumerable<int> Section, int IsLowestRisk, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'Set Risk Limit' API method.
+    /// </summary>
+    public record WalletSetRiskLimitBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, WalletSetRiskLimitRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Set Risk Limit' API method.
+    /// </summary>
+    public record WalletSetRiskLimitRes(WalletSetRiskLimitResPosition Position, WalletSetRiskLimitResRisk Risk);
+
+    /// <summary>
+    /// Internal data type of the response for the 'Set Risk Limit' API method.
+    /// </summary>
+    public record WalletSetRiskLimitResPosition(long Id, long UserId, Symbol Symbol, Side Side, int Size, decimal PositionValue,
+        decimal EntryPrice, long RiskId, decimal AutoAddMargin, decimal Leverage, decimal PositionMargin, decimal LiqPrice,
+        decimal BustPrice, decimal OccClosingFee, decimal OccFundingFee, decimal TakeProfit, decimal StopLoss, decimal TrailingStop,
+        PositionStatus PositionStatus, int DeleverageIndicator, string OcCalcData, decimal OrderMargin, decimal WalletBalance,
+        decimal RealisedPnl, decimal CumRealisedPnl, decimal CumCommission, long CrossSeq, long PositionSeq, DateTimeOffset CreatedAt,
+        DateTimeOffset UpdatedAt, WalletSetRiskLimitResPositionExtFields ExtFields);
+
+    /// <summary>
+    /// Extra data type of the response for the 'Set Risk Limit' API method.
+    /// </summary>
+    public record WalletSetRiskLimitResPositionExtFields(decimal TrailingActive, int V);
+
+    /// <summary>
+    /// Internal data type of the response for the 'Set Risk Limit' API method.
+    /// </summary>
+    /// <remarks>
+    /// 'is_lowest_risk' field is a numeric type and, despite its name, is not a bool. '0' represents 'No' and '1' represents 'Yes'. Terrible.
+    /// </remarks>
+    public record WalletSetRiskLimitResRisk(long Id, Currency Coin, decimal Limit, decimal MaintainMargen, decimal StartingMargin,
+        string Section, int IsLowestRisk, DateTimeOffset CreateAt, DateTimeOffset UpdatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'Withdraw Records' API method.
+    /// </summary>
+    public record WalletWithdrawBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, WalletWithdrawResBase? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Wrapper data type of the response for the 'Withdraw Records' API method.
+    /// </summary>
+    public record WalletWithdrawResBase(IReadOnlyList<WalletWithdrawRes> Data, int CurrentPage, int LastPage);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Withdraw Records' API method.
+    /// </summary>
+    public record WalletWithdrawRes(long Id, long UserId, Currency coin, WithdrawStatus Status, decimal Amount, decimal Fee,
+        string Address, string TxId, DateTimeOffset SubmitedAt, DateTimeOffset UpdatedAt);
 }

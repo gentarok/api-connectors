@@ -3,7 +3,6 @@ using BybitAPI.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BybitAPI.Api
@@ -76,7 +75,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns><see cref="OrderGetOrdersBase"/></returns>
-        OrderGetOrdersBase OrderGetOrders(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, string? direction = null, string? cursor = null);
+        OrderGetOrdersBase OrderGetOrders(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Get my active order list.
@@ -91,7 +90,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>ApiResponse of OrderGetOrdersBase</returns>
-        ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, string? direction = null, string? cursor = null);
+        ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Place active order
@@ -276,7 +275,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of OrderGetOrdersBase</returns>
-        Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, string? direction = null, string? cursor = null);
+        Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Get my active order list.
@@ -291,7 +290,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ApiResponse (OrderGetOrdersBase)</returns>
-        Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, string? direction = null, string? cursor = null);
+        Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Place active order
@@ -420,7 +419,6 @@ namespace BybitAPI.Api
     public partial class OrderApi : ApiBase, IOrderApi
     {
         private const int OrderGetOrdersLimitMaxValue = 50;
-        private static readonly string[] Directions = new[] { "prev", "next" };
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderApi"/> class.
@@ -648,7 +646,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns><see cref="OrderGetOrdersBase"/></returns>
-        public OrderGetOrdersBase OrderGetOrders(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, string? direction = null, string? cursor = null)
+        public OrderGetOrdersBase OrderGetOrders(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null)
             => OrderGetOrdersWithHttpInfo(symbol, limit, orderStatus, direction, cursor).Data;
 
         /// <summary>
@@ -661,17 +659,12 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>ApiResponse of OrderGetOrdersBase</returns>
-        public ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, string? direction = null, string? cursor = null)
+        public ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and <= OrderGetOrdersLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling OrderApi->OrderGetOrders");
-            }
-            // verify the parameter 'direction'
-            if (direction is not null && Directions.Contains(direction.ToLower()) is false)
-            {
-                throw new ApiException(400, "Validation error on 'direction' parameter occured when calling OrderApi->OrderGetOrders");
             }
 
             var localVarPath = "/v2/private/order/list";
@@ -721,7 +714,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of OrderGetOrdersBase</returns>
-        public async Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, string? direction = null, string? cursor = null)
+        public async Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null)
             => (await OrderGetOrdersAsyncWithHttpInfo(symbol, limit, orderStatus, direction, cursor)).Data;
 
         /// <summary>
@@ -734,17 +727,12 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns>Task of ApiResponse (OrderGetOrdersBase)</returns>
-        public Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, string? direction = null, string? cursor = null)
+        public Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and <= OrderGetOrdersLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling OrderApi->OrderGetOrders");
-            }
-            // verify the parameter 'direction'
-            if (direction is not null && Directions.Contains(direction.ToLower()) is false)
-            {
-                throw new ApiException(400, "Validation error on 'direction' parameter occured when calling OrderApi->OrderGetOrders");
             }
 
             var localVarPath = "/v2/private/order/list";

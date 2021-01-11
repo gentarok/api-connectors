@@ -84,7 +84,7 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
 
             var symbol = Symbol.BTCUSD;
-            string? orderId = string.Empty;
+            var orderId = string.Empty;
             string? orderLinkId = null;
 
             // Act
@@ -253,7 +253,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             int? limit = null;
             OrderStatus? orderStatus = null;
-            string? direction = null;
+            SearchDirection? direction = null;
             string? cursor = null;
 
             // Act

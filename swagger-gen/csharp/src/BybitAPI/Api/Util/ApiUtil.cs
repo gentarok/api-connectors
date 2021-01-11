@@ -80,6 +80,9 @@ namespace BybitAPI.Api.Util
 
             // Add a default String to Enum converter.
             yield return new JsonStringEnumConverter();
+
+            //// Add a custom DateTimeOffset converter.
+            yield return new UtcDateTimeStringToDateTimeOffsetConverter();
         }
     }
 }

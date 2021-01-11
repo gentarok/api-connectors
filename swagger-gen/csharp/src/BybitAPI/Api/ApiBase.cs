@@ -24,6 +24,7 @@ namespace BybitAPI.Api
             {
                 PropertyNamingPolicy = new SnakeCaseNamingPolicy(),
                 NumberHandling = JsonNumberHandling.AllowReadingFromString,
+                PropertyNameCaseInsensitive = true,
             };
             foreach (var converter in ApiUtil.GetJsonConverters())
             {
@@ -162,6 +163,8 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
+            System.Diagnostics.Trace.TraceInformation($"CallApiWithHttpInfo called from ${callerName}, deserializing json value is:\n{localVarResponse.Content}");
+
             if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory(callerName, localVarResponse);
@@ -171,13 +174,13 @@ namespace BybitAPI.Api
                 }
             }
 
-            System.Diagnostics.Trace.TraceInformation($"CallApiWithHttpInfo called from ${callerName}, deserializing json value is:\n{localVarResponse.Content}");
-
-            return new ApiResponse<T>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(
+            var headers = localVarResponse.Headers.ToDictionary(
                     x => x.Name ?? throw new NullReferenceException("x.Name"),
-                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException("x.Value")),
-                JsonSerializer.Deserialize<T>(localVarResponse.Content, SerializerOptions) ?? throw new ResponseContentNullException());
+                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException("x.Value"));
+
+            var data = JsonSerializer.Deserialize<T>(localVarResponse.Content, SerializerOptions) ?? throw new ResponseContentNullException();
+
+            return new ApiResponse<T>(localVarStatusCode, headers, data);
         }
 
         protected async Task<ApiResponse<T>> CallApiAsyncWithHttpInfo<T>(string localVarPath, Method method, List<KeyValuePair<string, string>>? localVarQueryParams = default, [CallerMemberName] string callerName = default)
@@ -230,6 +233,8 @@ namespace BybitAPI.Api
 
             var localVarStatusCode = (int)localVarResponse.StatusCode;
 
+            System.Diagnostics.Trace.TraceInformation($"CallApiWithHttpInfo called from ${callerName}, deserializing json value is:\n{localVarResponse.Content}");
+
             if (ExceptionFactory is not null)
             {
                 var exception = ExceptionFactory(callerName, localVarResponse);
@@ -239,13 +244,13 @@ namespace BybitAPI.Api
                 }
             }
 
-            System.Diagnostics.Trace.TraceInformation($"CallApiAsyncWithHttpInfo called from ${callerName}, deserializing json value is:\n{localVarResponse.Content}");
-
-            return new ApiResponse<T>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(
+            var headers = localVarResponse.Headers.ToDictionary(
                     x => x.Name ?? throw new NullReferenceException("x.Name"),
-                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException("x.Value")),
-                JsonSerializer.Deserialize<T>(localVarResponse.Content, SerializerOptions) ?? throw new ResponseContentNullException());
+                    x => x.Value is not null ? x.Value.ToString() : throw new NullReferenceException("x.Value"));
+
+            var data = JsonSerializer.Deserialize<T>(localVarResponse.Content, SerializerOptions) ?? throw new ResponseContentNullException();
+
+            return new ApiResponse<T>(localVarStatusCode, headers, data);
         }
     }
 }
