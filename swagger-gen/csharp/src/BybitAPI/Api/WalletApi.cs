@@ -340,6 +340,7 @@ namespace BybitAPI.Api
     {
         private const int WalletExchangeOrderLimitMaxValue = 50;
         private const int WalletWithdrawLimitMaxValue = 50;
+        private const int WalletGetRecordsLimitMaxValue = 50;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletApi"/> class.
@@ -588,6 +589,12 @@ namespace BybitAPI.Api
         /// <returns>ApiResponse of WalletGetRecordsBase</returns>
         public ApiResponse<WalletGetRecordsBase> WalletGetRecordsWithHttpInfo(DateTimeOffset? startDate = null, DateTimeOffset? endDate = null, Currency? coin = null, WalletFundType? walletFundType = null, int? page = null, int? limit = null)
         {
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > WalletGetRecordsLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletGetRecordsBase");
+            }
+
             var localVarPath = "/open-api/wallet/fund/records";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -666,6 +673,12 @@ namespace BybitAPI.Api
         /// <returns>Task of ApiResponse (WalletGetRecordsBase)</returns>
         public Task<ApiResponse<WalletGetRecordsBase>> WalletGetRecordsAsyncWithHttpInfo(DateTimeOffset? startDate = null, DateTimeOffset? endDate = null, Currency? coin = null, WalletFundType? walletFundType = null, int? page = null, int? limit = null)
         {
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > WalletGetRecordsLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletGetRecordsBase");
+            }
+
             var localVarPath = "/open-api/wallet/fund/records";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 

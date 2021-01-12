@@ -1,8 +1,10 @@
+using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
 using System;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api.Test
 {
@@ -101,6 +103,159 @@ namespace BybitAPI.Api.Test
             Assert.That(response.Result?[0].CreatedAt, Is.EqualTo(DateTimeOffset.Parse("2020-06-15T03:32:52 +00:00")));
         }
 
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletExchangeOrder_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+
+            long? from = null;
+            SearchDirection? direction = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.WalletExchangeOrder(limit, from, direction);
+            });
+
+            // Assert
+
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void WalletExchangeOrderWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletExchangeOrderBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+
+            long? from = null;
+            SearchDirection? direction = null;
+
+            // Act
+            var response = instance.WalletExchangeOrderWithHttpInfo(limit, from, direction);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletExchangeOrderBase>>(response, "response is ApiResponse<WalletExchangeOrderBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletExchangeOrderWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+
+            long? from = null;
+            SearchDirection? direction = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.WalletExchangeOrderWithHttpInfo(limit, from, direction);
+            });
+
+            // Assert
+
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task WalletExchangeOrderAsync_ParametersAreValid_ShouldReturnWalletExchangeOrderBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+
+            long? from = null;
+            SearchDirection? direction = null;
+
+            // Act
+            var response = await instance.WalletExchangeOrderAsync(limit, from, direction);
+
+            // Assert
+            Assert.IsInstanceOf<WalletExchangeOrderBase>(response, "response is WalletExchangeOrderBase");
+            Assert.That(response.Result?[0].CreatedAt, Is.EqualTo(DateTimeOffset.Parse("2020-06-15T03:32:52 +00:00")));
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletExchangeOrderAsync_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+
+            long? from = null;
+            SearchDirection? direction = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.WalletExchangeOrderAsync(limit, from, direction);
+            });
+
+            // Assert
+
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task WalletExchangeOrderAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletExchangeOrderBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+
+            long? from = null;
+            SearchDirection? direction = null;
+
+            // Act
+            var response = await instance.WalletExchangeOrderAsyncWithHttpInfo(limit, from, direction);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletExchangeOrderBase>>(response, "response is ApiResponse<WalletExchangeOrderBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletExchangeOrderAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+
+            long? from = null;
+            SearchDirection? direction = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.WalletExchangeOrderAsyncWithHttpInfo(limit, from, direction);
+            });
+
+            // Assert
+
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
         private static readonly string walletGetBalanceJson = @"
 {
     ""ret_code"": 0,
@@ -147,6 +302,51 @@ namespace BybitAPI.Api.Test
             Assert.IsInstanceOf<WalletGetBalanceBase>(response, "response is WalletGetBalanceBase");
         }
 
+        public void WalletGetBalance_ParametersAreValid_ShouldReturnApiResponseOfWalletGetBalanceBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+
+            Currency? coin = null;
+
+            // Act
+            var response = instance.WalletGetBalanceWithHttpInfo(coin);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletGetBalanceBase>>(response, "response is ApiResponse<WalletGetBalanceBase>");
+        }
+
+        public async Task WalletGetBalanceAsync_ParametersAreValid_ShouldReturnWalletGetBalanceBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+
+            Currency? coin = null;
+
+            // Act
+            var response = await instance.WalletGetBalanceAsync(coin);
+
+            // Assert
+            Assert.IsInstanceOf<WalletGetBalanceBase>(response, "response is WalletGetBalanceBase");
+        }
+
+        public async Task WalletGetBalanceAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletGetBalanceBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+
+            Currency? coin = null;
+
+            // Act
+            var response = await instance.WalletGetBalanceAsyncWithHttpInfo(coin);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletGetBalanceBase>>(response, "response is ApiResponse<WalletGetBalanceBase>");
+        }
+
         private static readonly string walletGetRecordsJson = @"
 {
     ""ret_code"": 0,
@@ -191,7 +391,10 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void WalletGetRecords_ParametersAreValid_ShouldReturnWalletGetRecordsBase()
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void WalletGetRecords_ParametersAreValid_ShouldReturnWalletGetRecordsBase(int? limit)
         {
             // Arrange
             var instance = Create();
@@ -202,13 +405,181 @@ namespace BybitAPI.Api.Test
             Currency? coin = null;
             WalletFundType? walletFundType = null;
             int? page = null;
-            int? limit = null;
 
             // Act
             var response = instance.WalletGetRecords(startDate, endDate, coin, walletFundType, page, limit);
 
             // Assert
             Assert.IsInstanceOf<WalletGetRecordsBase>(response, "response is WalletGetBalanceBase");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletGetRecords_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WalletFundType? walletFundType = null;
+            int? page = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.WalletGetRecords(startDate, endDate, coin, walletFundType, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void WalletGetRecords_ParametersAreValid_ShouldReturnApiResponseOfWalletGetRecordsBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WalletFundType? walletFundType = null;
+            int? page = null;
+
+            // Act
+            var response = instance.WalletGetRecordsWithHttpInfo(startDate, endDate, coin, walletFundType, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletGetRecordsBase>>(response, "response is ApiResponse<WalletGetRecordsBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletGetRecordsWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WalletFundType? walletFundType = null;
+            int? page = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.WalletGetRecordsWithHttpInfo(startDate, endDate, coin, walletFundType, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task WalletGetRecordsAsync_ParametersAreValid_ShouldReturnWalletGetRecordsBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WalletFundType? walletFundType = null;
+            int? page = null;
+
+            // Act
+            var response = await instance.WalletGetRecordsAsync(startDate, endDate, coin, walletFundType, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<WalletGetRecordsBase>(response, "response is WalletGetBalanceBase");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletGetRecordsAsync_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WalletFundType? walletFundType = null;
+            int? page = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.WalletGetRecordsAsync(startDate, endDate, coin, walletFundType, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task WalletGetRecordsAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletGetRecordsBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WalletFundType? walletFundType = null;
+            int? page = null;
+
+            // Act
+            var response = await instance.WalletGetRecordsAsyncWithHttpInfo(startDate, endDate, coin, walletFundType, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletGetRecordsBase>>(response, "response is ApiResponse<WalletGetRecordsBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletGetRecordsAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WalletFundType? walletFundType = null;
+            int? page = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.WalletGetRecordsAsyncWithHttpInfo(startDate, endDate, coin, walletFundType, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string walletGetRiskLimitJson = @"
@@ -267,7 +638,7 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void WalletGetRiskLimit_NoConditions_ShouldReturnWalletGetRiskLimitBase()
+        public void WalletGetRiskLimit_ParametersAreValid_ShouldReturnWalletGetRiskLimitBase()
         {
             // Arrange
             var instance = Create();
@@ -278,6 +649,48 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletGetRiskLimitBase>(response, "response is WalletGetRiskLimitBase");
+        }
+
+        [Test]
+        public void WalletGetRiskLimitWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletGetRiskLimitBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+
+            // Act
+            var response = instance.WalletGetRiskLimitWithHttpInfo();
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletGetRiskLimitBase>>(response, "response is ApiResponse<WalletGetRiskLimitBase>");
+        }
+
+        [Test]
+        public async Task WalletGetRiskLimitAsync_ParametersAreValid_ShouldReturnWalletGetRiskLimitBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+
+            // Act
+            var response = await instance.WalletGetRiskLimitAsync();
+
+            // Assert
+            Assert.IsInstanceOf<WalletGetRiskLimitBase>(response, "response is WalletGetRiskLimitBase");
+        }
+
+        [Test]
+        public async Task WalletGetRiskLimitAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletGetRiskLimitBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+
+            // Act
+            var response = await instance.WalletGetRiskLimitAsyncWithHttpInfo();
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletGetRiskLimitBase>>(response, "response is ApiResponse<WalletGetRiskLimitBase>");
         }
 
         private static readonly string walletSetRiskLimitJson = @"
@@ -359,6 +772,57 @@ namespace BybitAPI.Api.Test
             Assert.IsInstanceOf<WalletSetRiskLimitBase>(response, "response is WalletSetRiskLimitBase");
         }
 
+        [Test]
+        public void WalletSetRiskLimitWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletSetRiskLimitBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+
+            var symbol = Symbol.BTCUSD;
+            var riskId = 0;
+
+            // Act
+            var response = instance.WalletSetRiskLimitWithHttpInfo(symbol, riskId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletSetRiskLimitBase>>(response, "response is ApiResponse<WalletSetRiskLimitBase>");
+        }
+
+        [Test]
+        public async Task WalletSetRiskLimitAsync_ParametersAreValid_ShouldReturnWalletSetRiskLimitBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+
+            var symbol = Symbol.BTCUSD;
+            var riskId = 0;
+
+            // Act
+            var response = await instance.WalletSetRiskLimitAsync(symbol, riskId);
+
+            // Assert
+            Assert.IsInstanceOf<WalletSetRiskLimitBase>(response, "response is WalletSetRiskLimitBase");
+        }
+
+        [Test]
+        public async Task WalletSetRiskLimitAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletSetRiskLimitBase()
+        {
+            // Arrange
+            var instance = Create();
+            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+
+            var symbol = Symbol.BTCUSD;
+            var riskId = 0;
+
+            // Act
+            var response = await instance.WalletSetRiskLimitAsyncWithHttpInfo(symbol, riskId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletSetRiskLimitBase>>(response, "response is ApiResponse<WalletSetRiskLimitBase>");
+        }
+
         private static readonly string walletWithDrawJson = @"
 {
   ""ret_code"": 0,
@@ -389,24 +853,203 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void WalletWithdraw_ParametersAreValid_ShouldReturnWalletWithdrawBase()
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void WalletWithdraw_ParametersAreValid_ShouldReturnWalletWithdrawBase(int? limit)
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
             Currency? coin = null;
             WithdrawStatus? status = null;
             int? page = null;
-            int? limit = null;
 
             // Act
             var response = instance.WalletWithdraw(startDate, endDate, coin, status, page, limit);
 
             // Assert
             Assert.IsInstanceOf<WalletWithdrawBase>(response, "response is WalletWithdrawBase");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletWithdraw_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WithdrawStatus? status = null;
+            int? page = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.WalletWithdraw(startDate, endDate, coin, status, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void WalletWithdrawWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletWithdrawBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WithdrawStatus? status = null;
+            int? page = null;
+
+            // Act
+            var response = instance.WalletWithdrawWithHttpInfo(startDate, endDate, coin, status, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletWithdrawBase>>(response, "response is ApiResponse<WalletWithdrawBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletWithdrawWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WithdrawStatus? status = null;
+            int? page = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.WalletWithdrawWithHttpInfo(startDate, endDate, coin, status, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task WalletWithdrawAsync_ParametersAreValid_ShouldReturnWalletWithdrawBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WithdrawStatus? status = null;
+            int? page = null;
+
+            // Act
+            var response = await instance.WalletWithdrawAsync(startDate, endDate, coin, status, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<WalletWithdrawBase>(response, "response is WalletWithdrawBase");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletWithdrawAsync_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WithdrawStatus? status = null;
+            int? page = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.WalletWithdrawAsync(startDate, endDate, coin, status, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task WalletWithdrawAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletWithdrawBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WithdrawStatus? status = null;
+            int? page = null;
+
+            // Act
+            var response = await instance.WalletWithdrawAsyncWithHttpInfo(startDate, endDate, coin, status, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<WalletWithdrawBase>>(response, "response is ApiResponse<WalletWithdrawBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void WalletWithdrawAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletWithDrawJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            DateTimeOffset? startDate = null;
+            DateTimeOffset? endDate = null;
+            Currency? coin = null;
+            WithdrawStatus? status = null;
+            int? page = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.WalletWithdrawAsyncWithHttpInfo(startDate, endDate, coin, status, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
     }
 }

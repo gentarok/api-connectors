@@ -953,7 +953,7 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void OrderQuery_SymbolParameterIsValid_ShouldReturnQueryBaseOrderOfListForQueryRes()
+        public void OrderQuery_ParametersAreValid_ShouldReturnQueryBaseOrderOfListForQueryRes()
         {
             // Arrange
             var instance = Create();
@@ -970,7 +970,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        public void OrderQueryWithHttpInfo_SymbolParameterIsValid_ShouldReturnApiResponseOfQueryBaseOrderForListForQueryRes()
+        public void OrderQueryWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfQueryBaseOrderForListForQueryRes()
         {
             // Arrange
             var instance = Create();
@@ -987,7 +987,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        public async Task OrderQueryAsync_SymbolParameterIsValid_ShouldReturnQueryBaseOrderOfListForQueryRes()
+        public async Task OrderQueryAsync_ParameterAreValid_ShouldReturnQueryBaseOrderOfListForQueryRes()
         {
             // Arrange
             var instance = Create();
@@ -1004,7 +1004,7 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        public async Task OrderQueryAsyncWithHttpInfo_SymbolParameterIsValid_ShouldReturnApiResponseOfQueryBaseOrderForListForQueryRes()
+        public async Task OrderQueryAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfQueryBaseOrderForListForQueryRes()
         {
             // Arrange
             var instance = Create();

@@ -1,7 +1,9 @@
+using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api.Test
 {
@@ -150,13 +152,59 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, symbolGetJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, symbolGetJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             // Act
             var response = instance.SymbolGet();
 
             // Assert
             Assert.IsInstanceOf<SymbolGetBase>(response, "response is SymbolGetBase");
+        }
+
+        [Test]
+        public void SymbolGetWithHttpInfo_NoConditions_ShouldReturnApiResponseOfSymbolGetBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, symbolGetJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            // Act
+            var response = instance.SymbolGetWithHttpInfo();
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<SymbolGetBase>>(response, "response is ApiResponse<SymbolGetBase>");
+        }
+
+        [Test]
+        public async Task SymbolGetAsync_NoConditions_ShouldReturnSymbolGetBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, symbolGetJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            // Act
+            var response = await instance.SymbolGetAsync();
+
+            // Assert
+            Assert.IsInstanceOf<SymbolGetBase>(response, "response is SymbolGetBase");
+        }
+
+        [Test]
+        public async Task SymbolGetAsyncWithHttpInfo_NoConditions_ShouldReturnApiResponseOfSymbolGetBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, symbolGetJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            // Act
+            var response = await instance.SymbolGetAsyncWithHttpInfo();
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<SymbolGetBase>>(response, "response is ApiResponse<SymbolGetBase>");
         }
     }
 }

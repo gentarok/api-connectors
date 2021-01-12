@@ -78,7 +78,7 @@ namespace BybitAPI.IntegrationTest
         //}
 
         //[Test]
-        //public void ConditionalCancelAll_ParametersIsValid_ShouldReturnSuccess()
+        //public void ConditionalCancelAll_ParametersAreValid_ShouldReturnSuccess()
         //{
         //    // Arrange
         //    var instance = Create();

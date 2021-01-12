@@ -875,17 +875,17 @@ namespace BybitAPI.Api
         public ApiResponse<PositionsTradingStopBase> PositionsTradingStopWithHttpInfo(Symbol symbol, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, decimal? newTrailingActive = null)
         {
             // verify the parameter 'takeProfit'
-            if (takeProfit is not null and <= 0)
+            if (takeProfit is not null and < 0)
             {
                 throw new ApiException(400, "'takeProfit' (must be grater than 0): Validation error has occured when calling PositionsApi->PositionsTradingStop");
             }
             // verify the parameter 'stopLoss'
-            if (stopLoss is not null and <= 0)
+            if (stopLoss is not null and < 0)
             {
                 throw new ApiException(400, "'stopLoss' (must be grater than 0): Validation error has occured when calling PositionsApi->PositionsTradingStop");
             }
             // verify the parameter 'trailingStop'
-            if (trailingStop is not null and <= 0)
+            if (trailingStop is not null and < 0)
             {
                 throw new ApiException(400, "'trailingStop' (must be grater than 0): Validation error has occured when calling PositionsApi->PositionsTradingStop");
             }
@@ -959,17 +959,17 @@ namespace BybitAPI.Api
         public Task<ApiResponse<PositionsTradingStopBase>> PositionsTradingStopAsyncWithHttpInfo(Symbol symbol, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, decimal? newTrailingActive = null)
         {
             // verify the parameter 'takeProfit'
-            if (takeProfit is not null and <= 0)
+            if (takeProfit is not null and < 0)
             {
                 throw new ApiException(400, "'takeProfit' (must be grater than 0): Validation error has occured when calling PositionsApi->PositionsTradingStop");
             }
             // verify the parameter 'stopLoss'
-            if (stopLoss is not null and <= 0)
+            if (stopLoss is not null and < 0)
             {
                 throw new ApiException(400, "'stopLoss' (must be grater than 0): Validation error has occured when calling PositionsApi->PositionsTradingStop");
             }
             // verify the parameter 'trailingStop'
-            if (trailingStop is not null and <= 0)
+            if (trailingStop is not null and < 0)
             {
                 throw new ApiException(400, "'trailingStop' (must be grater than 0): Validation error has occured when calling PositionsApi->PositionsTradingStop");
             }

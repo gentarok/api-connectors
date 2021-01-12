@@ -4,6 +4,7 @@ using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api.Test
 {
@@ -62,7 +63,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, positionsChangeMarginJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsChangeMarginJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
             var margin = 0m;
@@ -72,6 +74,60 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsChangeMarginBase>(response, "response is PositionsChangeMarginBase");
+        }
+
+        [Test]
+        public void PositionsChangeMarginWithHttpInfo_ParametersAreValid_ShouldReturnPositionsChangeMarginBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsChangeMarginJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var margin = 0m;
+
+            // Act
+            var response = instance.PositionsChangeMarginWithHttpInfo(symbol, margin);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsChangeMarginBase>>(response, "response is ApiResponse<PositionsChangeMarginBase>");
+        }
+
+        [Test]
+        public async Task PositionsChangeMarginAsync_ParametersAreValid_ShouldReturnPositionsChangeMarginBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsChangeMarginJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var margin = 0m;
+
+            // Act
+            var response = await instance.PositionsChangeMarginAsync(symbol, margin);
+
+            // Assert
+            Assert.IsInstanceOf<PositionsChangeMarginBase>(response, "response is PositionsChangeMarginBase");
+        }
+
+        [Test]
+        public async Task PositionsChangeMarginAsyncWithHttpInfo_ParametersAreValid_ShouldReturnPositionsChangeMarginBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsChangeMarginJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var margin = 0m;
+
+            // Act
+            var response = await instance.PositionsChangeMarginAsyncWithHttpInfo(symbol, margin);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsChangeMarginBase>>(response, "response is ApiResponse<PositionsChangeMarginBase>");
         }
 
         private static readonly string positionsClosePnlJson = @"
@@ -113,24 +169,215 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void PositionsClosePnlRecords_ParametersAreValid_ShouldReturnPositionsClosePnlBase()
+        [TestCase(null, null)]
+        [TestCase(0, null)]
+        [TestCase(50, null)]
+        [TestCase(null, 0)]
+        [TestCase(null, 50)]
+        public void PositionsClosePnlRecords_ParametersAreValid_ShouldReturnPositionsClosePnlBase(int? page, int? limit)
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
             long? startTime = null;
             long? endTime = null;
             ExecType? execType = null;
-            int? page = null;
-            int? limit = null;
 
             // Act
             var response = instance.PositionsClosePnlRecords(symbol, startTime, endTime, execType, page, limit);
 
             // Assert
             Assert.IsInstanceOf<PositionsClosePnlBase>(response, "response is PositionsClosePnlBase");
+        }
+
+        [Test]
+        [TestCase(-1, null)]
+        [TestCase(51, null)]
+        [TestCase(null, -1)]
+        [TestCase(null, 51)]
+        public void PositionsClosePnlRecords_ParametersAreValid_ShouldRaiseApiException(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            long? startTime = null;
+            long? endTime = null;
+            ExecType? execType = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.PositionsClosePnlRecords(symbol, startTime, endTime, execType, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase(0, null)]
+        [TestCase(50, null)]
+        [TestCase(null, 0)]
+        [TestCase(null, 50)]
+        [TestCase(0, 0)]
+        [TestCase(50, 50)]
+        public void PositionsClosePnlRecordsWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsClosePnlBase(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            long? startTime = null;
+            long? endTime = null;
+            ExecType? execType = null;
+
+            // Act
+            var response = instance.PositionsClosePnlRecordsWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsClosePnlBase>>(response, "response is ApiResponse<PositionsClosePnlBase>");
+        }
+
+        [Test]
+        [TestCase(-1, null)]
+        [TestCase(51, null)]
+        [TestCase(null, -1)]
+        [TestCase(null, 51)]
+        public void PositionsClosePnlRecordsWithHttpInfo_ParametersAreValid_ShouldRaiseApiException(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            long? startTime = null;
+            long? endTime = null;
+            ExecType? execType = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.PositionsClosePnlRecordsWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase(0, null)]
+        [TestCase(50, null)]
+        [TestCase(null, 0)]
+        [TestCase(null, 50)]
+        public async Task PositionsClosePnlRecordsAsync_ParametersAreValid_ShouldReturnPositionsClosePnlBase(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            long? startTime = null;
+            long? endTime = null;
+            ExecType? execType = null;
+
+            // Act
+            var response = await instance.PositionsClosePnlRecordsAsync(symbol, startTime, endTime, execType, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<PositionsClosePnlBase>(response, "response is PositionsClosePnlBase");
+        }
+
+        [Test]
+        [TestCase(-1, null)]
+        [TestCase(51, null)]
+        [TestCase(null, -1)]
+        [TestCase(null, 51)]
+        public void PositionsClosePnlRecordsAsync_ParametersAreValid_ShouldRaiseApiException(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            long? startTime = null;
+            long? endTime = null;
+            ExecType? execType = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.PositionsClosePnlRecordsAsync(symbol, startTime, endTime, execType, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase(0, null)]
+        [TestCase(50, null)]
+        [TestCase(null, 0)]
+        [TestCase(null, 50)]
+        [TestCase(0, 0)]
+        [TestCase(50, 50)]
+        public async Task PositionsClosePnlRecordsAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsClosePnlBase(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            long? startTime = null;
+            long? endTime = null;
+            ExecType? execType = null;
+
+            // Act
+            var response = await instance.PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsClosePnlBase>>(response, "response is ApiResponse<PositionsClosePnlBase>");
+        }
+
+        [Test]
+        [TestCase(-1, null)]
+        [TestCase(51, null)]
+        [TestCase(null, -1)]
+        [TestCase(null, 51)]
+        public void PositionsClosePnlRecordsAsyncWithHttpInfo_ParametersAreValid_ShouldRaiseApiException(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsClosePnlJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            long? startTime = null;
+            long? endTime = null;
+            ExecType? execType = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string positionsMyPositionBySymbolJson = @"
@@ -181,11 +428,12 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void PositionsMyPosition_SymbolParameterIsValid_ShouldReturnPositionsMyPositionBaseOfPositionsMyPositionRes()
+        public void PositionsMyPosition_ParametersAreValid_ShouldReturnPositionsMyPositionBaseOfPositionsMyPositionRes()
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionBySymbolJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionBySymbolJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
 
@@ -194,6 +442,57 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsMyPositionBase<PositionsMyPositionRes>>(response, "response is PositionsMyPositionBase<PositionsMyPositionRes>");
+        }
+
+        [Test]
+        public void PositionsMyPositionWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsMyPositionBaseForPositionsMyPositionRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionBySymbolJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.PositionsMyPositionWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>>(response, "response is ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>");
+        }
+
+        [Test]
+        public async Task PositionsMyPositionAsync_ParametersAreValid_ShouldReturnPositionsMyPositionBaseOfPositionsMyPositionRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionBySymbolJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.PositionsMyPositionAsync(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<PositionsMyPositionBase<PositionsMyPositionRes>>(response, "response is PositionsMyPositionBase<PositionsMyPositionRes>");
+        }
+
+        [Test]
+        public async Task PositionsMyPositionAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsMyPositionBaseForPositionsMyPositionRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionBySymbolJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.PositionsMyPositionAsyncWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>>(response, "response is ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>");
         }
 
         private static readonly string positionsMyPositionJson = @"
@@ -290,13 +589,59 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             // Act
             var response = instance.PositionsMyPosition();
 
             // Assert
             Assert.IsInstanceOf<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>(response, "response is PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>");
+        }
+
+        [Test]
+        public void PositionsMyPositionWithHttpInfo_NoParameters_ShouldReturnApiResponseOfPositionsMyPositionBaseForListForPositionsMyPositionResBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            // Act
+            var response = instance.PositionsMyPositionWithHttpInfo();
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>>(response, "response is ApiResponse<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>");
+        }
+
+        [Test]
+        public async Task PositionsMyPositionAsync_NoParameters_ShouldReturnPositionsMyPositionBaseOfListForPositionsMyPositionResBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            // Act
+            var response = await instance.PositionsMyPositionAsync();
+
+            // Assert
+            Assert.IsInstanceOf<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>(response, "response is PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>");
+        }
+
+        [Test]
+        public async Task PositionsMyPositionAsyncWithHttpInfo_NoParameters_ShouldReturnApiResponseOfPositionsMyPositionBaseForListForPositionsMyPositionResBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsMyPositionJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            // Act
+            var response = await instance.PositionsMyPositionAsyncWithHttpInfo();
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>>(response, "response is ApiResponse<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>");
         }
 
         private static readonly string positionsSaveLeveraguJson = @"
@@ -318,7 +663,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, positionsSaveLeveraguJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsSaveLeveraguJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
             var leverage = 0m;
@@ -328,6 +674,60 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsSaveLeverageBase>(response, "response is PositionsSaveLeverage");
+        }
+
+        [Test]
+        public void PositionsSaveLeverageWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsSaveLeverage()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsSaveLeveraguJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var leverage = 0m;
+
+            // Act
+            var response = instance.PositionsSaveLeverageWithHttpInfo(symbol, leverage);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsSaveLeverageBase>>(response, "response is ApiResponse<PositionsSaveLeverageBase>");
+        }
+
+        [Test]
+        public async Task PositionsSaveLeverageAsync_ParametersAreValid_ShouldReturnPositionsSaveLeverage()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsSaveLeveraguJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var leverage = 0m;
+
+            // Act
+            var response = await instance.PositionsSaveLeverageAsync(symbol, leverage);
+
+            // Assert
+            Assert.IsInstanceOf<PositionsSaveLeverageBase>(response, "response is PositionsSaveLeverage");
+        }
+
+        [Test]
+        public async Task PositionsSaveLeverageAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsSaveLeverage()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsSaveLeveraguJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var leverage = 0m;
+
+            // Act
+            var response = await instance.PositionsSaveLeverageAsyncWithHttpInfo(symbol, leverage);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsSaveLeverageBase>>(response, "response is ApiResponse<PositionsSaveLeverageBase>");
         }
 
         private static readonly string positionsTradingStopJson = @"
@@ -382,16 +782,26 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void PositionsTradingStop_ParametersAreValid_ShouldReturnPositionsTradingStopBase()
+        [TestCase(0, null, null)]
+        [TestCase(0.1, null, null)]
+        [TestCase(1, null, null)]
+        [TestCase(2, null, null)]
+        [TestCase(null, 0, null)]
+        [TestCase(null, 0.1, null)]
+        [TestCase(null, 1, null)]
+        [TestCase(null, 2, null)]
+        [TestCase(null, null, 0)]
+        [TestCase(null, null, 0.1)]
+        [TestCase(null, null, 1)]
+        [TestCase(null, null, 2)]
+        public void PositionsTradingStop_ParametersAreValid_ShouldReturnPositionsTradingStopBase(decimal? takeProfit, decimal? stopLoss, decimal? trailingStop)
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            decimal? takeProfit = null;
-            decimal? stopLoss = null;
-            decimal? trailingStop = null;
             decimal? newTrailingActive = null;
 
             // Act
@@ -402,17 +812,15 @@ namespace BybitAPI.Api.Test
         }
 
         [Test]
-        [TestCase(0, null, null)]
-        [TestCase(null, 0, null)]
-        [TestCase(null, null, 0)]
-        [TestCase(0, 0, null)]
-        [TestCase(0, null, 0)]
-        [TestCase(null, 0, 0)]
+        [TestCase(-0.1, null, null)]
+        [TestCase(null, -0.1, null)]
+        [TestCase(null, null, -0.1)]
         public void PositionsTradingStop_ParametersAreInValid_ShouldRaiseApiException(decimal? takeProfit, decimal? stopLoss, decimal? trailingStop)
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
 
@@ -422,6 +830,171 @@ namespace BybitAPI.Api.Test
             var ex = Assert.Throws<ApiException>(() =>
             {
                 var response = instance.PositionsTradingStop(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(0, null, null)]
+        [TestCase(0.1, null, null)]
+        [TestCase(1, null, null)]
+        [TestCase(2, null, null)]
+        [TestCase(null, 0, null)]
+        [TestCase(null, 0.1, null)]
+        [TestCase(null, 1, null)]
+        [TestCase(null, 2, null)]
+        [TestCase(null, null, 0)]
+        [TestCase(null, null, 0.1)]
+        [TestCase(null, null, 1)]
+        [TestCase(null, null, 2)]
+        public void PositionsTradingStopWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsTradingStopBase(decimal? takeProfit, decimal? stopLoss, decimal? trailingStop)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            decimal? newTrailingActive = null;
+
+            // Act
+            var response = instance.PositionsTradingStopWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsTradingStopBase>>(response, "response is ApiResponse<PositionsTradingStopBase>");
+        }
+
+        [Test]
+        [TestCase(-0.1, null, null)]
+        [TestCase(null, -0.1, null)]
+        [TestCase(null, null, -0.1)]
+        public void PositionsTradingStopWithHttpInfo_ParametersAreInValid_ShouldReturnApiResponseOfPositionsTradingStopBase(decimal? takeProfit, decimal? stopLoss, decimal? trailingStop)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            decimal? newTrailingActive = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.PositionsTradingStopWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(0, null, null)]
+        [TestCase(0.1, null, null)]
+        [TestCase(1, null, null)]
+        [TestCase(2, null, null)]
+        [TestCase(null, 0, null)]
+        [TestCase(null, 0.1, null)]
+        [TestCase(null, 1, null)]
+        [TestCase(null, 2, null)]
+        [TestCase(null, null, 0)]
+        [TestCase(null, null, 0.1)]
+        [TestCase(null, null, 1)]
+        [TestCase(null, null, 2)]
+        public async Task PositionsTradingStopAsync_ParametersAreValid_ShouldReturnPositionsTradingStopBase(decimal? takeProfit, decimal? stopLoss, decimal? trailingStop)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            decimal? newTrailingActive = null;
+
+            // Act
+            var response = await instance.PositionsTradingStopAsync(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+
+            // Assert
+            Assert.IsInstanceOf<PositionsTradingStopBase>(response, "response is PositionsTradingStopBase");
+        }
+
+        [Test]
+        [TestCase(-0.1, null, null)]
+        [TestCase(null, -0.1, null)]
+        [TestCase(null, null, -0.1)]
+        public void PositionsTradingStopAsync_ParametersAreInValid_ShouldRaiseApiException(decimal? takeProfit, decimal? stopLoss, decimal? trailingStop)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            decimal? newTrailingActive = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.PositionsTradingStopAsync(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(0, null, null)]
+        [TestCase(0.1, null, null)]
+        [TestCase(1, null, null)]
+        [TestCase(2, null, null)]
+        [TestCase(null, 0, null)]
+        [TestCase(null, 0.1, null)]
+        [TestCase(null, 1, null)]
+        [TestCase(null, 2, null)]
+        [TestCase(null, null, 0)]
+        [TestCase(null, null, 0.1)]
+        [TestCase(null, null, 1)]
+        [TestCase(null, null, 2)]
+        public async Task PositionsTradingStopAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsTradingStopBase(decimal? takeProfit, decimal? stopLoss, decimal? trailingStop)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            decimal? newTrailingActive = null;
+
+            // Act
+            var response = await instance.PositionsTradingStopAsyncWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<PositionsTradingStopBase>>(response, "response is ApiResponse<PositionsTradingStopBase>");
+        }
+
+        [Test]
+        [TestCase(-0.1, null, null)]
+        [TestCase(null, -0.1, null)]
+        [TestCase(null, null, -0.1)]
+        public void PositionsTradingStopAsyncWithHttpInfo_ParametersAreInValid_ShouldReturnApiResponseOfPositionsTradingStopBase(decimal? takeProfit, decimal? stopLoss, decimal? trailingStop)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, positionsTradingStopJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            decimal? newTrailingActive = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.PositionsTradingStopAsyncWithHttpInfo(symbol, takeProfit, stopLoss, trailingStop, newTrailingActive);
             });
 
             // Assert
