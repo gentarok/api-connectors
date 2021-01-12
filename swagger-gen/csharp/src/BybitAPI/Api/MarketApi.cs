@@ -436,7 +436,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on 'period' parameter occured when calling MarketApi->MarketAccountRatio");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketAccountRatioLimitMaxValue)
+            if (limit is not null and < 0 or > MarketAccountRatioLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketAccountRatio");
             }
@@ -495,7 +495,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on 'period' parameter occured when calling MarketApi->MarketAccountRatio");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketAccountRatioLimitMaxValue)
+            if (limit is not null and < 0 or > MarketAccountRatioLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketAccountRatio");
             }
@@ -544,7 +544,7 @@ namespace BybitAPI.Api
         public ApiResponse<MarketBigDealBase> MarketBigDealWithHttpInfo(Symbol symbol, int? limit = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketBigDealLimitMaxValue)
+            if (limit is not null and < 0 or > MarketBigDealLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketBigDeal");
             }
@@ -588,7 +588,7 @@ namespace BybitAPI.Api
         public Task<ApiResponse<MarketBigDealBase>> MarketBigDealAsyncWithHttpInfo(Symbol symbol, int? limit = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketBigDealLimitMaxValue)
+            if (limit is not null and < 0 or > MarketBigDealLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketBigDeal");
             }
@@ -638,7 +638,7 @@ namespace BybitAPI.Api
         public ApiResponse<MarketLiqRecordsBase> MarketLiqRecordsWithHttpInfo(Symbol symbol, long? from = null, int? limit = null, long? startTime = null, long? endTime = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketLiqRecordsLimitMaxValue)
+            if (limit is not null and < 0 or > MarketLiqRecordsLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketLiqRecords");
             }
@@ -703,7 +703,7 @@ namespace BybitAPI.Api
         public Task<ApiResponse<MarketLiqRecordsBase>> MarketLiqRecordsAsyncWithHttpInfo(Symbol symbol, long? from = null, int? limit = null, long? startTime = null, long? endTime = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketLiqRecordsLimitMaxValue)
+            if (limit is not null and < 0 or > MarketLiqRecordsLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketLiqRecords");
             }
@@ -772,7 +772,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on 'period' parameter occured when calling MarketApi->MarketOpenInterest");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketOpenInterestLimitMaxValue)
+            if (limit is not null and < 0 or > MarketOpenInterestLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketOpenInterest");
             }
@@ -831,7 +831,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on 'period' parameter occured when calling MarketApi->MarketOpenInterest");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketOpenInterestLimitMaxValue)
+            if (limit is not null and < 0 or > MarketOpenInterestLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketOpenInterest");
             }
@@ -1012,7 +1012,7 @@ namespace BybitAPI.Api
         public ApiResponse<MarketTradingRecordsBase> MarketTradingRecordsWithHttpInfo(Symbol symbol, long? from = null, int? limit = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketTradingRecordsLimitMaxValue)
+            if (limit is not null and < 0 or > MarketTradingRecordsLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketOpenInterest");
             }
@@ -1063,7 +1063,7 @@ namespace BybitAPI.Api
         public Task<ApiResponse<MarketTradingRecordsBase>> MarketTradingRecordsAsyncWithHttpInfo(Symbol symbol, long? from = null, int? limit = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= MarketTradingRecordsLimitMaxValue)
+            if (limit is not null and < 0 or > MarketTradingRecordsLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling MarketApi->MarketOpenInterest");
             }

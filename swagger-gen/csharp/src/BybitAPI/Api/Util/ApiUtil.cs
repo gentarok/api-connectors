@@ -15,7 +15,8 @@ namespace BybitAPI.Api.Util
 
         internal const string TESTNET_URI = "https://api-testnet.bybit.com";
 
-        internal static string CreateSignature(string secret, IDictionary<string, string> param) => CreateSignature(secret, CreateQueryString(param));
+        internal static string CreateSignature(string secret, IDictionary<string, string> param)
+            => CreateSignature(secret, CreateQueryString(param));
 
         private static string CreateSignature(string secret, string message)
         {
@@ -81,7 +82,7 @@ namespace BybitAPI.Api.Util
             // Add a default String to Enum converter.
             yield return new JsonStringEnumConverter();
 
-            //// Add a custom DateTimeOffset converter.
+            // Add a custom DateTimeOffset converter.
             yield return new UtcDateTimeStringToDateTimeOffsetConverter();
         }
     }

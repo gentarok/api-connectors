@@ -673,7 +673,7 @@ namespace BybitAPI.Api
         public ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= ConditionalGetOrdersMaxValue)
+            if (limit is not null and < 0 or > ConditionalGetOrdersMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ConditionalApi->ConditionalGetOrders");
             }
@@ -744,7 +744,7 @@ namespace BybitAPI.Api
         public Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= ConditionalGetOrdersMaxValue)
+            if (limit is not null and < 0 or > ConditionalGetOrdersMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ConditionalApi->ConditionalGetOrders");
             }

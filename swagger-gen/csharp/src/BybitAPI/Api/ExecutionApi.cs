@@ -207,12 +207,12 @@ namespace BybitAPI.Api
         public ApiResponse<ExecutionGetTradesBase> ExecutionGetTradesWithHttpInfo(Symbol symbol, string? orderId = null, long? startTime = null, int? page = null, int? limit = null, Order? order = null)
         {
             // verify the parameter 'page'
-            if (page is not null and >= 0 and <= ExecutionGetTradesPageMaxValue)
+            if (page is not null and < 0 or > ExecutionGetTradesPageMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'page' parameter occured when calling ExecutionApi->ExecutionGetTrades");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= ExecutionGetTradesLimitMaxValue)
+            if (limit is not null and < 0 or > ExecutionGetTradesLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ExecutionApi->ExecutionGetTrades");
             }
@@ -288,12 +288,12 @@ namespace BybitAPI.Api
         public Task<ApiResponse<ExecutionGetTradesBase>> ExecutionGetTradesAsyncWithHttpInfo(Symbol symbol, string? orderId = null, long? startTime = null, int? page = null, int? limit = null, Order? order = null)
         {
             // verify the parameter 'page'
-            if (page is not null and >= 0 and <= ExecutionGetTradesPageMaxValue)
+            if (page is not null and < 0 or > ExecutionGetTradesPageMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'page' parameter occured when calling ExecutionApi->ExecutionGetTrades");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= ExecutionGetTradesLimitMaxValue)
+            if (limit is not null and < 0 or > ExecutionGetTradesLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ExecutionApi->ExecutionGetTrades");
             }
@@ -369,12 +369,12 @@ namespace BybitAPI.Api
         //public ApiResponse<PositionsClosePnlBase> PositionsClosePnlRecordsWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
         //{
         //    // verify the parameter 'page'
-        //    if (page is not null and >= 0 and <= PositionsClosePnlRecordsPageMaxValue)
+        //    if (page is not null and < 0 or > PositionsClosePnlRecordsPageMaxValue)
         //    {
         //        throw new ApiException(400, "Validation error on 'page' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
         //    }
         //    // verify the parameter 'limit'
-        //    if (limit is not null and >= 0 and <= PositionsClosePnlRecordsLimitMaxValue)
+        //    if (limit is not null and < 0 or > PositionsClosePnlRecordsLimitMaxValue)
         //    {
         //        throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
         //    }
@@ -455,12 +455,12 @@ namespace BybitAPI.Api
         //public Task<ApiResponse<PositionsClosePnlBase>> PositionsClosePnlRecordsAsyncWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
         //{
         //    // verify the parameter 'page'
-        //    if (page is not null and >= 0 and <= PositionsClosePnlRecordsPageMaxValue)
+        //    if (page is not null and < 0 or > PositionsClosePnlRecordsPageMaxValue)
         //    {
         //        throw new ApiException(400, "Validation error on 'page' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
         //    }
         //    // verify the parameter 'limit'
-        //    if (limit is not null and >= 0 and <= PositionsClosePnlRecordsLimitMaxValue)
+        //    if (limit is not null and < 0 or > PositionsClosePnlRecordsLimitMaxValue)
         //    {
         //        throw new ApiException(400, "Validation error on 'limit' parameter occured when calling ExecutionApi->PositionsClosePnlRecords");
         //    }

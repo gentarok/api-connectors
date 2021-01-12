@@ -376,7 +376,7 @@ namespace BybitAPI.Api
         public ApiResponse<WalletExchangeOrderBase> WalletExchangeOrderWithHttpInfo(int? limit = null, long? from = null, SearchDirection? direction = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= WalletExchangeOrderWithHttpInfoMaxValue)
+            if (limit is not null and < 0 or > WalletExchangeOrderWithHttpInfoMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletExchangeOrderWithHttpInfo");
             }
@@ -433,7 +433,7 @@ namespace BybitAPI.Api
         public Task<ApiResponse<WalletExchangeOrderBase>> WalletExchangeOrderAsyncWithHttpInfo(int? limit = null, long? from = null, SearchDirection? direction = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= WalletExchangeOrderWithHttpInfoMaxValue)
+            if (limit is not null and < 0 or > WalletExchangeOrderWithHttpInfoMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletExchangeOrderWithHttpInfo");
             }

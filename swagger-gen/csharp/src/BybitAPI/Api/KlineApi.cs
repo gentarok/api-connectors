@@ -194,7 +194,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on parameter 'interval' occered when calling KlineApi->KlineGet");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= KlineGetLimitMaxValue)
+            if (limit is not null and < 0 or > KlineGetLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling KlineApi->KlineGet");
             }
@@ -252,7 +252,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on parameter 'interval' occered when calling KlineApi->KlineGet");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= KlineGetLimitMaxValue)
+            if (limit is not null and < 0 or > KlineGetLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling KlineApi->KlineGet");
             }
@@ -310,7 +310,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on parameter 'interval' occered when calling KlineApi->KlineMarkPrice");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= KlineMarkPriceLimitMaxValue)
+            if (limit is not null and < 0 or > KlineMarkPriceLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling KlineApi->KlineMarkPrice");
             }
@@ -368,7 +368,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on parameter 'interval' occered when calling KlineApi->KlineMarkPrice");
             }
             // verify the parameter 'limit'
-            if (limit is not null and >= 0 and <= KlineMarkPriceLimitMaxValue)
+            if (limit is not null and < 0 or > KlineMarkPriceLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling KlineApi->KlineMarkPrice");
             }
