@@ -1,4 +1,9 @@
+using BybitAPI.Client;
+using BybitAPI.Model;
+using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api.Test
 {
@@ -8,13 +13,16 @@ namespace BybitAPI.Api.Test
     [TestFixture]
     public class FundingApiTests
     {
-        private FundingApi instance;
+        private static FundingApi Create()
+        {
+            var instance = new FundingApi();
 
-        /// <summary>
-        /// Setup before each unit test
-        /// </summary>
-        [SetUp]
-        public void Init() => instance = new FundingApi();
+            // Prepeare configurations to test.
+            instance.Configuration.AddApiKey("api_key", "");
+            instance.Configuration.AddApiKey("api_secret", "");
+
+            return instance;
+        }
 
         /// <summary>
         /// Clean up after each unit test
@@ -24,46 +32,295 @@ namespace BybitAPI.Api.Test
         {
         }
 
-        /// <summary>
-        /// Test an instance of FundingApi
-        /// </summary>
         [Test]
-        public void Instance_ShouldBeCreated() => Assert.IsInstanceOf<FundingApi>(instance, "instance is a FundingApi");
+        public void Instance_ShouldBeCreated()
+        {
+            // Arrange
 
-        ///// <summary>
-        ///// Test FundingMyLastFee
-        ///// </summary>
-        //[Test]
-        //public void FundingMyLastFeeTest()
-        //{
-        //    // TODO uncomment below to test the method and replace null with proper value
-        //    //string symbol = null;
-        //    //var response = instance.FundingMyLastFee(symbol);
-        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
-        //}
+            // Act
+            var instance = Create();
 
-        ///// <summary>
-        ///// Test FundingPredicted
-        ///// </summary>
-        //[Test]
-        //public void FundingPredictedTest()
-        //{
-        //    // TODO uncomment below to test the method and replace null with proper value
-        //    //string symbol = null;
-        //    //var response = instance.FundingPredicted(symbol);
-        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
-        //}
+            // Assert
+            Assert.IsInstanceOf<FundingApi>(instance, "instance is a FundingApi");
+        }
 
-        ///// <summary>
-        ///// Test FundingPrevRate
-        ///// </summary>
+        private static readonly string fundingMyLastFeeJson = @"
+{
+    ""ret_code"": 0,
+    ""ret_msg"": ""ok"",
+    ""ext_code"": """",
+    ""result"": {
+        ""symbol"": ""BTCUSD"",
+        ""side"": ""Buy"",
+        ""size"": 1,
+        ""funding_rate"": 0.0001,
+        ""exec_fee"": 0.00000002,
+        ""exec_timestamp"": 1575907200
+    },
+    ""ext_info"": null,
+    ""time_now"": ""1577446900.717204"",
+    ""rate_limit_status"": 119,
+    ""rate_limit_reset_ms"": 1577446900724,
+    ""rate_limit"": 120
+}
+";
+
+        [Test]
+        public void FundingMyLastFee_ParametersAreValid_ShouldReturnFundingMyLastFeeBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingMyLastFeeJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.FundingMyLastFee(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<FundingMyLastFeeBase>(response, "response is FundingMyLastFeeBase");
+        }
+
+        [Test]
+        public void FundingMyLastFeeWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseFundingMyLastFeeBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingMyLastFeeJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.FundingMyLastFeeWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<FundingMyLastFeeBase>>(response, "response is ApiResponse<FundingMyLastFeeBase>");
+        }
+
+        [Test]
+        public async Task FundingMyLastFeeAsync_ParametersAreValid_ShouldReturnFundingMyLastFeeBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingMyLastFeeJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.FundingMyLastFeeAsync(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<FundingMyLastFeeBase>(response, "response is FundingMyLastFeeBase");
+        }
+
+        [Test]
+        public async Task FundingMyLastFeeAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseFundingMyLastFeeBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingMyLastFeeJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.FundingMyLastFeeAsyncWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<FundingMyLastFeeBase>>(response, "response is ApiResponse<FundingMyLastFeeBase>");
+        }
+
+        private static readonly string fundingPredictedJson = @"
+{
+    ""ret_code"": 0,
+    ""ret_msg"": ""ok"",
+    ""ext_code"": """",
+    ""result"": {
+        ""predicted_funding_rate"": 0.0001,
+        ""predicted_funding_fee"": 0
+    },
+    ""ext_info"": null,
+    ""time_now"": ""1577447415.583259"",
+    ""rate_limit_status"": 118,
+    ""rate_limit_reset_ms"": 1577447415590,
+    ""rate_limit"": 120
+}
+";
+
+        [Test]
+        public void FundingPredicted_ParametersAreValid_ShouldReturnFundingPredictedBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingPredictedJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.FundingPredicted(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<FundingPredictedBase>(response, "response is FundingPredictedBase");
+        }
+
+        [Test]
+        public void FundingPredictedWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfFundingPredictedBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingPredictedJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.FundingPredictedWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<FundingPredictedBase>>(response, "response is ApiResponse<FundingPredictedBase>");
+        }
+
+        [Test]
+        public async Task FundingPredictedAsync_ParametersAreValid_ShouldReturnFundingPredictedBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingPredictedJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.FundingPredictedAsync(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<FundingPredictedBase>(response, "response is FundingPredictedBase");
+        }
+
+        [Test]
+        public async Task FundingPredictedAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfFundingPredictedBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingPredictedJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.FundingPredictedAsyncWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<FundingPredictedBase>>(response, "response is ApiResponse<FundingPredictedBase>");
+        }
+
+        private static readonly string fundingPrevRateJson = @"
+{
+    ""ret_code"": 0,
+    ""ret_msg"": ""ok"",
+    ""ext_code"": """",
+    ""result"": {
+        ""symbol"": ""BTCUSD"",
+        ""funding_rate"": ""0.00010000"",
+        ""funding_rate_timestamp"": 1577433600
+    },
+    ""ext_info"": null,
+    ""time_now"": ""1577445586.446797"",
+    ""rate_limit_status"": 119,
+    ""rate_limit_reset_ms"": 1577445586454,
+    ""rate_limit"": 120
+}
+";
+
+        [Test]
+        public void FundingPrevRate_ParametersAreValid_ShouldReturnFundingPrevRateBase()
+        {
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingPrevRateJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.FundingPrevRate(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<FundingPrevRateBase>(response, "response is FundingPrevRateBase");
+        }
+
+        [Test]
+        public void FundingPrevRateWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfFundingPrevRateBase()
+        {
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingPrevRateJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.FundingPrevRateWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<FundingPrevRateBase>>(response, "response is ApiResponse<FundingPrevRateBase>");
+        }
+
+        [Test]
+        public async Task FundingPrevRateAsync_ParametersAreValid_ShouldReturnFundingPrevRateBase()
+        {
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingPrevRateJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.FundingPrevRateAsync(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<FundingPrevRateBase>(response, "response is FundingPrevRateBase");
+        }
+
+        [Test]
+        public async Task FundingPrevRateAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfFundingPrevRateBase()
+        {
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, fundingPrevRateJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.FundingPrevRateAsyncWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<FundingPrevRateBase>>(response, "response is ApiResponse<FundingPrevRateBase>");
+        }
+
         //[Test]
-        //public void FundingPrevRateTest()
+        //public void Test()
         //{
-        //    // TODO uncomment below to test the method and replace null with proper value
-        //    //string symbol = null;
-        //    //var response = instance.FundingPrevRate(symbol);
-        //    //Assert.IsInstanceOf<Object> (response, "response is Object");
+        //    var asm = Assembly.GetAssembly(typeof(FundingApi));
+        //    var policyType = asm?.GetType("BybitAPI.Api.Util.SnakeCaseNamingPolicy");
+        //    var utilType = asm?.GetType("BybitAPI.Api.Util.ApiUtil");
+        //    var mi = utilType.GetMethod("GetJsonConverters", BindingFlags.Static | BindingFlags.NonPublic);
+
+        //    var options = new JsonSerializerOptions
+        //    {
+        //        PropertyNamingPolicy = (JsonNamingPolicy)Activator.CreateInstance(policyType),
+        //        NumberHandling = JsonNumberHandling.AllowReadingFromString,
+        //        PropertyNameCaseInsensitive = true,
+        //    };
+        //    foreach (var converter in (IEnumerable<JsonConverter>)mi.Invoke(null, null))
+        //    {
+        //        options.Converters.Add(converter);
+        //    }
+        //    var obj = JsonSerializer.Deserialize<FundingPrevRateBase>(fundingPrevRateJson, options);
+
+        //    Assert.IsInstanceOf<FundingPrevRateBase>(obj);
         //}
     }
 }

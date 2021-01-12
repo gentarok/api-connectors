@@ -85,7 +85,7 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Get Conditional Order' API method.
     /// </summary>
-    public record ConditionalGetOrdersResBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+    public record ConditionalGetOrdersBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
         ConditionalGetOrdersListBase? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>

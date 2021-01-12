@@ -74,8 +74,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns><see cref="ConditionalGetOrdersResBase"/></returns>
-        ConditionalGetOrdersResBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null);
+        /// <returns><see cref="ConditionalGetOrdersBase"/></returns>
+        ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Get my conditional order list.
@@ -89,8 +89,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>ApiResponse of ConditionalOrdersResBase</returns>
-        ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null);
+        /// <returns>ApiResponse of ConditionalGetOrdersBase</returns>
+        ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Place a new conditional order.
@@ -278,8 +278,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of ConditionalOrdersResBase</returns>
-        Task<ConditionalGetOrdersResBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null);
+        /// <returns>Task of ConditionalGetOrdersBase</returns>
+        Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Get my conditional order list.
@@ -293,8 +293,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of ApiResponse (ConditionalOrdersResBase)</returns>
-        Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null);
+        /// <returns>Task of ApiResponse (ConditionalGetOrdersBase)</returns>
+        Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Place a new conditional order.
@@ -654,7 +654,7 @@ namespace BybitAPI.Api
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
         /// <returns><see cref="ConditionalGetOrdersResBase"/></returns>
-        public ConditionalGetOrdersResBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
+        public ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
             => ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor).Data;
 
         /// <summary>
@@ -669,8 +669,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>ApiResponse of ConditionalOrdersResBase</returns>
-        public ApiResponse<ConditionalGetOrdersResBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
+        /// <returns>ApiResponse of ConditionalGetOrdersBase</returns>
+        public ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and < 0 or > ConditionalGetOrdersMaxValue)
@@ -709,7 +709,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            return CallApiWithHttpInfo<ConditionalGetOrdersResBase>(localVarPath, Method.GET, localVarQueryParams);
+            return CallApiWithHttpInfo<ConditionalGetOrdersBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
         /// <summary>
@@ -724,8 +724,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of ConditionalOrdersResBase</returns>
-        public async Task<ConditionalGetOrdersResBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
+        /// <returns>Task of ConditionalGetOrdersBase</returns>
+        public async Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
             => (await ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor)).Data;
 
         /// <summary>
@@ -740,8 +740,8 @@ namespace BybitAPI.Api
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
         /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of ApiResponse (ConditionalOrdersResBase)</returns>
-        public Task<ApiResponse<ConditionalGetOrdersResBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, decimal? limit = null, SearchDirection? direction = null, string? cursor = null)
+        /// <returns>Task of ApiResponse (ConditionalGetOrdersBase)</returns>
+        public Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and < 0 or > ConditionalGetOrdersMaxValue)
@@ -780,7 +780,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            return CallApiAsyncWithHttpInfo<ConditionalGetOrdersResBase>(localVarPath, Method.GET, localVarQueryParams);
+            return CallApiAsyncWithHttpInfo<ConditionalGetOrdersBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
         /// <summary>

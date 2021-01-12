@@ -59,13 +59,17 @@ namespace BybitAPI.Api.Util
 
         internal static IEnumerable<JsonConverter> GetJsonConverters()
         {
+            // Add a default String to Enum converter.
+            yield return new JsonStringEnumConverter();
+
             // Add custom converters for nullable enums.
             // Note: System.Text.Json 5.0 does not support to deserialise nullalbe enum. This may be supported in the next or later version.
+            // Notice!: The order in which the converters are added is the priority of the converters used by the deserializer, so these converters must be added after the JsonStringEnumConverter.
             var asm = Assembly.GetExecutingAssembly();
             var type = typeof(StringNullableEnumConverter<>);
 
+            // Supports enums defined in the namespace "$(AssemblyName).Model".
             var converters = asm.GetTypes()
-                // Supports enums defined in the namespace "$(AssemblyName).Model".
                 .Where(x => x.IsEnum && x.FullName.StartsWith($"{asm.GetName().Name}.Model"))
                 .Select(x =>
                 {
@@ -78,9 +82,6 @@ namespace BybitAPI.Api.Util
             {
                 yield return converter;
             }
-
-            // Add a default String to Enum converter.
-            yield return new JsonStringEnumConverter();
 
             // Add a custom DateTimeOffset converter.
             yield return new UtcDateTimeStringToDateTimeOffsetConverter();

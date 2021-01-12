@@ -1,8 +1,10 @@
+using BybitAPI.Client;
 using BybitAPI.Model;
 using BybitAPI.Test.Api.Factory;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace BybitAPI.Api.Test
 {
@@ -77,21 +79,167 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void OrderCancel_ParametersAreValid_ShouldReturnOrderCancelBase()
+        [TestCase("", "")]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public void OrderCancel_ParametersAreValid_ShouldReturnOrderCancelBase(string? orderId, string? orderLinkId)
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            var orderId = string.Empty;
-            string? orderLinkId = null;
 
             // Act
             var response = instance.OrderCancel(symbol, orderId, orderLinkId);
 
             // Assert
             Assert.IsInstanceOf<OrderCancelBase>(response, "response is OrderCancelBase");
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void OrderCancel_ParametersAreInvalid_ShouldRaiseApiException(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.OrderCancel(symbol, orderId, orderLinkId);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", "")]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public void OrderCancelWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfOrderCancelBase(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.OrderCancelWithHttpInfo(symbol, orderId, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderCancelBase>>(response, "response is ApiResponse<OrderCancelBase>");
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void OrderCancelWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.OrderCancelWithHttpInfo(symbol, orderId, orderLinkId);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", "")]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public async Task OrderCancelAsync_ParametersAreValid_ShouldReturnOrderCancelBase(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.OrderCancelAsync(symbol, orderId, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<OrderCancelBase>(response, "response is OrderCancelBase");
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void OrderCancelAsync_ParametersAreInvalid_ShouldRaiseApiException(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.OrderCancelAsync(symbol, orderId, orderLinkId);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", "")]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public async Task OrderCancelAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfOrderCancelBase(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.OrderCancelAsyncWithHttpInfo(symbol, orderId, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderCancelBase>>(response, "response is ApiResponse<OrderCancelBase>");
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void OrderCancelAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.OrderCancelAsyncWithHttpInfo(symbol, orderId, orderLinkId);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string orderCancelAllJson = @"
@@ -133,7 +281,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelAllJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
 
@@ -142,6 +291,57 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderCancelAllBase>(response, "response is OrderCancelAllBase");
+        }
+
+        [Test]
+        public void OrderCancelAllWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfOrderCancelAllBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.OrderCancelAllWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderCancelAllBase>>(response, "response is ApiResponse<OrderCancelAllBase>");
+        }
+
+        [Test]
+        public async Task OrderCancelAllAsync_ParametersAreValid_ShouldReturnOrderCancelAllBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.OrderCancelAllAsync(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<OrderCancelAllBase>(response, "response is OrderCancelAllBase");
+        }
+
+        [Test]
+        public async Task OrderCancelAllAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfOrderCancelAllBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderCancelAllJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.OrderCancelAllAsyncWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderCancelAllBase>>(response, "response is ApiResponse<OrderCancelAllBase>");
         }
 
         //Note: Created from actual response. (TestNet)
@@ -244,14 +444,17 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void OrderGetOrders_ParametersAreValid_ShouldReturnOrderGetOrdersBase()
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void OrderGetOrders_ParametersAreValid_ShouldReturnOrderGetOrdersBase(int? limit)
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            int? limit = null;
             OrderStatus? orderStatus = null;
             SearchDirection? direction = null;
             string? cursor = null;
@@ -261,6 +464,175 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderGetOrdersBase>(response, "response is OrderGetOrdersBase");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void OrderGetOrders_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            OrderStatus? orderStatus = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.OrderGetOrders(symbol, limit, orderStatus, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void OrderGetOrdersWithHttpInfo_ParametersAreValid_ShouldReturnOrderApiResponseOfGetOrdersBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            OrderStatus? orderStatus = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var response = instance.OrderGetOrdersWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderGetOrdersBase>>(response, "response is ApiResponse<OrderGetOrdersBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void OrderGetOrdersWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            OrderStatus? orderStatus = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.OrderGetOrdersWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task OrderGetOrdersAsync_ParametersAreValid_ShouldReturnOrderGetOrdersBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            OrderStatus? orderStatus = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var response = await instance.OrderGetOrdersAsync(symbol, limit, orderStatus, direction, cursor);
+
+            // Assert
+            Assert.IsInstanceOf<OrderGetOrdersBase>(response, "response is OrderGetOrdersBase");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void OrderGetOrdersAsync_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            OrderStatus? orderStatus = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.OrderGetOrdersAsync(symbol, limit, orderStatus, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task OrderGetOrdersAsyncWithHttpInfo_ParametersAreValid_ShouldReturnOrderApiResponseOfGetOrdersBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            OrderStatus? orderStatus = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var response = await instance.OrderGetOrdersAsyncWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderGetOrdersBase>>(response, "response is ApiResponse<OrderGetOrdersBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void OrderGetOrdersAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            OrderStatus? orderStatus = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.OrderGetOrdersAsyncWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string orderNewJson = @"
@@ -302,7 +674,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, orderNewJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderNewJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var side = Side.Sell;
             var symbol = Symbol.BTCUSD;
@@ -321,6 +694,87 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderNewBase>(response, "response is OrderNewBase");
+        }
+
+        [Test]
+        public void OrderNewWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfOrderNewBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderNewJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var side = Side.Sell;
+            var symbol = Symbol.BTCUSD;
+            var orderType = OrderType.Market;
+            var qty = 1;
+            var timeInForce = TimeInForce.GoodTillCancel;
+            decimal? price = null;
+            decimal? takeProfit = null;
+            decimal? stopLoss = null;
+            bool? reduceOnly = null;
+            bool? closeOnTrigger = null;
+            string? orderLinkId = null;
+
+            // Act
+            var response = instance.OrderNewWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderNewBase>>(response, "response is ApiResponse<OrderNewBase>");
+        }
+
+        [Test]
+        public async Task OrderNewAsync_ParametersAreValid_ShouldReturnOrderNewBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderNewJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var side = Side.Sell;
+            var symbol = Symbol.BTCUSD;
+            var orderType = OrderType.Market;
+            var qty = 1;
+            var timeInForce = TimeInForce.GoodTillCancel;
+            decimal? price = null;
+            decimal? takeProfit = null;
+            decimal? stopLoss = null;
+            bool? reduceOnly = null;
+            bool? closeOnTrigger = null;
+            string? orderLinkId = null;
+
+            // Act
+            var response = await instance.OrderNewAsync(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<OrderNewBase>(response, "response is OrderNewBase");
+        }
+
+        [Test]
+        public async Task OrderNewAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfOrderNewBase()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderNewJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var side = Side.Sell;
+            var symbol = Symbol.BTCUSD;
+            var orderType = OrderType.Market;
+            var qty = 1;
+            var timeInForce = TimeInForce.GoodTillCancel;
+            decimal? price = null;
+            decimal? takeProfit = null;
+            decimal? stopLoss = null;
+            bool? reduceOnly = null;
+            bool? closeOnTrigger = null;
+            string? orderLinkId = null;
+
+            // Act
+            var response = await instance.OrderNewAsyncWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderNewBase>>(response, "response is ApiResponse<OrderNewBase>");
         }
 
         private static readonly string orderQueryJsonBySymbolAndOrderId = @"
@@ -362,11 +816,12 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void OrderQuery_SymbolAndOrderIdParametersAreValid_ShouldReturnOrderQueryBaseOrderQueryRes()
+        public void OrderQuery_SymbolAndOrderIdParametersAreValid_ShouldReturnOrderQueryBaseOrderOfQueryRes()
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbolAndOrderId);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbolAndOrderId);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
             var orderId = string.Empty;
@@ -376,6 +831,60 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderQueryBase<OrderQueryRes>>(response, "response is OrderQueryBase<OrderQueryRes>");
+        }
+
+        [Test]
+        public void OrderQueryWithHttpInfo_SymbolAndOrderIdParametersAreValid_ShouldReturnApiResponseOfOrderQueryBaseForOrderFQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbolAndOrderId);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var orderId = string.Empty;
+
+            // Act
+            var response = instance.OrderQueryWithHttpInfo(symbol, orderId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderQueryBase<OrderQueryRes>>>(response, "response is ApiResponse<OrderQueryBase<OrderQueryRes>>");
+        }
+
+        [Test]
+        public async Task OrderQueryAsync_SymbolAndOrderIdParametersAreValid_ShouldReturnOrderQueryBaseOrderOfQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbolAndOrderId);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var orderId = string.Empty;
+
+            // Act
+            var response = await instance.OrderQueryAsync(symbol, orderId);
+
+            // Assert
+            Assert.IsInstanceOf<OrderQueryBase<OrderQueryRes>>(response, "response is OrderQueryBase<OrderQueryRes>");
+        }
+
+        [Test]
+        public async Task OrderQueryAsyncWithHttpInfo_SymbolAndOrderIdParametersAreValid_ShouldReturnApiResponseOfOrderQueryBaseForOrderFQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbolAndOrderId);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var orderId = string.Empty;
+
+            // Act
+            var response = await instance.OrderQueryAsyncWithHttpInfo(symbol, orderId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderQueryBase<OrderQueryRes>>>(response, "response is ApiResponse<OrderQueryBase<OrderQueryRes>>");
         }
 
         private static readonly string orderQueryJsonBySymbol = @"
@@ -448,7 +957,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbol);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbol);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
 
@@ -457,6 +967,57 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>(response, "response is OrderQueryBase<IReadOnlyList<OrderQueryRes>>");
+        }
+
+        [Test]
+        public void OrderQueryWithHttpInfo_SymbolParameterIsValid_ShouldReturnApiResponseOfQueryBaseOrderForListForQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbol);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.OrderQueryWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>>(response, "response is ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>");
+        }
+
+        [Test]
+        public async Task OrderQueryAsync_SymbolParameterIsValid_ShouldReturnQueryBaseOrderOfListForQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbol);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.OrderQueryAsync(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>(response, "response is OrderQueryBase<IReadOnlyList<OrderQueryRes>>");
+        }
+
+        [Test]
+        public async Task OrderQueryAsyncWithHttpInfo_SymbolParameterIsValid_ShouldReturnApiResponseOfQueryBaseOrderForListForQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderQueryJsonBySymbol);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.OrderQueryAsyncWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>>(response, "response is ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>");
         }
 
         private static readonly string orderReplaceJson = @"
@@ -482,11 +1043,10 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            //string? orderId = null;
-            //string? orderLinkId = null;
             string? pRQty = null;
             string? pRPrice = null;
 
@@ -495,6 +1055,164 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderReplaceBase>(response, "response is OrderReplaceBase");
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void OrderReplace_ParametersAreInvalid_ShouldRaiseApiException(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? pRQty = null;
+            string? pRPrice = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.OrderReplace(symbol, orderId, orderLinkId, pRQty, pRPrice);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", "")]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public void OrderReplaceWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfOrderReplaceBase(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? pRQty = null;
+            string? pRPrice = null;
+
+            // Act
+            var response = instance.OrderReplaceWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderReplaceBase>>(response, "response is ApiResponse<OrderReplaceBase>");
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void OrderReplaceWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? pRQty = null;
+            string? pRPrice = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.OrderReplaceWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", "")]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public async Task OrderReplaceAsync_ParametersAreValid_ShouldReturnOrderReplaceBase(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? pRQty = null;
+            string? pRPrice = null;
+
+            // Act
+            var response = await instance.OrderReplaceAsync(symbol, orderId, orderLinkId, pRQty, pRPrice);
+
+            // Assert
+            Assert.IsInstanceOf<OrderReplaceBase>(response, "response is OrderReplaceBase");
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void OrderReplaceAsync_ParametersAreInvalid_ShouldRaiseApiException(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? pRQty = null;
+            string? pRPrice = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.OrderReplaceAsync(symbol, orderId, orderLinkId, pRQty, pRPrice);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", "")]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public async Task OrderReplaceAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfOrderReplaceBase(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? pRQty = null;
+            string? pRPrice = null;
+
+            // Act
+            var response = await instance.OrderReplaceAsyncWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<OrderReplaceBase>>(response, "response is ApiResponse<OrderReplaceBase>");
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void OrderReplaceAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string? orderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, orderReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? pRQty = null;
+            string? pRPrice = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.OrderReplaceAsyncWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
     }
 }

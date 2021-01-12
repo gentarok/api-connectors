@@ -338,7 +338,8 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class WalletApi : ApiBase, IWalletApi
     {
-        private const int WalletExchangeOrderWithHttpInfoMaxValue = 50;
+        private const int WalletExchangeOrderLimitMaxValue = 50;
+        private const int WalletWithdrawLimitMaxValue = 50;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletApi"/> class.
@@ -376,9 +377,9 @@ namespace BybitAPI.Api
         public ApiResponse<WalletExchangeOrderBase> WalletExchangeOrderWithHttpInfo(int? limit = null, long? from = null, SearchDirection? direction = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and < 0 or > WalletExchangeOrderWithHttpInfoMaxValue)
+            if (limit is not null and < 0 or > WalletExchangeOrderLimitMaxValue)
             {
-                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletExchangeOrderWithHttpInfo");
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletExchangeOrder");
             }
 
             var localVarPath = "/v2/private/exchange-order/list";
@@ -433,9 +434,9 @@ namespace BybitAPI.Api
         public Task<ApiResponse<WalletExchangeOrderBase>> WalletExchangeOrderAsyncWithHttpInfo(int? limit = null, long? from = null, SearchDirection? direction = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and < 0 or > WalletExchangeOrderWithHttpInfoMaxValue)
+            if (limit is not null and < 0 or > WalletExchangeOrderLimitMaxValue)
             {
-                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletExchangeOrderWithHttpInfo");
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletExchangeOrder");
             }
 
             var localVarPath = "/v2/private/exchange-order/list";
@@ -901,6 +902,12 @@ namespace BybitAPI.Api
         /// <returns>ApiResponse of WalletWithdrawBase</returns>
         public ApiResponse<WalletWithdrawBase> WalletWithdrawWithHttpInfo(DateTimeOffset? startDate = null, DateTimeOffset? endDate = null, Currency? coin = null, WithdrawStatus? status = null, int? page = null, int? limit = null)
         {
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > WalletWithdrawLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletWithdraw");
+            }
+
             var localVarPath = "/open-api/wallet/withdraw/list";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -979,6 +986,12 @@ namespace BybitAPI.Api
         /// <returns>Task of ApiResponse (WalletWithdrawBase)</returns>
         public Task<ApiResponse<WalletWithdrawBase>> WalletWithdrawAsyncWithHttpInfo(DateTimeOffset? startDate = null, DateTimeOffset? endDate = null, Currency? coin = null, WithdrawStatus? status = null, int? page = null, int? limit = null)
         {
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > WalletWithdrawLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletWithdraw");
+            }
+
             var localVarPath = "/open-api/wallet/withdraw/list";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 

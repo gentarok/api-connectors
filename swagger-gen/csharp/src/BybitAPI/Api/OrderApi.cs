@@ -662,7 +662,7 @@ namespace BybitAPI.Api
         public ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and <= OrderGetOrdersLimitMaxValue)
+            if (limit is not null and < 0 or > OrderGetOrdersLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling OrderApi->OrderGetOrders");
             }
@@ -730,7 +730,7 @@ namespace BybitAPI.Api
         public Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, int? limit = null, OrderStatus? orderStatus = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
-            if (limit is not null and <= OrderGetOrdersLimitMaxValue)
+            if (limit is not null and < 0 or > OrderGetOrdersLimitMaxValue)
             {
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling OrderApi->OrderGetOrders");
             }

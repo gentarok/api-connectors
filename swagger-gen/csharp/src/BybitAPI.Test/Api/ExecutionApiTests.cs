@@ -113,7 +113,7 @@ namespace BybitAPI.Api.Test
         [TestCase(51, null)]
         [TestCase(null, -1)]
         [TestCase(null, 201)]
-        public void ExecutionGetTrades_ParametersAreInValid_ShouldRaiseApiException(int? page, int? limit)
+        public void ExecutionGetTrades_ParametersAreInvalid_ShouldRaiseApiException(int? page, int? limit)
         {
             // Arrange
             var instance = Create();
@@ -162,7 +162,7 @@ namespace BybitAPI.Api.Test
         [TestCase(51, null)]
         [TestCase(null, -1)]
         [TestCase(null, 201)]
-        public void ExecutionGetTradesAsync_ParametersAreInValid_ShouldRaiseApiException(int? page, int? limit)
+        public void ExecutionGetTradesAsync_ParametersAreInvalid_ShouldRaiseApiException(int? page, int? limit)
         {
             // Arrange
             var instance = Create();
@@ -177,6 +177,104 @@ namespace BybitAPI.Api.Test
             var ex = Assert.ThrowsAsync<ApiException>(async () =>
             {
                 var response = await instance.ExecutionGetTradesAsync(symbol, orderId, startTime, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(0, null)]
+        [TestCase(50, null)]
+        [TestCase(null, 0)]
+        [TestCase(null, 200)]
+        public void ExecutionGetTradesWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfExecutionGetTradesBase(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, executionGetTradesJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? orderId = null;
+            long? startTime = null;
+
+            // Act
+            var response = instance.ExecutionGetTradesWithHttpInfo(symbol, orderId, startTime, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ExecutionGetTradesBase>>(response, "response is ApiResponse<ExecutionGetTradesBase>");
+        }
+
+        [Test]
+        [TestCase(-1, null)]
+        [TestCase(51, null)]
+        [TestCase(null, -1)]
+        [TestCase(null, 201)]
+        public void ExecutionGetTradesWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, executionGetTradesJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? orderId = null;
+            long? startTime = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ExecutionGetTradesWithHttpInfo(symbol, orderId, startTime, page, limit);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(0, null)]
+        [TestCase(50, null)]
+        [TestCase(null, 0)]
+        [TestCase(null, 200)]
+        public async Task ExecutionGetTradesAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfExecutionGetTradesBase(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, executionGetTradesJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? orderId = null;
+            long? startTime = null;
+
+            // Act
+            var response = await instance.ExecutionGetTradesAsyncWithHttpInfo(symbol, orderId, startTime, page, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ExecutionGetTradesBase>>(response, "response is ApiRepsonse<ExecutionGetTradesBase>");
+        }
+
+        [Test]
+        [TestCase(-1, null)]
+        [TestCase(51, null)]
+        [TestCase(null, -1)]
+        [TestCase(null, 201)]
+        public void ExecutionGetTradesAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(int? page, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, executionGetTradesJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? orderId = null;
+            long? startTime = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ExecutionGetTradesAsyncWithHttpInfo(symbol, orderId, startTime, page, limit);
             });
 
             // Assert

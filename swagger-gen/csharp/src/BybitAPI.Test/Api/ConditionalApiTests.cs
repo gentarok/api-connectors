@@ -266,7 +266,10 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void ConditionalGetOrders_ParametersAreValid_ShouldReturnConditionalGetOrdersResBase()
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void ConditionalGetOrders_ParametersAreValid_ShouldReturnConditionalGetOrdersResBase(int? limit)
         {
             // Arrange
             var instance = Create();
@@ -275,7 +278,6 @@ namespace BybitAPI.Api.Test
 
             var symbol = Symbol.BTCUSD;
             var stopOrderStatus = StopOrderStatus.Active;
-            decimal? limit = null;
             SearchDirection? direction = null;
             string? cursor = null;
 
@@ -283,11 +285,13 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalGetOrders(symbol, stopOrderStatus, limit, direction, cursor);
 
             // Assert
-            Assert.IsInstanceOf<ConditionalGetOrdersResBase>(response, "response is ConditionalGetOrdersResBase");
+            Assert.IsInstanceOf<ConditionalGetOrdersBase>(response, "response is ConditionalGetOrdersBase");
         }
 
         [Test]
-        public void ConditionalGetOrdersWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalGetOrdersResBase()
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void ConditionalGetOrders_ParametersAreInvalid_ShouldReturnApiException(int? limit)
         {
             // Arrange
             var instance = Create();
@@ -296,7 +300,32 @@ namespace BybitAPI.Api.Test
 
             var symbol = Symbol.BTCUSD;
             var stopOrderStatus = StopOrderStatus.Active;
-            decimal? limit = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalGetOrders(symbol, stopOrderStatus, limit, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void ConditionalGetOrdersWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalGetOrdersResBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var stopOrderStatus = StopOrderStatus.Active;
             SearchDirection? direction = null;
             string? cursor = null;
 
@@ -304,11 +333,13 @@ namespace BybitAPI.Api.Test
             var response = instance.ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor);
 
             // Assert
-            Assert.IsInstanceOf<ApiResponse<ConditionalGetOrdersResBase>>(response, "response is ConditionalGetOrdersResBase");
+            Assert.IsInstanceOf<ApiResponse<ConditionalGetOrdersBase>>(response, "response is ConditionalGetOrdersBase");
         }
 
         [Test]
-        public async Task ConditionalGetOrdersAsync_ParametersAreValid_ShouldReturnConditionalGetOrdersResBase()
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void ConditionalGetOrdersWithHttpInfo_ParametersAreInvalid_ShouldReturnApiException(int? limit)
         {
             // Arrange
             var instance = Create();
@@ -317,7 +348,32 @@ namespace BybitAPI.Api.Test
 
             var symbol = Symbol.BTCUSD;
             var stopOrderStatus = StopOrderStatus.Active;
-            decimal? limit = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task ConditionalGetOrdersAsync_ParametersAreValid_ShouldReturnConditionalGetOrdersResBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var stopOrderStatus = StopOrderStatus.Active;
             SearchDirection? direction = null;
             string? cursor = null;
 
@@ -325,11 +381,13 @@ namespace BybitAPI.Api.Test
             var response = await instance.ConditionalGetOrdersAsync(symbol, stopOrderStatus, limit, direction, cursor);
 
             // Assert
-            Assert.IsInstanceOf<ConditionalGetOrdersResBase>(response, "response is ConditionalGetOrdersResBase");
+            Assert.IsInstanceOf<ConditionalGetOrdersBase>(response, "response is ConditionalGetOrdersBase");
         }
 
         [Test]
-        public async Task ConditionalGetOrdersAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalGetOrdersResBase()
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void ConditionalGetOrdersAsync_ParametersAreValid_ShouldRaiseApiException(int? limit)
         {
             // Arrange
             var instance = Create();
@@ -338,7 +396,32 @@ namespace BybitAPI.Api.Test
 
             var symbol = Symbol.BTCUSD;
             var stopOrderStatus = StopOrderStatus.Active;
-            decimal? limit = null;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalGetOrdersAsync(symbol, stopOrderStatus, limit, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public async Task ConditionalGetOrdersAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalGetOrdersResBase(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var stopOrderStatus = StopOrderStatus.Active;
             SearchDirection? direction = null;
             string? cursor = null;
 
@@ -346,7 +429,32 @@ namespace BybitAPI.Api.Test
             var response = await instance.ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor);
 
             // Assert
-            Assert.IsInstanceOf<ApiResponse<ConditionalGetOrdersResBase>>(response, "response is ApiResponse<ConditionalGetOrdersResBase>");
+            Assert.IsInstanceOf<ApiResponse<ConditionalGetOrdersBase>>(response, "response is ApiResponse<ConditionalGetOrdersBase>");
+        }
+
+        [Test]
+        [TestCase(-1)]
+        [TestCase(51)]
+        public void ConditionalGetOrdersAsyncWithHttpInfo_ParametersAreValid_ShouldRaiseApiException(int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalGetOrdersJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var stopOrderStatus = StopOrderStatus.Active;
+            SearchDirection? direction = null;
+            string? cursor = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
         private readonly string conditionalNewJson = @"

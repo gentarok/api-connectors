@@ -379,7 +379,7 @@ namespace BybitAPI.Api
     /// </summary>
     public partial class MarketApi : ApiBase, IMarketApi
     {
-        private const int MarketAccountRatioLimitMaxValue = 1000;
+        private const int MarketAccountRatioLimitMaxValue = 500;
         private const int MarketBigDealLimitMaxValue = 1000;
         private const int MarketLiqRecordsLimitMaxValue = 1000;
         private const int MarketOpenInterestLimitMaxValue = 200;

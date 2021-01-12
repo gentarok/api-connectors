@@ -81,13 +81,15 @@ namespace BybitAPI.Api.Test
 ";
 
         [Test]
-        public void WalletExchangeOrder_ParametersAreValid_ShouldReturnWalletExchangeOrderBase()
+        [TestCase(null)]
+        [TestCase(0)]
+        [TestCase(50)]
+        public void WalletExchangeOrder_ParametersAreValid_ShouldReturnWalletExchangeOrderBase(int? limit)
         {
             // Arrange
             var instance = Create();
             instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
 
-            int? limit = null;
             long? from = null;
             SearchDirection? direction = null;
 

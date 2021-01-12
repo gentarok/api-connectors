@@ -44,8 +44,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns><see cref="FundingPredictedRes"/></returns>
-        FundingPredictedRes FundingPredicted(Symbol symbol);
+        /// <returns><see cref="FundingPredictedBase"/></returns>
+        FundingPredictedBase FundingPredicted(Symbol symbol);
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -55,8 +55,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of FundingPredictedRes</returns>
-        ApiResponse<FundingPredictedRes> FundingPredictedWithHttpInfo(Symbol symbol);
+        /// <returns>ApiResponse of FundingPredictedBase</returns>
+        ApiResponse<FundingPredictedBase> FundingPredictedWithHttpInfo(Symbol symbol);
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -114,7 +114,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of FundingPredictedRes</returns>
+        /// <returns>Task of FundingPredictedBase</returns>
         Task<FundingPredictedBase> FundingPredictedAsync(Symbol symbol);
 
         /// <summary>
@@ -260,8 +260,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns><see cref="FundingPredictedRes"/></returns>
-        public FundingPredictedRes FundingPredicted(Symbol symbol)
+        /// <returns><see cref="FundingPredictedBase"/></returns>
+        public FundingPredictedBase FundingPredicted(Symbol symbol)
             => FundingPredictedWithHttpInfo(symbol).Data;
 
         /// <summary>
@@ -272,8 +272,8 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of FundingPredictedRes</returns>
-        public ApiResponse<FundingPredictedRes> FundingPredictedWithHttpInfo(Symbol symbol)
+        /// <returns>ApiResponse of FundingPredictedBase</returns>
+        public ApiResponse<FundingPredictedBase> FundingPredictedWithHttpInfo(Symbol symbol)
         {
             var localVarPath = "/open-api/funding/predicted-funding";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
@@ -289,7 +289,7 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            return CallApiWithHttpInfo<FundingPredictedRes>(localVarPath, Method.GET, localVarQueryParams);
+            return CallApiWithHttpInfo<FundingPredictedBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
         /// <summary>
@@ -342,10 +342,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <returns><see cref="FundingPrevRateBase"/></returns>
         public FundingPrevRateBase FundingPrevRate(Symbol symbol)
-        {
-            var localVarResponse = FundingPrevRateWithHttpInfo(symbol);
-            return localVarResponse.Data;
-        }
+             => FundingPrevRateWithHttpInfo(symbol).Data;
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
@@ -385,10 +382,7 @@ namespace BybitAPI.Api
         /// <param name="symbol">Contract type.</param>
         /// <returns>Task of FundingPrevRateBase</returns>
         public async Task<FundingPrevRateBase> FundingPrevRateAsync(Symbol symbol)
-        {
-            var localVarResponse = await FundingPrevRateAsyncWithHttpInfo(symbol);
-            return localVarResponse.Data;
-        }
+            => (await FundingPrevRateAsyncWithHttpInfo(symbol)).Data;
 
         /// <summary>
         /// Get predicted funding rate and funding fee.
