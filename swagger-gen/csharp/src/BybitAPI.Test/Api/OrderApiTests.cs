@@ -1083,8 +1083,8 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            string? pRQty = null;
-            string? pRPrice = null;
+            decimal? pRQty = null;
+            decimal? pRPrice = null;
 
             // Act
             var response = instance.OrderReplace(symbol, orderId, orderLinkId, pRQty, pRPrice);
@@ -1104,8 +1104,8 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            string? pRQty = null;
-            string? pRPrice = null;
+            decimal? pRQty = null;
+            decimal? pRPrice = null;
 
             // Act
             var ex = Assert.Throws<ApiException>(() =>
@@ -1129,8 +1129,8 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            string? pRQty = null;
-            string? pRPrice = null;
+            decimal? pRQty = null;
+            decimal? pRPrice = null;
 
             // Act
             var response = instance.OrderReplaceWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
@@ -1151,8 +1151,8 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            string? pRQty = null;
-            string? pRPrice = null;
+            decimal? pRQty = null;
+            decimal? pRPrice = null;
 
             // Act
             var ex = Assert.Throws<ApiException>(() =>
@@ -1176,8 +1176,8 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            string? pRQty = null;
-            string? pRPrice = null;
+            decimal? pRQty = null;
+            decimal? pRPrice = null;
 
             // Act
             var response = await instance.OrderReplaceAsync(symbol, orderId, orderLinkId, pRQty, pRPrice);
@@ -1197,8 +1197,8 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            string? pRQty = null;
-            string? pRPrice = null;
+            decimal? pRQty = null;
+            decimal? pRPrice = null;
 
             // Act
             var ex = Assert.ThrowsAsync<ApiException>(async () =>
@@ -1222,8 +1222,8 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            string? pRQty = null;
-            string? pRPrice = null;
+            decimal? pRQty = null;
+            decimal? pRPrice = null;
 
             // Act
             var response = await instance.OrderReplaceAsyncWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice);
@@ -1244,8 +1244,8 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            string? pRQty = null;
-            string? pRPrice = null;
+            decimal? pRQty = null;
+            decimal? pRPrice = null;
 
             // Act
             var ex = Assert.ThrowsAsync<ApiException>(async () =>

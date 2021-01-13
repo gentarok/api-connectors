@@ -111,7 +111,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns><see cref="OrderNewBase"/></returns>
-        OrderNewBase OrderNew(Side side, Symbol symbol, OrderType orderType, int qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null);
+        OrderNewBase OrderNew(Side side, Symbol symbol, OrderType orderType, decimal qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null);
 
         /// <summary>
         /// Place active order
@@ -132,7 +132,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>ApiResponse of OrderNewBase</returns>
-        ApiResponse<OrderNewBase> OrderNewWithHttpInfo(Side side, Symbol symbol, OrderType orderType, int qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null);
+        ApiResponse<OrderNewBase> OrderNewWithHttpInfo(Side side, Symbol symbol, OrderType orderType, decimal qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -193,7 +193,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns><see cref="OrderReplaceBase"/></returns>
-        OrderReplaceBase OrderReplace(Symbol Symbol, string? orderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null);
+        OrderReplaceBase OrderReplace(Symbol Symbol, string? orderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null);
 
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
@@ -208,7 +208,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>ApiResponse of OrderReplaceBase</returns>
-        ApiResponse<OrderReplaceBase> OrderReplaceWithHttpInfo(Symbol Symbol, string? orderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null);
+        ApiResponse<OrderReplaceBase> OrderReplaceWithHttpInfo(Symbol Symbol, string? orderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null);
 
         #endregion Synchronous Operations
 
@@ -311,7 +311,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of OrderNewBase</returns>
-        Task<OrderNewBase> OrderNewAsync(Side side, Symbol symbol, OrderType orderType, int qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null);
+        Task<OrderNewBase> OrderNewAsync(Side side, Symbol symbol, OrderType orderType, decimal qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null);
 
         /// <summary>
         /// Place active order
@@ -332,7 +332,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of ApiResponse (OrderNewBase)</returns>
-        Task<ApiResponse<OrderNewBase>> OrderNewAsyncWithHttpInfo(Side side, Symbol symbol, OrderType orderType, int qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null);
+        Task<ApiResponse<OrderNewBase>> OrderNewAsyncWithHttpInfo(Side side, Symbol symbol, OrderType orderType, decimal qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null);
 
         /// <summary>
         /// Get my active order list.
@@ -393,7 +393,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of OrderReplaceBase</returns>
-        Task<OrderReplaceBase> OrderReplaceAsync(Symbol Symbol, string? orderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null);
+        Task<OrderReplaceBase> OrderReplaceAsync(Symbol Symbol, string? orderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null);
 
         /// <summary>
         /// Replace active order. Only incomplete orders can be modified.
@@ -408,7 +408,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of ApiResponse (OrderReplaceBase)</returns>
-        Task<ApiResponse<OrderReplaceBase>> OrderReplaceAsyncWithHttpInfo(Symbol Symbol, string? orderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null);
+        Task<ApiResponse<OrderReplaceBase>> OrderReplaceAsyncWithHttpInfo(Symbol Symbol, string? orderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null);
 
         #endregion Asynchronous Operations
     }
@@ -791,7 +791,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns><see cref="OrderNewBase"/></returns>
-        public OrderNewBase OrderNew(Side side, Symbol symbol, OrderType orderType, int qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null)
+        public OrderNewBase OrderNew(Side side, Symbol symbol, OrderType orderType, decimal qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null)
             => OrderNewWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId).Data;
 
         /// <summary>
@@ -813,7 +813,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>ApiResponse of OrderNewBase</returns>
-        public ApiResponse<OrderNewBase> OrderNewWithHttpInfo(Side side, Symbol symbol, OrderType orderType, int qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null)
+        public ApiResponse<OrderNewBase> OrderNewWithHttpInfo(Side side, Symbol symbol, OrderType orderType, decimal qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null)
         {
             var localVarPath = "/v2/private/order/create";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
@@ -884,7 +884,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of OrderNewBase</returns>
-        public async Task<OrderNewBase> OrderNewAsync(Side side, Symbol symbol, OrderType orderType, int qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null)
+        public async Task<OrderNewBase> OrderNewAsync(Side side, Symbol symbol, OrderType orderType, decimal qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null)
             => (await OrderNewAsyncWithHttpInfo(side, symbol, orderType, qty, timeInForce, price, takeProfit, stopLoss, reduceOnly, closeOnTrigger, orderLinkId)).Data;
 
         /// <summary>
@@ -906,7 +906,7 @@ namespace BybitAPI.Api
         /// <param name="closeOnTrigger">close on trigger (optional)</param>
         /// <param name="orderLinkId">TCustomized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique. (optional)</param>
         /// <returns>Task of ApiResponse (OrderNewBase)</returns>
-        public Task<ApiResponse<OrderNewBase>> OrderNewAsyncWithHttpInfo(Side side, Symbol symbol, OrderType orderType, int qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null)
+        public Task<ApiResponse<OrderNewBase>> OrderNewAsyncWithHttpInfo(Side side, Symbol symbol, OrderType orderType, decimal qty, TimeInForce timeInForce, decimal? price = null, decimal? takeProfit = null, decimal? stopLoss = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null)
         {
             var localVarPath = "/v2/private/order/create";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
@@ -1145,7 +1145,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns><see cref="OrderReplaceBase"/></returns>
-        public OrderReplaceBase OrderReplace(Symbol symbol, string? orderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null)
+        public OrderReplaceBase OrderReplace(Symbol symbol, string? orderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null)
             => OrderReplaceWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice).Data;
 
         /// <summary>
@@ -1161,7 +1161,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>ApiResponse of OrderReplaceBase</returns>
-        public ApiResponse<OrderReplaceBase> OrderReplaceWithHttpInfo(Symbol symbol, string? orderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null)
+        public ApiResponse<OrderReplaceBase> OrderReplaceWithHttpInfo(Symbol symbol, string? orderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null)
         {
             // FIXED : According to the document, 'orderId' or 'orderLinkId' is required.
             if (orderId is null && orderLinkId is null)
@@ -1219,7 +1219,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of OrderReplaceBase</returns>
-        public async Task<OrderReplaceBase> OrderReplaceAsync(Symbol symbol, string? orderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null)
+        public async Task<OrderReplaceBase> OrderReplaceAsync(Symbol symbol, string? orderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null)
             => (await OrderReplaceAsyncWithHttpInfo(symbol, orderId, orderLinkId, pRQty, pRPrice)).Data;
 
         /// <summary>
@@ -1235,7 +1235,7 @@ namespace BybitAPI.Api
         /// <param name="pRQty">Order quantity. (optional)</param>
         /// <param name="pRPrice">Order price. (optional)</param>
         /// <returns>Task of ApiResponse (OrderReplaceBase)</returns>
-        public Task<ApiResponse<OrderReplaceBase>> OrderReplaceAsyncWithHttpInfo(Symbol symbol, string? orderId = null, string? orderLinkId = null, string? pRQty = null, string? pRPrice = null)
+        public Task<ApiResponse<OrderReplaceBase>> OrderReplaceAsyncWithHttpInfo(Symbol symbol, string? orderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null)
         {
             // FIXED : According to the document, 'orderId' or 'orderLinkId' is required.
             if (orderId is null && orderLinkId is null)

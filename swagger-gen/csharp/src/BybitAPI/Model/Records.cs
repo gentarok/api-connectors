@@ -78,9 +78,9 @@ namespace BybitAPI.Model
     /// </para>
     /// </remarks>
     public record ConditionalCancelAllRes(string Clordid, long UserId, Symbol Symbol, Side Side, OrderType OrderType,
-        decimal Price, int Qty, TimeInForce TimeInForce, CreateType CreateType, CancelType CancelType, OrderStatus? OrderStatus,
+        decimal Price, decimal Qty, TimeInForce TimeInForce, CreateType CreateType, CancelType CancelType, OrderStatus? OrderStatus,
         decimal? LeavesValue, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string CrossStatus, long CrossSeq,
-        string StopOrderType, TriggerPriceType TriggerBy, decimal? BasePrice, decimal? TrailValue, string ExpectedDirection);
+        string StopOrderType, TriggerPriceType TriggerBy, decimal BasePrice, decimal TrailValue, string ExpectedDirection);
 
     /// <summary>
     /// Base type of the response for the 'Get Conditional Order' API method.
@@ -100,8 +100,8 @@ namespace BybitAPI.Model
     /// 'order_id' (also 'order_link_id' and 'stop_order_id') field looks like a UUID, but the property type could not be defined as GUID because the API may return an empty string. Since an empty string does not imply null, it cannot be defined as a nullable reference type either.
     /// </remarks>
     public record ConditionalGetOrdersRes(long UserId, StopOrderStatus StopOrderStatus, Symbol Symbol, Side Side, OrderType OrderType,
-        string StopOrderType, decimal Price, int Qty, TimeInForce TimeInForce, decimal? BasePrice, string OrderLinkId,
-        DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, decimal? StopPx, string? StopOrderId);
+        string StopOrderType, decimal Price, decimal Qty, TimeInForce TimeInForce, decimal BasePrice, string OrderLinkId,
+        DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, decimal StopPx, string StopOrderId);
 
     /// <summary>
     /// Base type of the response for the 'Place Conditional Order' API method.
@@ -115,8 +115,8 @@ namespace BybitAPI.Model
     /// <remarks>
     /// 'order_id' (also 'order_link_id' and 'stop_order_id') field looks like a UUID, but the property type could not be defined as GUID because the API may return an empty string. Since an empty string does not imply null, it cannot be defined as a nullable reference type either.
     /// </remarks>
-    public record ConditionalNewOrderRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
-        TimeInForce TimeInForce, string Remark, int? LeavesQty, decimal? LeavesValue, decimal? StopPx, string? RejectReason,
+    public record ConditionalNewOrderRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, decimal Qty,
+        TimeInForce TimeInForce, string Remark, decimal LeavesQty, decimal LeavesValue, decimal StopPx, string? RejectReason,
         string? StopOrderId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
 
     /// <summary>
@@ -134,9 +134,9 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Query Conditional Order (real-time)' API method.
     /// </summary>
-    public record ConditionalQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty, decimal StopPx,
-        decimal BasePrice, TimeInForce TimeInForce, OrderStatus OrderStatus, ConditionalQuiryExtFields ExtFields, int LeavesQty,
-        decimal LeavesValue, int? CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason, CancelType CancelType,
+    public record ConditionalQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, decimal Qty, decimal StopPx,
+        decimal BasePrice, TimeInForce TimeInForce, OrderStatus OrderStatus, ConditionalQuiryExtFields ExtFields, decimal LeavesQty,
+        decimal LeavesValue, decimal? CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason, CancelType CancelType,
         string OrderLinkId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string OrderId, TriggerPriceType? TriggerBy);
 
     /// <summary>
@@ -184,9 +184,9 @@ namespace BybitAPI.Model
     /// ignore the 'exec_time' field because it is marked as 'abandoned' in the documentation.
     /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
     /// </remarks>
-    public record ExecutionGetTradesRes(int ClosedSize, long CrossSeq, decimal ExecFee, string ExecId, decimal ExecPrice, int ExecQty,
-        ExecType ExecType, decimal ExecValue, decimal FeeRate, LiquidityType LastLiquidityInd, int LeavesQty, long NthFill, string OrderId,
-        string OrderLinkId, decimal OrderPrice, int OrderQty, OrderType OrderType, Side Side, Symbol Symbol, int UserId, long TradeTimeMs);
+    public record ExecutionGetTradesRes(int ClosedSize, long CrossSeq, decimal ExecFee, string ExecId, decimal ExecPrice, decimal ExecQty,
+        ExecType ExecType, decimal ExecValue, decimal FeeRate, LiquidityType LastLiquidityInd, decimal LeavesQty, long NthFill, string OrderId,
+        string OrderLinkId, decimal OrderPrice, decimal OrderQty, OrderType OrderType, Side Side, Symbol Symbol, int UserId, long TradeTimeMs);
 
     /// <summary>
     /// Base type of the response for the 'My Last Funding Fee' API method.
@@ -280,7 +280,7 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Liquidated Orders' API method.
     /// </summary>
-    public record MarketLiqRecordsRes(long Id, int Qty, Side Side, long Time, Symbol Symbol, decimal Price);
+    public record MarketLiqRecordsRes(long Id, decimal Qty, Side Side, long Time, Symbol Symbol, decimal Price);
 
     /// <summary>
     /// Base type of the response for the 'Open Interest' API method.
@@ -332,7 +332,7 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Public Trading Records' API method.
     /// </summary>
-    public record MarketTradingRecordsRes(long Id, Symbol Symbol, decimal Price, int Qty, Side Side, DateTimeOffset Time);
+    public record MarketTradingRecordsRes(long Id, Symbol Symbol, decimal Price, decimal Qty, Side Side, DateTimeOffset Time);
 
     /// <summary>
     /// Base type of the response for the 'Cancel Active Order' API method.
@@ -344,8 +344,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Cancel Active Order' API method.
     /// </summary>
-    public record OrderCancelRes(long UserId, string OrderId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
-        TimeInForce TimeInForce, OrderStatus OrderStatus, double LastExecTime, decimal LastExecPrice, int LeavesQty, int CumExecQty,
+    public record OrderCancelRes(long UserId, string OrderId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, decimal Qty,
+        TimeInForce TimeInForce, OrderStatus OrderStatus, double LastExecTime, decimal LastExecPrice, decimal LeavesQty, int CumExecQty,
         decimal CumExecValue, decimal CumExecFee, string? RejectReason, string OrderLinkId, DateTimeOffset CreatedAt,
         DateTimeOffset UpdatedAt);
 
@@ -361,8 +361,8 @@ namespace BybitAPI.Model
     /// <remarks>
     /// 'clOrdID' field is not consistent with the snake case naming policy, so it is named 'xxxid' when it should be named 'xxxId'.
     /// </remarks>
-    public record OrderCancelAllRes(string Clordid, long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
-        TimeInForce TimeInForce, CreateType CreateType, CancelType CancelType, OrderStatus? OrderStatus, int LeavesQty,
+    public record OrderCancelAllRes(string Clordid, long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, decimal Qty,
+        TimeInForce TimeInForce, CreateType CreateType, CancelType CancelType, OrderStatus? OrderStatus, decimal LeavesQty,
         decimal LeavesValue, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string CrossStatus, long CrossSeq);
 
     /// <summary>
@@ -381,8 +381,8 @@ namespace BybitAPI.Model
     /// Actual data type of the response for the 'Get Active Order' API method.
     /// </summary>
     public record OrderGetOrdersRes(long UserId, OrderStatus OrderStatus, Symbol Symbol, Side Side, OrderType OrderType, decimal Price,
-        int Qty, TimeInForce TimeInForce, string OrderLinkId, string OrderId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt,
-        int LeavesQty, decimal LeavesValue, decimal CumExecQty, decimal CumExecValue, decimal CumExecFee, string? RejectReason);
+        decimal Qty, TimeInForce TimeInForce, string OrderLinkId, string OrderId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt,
+        decimal LeavesQty, decimal LeavesValue, decimal CumExecQty, decimal CumExecValue, decimal CumExecFee, string? RejectReason);
 
     /// <summary>
     /// Base type of the response for the 'Place Active Order' API method.
@@ -393,8 +393,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Place Active Order' API method.
     /// </summary>
-    public record OrderNewRes(long UserId, string OrderId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
-        TimeInForce TimeInForce, OrderStatus OrderStatus, double LastExecTime, decimal LastExecPrice, int LeavesQty, int CumExecQty,
+    public record OrderNewRes(long UserId, string OrderId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, decimal Qty,
+        TimeInForce TimeInForce, OrderStatus OrderStatus, double LastExecTime, decimal LastExecPrice, decimal LeavesQty, int CumExecQty,
         decimal CumExecValue, decimal CumExecFee, string? RejectReason, string OrderLinkId, DateTimeOffset CreatedAt,
         DateTimeOffset UpdatedAt);
 
@@ -413,9 +413,9 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Query Active Order (real-time)' API method.
     /// </summary>
-    public record OrderQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, int Qty,
-        TimeInForce TimeInForce, OrderStatus OrderStatus, OrderQueryExtFields ExtFields, double LastExecTime, int LeavesQty,
-        decimal LeavesValue, int? CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason, CancelType CancelType,
+    public record OrderQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, decimal Qty,
+        TimeInForce TimeInForce, OrderStatus OrderStatus, OrderQueryExtFields ExtFields, double LastExecTime, decimal LeavesQty,
+        decimal LeavesValue, decimal? CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason, CancelType CancelType,
         string OrderLinkId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string OrderId);
 
     /// <summary>
@@ -463,7 +463,7 @@ namespace BybitAPI.Model
     /// 'order_id' (also 'order_link_id' and 'stop_order_id') field looks like a UUID, but the property type could not be defined as GUID because the API may return an empty string. Since an empty string does not imply null, it cannot be defined as a nullable reference type either.
     /// 'created_at' is a UNIX timestamp in seconds. not a datetime string. omg. Inconsistent naming!
     /// </remarks>
-    public record PositionsClosePnlRes(long Id, long UserId, Symbol Symbol, string OrderId, Side Side, int Qty, decimal OrderPrice,
+    public record PositionsClosePnlRes(long Id, long UserId, Symbol Symbol, string OrderId, Side Side, decimal Qty, decimal OrderPrice,
         OrderType OrderType, ExecType ExecType, int ClosedSize, decimal CumEntryValue, decimal AvgEntryPrice, decimal CumExitValue,
         decimal AvgExitPrice, decimal ClosedPnl, int FillCount, decimal Leverage, long CreatedAt);
 
@@ -540,7 +540,7 @@ namespace BybitAPI.Model
     /// <summary>
     /// Extra data for the <see cref="SymbolGetRes"/>
     /// </summary>
-    public record LotSizeFilterRes(int MaxTradingQty, decimal MinTradingQty, int QtyStep);
+    public record LotSizeFilterRes(decimal MaxTradingQty, decimal MinTradingQty, decimal QtyStep);
 
     /// <summary>
     /// Base type of the response for the 'Asset Exchange Records' API method.

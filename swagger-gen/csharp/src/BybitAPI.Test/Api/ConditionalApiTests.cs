@@ -964,7 +964,7 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            int? pRQty = null;
+            decimal? pRQty = null;
             decimal? pRPrice = null;
             decimal? pRTriggerPrice = null;
 
@@ -987,7 +987,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             string? stopOrderId = null;
             string? orderLinkId = null;
-            int? pRQty = null;
+            decimal? pRQty = null;
             decimal? pRPrice = null;
             decimal? pRTriggerPrice = null;
 
@@ -1012,7 +1012,7 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            int? pRQty = null;
+            decimal? pRQty = null;
             decimal? pRPrice = null;
             decimal? pRTriggerPrice = null;
 
@@ -1036,7 +1036,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             string? stopOrderId = null;
             string? orderLinkId = null;
-            int? pRQty = null;
+            decimal? pRQty = null;
             decimal? pRPrice = null;
             decimal? pRTriggerPrice = null;
 
@@ -1061,7 +1061,7 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            int? pRQty = null;
+            decimal? pRQty = null;
             decimal? pRPrice = null;
             decimal? pRTriggerPrice = null;
 
@@ -1084,7 +1084,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             string? stopOrderId = null;
             string? orderLinkId = null;
-            int? pRQty = null;
+            decimal? pRQty = null;
             decimal? pRPrice = null;
             decimal? pRTriggerPrice = null;
 
@@ -1109,7 +1109,7 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            int? pRQty = null;
+            decimal? pRQty = null;
             decimal? pRPrice = null;
             decimal? pRTriggerPrice = null;
 
@@ -1133,7 +1133,7 @@ namespace BybitAPI.Api.Test
             var symbol = Symbol.BTCUSD;
             string? stopOrderId = null;
             string? orderLinkId = null;
-            int? pRQty = null;
+            decimal? pRQty = null;
             decimal? pRPrice = null;
             decimal? pRTriggerPrice = null;
 

@@ -25,6 +25,7 @@ namespace BybitAPI.Api
                 PropertyNamingPolicy = new SnakeCaseNamingPolicy(),
                 NumberHandling = JsonNumberHandling.AllowReadingFromString,
                 PropertyNameCaseInsensitive = true,
+                AllowTrailingCommas = true,
             };
             foreach (var converter in ApiUtil.GetJsonConverters())
             {
