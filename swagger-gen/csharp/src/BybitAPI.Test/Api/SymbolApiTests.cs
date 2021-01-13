@@ -160,6 +160,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<SymbolGetBase>(response, "response is SymbolGetBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -175,6 +176,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<SymbolGetBase>>(response, "response is ApiResponse<SymbolGetBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -190,6 +193,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<SymbolGetBase>(response, "response is SymbolGetBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -205,6 +209,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<SymbolGetBase>>(response, "response is ApiResponse<SymbolGetBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
     }
 }

@@ -74,6 +74,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsChangeMarginBase>(response, "response is PositionsChangeMarginBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -92,6 +93,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsChangeMarginBase>>(response, "response is ApiResponse<PositionsChangeMarginBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -110,6 +113,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsChangeMarginBase>(response, "response is PositionsChangeMarginBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -128,6 +132,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsChangeMarginBase>>(response, "response is ApiResponse<PositionsChangeMarginBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string positionsClosePnlJson = @"
@@ -191,6 +197,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsClosePnlBase>(response, "response is PositionsClosePnlBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -245,6 +252,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsClosePnlBase>>(response, "response is ApiResponse<PositionsClosePnlBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -297,6 +306,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsClosePnlBase>(response, "response is PositionsClosePnlBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -351,6 +361,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsClosePnlBase>>(response, "response is ApiResponse<PositionsClosePnlBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -442,10 +454,11 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsMyPositionBase<PositionsMyPositionRes>>(response, "response is PositionsMyPositionBase<PositionsMyPositionRes>");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
-        public void PositionsMyPositionWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsMyPositionBaseForPositionsMyPositionRes()
+        public void PositionsMyPositionWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsMyPositionBaseOfPositionsMyPositionRes()
         {
             // Arrange
             var instance = Create();
@@ -459,6 +472,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>>(response, "response is ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -476,10 +491,11 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsMyPositionBase<PositionsMyPositionRes>>(response, "response is PositionsMyPositionBase<PositionsMyPositionRes>");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
-        public async Task PositionsMyPositionAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsMyPositionBaseForPositionsMyPositionRes()
+        public async Task PositionsMyPositionAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfPositionsMyPositionBaseOfPositionsMyPositionRes()
         {
             // Arrange
             var instance = Create();
@@ -493,6 +509,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>>(response, "response is ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string positionsMyPositionJson = @"
@@ -597,10 +615,11 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>(response, "response is PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
-        public void PositionsMyPositionWithHttpInfo_NoParameters_ShouldReturnApiResponseOfPositionsMyPositionBaseForListForPositionsMyPositionResBase()
+        public void PositionsMyPositionWithHttpInfo_NoParameters_ShouldReturnApiResponseOfPositionsMyPositionBaseOfListForPositionsMyPositionResBase()
         {
             // Arrange
             var instance = Create();
@@ -612,6 +631,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>>(response, "response is ApiResponse<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -627,10 +648,11 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>(response, "response is PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
-        public async Task PositionsMyPositionAsyncWithHttpInfo_NoParameters_ShouldReturnApiResponseOfPositionsMyPositionBaseForListForPositionsMyPositionResBase()
+        public async Task PositionsMyPositionAsyncWithHttpInfo_NoParameters_ShouldReturnApiResponseOfPositionsMyPositionBaseOfListForPositionsMyPositionResBase()
         {
             // Arrange
             var instance = Create();
@@ -642,6 +664,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>>(response, "response is ApiResponse<PositionsMyPositionBase<IReadOnlyList<PositionsMyPositionResBase>>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string positionsSaveLeveraguJson = @"
@@ -674,6 +698,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsSaveLeverageBase>(response, "response is PositionsSaveLeverage");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -692,6 +717,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsSaveLeverageBase>>(response, "response is ApiResponse<PositionsSaveLeverageBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -710,6 +737,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsSaveLeverageBase>(response, "response is PositionsSaveLeverage");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -728,6 +756,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsSaveLeverageBase>>(response, "response is ApiResponse<PositionsSaveLeverageBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string positionsTradingStopJson = @"
@@ -809,6 +839,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsTradingStopBase>(response, "response is PositionsTradingStopBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -864,6 +895,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsTradingStopBase>>(response, "response is ApiResponse<PositionsTradingStopBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -919,6 +952,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<PositionsTradingStopBase>(response, "response is PositionsTradingStopBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -974,6 +1008,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<PositionsTradingStopBase>>(response, "response is ApiResponse<PositionsTradingStopBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]

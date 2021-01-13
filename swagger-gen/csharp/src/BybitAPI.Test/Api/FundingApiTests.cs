@@ -80,6 +80,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<FundingMyLastFeeBase>(response, "response is FundingMyLastFeeBase");
+            Assert.NotNull(response.Result);
         }
 
         [Test]
@@ -97,6 +98,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<FundingMyLastFeeBase>>(response, "response is ApiResponse<FundingMyLastFeeBase>");
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.Result);
         }
 
         [Test]
@@ -114,6 +117,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<FundingMyLastFeeBase>(response, "response is FundingMyLastFeeBase");
+            Assert.NotNull(response.Result);
         }
 
         [Test]
@@ -131,6 +135,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<FundingMyLastFeeBase>>(response, "response is ApiResponse<FundingMyLastFeeBase>");
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.Result);
         }
 
         private static readonly string fundingPredictedJson = @"
@@ -165,6 +171,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<FundingPredictedBase>(response, "response is FundingPredictedBase");
+            Assert.NotNull(response.Result);
         }
 
         [Test]
@@ -182,6 +189,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<FundingPredictedBase>>(response, "response is ApiResponse<FundingPredictedBase>");
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.Result);
         }
 
         [Test]
@@ -199,6 +208,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<FundingPredictedBase>(response, "response is FundingPredictedBase");
+            Assert.NotNull(response.Result);
         }
 
         [Test]
@@ -216,6 +226,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<FundingPredictedBase>>(response, "response is ApiResponse<FundingPredictedBase>");
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.Result);
         }
 
         private static readonly string fundingPrevRateJson = @"
@@ -250,6 +262,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<FundingPrevRateBase>(response, "response is FundingPrevRateBase");
+            Assert.NotNull(response.Result);
         }
 
         [Test]
@@ -266,6 +279,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<FundingPrevRateBase>>(response, "response is ApiResponse<FundingPrevRateBase>");
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.Result);
         }
 
         [Test]
@@ -282,6 +297,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<FundingPrevRateBase>(response, "response is FundingPrevRateBase");
+            Assert.NotNull(response.Result);
         }
 
         [Test]
@@ -298,6 +314,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<FundingPrevRateBase>>(response, "response is ApiResponse<FundingPrevRateBase>");
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.Result);
         }
 
         //[Test]

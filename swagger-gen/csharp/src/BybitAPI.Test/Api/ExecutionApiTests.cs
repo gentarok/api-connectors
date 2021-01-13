@@ -106,6 +106,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ExecutionGetTradesBase>(response, "response is ExecutionGetTradesBase");
+            Assert.NotNull(response.Result);
         }
 
         [Test]
@@ -155,6 +156,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ExecutionGetTradesBase>(response, "response is ExecutionGetTradesBase");
+            Assert.NotNull(response.Result);
         }
 
         [Test]
@@ -204,6 +206,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ExecutionGetTradesBase>>(response, "response is ApiResponse<ExecutionGetTradesBase>");
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.Result);
         }
 
         [Test]
@@ -253,6 +257,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ExecutionGetTradesBase>>(response, "response is ApiRepsonse<ExecutionGetTradesBase>");
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.Result);
         }
 
         [Test]

@@ -90,7 +90,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             long? from = null;
             SearchDirection? direction = null;
@@ -100,6 +101,9 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletExchangeOrderBase>(response, "response is WalletExchangeOrderBase");
+            Assert.IsNotNull(response.Result);
+
+            //Note: test for UtcDateTimeStringToDateTimeOffsetConverter.
             Assert.That(response.Result?[0].CreatedAt, Is.EqualTo(DateTimeOffset.Parse("2020-06-15T03:32:52 +00:00")));
         }
 
@@ -110,7 +114,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             long? from = null;
             SearchDirection? direction = null;
@@ -134,7 +139,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             long? from = null;
             SearchDirection? direction = null;
@@ -144,6 +150,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletExchangeOrderBase>>(response, "response is ApiResponse<WalletExchangeOrderBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -153,7 +161,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             long? from = null;
             SearchDirection? direction = null;
@@ -177,7 +186,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             long? from = null;
             SearchDirection? direction = null;
@@ -187,6 +197,9 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletExchangeOrderBase>(response, "response is WalletExchangeOrderBase");
+            Assert.IsNotNull(response.Result);
+
+            //Note: test for UtcDateTimeStringToDateTimeOffsetConverter.
             Assert.That(response.Result?[0].CreatedAt, Is.EqualTo(DateTimeOffset.Parse("2020-06-15T03:32:52 +00:00")));
         }
 
@@ -197,7 +210,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             long? from = null;
             SearchDirection? direction = null;
@@ -221,7 +235,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             long? from = null;
             SearchDirection? direction = null;
@@ -231,6 +246,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletExchangeOrderBase>>(response, "response is ApiResponse<WalletExchangeOrderBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -240,7 +257,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletExchangeOrderJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             long? from = null;
             SearchDirection? direction = null;
@@ -291,7 +309,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             Currency? coin = null;
 
@@ -300,13 +319,15 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletGetBalanceBase>(response, "response is WalletGetBalanceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         public void WalletGetBalance_ParametersAreValid_ShouldReturnApiResponseOfWalletGetBalanceBase()
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             Currency? coin = null;
 
@@ -315,13 +336,16 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletGetBalanceBase>>(response, "response is ApiResponse<WalletGetBalanceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         public async Task WalletGetBalanceAsync_ParametersAreValid_ShouldReturnWalletGetBalanceBase()
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             Currency? coin = null;
 
@@ -330,13 +354,15 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletGetBalanceBase>(response, "response is WalletGetBalanceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         public async Task WalletGetBalanceAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfWalletGetBalanceBase()
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetBalanceJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             Currency? coin = null;
 
@@ -345,6 +371,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletGetBalanceBase>>(response, "response is ApiResponse<WalletGetBalanceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string walletGetRecordsJson = @"
@@ -398,7 +426,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
@@ -411,6 +440,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletGetRecordsBase>(response, "response is WalletGetBalanceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -420,7 +450,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
@@ -446,7 +477,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
@@ -459,6 +491,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletGetRecordsBase>>(response, "response is ApiResponse<WalletGetRecordsBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -468,7 +502,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
@@ -494,7 +529,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
@@ -507,6 +543,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletGetRecordsBase>(response, "response is WalletGetBalanceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -516,7 +553,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
@@ -542,7 +580,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
@@ -555,6 +594,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletGetRecordsBase>>(response, "response is ApiResponse<WalletGetRecordsBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -564,7 +605,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRecordsJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             DateTimeOffset? startDate = null;
             DateTimeOffset? endDate = null;
@@ -642,13 +684,15 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             // Act
             var response = instance.WalletGetRiskLimit();
 
             // Assert
             Assert.IsInstanceOf<WalletGetRiskLimitBase>(response, "response is WalletGetRiskLimitBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -656,13 +700,16 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             // Act
             var response = instance.WalletGetRiskLimitWithHttpInfo();
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletGetRiskLimitBase>>(response, "response is ApiResponse<WalletGetRiskLimitBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -670,13 +717,15 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             // Act
             var response = await instance.WalletGetRiskLimitAsync();
 
             // Assert
             Assert.IsInstanceOf<WalletGetRiskLimitBase>(response, "response is WalletGetRiskLimitBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -684,13 +733,16 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletGetRiskLimitJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             // Act
             var response = await instance.WalletGetRiskLimitAsyncWithHttpInfo();
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletGetRiskLimitBase>>(response, "response is ApiResponse<WalletGetRiskLimitBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string walletSetRiskLimitJson = @"
@@ -760,7 +812,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
             var riskId = 0;
@@ -770,6 +823,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletSetRiskLimitBase>(response, "response is WalletSetRiskLimitBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -777,7 +831,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
             var riskId = 0;
@@ -787,6 +842,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletSetRiskLimitBase>>(response, "response is ApiResponse<WalletSetRiskLimitBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -794,7 +851,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
             var riskId = 0;
@@ -804,6 +862,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletSetRiskLimitBase>(response, "response is WalletSetRiskLimitBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -811,7 +870,8 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            instance.Configuration.ApiClient.RestClient = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, walletSetRiskLimitJson);
+            instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
             var riskId = 0;
@@ -821,6 +881,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletSetRiskLimitBase>>(response, "response is ApiResponse<WalletSetRiskLimitBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string walletWithDrawJson = @"
@@ -874,6 +936,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletWithdrawBase>(response, "response is WalletWithdrawBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -924,6 +987,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletWithdrawBase>>(response, "response is ApiResponse<WalletWithdrawBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -974,6 +1039,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<WalletWithdrawBase>(response, "response is WalletWithdrawBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -1024,6 +1090,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<WalletWithdrawBase>>(response, "response is ApiResponse<WalletWithdrawBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]

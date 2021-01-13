@@ -106,6 +106,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<KlineGetBase>(response, "response is KlineGetBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -165,6 +166,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<KlineGetBase>>(response, "response is ApiResponse<KlineGetBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -224,6 +227,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<KlineGetBase>(response, "response is KlineGetBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -283,6 +287,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<KlineGetBase>>(response, "response is ApiResponse<KlineGetBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -364,6 +370,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<KlineMarkPriceBase>(response, "response is KlineMarkPriceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -423,6 +430,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<KlineMarkPriceBase>>(response, "response is ApiResponse<KlineMarkPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -482,6 +491,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<KlineMarkPriceBase>(response, "response is KlineMarkPriceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -541,6 +551,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<KlineMarkPriceBase>>(response, "response is ApiResponse<KlineMarkPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]

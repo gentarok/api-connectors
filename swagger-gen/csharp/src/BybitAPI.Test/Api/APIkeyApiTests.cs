@@ -85,6 +85,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<APIKeyInfoBase>(response, "response is APIKeyInfoBase");
+            Assert.IsNotNull(response.Result);
             Assert.That(response.RetCode, Is.EqualTo(0));
             Assert.That(response.RetMsg, Is.EqualTo("ok"));
             Assert.That(response.ExtCode, Is.EqualTo(""));
@@ -107,6 +108,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<APIKeyInfoBase>>(response, "response is ApiResponse<APIKeyInfoBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test()]
@@ -121,6 +124,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<APIKeyInfoBase>(response, "response is APIKeyInfoBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test()]
@@ -135,6 +139,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<APIKeyInfoBase>>(response, "response is ApiResponse<APIKeyInfoBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
     }
 }

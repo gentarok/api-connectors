@@ -92,6 +92,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketAccountRatioBase>(response, "response is MarketAccountRatioBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -139,6 +140,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketAccountRatioBase>>(response, "response is ApiResponse<MarketAccountRatioBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -186,6 +189,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketAccountRatioBase>(response, "response is MarketAccountRatioBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -233,6 +237,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketAccountRatioBase>>(response, "response is ApiResponse<MarketAccountRatioBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -299,6 +305,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketBigDealBase>(response, "response is MarketBigDealBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -341,6 +348,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketBigDealBase>>(response, "response is ApiResponse<MarketBigDealBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -383,6 +392,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketBigDealBase>(response, "response is MarketBigDealBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -425,6 +435,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketBigDealBase>>(response, "response is ApiResponse<MarketBigDealBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -490,6 +502,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketLiqRecordsBase>(response, "response is MarketLiqRecordsBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -538,6 +551,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketLiqRecordsBase>>(response, "response is ApiResponse<MarketLiqRecordsBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -586,6 +601,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketLiqRecordsBase>(response, "response is MarketLiqRecordsBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -634,6 +650,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketLiqRecordsBase>>(response, "response is ApiResponse<MarketLiqRecordsBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -706,6 +724,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketOpenInterestBase>(response, "response is MarketOpenInterestBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -754,6 +773,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketOpenInterestBase>>(response, "response is ApiResponse<MarketOpenInterestBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -802,6 +823,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketOpenInterestBase>(response, "response is MarketOpenInterestBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -850,6 +872,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketOpenInterestBase>>(response, "response is ApiResponse<MarketOpenInterestBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -914,6 +938,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketOrderbookBase>(response, "response is MarketOrderbookBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -931,6 +956,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketOrderbookBase>>(response, "response is ApiResponse<MarketOrderbookBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -948,6 +975,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketOrderbookBase>(response, "response is MarketOrderbookBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -965,6 +993,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketOrderbookBase>>(response, "response is ApiResponse<MarketOrderbookBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string marketSymbolInfoJson = @"
@@ -1009,7 +1039,7 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, marketOrderbookJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, marketSymbolInfoJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
@@ -1019,6 +1049,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketSymbolInfoBase>(response, "response is MarketSymbolInfoBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -1026,7 +1057,7 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, marketOrderbookJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, marketSymbolInfoJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
@@ -1036,6 +1067,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketSymbolInfoBase>>(response, "response is ApiResponse<MarketSymbolInfoBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -1043,7 +1076,7 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, marketOrderbookJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, marketSymbolInfoJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
@@ -1053,6 +1086,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketSymbolInfoBase>(response, "response is MarketSymbolInfoBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -1060,7 +1094,7 @@ namespace BybitAPI.Api.Test
         {
             // Arrange
             var instance = Create();
-            var client = MockRestClientFactory.Create(HttpStatusCode.OK, marketOrderbookJson);
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, marketSymbolInfoJson);
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
@@ -1070,6 +1104,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketSymbolInfoBase>>(response, "response is ApiResponse<MarketSymbolInfoBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string marketTradingRecordsJson = @"
@@ -1110,6 +1146,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketTradingRecordsBase>(response, "response is MarketTradingRecordsBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -1153,6 +1190,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketTradingRecordsBase>>(response, "response is ApiResponse<MarketTradingRecordsBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -1196,6 +1235,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<MarketTradingRecordsBase>(response, "response is MarketTradingRecordsBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -1239,6 +1279,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<MarketTradingRecordsBase>>(response, "response is ApiResponse<MarketTradingRecordsBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]

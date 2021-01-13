@@ -96,6 +96,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderCancelBase>(response, "response is OrderCancelBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -137,6 +138,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderCancelBase>>(response, "response is ApiResponse<OrderCancelBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -178,6 +181,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderCancelBase>(response, "response is OrderCancelBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -219,6 +223,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderCancelBase>>(response, "response is ApiResponse<OrderCancelBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -291,6 +297,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderCancelAllBase>(response, "response is OrderCancelAllBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -308,6 +315,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderCancelAllBase>>(response, "response is ApiResponse<OrderCancelAllBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -325,6 +334,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderCancelAllBase>(response, "response is OrderCancelAllBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -342,6 +352,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderCancelAllBase>>(response, "response is ApiResponse<OrderCancelAllBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         //Note: Created from actual response. (TestNet)
@@ -464,6 +476,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderGetOrdersBase>(response, "response is OrderGetOrdersBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -512,6 +525,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderGetOrdersBase>>(response, "response is ApiResponse<OrderGetOrdersBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -560,6 +575,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderGetOrdersBase>(response, "response is OrderGetOrdersBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -608,6 +624,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderGetOrdersBase>>(response, "response is ApiResponse<OrderGetOrdersBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -694,6 +712,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderNewBase>(response, "response is OrderNewBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -721,6 +740,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderNewBase>>(response, "response is ApiResponse<OrderNewBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -748,6 +769,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderNewBase>(response, "response is OrderNewBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -775,6 +797,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderNewBase>>(response, "response is ApiResponse<OrderNewBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string orderQueryJsonBySymbolAndOrderId = @"
@@ -831,10 +855,11 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderQueryBase<OrderQueryRes>>(response, "response is OrderQueryBase<OrderQueryRes>");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
-        public void OrderQueryWithHttpInfo_SymbolAndOrderIdParametersAreValid_ShouldReturnApiResponseOfOrderQueryBaseForOrderFQueryRes()
+        public void OrderQueryWithHttpInfo_SymbolAndOrderIdParametersAreValid_ShouldReturnApiResponseOfOrderQueryBaseOfOrderFQueryRes()
         {
             // Arrange
             var instance = Create();
@@ -849,6 +874,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderQueryBase<OrderQueryRes>>>(response, "response is ApiResponse<OrderQueryBase<OrderQueryRes>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -867,10 +894,11 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderQueryBase<OrderQueryRes>>(response, "response is OrderQueryBase<OrderQueryRes>");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
-        public async Task OrderQueryAsyncWithHttpInfo_SymbolAndOrderIdParametersAreValid_ShouldReturnApiResponseOfOrderQueryBaseForOrderFQueryRes()
+        public async Task OrderQueryAsyncWithHttpInfo_SymbolAndOrderIdParametersAreValid_ShouldReturnApiResponseOfOrderQueryBaseOfOrderFQueryRes()
         {
             // Arrange
             var instance = Create();
@@ -885,6 +913,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderQueryBase<OrderQueryRes>>>(response, "response is ApiResponse<OrderQueryBase<OrderQueryRes>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string orderQueryJsonBySymbol = @"
@@ -967,6 +997,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>(response, "response is OrderQueryBase<IReadOnlyList<OrderQueryRes>>");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -984,6 +1015,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>>(response, "response is ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -1001,6 +1034,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>(response, "response is OrderQueryBase<IReadOnlyList<OrderQueryRes>>");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -1018,6 +1052,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>>(response, "response is ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private static readonly string orderReplaceJson = @"
@@ -1055,6 +1091,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderReplaceBase>(response, "response is OrderReplaceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -1100,6 +1137,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderReplaceBase>>(response, "response is ApiResponse<OrderReplaceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -1145,6 +1184,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<OrderReplaceBase>(response, "response is OrderReplaceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -1190,6 +1230,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderReplaceBase>>(response, "response is ApiResponse<OrderReplaceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]

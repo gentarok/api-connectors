@@ -78,6 +78,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<AnnouncementBase>(response, "response is AnnouncementBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test()]
@@ -93,6 +94,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<AnnouncementBase>>(response, "response is ApiResponse<AnnouncementBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test()]
@@ -108,6 +111,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<AnnouncementBase>(response, "response is AnnouncementBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test()]
@@ -123,6 +127,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<AnnouncementBase>>(response, "response is ApiResponse<AnnouncementBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         // Note: The documentation is wrong, so we will test it according to the actual format of the returned JSON.
@@ -165,6 +171,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<LCPInfoBase>(response, "response is LCPInfoBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test()]
@@ -182,6 +189,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<LCPInfoBase>>(response, "response is ApiResponse<LCPInfoBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test()]
@@ -199,6 +208,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<LCPInfoBase>(response, "response is LCPInfoBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test()]
@@ -216,6 +226,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<LCPInfoBase>>(response, "response is ApiResponse<LCPInfoBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private readonly string servertimejson = @"
@@ -242,6 +254,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ServerTimeRes>(response, "response is ServerTimeRes");
+            Assert.IsNotNull(response.Result);
             Assert.That(response.RetCode, Is.EqualTo(0));
             Assert.That(response.RetMsg, Is.EqualTo("OK"));
             Assert.That(response.ExtCode, Is.EqualTo(""));
@@ -277,6 +290,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ServerTimeRes>(response, "response is ServerTimeRes");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test()]
@@ -292,6 +306,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ServerTimeRes>>(response, "response is ApiResponse<ServerTimeRes>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
     }
 }

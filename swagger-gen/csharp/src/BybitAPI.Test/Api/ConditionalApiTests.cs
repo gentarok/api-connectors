@@ -79,6 +79,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalCancelBase>(response, "response is ConditionalCancelBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -179,6 +180,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalCancelAllBase>(response, "response is ConditionalCancelAllBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -196,6 +198,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ConditionalCancelAllBase>>(response, "response is ApiResponseConditionalCancelAllBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         public async Task ConditionalCancelAllAsync_ParametersAreValid_ShouldReturnConditionalCancelAllBase()
@@ -212,6 +216,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalCancelAllBase>(response, "response is ConditionalCancelAllBase");
+            Assert.IsNotNull(response.Result);
         }
 
         public async Task ConditionalCancelAllAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalCancelAllBase()
@@ -228,6 +233,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ConditionalCancelAllBase>>(response, "response is ApiResponse<ConditionalCancelAllBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private readonly string conditionalGetOrdersJson = @"
@@ -286,6 +293,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalGetOrdersBase>(response, "response is ConditionalGetOrdersBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -334,6 +342,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ConditionalGetOrdersBase>>(response, "response is ConditionalGetOrdersBase");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -382,6 +392,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalGetOrdersBase>(response, "response is ConditionalGetOrdersBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -430,6 +441,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ConditionalGetOrdersBase>>(response, "response is ApiResponse<ConditionalGetOrdersBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -509,6 +522,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalNewOrderBase>(response, "response is ConditionalNewOrderBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -536,6 +550,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ConditionalNewOrderBase>>(response, "response is ApiResponse<ConditionalNewOrderBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         [Test]
@@ -563,6 +579,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalNewOrderBase>(response, "response is ConditionalNewOrderBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -590,6 +607,8 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<ConditionalNewOrderBase>>(response, "response is ApiResponse<ConditionalNewOrderBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         //Note: In the documented response example, the 'trigger_by' field is not included, but it was added in the API update.
@@ -646,14 +665,158 @@ namespace BybitAPI.Api.Test
             instance.Configuration.ApiClient.RestClient = client;
 
             var symbol = Symbol.BTCUSD;
-            //string? stopOrderId = string.Empty;
-            //string? orderLinkId = null;
-
             // Act
             var response = instance.ConditionalQuery(symbol, stopOrderId, orderLinkId);
 
             // Assert
             Assert.IsInstanceOf<ConditionalQueryBase<ConditionalQueryRes>>(response, "response is ConditionalQueryBase<ConditionalQueryRes>");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void ConditionalQuery_ParametersAreInvalid_ShouldRaiseApiException(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalQuery(symbol, stopOrderId, orderLinkId);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        public void ConditionalQueryWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalQueryBaseOfConditionalQueryRes(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            // Act
+            var response = instance.ConditionalQueryWithHttpInfo(symbol, stopOrderId, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalQueryBase<ConditionalQueryRes>>>(response, "response is ApiResponse<ConditionalQueryBase<ConditionalQueryRes>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void ConditionalQueryWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalQueryWithHttpInfo(symbol, stopOrderId, orderLinkId);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        public async Task ConditionalQueryAsync_ParametersAreValid_ShouldReturnConditionalQueryBaseOfConditionalQueryRes(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            // Act
+            var response = await instance.ConditionalQueryAsync(symbol, stopOrderId, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<ConditionalQueryBase<ConditionalQueryRes>>(response, "response is ConditionalQueryBase<ConditionalQueryRes>");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void ConditionalQueryAsync_ParametersAreInvalid_ShouldRaiseApiException(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalQueryAsync(symbol, stopOrderId, orderLinkId);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        public async Task ConditionalQueryAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalQueryBaseOfConditionalQueryRes(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            // Act
+            var response = await instance.ConditionalQueryAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalQueryBase<ConditionalQueryRes>>>(response, "response is ApiResponse<ConditionalQueryBase<ConditionalQueryRes>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        public void ConditionalQueryAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalQueryAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
         }
 
         private readonly string conditionalQueryBySymbolJson = @"
@@ -713,7 +876,65 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>(response, "response is ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>");
+            Assert.IsNotNull(response.Result);
+            //Note: Test for UtcDateTimeStringToDateTimeConverter.
             Assert.That(response.Result?[0].CreatedAt, Is.EqualTo(DateTimeOffset.Parse("2021-01-08T17:30:07.306465866Z")));
+        }
+
+        [Test]
+        public void ConditionalQueryWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalQueryBaseOfListOfConditionalQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryBySymbolJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = instance.ConditionalQueryWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>>(response, "response is ApiResponse<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        public async Task ConditionalQueryAsync_ParametersAreValid_ShouldReturnConditionalQueryBaseOfListForConditionalQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryBySymbolJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.ConditionalQueryAsync(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>(response, "response is ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        public async Task ConditionalQueryAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalQueryBaseOfListOfConditionalQueryRes()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalQueryBySymbolJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+
+            // Act
+            var response = await instance.ConditionalQueryAsyncWithHttpInfo(symbol);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>>(response, "response is ApiResponse<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
         }
 
         private readonly string conditionalReplaceJson = @"
@@ -752,6 +973,7 @@ namespace BybitAPI.Api.Test
 
             // Assert
             Assert.IsInstanceOf<ConditionalReplaceBase>(response, "response is ConditionalReplaceBase");
+            Assert.IsNotNull(response.Result);
         }
 
         [Test]
@@ -773,6 +995,152 @@ namespace BybitAPI.Api.Test
             var ex = Assert.Throws<ApiException>(() =>
             {
                 var response = instance.ConditionalReplace(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public void ConditionalReplaceWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalReplaceBase(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            int? pRQty = null;
+            decimal? pRPrice = null;
+            decimal? pRTriggerPrice = null;
+
+            // Act
+            var response = instance.ConditionalReplaceWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalReplaceBase>>(response, "response is ApiResponse<ConditionalReplaceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        public void ConditionalReplaceWithHttpInfo_ParametersAreInValid_ShouldRaiseApiException()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? stopOrderId = null;
+            string? orderLinkId = null;
+            int? pRQty = null;
+            decimal? pRPrice = null;
+            decimal? pRTriggerPrice = null;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.ConditionalReplaceWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public async Task ConditionalReplaceAsync_ParametersAreValid_ShouldReturnConditionalReplaceBase(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            int? pRQty = null;
+            decimal? pRPrice = null;
+            decimal? pRTriggerPrice = null;
+
+            // Act
+            var response = await instance.ConditionalReplaceAsync(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+
+            // Assert
+            Assert.IsInstanceOf<ConditionalReplaceBase>(response, "response is ConditionalReplaceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        public void ConditionalReplaceAsync_ParametersAreInValid_ShouldRaiseApiException()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? stopOrderId = null;
+            string? orderLinkId = null;
+            int? pRQty = null;
+            decimal? pRPrice = null;
+            decimal? pRTriggerPrice = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalReplaceAsync(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+            });
+
+            // Assert
+            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("", null)]
+        [TestCase(null, "")]
+        public async Task ConditionalReplaceAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiResponseOfConditionalReplaceBase(string? stopOrderId, string? orderLinkId)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            int? pRQty = null;
+            decimal? pRPrice = null;
+            decimal? pRTriggerPrice = null;
+
+            // Act
+            var response = await instance.ConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<ConditionalReplaceBase>>(response, "response is ApiResponse<ConditionalReplaceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        public void ConditionalReplaceAsyncWithHttpInfo_ParametersAreInValid_ShouldRaiseApiException()
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, conditionalReplaceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            string? stopOrderId = null;
+            string? orderLinkId = null;
+            int? pRQty = null;
+            decimal? pRPrice = null;
+            decimal? pRTriggerPrice = null;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.ConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
             });
 
             // Assert
