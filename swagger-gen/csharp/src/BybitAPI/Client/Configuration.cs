@@ -102,10 +102,7 @@ namespace BybitAPI.Client
         #region Constructors
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1810:Initialize reference type static fields inline", Justification = "<Pending>")]
-        static Configuration()
-        {
-            _globalConfiguration = new GlobalConfiguration();
-        }
+        static Configuration() => _globalConfiguration = new GlobalConfiguration();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
@@ -414,19 +411,13 @@ namespace BybitAPI.Client
         /// <param name="key">Header field name.</param>
         /// <param name="value">Header field value.</param>
         /// <returns></returns>
-        public void AddDefaultHeader(string key, string value)
-        {
-            DefaultHeader[key] = value;
-        }
+        public void AddDefaultHeader(string key, string value) => DefaultHeader[key] = value;
 
         /// <summary>
         /// Creates a new <see cref="ApiClient" /> based on this <see cref="Configuration" /> instance.
         /// </summary>
         /// <returns></returns>
-        public ApiClient CreateApiClient()
-        {
-            return new ApiClient(BasePath) { Configuration = this };
-        }
+        public ApiClient CreateApiClient() => new ApiClient(BasePath) { Configuration = this };
 
         /// <summary>
         /// Returns a string with essential information for debugging.
@@ -448,20 +439,14 @@ namespace BybitAPI.Client
         /// <param name="key">Api Key name.</param>
         /// <param name="value">Api Key value.</param>
         /// <returns></returns>
-        public void AddApiKey(string key, string value)
-        {
-            ApiKey[key] = value;
-        }
+        public void AddApiKey(string key, string value) => ApiKey[key] = value;
 
         /// <summary>
         /// Sets the API key prefix.
         /// </summary>
         /// <param name="key">Api Key name.</param>
         /// <param name="value">Api Key value.</param>
-        public void AddApiKeyPrefix(string key, string value)
-        {
-            ApiKeyPrefix[key] = value;
-        }
+        public void AddApiKeyPrefix(string key, string value) => ApiKeyPrefix[key] = value;
 
         #endregion Methods
     }

@@ -11,7 +11,9 @@ namespace BybitAPI.Test.Api.Factory
         {
             var response = new Mock<IRestResponse>();
             response.Setup(_ => _.StatusCode).Returns(httpStatusCode);
+#pragma warning disable CS0618 // Type or member is obsolete
             response.Setup(_ => _.Headers).Returns(Array.Empty<Parameter>());
+#pragma warning restore CS0618 // Type or member is obsolete
             response.Setup(_ => _.Content).Returns(json);
 
             var mockIRestClient = new Mock<IRestClient>();

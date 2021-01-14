@@ -10,9 +10,11 @@
 
 using RestSharp;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BybitAPI.Client
 {
+    [return: MaybeNull]
     /// <summary>
     /// A delegate to ExceptionFactory method
     /// </summary>
