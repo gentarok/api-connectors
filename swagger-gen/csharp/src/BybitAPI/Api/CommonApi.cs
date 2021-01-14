@@ -145,93 +145,38 @@ namespace BybitAPI.Api
         #endregion Asynchronous Operations
     }
 
-    /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
-    /// </summary>
+    /// <inheritdoc/>
     public partial class CommonApi : ApiBase, ICommonApi
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommonApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public CommonApi(string basePath) : base(basePath) { }
+        public CommonApi(string basePath) : base(basePath)
+        {
+        }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommonApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public CommonApi(Configuration? configuration = null) : base(configuration) { }
+        public CommonApi(Configuration? configuration = null) : base(configuration)
+        {
+        }
 
-        /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns><see cref="AnnouncementRes"/></returns>
-        public AnnouncementBase CommonAnnouncements() => CommonAnnouncementsWithHttpInfo().Data;
+        public AnnouncementBase CommonAnnouncements()
+            => CommonAnnouncementsWithHttpInfo().Data;
 
-        /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of AnnouncementBase</returns>
         public ApiResponse<AnnouncementBase> CommonAnnouncementsWithHttpInfo()
         {
             var localVarPath = "/v2/public/announcement";
             return CallApiWithHttpInfo<AnnouncementBase>(localVarPath, Method.GET);
         }
 
-        /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of AnnouncementBase</returns>
-        public async Task<AnnouncementBase> CommonAnnouncementsAsync() => (await CommonAnnouncementsAsyncWithHttpInfo()).Data;
+        public async Task<AnnouncementBase> CommonAnnouncementsAsync()
+            => (await CommonAnnouncementsAsyncWithHttpInfo()).Data;
 
-        /// <summary>
-        /// Get Bybit OpenAPI announcements in the last 30 days in reverse order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-announcement"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (AnnouncementBase)</returns>
         public Task<ApiResponse<AnnouncementBase>> CommonAnnouncementsAsyncWithHttpInfo()
         {
             var localVarPath = "/v2/public/announcement";
             return CallApiAsyncWithHttpInfo<AnnouncementBase>(localVarPath, Method.GET);
         }
 
-        /// <summary>
-        /// Query LCP info.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <returns><see cref="LCPInfoBase"/></returns>
-        public LCPInfoBase CommonGetLcp(Symbol symbol) => CommonGetLcpWithHttpInfo(symbol).Data;
+        public LCPInfoBase CommonGetLcp(Symbol symbol)
+            => CommonGetLcpWithHttpInfo(symbol).Data;
 
-        /// <summary>
-        /// Query LCP info.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <returns>ApiResponse of LCPInfoBase</returns>
         public ApiResponse<LCPInfoBase> CommonGetLcpWithHttpInfo(Symbol symbol)
         {
             var localVarPath = "/v2/private/account/lcp";
@@ -251,26 +196,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LCPInfoBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Query LCP info.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <returns>Task of LCPInfoBase</returns>
-        public async Task<LCPInfoBase> CommonGetLcpAsync(Symbol symbol) => (await CommonGetLcpAsyncWithHttpInfo(symbol)).Data;
+        public async Task<LCPInfoBase> CommonGetLcpAsync(Symbol symbol)
+            => (await CommonGetLcpAsyncWithHttpInfo(symbol)).Data;
 
-        /// <summary>
-        /// Query LCP info.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <returns>Task of ApiResponse (LCPInfoBase)</returns>
         public Task<ApiResponse<LCPInfoBase>> CommonGetLcpAsyncWithHttpInfo(Symbol symbol)
         {
             var localVarPath = "/v2/private/account/lcp";
@@ -290,48 +218,18 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<LCPInfoBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get bybit server time.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns><see cref="ServerTime"/></returns>
-        public ServerTimeRes CommonGetTime() => CommonGetTimeWithHttpInfo().Data;
+        public ServerTimeRes CommonGetTime()
+            => CommonGetTimeWithHttpInfo().Data;
 
-        /// <summary>
-        /// Get bybit server time.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ServerTimeRes</returns>
         public ApiResponse<ServerTimeRes> CommonGetTimeWithHttpInfo()
         {
             var localVarPath = "/v2/public/time";
             return CallApiWithHttpInfo<ServerTimeRes>(localVarPath, Method.GET);
         }
 
-        /// <summary>
-        /// Get bybit server time.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ServerTimeRes</returns>
-        public async Task<ServerTimeRes> CommonGetTimeAsync() => (await CommonGetTimeAsyncWithHttpInfo()).Data;
+        public async Task<ServerTimeRes> CommonGetTimeAsync()
+            => (await CommonGetTimeAsyncWithHttpInfo()).Data;
 
-        /// <summary>
-        /// Get bybit server time.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-servertime"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ServerTimeRes)</returns>
         public Task<ApiResponse<ServerTimeRes>> CommonGetTimeAsyncWithHttpInfo()
         {
             var localVarPath = "/v2/public/time";

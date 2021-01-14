@@ -421,52 +421,22 @@ namespace BybitAPI.Api
         #endregion Asynchronous Operations
     }
 
-    /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
-    /// </summary>
+    /// <inheritdoc/>
     public partial class ConditionalApi : ApiBase, IConditionalApi
     {
         private const int ConditionalGetOrdersMaxValue = 50;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public ConditionalApi(string basePath) : base(basePath) { }
+        public ConditionalApi(string basePath) : base(basePath)
+        {
+        }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public ConditionalApi(Configuration? configuration = null) : base(configuration) { }
+        public ConditionalApi(Configuration? configuration = null) : base(configuration)
+        {
+        }
 
-        /// <summary>
-        /// Cancel conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
-        /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns><see cref="ConditionalCancelBase"/></returns>
         public ConditionalCancelBase ConditionalCancel(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
             => ConditionalCancelWithHttpInfo(symbol, stopOrderId, orderLinkId).Data;
 
-        /// <summary>
-        /// Cancel conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
-        /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>ApiResponse of ConditionalCancelBase</returns>
         public ApiResponse<ConditionalCancelBase> ConditionalCancelWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -502,31 +472,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ConditionalCancelBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Cancel conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
-        /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of ConditionalCancelBase</returns>
         public async Task<ConditionalCancelBase> ConditionalCancelAsync(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
             => (await ConditionalCancelAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId)).Data;
 
-        /// <summary>
-        /// Cancel conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
-        /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of ApiResponse (ConditionalCancelBase)</returns>
         public Task<ApiResponse<ConditionalCancelBase>> ConditionalCancelAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -562,27 +510,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ConditionalCancelBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Cancel conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns><see cref="ConditionalCancelAllBase"/></returns>
         public ConditionalCancelAllBase ConditionalCancelAll(Symbol symbol)
             => ConditionalCancelAllWithHttpInfo(symbol).Data;
 
-        /// <summary>
-        /// Cancel conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
         public ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(Symbol symbol)
         {
             var localVarPath = "/v2/private/stop-order/cancelAll";
@@ -602,26 +532,8 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ConditionalCancelAllBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Cancel conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ConditionalCancelAllBase</returns>
         public async Task<ConditionalCancelAllBase> ConditionalCancelAllAsync(Symbol symbol) => (await ConditionalCancelAllAsyncWithHttpInfo(symbol)).Data;
 
-        /// <summary>
-        /// Cancel conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (ConditionalCancelAllBase)</returns>
         public Task<ApiResponse<ConditionalCancelAllBase>> ConditionalCancelAllAsyncWithHttpInfo(Symbol symbol)
         {
             var localVarPath = "/v2/private/stop-order/cancelAll";
@@ -641,35 +553,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ConditionalCancelAllBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get my conditional order list.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
-        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns><see cref="ConditionalGetOrdersResBase"/></returns>
         public ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
             => ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor).Data;
 
-        /// <summary>
-        /// Get my conditional order list.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
-        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>ApiResponse of ConditionalGetOrdersBase</returns>
         public ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
@@ -712,35 +598,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ConditionalGetOrdersBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get my conditional order list.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
-        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of ConditionalGetOrdersBase</returns>
         public async Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
             => (await ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor)).Data;
 
-        /// <summary>
-        /// Get my conditional order list.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
-        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
-        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
-        /// <returns>Task of ApiResponse (ConditionalGetOrdersBase)</returns>
         public Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
@@ -783,47 +643,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ConditionalGetOrdersBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Place a new conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="side">Side.</param>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="orderType">Conditional order type.</param>
-        /// <param name="qty">Order quantity.</param>
-        /// <param name="basePrice">Send current market price. It will be used to compare with the value of &#39;stop_px&#39;, to decide whether your conditional order will be triggered by crossing trigger price from upper side or lower side. Mainly used to identify the expected direction of the current conditional order..</param>
-        /// <param name="stopPx">Trigger price.</param>
-        /// <param name="timeInForce">Time in force.</param>
-        /// <param name="price">Execution price for conditional order (optional)</param>
-        /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
-        /// <param name="closeOnTrigger">close on trigger. (optional)</param>
-        /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns><see cref="ConditionalNewOrderBase"/></returns>
         public ConditionalNewOrderBase ConditionalNew(Side side, Symbol symbol, OrderType orderType, decimal qty, decimal basePrice, decimal stopPx, TimeInForce timeInForce, decimal? price = null, TriggerPriceType? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null)
             => ConditionalNewWithHttpInfo(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId).Data;
 
-        /// <summary>
-        /// Place a new conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="side">Side.</param>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="orderType">Conditional order type.</param>
-        /// <param name="qty">Order quantity.</param>
-        /// <param name="basePrice">Send current market price. It will be used to compare with the value of &#39;stop_px&#39;, to decide whether your conditional order will be triggered by crossing trigger price from upper side or lower side. Mainly used to identify the expected direction of the current conditional order..</param>
-        /// <param name="stopPx">Trigger price.</param>
-        /// <param name="timeInForce">Time in force.</param>
-        /// <param name="price">Execution price for conditional order (optional)</param>
-        /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
-        /// <param name="closeOnTrigger">close on trigger. (optional)</param>
-        /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>ApiResponse of ConditionalNewOrderBase</returns>
         public ApiResponse<ConditionalNewOrderBase> ConditionalNewWithHttpInfo(Side side, Symbol symbol, OrderType orderType, decimal qty, decimal basePrice, decimal stopPx, TimeInForce timeInForce, decimal? price = null, TriggerPriceType? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null)
         {
             var localVarPath = "/v2/private/stop-order/create";
@@ -866,47 +688,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ConditionalNewOrderBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Place a new conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="side">Side.</param>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="orderType">Conditional order type.</param>
-        /// <param name="qty">Order quantity.</param>
-        /// <param name="basePrice">Send current market price. It will be used to compare with the value of &#39;stop_px&#39;, to decide whether your conditional order will be triggered by crossing trigger price from upper side or lower side. Mainly used to identify the expected direction of the current conditional order..</param>
-        /// <param name="stopPx">Trigger price.</param>
-        /// <param name="timeInForce">Time in force.</param>
-        /// <param name="price">Execution price for conditional order (optional)</param>
-        /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
-        /// <param name="closeOnTrigger">close on trigger. (optional)</param>
-        /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>Task of Object</returns>
         public async Task<ConditionalNewOrderBase> ConditionalNewAsync(Side side, Symbol symbol, OrderType orderType, decimal qty, decimal basePrice, decimal stopPx, TimeInForce timeInForce, decimal? price = null, TriggerPriceType? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null)
             => (await ConditionalNewAsyncWithHttpInfo(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, closeOnTrigger, orderLinkId)).Data;
 
-        /// <summary>
-        /// Place a new conditional order.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-placecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="side">Side.</param>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="orderType">Conditional order type.</param>
-        /// <param name="qty">Order quantity.</param>
-        /// <param name="basePrice">Send current market price. It will be used to compare with the value of &#39;stop_px&#39;, to decide whether your conditional order will be triggered by crossing trigger price from upper side or lower side. Mainly used to identify the expected direction of the current conditional order..</param>
-        /// <param name="stopPx">Trigger price.</param>
-        /// <param name="timeInForce">Time in force.</param>
-        /// <param name="price">Execution price for conditional order (optional)</param>
-        /// <param name="triggerBy">Trigger price type. Default LastPrice. (optional)</param>
-        /// <param name="closeOnTrigger">close on trigger. (optional)</param>
-        /// <param name="orderLinkId">Customized order ID, maximum length at 36 characters, and order ID under the same agency has to be unique.. (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
         public Task<ApiResponse<ConditionalNewOrderBase>> ConditionalNewAsyncWithHttpInfo(Side side, Symbol symbol, OrderType orderType, decimal qty, decimal basePrice, decimal stopPx, TimeInForce timeInForce, decimal? price = null, TriggerPriceType? triggerBy = null, bool? closeOnTrigger = null, string? orderLinkId = null)
         {
             var localVarPath = "/v2/private/stop-order/create";
@@ -949,31 +733,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ConditionalNewOrderBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Query real-time stop order information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
-        /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>ConditionalQueryBase of ConditionalQueryRes</returns>
         public ConditionalQueryBase<ConditionalQueryRes> ConditionalQuery(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
             => ConditionalQueryWithHttpInfo(symbol, stopOrderId, orderLinkId).Data;
 
-        /// <summary>
-        /// Query real-time stop order information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
-        /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>ApiResponse of ConditionalQueryBase (ConditionalQueryRes)</returns>
         public ApiResponse<ConditionalQueryBase<ConditionalQueryRes>> ConditionalQueryWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -1008,31 +770,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ConditionalQueryBase<ConditionalQueryRes>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Query real-time stop order information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
-        /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of ConditionalQueryBase (ConditionalQueryRes)</returns>
         public async Task<ConditionalQueryBase<ConditionalQueryRes>> ConditionalQueryAsync(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
             => (await ConditionalQueryAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId)).Data;
 
-        /// <summary>
-        /// Query real-time stop order information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
-        /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
-        /// <returns>Task of ApiResponse (ConditionalQueryBase of ConditionalQueryRes)</returns>
         public Task<ApiResponse<ConditionalQueryBase<ConditionalQueryRes>>> ConditionalQueryAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -1067,27 +807,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ConditionalQueryBase<ConditionalQueryRes>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Query real-time stop order information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>ConditionalQueryBase of IReadOnlyList (ConditionalQueryRes)</returns>
         public ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>> ConditionalQuery(Symbol symbol)
             => ConditionalQueryWithHttpInfo(symbol).Data;
 
-        /// <summary>
-        /// Query real-time stop order information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of ConditionalQueryBase (IReadOnlyList of ConditionalQueryRes)</returns>
         public ApiResponse<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>> ConditionalQueryWithHttpInfo(Symbol symbol)
         {
             var localVarPath = "/v2/private/stop-order";
@@ -1107,27 +829,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Query real-time stop order information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ConditionalQueryBase (IReadOnlyList of ConditionalQueryRes)</returns>
         public async Task<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>> ConditionalQueryAsync(Symbol symbol)
             => (await ConditionalQueryAsyncWithHttpInfo(symbol)).Data;
 
-        /// <summary>
-        /// Query real-time stop order information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (ConditionalQueryBase of IReadOnlyList (ConditionalQueryRes))</returns>
         public Task<ApiResponse<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>> ConditionalQueryAsyncWithHttpInfo(Symbol symbol)
         {
             var localVarPath = "/v2/private/stop-order";
@@ -1147,37 +851,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Replace conditional order. Only incomplete orders can be modified.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Stop order ID. (optional)</param>
-        /// <param name="orderLinkId">Order Link ID. (optional)</param>
-        /// <param name="pRQty">Order quantity. (optional)</param>
-        /// <param name="pRPrice">Order price. (optional)</param>
-        /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns><see cref="ConditionalReplaceBase"/></returns>
         public ConditionalReplaceBase ConditionalReplace(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
             => ConditionalReplaceWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice).Data;
 
-        /// <summary>
-        /// Replace conditional order. Only incomplete orders can be modified.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Stop order ID. (optional)</param>
-        /// <param name="orderLinkId">Order Link ID. (optional)</param>
-        /// <param name="pRQty">Order quantity. (optional)</param>
-        /// <param name="pRPrice">Order price. (optional)</param>
-        /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>ApiResponse of ConditionalReplaceBase</returns>
         public ApiResponse<ConditionalReplaceBase> ConditionalReplaceWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
             // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -1224,37 +900,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ConditionalReplaceBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Replace conditional order. Only incomplete orders can be modified.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Stop order ID. (optional)</param>
-        /// <param name="orderLinkId">Order Link ID. (optional)</param>
-        /// <param name="pRQty">Order quantity. (optional)</param>
-        /// <param name="pRPrice">Order price. (optional)</param>
-        /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>Task of ConditionalReplaceBase</returns>
         public async Task<ConditionalReplaceBase> ConditionalReplaceAsync(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
             => (await ConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice)).Data;
 
-        /// <summary>
-        /// Replace conditional order. Only incomplete orders can be modified.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="stopOrderId">Stop order ID. (optional)</param>
-        /// <param name="orderLinkId">Order Link ID. (optional)</param>
-        /// <param name="pRQty">Order quantity. (optional)</param>
-        /// <param name="pRPrice">Order price. (optional)</param>
-        /// <param name="pRTriggerPrice">Trigger price. (optional)</param>
-        /// <returns>Task of ApiResponse (ConditionalReplaceBase)</returns>
         public Task<ApiResponse<ConditionalReplaceBase>> ConditionalReplaceAsyncWithHttpInfo(Symbol symbol, string? stopOrderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
             // FIXED : According to the document, 'stopOrderId' or 'orderLinkId' is required.

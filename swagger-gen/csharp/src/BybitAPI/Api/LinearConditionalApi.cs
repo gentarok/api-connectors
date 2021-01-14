@@ -469,52 +469,20 @@ namespace BybitAPI.Api
         #endregion Asynchronous Operations
     }
 
-    /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
-    /// </summary>
+    /// <inheritdoc/>
     public partial class LinearConditionalApi : ApiBase, ILinearConditionalApi
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LinearConditionalApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public LinearConditionalApi(string basePath) : base(basePath) { }
+        public LinearConditionalApi(string basePath) : base(basePath)
+        {
+        }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LinearConditionalApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public LinearConditionalApi(Configuration? configuration = null) : base(configuration) { }
+        public LinearConditionalApi(Configuration? configuration = null) : base(configuration)
+        {
+        }
 
-        /// <summary>
-        /// Cancel Active Order This will cancel linear active order
-        /// </summary>
-        /// <remarks>
-        /// This will cancel linear active order
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="symbol"> (optional)</param>
-        /// <returns><see cref="LinearConditionalCancelBase"/></returns>
         public LinearConditionalCancelBase LinearConditionalCancel(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null)
             => LinearConditionalCancelWithHttpInfo(stopOrderId, orderLinkId, symbol).Data;
 
-        /// <summary>
-        /// Cancel Active Order This will cancel linear active order
-        /// </summary>
-        /// <remarks>
-        /// This will cancel linear active order
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="symbol"> (optional)</param>
-        /// <returns>ApiResponse of LinearConditionalCancelBase</returns>
         public ApiResponse<LinearConditionalCancelBase> LinearConditionalCancelWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -554,33 +522,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LinearConditionalCancelBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Cancel Active Order This will cancel linear active order
-        /// </summary>
-        /// <remarks>
-        /// This will cancel linear active order
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="symbol"> (optional)</param>
-        /// <returns>Task of LinearConditionalCancelBase</returns>
         public async Task<LinearConditionalCancelBase> LinearConditionalCancelAsync(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null)
             => (await LinearConditionalCancelAsyncWithHttpInfo(stopOrderId, orderLinkId, symbol)).Data;
 
-        /// <summary>
-        /// Cancel Active Order This will cancel linear active order
-        /// </summary>
-        /// <remarks>
-        /// This will cancel linear active order
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="symbol"> (optional)</param>
-        /// <returns>Task of ApiResponse (LinearConditionalCancelBase)</returns>
         public Task<ApiResponse<LinearConditionalCancelBase>> LinearConditionalCancelAsyncWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -620,27 +564,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<LinearConditionalCancelBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Cancel all stop orders.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelallcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns><see cref="LinearConditionalCancelAllBase"/></returns>
         public LinearConditionalCancelAllBase LinearConditionalCancelAll(LinearSymbol symbol)
             => LinearConditionalCancelAllWithHttpInfo(symbol).Data;
 
-        /// <summary>
-        /// Cancel all stop orders.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelallcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>ApiResponse of LinearConditionalCancelAllBase</returns>
         public ApiResponse<LinearConditionalCancelAllBase> LinearConditionalCancelAllWithHttpInfo(LinearSymbol symbol)
         {
             var localVarPath = "/private/linear/stop-order/cancel-all";
@@ -660,27 +586,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LinearConditionalCancelAllBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Cancel all stop orders.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelallcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of LinearConditionalCancelAllBase</returns>
         public async Task<LinearConditionalCancelAllBase> LinearConditionalCancelAllAsync(LinearSymbol symbol)
             => (await LinearConditionalCancelAllAsyncWithHttpInfo(symbol)).Data;
 
-        /// <summary>
-        /// Cancel all stop orders.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelallcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <returns>Task of ApiResponse (LinearConditionalCancelAllBase)</returns>
         public Task<ApiResponse<LinearConditionalCancelAllBase>> LinearConditionalCancelAllAsyncWithHttpInfo(LinearSymbol symbol)
         {
             var localVarPath = "/private/linear/stop-order/cancel-all";
@@ -700,41 +608,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<LinearConditionalCancelAllBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get linear Stop Orders This will get linear active orders
-        /// </summary>
-        /// <remarks>
-        /// This will get linear active orders
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-getcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (requaired)</param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="order"> (optional)</param>
-        /// <param name="page"> (optional)</param>
-        /// <param name="limit"> (optional)</param>
-        /// <param name="stopOrderStatus"> (optional)</param>
-        /// <returns><see cref="LinearConditionalGetOrdersBase"/></returns>
         public LinearConditionalGetOrdersBase LinearConditionalGetOrders(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null, LinearOrder? order = null, int? page = null, int? limit = null, LinearStopOrderStatus? stopOrderStatus = null)
             => LinearConditionalGetOrdersWithHttpInfo(symbol, stopOrderId, orderLinkId, order, page, limit, stopOrderStatus).Data;
 
-        /// <summary>
-        /// Get linear Stop Orders This will get linear active orders
-        /// </summary>
-        /// <remarks>
-        /// This will get linear active orders
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-getcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="order"> (optional)</param>
-        /// <param name="page"> (optional)</param>
-        /// <param name="limit"> (optional)</param>
-        /// <param name="stopOrderStatus"> (optional)</param>
-        /// <returns>ApiResponse of LinearConditionalGetOrdersBase</returns>
         public ApiResponse<LinearConditionalGetOrdersBase> LinearConditionalGetOrdersWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null, LinearOrder? order = null, int? page = null, int? limit = null, LinearStopOrderStatus? stopOrderStatus = null)
         {
             var localVarPath = "/private/linear/stop-order/list";
@@ -784,41 +660,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LinearConditionalGetOrdersBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get linear Stop Orders This will get linear active orders
-        /// </summary>
-        /// <remarks>
-        /// This will get linear active orders
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-getcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="order"> (optional)</param>
-        /// <param name="page"> (optional)</param>
-        /// <param name="limit"> (optional)</param>
-        /// <param name="stopOrderStatus"> (optional)</param>
-        /// <returns>Task of LinearConditionalGetOrdersBase</returns>
         public async Task<LinearConditionalGetOrdersBase> LinearConditionalGetOrdersAsync(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null, LinearOrder? order = null, int? page = null, int? limit = null, LinearStopOrderStatus? stopOrderStatus = null)
             => (await LinearConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, order, page, limit, stopOrderStatus)).Data;
 
-        /// <summary>
-        /// Get linear Stop Orders This will get linear active orders
-        /// </summary>
-        /// <remarks>
-        /// This will get linear active orders
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-getcond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="order"> (optional)</param>
-        /// <param name="page"> (optional)</param>
-        /// <param name="limit"> (optional)</param>
-        /// <param name="stopOrderStatus"> (optional)</param>
-        /// <returns>Task of ApiResponse (LinearConditionalGetOrdersBase)</returns>
         public Task<ApiResponse<LinearConditionalGetOrdersBase>> LinearConditionalGetOrdersAsyncWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null, LinearOrder? order = null, int? page = null, int? limit = null, LinearStopOrderStatus? stopOrderStatus = null)
         {
             var localVarPath = "/private/linear/stop-order/list";
@@ -868,59 +712,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<LinearConditionalGetOrdersBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Create linear stop Order This will create linear stop order
-        /// </summary>
-        /// <remarks>
-        /// This will create linear stop order
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-placecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="side"> (required)</param>
-        /// <param name="symbol"> (required)</param>
-        /// <param name="orderType"> (required)</param>
-        /// <param name="qty"> (required)</param>
-        /// <param name="price"> (required)</param>
-        /// <param name="basePrice"> (required)</param>
-        /// <param name="stopPx"> (required)</param>
-        /// <param name="timeInForce"> (required)</param>
-        /// <param name="triggerBy"> (optional)</param>
-        /// <param name="reduceOnly"> (optional)</param>
-        /// <param name="closeOnTrigger"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="takeProfit"> (optional)</param>
-        /// <param name="stopLoss"> (optional)</param>
-        /// <param name="tpTriggerBy"> (optional)</param>
-        /// <param name="slTriggerBy"> (optional)</param>
-        /// <returns><see cref="LinearConditionalNewOrderBase"/></returns>
         public LinearConditionalNewOrderBase LinearConditionalNew(LinearSide side, LinearSymbol symbol, LinearOrderType orderType, decimal qty, decimal basePrice, decimal stopPx, LinearTimeInForce timeInForce, decimal? price = null, LinearTriggerPriceType? triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null, decimal? takeProfit = null, decimal? stopLoss = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null)
             => LinearConditionalNewWithHttpInfo(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, reduceOnly, closeOnTrigger, orderLinkId, takeProfit, stopLoss, tpTriggerBy, slTriggerBy).Data;
 
-        /// <summary>
-        /// Create linear stop Order This will create linear stop order
-        /// </summary>
-        /// <remarks>
-        /// This will create linear stop order
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-placecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="side"> (required)</param>
-        /// <param name="symbol"> (required)</param>
-        /// <param name="orderType"> (required)</param>
-        /// <param name="qty"> (required)</param>
-        /// <param name="price"> (required)</param>
-        /// <param name="basePrice"> (required)</param>
-        /// <param name="stopPx"> (required)</param>
-        /// <param name="timeInForce"> (required)</param>
-        /// <param name="triggerBy"> (optional)</param>
-        /// <param name="reduceOnly"> (optional)</param>
-        /// <param name="closeOnTrigger"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="takeProfit"> (optional)</param>
-        /// <param name="stopLoss"> (optional)</param>
-        /// <param name="tpTriggerBy"> (optional)</param>
-        /// <param name="slTriggerBy"> (optional)</param>
-        /// <returns>ApiResponse of LinearConditionalNewOrderBase</returns>
         public ApiResponse<LinearConditionalNewOrderBase> LinearConditionalNewWithHttpInfo(LinearSide side, LinearSymbol symbol, LinearOrderType orderType, decimal qty, decimal basePrice, decimal stopPx, LinearTimeInForce timeInForce, decimal? price = null, LinearTriggerPriceType? triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null, decimal? takeProfit = null, decimal? stopLoss = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null)
         {
             var localVarPath = "/private/linear/stop-order/create";
@@ -991,59 +785,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LinearConditionalNewOrderBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Create linear stop Order This will create linear stop order
-        /// </summary>
-        /// <remarks>
-        /// This will create linear stop order
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-placecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="side"> (required)</param>
-        /// <param name="symbol"> (required)</param>
-        /// <param name="orderType"> (required)</param>
-        /// <param name="qty"> (required)</param>
-        /// <param name="price"> (required)</param>
-        /// <param name="basePrice"> (required)</param>
-        /// <param name="stopPx"> (required)</param>
-        /// <param name="timeInForce"> (required)</param>
-        /// <param name="triggerBy"> (optional)</param>
-        /// <param name="reduceOnly"> (optional)</param>
-        /// <param name="closeOnTrigger"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="takeProfit"> (optional)</param>
-        /// <param name="stopLoss"> (optional)</param>
-        /// <param name="tpTriggerBy"> (optional)</param>
-        /// <param name="slTriggerBy"> (optional)</param>
-        /// <returns>Task of LinearConditionalNewOrderBase</returns>
         public async Task<LinearConditionalNewOrderBase> LinearConditionalNewAsync(LinearSide side, LinearSymbol symbol, LinearOrderType orderType, decimal qty, decimal basePrice, decimal stopPx, LinearTimeInForce timeInForce, decimal? price = null, LinearTriggerPriceType? triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null, decimal? takeProfit = null, decimal? stopLoss = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null)
             => (await LinearConditionalNewAsyncWithHttpInfo(side, symbol, orderType, qty, basePrice, stopPx, timeInForce, price, triggerBy, reduceOnly, closeOnTrigger, orderLinkId, takeProfit, stopLoss, tpTriggerBy, slTriggerBy)).Data;
 
-        /// <summary>
-        /// Create linear stop Order This will create linear stop order
-        /// </summary>
-        /// <remarks>
-        /// This will create linear stop order
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-placecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="side"> (required)</param>
-        /// <param name="symbol"> (required)</param>
-        /// <param name="orderType"> (required)</param>
-        /// <param name="qty"> (required)</param>
-        /// <param name="price"> (required)</param>
-        /// <param name="basePrice"> (required)</param>
-        /// <param name="stopPx"> (required)</param>
-        /// <param name="timeInForce"> (required)</param>
-        /// <param name="triggerBy"> (optional)</param>
-        /// <param name="reduceOnly"> (optional)</param>
-        /// <param name="closeOnTrigger"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="takeProfit"> (optional)</param>
-        /// <param name="stopLoss"> (optional)</param>
-        /// <param name="tpTriggerBy"> (optional)</param>
-        /// <param name="slTriggerBy"> (optional)</param>
-        /// <returns>Task of ApiResponse (LinearConditionalNewOrderBase)</returns>
         public Task<ApiResponse<LinearConditionalNewOrderBase>> LinearConditionalNewAsyncWithHttpInfo(LinearSide side, LinearSymbol symbol, LinearOrderType orderType, decimal qty, decimal basePrice, decimal stopPx, LinearTimeInForce timeInForce, decimal? price = null, LinearTriggerPriceType? triggerBy = null, bool? reduceOnly = null, bool? closeOnTrigger = null, string? orderLinkId = null, decimal? takeProfit = null, decimal? stopLoss = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null)
         {
             var localVarPath = "/private/linear/stop-order/create";
@@ -1114,33 +858,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<LinearConditionalNewOrderBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
-        /// </summary>
-        /// <remarks>
-        /// This will get linear stop orders(real-time)
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">)</param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <returns>LinearConditionalQueryBase of LinearConditionalQueryRes</returns>
         public LinearConditionalQueryBase<LinearConditionalQueryRes> LinearConditionalQuery(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null)
             => LinearConditionalQueryWithHttpInfo(symbol, stopOrderId, orderLinkId).Data;
 
-        /// <summary>
-        /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
-        /// </summary>
-        /// <remarks>
-        /// This will get linear stop orders(real-time)
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <returns>ApiResponse of LinearConditionalQueryBase (LinearConditionalQueryRes)</returns>
         public ApiResponse<LinearConditionalQueryBase<LinearConditionalQueryRes>> LinearConditionalQueryWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -1176,33 +896,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LinearConditionalQueryBase<LinearConditionalQueryRes>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
-        /// </summary>
-        /// <remarks>
-        /// This will get linear stop orders(real-time)
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <returns>Task of LinearConditionalQueryBase (LinearConditionalQueryRes)</returns>
         public async Task<LinearConditionalQueryBase<LinearConditionalQueryRes>> LinearConditionalQueryAsync(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null)
             => (await LinearConditionalQueryAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId)).Data;
 
-        /// <summary>
-        /// Get Stop Orders(real-time) This will get linear stop orders(real-time)
-        /// </summary>
-        /// <remarks>
-        /// This will get linear stop orders(real-time)
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <returns>Task of ApiResponse (LinearConditionalQueryBase of LinearConditionalQueryRes)</returns>
         public Task<ApiResponse<LinearConditionalQueryBase<LinearConditionalQueryRes>>> LinearConditionalQueryAsyncWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -1238,29 +934,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<LinearConditionalQueryBase<LinearConditionalQueryRes>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get Stop Orders(real-time)
-        /// </summary>
-        /// <remarks>
-        /// This will get linear stop orders(real-time)
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <returns>LinearConditionalQueryBase of List (LinearConditionalQueryRes)</returns>
         public LinearConditionalQueryBase<IReadOnlyList<LinearConditionalQueryRes>> LinearConditionalQuery(LinearSymbol symbol)
             => LinearConditionalQueryWithHttpInfo(symbol).Data;
 
-        /// <summary>
-        /// Get Stop Orders(real-time)
-        /// </summary>
-        /// <remarks>
-        /// This will get linear stop orders(real-time)
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">)</param>
-        /// <returns>ApiResponse of LinearConditionalQueryBase (List of LinearConditionalQueryRes)</returns>
         public ApiResponse<LinearConditionalQueryBase<IReadOnlyList<LinearConditionalQueryRes>>> LinearConditionalQueryWithHttpInfo(LinearSymbol symbol)
         {
             var localVarPath = "/private/linear/stop-order/search";
@@ -1280,29 +956,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LinearConditionalQueryBase<IReadOnlyList<LinearConditionalQueryRes>>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get Stop Orders(real-time)
-        /// </summary>
-        /// <remarks>
-        /// This will get linear stop orders(real-time)
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <returns>Task of LinearConditionalQueryBase (List of LinearConditionalQueryRes)</returns>
         public async Task<LinearConditionalQueryBase<IReadOnlyList<LinearConditionalQueryRes>>> LinearConditionalQueryAsync(LinearSymbol symbol)
             => (await LinearConditionalQueryAsyncWithHttpInfo(symbol)).Data;
 
-        /// <summary>
-        /// Get Stop Orders(real-time)
-        /// </summary>
-        /// <remarks>
-        /// This will get linear stop orders(real-time)
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querycond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <returns>Task of ApiResponse (LinearConditionalQueryBase of List (LinearConditionalQueryRes))</returns>
         public Task<ApiResponse<LinearConditionalQueryBase<IReadOnlyList<LinearConditionalQueryRes>>>> LinearConditionalQueryAsyncWithHttpInfo(LinearSymbol symbol)
         {
             var localVarPath = "/private/linear/stop-order/search";
@@ -1322,37 +978,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<LinearConditionalQueryBase<IReadOnlyList<LinearConditionalQueryRes>>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Replace conditional order
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-replacecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="pRQty"> (optional)</param>
-        /// <param name="pRPrice"> (optional)</param>
-        /// <param name="pRTriggerPrice"> (optional)</param>
-        /// <returns><see cref="LinearConditionalReplaceBase"/></returns>
         public LinearConditionalReplaceBase LinearConditionalReplace(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
             => LinearConditionalReplaceWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice).Data;
 
-        /// <summary>
-        /// Replace conditional order
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-replacecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="pRQty"> (optional)</param>
-        /// <param name="pRPrice"> (optional)</param>
-        /// <param name="pRTriggerPrice"> (optional)</param>
-        /// <returns>ApiResponse of LinearConditionalReplaceBase</returns>
         public ApiResponse<LinearConditionalReplaceBase> LinearConditionalReplaceWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
@@ -1403,37 +1031,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LinearConditionalReplaceBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Replace conditional order
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-replacecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="pRQty"> (optional)</param>
-        /// <param name="pRPrice"> (optional)</param>
-        /// <param name="pRTriggerPrice"> (optional)</param>
-        /// <returns>Task of LinearConditionalReplaceBase</returns>
         public async Task<LinearConditionalReplaceBase> LinearConditionalReplaceAsync(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
             => (await LinearConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice)).Data;
 
-        /// <summary>
-        /// Replace conditional order
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-replacecond"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
-        /// <param name="stopOrderId"> (optional)</param>
-        /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="pRQty"> (optional)</param>
-        /// <param name="pRPrice"> (optional)</param>
-        /// <param name="pRTriggerPrice"> (optional)</param>
-        /// <returns>Task of ApiResponse (LinearConditionalReplaceBase)</returns>
         public Task<ApiResponse<LinearConditionalReplaceBase>> LinearConditionalReplaceAsyncWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null, decimal? pRQty = null, decimal? pRPrice = null, decimal? pRTriggerPrice = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.

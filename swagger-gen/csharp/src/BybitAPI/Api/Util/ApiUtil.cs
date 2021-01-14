@@ -11,6 +11,8 @@ namespace BybitAPI.Api.Util
 {
     internal static class ApiUtil
     {
+        internal static readonly string[] Intervals = new[] { "1", "3", "5", "15", "30", "60", "120", "240", "360", "720", "D", "M", "W", };
+
         internal const string MAINNET_URI = "https://api.bybit.com";
 
         internal const string TESTNET_URI = "https://api-testnet.bybit.com";

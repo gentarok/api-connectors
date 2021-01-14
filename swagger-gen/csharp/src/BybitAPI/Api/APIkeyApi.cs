@@ -61,43 +61,20 @@ namespace BybitAPI.Api
         #endregion Asynchronous Operations
     }
 
-    /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
-    /// </summary>
+    /// <inheritdoc/>
     public partial class APIkeyApi : ApiBase, IAPIkeyApi
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="APIkeyApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public APIkeyApi(string basePath) : base(basePath) { }
+        public APIkeyApi(string basePath) : base(basePath)
+        {
+        }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="APIkeyApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public APIkeyApi(Configuration? configuration = null) : base(configuration) { }
+        public APIkeyApi(Configuration? configuration = null) : base(configuration)
+        {
+        }
 
-        /// <summary>
-        /// Get account api-key information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        public APIKeyInfoBase APIkeyInfo() => APIkeyInfoWithHttpInfo().Data;
+        public APIKeyInfoBase APIkeyInfo()
+            => APIkeyInfoWithHttpInfo().Data;
 
-        /// <summary>
-        /// Get account api-key information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
         public ApiResponse<APIKeyInfoBase> APIkeyInfoWithHttpInfo()
         {
             var localVarPath = "/open-api/api-key";
@@ -115,24 +92,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<APIKeyInfoBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get account api-key information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Object</returns>
-        public async Task<APIKeyInfoBase> APIkeyInfoAsync() => (await APIkeyInfoAsyncWithHttpInfo()).Data;
+        public async Task<APIKeyInfoBase> APIkeyInfoAsync()
+            => (await APIkeyInfoAsyncWithHttpInfo()).Data;
 
-        /// <summary>
-        /// Get account api-key information.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-key"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Object)</returns>
         public Task<ApiResponse<APIKeyInfoBase>> APIkeyInfoAsyncWithHttpInfo()
         {
             var localVarPath = "/open-api/api-key";

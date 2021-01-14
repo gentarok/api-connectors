@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BybitAPI.Model
 {
@@ -136,5 +135,198 @@ namespace BybitAPI.Model
     /// </remarks>
     public record LinearExecutionGetTradesRes(string OrderId, string OrderLinkId, LinearSide Side, string ExecId, decimal OrderPrice,
         decimal OrderQty, LinearOrderType OrderType, decimal FeeRate, decimal ExecPrice, LinearExecType ExecType, decimal ExecQty,
-        decimal ExecFee, decimal ExecValue, decimal LeavesQty, decimal ClozedSize, LinearLiquidityType LastLiquidityInd, long TradeTimeMs);
+        decimal ExecFee, decimal ExecValue, decimal LeavesQty, decimal ClosedSize, LinearLiquidityType LastLiquidityInd, long TradeTimeMs);
+
+    /// <summary>
+    /// Base type of the response for the 'My Last Funding Fee' API method.
+    /// </summary>
+    /// <remarks>
+    public record LinearFundingMyLastFeeBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, LinearFundingMyLastFeeRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'My Last Funding Fee' API method.
+    /// </summary>
+    public record LinearFundingMyLastFeeRes(LinearSymbol Symbol, LinearSide Side, decimal Size, decimal FundingRate, decimal ExecFee,
+        DateTimeOffset ExecTime);
+
+    /// <summary>
+    /// Base type of the response for the 'Predicted Funding Rate and My Funding Fee' API method.
+    /// </summary>
+    public record LinearFundingPredictedBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, LinearFundingPredictedRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Predicted Funding Rate and My Funding Fee' API method.
+    /// </summary>
+    public record LinearFundingPredictedRes(decimal PredictedFundingRate, decimal PredictedFundingFee);
+
+    /// <summary>
+    /// Base type of the response for the 'Get the Last Funding Rate' API method.
+    /// </summary>
+    public record LinearFundingPrevRateBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, LinearFundingPrevRateRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Get the Last Funding Rate' API method.
+    /// </summary>
+    public record LinearFundingPrevRateRes(LinearSymbol Symbol, decimal FundingRate, DateTimeOffset FundingRateTimestamp);
+
+    /// <summary>
+    /// Base type of the response for the 'Query Kline' API method.
+    /// </summary>
+    public record LinearKlineGetBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, IReadOnlyList<LinearKlineGetRes>? Result,
+        string TimeNow);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Query Kline' API method.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// ignore the 'start_at', 'open' field because it is marked as 'abandoned' in the documentation.
+    /// </para>
+    /// <para>
+    /// 'open' field is marked as 'abandoned', but we leave it as no alternative field definition has been added.
+    /// </para>
+    /// <para>
+    /// Caution!<br/>
+    /// The description in the documentation of the 'period' and 'interval' fields is strange and contains the same definition. However, they both return the same value as the parameter 'interval'.
+    /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querykline"/>
+    /// </para>
+    /// </remarks>
+    public record LinearKlineGetRes(long Id, LinearSymbol Symbol, string Period, string Interval, long OpenTime, decimal Volume,
+        decimal Open, decimal High, decimal Low, decimal Close, decimal Turnover);
+
+    /// <summary>
+    /// Base type of the response for the 'Query Mark Price Kline' API method.
+    /// </summary>
+    public record LinearKlineMarkPriceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<LinearKlineMarkPriceRes>? Result, string TimeNow);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Query Mark Price Kline' API method.
+    /// </summary>
+    public record LinearKlineMarkPriceRes(long Id, LinearSymbol Symbol, string Period, long StartAt, decimal Volume, decimal Open, decimal High,
+        decimal Low, decimal Close);
+
+    /// <summary>
+    /// Base type of the response for the 'Public Trading Records' API method.
+    /// </summary>
+    /// <remarks>
+    public record LinearMarketTradingBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<LinearMarketTradingRes>? Result, string TimeNow);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Public Trading Records' API method.
+    /// </summary>
+    /// <remarks>
+    /// ignore the 'time', 'open' field because it is marked as 'abandoned' in the documentation.
+    /// </remarks>
+    public record LinearMarketTradingRes(long Id, LinearSymbol Symbol, decimal Price, decimal Qty, LinearSide Side, long TradeTimeMs);
+
+    /// <summary>
+    /// Base type of the response for the 'Cancel Active Order' API method.
+    /// </summary>
+    /// <remarks>
+    public record LinearOrderCancelBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, LinearOrderCancelRes? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Cancel Active Order' API method.
+    /// </summary>
+    public record LinearOrderCancelRes(string OrderId);
+
+    /// <summary>
+    /// Base type of the response for the 'Cancel All Active Orders' API method.
+    /// </summary>
+    public record LinearOrderCancelAllBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<string>? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Base type of the response for the 'Get Active Order' API method.
+    /// </summary>
+    public record LinearOrderGetOrdersBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        LinearOrderGetOrdersListBase? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Collection type for the actual data type of the 'Get Active Order' API method response.
+    /// </summary>
+    public record LinearOrderGetOrdersListBase(IReadOnlyList<LinearOrderGetOrdersRes> Data, int CurrentPage, int LastPage);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Get Active Order' API method.
+    /// </summary>
+    /// <remarks>
+    /// 'order_id' (also 'order_link_id' and 'stop_order_id') field looks like a UUID, but the property type could not be defined as GUID because the API may return an empty string. Since an empty string does not imply null, it cannot be defined as a nullable reference type either.
+    /// </remarks>
+    public record LinearOrderGetOrdersRes(string OrderId, long UserId, LinearSymbol Symbol, LinearSide Side, LinearOrderType OrderType,
+        decimal Price, decimal Qty, LinearTimeInForce TimeInForce, LinearOrderStatus OrderStatus, decimal LastExecPrice,
+        decimal CumExecQty, decimal CumExecValue, decimal CumExecFee, string OrderLinkId, bool ReduceOnly, bool CloseOnTrigger,
+        DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'Place Active Order' API method.
+    /// </summary>
+    public record LinearOrderNewBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, LinearOrderNewRes? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Place Active Order' API method.
+    /// </summary>
+    public record LinearOrderNewRes(string OrderId, long UserId, LinearSymbol Symbol, LinearSide Side, LinearOrderType OrderType,
+        decimal Price, decimal Qty, LinearTimeInForce TimeInForce, LinearOrderStatus OrderStatus, decimal LastExecPrice,
+        decimal CumExecQty, decimal CumExecValue, decimal CumExecFee, string OrderLinkId, bool ReduceOnly, bool CloseOnTrigger,
+        DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'Query Active Order (real-time)' API method.
+    /// </summary>
+    /// <remarks>
+    /// 'Query Active Order (real-time)' method of the API returns different types of responses depending on the parameters of the method, so define a generic type and deserialize it.
+    /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
+    /// <seealso cref="https://bybit-exchange.github.io/docs/linear/#2020-12-03"/>
+    /// </remarks>
+    /// <typeparam name="T">'Result' proterty data type.</typeparam>
+    public record LinearOrderQueryBase<T>(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, T? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Query Active Order (real-time)' API method.
+    /// </summary>
+    public record LinearOrderQueryRes(string OrderId, long UserId, LinearSymbol Symbol, LinearSide Side, LinearOrderType OrderType,
+        decimal Price, decimal Qty, LinearTimeInForce TimeInForce, LinearOrderStatus OrderStatus, decimal LastExecPrice,
+        decimal CumExecQty, decimal CumExecValue, decimal CumExecFee, string OrderLinkId, bool ReduceOnly, bool CloseOnTrigger,
+        DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, decimal TakeProfit, decimal StopLoss, LinearTriggerPriceType TpTriggerBy,
+        LinearTriggerPriceType SlTriggerBy);
+
+    /// <summary>
+    /// Base type of the response for the 'Replace Active Order' API method.
+    /// </summary>
+    public record LinearOrderReplaceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, LinearOrderReplaceRes? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Replace Active Order' API method.
+    /// </summary>
+    public record LinearOrderReplaceRes(string OrderId);
+
+    /// <summary>
+    /// Base type of the response for the 'Change Margin' API method.
+    /// </summary>
+    public record LinearPositionsChangeMarginBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, LinearPositionsChangeMarginResBase? Result,
+        string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Wrapper data type of the response for the Change Margin' API method.
+    /// </summary>
+    public record LinearPositionsChangeMarginResBase(LinearPositionsChangeMarginRes PositionsListResult, decimal WalletBalance, decimal AvailableBalance);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Change Margin' API method.
+    /// </summary>
+    public record LinearPositionsChangeMarginRes(long UserId, LinearSymbol Symbol, LinearSide Side, decimal Size, decimal PositionValue, decimal EntryPrice,
+        decimal LiqPrice, decimal BustPrice, decimal Leverage, decimal PositionMargin, decimal OccClosingFee, decimal RealisedPnl, decimal CumRealizedPnl,
+        decimal FreeQty);
+
+    public record LinearPositionsClosePnlRecordsBase();
 }

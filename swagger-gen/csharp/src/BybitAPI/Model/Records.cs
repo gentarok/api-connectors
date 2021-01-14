@@ -184,26 +184,24 @@ namespace BybitAPI.Model
     /// ignore the 'exec_time' field because it is marked as 'abandoned' in the documentation.
     /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
     /// </remarks>
-    public record ExecutionGetTradesRes(int ClosedSize, long CrossSeq, decimal ExecFee, string ExecId, decimal ExecPrice, decimal ExecQty,
+    public record ExecutionGetTradesRes(decimal ClosedSize, long CrossSeq, decimal ExecFee, string ExecId, decimal ExecPrice, decimal ExecQty,
         ExecType ExecType, decimal ExecValue, decimal FeeRate, LiquidityType LastLiquidityInd, decimal LeavesQty, long NthFill, string OrderId,
         string OrderLinkId, decimal OrderPrice, decimal OrderQty, OrderType OrderType, Side Side, Symbol Symbol, int UserId, long TradeTimeMs);
 
     /// <summary>
     /// Base type of the response for the 'My Last Funding Fee' API method.
     /// </summary>
-    /// <remarks>
     public record FundingMyLastFeeBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingMyLastFeeRes? Result,
         string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
     /// <summary>
     /// Actual data type of the response for the 'My Last Funding Fee' API method.
     /// </summary>
-    public record FundingMyLastFeeRes(Symbol Symbol, Side Side, int Size, decimal FundingRate, decimal ExecFee, long ExecTimestamp);
+    public record FundingMyLastFeeRes(Symbol Symbol, Side Side, decimal Size, decimal FundingRate, decimal ExecFee, long ExecTimestamp);
 
     /// <summary>
     /// Base type of the response for the 'Predicted Funding Rate and My Funding Fee' API method.
     /// </summary>
-    /// <remarks>
     public record FundingPredictedBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingPredictedRes? Result,
         string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
@@ -215,7 +213,6 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Get the Last Funding Rate' API method.
     /// </summary>
-    /// <remarks>
     public record FundingPrevRateBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, FundingPrevRateRes? Result,
         string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
@@ -251,7 +248,6 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Long-Short Ratio' API method.
     /// </summary>
-    /// <remarks>
     public record MarketAccountRatioBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
         IReadOnlyList<MarketAccountRatioRes>? Result, string TimeNow);
 
@@ -296,19 +292,17 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Open Interest' API method.
     /// </summary>
-    /// <remarks>
     public record MarketOrderbookBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
         IReadOnlyList<MarketOrderbookRes>? Result, string TimeNow);
 
     /// <summary>
     /// Actual data type of the response for the 'Open Interest' API method.
     /// </summary>
-    public record MarketOrderbookRes(Symbol Symbol, decimal Price, int Size, Side Side);
+    public record MarketOrderbookRes(Symbol Symbol, decimal Price, decimal Size, Side Side);
 
     /// <summary>
     /// Base type of the response for the 'Latest Information for Symbol' API method.
     /// </summary>
-    /// <remarks>
     public record MarketSymbolInfoBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
         IReadOnlyList<MarketSymbolInfokRes>? Result, string TimeNow);
 
@@ -325,7 +319,6 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Public Trading Records' API method.
     /// </summary>
-    /// <remarks>
     public record MarketTradingRecordsBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
         IReadOnlyList<MarketTradingRecordsRes>? Result, string TimeNow);
 
@@ -337,7 +330,6 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Cancel Active Order' API method.
     /// </summary>
-    /// <remarks>
     public record OrderCancelBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, OrderCancelRes? Result,
         string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
@@ -368,7 +360,6 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Get Active Order' API method.
     /// </summary>
-    /// <remarks>
     public record OrderGetOrdersBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
         OrderGetOrdersListBase? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
@@ -415,7 +406,7 @@ namespace BybitAPI.Model
     /// </summary>
     public record OrderQueryRes(long UserId, Symbol Symbol, Side Side, OrderType OrderType, decimal Price, decimal Qty,
         TimeInForce TimeInForce, OrderStatus OrderStatus, OrderQueryExtFields ExtFields, double LastExecTime, decimal LeavesQty,
-        decimal LeavesValue, decimal? CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason, CancelType CancelType,
+        decimal LeavesValue, decimal CumExecQty, decimal? CumExecValue, decimal? CumExecFee, string? RejectReason, CancelType CancelType,
         string OrderLinkId, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, string OrderId);
 
     /// <summary>
@@ -441,7 +432,6 @@ namespace BybitAPI.Model
     /// <summary>
     /// Base type of the response for the 'Change Margin' API method.
     /// </summary>
-    /// <remarks>
     public record PositionsChangeMarginBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, decimal? Result, string TimeNow,
         int RateLimitStatus, long RateLimitResetMs, int RateLimit);
 
@@ -464,7 +454,7 @@ namespace BybitAPI.Model
     /// 'created_at' is a UNIX timestamp in seconds. not a datetime string. omg. Inconsistent naming!
     /// </remarks>
     public record PositionsClosePnlRes(long Id, long UserId, Symbol Symbol, string OrderId, Side Side, decimal Qty, decimal OrderPrice,
-        OrderType OrderType, ExecType ExecType, int ClosedSize, decimal CumEntryValue, decimal AvgEntryPrice, decimal CumExitValue,
+        OrderType OrderType, ExecType ExecType, decimal ClosedSize, decimal CumEntryValue, decimal AvgEntryPrice, decimal CumExitValue,
         decimal AvgExitPrice, decimal ClosedPnl, int FillCount, decimal Leverage, long CreatedAt);
 
     /// <summary>
@@ -482,7 +472,7 @@ namespace BybitAPI.Model
     /// Actual data type of the response for the 'My Position' API method.
     /// </summary>
     public record PositionsMyPositionRes(long Id, int PositionIdx, int Mode, long UserId, long RiskId, Symbol Symbol, Side Side,
-        int Size, decimal PositionValue, decimal EntryPrice, bool IsIsolated, int AutoAddMargin, decimal Leverage,
+        decimal Size, decimal PositionValue, decimal EntryPrice, bool IsIsolated, int AutoAddMargin, decimal Leverage,
         decimal EffectiveLeverage, decimal PositionMargin, decimal LiqPrice, decimal BustPrice, decimal OccClosingFee,
         decimal OccFundingFee, decimal TakeProfit, decimal StopLoss, decimal TrailingStop, PositionStatus PositionStatus,
         int DeleverageIndicator, string OcCalcData, decimal OrderMargin, decimal WalletBalance, decimal RealisedPnl,
@@ -503,7 +493,7 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Set Trading-Stop' API method.
     /// </summary>
-    public record PositionsTradingStopRes(long Id, long UserId, Symbol Symbol, Side Side, int Size, decimal PositionValue,
+    public record PositionsTradingStopRes(long Id, long UserId, Symbol Symbol, Side Side, decimal Size, decimal PositionValue,
         decimal EntryPrice, long RiskId, int AutoAddMargin, decimal Leverage, decimal PositionMargin, decimal LiqPrice, decimal BustPrice,
         decimal OccClosingFee, decimal OccFundingFee, decimal TakeProfit, decimal StopLoss, decimal TrailingStop, PositionStatus PositionStatus,
         int DeleverageIndicator, string OcCalcData, decimal OrderMargin, decimal WalletBalance, decimal RealisedPnl, decimal CumRealisedPnl,
@@ -622,7 +612,7 @@ namespace BybitAPI.Model
     /// <summary>
     /// Internal data type of the response for the 'Set Risk Limit' API method.
     /// </summary>
-    public record WalletSetRiskLimitResPosition(long Id, long UserId, Symbol Symbol, Side Side, int Size, decimal PositionValue,
+    public record WalletSetRiskLimitResPosition(long Id, long UserId, Symbol Symbol, Side Side, decimal Size, decimal PositionValue,
         decimal EntryPrice, long RiskId, decimal AutoAddMargin, decimal Leverage, decimal PositionMargin, decimal LiqPrice,
         decimal BustPrice, decimal OccClosingFee, decimal OccFundingFee, decimal TakeProfit, decimal StopLoss, decimal TrailingStop,
         PositionStatus PositionStatus, int DeleverageIndicator, string OcCalcData, decimal OrderMargin, decimal WalletBalance,

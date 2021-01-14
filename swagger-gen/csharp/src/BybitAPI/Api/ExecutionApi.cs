@@ -149,9 +149,7 @@ namespace BybitAPI.Api
         #endregion Asynchronous Operations
     }
 
-    /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
-    /// </summary>
+    /// <inheritdoc/>
     public partial class ExecutionApi : ApiBase, IExecutionApi
     {
         private const int ExecutionGetTradesPageMaxValue = 50;
@@ -159,51 +157,17 @@ namespace BybitAPI.Api
         //private const int PositionsClosePnlRecordsPageMaxValue = 50;
         //private const int PositionsClosePnlRecordsLimitMaxValue = 50;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExecutionApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public ExecutionApi(string basePath) : base(basePath) { }
+        public ExecutionApi(string basePath) : base(basePath)
+        {
+        }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExecutionApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public ExecutionApi(Configuration? configuration = null) : base(configuration) { }
+        public ExecutionApi(Configuration? configuration = null) : base(configuration)
+        {
+        }
 
-        /// <summary>
-        /// Get user’s trade records.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
-        /// <param name="startTime">Start timestamp point for result. (optional)</param>
-        /// <param name="page">Page. Default getting first page data. (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 200. Default as showing 50 pieces of data per page. (optional)</param>
-        /// <param name="order">Sort orders by creation date. (optional)</param>
-        /// <returns><see cref="ExecutionGetTradesBase"/></returns>
         public ExecutionGetTradesBase ExecutionGetTrades(Symbol symbol, string? orderId = null, long? startTime = null, int? page = null, int? limit = null, Order? order = null)
             => ExecutionGetTradesWithHttpInfo(symbol, orderId, startTime, page, limit, order).Data;
 
-        /// <summary>
-        /// Get user’s trade records.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
-        /// <param name="startTime">Start timestamp point for result. (optional)</param>
-        /// <param name="page">Page. Default getting first page data. (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 200. Default as showing 50 pieces of data per page. (optional)</param>
-        /// <param name="order">Sort orders by creation date. (optional)</param>
-        /// <returns>ApiResponse of ExecutionGetTradesBase</returns>
         public ApiResponse<ExecutionGetTradesBase> ExecutionGetTradesWithHttpInfo(Symbol symbol, string? orderId = null, long? startTime = null, int? page = null, int? limit = null, Order? order = null)
         {
             // verify the parameter 'page'
@@ -254,37 +218,9 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ExecutionGetTradesBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        /// <summary>
-        /// Get user’s trade records.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
-        /// <param name="startTime">Start timestamp point for result. (optional)</param>
-        /// <param name="page">Page. Default getting first page data. (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 200. Default as showing 50 pieces of data per page. (optional)</param>
-        /// <param name="order">Sort orders by creation date. (optional)</param>
-        /// <returns>Task of ExecutionGetTradesBase</returns>
         public async Task<ExecutionGetTradesBase> ExecutionGetTradesAsync(Symbol symbol, string? orderId = null, long? startTime = null, int? page = null, int? limit = null, Order? order = null)
             => (await ExecutionGetTradesAsyncWithHttpInfo(symbol, orderId, startTime, page, limit, order)).Data;
 
-        /// <summary>
-        /// Get user’s trade records.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
-        /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
-        /// <param name="startTime">Start timestamp point for result. (optional)</param>
-        /// <param name="page">Page. Default getting first page data. (optional)</param>
-        /// <param name="limit">Limit for data size per page, max size is 200. Default as showing 50 pieces of data per page. (optional)</param>
-        /// <param name="order">Sort orders by creation date. (optional)</param>
-        /// <returns>Task of ApiResponse (ExecutionGetTradesBase)</returns>
         public Task<ApiResponse<ExecutionGetTradesBase>> ExecutionGetTradesAsyncWithHttpInfo(Symbol symbol, string? orderId = null, long? startTime = null, int? page = null, int? limit = null, Order? order = null)
         {
             // verify the parameter 'page'
@@ -335,37 +271,9 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ExecutionGetTradesBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        ///// <summary>
-        ///// Get user&#39;s closed profit and loss records
-        ///// </summary>
-        ///// <remarks>
-        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        ///// </remarks>
-        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        ///// <param name="symbol">Contract type</param>
-        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        ///// <param name="execType">Execution type (optional)</param>
-        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        ///// <returns><see cref="PositionsClosePnlBase"/></returns>
         //public PositionsClosePnlBase PositionsClosePnlRecords(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
         //    => PositionsClosePnlRecordsWithHttpInfo(symbol, startTime, endTime, execType, page, limit).Data;
 
-        ///// <summary>
-        ///// Get user&#39;s closed profit and loss records
-        ///// </summary>
-        ///// <remarks>
-        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        ///// </remarks>
-        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        ///// <param name="symbol">Contract type</param>
-        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        ///// <param name="execType">Execution type (optional)</param>
-        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        ///// <returns>ApiResponse of PositionsClosePnlBase</returns>
         //public ApiResponse<PositionsClosePnlBase> PositionsClosePnlRecordsWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
         //{
         //    // verify the parameter 'page'
@@ -421,37 +329,9 @@ namespace BybitAPI.Api
         //    return CallApiWithHttpInfo<PositionsClosePnlBase>(localVarPath, Method.GET, localVarQueryParams);
         //}
 
-        ///// <summary>
-        ///// Get user&#39;s closed profit and loss records
-        ///// </summary>
-        ///// <remarks>
-        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        ///// </remarks>
-        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        ///// <param name="symbol">Contract type</param>
-        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        ///// <param name="execType">Execution type (optional)</param>
-        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        ///// <returns>Task of PositionsClosePnlBase</returns>
         //public async Task<PositionsClosePnlBase> PositionsClosePnlRecordsAsync(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
         //    => (await PositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit)).Data;
 
-        ///// <summary>
-        ///// Get user&#39;s closed profit and loss records
-        ///// </summary>
-        ///// <remarks>
-        ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
-        ///// </remarks>
-        ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        ///// <param name="symbol">Contract type</param>
-        ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
-        ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
-        ///// <param name="execType">Execution type (optional)</param>
-        ///// <param name="page">Page. By default, gets first page of data. Maximum of 50 pages (optional)</param>
-        ///// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
-        ///// <returns>Task of ApiResponse (PositionsClosePnlBase)</returns>
         //public Task<ApiResponse<PositionsClosePnlBase>> PositionsClosePnlRecordsAsyncWithHttpInfo(Symbol symbol, long? startTime = null, long? endTime = null, ExecType? execType = null, int? page = null, int? limit = null)
         //{
         //    // verify the parameter 'page'
