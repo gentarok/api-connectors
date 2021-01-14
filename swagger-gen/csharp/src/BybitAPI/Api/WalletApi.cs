@@ -491,7 +491,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletGetRecordsBase");
             }
 
-            var localVarPath = "/open-api/wallet/fund/records";
+            var localVarPath = "/v2/private/wallet/fund/records";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             if (startDate is not null)
@@ -547,7 +547,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletGetRecordsBase");
             }
 
-            var localVarPath = "/open-api/wallet/fund/records";
+            var localVarPath = "/v2/private/wallet/fund/records";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             if (startDate is not null)
@@ -689,7 +689,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletWithdraw");
             }
 
-            var localVarPath = "/open-api/wallet/withdraw/list";
+            var localVarPath = "/v2/private/wallet/withdraw/list";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             if (startDate is not null)
@@ -745,7 +745,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "Validation error on 'limit' parameter occured when calling WalletApi->WalletWithdraw");
             }
 
-            var localVarPath = "/open-api/wallet/withdraw/list";
+            var localVarPath = "/open-api/wallet/withdraw/list/v2/private/wallet/withdraw/list";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             if (startDate is not null)

@@ -12,8 +12,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'API Key Info' API method.
     /// </summary>
-    public record APIKeyInfoRes(string ApiKey, long UserId, IReadOnlyList<string> Ips, string Note, IReadOnlyList<string> Permissions,
-        DateTimeOffset CreatedAt, bool ReadOnly);
+    public record APIKeyInfoRes(string ApiKey, string Type, long UserId, IReadOnlyList<string> Ips, string Note, IReadOnlyList<string> Permissions,
+        DateTimeOffset CreatedAt, DateTimeOffset ExpiredAt, bool ReadOnly);
 
     /// <summary>
     /// Base type of the response for the 'Announcement' API method.

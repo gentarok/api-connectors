@@ -77,7 +77,7 @@ namespace BybitAPI.Api
 
         public ApiResponse<APIKeyInfoBase> APIkeyInfoWithHttpInfo()
         {
-            var localVarPath = "/open-api/api-key";
+            var localVarPath = "/v2/private/account/api-key";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             // authentication (timestamp) required
@@ -97,7 +97,7 @@ namespace BybitAPI.Api
 
         public Task<ApiResponse<APIKeyInfoBase>> APIkeyInfoAsyncWithHttpInfo()
         {
-            var localVarPath = "/open-api/api-key";
+            var localVarPath = "/v2/private/account/api-key";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             // authentication (timestamp) required
