@@ -28,7 +28,18 @@ namespace BybitAPI.IntegrationTest
 
             // Act
             //var response1 = instance.WalletGetRecords(new System.DateTimeOffset(2021, 1, 1, 0, 0, 0, System.TimeSpan.FromHours(9)));
-            var response1 = instance.WalletGetRecords(new System.DateTimeOffset(2021, 1, 1, 0, 0, 0, System.TimeSpan.FromHours(9)));
+            //var response1 = instance.WalletGetRecords(new System.DateTimeOffset(2021, 1, 1, 0, 0, 0, System.TimeSpan.FromHours(9)));
+            //var response1 = instance.WalletGetRiskLimit();
+
+            // Prepeare configurations to test.
+            //var configuration = new Configuration
+            //{
+            //    BasePath = TestUtil.TESTNET_URI
+            //};
+            //configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
+            //configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());
+            //var obj = new LinearWalletApi(configuration);
+            //obj.LinearWalletGetRiskLimit(Model.LinearSymbol.ETHUSDT);
 
             // Assert
             Assert.Fail();

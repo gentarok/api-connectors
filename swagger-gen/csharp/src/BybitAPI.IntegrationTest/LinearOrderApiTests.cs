@@ -32,5 +32,22 @@ namespace BybitAPI.IntegrationTest
             // Assert
             Assert.Fail();
         }
+
+        //[Test]
+        //public void Test1()
+        //{
+        //    // Prepeare configurations to test.
+        //    var configuration = new Configuration
+        //    {
+        //        BasePath = TestUtil.TESTNET_URI
+        //    };
+        //    configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
+        //    configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());
+        //    var obj = new LinearPositionsApi(configuration);
+
+        //    obj.LinearPositionsSaveLeverage(Model.LinearSymbol.BTCUSDT, 2.5m, 3.5m);
+
+        //    Assert.Fail();
+        //}
     }
 }

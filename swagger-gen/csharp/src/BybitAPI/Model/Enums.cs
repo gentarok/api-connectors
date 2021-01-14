@@ -43,6 +43,14 @@
     /// </remarks>
     public enum Currency
     {
+        /// <summary>
+        /// Value for Test?
+        /// </summary>
+        /// <remarks>
+        /// Undocumented, but "/open-api/wallet/risk-limit/list" API returns this value on the TEST-NET.
+        /// </remarks>
+        TEST,
+
         BTC,
         ETH,
         EOS,

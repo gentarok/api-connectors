@@ -647,6 +647,6 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'Withdraw Records' API method.
     /// </summary>
-    public record WalletWithdrawRes(long Id, long UserId, Currency coin, WithdrawStatus Status, decimal Amount, decimal Fee,
+    public record WalletWithdrawRes(long Id, long UserId, Currency Coin, WithdrawStatus Status, decimal Amount, decimal Fee,
         string Address, string TxId, DateTimeOffset SubmitedAt, DateTimeOffset UpdatedAt);
 }

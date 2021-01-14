@@ -1177,7 +1177,7 @@ namespace BybitAPI.Api.Test
             // Act
             var ex = Assert.ThrowsAsync<ApiException>(async () =>
             {
-                var response = instance.LinearConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
+                var response = await instance.LinearConditionalReplaceAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId, pRQty, pRPrice, pRTriggerPrice);
             });
 
             // Assert

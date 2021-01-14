@@ -23,7 +23,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-addmargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Symbol</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="side">Side</param>
         /// <param name="margin">Add/Remove how much margin: Increase 10; decrease -10, supports 4 decimal places</param>
         /// <returns><see cref="LinearPositionsChangeMarginBase"/></returns>
@@ -37,7 +37,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-addmargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Symbol</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="side">Side</param>
         /// <param name="margin">Add/Remove how much margin: Increase 10; decrease -10, supports 4 decimal places</param>
         /// <returns>ApiResponse of LinearPositionsChangeMarginBase</returns>
@@ -51,7 +51,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-closedprofitandloss"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Symbol</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="startTime">Start timestamp point for result, in seconds</param>
         /// <param name="endTime">End timestamp point for result, in seconds</param>
         /// <param name="execType">Execution type</param>
@@ -68,7 +68,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-closedprofitandloss"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Symbol</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="startTime">Start timestamp point for result, in seconds</param>
         /// <param name="endTime">End timestamp point for result, in seconds</param>
         /// <param name="execType">Execution type</param>
@@ -82,164 +82,198 @@ namespace BybitAPI.Api
         /// </summary>
         /// <remarks>
         /// This will get my position list.
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-myposition"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <returns>Object</returns>
-        object LinearPositionsMyPosition(string symbol = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <returns>LinearPositionsMyPositionBase of List (LinearPositionsMyPositionRes)</returns>
+        LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>> LinearPositionsMyPosition(LinearSymbol symbol);
 
         /// <summary>
         /// Get my position list.
         /// </summary>
         /// <remarks>
         /// This will get my position list.
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-myposition"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> LinearPositionsMyPositionWithHttpInfo(string symbol = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <returns>ApiResponse of LinearPositionsMyPositionBase (List of LinearPositionsMyPositionRes)</returns>
+        ApiResponse<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>>> LinearPositionsMyPositionWithHttpInfo(LinearSymbol symbol);
+
+        /// <summary>
+        /// Get my position list.
+        /// </summary>
+        /// <remarks>
+        /// This will get my position list.
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-myposition"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <returns>LinearPositionsMyPositionBase of List (LinearPositionsMyPositionResBase)</returns>
+        LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>> LinearPositionsMyPosition();
+
+        /// <summary>
+        /// Get my position list.
+        /// </summary>
+        /// <remarks>
+        /// This will get my position list.
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-myposition"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of LinearPositionsMyPositionBase (List of LinearPositionsMyPositionResBase)</returns>
+        ApiResponse<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>>> LinearPositionsMyPositionWithHttpInfo();
 
         /// <summary>
         /// Set leverage
         /// </summary>
         /// <remarks>
         /// This will Set Leverage
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-setleverage"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="buyLeverage"> (optional)</param>
-        /// <param name="sellLeverage"> (optional)</param>
-        /// <returns>Object</returns>
-        object LinearPositionsSaveLeverage(string symbol = null, double? buyLeverage = null, double? sellLeverage = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/> (optional)</param>
+        /// <param name="buyLeverage">Must be greater than 0 and less than the risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <param name="sellLeverage">Must be greater than 0 and less than the risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <returns><see cref="LinearPositionsSaveLeverageBase"/></returns>
+        LinearPositionsSaveLeverageBase LinearPositionsSaveLeverage(LinearSymbol symbol, decimal buyLeverage, decimal sellLeverage);
 
         /// <summary>
         /// Set leverage
         /// </summary>
         /// <remarks>
         /// This will Set Leverage
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-setleverage"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="buyLeverage"> (optional)</param>
-        /// <param name="sellLeverage"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> LinearPositionsSaveLeverageWithHttpInfo(string symbol = null, double? buyLeverage = null, double? sellLeverage = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/> (optional)</param>
+        /// <param name="buyLeverage">Must be greater than 0 and less than the risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <param name="sellLeverage">Must be greater than 0 and less than the risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <returns>ApiResponse of LinearPositionsSaveLeverageBase</returns>
+        ApiResponse<LinearPositionsSaveLeverageBase> LinearPositionsSaveLeverageWithHttpInfo(LinearSymbol symbol, decimal buyLeverage, decimal sellLeverage);
 
         /// <summary>
         /// Set auto add margin
         /// </summary>
         /// <remarks>
         /// This will Set auto add margin
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-setautoaddmargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="side"> (optional)</param>
-        /// <param name="autoAddMargin"> (optional)</param>
-        /// <returns>Object</returns>
-        object LinearPositionsSetAutoAddMargin(string symbol = null, string side = null, bool? autoAddMargin = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="side"><see cref="LinearSide"/></param>
+        /// <param name="autoAddMargin">Auto add margin button</param>
+        /// <returns><see cref="LinearPositionsSetAutoAddMarginBase"/></returns>
+        LinearPositionsSetAutoAddMarginBase LinearPositionsSetAutoAddMargin(LinearSymbol symbol, LinearSide side, bool autoAddMargin);
 
         /// <summary>
         /// Set auto add margin
         /// </summary>
         /// <remarks>
         /// This will Set auto add margin
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-setautoaddmargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="side"> (optional)</param>
-        /// <param name="autoAddMargin"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> LinearPositionsSetAutoAddMarginWithHttpInfo(string symbol = null, string side = null, bool? autoAddMargin = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="side"><see cref="LinearSide"/></param>
+        /// <param name="autoAddMargin">Auto add margin button</param>
+        /// <returns>ApiResponse of LinearPositionsSetAutoAddMarginBase</returns>
+        ApiResponse<LinearPositionsSetAutoAddMarginBase> LinearPositionsSetAutoAddMarginWithHttpInfo(LinearSymbol symbol, LinearSide side, bool autoAddMargin);
 
         /// <summary>
         /// Switch isolated
         /// </summary>
         /// <remarks>
         /// This will switch isolated
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-marginswitch"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="isIsolated"> (optional)</param>
-        /// <param name="buyLeverage"> (optional)</param>
-        /// <param name="sellLeverage"> (optional)</param>
-        /// <returns>Object</returns>
-        object LinearPositionsSwitchIsolated(string symbol = null, bool? isIsolated = null, double? buyLeverage = null, double? sellLeverage = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="isIsolated">Cross/Isolated: true is Isolated; false is Cross</param>
+        /// <param name="buyLeverage">Must be greater than 0 and less than the  risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <param name="sellLeverage">Must be greater than 0 and less than the  risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <returns><see cref="LinearPositionsSwitchIsolatedBase"/></returns>
+        LinearPositionsSwitchIsolatedBase LinearPositionsSwitchIsolated(LinearSymbol symbol, bool isIsolated, decimal buyLeverage, decimal sellLeverage);
 
         /// <summary>
         /// Switch isolated
         /// </summary>
         /// <remarks>
         /// This will switch isolated
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-marginswitch"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="isIsolated"> (optional)</param>
-        /// <param name="buyLeverage"> (optional)</param>
-        /// <param name="sellLeverage"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> LinearPositionsSwitchIsolatedWithHttpInfo(string symbol = null, bool? isIsolated = null, double? buyLeverage = null, double? sellLeverage = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="isIsolated">Cross/Isolated: true is Isolated; false is Cross</param>
+        /// <param name="buyLeverage">Must be greater than 0 and less than the  risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <param name="sellLeverage">Must be greater than 0 and less than the  risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <returns>ApiResponse of LinearPositionsSwitchIsolatedBase</returns>
+        ApiResponse<LinearPositionsSwitchIsolatedBase> LinearPositionsSwitchIsolatedWithHttpInfo(LinearSymbol symbol, bool isIsolated, decimal buyLeverage, decimal sellLeverage);
 
         /// <summary>
         /// Switch Mode
         /// </summary>
         /// <remarks>
         /// This will Switch TP/SL Mode
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="tpSlMode"> (optional)</param>
-        /// <returns>Object</returns>
-        object LinearPositionsSwitchMode(string symbol = null, string tpSlMode = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="tpSlMode"><see cref="LinearTpSlModeType"/></param>
+        /// <returns><see cref="LinearPositionsSwitchModeBase"/></returns>
+        LinearPositionsSwitchModeBase LinearPositionsSwitchMode(LinearSymbol symbol, LinearTpSlModeType tpSlMode);
 
         /// <summary>
         /// Switch Mode
         /// </summary>
         /// <remarks>
         /// This will Switch TP/SL Mode
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="tpSlMode"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> LinearPositionsSwitchModeWithHttpInfo(string symbol = null, string tpSlMode = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="tpSlMode"><see cref="LinearTpSlModeType"/></param>
+        /// <returns>ApiResponse of LinearPositionsSwitchModeBase</returns>
+        ApiResponse<LinearPositionsSwitchModeBase> LinearPositionsSwitchModeWithHttpInfo(LinearSymbol symbol, LinearTpSlModeType tpSlMode);
 
         /// <summary>
         /// Set tradingStop
         /// </summary>
         /// <remarks>
         /// This will set tradingStop
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-tradingstop"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="side"> (optional)</param>
-        /// <param name="takeProfit"> (optional)</param>
-        /// <param name="stopLoss"> (optional)</param>
-        /// <param name="trailingStop"> (optional)</param>
-        /// <param name="tpTriggerBy"> (optional)</param>
-        /// <param name="slTriggerBy"> (optional)</param>
-        /// <param name="slSize"> (optional)</param>
-        /// <param name="tpSize"> (optional)</param>
-        /// <returns>Object</returns>
-        object LinearPositionsTradingStop(string symbol = null, string side = null, double? takeProfit = null, double? stopLoss = null, double? trailingStop = null, string tpTriggerBy = null, string slTriggerBy = null, double? slSize = null, double? tpSize = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="side"><see cref="LinearSide"/></param>
+        /// <param name="takeProfit">Cannot be less than 0, 0 means cancel TP. (optional)</param>
+        /// <param name="stopLoss">Cannot be less than 0, 0 means cancel SL. (optional)</param>
+        /// <param name="trailingStop">Cannot be less than 0, 0 means cancel TS. (optional)</param>
+        /// <param name="tpTriggerBy"><see cref="LinearTriggerPriceType"/>, default: <see cref="LinearTriggerPriceType.LastPrice"/>(optional)</param>
+        /// <param name="slTriggerBy"><see cref="LinearTriggerPriceType"/>, default: <see cref="LinearTriggerPriceType.LastPrice"/>(optional)</param>
+        /// <param name="slSize">Stop loss quantity (when in partial mode) <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/> (optional)</param>
+        /// <param name="tpSize">Take profit quantity (when in partial mode) <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/> (optional)</param>
+        /// <returns><see cref="LinearPositionsTradingStopBase"/></returns>
+        LinearPositionsTradingStopBase LinearPositionsTradingStop(LinearSymbol symbol, LinearSide side, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null, decimal? slSize = null, decimal? tpSize = null);
 
         /// <summary>
         /// Set tradingStop
         /// </summary>
         /// <remarks>
         /// This will set tradingStop
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-tradingstop"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="side"> (optional)</param>
-        /// <param name="takeProfit"> (optional)</param>
-        /// <param name="stopLoss"> (optional)</param>
-        /// <param name="trailingStop"> (optional)</param>
-        /// <param name="tpTriggerBy"> (optional)</param>
-        /// <param name="slTriggerBy"> (optional)</param>
-        /// <param name="slSize"> (optional)</param>
-        /// <param name="tpSize"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<object> LinearPositionsTradingStopWithHttpInfo(string symbol = null, string side = null, double? takeProfit = null, double? stopLoss = null, double? trailingStop = null, string tpTriggerBy = null, string slTriggerBy = null, double? slSize = null, double? tpSize = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="side"><see cref="LinearSide"/></param>
+        /// <param name="takeProfit">Cannot be less than 0, 0 means cancel TP. (optional)</param>
+        /// <param name="stopLoss">Cannot be less than 0, 0 means cancel SL. (optional)</param>
+        /// <param name="trailingStop">Cannot be less than 0, 0 means cancel TS. (optional)</param>
+        /// <param name="tpTriggerBy"><see cref="LinearTriggerPriceType"/>, default: <see cref="LinearTriggerPriceType.LastPrice"/>(optional)</param>
+        /// <param name="slTriggerBy"><see cref="LinearTriggerPriceType"/>, default: <see cref="LinearTriggerPriceType.LastPrice"/>(optional)</param>
+        /// <param name="slSize">Stop loss quantity (when in partial mode) <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/> (optional)</param>
+        /// <param name="tpSize">Take profit quantity (when in partial mode) <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/> (optional)</param>
+        /// <returns>ApiResponse of LinearPositionsTradingStopBase</returns>
+        ApiResponse<LinearPositionsTradingStopBase> LinearPositionsTradingStopWithHttpInfo(LinearSymbol symbol, LinearSide side, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null, decimal? slSize = null, decimal? tpSize = null);
 
         #endregion Synchronous Operations
 
@@ -253,7 +287,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-addmargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Symbol</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="side">Side</param>
         /// <param name="margin">Add/Remove how much margin: Increase 10; decrease -10, supports 4 decimal places</param>
         /// <returns>Task of LinearPositionsChangeMarginBase</returns>
@@ -267,7 +301,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-addmargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Symbol</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="side">Side</param>
         /// <param name="margin">Add/Remove how much margin: Increase 10; decrease -10, supports 4 decimal places</param>
         /// <returns>Task of ApiResponse (LinearPositionsChangeMarginBase)</returns>
@@ -281,7 +315,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-closedprofitandloss"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Symbol</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="startTime">Start timestamp point for result, in seconds</param>
         /// <param name="endTime">End timestamp point for result, in seconds</param>
         /// <param name="execType">Execution type</param>
@@ -298,7 +332,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-closedprofitandloss"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Symbol</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="startTime">Start timestamp point for result, in seconds</param>
         /// <param name="endTime">End timestamp point for result, in seconds</param>
         /// <param name="execType">Execution type</param>
@@ -312,164 +346,198 @@ namespace BybitAPI.Api
         /// </summary>
         /// <remarks>
         /// This will get my position list.
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-myposition"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> LinearPositionsMyPositionAsync(string symbol = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <returns>Task of LinearPositionsMyPositionBase (List of LinearPositionsMyPositionRes)</returns>
+        Task<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>>> LinearPositionsMyPositionAsync(LinearSymbol symbol);
 
         /// <summary>
         /// Get my position list.
         /// </summary>
         /// <remarks>
         /// This will get my position list.
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-myposition"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> LinearPositionsMyPositionAsyncWithHttpInfo(string symbol = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <returns>Task of ApiResponse (LinearPositionsMyPositionBase of List (LinearPositionsMyPositionRes))</returns>
+        Task<ApiResponse<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>>>> LinearPositionsMyPositionAsyncWithHttpInfo(LinearSymbol symbol);
+
+        /// <summary>
+        /// Get my position list.
+        /// </summary>
+        /// <remarks>
+        /// This will get my position list.
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-myposition"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of LinearPositionsMyPositionBase (List of LinearPositionsMyPositionResBase)</returns>
+        Task<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>>> LinearPositionsMyPositionAsync();
+
+        /// <summary>
+        /// Get my position list.
+        /// </summary>
+        /// <remarks>
+        /// This will get my position list.
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-myposition"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (LinearPositionsMyPositionBase of List (LinearPositionsMyPositionResBase))</returns>
+        Task<ApiResponse<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>>>> LinearPositionsMyPositionAsyncWithHttpInfo();
 
         /// <summary>
         /// Set leverage
         /// </summary>
         /// <remarks>
         /// This will Set Leverage
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-setleverage"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="buyLeverage"> (optional)</param>
-        /// <param name="sellLeverage"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> LinearPositionsSaveLeverageAsync(string symbol = null, double? buyLeverage = null, double? sellLeverage = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/> (optional)</param>
+        /// <param name="buyLeverage">Must be greater than 0 and less than the risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <param name="sellLeverage">Must be greater than 0 and less than the risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <returns>Task of LinearPositionsSaveLeverageBase</returns>
+        Task<LinearPositionsSaveLeverageBase> LinearPositionsSaveLeverageAsync(LinearSymbol symbol, decimal buyLeverage, decimal sellLeverage);
 
         /// <summary>
         /// Set leverage
         /// </summary>
         /// <remarks>
         /// This will Set Leverage
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-setleverage"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="buyLeverage"> (optional)</param>
-        /// <param name="sellLeverage"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> LinearPositionsSaveLeverageAsyncWithHttpInfo(string symbol = null, double? buyLeverage = null, double? sellLeverage = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/> (optional)</param>
+        /// <param name="buyLeverage">Must be greater than 0 and less than the risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <param name="sellLeverage">Must be greater than 0 and less than the risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <returns>Task of ApiResponse (LinearPositionsSaveLeverageBase)</returns>
+        Task<ApiResponse<LinearPositionsSaveLeverageBase>> LinearPositionsSaveLeverageAsyncWithHttpInfo(LinearSymbol symbol, decimal buyLeverage, decimal sellLeverage);
 
         /// <summary>
         /// Set auto add margin
         /// </summary>
         /// <remarks>
         /// This will Set auto add margin
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-setautoaddmargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="side"> (optional)</param>
-        /// <param name="autoAddMargin"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> LinearPositionsSetAutoAddMarginAsync(string symbol = null, string side = null, bool? autoAddMargin = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="side"><see cref="LinearSide"/></param>
+        /// <param name="autoAddMargin">Auto add margin button</param>
+        /// <returns>Task of LinearPositionsSetAutoAddMarginBase</returns>
+        Task<LinearPositionsSetAutoAddMarginBase> LinearPositionsSetAutoAddMarginAsync(LinearSymbol symbol, LinearSide side, bool autoAddMargin);
 
         /// <summary>
         /// Set auto add margin
         /// </summary>
         /// <remarks>
         /// This will Set auto add margin
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-setautoaddmargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="side"> (optional)</param>
-        /// <param name="autoAddMargin"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> LinearPositionsSetAutoAddMarginAsyncWithHttpInfo(string symbol = null, string side = null, bool? autoAddMargin = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="side"><see cref="LinearSide"/></param>
+        /// <param name="autoAddMargin">Auto add margin button</param>
+        /// <returns>Task of ApiResponse (LinearPositionsSetAutoAddMarginBase)</returns>
+        Task<ApiResponse<LinearPositionsSetAutoAddMarginBase>> LinearPositionsSetAutoAddMarginAsyncWithHttpInfo(LinearSymbol symbol, LinearSide side, bool autoAddMargin);
 
         /// <summary>
         /// Switch isolated
         /// </summary>
         /// <remarks>
         /// This will switch isolated
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-marginswitch"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="isIsolated"> (optional)</param>
-        /// <param name="buyLeverage"> (optional)</param>
-        /// <param name="sellLeverage"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> LinearPositionsSwitchIsolatedAsync(string symbol = null, bool? isIsolated = null, double? buyLeverage = null, double? sellLeverage = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="isIsolated">Cross/Isolated: true is Isolated; false is Cross</param>
+        /// <param name="buyLeverage">Must be greater than 0 and less than the  risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <param name="sellLeverage">Must be greater than 0 and less than the  risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <returns>Task of LinearPositionsSwitchIsolatedBase</returns>
+        Task<LinearPositionsSwitchIsolatedBase> LinearPositionsSwitchIsolatedAsync(LinearSymbol symbol, bool isIsolated, decimal buyLeverage, decimal sellLeverage);
 
         /// <summary>
         /// Switch isolated
         /// </summary>
         /// <remarks>
         /// This will switch isolated
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-marginswitch"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="isIsolated"> (optional)</param>
-        /// <param name="buyLeverage"> (optional)</param>
-        /// <param name="sellLeverage"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> LinearPositionsSwitchIsolatedAsyncWithHttpInfo(string symbol = null, bool? isIsolated = null, double? buyLeverage = null, double? sellLeverage = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="isIsolated">Cross/Isolated: true is Isolated; false is Cross</param>
+        /// <param name="buyLeverage">Must be greater than 0 and less than the  risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <param name="sellLeverage">Must be greater than 0 and less than the  risk limit leverage.<see cref="https://help.bybit.com/hc/en-us/articles/360039749753-What-is-Risk-Limit-What-effect-does-the-Risk-Limit-have-on-Margin-Inverse-Contract-"/></param>
+        /// <returns>Task of ApiResponse (LinearPositionsSwitchIsolatedBase)</returns>
+        Task<ApiResponse<LinearPositionsSwitchIsolatedBase>> LinearPositionsSwitchIsolatedAsyncWithHttpInfo(LinearSymbol symbol, bool isIsolated, decimal buyLeverage, decimal sellLeverage);
 
         /// <summary>
         /// Switch Mode
         /// </summary>
         /// <remarks>
         /// This will Switch TP/SL Mode
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="tpSlMode"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> LinearPositionsSwitchModeAsync(string symbol = null, string tpSlMode = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="tpSlMode"><see cref="LinearTpSlModeType"/></param>
+        /// <returns>Task of LinearPositionsSwitchModeBase</returns>
+        Task<LinearPositionsSwitchModeBase> LinearPositionsSwitchModeAsync(LinearSymbol symbol, LinearTpSlModeType tpSlMode);
 
         /// <summary>
         /// Switch Mode
         /// </summary>
         /// <remarks>
         /// This will Switch TP/SL Mode
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="tpSlMode"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> LinearPositionsSwitchModeAsyncWithHttpInfo(string symbol = null, string tpSlMode = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="tpSlMode"><see cref="LinearTpSlModeType"/></param>
+        /// <returns>Task of ApiResponse (LinearPositionsSwitchModeBase)</returns>
+        Task<ApiResponse<LinearPositionsSwitchModeBase>> LinearPositionsSwitchModeAsyncWithHttpInfo(LinearSymbol symbol, LinearTpSlModeType tpSlMode);
 
         /// <summary>
         /// Set tradingStop
         /// </summary>
         /// <remarks>
         /// This will set tradingStop
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-tradingstop"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="side"> (optional)</param>
-        /// <param name="takeProfit"> (optional)</param>
-        /// <param name="stopLoss"> (optional)</param>
-        /// <param name="trailingStop"> (optional)</param>
-        /// <param name="tpTriggerBy"> (optional)</param>
-        /// <param name="slTriggerBy"> (optional)</param>
-        /// <param name="slSize"> (optional)</param>
-        /// <param name="tpSize"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<object> LinearPositionsTradingStopAsync(string symbol = null, string side = null, double? takeProfit = null, double? stopLoss = null, double? trailingStop = null, string tpTriggerBy = null, string slTriggerBy = null, double? slSize = null, double? tpSize = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="side"><see cref="LinearSide"/></param>
+        /// <param name="takeProfit">Cannot be less than 0, 0 means cancel TP. (optional)</param>
+        /// <param name="stopLoss">Cannot be less than 0, 0 means cancel SL. (optional)</param>
+        /// <param name="trailingStop">Cannot be less than 0, 0 means cancel TS. (optional)</param>
+        /// <param name="tpTriggerBy"><see cref="LinearTriggerPriceType"/>, default: <see cref="LinearTriggerPriceType.LastPrice"/>(optional)</param>
+        /// <param name="slTriggerBy"><see cref="LinearTriggerPriceType"/>, default: <see cref="LinearTriggerPriceType.LastPrice"/>(optional)</param>
+        /// <param name="slSize">Stop loss quantity (when in partial mode) <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/> (optional)</param>
+        /// <param name="tpSize">Take profit quantity (when in partial mode) <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/> (optional)</param>
+        /// <returns>Task of LinearPositionsTradingStopBase</returns>
+        Task<LinearPositionsTradingStopBase> LinearPositionsTradingStopAsync(LinearSymbol symbol, LinearSide side, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null, decimal? slSize = null, decimal? tpSize = null);
 
         /// <summary>
         /// Set tradingStop
         /// </summary>
         /// <remarks>
         /// This will set tradingStop
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-tradingstop"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (optional)</param>
-        /// <param name="side"> (optional)</param>
-        /// <param name="takeProfit"> (optional)</param>
-        /// <param name="stopLoss"> (optional)</param>
-        /// <param name="trailingStop"> (optional)</param>
-        /// <param name="tpTriggerBy"> (optional)</param>
-        /// <param name="slTriggerBy"> (optional)</param>
-        /// <param name="slSize"> (optional)</param>
-        /// <param name="tpSize"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<object>> LinearPositionsTradingStopAsyncWithHttpInfo(string symbol = null, string side = null, double? takeProfit = null, double? stopLoss = null, double? trailingStop = null, string tpTriggerBy = null, string slTriggerBy = null, double? slSize = null, double? tpSize = null);
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
+        /// <param name="side"><see cref="LinearSide"/></param>
+        /// <param name="takeProfit">Cannot be less than 0, 0 means cancel TP. (optional)</param>
+        /// <param name="stopLoss">Cannot be less than 0, 0 means cancel SL. (optional)</param>
+        /// <param name="trailingStop">Cannot be less than 0, 0 means cancel TS. (optional)</param>
+        /// <param name="tpTriggerBy"><see cref="LinearTriggerPriceType"/>, default: <see cref="LinearTriggerPriceType.LastPrice"/>(optional)</param>
+        /// <param name="slTriggerBy"><see cref="LinearTriggerPriceType"/>, default: <see cref="LinearTriggerPriceType.LastPrice"/>(optional)</param>
+        /// <param name="slSize">Stop loss quantity (when in partial mode) <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/> (optional)</param>
+        /// <param name="tpSize">Take profit quantity (when in partial mode) <see cref="https://bybit-exchange.github.io/docs/linear/#t-switchmode"/> (optional)</param>
+        /// <returns>Task of ApiResponse (LinearPositionsTradingStopBase)</returns>
+        Task<ApiResponse<LinearPositionsTradingStopBase>> LinearPositionsTradingStopAsyncWithHttpInfo(LinearSymbol symbol, LinearSide side, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null, decimal? slSize = null, decimal? tpSize = null);
 
         #endregion Asynchronous Operations
     }
@@ -477,6 +545,9 @@ namespace BybitAPI.Api
     /// <inheritdoc/>
     public partial class LinearPositionsApi : ApiBase, ILinearPositionsApi
     {
+        private const int LinearPositionsClosePnlRecordsPageMaxValue = 50;
+        private const int LinearPositionsClosePnlRecordsLimitMaxValue = 50;
+
         public LinearPositionsApi(string basePath) : base(basePath)
         {
         }
@@ -538,6 +609,17 @@ namespace BybitAPI.Api
 
         public ApiResponse<LinearPositionsClosePnlRecordsBase> LinearPositionsClosePnlRecordsWithHttpInfo(LinearSymbol symbol, long? startTime = null, long? endTime = null, LinearExecType? execType = null, int? page = null, int? limit = null)
         {
+            // verify the parameter 'page'
+            if (page is not null and < 0 or > LinearPositionsClosePnlRecordsPageMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'page' parameter occured when calling LinearPositionsApi->LinearPositionsClosePnlRecords");
+            }
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > LinearPositionsClosePnlRecordsLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling LinearPositionsApi->LinearPositionsClosePnlRecords");
+            }
+
             var localVarPath = "/private/linear/trade/closed-pnl/list";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -585,6 +667,17 @@ namespace BybitAPI.Api
 
         public Task<ApiResponse<LinearPositionsClosePnlRecordsBase>> LinearPositionsClosePnlRecordsAsyncWithHttpInfo(LinearSymbol symbol, long? startTime = null, long? endTime = null, LinearExecType? execType = null, int? page = null, int? limit = null)
         {
+            // verify the parameter 'page'
+            if (page is not null and < 0 or > LinearPositionsClosePnlRecordsPageMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'page' parameter occured when calling LinearPositionsApi->LinearPositionsClosePnlRecords");
+            }
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > LinearPositionsClosePnlRecordsLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling LinearPositionsApi->LinearPositionsClosePnlRecords");
+            }
+
             var localVarPath = "/private/linear/trade/closed-pnl/list";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
@@ -627,40 +720,18 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<LinearPositionsClosePnlRecordsBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        public object LinearPositionsMyPosition(string symbol = null)
+        public LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>> LinearPositionsMyPosition(LinearSymbol symbol)
             => LinearPositionsMyPositionWithHttpInfo(symbol).Data;
 
-        public ApiResponse<object> LinearPositionsMyPositionWithHttpInfo(string symbol = null)
+        public ApiResponse<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>>> LinearPositionsMyPositionWithHttpInfo(LinearSymbol symbol)
         {
             var localVarPath = "/private/linear/position/list";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/json",
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -668,72 +739,21 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsMyPosition", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiWithHttpInfo<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        public async Task<object> LinearPositionsMyPositionAsync(string symbol = null)
+        public async Task<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>>> LinearPositionsMyPositionAsync(LinearSymbol symbol)
             => (await LinearPositionsMyPositionAsyncWithHttpInfo(symbol)).Data;
 
-        public async Task<ApiResponse<object>> LinearPositionsMyPositionAsyncWithHttpInfo(string symbol = null)
+        public Task<ApiResponse<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>>>> LinearPositionsMyPositionAsyncWithHttpInfo(LinearSymbol symbol)
         {
             var localVarPath = "/private/linear/position/list";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/json",
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -741,81 +761,74 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsMyPosition", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiAsyncWithHttpInfo<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionRes>>>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        public object LinearPositionsSaveLeverage(string symbol = null, double? buyLeverage = null, double? sellLeverage = null)
+        public LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>> LinearPositionsMyPosition()
+            => LinearPositionsMyPositionWithHttpInfo().Data;
+
+        public ApiResponse<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>>> LinearPositionsMyPositionWithHttpInfo()
+        {
+            var localVarPath = "/private/linear/position/list";
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
+            }
+
+            return CallApiWithHttpInfo<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>>>(localVarPath, Method.GET, localVarQueryParams);
+        }
+
+        public async Task<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>>> LinearPositionsMyPositionAsync()
+            => (await LinearPositionsMyPositionAsyncWithHttpInfo()).Data;
+
+        public Task<ApiResponse<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>>>> LinearPositionsMyPositionAsyncWithHttpInfo()
+        {
+            var localVarPath = "/private/linear/position/list";
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
+            }
+
+            return CallApiAsyncWithHttpInfo<LinearPositionsMyPositionBase<IReadOnlyList<LinearPositionsMyPositionResBase>>>(localVarPath, Method.GET, localVarQueryParams);
+        }
+
+        public LinearPositionsSaveLeverageBase LinearPositionsSaveLeverage(LinearSymbol symbol, decimal buyLeverage, decimal sellLeverage)
             => LinearPositionsSaveLeverageWithHttpInfo(symbol, buyLeverage, sellLeverage).Data;
 
-        public ApiResponse<object> LinearPositionsSaveLeverageWithHttpInfo(string symbol = null, double? buyLeverage = null, double? sellLeverage = null)
+        public ApiResponse<LinearPositionsSaveLeverageBase> LinearPositionsSaveLeverageWithHttpInfo(LinearSymbol symbol, decimal buyLeverage, decimal sellLeverage)
         {
+            // verify the parameter 'buyLeverage'
+            if (buyLeverage <= 0)
+            {
+                throw new ApiException(400, "Validation error on 'buyLeverage' parameter occured when calling LinearPositionsApi->LinearPositionsSaveLeverage");
+            }
+            // verify the parameter 'sellLeverage'
+            if (sellLeverage <= 0)
+            {
+                throw new ApiException(400, "Validation error on 'sellLeverage' parameter occured when calling LinearPositionsApi->LinearPositionsSaveLeverage");
+            }
+
             var localVarPath = "/private/linear/position/set-leverage";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "buy_leverage", Configuration.ApiClient.ParameterToString(buyLeverage)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sell_leverage", Configuration.ApiClient.ParameterToString(sellLeverage)));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (buyLeverage is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "buy_leverage", Configuration.ApiClient.ParameterToString(buyLeverage)));
-            }
-
-            if (sellLeverage is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sell_leverage", Configuration.ApiClient.ParameterToString(sellLeverage)));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -823,81 +836,34 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsSaveLeverage", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiWithHttpInfo<LinearPositionsSaveLeverageBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public async Task<object> LinearPositionsSaveLeverageAsync(string symbol = null, double? buyLeverage = null, double? sellLeverage = null)
+        public async Task<LinearPositionsSaveLeverageBase> LinearPositionsSaveLeverageAsync(LinearSymbol symbol, decimal buyLeverage, decimal sellLeverage)
             => (await LinearPositionsSaveLeverageAsyncWithHttpInfo(symbol, buyLeverage, sellLeverage)).Data;
 
-        public async Task<ApiResponse<object>> LinearPositionsSaveLeverageAsyncWithHttpInfo(string symbol = null, double? buyLeverage = null, double? sellLeverage = null)
+        public Task<ApiResponse<LinearPositionsSaveLeverageBase>> LinearPositionsSaveLeverageAsyncWithHttpInfo(LinearSymbol symbol, decimal buyLeverage, decimal sellLeverage)
         {
+            // verify the parameter 'buyLeverage'
+            if (buyLeverage <= 0)
+            {
+                throw new ApiException(400, "Validation error on 'buyLeverage' parameter occured when calling LinearPositionsApi->LinearPositionsSaveLeverage");
+            }
+            // verify the parameter 'sellLeverage'
+            if (sellLeverage <= 0)
+            {
+                throw new ApiException(400, "Validation error on 'sellLeverage' parameter occured when calling LinearPositionsApi->LinearPositionsSaveLeverage");
+            }
+
             var localVarPath = "/private/linear/position/set-leverage";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "buy_leverage", Configuration.ApiClient.ParameterToString(buyLeverage)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sell_leverage", Configuration.ApiClient.ParameterToString(sellLeverage)));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (buyLeverage is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "buy_leverage", Configuration.ApiClient.ParameterToString(buyLeverage)));
-            }
-
-            if (sellLeverage is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sell_leverage", Configuration.ApiClient.ParameterToString(sellLeverage)));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -905,81 +871,23 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsSaveLeverage", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiAsyncWithHttpInfo<LinearPositionsSaveLeverageBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public object LinearPositionsSetAutoAddMargin(string symbol = null, string side = null, bool? autoAddMargin = null)
+        public LinearPositionsSetAutoAddMarginBase LinearPositionsSetAutoAddMargin(LinearSymbol symbol, LinearSide side, bool autoAddMargin)
             => LinearPositionsSetAutoAddMarginWithHttpInfo(symbol, side, autoAddMargin).Data;
 
-        public ApiResponse<object> LinearPositionsSetAutoAddMarginWithHttpInfo(string symbol = null, string side = null, bool? autoAddMargin = null)
+        public ApiResponse<LinearPositionsSetAutoAddMarginBase> LinearPositionsSetAutoAddMarginWithHttpInfo(LinearSymbol symbol, LinearSide side, bool autoAddMargin)
         {
             var localVarPath = "/private/linear/position/set-auto-add-margin";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "auto_add_margin", Configuration.ApiClient.ParameterToString(autoAddMargin)));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (side is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
-            }
-
-            if (autoAddMargin is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "auto_add_margin", Configuration.ApiClient.ParameterToString(autoAddMargin)));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -987,81 +895,23 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsSetAutoAddMargin", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiWithHttpInfo<LinearPositionsSetAutoAddMarginBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public async Task<object> LinearPositionsSetAutoAddMarginAsync(string symbol = null, string side = null, bool? autoAddMargin = null)
+        public async Task<LinearPositionsSetAutoAddMarginBase> LinearPositionsSetAutoAddMarginAsync(LinearSymbol symbol, LinearSide side, bool autoAddMargin)
             => (await LinearPositionsSetAutoAddMarginAsyncWithHttpInfo(symbol, side, autoAddMargin)).Data;
 
-        public async Task<ApiResponse<object>> LinearPositionsSetAutoAddMarginAsyncWithHttpInfo(string symbol = null, string side = null, bool? autoAddMargin = null)
+        public Task<ApiResponse<LinearPositionsSetAutoAddMarginBase>> LinearPositionsSetAutoAddMarginAsyncWithHttpInfo(LinearSymbol symbol, LinearSide side, bool autoAddMargin)
         {
             var localVarPath = "/private/linear/position/set-auto-add-margin";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "auto_add_margin", Configuration.ApiClient.ParameterToString(autoAddMargin)));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (side is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
-            }
-
-            if (autoAddMargin is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "auto_add_margin", Configuration.ApiClient.ParameterToString(autoAddMargin)));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -1069,86 +919,35 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsSetAutoAddMargin", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiAsyncWithHttpInfo<LinearPositionsSetAutoAddMarginBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public object LinearPositionsSwitchIsolated(string symbol = null, bool? isIsolated = null, double? buyLeverage = null, double? sellLeverage = null)
+        public LinearPositionsSwitchIsolatedBase LinearPositionsSwitchIsolated(LinearSymbol symbol, bool isIsolated, decimal buyLeverage, decimal sellLeverage)
             => LinearPositionsSwitchIsolatedWithHttpInfo(symbol, isIsolated, buyLeverage, sellLeverage).Data;
 
-        public ApiResponse<object> LinearPositionsSwitchIsolatedWithHttpInfo(string symbol = null, bool? isIsolated = null, double? buyLeverage = null, double? sellLeverage = null)
+        public ApiResponse<LinearPositionsSwitchIsolatedBase> LinearPositionsSwitchIsolatedWithHttpInfo(LinearSymbol symbol, bool isIsolated, decimal buyLeverage, decimal sellLeverage)
         {
+            // verify the parameter 'buyLeverage'
+            if (buyLeverage <= 0)
+            {
+                throw new ApiException(400, "Validation error on 'buyLeverage' parameter occured when calling LinearPositionsApi->LinearPositionsSwitchIsolated");
+            }
+            // verify the parameter 'sellLeverage'
+            if (sellLeverage <= 0)
+            {
+                throw new ApiException(400, "Validation error on 'sellLeverage' parameter occured when calling LinearPositionsApi->LinearPositionsSwitchIsolated");
+            }
+
             var localVarPath = "/private/linear/position/switch-isolated";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "is_isolated", Configuration.ApiClient.ParameterToString(isIsolated)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "buy_leverage", Configuration.ApiClient.ParameterToString(buyLeverage)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sell_leverage", Configuration.ApiClient.ParameterToString(sellLeverage)));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (isIsolated is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "is_isolated", Configuration.ApiClient.ParameterToString(isIsolated)));
-            }
-
-            if (buyLeverage is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "buy_leverage", Configuration.ApiClient.ParameterToString(buyLeverage)));
-            }
-
-            if (sellLeverage is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sell_leverage", Configuration.ApiClient.ParameterToString(sellLeverage)));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -1156,86 +955,35 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsSwitchIsolated", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiWithHttpInfo<LinearPositionsSwitchIsolatedBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public async Task<object> LinearPositionsSwitchIsolatedAsync(string symbol = null, bool? isIsolated = null, double? buyLeverage = null, double? sellLeverage = null)
+        public async Task<LinearPositionsSwitchIsolatedBase> LinearPositionsSwitchIsolatedAsync(LinearSymbol symbol, bool isIsolated, decimal buyLeverage, decimal sellLeverage)
             => (await LinearPositionsSwitchIsolatedAsyncWithHttpInfo(symbol, isIsolated, buyLeverage, sellLeverage)).Data;
 
-        public async Task<ApiResponse<object>> LinearPositionsSwitchIsolatedAsyncWithHttpInfo(string symbol = null, bool? isIsolated = null, double? buyLeverage = null, double? sellLeverage = null)
+        public Task<ApiResponse<LinearPositionsSwitchIsolatedBase>> LinearPositionsSwitchIsolatedAsyncWithHttpInfo(LinearSymbol symbol, bool isIsolated, decimal buyLeverage, decimal sellLeverage)
         {
+            // verify the parameter 'buyLeverage'
+            if (buyLeverage <= 0)
+            {
+                throw new ApiException(400, "Validation error on 'buyLeverage' parameter occured when calling LinearPositionsApi->LinearPositionsSwitchIsolated");
+            }
+            // verify the parameter 'sellLeverage'
+            if (sellLeverage <= 0)
+            {
+                throw new ApiException(400, "Validation error on 'sellLeverage' parameter occured when calling LinearPositionsApi->LinearPositionsSwitchIsolated");
+            }
+
             var localVarPath = "/private/linear/position/switch-isolated";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "is_isolated", Configuration.ApiClient.ParameterToString(isIsolated)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "buy_leverage", Configuration.ApiClient.ParameterToString(buyLeverage)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sell_leverage", Configuration.ApiClient.ParameterToString(sellLeverage)));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (isIsolated is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "is_isolated", Configuration.ApiClient.ParameterToString(isIsolated)));
-            }
-
-            if (buyLeverage is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "buy_leverage", Configuration.ApiClient.ParameterToString(buyLeverage)));
-            }
-
-            if (sellLeverage is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sell_leverage", Configuration.ApiClient.ParameterToString(sellLeverage)));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -1243,76 +991,22 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsSwitchIsolated", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiAsyncWithHttpInfo<LinearPositionsSwitchIsolatedBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public object LinearPositionsSwitchMode(string symbol = null, string tpSlMode = null)
+        public LinearPositionsSwitchModeBase LinearPositionsSwitchMode(LinearSymbol symbol, LinearTpSlModeType tpSlMode)
             => LinearPositionsSwitchModeWithHttpInfo(symbol, tpSlMode).Data;
 
-        public ApiResponse<object> LinearPositionsSwitchModeWithHttpInfo(string symbol = null, string tpSlMode = null)
+        public ApiResponse<LinearPositionsSwitchModeBase> LinearPositionsSwitchModeWithHttpInfo(LinearSymbol symbol, LinearTpSlModeType tpSlMode)
         {
             var localVarPath = "/private/linear/tpsl/switch-mode";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "tp_sl_mode", Configuration.ApiClient.ParameterToString(tpSlMode)));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (tpSlMode is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "tp_sl_mode", Configuration.ApiClient.ParameterToString(tpSlMode)));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -1320,76 +1014,22 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsSwitchMode", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiWithHttpInfo<LinearPositionsSwitchModeBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public async Task<object> LinearPositionsSwitchModeAsync(string symbol = null, string tpSlMode = null)
+        public async Task<LinearPositionsSwitchModeBase> LinearPositionsSwitchModeAsync(LinearSymbol symbol, LinearTpSlModeType tpSlMode)
             => (await LinearPositionsSwitchModeAsyncWithHttpInfo(symbol, tpSlMode)).Data;
 
-        public async Task<ApiResponse<object>> LinearPositionsSwitchModeAsyncWithHttpInfo(string symbol = null, string tpSlMode = null)
+        public Task<ApiResponse<LinearPositionsSwitchModeBase>> LinearPositionsSwitchModeAsyncWithHttpInfo(LinearSymbol symbol, LinearTpSlModeType tpSlMode)
         {
             var localVarPath = "/private/linear/tpsl/switch-mode";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "tp_sl_mode", Configuration.ApiClient.ParameterToString(tpSlMode)));
 
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (tpSlMode is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "tp_sl_mode", Configuration.ApiClient.ParameterToString(tpSlMode)));
-            }
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
@@ -1397,76 +1037,36 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsSwitchMode", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiAsyncWithHttpInfo<LinearPositionsSwitchModeBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public object LinearPositionsTradingStop(string symbol = null, string side = null, double? takeProfit = null, double? stopLoss = null, double? trailingStop = null, string tpTriggerBy = null, string slTriggerBy = null, double? slSize = null, double? tpSize = null)
+        public LinearPositionsTradingStopBase LinearPositionsTradingStop(LinearSymbol symbol, LinearSide side, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null, decimal? slSize = null, decimal? tpSize = null)
             => LinearPositionsTradingStopWithHttpInfo(symbol, side, takeProfit, stopLoss, trailingStop, tpTriggerBy, slTriggerBy, slSize, tpSize).Data;
 
-        public ApiResponse<object> LinearPositionsTradingStopWithHttpInfo(string symbol = null, string side = null, double? takeProfit = null, double? stopLoss = null, double? trailingStop = null, string tpTriggerBy = null, string slTriggerBy = null, double? slSize = null, double? tpSize = null)
+        public ApiResponse<LinearPositionsTradingStopBase> LinearPositionsTradingStopWithHttpInfo(LinearSymbol symbol, LinearSide side, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null, decimal? slSize = null, decimal? tpSize = null)
         {
+            // verify the parameter 'takeProfit'
+            if (takeProfit is not null and < 0)
+            {
+                throw new ApiException(400, "Validation error on 'takeProfit' parameter occured when calling LinearPositionsApi->LinearPositionsTradingStop");
+            }
+            // verify the parameter 'stopLoss'
+            if (stopLoss is not null and < 0)
+            {
+                throw new ApiException(400, "Validation error on 'stopLoss' parameter occured when calling LinearPositionsApi->LinearPositionsTradingStop");
+            }
+
+            // verify the parameter 'trailingStop'
+            if (trailingStop is not null and < 0)
+            {
+                throw new ApiException(400, "Validation error on 'trailingStop' parameter occured when calling LinearPositionsApi->LinearPositionsTradingStop");
+            }
+
             var localVarPath = "/private/linear/position/trading-stop";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (side is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
-            }
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
 
             if (takeProfit is not null)
             {
@@ -1503,82 +1103,45 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "tp_size", Configuration.ApiClient.ParameterToString(tpSize)));
             }
 
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
+
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsTradingStop", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiWithHttpInfo<LinearPositionsTradingStopBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public async Task<object> LinearPositionsTradingStopAsync(string symbol = null, string side = null, double? takeProfit = null, double? stopLoss = null, double? trailingStop = null, string tpTriggerBy = null, string slTriggerBy = null, double? slSize = null, double? tpSize = null)
+        public async Task<LinearPositionsTradingStopBase> LinearPositionsTradingStopAsync(LinearSymbol symbol, LinearSide side, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null, decimal? slSize = null, decimal? tpSize = null)
             => (await LinearPositionsTradingStopAsyncWithHttpInfo(symbol, side, takeProfit, stopLoss, trailingStop, tpTriggerBy, slTriggerBy, slSize, tpSize)).Data;
 
-        public async Task<ApiResponse<object>> LinearPositionsTradingStopAsyncWithHttpInfo(string symbol = null, string side = null, double? takeProfit = null, double? stopLoss = null, double? trailingStop = null, string tpTriggerBy = null, string slTriggerBy = null, double? slSize = null, double? tpSize = null)
+        public Task<ApiResponse<LinearPositionsTradingStopBase>> LinearPositionsTradingStopAsyncWithHttpInfo(LinearSymbol symbol, LinearSide side, decimal? takeProfit = null, decimal? stopLoss = null, decimal? trailingStop = null, LinearTriggerPriceType? tpTriggerBy = null, LinearTriggerPriceType? slTriggerBy = null, decimal? slSize = null, decimal? tpSize = null)
         {
+            // verify the parameter 'takeProfit'
+            if (takeProfit is not null and < 0)
+            {
+                throw new ApiException(400, "Validation error on 'takeProfit' parameter occured when calling LinearPositionsApi->LinearPositionsTradingStop");
+            }
+            // verify the parameter 'stopLoss'
+            if (stopLoss is not null and < 0)
+            {
+                throw new ApiException(400, "Validation error on 'stopLoss' parameter occured when calling LinearPositionsApi->LinearPositionsTradingStop");
+            }
+
+            // verify the parameter 'trailingStop'
+            if (trailingStop is not null and < 0)
+            {
+                throw new ApiException(400, "Validation error on 'trailingStop' parameter occured when calling LinearPositionsApi->LinearPositionsTradingStop");
+            }
+
             var localVarPath = "/private/linear/position/trading-stop";
-            var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
 
-            // to determine the Content-Type header
-            var localVarHttpContentTypes = new string[] {
-                "application/x-www-form-urlencoded"
-            };
-            var localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            var localVarHttpHeaderAccepts = new string[] {
-                "application/json"
-            };
-            var localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept is not null)
-            {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
-            }
-
-            if (side is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
-            }
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "side", Configuration.ApiClient.ParameterToString(side)));
 
             if (takeProfit is not null)
             {
@@ -1615,42 +1178,16 @@ namespace BybitAPI.Api
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "tp_size", Configuration.ApiClient.ParameterToString(tpSize)));
             }
 
+            // authentication (timestamp) required
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString()));
+
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
 
-            // authentication (timestamp) required
-            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("timestamp")))
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "timestamp", Configuration.GetApiKeyWithPrefix("timestamp")));
-            }
-
-            var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));
-            var secret = Configuration.GetApiKeyWithPrefix("api_secret");
-            var sign = Util.ApiUtil.CreateSignature(secret, param);
-            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sign", sign));
-
-            // make the HTTP request
-            var localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            var localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory is not null)
-            {
-                var exception = ExceptionFactory("LinearPositionsTradingStop", localVarResponse);
-                if (exception is not null)
-                {
-                    throw exception;
-                }
-            }
-
-            return new ApiResponse<object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
+            return CallApiAsyncWithHttpInfo<LinearPositionsTradingStopBase>(localVarPath, Method.POST, localVarQueryParams);
         }
     }
 }

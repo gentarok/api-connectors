@@ -328,5 +328,93 @@ namespace BybitAPI.Model
         decimal LiqPrice, decimal BustPrice, decimal Leverage, decimal PositionMargin, decimal OccClosingFee, decimal RealisedPnl, decimal CumRealizedPnl,
         decimal FreeQty);
 
-    public record LinearPositionsClosePnlRecordsBase();
+    /// <summary>
+    /// Base type of the response for the 'Closed Profit and Loss' API method.
+    /// </summary>
+    public record LinearPositionsClosePnlRecordsBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        LinearPositionsClosePnlRecordsListBase? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Collection type for the actual data type of the 'Closed Profit and Loss' API method response.
+    /// </summary>
+    public record LinearPositionsClosePnlRecordsListBase(int CurrentPage, IList<LinearPositionsClosePnlRecordsRes> Data);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Closed Profit and Loss' API method.
+    /// </summary>
+    /// <remarks>
+    /// 'order_id' (also 'order_link_id' and 'stop_order_id') field looks like a UUID, but the property type could not be defined as GUID because the API may return an empty string. Since an empty string does not imply null, it cannot be defined as a nullable reference type either.
+    /// 'created_at' is a UNIX timestamp in seconds. not a datetime string. omg. Inconsistent naming!
+    /// </remarks>
+    public record LinearPositionsClosePnlRecordsRes(long Id, long UserId, LinearSymbol Symbol, string OrderId, LinearSide Side, decimal Qty, decimal OrderPrice,
+        LinearOrderType OrderType, LinearExecType ExecType, decimal ClosedSize, decimal CumEntryValue, decimal AvgEntryPrice, decimal CumExitValue,
+        decimal AvgExitPrice, decimal ClosedPnl, int FillCount, decimal Leverage, long CreatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'My Position' API method.
+    /// </summary>
+    public record LinearPositionsMyPositionBase<T>(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, T? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Wrapper data type of the response for the 'My Position' API method.
+    /// </summary>
+    public record LinearPositionsMyPositionResBase(LinearPositionsMyPositionRes? Data, bool IsValid);
+
+    /// <summary>
+    /// Actual data type of the response for the 'My Position' API method.
+    /// </summary>
+    public record LinearPositionsMyPositionRes(long UserId, LinearSymbol Symbol, LinearSide Side, decimal Size, decimal PositionValue, decimal EntryPrice,
+        decimal LiqPrice, decimal BustPrice, decimal Leverage, bool IsIsolated, decimal AutoAddMargin, decimal PositionMargin, decimal OccClosingFee,
+        decimal RealisedPnl, decimal CumRealisedPnl, decimal FreeQty, LinearTpSlModeType TpSlMode, decimal UnrealisedPnl, int DeleverageIndicator);
+
+    /// <summary>
+    /// Base type of the response for the 'Set Leverage' API method.
+    /// </summary>
+    public record LinearPositionsSaveLeverageBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, object? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Base type of the response for the 'Set Auto Add Margin' API method.
+    /// </summary>
+    public record LinearPositionsSetAutoAddMarginBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, object? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Base type of the response for the 'Cross/Isolated Margin Switch' API method.
+    /// </summary>
+    public record LinearPositionsSwitchIsolatedBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, object? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Base type of the response for the 'Full/Partial Position SL/TP Switch' API method.
+    /// </summary>
+    public record LinearPositionsSwitchModeBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, LinearPositionsSwitchModeRes? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual type of the response for the 'Full/Partial Position SL/TP Switch' API method.
+    /// </summary>
+    public record LinearPositionsSwitchModeRes(LinearTpSlModeType TpSlMode);
+
+    /// <summary>
+    /// Base type of the response for the 'Set Trading-Stop' API method.
+    /// </summary>
+    public record LinearPositionsTradingStopBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo, object? Result, string TimeNow,
+        int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Base type of the response for the 'Get Risk Limit' API method.
+    /// </summary>
+    public record LinearWalletGetRiskLimitBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<LinearWalletGetRiskLimitRes>? Result, string TimeNow, int RateLimitStatus, long RateLimitResetMs, int RateLimit);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Get Risk Limit' API method.
+    /// </summary>
+    /// <remarks>
+    /// 'is_lowest_risk' field is a numeric type and, despite its name, is not a bool. '0' represents 'No' and '1' represents 'Yes'. Terrible.
+    /// </remarks>
+    public record LinearWalletGetRiskLimitRes(long Id, LinearSymbol Symbol, decimal Limit, decimal MaintainMargin, decimal StartingMargin,
+        IEnumerable<int> Section, int IsLowestRisk, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
 }
