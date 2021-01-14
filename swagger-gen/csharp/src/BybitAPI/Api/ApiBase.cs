@@ -4,7 +4,6 @@ using BybitAPI.Client;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -81,22 +80,6 @@ namespace BybitAPI.Api
         }
 
         /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value) => Configuration.AddDefaultHeader(key, value);
-
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<string, string> DefaultHeader() => new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
-
-        /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
@@ -107,16 +90,6 @@ namespace BybitAPI.Api
                 throw new NullReferenceException();
             }
             return Configuration.ApiClient.RestClient.BaseUrl.ToString();
-        }
-
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(string basePath)
-        {
-            // do nothing
         }
 
         protected ApiResponse<T> CallApiWithHttpInfo<T>(string localVarPath, Method method, List<KeyValuePair<string, string>>? localVarQueryParams = default, [CallerMemberName] string callerName = default)

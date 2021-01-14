@@ -16,11 +16,6 @@ namespace BybitAPI.Client
     /// </summary>
     public partial class ApiClient
     {
-        //private readonly JsonSerializerSettings serializerSettings = new JsonSerializerSettings
-        //{
-        //    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
-        //};
-
         /// <summary>
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
         /// </summary>
@@ -71,13 +66,6 @@ namespace BybitAPI.Client
             RestClient = new RestClient(basePath);
             Configuration = Client.Configuration.Default;
         }
-
-        /// <summary>
-        /// Gets or sets the default API client for making HTTP calls.
-        /// </summary>
-        /// <value>The default API client.</value>
-        [Obsolete("ApiClient.Default is deprecated, please use 'Configuration.Default.ApiClient' instead.")]
-        public static ApiClient? Default;
 
         /// <summary>
         /// Gets or sets an instance of the IReadableConfiguration.
@@ -271,84 +259,6 @@ namespace BybitAPI.Client
                     return Convert.ToString(obj);
             }
         }
-
-        //[return: MaybeNull]
-        ///// <summary>
-        ///// Deserialize the JSON string into a proper object.
-        ///// </summary>
-        ///// <param name="response">The HTTP response.</param>
-        ///// <param name="type">Object type.</param>
-        ///// <returns>Object representation of the JSON string.</returns>
-        //public object Deserialize(IRestResponse response, Type type)
-        //{
-        //    var headers = response.Headers;
-        //    if (type == typeof(byte[])) // return byte array
-        //    {
-        //        return response.RawBytes;
-        //    }
-
-        //    // TODO: ? if (type.IsAssignableFrom(typeof(Stream)))
-        //    if (type == typeof(Stream))
-        //    {
-        //        if (headers is not null)
-        //        {
-        //            var filePath = string.IsNullOrEmpty(Configuration.TempFolderPath)
-        //                ? Path.GetTempPath()
-        //                : Configuration.TempFolderPath;
-        //            var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
-        //            foreach (var header in headers)
-        //            {
-        //                var match = regex.Match(header.ToString());
-        //                if (match.Success)
-        //                {
-        //                    var fileName = filePath + SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
-        //                    File.WriteAllBytes(fileName, response.RawBytes);
-        //                    return new FileStream(fileName, FileMode.Open);
-        //                }
-        //            }
-        //        }
-        //        var stream = new MemoryStream(response.RawBytes);
-        //        return stream;
-        //    }
-
-        //    if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
-        //    {
-        //        return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
-        //    }
-
-        //    if (type == typeof(string) || type.Name.StartsWith("System.Nullable")) // return primitive type
-        //    {
-        //        return ConvertType(response.Content, type);
-        //    }
-
-        //    // at this point, it must be a model (json)
-        //    try
-        //    {
-        //        return JsonConvert.DeserializeObject(response.Content, type, serializerSettings);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw new ApiException(500, e.Message);
-        //    }
-        //}
-
-        //[return: MaybeNull]
-        ///// <summary>
-        ///// Serialize an input (model) into JSON string
-        ///// </summary>
-        ///// <param name="obj">Object.</param>
-        ///// <returns>JSON string.</returns>
-        //public string Serialize(object obj)
-        //{
-        //    try
-        //    {
-        //        return obj is not null ? JsonConvert.SerializeObject(obj) : null;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw new ApiException(500, e.Message);
-        //    }
-        //}
 
         /// <summary>
         ///Check if the given MIME is a JSON MIME.

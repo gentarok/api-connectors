@@ -3,7 +3,6 @@ using BybitAPI.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BybitAPI.Api
