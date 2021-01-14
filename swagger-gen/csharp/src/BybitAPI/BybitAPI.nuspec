@@ -24,9 +24,6 @@
 
     <!-- Dependencies are automatically installed when the package is installed -->
     <dependencies>
-
-      <dependency id="NewtonSoft.Json" version="12.0.3" />
-      <dependency id="JsonSubTypes" version="1.8.0" />
       <dependency id="RestSharp" version="106.11.7" />
     </dependencies>
   </metadata>
