@@ -344,7 +344,7 @@ namespace BybitAPI.Api
 
         public ApiResponse<PositionsChangeMarginBase> PositionsChangeMarginWithHttpInfo(Symbol symbol, decimal margin)
         {
-            var localVarPath = "/position/change-position-margin";
+            var localVarPath = "/v2/private/position/change-position-margin";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
@@ -367,7 +367,7 @@ namespace BybitAPI.Api
 
         public Task<ApiResponse<PositionsChangeMarginBase>> PositionsChangeMarginAsyncWithHttpInfo(Symbol symbol, decimal margin)
         {
-            var localVarPath = "/position/change-position-margin";
+            var localVarPath = "/v2/private/position/change-position-margin";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
@@ -590,7 +590,7 @@ namespace BybitAPI.Api
 
         public ApiResponse<PositionsSaveLeverageBase> PositionsSaveLeverageWithHttpInfo(Symbol symbol, decimal leverage)
         {
-            var localVarPath = "/user/leverage/save";
+            var localVarPath = "/v2/private/position/leverage/save";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
@@ -613,7 +613,7 @@ namespace BybitAPI.Api
 
         public Task<ApiResponse<PositionsSaveLeverageBase>> PositionsSaveLeverageAsyncWithHttpInfo(Symbol symbol, decimal leverage)
         {
-            var localVarPath = "/user/leverage/save";
+            var localVarPath = "/v2/private/position/leverage/save";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
@@ -652,7 +652,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "'trailingStop' (must be grater than 0): Validation error has occured when calling PositionsApi->PositionsTradingStop");
             }
 
-            var localVarPath = "/open-api/position/trading-stop";
+            var localVarPath = "/v2/private/position/trading-stop";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
@@ -710,7 +710,7 @@ namespace BybitAPI.Api
                 throw new ApiException(400, "'trailingStop' (must be grater than 0): Validation error has occured when calling PositionsApi->PositionsTradingStop");
             }
 
-            var localVarPath = "/open-api/position/trading-stop";
+            var localVarPath = "/v2/private/position/trading-stop";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));

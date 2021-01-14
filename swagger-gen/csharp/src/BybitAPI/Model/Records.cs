@@ -12,8 +12,8 @@ namespace BybitAPI.Model
     /// <summary>
     /// Actual data type of the response for the 'API Key Info' API method.
     /// </summary>
-    public record APIKeyInfoRes(string ApiKey, long UserId, IReadOnlyList<string> Ips, string Note, IReadOnlyList<string> Permissions,
-        DateTimeOffset CreatedAt, bool ReadOnly);
+    public record APIKeyInfoRes(string ApiKey, string Type, long UserId, IReadOnlyList<string> Ips, string Note, IReadOnlyList<string> Permissions,
+        DateTimeOffset CreatedAt, DateTimeOffset ExpiredAt, bool ReadOnly);
 
     /// <summary>
     /// Base type of the response for the 'Announcement' API method.
@@ -649,4 +649,28 @@ namespace BybitAPI.Model
     /// </summary>
     public record WalletWithdrawRes(long Id, long UserId, Currency Coin, WithdrawStatus Status, decimal Amount, decimal Fee,
         string Address, string TxId, DateTimeOffset SubmitedAt, DateTimeOffset UpdatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'Query Index Price Kline' API method.
+    /// </summary>
+    public record KlineIndexPriceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<KlineIndexPriceRes>? Result, string TimeNow);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Query Index Price Kline' API method.
+    /// </summary>
+    public record KlineIndexPriceRes(long Id, Symbol Symbol, string Period, long StartAt, decimal Open, decimal High, decimal Low,
+        decimal Close);
+
+    /// <summary>
+    /// Base type of the response for the 'Query Premium Index Price Kline' API method.
+    /// </summary>
+    public record KlinePremiumIndexPriceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<KlinePremiumIndexPriceRes>? Result, string TimeNow);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Query Premium Index Price Kline' API method.
+    /// </summary>
+    public record KlinePremiumIndexPriceRes(long Id, Symbol Symbol, string Period, long StartAt, decimal Open, decimal High, decimal Low,
+        decimal Close);
 }

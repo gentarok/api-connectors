@@ -76,6 +76,58 @@ namespace BybitAPI.Api
         /// <returns>ApiResponse of LinearKlineMarkPriceBase</returns>
         ApiResponse<LinearKlineMarkPriceBase> LinearKlineMarkPriceWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit = null);
 
+        /// <summary>
+        /// Query index price kline.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-indexpricekline"/>
+        /// </remarks>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="interval">Data refresh interval. Enum : 1 3 5 15 30 60 120 240 360 720 "D" "M" "W" "Y"</param>
+        /// <param name="from">From timestamp in seconds</param>
+        /// <param name="limit">Limit for data size, max size is 200. Default as showing 200 pieces of data</param>
+        /// <returns><see cref="LinearKlineIndexPriceBase"/></returns>
+        LinearKlineIndexPriceBase LinearKlineIndexPrice(LinearSymbol symbol, string interval, long from, int? limit);
+
+        /// <summary>
+        /// Query index price kline.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-indexpricekline"/>
+        /// </remarks>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="interval">Data refresh interval. Enum : 1 3 5 15 30 60 120 240 360 720 "D" "M" "W" "Y"</param>
+        /// <param name="from">From timestamp in seconds</param>
+        /// <param name="limit">Limit for data size, max size is 200. Default as showing 200 pieces of data</param>
+        /// <returns>ApiResponse of LinearKlineIndexPriceBase</returns>
+        ApiResponse<LinearKlineIndexPriceBase> LinearKlineIndexPriceWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit);
+
+        /// <summary>
+        /// Query premium index kline.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-premiumindiceskline"/>
+        /// </remarks>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="interval">Data refresh interval. Enum : 1 3 5 15 30 60 120 240 360 720 "D" "M" "W" "Y"</param>
+        /// <param name="from">From timestamp in seconds</param>
+        /// <param name="limit">Limit for data size, max size is 200. Default as showing 200 pieces of data</param>
+        /// <returns><see cref="LinearKlinePremiumIndexPriceBase"/></returns>
+        LinearKlinePremiumIndexPriceBase LinearKlinePremiumIndexPrice(LinearSymbol symbol, string interval, long from, int? limit);
+
+        /// <summary>
+        /// Query premium index kline.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-premiumindiceskline"/>
+        /// </remarks>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="interval">Data refresh interval. Enum : 1 3 5 15 30 60 120 240 360 720 "D" "M" "W" "Y"</param>
+        /// <param name="from">From timestamp in seconds</param>
+        /// <param name="limit">Limit for data size, max size is 200. Default as showing 200 pieces of data</param>
+        /// <returns>ApiResponse of LinearKlinePremiumIndexPriceBase</returns>
+        ApiResponse<LinearKlinePremiumIndexPriceBase> LinearKlinePremiumIndexPriceWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit);
+
         #endregion Synchronous Operations
 
         #region Asynchronous Operations
@@ -140,6 +192,58 @@ namespace BybitAPI.Api
         /// <returns>Task of ApiResponse (LinearKlineMarkPriceBase)</returns>
         Task<ApiResponse<LinearKlineMarkPriceBase>> LinearKlineMarkPriceAsyncWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit = null);
 
+        /// <summary>
+        /// Query index price kline.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-indexpricekline"/>
+        /// </remarks>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="interval">Data refresh interval. Enum : 1 3 5 15 30 60 120 240 360 720 "D" "M" "W" "Y"</param>
+        /// <param name="from">From timestamp in seconds</param>
+        /// <param name="limit">Limit for data size, max size is 200. Default as showing 200 pieces of data</param>
+        /// <returns>Task of LinearKlineIndexPriceBase"</returns>
+        Task<LinearKlineIndexPriceBase> LinearKlineIndexPriceAsync(LinearSymbol symbol, string interval, long from, int? limit);
+
+        /// <summary>
+        /// Query index price kline.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-indexpricekline"/>
+        /// </remarks>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="interval">Data refresh interval. Enum : 1 3 5 15 30 60 120 240 360 720 "D" "M" "W" "Y"</param>
+        /// <param name="from">From timestamp in seconds</param>
+        /// <param name="limit">Limit for data size, max size is 200. Default as showing 200 pieces of data</param>
+        /// <returns>Task of ApiResponse (LinearKlineIndexPriceBase)</returns>
+        Task<ApiResponse<LinearKlineIndexPriceBase>> LinearKlineIndexPriceAsyncWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit);
+
+        /// <summary>
+        /// Query premium index kline.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-premiumindiceskline"/>
+        /// </remarks>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="interval">Data refresh interval. Enum : 1 3 5 15 30 60 120 240 360 720 "D" "M" "W" "Y"</param>
+        /// <param name="from">From timestamp in seconds</param>
+        /// <param name="limit">Limit for data size, max size is 200. Default as showing 200 pieces of data</param>
+        /// <returns>Task of LinearKlinePremiumIndexPriceBase</returns>
+        Task<LinearKlinePremiumIndexPriceBase> LinearKlinePremiumIndexPriceAsync(LinearSymbol symbol, string interval, long from, int? limit);
+
+        /// <summary>
+        /// Query premium index kline.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-premiumindiceskline"/>
+        /// </remarks>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="interval">Data refresh interval. Enum : 1 3 5 15 30 60 120 240 360 720 "D" "M" "W" "Y"</param>
+        /// <param name="from">From timestamp in seconds</param>
+        /// <param name="limit">Limit for data size, max size is 200. Default as showing 200 pieces of data</param>
+        /// <returns>Task of ApiResponse (LinearKlinePremiumIndexPriceBase)</returns>
+        Task<ApiResponse<LinearKlinePremiumIndexPriceBase>> LinearKlinePremiumIndexPriceAsyncWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit);
+
         #endregion Asynchronous Operations
     }
 
@@ -148,6 +252,8 @@ namespace BybitAPI.Api
     {
         private const int LinearKlineGetLimitMaxValue = 200;
         private const int LinearKlineMarkPriceLimitMaxValue = 200;
+        private const int LinearKlineIndexPriceLimitMaxValue = 200;
+        private const int LinearKlinePremiumIndexPriceLimitMaxValue = 200;
 
         public LinearKlineApi(string basePath) : base(basePath)
         {
@@ -331,6 +437,142 @@ namespace BybitAPI.Api
             }
 
             return CallApiAsyncWithHttpInfo<LinearKlineMarkPriceBase>(localVarPath, Method.GET, localVarQueryParams);
+        }
+
+        public LinearKlineIndexPriceBase LinearKlineIndexPrice(LinearSymbol symbol, string interval, long from, int? limit)
+            => LinearKlineIndexPriceWithHttpInfo(symbol, interval, from, limit).Data;
+
+        public ApiResponse<LinearKlineIndexPriceBase> LinearKlineIndexPriceWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit)
+        {
+            // verify the required parameter 'interval'
+            //Note: 'interval' parameter is defined as an enum in the documentation and is used in both the parameter and the response,
+            // but it cannot be serialized/deserialized to the Enum type in .NET because some name of the value starts with a number.
+            // Therefore, it needs to be defined as a string type and validated when used as a parameter.
+            if (interval is null || ApiUtil.Intervals.Contains(interval) is false)
+            {
+                throw new ApiException(400, "Validation error on parameter 'interval' occered when calling LinearKlineApi->LinearKlineIndexPrice");
+            }
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > LinearKlineIndexPriceLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling LinearKlineApi->LinearKlineIndexPrice");
+            }
+
+            var localVarPath = "/public/linear/index-price-kline";
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from));
+
+            if (limit is not null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
+            }
+
+            return CallApiWithHttpInfo<LinearKlineIndexPriceBase>(localVarPath, Method.GET, localVarQueryParams);
+        }
+
+        public async Task<LinearKlineIndexPriceBase> LinearKlineIndexPriceAsync(LinearSymbol symbol, string interval, long from, int? limit)
+            => (await LinearKlineIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit)).Data;
+
+        public Task<ApiResponse<LinearKlineIndexPriceBase>> LinearKlineIndexPriceAsyncWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit)
+        {
+            // verify the required parameter 'interval'
+            //Note: 'interval' parameter is defined as an enum in the documentation and is used in both the parameter and the response,
+            // but it cannot be serialized/deserialized to the Enum type in .NET because some name of the value starts with a number.
+            // Therefore, it needs to be defined as a string type and validated when used as a parameter.
+            if (interval is null || ApiUtil.Intervals.Contains(interval) is false)
+            {
+                throw new ApiException(400, "Validation error on parameter 'interval' occered when calling LinearKlineApi->LinearKlineIndexPrice");
+            }
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > LinearKlineIndexPriceLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling LinearKlineApi->LinearKlineIndexPrice");
+            }
+
+            var localVarPath = "/public/linear/index-price-kline";
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from));
+
+            if (limit is not null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
+            }
+
+            return CallApiAsyncWithHttpInfo<LinearKlineIndexPriceBase>(localVarPath, Method.GET, localVarQueryParams);
+        }
+
+        public LinearKlinePremiumIndexPriceBase LinearKlinePremiumIndexPrice(LinearSymbol symbol, string interval, long from, int? limit)
+            => LinearKlinePremiumIndexPriceWithHttpInfo(symbol, interval, from, limit).Data;
+
+        public ApiResponse<LinearKlinePremiumIndexPriceBase> LinearKlinePremiumIndexPriceWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit)
+        {
+            // verify the required parameter 'interval'
+            //Note: 'interval' parameter is defined as an enum in the documentation and is used in both the parameter and the response,
+            // but it cannot be serialized/deserialized to the Enum type in .NET because some name of the value starts with a number.
+            // Therefore, it needs to be defined as a string type and validated when used as a parameter.
+            if (interval is null || ApiUtil.Intervals.Contains(interval) is false)
+            {
+                throw new ApiException(400, "Validation error on parameter 'interval' occered when calling LinearKlineApi->LinearKlinePremiumIndexPrice");
+            }
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > LinearKlinePremiumIndexPriceLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling LinearKlineApi->LinearKlinePremiumIndexPrice");
+            }
+
+            var localVarPath = "/public/linear/premium-index-kline";
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from));
+
+            if (limit is not null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
+            }
+
+            return CallApiWithHttpInfo<LinearKlinePremiumIndexPriceBase>(localVarPath, Method.GET, localVarQueryParams);
+        }
+
+        public async Task<LinearKlinePremiumIndexPriceBase> LinearKlinePremiumIndexPriceAsync(LinearSymbol symbol, string interval, long from, int? limit)
+            => (await LinearKlinePremiumIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit)).Data;
+
+        public Task<ApiResponse<LinearKlinePremiumIndexPriceBase>> LinearKlinePremiumIndexPriceAsyncWithHttpInfo(LinearSymbol symbol, string interval, long from, int? limit)
+        {
+            // verify the required parameter 'interval'
+            //Note: 'interval' parameter is defined as an enum in the documentation and is used in both the parameter and the response,
+            // but it cannot be serialized/deserialized to the Enum type in .NET because some name of the value starts with a number.
+            // Therefore, it needs to be defined as a string type and validated when used as a parameter.
+            if (interval is null || ApiUtil.Intervals.Contains(interval) is false)
+            {
+                throw new ApiException(400, "Validation error on parameter 'interval' occered when calling LinearKlineApi->LinearKlinePremiumIndexPrice");
+            }
+            // verify the parameter 'limit'
+            if (limit is not null and < 0 or > LinearKlinePremiumIndexPriceLimitMaxValue)
+            {
+                throw new ApiException(400, "Validation error on 'limit' parameter occured when calling LinearKlineApi->LinearKlinePremiumIndexPrice");
+            }
+
+            var localVarPath = "/public/linear/premium-index-kline";
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interval", interval));
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "from", from));
+
+            if (limit is not null)
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit));
+            }
+
+            return CallApiAsyncWithHttpInfo<LinearKlinePremiumIndexPriceBase>(localVarPath, Method.GET, localVarQueryParams);
         }
     }
 }

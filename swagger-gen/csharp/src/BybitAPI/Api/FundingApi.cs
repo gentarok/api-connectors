@@ -169,7 +169,7 @@ namespace BybitAPI.Api
 
         public ApiResponse<FundingMyLastFeeBase> FundingMyLastFeeWithHttpInfo(Symbol symbol)
         {
-            var localVarPath = "/open-api/funding/prev-funding";
+            var localVarPath = "/v2/private/funding/prev-funding";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
@@ -191,7 +191,7 @@ namespace BybitAPI.Api
 
         public Task<ApiResponse<FundingMyLastFeeBase>> FundingMyLastFeeAsyncWithHttpInfo(Symbol symbol)
         {
-            var localVarPath = "/open-api/funding/prev-funding";
+            var localVarPath = "/v2/private/funding/prev-funding";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
@@ -213,7 +213,7 @@ namespace BybitAPI.Api
 
         public ApiResponse<FundingPredictedBase> FundingPredictedWithHttpInfo(Symbol symbol)
         {
-            var localVarPath = "/open-api/funding/predicted-funding";
+            var localVarPath = "/v2/private/funding/predicted-funding";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
@@ -235,7 +235,7 @@ namespace BybitAPI.Api
 
         public Task<ApiResponse<FundingPredictedBase>> FundingPredictedAsyncWithHttpInfo(Symbol symbol)
         {
-            var localVarPath = "/open-api/funding/predicted-funding";
+            var localVarPath = "/v2/private/funding/predicted-funding";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
@@ -257,7 +257,7 @@ namespace BybitAPI.Api
 
         public ApiResponse<FundingPrevRateBase> FundingPrevRateWithHttpInfo(Symbol symbol)
         {
-            var localVarPath = "/open-api/funding/prev-funding-rate";
+            var localVarPath = "/v2/private/funding/prev-funding-rate";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));
@@ -279,7 +279,7 @@ namespace BybitAPI.Api
 
         public Task<ApiResponse<FundingPrevRateBase>> FundingPrevRateAsyncWithHttpInfo(Symbol symbol)
         {
-            var localVarPath = "/open-api/funding/prev-funding-rate";
+            var localVarPath = "/v2/private/funding/prev-funding-rate";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
             localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", symbol));

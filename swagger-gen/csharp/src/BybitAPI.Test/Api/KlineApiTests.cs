@@ -580,5 +580,531 @@ namespace BybitAPI.Api.Test
             // Assert
             Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
+
+        private static readonly string klineIndexPriceJson = @"
+{
+    ""ret_code"":0,
+    ""ret_msg"":""OK"",
+    ""ext_code"":"""",
+    ""ext_info"":"""",
+    ""result"":[
+        {
+            ""symbol"":""BTCUSD"",
+            ""period"":""1"",
+            ""open_time"":1582231260,
+            ""open"":""10106.09"",
+            ""high"":""10108.75"",
+            ""low"":""10104.66"",
+            ""close"":""10108.73""
+        }
+    ],
+    ""time_now"":""1591263582.601795""
+}
+";
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public void KlineIndexPrice_ParametersAreValid_ShouldReturnKlineIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var response = instance.KlineIndexPrice(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<KlineIndexPriceBase>(response, "response is KlineIndexPriceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void KlineIndexPrice_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.KlineIndexPrice(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public void KlineIndexPriceWithHttpInfo_ParametersAreValid_ShouldReturnApiRenponseOfKlineIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var response = instance.KlineIndexPriceWithHttpInfo(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<KlineIndexPriceBase>>(response, "response is ApiResponse<KlineIndexPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void KlineIndexPriceWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.KlineIndexPriceWithHttpInfo(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public async Task KlineIndexPriceAsync_ParametersAreValid_ShouldReturnKlineIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var response = await instance.KlineIndexPriceAsync(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<KlineIndexPriceBase>(response, "response is KlineIndexPriceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void KlineIndexPriceAsync_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.KlineIndexPriceAsync(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public async Task KlineIndexPriceAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiRenponseOfKlineIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var response = await instance.KlineIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<KlineIndexPriceBase>>(response, "response is ApiResponse<KlineIndexPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void KlineIndexPriceAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.KlineIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        private static readonly string klinePremiumIndexPriceJson = @"
+{
+    ""ret_code"":0,
+    ""ret_msg"":""OK"",
+    ""ext_code"":"""",
+    ""ext_info"":"""",
+    ""result"":[
+        {
+            ""symbol"":""BTCUSD"",
+            ""period"":""1"",
+            ""open_time"":1582231260,
+            ""open"":""0.000588"",
+            ""high"":""0.000618"",
+            ""low"":""0.000588"",
+            ""close"":""0.000618""
+        }
+  ],
+    ""time_now"":""1591263582.601795""
+}
+";
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public void KlinePremiumIndexPrice_ParametersAreValid_ShouldReturnKlinePremiumIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var response = instance.KlinePremiumIndexPrice(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<KlinePremiumIndexPriceBase>(response, "response is KlinePremiumIndexPriceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void KlinePremiumIndexPrice_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.KlinePremiumIndexPrice(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public void KlinePremiumIndexPriceWithHttpInfo_ParametersAreValid_ShouldReturnApiRenponseOfKlinePremiumIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var response = instance.KlinePremiumIndexPriceWithHttpInfo(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<KlinePremiumIndexPriceBase>>(response, "response is ApiResponse<KlinePremiumIndexPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void KlinePremiumIndexPriceWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.KlinePremiumIndexPriceWithHttpInfo(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public async Task KlinePremiumIndexPriceAsync_ParametersAreValid_ShouldReturnKlinePremiumIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var response = await instance.KlinePremiumIndexPriceAsync(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<KlinePremiumIndexPriceBase>(response, "response is KlinePremiumIndexPriceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void KlinePremiumIndexPriceAsync_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.KlinePremiumIndexPriceAsync(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public async Task KlinePremiumIndexPriceAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiRenponseOfKlinePremiumIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var response = await instance.KlinePremiumIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<KlinePremiumIndexPriceBase>>(response, "response is ApiResponse<KlinePremiumIndexPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void KlinePremiumIndexPriceAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, klinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = Symbol.BTCUSD;
+            var from = 0;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.KlinePremiumIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
     }
 }
