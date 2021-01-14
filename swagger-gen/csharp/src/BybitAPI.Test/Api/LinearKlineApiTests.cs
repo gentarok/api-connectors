@@ -129,7 +129,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -191,7 +191,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -252,7 +252,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -314,7 +314,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string linearKlineMarkPriceJson = @"
@@ -407,7 +407,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -469,7 +469,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -530,7 +530,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -592,7 +592,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
     }
 }

@@ -102,7 +102,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -145,7 +145,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -187,7 +187,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -230,7 +230,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string linearOrderCancelAllJson = @"
@@ -413,7 +413,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -467,7 +467,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -520,7 +520,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -574,7 +574,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string linearOrderNewJson = @"
@@ -672,7 +672,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -734,7 +734,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -795,7 +795,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -857,7 +857,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         //Note: Comparing with the actual response, it seems that the 'Response Example' in the documentation is not maintained.

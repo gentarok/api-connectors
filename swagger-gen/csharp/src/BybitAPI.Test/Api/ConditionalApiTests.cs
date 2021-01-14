@@ -101,7 +101,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private readonly string conditionalCancelAllJson = @"
@@ -318,7 +318,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -368,7 +368,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -417,7 +417,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -467,7 +467,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private readonly string conditionalNewJson = @"
@@ -691,7 +691,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -733,7 +733,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -774,7 +774,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -816,7 +816,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private readonly string conditionalQueryBySymbolJson = @"
@@ -998,7 +998,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1047,7 +1047,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1095,7 +1095,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1144,7 +1144,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
     }
 }

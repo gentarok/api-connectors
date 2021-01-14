@@ -248,7 +248,7 @@ namespace BybitAPI.Api.Test
                 var response = instance.LinearPositionsClosePnlRecords(symbol, startTime, endTime, execType, page, limit);
             });
 
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -300,7 +300,7 @@ namespace BybitAPI.Api.Test
                 var response = instance.LinearPositionsClosePnlRecordsWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
             });
 
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -351,7 +351,7 @@ namespace BybitAPI.Api.Test
                 var response = await instance.LinearPositionsClosePnlRecordsAsync(symbol, startTime, endTime, execType, page, limit);
             });
 
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -403,7 +403,7 @@ namespace BybitAPI.Api.Test
                 var response = await instance.LinearPositionsClosePnlRecordsAsyncWithHttpInfo(symbol, startTime, endTime, execType, page, limit);
             });
 
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string linearPositionsMyPositionJsonBySymbol = @"
@@ -758,7 +758,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -804,7 +804,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -849,7 +849,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -895,7 +895,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string linearPositionsSetAutoAddMarginJson = @"
@@ -1047,7 +1047,7 @@ namespace BybitAPI.Api.Test
                 var response = instance.LinearPositionsSwitchIsolated(symbol, isIsolated, buyLeverage, sellLeverage);
             });
 
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1090,7 +1090,7 @@ namespace BybitAPI.Api.Test
                 var response = instance.LinearPositionsSwitchIsolatedWithHttpInfo(symbol, isIsolated, buyLeverage, sellLeverage);
             });
 
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1132,7 +1132,7 @@ namespace BybitAPI.Api.Test
                 var response = await instance.LinearPositionsSwitchIsolatedAsync(symbol, isIsolated, buyLeverage, sellLeverage);
             });
 
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1175,7 +1175,7 @@ namespace BybitAPI.Api.Test
                 var response = await instance.LinearPositionsSwitchIsolatedAsyncWithHttpInfo(symbol, isIsolated, buyLeverage, sellLeverage);
             });
 
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         private static readonly string linearPositionsSwitchModeJson = @"
@@ -1344,7 +1344,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1406,7 +1406,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1467,7 +1467,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -1529,7 +1529,7 @@ namespace BybitAPI.Api.Test
             });
 
             // Assert
-            Assert.That(ex.ErrorCode, Is.EqualTo(400));
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
     }
 }
