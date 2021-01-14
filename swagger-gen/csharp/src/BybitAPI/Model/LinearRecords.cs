@@ -417,4 +417,28 @@ namespace BybitAPI.Model
     /// </remarks>
     public record LinearWalletGetRiskLimitRes(long Id, LinearSymbol Symbol, decimal Limit, decimal MaintainMargin, decimal StartingMargin,
         IEnumerable<int> Section, int IsLowestRisk, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
+
+    /// <summary>
+    /// Base type of the response for the 'Query Index Price Kline' API method.
+    /// </summary>
+    public record LinearKlineIndexPriceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<LinearKlineIndexPriceRes>? Result, string TimeNow);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Query Index Price Kline' API method.
+    /// </summary>
+    public record LinearKlineIndexPriceRes(long Id, LinearSymbol Symbol, string Period, long StartAt, decimal Open, decimal High, decimal Low,
+        decimal Close);
+
+    /// <summary>
+    /// Base type of the response for the 'Query Premium Index Price Kline' API method.
+    /// </summary>
+    public record LinearKlinePremiumIndexPriceBase(int RetCode, string RetMsg, string ExtCode, string? ExtInfo,
+        IReadOnlyList<LinearKlinePremiumIndexPriceRes>? Result, string TimeNow);
+
+    /// <summary>
+    /// Actual data type of the response for the 'Query Premium Index Price Kline' API method.
+    /// </summary>
+    public record LinearKlinePremiumIndexPriceRes(long Id, LinearSymbol Symbol, string Period, long StartAt, decimal Open, decimal High, decimal Low,
+        decimal Close);
 }

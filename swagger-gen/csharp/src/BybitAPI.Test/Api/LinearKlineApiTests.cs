@@ -594,5 +594,527 @@ namespace BybitAPI.Api.Test
             // Assert
             Assert.That(ex?.ErrorCode, Is.EqualTo(400));
         }
+
+        private static readonly string linearKlineIndexPriceJson = @"
+{
+    ""ret_code"":0,
+    ""ret_msg"":""OK"",
+    ""ext_code"":"""",
+    ""ext_info"":"""",
+    ""result"":[{
+        ""symbol"":""BTCUSDT"",
+        ""period"":""1"",
+        ""open_time"":1582231260,
+        ""open"":""10106.09"",
+        ""high"":""10108.75"",
+        ""low"":""10104.66"",
+        ""close"":""10108.73""
+    }],
+    ""time_now"":""1591263582.601795""
+}
+";
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public void LinearKlineIndexPrice_ParametersAreValid_ShouldReturnLinearKlineIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var response = instance.LinearKlineIndexPrice(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<LinearKlineIndexPriceBase>(response, "response is LinearKlineIndexPriceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void LinearKlineIndexPrice_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.LinearKlineIndexPrice(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public void LinearKlineIndexPriceWithHttpInfo_ParametersAreValid_ShouldReturnApiRenponseOfLinearKlineIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var response = instance.LinearKlineIndexPriceWithHttpInfo(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<LinearKlineIndexPriceBase>>(response, "response is ApiResponse<LinearKlineIndexPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void LinearKlineIndexPriceWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.LinearKlineIndexPriceWithHttpInfo(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public async Task LinearKlineIndexPriceAsync_ParametersAreValid_ShouldReturnLinearKlineIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var response = await instance.LinearKlineIndexPriceAsync(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<LinearKlineIndexPriceBase>(response, "response is LinearKlineIndexPriceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void LinearKlineIndexPriceAsync_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.LinearKlineIndexPriceAsync(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public async Task LinearKlineIndexPriceAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiRenponseOfLinearKlineIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var response = await instance.LinearKlineIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<LinearKlineIndexPriceBase>>(response, "response is ApiResponse<LinearKlineIndexPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void LinearKlineIndexPriceAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlineIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.LinearKlineIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        private static readonly string linearKlinePremiumIndexPriceJson = @"
+{
+    ""ret_code"":0,
+    ""ret_msg"":""OK"",
+    ""ext_code"":"""",
+    ""ext_info"":"""",
+    ""result"":[{
+        ""symbol"":""BTCUSDT"",
+        ""period"":""1"",
+        ""open_time"":1582231260,
+        ""open"":""0.000588"",
+        ""high"":""0.000618"",
+        ""low"":""0.000588"",
+        ""close"":""0.000618""
+    }],
+    ""time_now"":""1591263582.601795""
+}
+";
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public void LinearKlinePremiumIndexPrice_ParametersAreValid_ShouldReturnLinearKlinePremiumIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var response = instance.LinearKlinePremiumIndexPrice(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<LinearKlinePremiumIndexPriceBase>(response, "response is LinearKlinePremiumIndexPriceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void LinearKlinePremiumIndexPrice_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.LinearKlinePremiumIndexPrice(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public void LinearKlinePremiumIndexPriceWithHttpInfo_ParametersAreValid_ShouldReturnApiRenponseOfLinearKlinePremiumIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var response = instance.LinearKlinePremiumIndexPriceWithHttpInfo(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<LinearKlinePremiumIndexPriceBase>>(response, "response is ApiResponse<LinearKlinePremiumIndexPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void LinearKlinePremiumIndexPriceWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var ex = Assert.Throws<ApiException>(() =>
+            {
+                var response = instance.LinearKlinePremiumIndexPriceWithHttpInfo(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public async Task LinearKlinePremiumIndexPriceAsync_ParametersAreValid_ShouldReturnLinearKlinePremiumIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var response = await instance.LinearKlinePremiumIndexPriceAsync(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<LinearKlinePremiumIndexPriceBase>(response, "response is LinearKlinePremiumIndexPriceBase");
+            Assert.IsNotNull(response.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void LinearKlinePremiumIndexPriceAsync_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.LinearKlinePremiumIndexPriceAsync(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        [TestCase("1", null)]
+        [TestCase("3", null)]
+        [TestCase("5", null)]
+        [TestCase("15", null)]
+        [TestCase("30", null)]
+        [TestCase("60", null)]
+        [TestCase("120", null)]
+        [TestCase("240", null)]
+        [TestCase("360", null)]
+        [TestCase("720", null)]
+        [TestCase("D", null)]
+        [TestCase("M", null)]
+        [TestCase("W", null)]
+        [TestCase("1", 0)]
+        [TestCase("1", 200)]
+        public async Task LinearKlinePremiumIndexPriceAsyncWithHttpInfo_ParametersAreValid_ShouldReturnApiRenponseOfLinearKlinePremiumIndexPriceBase(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var response = await instance.LinearKlinePremiumIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+
+            // Assert
+            Assert.IsInstanceOf<ApiResponse<LinearKlinePremiumIndexPriceBase>>(response, "response is ApiResponse<LinearKlinePremiumIndexPriceBase>");
+            Assert.IsNotNull(response.Data);
+            Assert.IsNotNull(response.Data.Result);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("2", null)]
+        [TestCase("A", null)]
+        [TestCase("1", -1)]
+        [TestCase("1", 201)]
+        public void LinearKlinePremiumIndexPriceAsyncWithHttpInfo_ParametersAreInvalid_ShouldRaiseApiException(string interval, int? limit)
+        {
+            // Arrange
+            var instance = Create();
+            var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearKlinePremiumIndexPriceJson);
+            instance.Configuration.ApiClient.RestClient = client;
+
+            var symbol = LinearSymbol.BCHUSDT;
+            var from = 0;
+
+            // Act
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                var response = await instance.LinearKlinePremiumIndexPriceAsyncWithHttpInfo(symbol, interval, from, limit);
+            });
+
+            // Assert
+            Assert.That(ex?.ErrorCode, Is.EqualTo(400));
+        }
     }
 }
