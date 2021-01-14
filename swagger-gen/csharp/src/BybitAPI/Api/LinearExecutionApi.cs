@@ -22,7 +22,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-usertraderecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
         /// <param name="execType"> (optional)</param>
@@ -39,7 +39,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-usertraderecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
         /// <param name="execType"> (optional)</param>
@@ -60,7 +60,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-usertraderecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
         /// <param name="execType"> (optional)</param>
@@ -77,7 +77,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-usertraderecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="startTime"> (optional)</param>
         /// <param name="endTime"> (optional)</param>
         /// <param name="execType"> (optional)</param>

@@ -21,7 +21,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
         /// <param name="page">Page. Default getting first page data. (optional)</param>
@@ -37,7 +37,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
         /// <param name="page">Page. Default getting first page data. (optional)</param>
@@ -53,7 +53,7 @@ namespace BybitAPI.Api
         ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
         ///// </remarks>
         ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        ///// <param name="symbol">Contract type</param>
+        ///// <param name="symbol"><see cref="Symbol"/></param>
         ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
         ///// <param name="execType">Execution type (optional)</param>
@@ -69,7 +69,7 @@ namespace BybitAPI.Api
         ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
         ///// </remarks>
         ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        ///// <param name="symbol">Contract type</param>
+        ///// <param name="symbol"><see cref="Symbol"/></param>
         ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
         ///// <param name="execType">Execution type (optional)</param>
@@ -89,7 +89,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
         /// <param name="page">Page. Default getting first page data. (optional)</param>
@@ -105,7 +105,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-usertraderecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">OrderID. If not provided, will return user’s trading records. (optional)</param>
         /// <param name="startTime">Start timestamp point for result. (optional)</param>
         /// <param name="page">Page. Default getting first page data. (optional)</param>
@@ -121,7 +121,7 @@ namespace BybitAPI.Api
         ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
         ///// </remarks>
         ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        ///// <param name="symbol">Contract type</param>
+        ///// <param name="symbol"><see cref="Symbol"/></param>
         ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
         ///// <param name="execType">Execution type (optional)</param>
@@ -137,7 +137,7 @@ namespace BybitAPI.Api
         ///// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
         ///// </remarks>
         ///// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        ///// <param name="symbol">Contract type</param>
+        ///// <param name="symbol"><see cref="Symbol"/></param>
         ///// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         ///// <param name="endTime">End timestamp point for result, in second (optional)</param>
         ///// <param name="execType">Execution type (optional)</param>

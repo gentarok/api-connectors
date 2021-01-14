@@ -22,7 +22,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-marketaccountratio"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns><see cref="MarketAccountRatioBase"/></returns>
@@ -35,7 +35,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-marketaccountratio"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>ApiResponse of MarketAccountRatioBase</returns>
@@ -48,7 +48,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-marketbigdeal"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns><see cref="MarketBigDealBase"/></returns>
         MarketBigDealBase MarketBigDeal(Symbol symbol, int? limit = null);
@@ -60,7 +60,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-marketbigdeal"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>ApiResponse of MarketBigDealBase</returns>
         ApiResponse<MarketBigDealBase> MarketBigDealWithHttpInfo(Symbol symbol, int? limit = null);
@@ -72,7 +72,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-query_liqrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
@@ -87,7 +87,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-query_liqrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
@@ -102,7 +102,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-marketopeninterest"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns><see cref="MarketOpenInterestBase"/></returns>
@@ -115,7 +115,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-marketopeninterest"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>ApiResponse of MarketOpenInterestBase</returns>
@@ -128,7 +128,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-orderbook"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns><see cref="MarketOrderbookBase"/></returns>
         MarketOrderbookBase MarketOrderbook(Symbol symbol);
 
@@ -139,7 +139,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-orderbook"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of MarketOrderbookBase</returns>
         ApiResponse<MarketOrderbookBase> MarketOrderbookWithHttpInfo(Symbol symbol);
 
@@ -150,7 +150,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-latestsymbolinfo"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type. (optional)</param>
+        /// <param name="symbol"><see cref="Symbol"/> (optional)</param>
         /// <returns><see cref="MarketSymbolInfoBase"/></returns>
         MarketSymbolInfoBase MarketSymbolInfo(Symbol? symbol = null);
 
@@ -161,7 +161,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-latestsymbolinfo"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type. (optional)</param>
+        /// <param name="symbol"><see cref="Symbol"/> (optional)</param>
         /// <returns>ApiResponse of MarketSymbolInfoBase</returns>
         ApiResponse<MarketSymbolInfoBase> MarketSymbolInfoWithHttpInfo(Symbol? symbol = null);
 
@@ -172,7 +172,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-publictradingrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns><see cref="MarketTradingRecordsBase"/></returns>
@@ -185,7 +185,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-publictradingrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>ApiResponse of MarketTradingRecordsBase</returns>
@@ -202,7 +202,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-marketaccountratio"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of MarketAccountRatioBase</returns>
@@ -215,7 +215,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-marketaccountratio"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 500. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (MarketAccountRatioBase)</returns>
@@ -228,7 +228,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-marketbigdeal"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of MarketBigDealBase</returns>
         Task<MarketBigDealBase> MarketBigDealAsync(Symbol symbol, int? limit = null);
@@ -240,7 +240,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-marketbigdeal"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <returns>Task of ApiResponse (MarketBigDealBase)</returns>
         Task<ApiResponse<MarketBigDealBase>> MarketBigDealAsyncWithHttpInfo(Symbol symbol, int? limit = null);
@@ -252,7 +252,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-query_liqrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
@@ -267,7 +267,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-query_liqrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Limit for data size, max size is 1000. Default size is 500 (optional)</param>
         /// <param name="startTime">Start timestamp point for result, in millisecond (optional)</param>
@@ -282,7 +282,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-marketopeninterest"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of MarketOpenInterestBase</returns>
@@ -295,7 +295,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-marketopeninterest"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="period">Data recording period. 5min, 15min, 30min, 1h, 4h, 1d</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 50 (optional)</param>
         /// <returns>Task of ApiResponse (MarketOpenInterestBase)</returns>
@@ -308,7 +308,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-orderbook"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of Object</returns>
         Task<MarketOrderbookBase> MarketOrderbookAsync(Symbol symbol);
 
@@ -319,7 +319,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-orderbook"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (MarketOrderbookBase)</returns>
         Task<ApiResponse<MarketOrderbookBase>> MarketOrderbookAsyncWithHttpInfo(Symbol symbol);
 
@@ -330,7 +330,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-latestsymbolinfo"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type. (optional)</param>
+        /// <param name="symbol"><see cref="Symbol"/> (optional)</param>
         /// <returns>Task of MarketSymbolInfoBase</returns>
         Task<MarketSymbolInfoBase> MarketSymbolInfoAsync(Symbol? symbol = null);
 
@@ -341,7 +341,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-latestsymbolinfo"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type. (optional)</param>
+        /// <param name="symbol"><see cref="Symbol"/> (optional)</param>
         /// <returns>Task of ApiResponse (MarketSymbolInfoBase)</returns>
         Task<ApiResponse<MarketSymbolInfoBase>> MarketSymbolInfoAsyncWithHttpInfo(Symbol? symbol = null);
 
@@ -352,7 +352,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-publictradingrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of MarketTradingRecordsBase</returns>
@@ -365,7 +365,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-publictradingrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="from">From ID. Default: return latest data (optional)</param>
         /// <param name="limit">Number of results. Default 500; max 1000 (optional)</param>
         /// <returns>Task of ApiResponse (MarketTradingRecordsBase)</returns>

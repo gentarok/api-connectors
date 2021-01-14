@@ -121,7 +121,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-setrisklimit"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns><see cref="WalletSetRiskLimitBase"/></returns>
         WalletSetRiskLimitBase WalletSetRiskLimit(Symbol symbol, long riskId);
@@ -133,7 +133,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-setrisklimit"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>ApiResponse of WalletSetRiskLimitBase</returns>
         ApiResponse<WalletSetRiskLimitBase> WalletSetRiskLimitWithHttpInfo(Symbol symbol, long riskId);
@@ -281,7 +281,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-setrisklimit"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of WalletSetRiskLimitBase</returns>
         Task<WalletSetRiskLimitBase> WalletSetRiskLimitAsync(Symbol symbol, long riskId);
@@ -293,7 +293,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-setrisklimit"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="riskId">Risk ID. Can be found with the Get risk limit list endpoint.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         Task<ApiResponse<WalletSetRiskLimitBase>> WalletSetRiskLimitAsyncWithHttpInfo(Symbol symbol, long riskId);

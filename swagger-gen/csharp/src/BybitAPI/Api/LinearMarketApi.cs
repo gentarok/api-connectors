@@ -22,7 +22,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-publictradingrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="limit">Number of results. Default 500; max 1000. (optional)</param>
         /// <returns><see cref="LinearMarketTradingBase"/></returns>
         LinearMarketTradingBase LinearMarketTrading(LinearSymbol symbol, int? limit = null);
@@ -35,7 +35,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-publictradingrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="limit">Number of results. Default 500; max 1000. (optional)</param>
         /// <returns>ApiResponse of LinearMarketTradingBase</returns>
         ApiResponse<LinearMarketTradingBase> LinearMarketTradingWithHttpInfo(LinearSymbol symbol, int? limit = null);
@@ -52,7 +52,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-publictradingrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="limit">Number of results. Default 500; max 1000. (optional)</param>
         /// <returns>Task of LinearMarketTradingBase</returns>
         Task<LinearMarketTradingBase> LinearMarketTradingAsync(LinearSymbol symbol, int? limit = null);
@@ -65,7 +65,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-publictradingrecords"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="limit">Number of results. Default 500; max 1000. (optional)</param>
         /// <returns>Task of ApiResponse (LinearMarketTradingBase)</returns>
         Task<ApiResponse<LinearMarketTradingBase>> LinearMarketTradingAsyncWithHttpInfo(LinearSymbol symbol, int? limit = null);

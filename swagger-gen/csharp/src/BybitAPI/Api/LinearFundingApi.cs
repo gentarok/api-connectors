@@ -22,7 +22,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-mylastfundingfee"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns><see cref="LinearFundingMyLastFeeBase"/></returns>
         LinearFundingMyLastFeeBase LinearFundingMyLastFee(LinearSymbol symbol);
 
@@ -34,7 +34,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-mylastfundingfee"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>ApiResponse of LinearFundingMyLastFeeBase</returns>
         ApiResponse<LinearFundingMyLastFeeBase> LinearFundingMyLastFeeWithHttpInfo(LinearSymbol symbol);
 
@@ -45,7 +45,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-predictedfunding"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns><see cref="LinearFundingPredictedBase"/></returns>
         LinearFundingPredictedBase LinearFundingPredicted(LinearSymbol symbol);
 
@@ -56,7 +56,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-predictedfunding"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>ApiResponse of LinearFundingPredictedBase</returns>
         ApiResponse<LinearFundingPredictedBase> LinearFundingPredictedWithHttpInfo(LinearSymbol symbol);
 
@@ -68,7 +68,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-fundingrate"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns><see cref="LinearFundingPrevRateBase"/></returns>
         LinearFundingPrevRateBase LinearFundingPrevRate(LinearSymbol symbol);
 
@@ -80,7 +80,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-fundingrate"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>ApiResponse of LinearFundingPrevRateBase</returns>
         ApiResponse<LinearFundingPrevRateBase> LinearFundingPrevRateWithHttpInfo(LinearSymbol symbol);
 
@@ -96,7 +96,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-mylastfundingfee"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of LinearFundingMyLastFeeBase</returns>
         Task<LinearFundingMyLastFeeBase> LinearFundingMyLastFeeAsync(LinearSymbol symbol);
 
@@ -108,7 +108,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-mylastfundingfee"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of ApiResponse (LinearFundingMyLastFeeBase)</returns>
         Task<ApiResponse<LinearFundingMyLastFeeBase>> LinearFundingMyLastFeeAsyncWithHttpInfo(LinearSymbol symbol);
 
@@ -119,7 +119,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-predictedfunding"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of LinearFundingPredictedBase</returns>
         Task<LinearFundingPredictedBase> LinearFundingPredictedAsync(LinearSymbol symbol);
 
@@ -130,7 +130,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-predictedfunding"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of ApiResponse (LinearFundingPredictedBase)</returns>
         Task<ApiResponse<LinearFundingPredictedBase>> LinearFundingPredictedAsyncWithHttpInfo(LinearSymbol symbol);
 
@@ -142,7 +142,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-fundingrate"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of LinearFundingPrevRateBase</returns>
         Task<LinearFundingPrevRateBase> LinearFundingPrevRateAsync(LinearSymbol symbol);
 
@@ -154,7 +154,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-fundingrate"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of ApiResponse (LinearFundingPrevRateBase)</returns>
         Task<ApiResponse<LinearFundingPrevRateBase>> LinearFundingPrevRateAsyncWithHttpInfo(LinearSymbol symbol);
 

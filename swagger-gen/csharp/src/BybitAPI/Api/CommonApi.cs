@@ -41,7 +41,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns><see cref="LCPInfoBase"/></returns>
         LCPInfoBase CommonGetLcp(Symbol symbol);
 
@@ -52,7 +52,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of LCPInfoBase</returns>
         ApiResponse<LCPInfoBase> CommonGetLcpWithHttpInfo(Symbol symbol);
 
@@ -107,7 +107,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of LCPInfoBase</returns>
         Task<LCPInfoBase> CommonGetLcpAsync(Symbol symbol);
 
@@ -118,7 +118,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-lcp"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (LCPInfoBase)</returns>
         Task<ApiResponse<LCPInfoBase>> CommonGetLcpAsyncWithHttpInfo(Symbol symbol);
 

@@ -22,7 +22,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns><see cref="LinearOrderCancelBase"/></returns>
@@ -36,7 +36,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>ApiResponse of LinearOrderCancelBase</returns>
@@ -49,7 +49,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelallactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns><see cref="LinearOrderCancelAllBase"/></returns>
         LinearOrderCancelAllBase LinearOrderCancelAll(LinearSymbol symbol);
 
@@ -60,7 +60,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelallactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>ApiResponse of LinearOrderCancelAllBase</returns>
         ApiResponse<LinearOrderCancelAllBase> LinearOrderCancelAllWithHttpInfo(LinearSymbol symbol);
 
@@ -72,7 +72,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-getactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="order"> (optional)</param>
@@ -90,7 +90,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-getactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="order"> (optional)</param>
@@ -109,7 +109,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side"> (reqired)</param>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderType"> (optional)</param>
         /// <param name="timeInForce"> (optional)</param>
         /// <param name="qty"> (optional)</param>
@@ -133,7 +133,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side"> (reqired)</param>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderType"> (optional)</param>
         /// <param name="timeInForce"> (optional)</param>
         /// <param name="qty"> (optional)</param>
@@ -156,7 +156,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>LinearOrderQueryBase of LinearOrderQueryRes</returns>
@@ -170,7 +170,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>ApiResponse of LinearOrderQueryBase (LinearOrderQueryRes)</returns>
@@ -184,7 +184,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>LinearOrderQueryBase of List (LinearOrderQueryRes)</returns>
         LinearOrderQueryBase<IReadOnlyList<LinearOrderQueryRes>> LinearOrderQuery(LinearSymbol symbol);
 
@@ -196,7 +196,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>ApiResponse of LinearOrderQueryBase (List of LinearOrderQueryRes)</returns>
         ApiResponse<LinearOrderQueryBase<IReadOnlyList<LinearOrderQueryRes>>> LinearOrderQueryWithHttpInfo(LinearSymbol symbol);
 
@@ -207,7 +207,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-replaceactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="pRQty"> (optional)</param>
@@ -222,7 +222,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-replaceactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="pRQty"> (optional)</param>
@@ -242,7 +242,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of LinearOrderCancelBase</returns>
@@ -256,7 +256,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of ApiResponse (LinearOrderCancelBase)</returns>
@@ -269,7 +269,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelallactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of LinearOrderCancelAllBase</returns>
         Task<LinearOrderCancelAllBase> LinearOrderCancelAllAsync(LinearSymbol symbol);
 
@@ -280,7 +280,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelallactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of ApiResponse (LinearOrderCancelAllBase)</returns>
         Task<ApiResponse<LinearOrderCancelAllBase>> LinearOrderCancelAllAsyncWithHttpInfo(LinearSymbol symbol);
 
@@ -292,7 +292,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-getactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="order"> (optional)</param>
@@ -310,7 +310,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-getactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="order"> (optional)</param>
@@ -329,7 +329,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side"> (required)</param>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderType"> (optional)</param>
         /// <param name="timeInForce"> (optional)</param>
         /// <param name="qty"> (optional)</param>
@@ -353,7 +353,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side"> (required)</param>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderType"> (optional)</param>
         /// <param name="timeInForce"> (optional)</param>
         /// <param name="qty"> (optional)</param>
@@ -376,7 +376,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of LinearOrderQueryBase (LinearOrderQueryRes)</returns>
@@ -390,7 +390,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"> (required)</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of ApiResponse (LinearOrderQueryBase of LinearOrderQueryRes)</returns>
@@ -404,7 +404,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <returns>Task of LinearOrderQueryBase (List of LinearOrderQueryRes)</returns>
         Task<LinearOrderQueryBase<IReadOnlyList<LinearOrderQueryRes>>> LinearOrderQueryAsync(LinearSymbol symbol);
 
@@ -416,7 +416,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <returns>Task of ApiResponse (LinearOrderQueryBase of List (LinearOrderQueryRes))</returns>
@@ -429,7 +429,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-replaceactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="pRQty"> (optional)</param>
@@ -444,7 +444,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-replaceactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol"></param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="orderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
         /// <param name="pRQty"> (optional)</param>

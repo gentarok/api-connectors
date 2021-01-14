@@ -21,7 +21,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-cancelactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns><see cref="OrderCancelBase"/></returns>
@@ -34,7 +34,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-cancelactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>ApiResponse of OrderCancelBase</returns>
@@ -47,7 +47,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-cancelallactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns><see cref="OrderCancelAllBase"/></returns>
         OrderCancelAllBase OrderCancelAll(Symbol symbol);
 
@@ -58,7 +58,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-cancelallactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of OrderCancelAllBase</returns>
         ApiResponse<OrderCancelAllBase> OrderCancelAllWithHttpInfo(Symbol symbol);
 
@@ -69,7 +69,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type. Default BTCUSD</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
@@ -84,7 +84,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type. Default BTCUSD</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
@@ -100,7 +100,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderType">Active order type</param>
         /// <param name="qty"></param>
         /// <param name="timeInForce">Time in force</param>
@@ -121,7 +121,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderType">Active order type</param>
         /// <param name="qty"></param>
         /// <param name="timeInForce">Time in force</param>
@@ -141,7 +141,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID.</param>
         /// <returns>OrderQueryBase of OrderQueryRes</returns>
         OrderQueryBase<OrderQueryRes> OrderQuery(Symbol symbol, string orderId);
@@ -153,7 +153,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID.</param>
         /// <returns>ApiResponse of OrderQueryBase (OrderQueryRes)</returns>
         ApiResponse<OrderQueryBase<OrderQueryRes>> OrderQueryWithHttpInfo(Symbol symbol, string orderId);
@@ -165,7 +165,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>OrderQueryBase of List (OrderQueryRes)</returns>
         OrderQueryBase<IReadOnlyList<OrderQueryRes>> OrderQuery(Symbol symbol);
 
@@ -176,7 +176,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of OrderQueryBase (List of OrderQueryRes)</returns>
         ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>> OrderQueryWithHttpInfo(Symbol symbol);
 
@@ -187,7 +187,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-replaceactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
@@ -202,7 +202,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-replaceactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
@@ -221,7 +221,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-cancelactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of OrderCancelBase</returns>
@@ -234,7 +234,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-cancelactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID (optional)</param>
         /// <param name="orderLinkId">Order link id. (optional)</param>
         /// <returns>Task of ApiResponse (OrderCancelBase)</returns>
@@ -247,7 +247,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-cancelallactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of OrderCancelAllBase</returns>
         Task<OrderCancelAllBase> OrderCancelAllAsync(Symbol symbol);
 
@@ -258,7 +258,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-cancelallactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (OrderCancelAllBase)</returns>
         Task<ApiResponse<OrderCancelAllBase>> OrderCancelAllAsyncWithHttpInfo(Symbol symbol);
 
@@ -269,7 +269,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type. Default BTCUSD</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
@@ -284,7 +284,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type. Default BTCUSD</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
         /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
@@ -300,7 +300,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderType">Active order type</param>
         /// <param name="qty"></param>
         /// <param name="timeInForce">Time in force</param>
@@ -321,7 +321,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side</param>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderType">Active order type</param>
         /// <param name="qty"></param>
         /// <param name="timeInForce">Time in force</param>
@@ -341,7 +341,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID.</param>
         /// <returns>Task of OrderQueryBase (OrderQueryRes)</returns>
         Task<OrderQueryBase<OrderQueryRes>> OrderQueryAsync(Symbol symbol, string orderId);
@@ -353,7 +353,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID.</param>
         /// <returns>Task of ApiResponse (OrderQueryBase of OrderQueryRes))</returns>
         Task<ApiResponse<OrderQueryBase<OrderQueryRes>>> OrderQueryAsyncWithHttpInfo(Symbol symbol, string orderId);
@@ -365,7 +365,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of OrderQueryBase (OrderQueryRes)</returns>
         Task<OrderQueryBase<IReadOnlyList<OrderQueryRes>>> OrderQueryAsync(Symbol symbol);
 
@@ -376,7 +376,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-queryactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (OrderQueryBase of List (OrderQueryRes)))</returns>
         Task<ApiResponse<OrderQueryBase<IReadOnlyList<OrderQueryRes>>>> OrderQueryAsyncWithHttpInfo(Symbol symbol);
 
@@ -387,7 +387,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-replaceactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
@@ -402,7 +402,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-replaceactive"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderId">Order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>

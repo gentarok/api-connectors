@@ -21,7 +21,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns><see cref="ConditionalCancelBase"/></returns>
@@ -34,7 +34,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>ApiResponse of ConditionalCancelBase</returns>
@@ -47,7 +47,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns><see cref="ConditionalCancelAllBase"/></returns>
         ConditionalCancelAllBase ConditionalCancelAll(Symbol symbol);
 
@@ -58,7 +58,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
         ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(Symbol symbol);
 
@@ -69,7 +69,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderStatus">Stop order status. (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
@@ -84,7 +84,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderStatus">Stop order status. (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
@@ -100,7 +100,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderType">Conditional order type.</param>
         /// <param name="qty">Order quantity.</param>
         /// <param name="basePrice">Send current market price. It will be used to compare with the value of &#39;stop_px&#39;, to decide whether your conditional order will be triggered by crossing trigger price from upper side or lower side. Mainly used to identify the expected direction of the current conditional order..</param>
@@ -121,7 +121,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderType">Conditional order type.</param>
         /// <param name="qty">Order quantity.</param>
         /// <param name="basePrice">Send current market price. It will be used to compare with the value of &#39;stop_px&#39;, to decide whether your conditional order will be triggered by crossing trigger price from upper side or lower side. Mainly used to identify the expected direction of the current conditional order..</param>
@@ -141,7 +141,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>ConditionalQueryBase of ConditionalQueryRes</returns>
@@ -154,7 +154,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>ApiResponse of ConditionalQueryBase (ConditionalQueryRes)</returns>
@@ -167,7 +167,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ConditionalQueryBase of IReadOnlyList (ConditionalQueryRes)</returns>
         ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>> ConditionalQuery(Symbol symbol);
 
@@ -178,7 +178,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of ConditionalQueryBase (IReadOnlyList of ConditionalQueryRes)</returns>
         ApiResponse<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>> ConditionalQueryWithHttpInfo(Symbol symbol);
 
@@ -189,7 +189,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Stop order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
@@ -205,7 +205,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Stop order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
@@ -225,7 +225,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>Task of ConditionalCancelBase</returns>
@@ -238,7 +238,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>Task of ApiResponse (ConditionalCancelBase)</returns>
@@ -251,7 +251,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ConditionalCancelAllBase</returns>
         Task<ConditionalCancelAllBase> ConditionalCancelAllAsync(Symbol symbol);
 
@@ -262,7 +262,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-cancelallcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (ConditionalCancelAllBase))</returns>
         Task<ApiResponse<ConditionalCancelAllBase>> ConditionalCancelAllAsyncWithHttpInfo(Symbol symbol);
 
@@ -273,7 +273,7 @@ namespace BybitAPI.Api
         ///
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderStatus">Stop order status. (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
@@ -288,7 +288,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderStatus">Stop order status. (optional)</param>
         /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
         /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
@@ -304,7 +304,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderType">Conditional order type.</param>
         /// <param name="qty">Order quantity.</param>
         /// <param name="basePrice">Send current market price. It will be used to compare with the value of &#39;stop_px&#39;, to decide whether your conditional order will be triggered by crossing trigger price from upper side or lower side. Mainly used to identify the expected direction of the current conditional order..</param>
@@ -325,7 +325,7 @@ namespace BybitAPI.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="side">Side.</param>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="orderType">Conditional order type.</param>
         /// <param name="qty">Order quantity.</param>
         /// <param name="basePrice">Send current market price. It will be used to compare with the value of &#39;stop_px&#39;, to decide whether your conditional order will be triggered by crossing trigger price from upper side or lower side. Mainly used to identify the expected direction of the current conditional order..</param>
@@ -345,7 +345,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>Task of ConditionalQueryBase (ConditionalQueryRes)</returns>
@@ -358,7 +358,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Order ID of conditional order. (optional)</param>
         /// <param name="orderLinkId">Agency customized order ID. (optional)</param>
         /// <returns>Task of ApiResponse (ConditionalQueryBase of ConditionalQueryRes)</returns>
@@ -371,7 +371,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ConditionalQueryBase (IReadOnlyList of ConditionalQueryRes)</returns>
         Task<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>> ConditionalQueryAsync(Symbol symbol);
 
@@ -382,7 +382,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querycond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (ConditionalQueryBase of IReadOnlyList (ConditionalQueryRes))</returns>
         Task<ApiResponse<ConditionalQueryBase<IReadOnlyList<ConditionalQueryRes>>>> ConditionalQueryAsyncWithHttpInfo(Symbol symbol);
 
@@ -393,7 +393,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Stop order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>
@@ -409,7 +409,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-replacecond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="stopOrderId">Stop order ID. (optional)</param>
         /// <param name="orderLinkId">Order Link ID. (optional)</param>
         /// <param name="pRQty">Order quantity. (optional)</param>

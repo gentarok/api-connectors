@@ -21,7 +21,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-mylastfundingfee"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns><see cref="FundingMyLastFeeBase"/></returns>
         FundingMyLastFeeBase FundingMyLastFee(Symbol symbol);
 
@@ -32,7 +32,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-mylastfundingfee"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of FundingMyLastFeeBase</returns>
         ApiResponse<FundingMyLastFeeBase> FundingMyLastFeeWithHttpInfo(Symbol symbol);
 
@@ -43,7 +43,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-predictedfunding"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns><see cref="FundingPredictedBase"/></returns>
         FundingPredictedBase FundingPredicted(Symbol symbol);
 
@@ -54,7 +54,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-predictedfunding"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of FundingPredictedBase</returns>
         ApiResponse<FundingPredictedBase> FundingPredictedWithHttpInfo(Symbol symbol);
 
@@ -65,7 +65,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-fundingrate"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns><see cref="FundingPrevRateBase"/></returns>
         FundingPrevRateBase FundingPrevRate(Symbol symbol);
 
@@ -76,7 +76,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-fundingrate"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of FundingPrevRateBase</returns>
         ApiResponse<FundingPrevRateBase> FundingPrevRateWithHttpInfo(Symbol symbol);
 
@@ -91,7 +91,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-mylastfundingfee"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of FundingMyLastFeeBase</returns>
         Task<FundingMyLastFeeBase> FundingMyLastFeeAsync(Symbol symbol);
 
@@ -102,7 +102,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-mylastfundingfee"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (FundingMyLastFeeBase)</returns>
         Task<ApiResponse<FundingMyLastFeeBase>> FundingMyLastFeeAsyncWithHttpInfo(Symbol symbol);
 
@@ -113,7 +113,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-predictedfunding"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of FundingPredictedBase</returns>
         Task<FundingPredictedBase> FundingPredictedAsync(Symbol symbol);
 
@@ -124,7 +124,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-predictedfunding"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (FundingPredictedBase)</returns>
         Task<ApiResponse<FundingPredictedBase>> FundingPredictedAsyncWithHttpInfo(Symbol symbol);
 
@@ -135,7 +135,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-fundingrate"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of FundingPrevRateBase</returns>
         Task<FundingPrevRateBase> FundingPrevRateAsync(Symbol symbol);
 
@@ -146,7 +146,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-fundingrate"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (FundingPrevRateBase)</returns>
         Task<ApiResponse<FundingPrevRateBase>> FundingPrevRateAsyncWithHttpInfo(Symbol symbol);
 

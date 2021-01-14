@@ -24,7 +24,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querykline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
@@ -39,7 +39,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querykline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
@@ -54,7 +54,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-markpricekline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
@@ -69,7 +69,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-markpricekline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
@@ -88,7 +88,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querykline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
@@ -103,7 +103,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-querykline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
@@ -118,7 +118,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-markpricekline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>
@@ -133,7 +133,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-markpricekline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Contract type. (optional)</param>

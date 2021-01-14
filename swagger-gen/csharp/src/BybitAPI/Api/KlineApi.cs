@@ -22,7 +22,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querykline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 200 (optional)</param>
@@ -36,7 +36,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querykline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 200 (optional)</param>
@@ -50,7 +50,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-markpricekline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 200 (optional)</param>
@@ -64,7 +64,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-markpricekline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 200 (optional)</param>
@@ -82,7 +82,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querykline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 200 (optional)</param>
@@ -96,7 +96,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-querykline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="interval">Kline interval.</param>
         /// <param name="from">from timestamp.</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 200 (optional)</param>
@@ -110,7 +110,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-markpricekline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 200 (optional)</param>
@@ -124,7 +124,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-markpricekline"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="interval">Data refresh interval</param>
         /// <param name="from">From timestamp in seconds</param>
         /// <param name="limit">Limit for data size, max size is 200. Default size is 200 (optional)</param>

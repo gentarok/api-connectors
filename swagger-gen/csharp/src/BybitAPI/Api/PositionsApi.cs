@@ -21,7 +21,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-changemargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type which you want update its margin</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="margin">New margin you want set</param>
         /// <returns><see cref="PositionsChangeMarginBase"/></returns>
         PositionsChangeMarginBase PositionsChangeMargin(Symbol symbol, decimal margin);
@@ -33,7 +33,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-changemargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type which you want update its margin</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>ApiResponse of PositionsChangeMarginBase</returns>
         ApiResponse<PositionsChangeMarginBase> PositionsChangeMarginWithHttpInfo(Symbol symbol, decimal margin);
@@ -45,7 +45,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
         /// <param name="execType">Execution type (optional)</param>
@@ -61,7 +61,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
         /// <param name="execType">Execution type (optional)</param>
@@ -77,7 +77,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-myposition"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type which you want update its margin.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>PositionsMyPositionBase of PositionsMyPositionRes</returns>
         PositionsMyPositionBase<PositionsMyPositionRes> PositionsMyPosition(Symbol symbol);
 
@@ -88,7 +88,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-myposition"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type which you want update its margin.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of PositionsMyPositionBase (PositionsMyPositionRes)</returns>
         ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>> PositionsMyPositionWithHttpInfo(Symbol symbol);
 
@@ -143,7 +143,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-tradingstop"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
@@ -158,7 +158,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-tradingstop"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
@@ -177,7 +177,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-changemargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type which you want update its margin</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of PositionsChangeMarginBase</returns>
         Task<PositionsChangeMarginBase> PositionsChangeMarginAsync(Symbol symbol, decimal margin);
@@ -189,7 +189,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-changemargin"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type which you want update its margin</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="margin">New margin you want set</param>
         /// <returns>Task of ApiResponse (PositionsChangeMarginBase)</returns>
         Task<ApiResponse<PositionsChangeMarginBase>> PositionsChangeMarginAsyncWithHttpInfo(Symbol symbol, decimal margin);
@@ -201,7 +201,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
         /// <param name="execType">Execution type (optional)</param>
@@ -217,7 +217,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-closedprofitandloss"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="startTime">Start timestamp point for result, in second (optional)</param>
         /// <param name="endTime">End timestamp point for result, in second (optional)</param>
         /// <param name="execType">Execution type (optional)</param>
@@ -233,7 +233,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-myposition"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type which you want update its margin.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of PositionsMyPositionRes</returns>
         Task<PositionsMyPositionBase<PositionsMyPositionRes>> PositionsMyPositionAsync(Symbol symbol);
 
@@ -244,7 +244,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-myposition"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type which you want update its margin.</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (PositionsMyPositionBase of PositionsMyPositionRes)</returns>
         Task<ApiResponse<PositionsMyPositionBase<PositionsMyPositionRes>>> PositionsMyPositionAsyncWithHttpInfo(Symbol symbol);
 
@@ -299,7 +299,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-tradingstop"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
@@ -314,7 +314,7 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-tradingstop"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Contract type</param>
+        /// <param name="symbol"><see cref="Symbol"/></param>
         /// <param name="takeProfit">Not less than 0, 0 means cancel TP (optional)</param>
         /// <param name="stopLoss">Not less than 0, 0 means cancel SL (optional)</param>
         /// <param name="trailingStop">Not less than 0, 0 means cancel TS (optional)</param>
