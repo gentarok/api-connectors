@@ -22,11 +22,11 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="symbol"><see cref="LinearSymbol"/> (optional)</param>
         /// <returns><see cref="LinearConditionalCancelBase"/></returns>
-        LinearConditionalCancelBase LinearConditionalCancel(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null);
+        LinearConditionalCancelBase LinearConditionalCancel(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null);
 
         /// <summary>
         /// Cancel Active Order
@@ -36,11 +36,11 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="symbol"><see cref="LinearSymbol"/> (optional)</param>
         /// <returns>ApiResponse of LinearConditionalCancelBase</returns>
-        ApiResponse<LinearConditionalCancelBase> LinearConditionalCancelWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null);
+        ApiResponse<LinearConditionalCancelBase> LinearConditionalCancelWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null);
 
         /// <summary>
         /// Cancel all stop orders.
@@ -250,11 +250,11 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="symbol"><see cref="LinearSymbol"/> (optional)</param>
         /// <returns>Task of LinearConditionalCancelBase</returns>
-        Task<LinearConditionalCancelBase> LinearConditionalCancelAsync(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null);
+        Task<LinearConditionalCancelBase> LinearConditionalCancelAsync(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null);
 
         /// <summary>
         /// Cancel Active Order
@@ -264,11 +264,11 @@ namespace BybitAPI.Api
         /// <see cref="https://bybit-exchange.github.io/docs/linear/#t-cancelcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="LinearSymbol"/></param>
         /// <param name="stopOrderId"> (optional)</param>
         /// <param name="orderLinkId"> (optional)</param>
-        /// <param name="symbol"><see cref="LinearSymbol"/> (optional)</param>
         /// <returns>Task of ApiResponse (LinearConditionalCancelBase)</returns>
-        Task<ApiResponse<LinearConditionalCancelBase>> LinearConditionalCancelAsyncWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null);
+        Task<ApiResponse<LinearConditionalCancelBase>> LinearConditionalCancelAsyncWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null);
 
         /// <summary>
         /// Cancel all stop orders.
@@ -480,10 +480,10 @@ namespace BybitAPI.Api
         {
         }
 
-        public LinearConditionalCancelBase LinearConditionalCancel(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null)
-            => LinearConditionalCancelWithHttpInfo(stopOrderId, orderLinkId, symbol).Data;
+        public LinearConditionalCancelBase LinearConditionalCancel(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null)
+            => LinearConditionalCancelWithHttpInfo(symbol, stopOrderId, orderLinkId).Data;
 
-        public ApiResponse<LinearConditionalCancelBase> LinearConditionalCancelWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null)
+        public ApiResponse<LinearConditionalCancelBase> LinearConditionalCancelWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
             // see: https://bybit-exchange.github.io/docs/linear/#t-cancelcond
@@ -495,6 +495,8 @@ namespace BybitAPI.Api
             var localVarPath = "/private/linear/stop-order/cancel";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+
             if (stopOrderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)));
@@ -503,11 +505,6 @@ namespace BybitAPI.Api
             if (orderLinkId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)));
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             // authentication (timestamp) required
@@ -522,10 +519,10 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<LinearConditionalCancelBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public async Task<LinearConditionalCancelBase> LinearConditionalCancelAsync(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null)
-            => (await LinearConditionalCancelAsyncWithHttpInfo(stopOrderId, orderLinkId, symbol)).Data;
+        public async Task<LinearConditionalCancelBase> LinearConditionalCancelAsync(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null)
+            => (await LinearConditionalCancelAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId)).Data;
 
-        public Task<ApiResponse<LinearConditionalCancelBase>> LinearConditionalCancelAsyncWithHttpInfo(string? stopOrderId = null, string? orderLinkId = null, LinearSymbol? symbol = null)
+        public Task<ApiResponse<LinearConditionalCancelBase>> LinearConditionalCancelAsyncWithHttpInfo(LinearSymbol symbol, string? stopOrderId = null, string? orderLinkId = null)
         {
             // Note : According to the document, 'stopOrderId' or 'orderLinkId' is required.
             // see: https://bybit-exchange.github.io/docs/linear/#t-cancelcond
@@ -537,6 +534,8 @@ namespace BybitAPI.Api
             var localVarPath = "/private/linear/stop-order/cancel";
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
 
+            localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
+
             if (stopOrderId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_id", Configuration.ApiClient.ParameterToString(stopOrderId)));
@@ -545,11 +544,6 @@ namespace BybitAPI.Api
             if (orderLinkId is not null)
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_link_id", Configuration.ApiClient.ParameterToString(orderLinkId)));
-            }
-
-            if (symbol is not null)
-            {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "symbol", Configuration.ApiClient.ParameterToString(symbol)));
             }
 
             // authentication (timestamp) required

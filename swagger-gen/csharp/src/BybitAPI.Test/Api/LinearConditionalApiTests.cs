@@ -73,10 +73,10 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearConditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            LinearSymbol? symbol = null;
+            var symbol = LinearSymbol.BCHUSDT;
 
             // Act
-            var response = instance.LinearConditionalCancel(stopOrderId, orderLinkId, symbol);
+            var response = instance.LinearConditionalCancel(symbol, stopOrderId, orderLinkId);
 
             // Assert
             Assert.IsInstanceOf<LinearConditionalCancelBase>(response, "response is LinearConditionalCancelBase");
@@ -92,12 +92,12 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearConditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            LinearSymbol? symbol = null;
+            var symbol = LinearSymbol.BCHUSDT;
 
             // Act
             var ex = Assert.Throws<ApiException>(() =>
             {
-                var response = instance.LinearConditionalCancel(stopOrderId, orderLinkId, symbol);
+                var response = instance.LinearConditionalCancel(symbol, stopOrderId, orderLinkId);
             });
 
             // Assert
@@ -114,10 +114,10 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearConditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            LinearSymbol? symbol = null;
+            var symbol = LinearSymbol.BCHUSDT;
 
             // Act
-            var response = instance.LinearConditionalCancelWithHttpInfo(stopOrderId, orderLinkId, symbol);
+            var response = instance.LinearConditionalCancelWithHttpInfo(symbol, stopOrderId, orderLinkId);
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<LinearConditionalCancelBase>>(response, "response is ApiResponse<LinearConditionalCancelBase>");
@@ -134,12 +134,12 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearConditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            LinearSymbol? symbol = null;
+            var symbol = LinearSymbol.BCHUSDT;
 
             // Act
             var ex = Assert.Throws<ApiException>(() =>
             {
-                var response = instance.LinearConditionalCancelWithHttpInfo(stopOrderId, orderLinkId, symbol);
+                var response = instance.LinearConditionalCancelWithHttpInfo(symbol, stopOrderId, orderLinkId);
             });
 
             // Assert
@@ -156,10 +156,10 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearConditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            LinearSymbol? symbol = null;
+            var symbol = LinearSymbol.BCHUSDT;
 
             // Act
-            var response = await instance.LinearConditionalCancelAsync(stopOrderId, orderLinkId, symbol);
+            var response = await instance.LinearConditionalCancelAsync(symbol, stopOrderId, orderLinkId);
 
             // Assert
             Assert.IsInstanceOf<LinearConditionalCancelBase>(response, "response is LinearConditionalCancelBase");
@@ -175,12 +175,12 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearConditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            LinearSymbol? symbol = null;
+            var symbol = LinearSymbol.BCHUSDT;
 
             // Act
             var ex = Assert.ThrowsAsync<ApiException>(async () =>
             {
-                var response = await instance.LinearConditionalCancelAsync(stopOrderId, orderLinkId, symbol);
+                var response = await instance.LinearConditionalCancelAsync(symbol, stopOrderId, orderLinkId);
             });
 
             // Assert
@@ -197,10 +197,10 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearConditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            LinearSymbol? symbol = null;
+            var symbol = LinearSymbol.BCHUSDT;
 
             // Act
-            var response = await instance.LinearConditionalCancelAsyncWithHttpInfo(stopOrderId, orderLinkId, symbol);
+            var response = await instance.LinearConditionalCancelAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId);
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<LinearConditionalCancelBase>>(response, "response is ApiResponse<LinearConditionalCancelBase>");
@@ -217,12 +217,12 @@ namespace BybitAPI.Api.Test
             var client = MockRestClientFactory.Create(HttpStatusCode.OK, linearConditionalCancelJson);
             instance.Configuration.ApiClient.RestClient = client;
 
-            LinearSymbol? symbol = null;
+            var symbol = LinearSymbol.BCHUSDT;
 
             // Act
             var ex = Assert.ThrowsAsync<ApiException>(async () =>
             {
-                var response = await instance.LinearConditionalCancelAsyncWithHttpInfo(stopOrderId, orderLinkId, symbol);
+                var response = await instance.LinearConditionalCancelAsyncWithHttpInfo(symbol, stopOrderId, orderLinkId);
             });
 
             // Assert
