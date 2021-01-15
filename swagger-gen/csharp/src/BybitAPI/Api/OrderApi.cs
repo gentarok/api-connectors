@@ -3,6 +3,7 @@ using BybitAPI.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BybitAPI.Api
@@ -61,6 +62,66 @@ namespace BybitAPI.Api
         /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of OrderCancelAllBase</returns>
         ApiResponse<OrderCancelAllBase> OrderCancelAllWithHttpInfo(Symbol symbol);
+
+        /// <summary>
+        /// Get my active order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns><see cref="OrderGetOrdersBase"/></returns>
+        OrderGetOrdersBase OrderGetOrders(Symbol symbol, OrderStatus[]? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my active order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>ApiResponse of OrderGetOrdersBase</returns>
+        ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, OrderStatus[]? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my active order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns><see cref="OrderGetOrdersBase"/></returns>
+        OrderGetOrdersBase OrderGetOrders(Symbol symbol, IEnumerable<OrderStatus>? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my active order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>ApiResponse of OrderGetOrdersBase</returns>
+        ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, IEnumerable<OrderStatus>? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null);
 
         /// <summary>
         /// Get my active order list.
@@ -261,6 +322,66 @@ namespace BybitAPI.Api
         /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>Task of ApiResponse (OrderCancelAllBase)</returns>
         Task<ApiResponse<OrderCancelAllBase>> OrderCancelAllAsyncWithHttpInfo(Symbol symbol);
+
+        /// <summary>
+        /// Get my active order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>Task of OrderGetOrdersBase</returns>
+        Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, OrderStatus[]? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my active order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>Task of ApiResponse (OrderGetOrdersBase)</returns>
+        Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, OrderStatus[]? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my active order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>Task of OrderGetOrdersBase</returns>
+        Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, IEnumerable<OrderStatus>? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my active order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/#t-getactive"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="orderStatus">Query your orders for all statuses if &#39;order_status&#39; is empty. If you want to query orders with specific statuses , you can pass the order_status split by (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="limit">TLimit for data size per page, max size is 50. Default as showing 20 pieces of data per page (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>Task of ApiResponse (OrderGetOrdersBase)</returns>
+        Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, IEnumerable<OrderStatus>? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null);
 
         /// <summary>
         /// Get my active order list.
@@ -548,10 +669,10 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<OrderCancelAllBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public OrderGetOrdersBase OrderGetOrders(Symbol symbol, OrderStatus? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+        public OrderGetOrdersBase OrderGetOrders(Symbol symbol, OrderStatus[]? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
             => OrderGetOrdersWithHttpInfo(symbol, orderStatus, direction, limit, cursor).Data;
 
-        public ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, OrderStatus? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+        public ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, OrderStatus[]? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and < 0 or > OrderGetOrdersLimitMaxValue)
@@ -571,7 +692,7 @@ namespace BybitAPI.Api
 
             if (orderStatus is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", orderStatus));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", new List<OrderStatus>(orderStatus)));
             }
 
             if (direction is not null)
@@ -596,10 +717,10 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<OrderGetOrdersBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        public async Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, OrderStatus? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+        public async Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, OrderStatus[]? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
             => (await OrderGetOrdersAsyncWithHttpInfo(symbol, orderStatus, direction, limit, cursor)).Data;
 
-        public Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, OrderStatus? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+        public Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, OrderStatus[]? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and < 0 or > OrderGetOrdersLimitMaxValue)
@@ -619,7 +740,7 @@ namespace BybitAPI.Api
 
             if (orderStatus is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", orderStatus));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order_status", new List<OrderStatus>(orderStatus)));
             }
 
             if (direction is not null)
@@ -947,5 +1068,29 @@ namespace BybitAPI.Api
 
             return CallApiAsyncWithHttpInfo<OrderReplaceBase>(localVarPath, Method.POST, localVarQueryParams);
         }
+
+        public OrderGetOrdersBase OrderGetOrders(Symbol symbol, IEnumerable<OrderStatus>? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+            => OrderGetOrders(symbol, orderStatus.ToArray(), direction, limit, cursor);
+
+        public ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, IEnumerable<OrderStatus>? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+            => OrderGetOrdersWithHttpInfo(symbol, orderStatus.ToArray(), direction, limit, cursor);
+
+        public Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, IEnumerable<OrderStatus>? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+            => OrderGetOrdersAsync(symbol, orderStatus.ToArray(), direction, limit, cursor);
+
+        public Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, IEnumerable<OrderStatus>? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+            => OrderGetOrdersAsyncWithHttpInfo(symbol, orderStatus.ToArray(), direction, limit, cursor);
+
+        public OrderGetOrdersBase OrderGetOrders(Symbol symbol, OrderStatus? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+            => OrderGetOrders(symbol, orderStatus.HasValue ? new[] { orderStatus.Value } : null, direction, limit, cursor);
+
+        public ApiResponse<OrderGetOrdersBase> OrderGetOrdersWithHttpInfo(Symbol symbol, OrderStatus? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+            => OrderGetOrdersWithHttpInfo(symbol, orderStatus.HasValue ? new[] { orderStatus.Value } : null, direction, limit, cursor);
+
+        public Task<OrderGetOrdersBase> OrderGetOrdersAsync(Symbol symbol, OrderStatus? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+            => OrderGetOrdersAsync(symbol, orderStatus.HasValue ? new[] { orderStatus.Value } : null, direction, limit, cursor);
+
+        public Task<ApiResponse<OrderGetOrdersBase>> OrderGetOrdersAsyncWithHttpInfo(Symbol symbol, OrderStatus? orderStatus = null, SearchDirection? direction = null, int? limit = null, string? cursor = null)
+            => OrderGetOrdersAsyncWithHttpInfo(symbol, orderStatus.HasValue ? new[] { orderStatus.Value } : null, direction, limit, cursor);
     }
 }

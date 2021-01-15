@@ -3,6 +3,7 @@ using BybitAPI.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BybitAPI.Api
@@ -61,6 +62,66 @@ namespace BybitAPI.Api
         /// <param name="symbol"><see cref="Symbol"/></param>
         /// <returns>ApiResponse of ConditionalCancelAllBase</returns>
         ApiResponse<ConditionalCancelAllBase> ConditionalCancelAllWithHttpInfo(Symbol symbol);
+
+        /// <summary>
+        /// Get my conditional order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
+        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns><see cref="ConditionalGetOrdersBase"/></returns>
+        ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, StopOrderStatus[]? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my conditional order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
+        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>ApiResponse of ConditionalGetOrdersBase</returns>
+        ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus[]? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my conditional order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
+        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns><see cref="ConditionalGetOrdersBase"/></returns>
+        ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, IEnumerable<StopOrderStatus>? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my conditional order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
+        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>ApiResponse of ConditionalGetOrdersBase</returns>
+        ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, IEnumerable<StopOrderStatus>? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
 
         /// <summary>
         /// Get my conditional order list.
@@ -270,7 +331,67 @@ namespace BybitAPI.Api
         /// Get my conditional order list.
         /// </summary>
         /// <remarks>
-        ///
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
+        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>Task of ConditionalGetOrdersBase</returns>
+        Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus[]? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my conditional order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
+        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>Task of ApiResponse (ConditionalGetOrdersBase)</returns>
+        Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus[]? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my conditional order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
+        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>Task of ConditionalGetOrdersBase</returns>
+        Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, IEnumerable<StopOrderStatus>? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my conditional order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol"><see cref="Symbol"/></param>
+        /// <param name="stopOrderStatus">Stop order status. (optional)</param>
+        /// <param name="limit">Limit for data size per page, max size is 50. Default as showing 20 pieces of data per page. (optional)</param>
+        /// <param name="direction">Search direction. prev: prev page, next: next page. Defaults to next (optional)</param>
+        /// <param name="cursor">Page turning mark，Use return cursor,Sign use origin data, in request please urlencode (optional)</param>
+        /// <returns>Task of ApiResponse (ConditionalGetOrdersBase)</returns>
+        Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, IEnumerable<StopOrderStatus>? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null);
+
+        /// <summary>
+        /// Get my conditional order list.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="https://bybit-exchange.github.io/docs/inverse/?console#t-getcond"/>
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol"><see cref="Symbol"/></param>
@@ -553,10 +674,10 @@ namespace BybitAPI.Api
             return CallApiAsyncWithHttpInfo<ConditionalCancelAllBase>(localVarPath, Method.POST, localVarQueryParams);
         }
 
-        public ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+        public ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, StopOrderStatus[]? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
             => ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor).Data;
 
-        public ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+        public ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus[]? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and < 0 or > ConditionalGetOrdersMaxValue)
@@ -571,7 +692,7 @@ namespace BybitAPI.Api
 
             if (stopOrderStatus is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_status", stopOrderStatus));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_status", new List<StopOrderStatus>(stopOrderStatus)));
             }
             if (limit is not null)
             {
@@ -598,10 +719,10 @@ namespace BybitAPI.Api
             return CallApiWithHttpInfo<ConditionalGetOrdersBase>(localVarPath, Method.GET, localVarQueryParams);
         }
 
-        public async Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+        public async Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus[]? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
             => (await ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus, limit, direction, cursor)).Data;
 
-        public Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+        public Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus[]? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
         {
             // verify the parameter 'limit'
             if (limit is not null and < 0 or > ConditionalGetOrdersMaxValue)
@@ -616,7 +737,7 @@ namespace BybitAPI.Api
 
             if (stopOrderStatus is not null)
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_status", stopOrderStatus));
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stop_order_status", new List<StopOrderStatus>(stopOrderStatus)));
             }
             if (limit is not null)
             {
@@ -948,5 +1069,29 @@ namespace BybitAPI.Api
 
             return CallApiAsyncWithHttpInfo<ConditionalReplaceBase>(localVarPath, Method.POST, localVarQueryParams);
         }
+
+        public ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, IEnumerable<StopOrderStatus>? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+            => ConditionalGetOrders(symbol, stopOrderStatus.ToArray(), limit, direction, cursor);
+
+        public ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, IEnumerable<StopOrderStatus>? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+            => ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus.ToArray(), limit, direction, cursor);
+
+        public Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, IEnumerable<StopOrderStatus>? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+            => ConditionalGetOrdersAsync(symbol, stopOrderStatus.ToArray(), limit, direction, cursor);
+
+        public Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, IEnumerable<StopOrderStatus>? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+            => ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus.ToArray(), limit, direction, cursor);
+
+        public ConditionalGetOrdersBase ConditionalGetOrders(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+            => ConditionalGetOrders(symbol, stopOrderStatus.HasValue ? new[] { stopOrderStatus.Value } : null, limit, direction, cursor);
+
+        public ApiResponse<ConditionalGetOrdersBase> ConditionalGetOrdersWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+            => ConditionalGetOrdersWithHttpInfo(symbol, stopOrderStatus.HasValue ? new[] { stopOrderStatus.Value } : null, limit, direction, cursor);
+
+        public Task<ConditionalGetOrdersBase> ConditionalGetOrdersAsync(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+            => ConditionalGetOrdersAsync(symbol, stopOrderStatus.HasValue ? new[] { stopOrderStatus.Value } : null, limit, direction, cursor);
+
+        public Task<ApiResponse<ConditionalGetOrdersBase>> ConditionalGetOrdersAsyncWithHttpInfo(Symbol symbol, StopOrderStatus? stopOrderStatus = null, int? limit = null, SearchDirection? direction = null, string? cursor = null)
+            => ConditionalGetOrdersAsyncWithHttpInfo(symbol, stopOrderStatus.HasValue ? new[] { stopOrderStatus.Value } : null, limit, direction, cursor);
     }
 }
