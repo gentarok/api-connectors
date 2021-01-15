@@ -18,6 +18,7 @@ namespace BybitAPI.IntegrationTest
             };
             configuration.ApiKey.Add("api_key", TestUtil.GetTestApiKey());
             configuration.ApiKey.Add("api_secret", TestUtil.GetTestApiSecret());
+            configuration.ApiKey.Add("recv_window", 10000.ToString());
             return new ConditionalApi(configuration);
         }
 
@@ -116,11 +117,15 @@ namespace BybitAPI.IntegrationTest
             var instance = Create();
 
             // Act
-            //var response = instance.ConditionalQuery(symbol, "da5fc794-6c65-4222-b06f-58fee13a1f0c");
-            //System.Diagnostics.Debug.WriteLine(response);
+            //var response0 = instance.ConditionalGetOrders(Symbol.BTCUSD);
+            //System.Diagnostics.Debug.WriteLine(response0);
+            //var response1 = instance.ConditionalGetOrders(Symbol.BTCUSD, new[] { StopOrderStatus.Untriggered, StopOrderStatus.Active });
+            //var response1 = instance.ConditionalGetOrders(Symbol.BTCUSD, new List<StopOrderStatus>() { StopOrderStatus.Untriggered, StopOrderStatus.Active });
+            var response1 = instance.ConditionalGetOrders(Symbol.BTCUSD, StopOrderStatus.Untriggered);
+            System.Diagnostics.Debug.WriteLine(response1);
 
             // Assert
-            //Assert.Fail();
+            Assert.Fail();
             //Assert.That(response.RetCode, Is.EqualTo(0), $"API error has occered: {response.RetMsg}");
         }
     }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
@@ -53,9 +52,10 @@ namespace BybitAPI.Api.Util
             var b = new StringBuilder();
             foreach (var item in param)
             {
-                b.Append(string.Format("&{0}={1}", item.Key, WebUtility.UrlEncode(item.Value)));
+                b.Append(string.Format("&{0}={1}", item.Key, item.Value));
             }
 
+            // Note: Not Encoded.
             return b.ToString().TrimStart('&');
         }
 

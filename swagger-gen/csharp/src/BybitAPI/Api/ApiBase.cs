@@ -122,6 +122,11 @@ namespace BybitAPI.Api
                 localVarQueryParams = new List<KeyValuePair<string, string>>();
             }
 
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("recv_window")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "recv_window", Configuration.GetApiKeyWithPrefix("recv_window")));
+            }
+
             if (localVarQueryParams.Count > 0)
             {
                 var param = new SortedDictionary<string, string>(localVarQueryParams.ToDictionary(x => x.Key, x => x.Value));

@@ -1,7 +1,6 @@
 ﻿using BybitAPI.Api;
 using BybitAPI.Client;
 using BybitAPI.IntegrationTest.Util;
-using BybitAPI.Model;
 using NUnit.Framework;
 
 namespace BybitAPI.IntegrationTest
@@ -33,14 +32,14 @@ namespace BybitAPI.IntegrationTest
             //var orderId = "707c2e31-7b4a-4b3e-b8f6-1e2c915438ca";
             //var response2 = instance.OrderCancel(Symbol.BTCUSD, orderId);
             //var response3 = instance.OrderCancelAll(Symbol.BTCUSD);
-            //var response4 = instance.OrderGetOrders(Symbol.BTCUSD);
+            //var response4 = instance.OrderGetOrders(Symbol.BTCUSD, new[]{ OrderStatus.Cancelled, OrderStatus.Untriggered, });
             //var response5 = instance.OrderNew(Side.Buy, Symbol.BTCUSD, OrderType.Limit, 1, TimeInForce.PostOnly, 12344);
-            var response6 = instance.OrderQuery(Symbol.BTCUSD, "f9622175-67b0-4d0b-8f46-49806bf5b97f");
+            //var response6 = instance.OrderQuery(Symbol.BTCUSD, "f9622175-67b0-4d0b-8f46-49806bf5b97f");
 
             //803a6dd0-ca2d-4d9a-95a7-4e0190f512bf
 
             // Assert
-            //Assert.Fail();
+            Assert.Fail();
         }
     }
 }
