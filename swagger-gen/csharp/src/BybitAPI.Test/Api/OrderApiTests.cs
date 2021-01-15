@@ -472,7 +472,7 @@ namespace BybitAPI.Api.Test
             string? cursor = null;
 
             // Act
-            var response = instance.OrderGetOrders(symbol, limit, orderStatus, direction, cursor);
+            var response = instance.OrderGetOrders(symbol, orderStatus, direction, limit, cursor);
 
             // Assert
             Assert.IsInstanceOf<OrderGetOrdersBase>(response, "response is OrderGetOrdersBase");
@@ -497,7 +497,7 @@ namespace BybitAPI.Api.Test
             // Act
             var ex = Assert.Throws<ApiException>(() =>
             {
-                var response = instance.OrderGetOrders(symbol, limit, orderStatus, direction, cursor);
+                var response = instance.OrderGetOrders(symbol, orderStatus, direction, limit, cursor);
             });
 
             // Assert
@@ -521,7 +521,7 @@ namespace BybitAPI.Api.Test
             string? cursor = null;
 
             // Act
-            var response = instance.OrderGetOrdersWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+            var response = instance.OrderGetOrdersWithHttpInfo(symbol, orderStatus, direction, limit, cursor);
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderGetOrdersBase>>(response, "response is ApiResponse<OrderGetOrdersBase>");
@@ -547,7 +547,7 @@ namespace BybitAPI.Api.Test
             // Act
             var ex = Assert.Throws<ApiException>(() =>
             {
-                var response = instance.OrderGetOrdersWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+                var response = instance.OrderGetOrdersWithHttpInfo(symbol, orderStatus, direction, limit, cursor);
             });
 
             // Assert
@@ -571,7 +571,7 @@ namespace BybitAPI.Api.Test
             string? cursor = null;
 
             // Act
-            var response = await instance.OrderGetOrdersAsync(symbol, limit, orderStatus, direction, cursor);
+            var response = await instance.OrderGetOrdersAsync(symbol, orderStatus, direction, limit, cursor);
 
             // Assert
             Assert.IsInstanceOf<OrderGetOrdersBase>(response, "response is OrderGetOrdersBase");
@@ -596,7 +596,7 @@ namespace BybitAPI.Api.Test
             // Act
             var ex = Assert.ThrowsAsync<ApiException>(async () =>
             {
-                var response = await instance.OrderGetOrdersAsync(symbol, limit, orderStatus, direction, cursor);
+                var response = await instance.OrderGetOrdersAsync(symbol, orderStatus, direction, limit, cursor);
             });
 
             // Assert
@@ -620,7 +620,7 @@ namespace BybitAPI.Api.Test
             string? cursor = null;
 
             // Act
-            var response = await instance.OrderGetOrdersAsyncWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+            var response = await instance.OrderGetOrdersAsyncWithHttpInfo(symbol, orderStatus, direction, limit, cursor);
 
             // Assert
             Assert.IsInstanceOf<ApiResponse<OrderGetOrdersBase>>(response, "response is ApiResponse<OrderGetOrdersBase>");
@@ -646,7 +646,7 @@ namespace BybitAPI.Api.Test
             // Act
             var ex = Assert.ThrowsAsync<ApiException>(async () =>
             {
-                var response = await instance.OrderGetOrdersAsyncWithHttpInfo(symbol, limit, orderStatus, direction, cursor);
+                var response = await instance.OrderGetOrdersAsyncWithHttpInfo(symbol, orderStatus, direction, limit, cursor);
             });
 
             // Assert
